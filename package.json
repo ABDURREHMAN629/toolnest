@@ -1,0 +1,11 @@
+{
+  "name": "toolnest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "150+ free online tools that run in the browser. Static site, no backend.",
+  "scripts": {
+    "build": "node build.js",
+    "start": "node build.js && node serve.js",
+    "serve": "node serve.js"
+  }
+}

@@ -1,0 +1,4 @@
+test/material/
+node_modules/
+SESSION_SUMMARY.md
+.claude/

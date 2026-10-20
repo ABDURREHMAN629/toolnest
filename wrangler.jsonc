@@ -1,0 +1,11 @@
+// Cloudflare Workers static-site config (used when the repo is deployed as a Worker with `npx wrangler deploy`).
+// Cloudflare Pages ignores this file and uses its own build settings: build `node build.js`, output `site`.
+{
+  "name": "webtoolnest",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./site",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

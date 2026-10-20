@@ -4,7 +4,7 @@ module.exports = {
   // Your live domain, no trailing slash. Change this once the custom domain is connected,
   // e.g. 'https://www.yourdomain.com' — canonical links, sitemap and robots.txt all follow it.
   url: 'https://www.webtoolnest.com',
-  contactEmail: 'gabdurrehman493@gmail.com',
+  contactEmail: 'contact@webtoolnest.com',
   contactPhone: '',
   gaId: '',              // Google Analytics 4 ID, e.g. 'G-XXXXXXXXXX'
   adsenseClient: '',     // AdSense publisher ID, e.g. 'ca-pub-1234567890123456'

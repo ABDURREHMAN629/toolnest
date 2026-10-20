@@ -1,0 +1,9 @@
+# Cloudflare Pages / Netlify response headers
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+# CSS/JS are cache-busted with ?v= on every build, so they can be cached for a long time
+/assets/*
+  Cache-Control: public, max-age=2592000

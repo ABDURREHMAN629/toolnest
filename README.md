@@ -18,6 +18,8 @@ This builds the pages and serves the site at http://localhost:8080. Node.js 18+ 
 
 ## Before you go live
 
+**Full step-by-step guide (domain, hosting, Search Console, AdSense, ranking): [GO-LIVE.md](GO-LIVE.md).**
+
 1. Open **`site.config.js`** and set your site `name`, your real domain in `url` (used for canonical links and the sitemap), and `contactEmail`.
 2. Optional: add your Google Analytics ID (`gaId`) and Google AdSense publisher ID (`adsenseClient`). AdSense Auto Ads are enabled automatically when the ID is set.
 3. Run `npm run build`.
@@ -39,6 +41,7 @@ Note: the site must be served over **HTTPS** (all hosts above do this). Camera, 
 
 ```
 site.config.js          Site name, domain, analytics/ads IDs
+content.js              Hand-written long-form guides per tool (the main SEO lever)
 build.js                Static page generator (tool pages, categories, sitemap, legal pages)
 serve.js                Local dev server
 site/                   ← deploy this folder

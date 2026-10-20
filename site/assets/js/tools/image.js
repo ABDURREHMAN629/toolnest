@@ -729,7 +729,7 @@
         work.innerHTML = `<div class="row opts"></div><div class="grid-2" style="align-items:start">
           <div class="stack" style="align-items:center"><div class="stage" style="position:relative;touch-action:none;cursor:grab;line-height:0;box-shadow:var(--shadow-lg)"><canvas class="cv"></canvas></div><div class="small muted text-center">Drag the photo to position it. Fit the head inside the oval, eyes on the line.</div></div>
           <div class="stack"><div class="field"><label>Zoom</label><input type="range" class="zoom" min="0.3" max="4" step="0.01" value="1"></div>
-          <div class="notice small">Tips: plain white or light background, even lighting, neutral expression, no glasses glare. Need a white background? Use our <a href="remove-background.html">Background Remover</a> first.</div>
+          <div class="notice small">Tips: plain white or light background, even lighting, neutral expression, no glasses glare. Need a white background? Use our <a href="remove-background">Background Remover</a> first.</div>
           <div class="btn-row"><button class="btn lg one">⬇ Single photo</button><button class="btn lg success sheet">⬇ Print sheet</button></div><button class="btn ghost chg">Choose another photo</button></div></div>`;
         const $ = UI.q(work);
         const form = UI.fields($('.opts'), [

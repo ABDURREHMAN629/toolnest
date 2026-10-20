@@ -498,7 +498,7 @@
       const res = UI.searchTools(input.value).slice(0, 8);
       active = -1;
       if (!input.value.trim()) { box.classList.remove('show'); return; }
-      box.innerHTML = res.length ? res.map(t => `<a href="${t.slug}.html" role="option"><span class="tool-icon" style="--c:${cats[t.cat].color};width:34px;height:34px;font-size:1rem">${t.icon}</span><span><strong>${esc(t.name)}</strong><small>${esc(cats[t.cat].name)}</small></span></a>`).join('') : '<div class="empty">No tools found. Try another word.</div>';
+      box.innerHTML = res.length ? res.map(t => `<a href="${window.BASE || ''}${t.slug}" role="option"><span class="tool-icon" style="--c:${cats[t.cat].color};width:34px;height:34px;font-size:1rem">${t.icon}</span><span><strong>${esc(t.name)}</strong><small>${esc(cats[t.cat].name)}</small></span></a>`).join('') : '<div class="empty">No tools found. Try another word.</div>';
       box.classList.add('show');
     };
     input.addEventListener('input', render);
@@ -525,11 +525,11 @@
     const none = document.getElementById('no-results');
     const filter = () => {
       const q = input.value.trim().toLowerCase();
-      const hits = new Set(UI.searchTools(q).map(t => t.slug + '.html'));
+      const hits = new Set(UI.searchTools(q).map(t => t.slug));
       let any = false;
       sections.forEach(s => {
         let n = 0;
-        s.querySelectorAll('.tool-card-link').forEach(a => { const ok = !q || hits.has(a.getAttribute('href')); a.hidden = !ok; if (ok) n++; });
+        s.querySelectorAll('.tool-card-link').forEach(a => { const ok = !q || hits.has(a.dataset.slug); a.hidden = !ok; if (ok) n++; });
         s.hidden = !n; if (n) any = true;
       });
       none.hidden = any;

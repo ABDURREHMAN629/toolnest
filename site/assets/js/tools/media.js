@@ -363,7 +363,7 @@
         const url = URL.createObjectURL(blob), name = `screen-recording-${new Date().toISOString().slice(0, 19).replace(/[T:]/g, '-')}.${ext}`;
         $('.out').prepend(UI.h(`<div class="card-sub stack"><video controls playsinline src="${url}" style="width:100%;max-height:380px;border-radius:10px;background:#000"></video></div>`));
         $('.out .card-sub').append(UI.fileRow({ name, sub: `${UI.fmtBytes(blob.size)} · ${timerText(acc)}`, icon: '🎬', blob }));
-        if (ext === 'webm') $('.out .card-sub').append(UI.h('<p class="small muted">Need MP4? Open the <a href="video-converter.html">Video Converter</a> and convert this WebM file.</p>'));
+        if (ext === 'webm') $('.out .card-sub').append(UI.h('<p class="small muted">Need MP4? Open the <a href="video-converter">Video Converter</a> and convert this WebM file.</p>'));
       };
       display.getVideoTracks()[0].addEventListener('ended', () => rec && rec.state !== 'inactive' && rec.stop());
       rec.start(1000); acc = 0; t0 = Date.now();

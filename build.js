@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./site.config');
 const { CATEGORIES, TOOLS } = require('./site/assets/js/registry.js');
+const CONTENT = require('./content.js');
 
 const OUT = path.join(__dirname, 'site');
 const VERSION = Date.now().toString(36);
@@ -11,10 +12,13 @@ const toolBySlug = Object.fromEntries(TOOLS.map(t => [t.slug, t]));
 const COUNT = Math.floor(TOOLS.filter(t => !t.of).length / 10) * 10;
 
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const abs = p => `${config.url}/${p === 'index.html' ? '' : p}`;
+// Clean URLs (no .html): Cloudflare Pages, Netlify and GitHub Pages all serve /merge-pdf from merge-pdf.html.
+const SITE = config.url.replace(/\/$/, '');
+const BASE = new URL(SITE).pathname.replace(/\/?$/, '/');
+const abs = p => `${SITE}/${p === 'index.html' ? '' : p.replace(/\.html$/, '')}`;
 const year = new Date().getFullYear();
 
-function head({ title, desc, file, extraHead = '', jsonld = [] }) {
+function head({ title, desc, file, extraHead = '', jsonld = [], noindex = false }) {
   const ga = config.gaId ? `
 <script async src="https://www.googletagmanager.com/gtag/js?id=${esc(config.gaId)}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${esc(config.gaId)}');</script>` : '';
@@ -27,17 +31,22 @@ function head({ title, desc, file, extraHead = '', jsonld = [] }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
-<link rel="canonical" href="${esc(abs(file))}">
+${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${esc(abs(file))}">`}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${esc(config.name)}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${esc(abs(file))}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="${SITE}/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">${config.googleVerification ? `
+<meta name="google-site-verification" content="${esc(config.googleVerification)}">` : ''}${config.bingVerification ? `
+<meta name="msvalidate.01" content="${esc(config.bingVerification)}">` : ''}
 <meta name="theme-color" content="#4f46e5">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="assets/css/style.css?v=${VERSION}">
-<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>${ga}${ads}
+<link rel="icon" href="${BASE}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="${BASE}assets/css/style.css?v=${VERSION}">
+<script>window.BASE=${JSON.stringify(BASE)};try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>${ga}${ads}
 ${jsonld.map(j => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join('\n')}${extraHead}
 </head>
 <body>
@@ -45,19 +54,19 @@ ${header()}`;
 }
 
 function header() {
-  const cats = CATEGORIES.map(c => `<a href="${c.slug}.html"><span>${c.icon}</span>${esc(c.name)}</a>`).join('');
+  const cats = CATEGORIES.map(c => `<a href="${BASE}${c.slug}"><span>${c.icon}</span>${esc(c.name)}</a>`).join('');
   return `<header class="site-header">
   <div class="container header-inner">
-    <a class="logo" href="index.html" aria-label="${esc(config.name)} home"><span class="logo-mark">◆</span>${esc(config.name)}</a>
+    <a class="logo" href="${BASE}" aria-label="${esc(config.name)} home"><span class="logo-mark">◆</span>${esc(config.name)}</a>
     <nav class="main-nav">
       <div class="dropdown">
         <button class="nav-btn" aria-haspopup="true" aria-expanded="false">All Tools <span aria-hidden="true">▾</span></button>
         <div class="dropdown-menu">${cats}</div>
       </div>
-      <a class="nav-link hide-sm" href="pdf-tools.html">PDF</a>
-      <a class="nav-link hide-sm" href="image-tools.html">Image</a>
-      <a class="nav-link hide-sm" href="video-audio-tools.html">Video</a>
-      <a class="nav-link hide-sm" href="student-tools.html">Student</a>
+      <a class="nav-link hide-sm" href="${BASE}pdf-tools">PDF</a>
+      <a class="nav-link hide-sm" href="${BASE}image-tools">Image</a>
+      <a class="nav-link hide-sm" href="${BASE}video-audio-tools">Video</a>
+      <a class="nav-link hide-sm" href="${BASE}student-tools">Student</a>
     </nav>
     <div class="header-search">
       <input type="search" id="site-search" placeholder="Search ${COUNT}+ tools…" autocomplete="off" aria-label="Search tools">
@@ -71,24 +80,24 @@ function header() {
 function footer(scripts = '') {
   const cols = CATEGORIES.map(c => {
     const list = TOOLS.filter(t => t.cat === c.id && !t.of).slice(0, 6)
-      .map(t => `<li><a href="${t.slug}.html">${esc(t.name)}</a></li>`).join('');
-    return `<div><h4><a href="${c.slug}.html">${esc(c.name)}</a></h4><ul>${list}</ul></div>`;
+      .map(t => `<li><a href="${BASE}${t.slug}">${esc(t.name)}</a></li>`).join('');
+    return `<div><h4><a href="${BASE}${c.slug}">${esc(c.name)}</a></h4><ul>${list}</ul></div>`;
   }).join('');
   return `<footer class="site-footer">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="logo" href="index.html"><span class="logo-mark">◆</span>${esc(config.name)}</a>
+        <a class="logo" href="${BASE}"><span class="logo-mark">◆</span>${esc(config.name)}</a>
         <p>${esc(config.tagline)}. ${COUNT}+ free tools that run right in your browser — no sign-up, no uploads, no limits.</p>
       </div>
-      <div class="footer-links"><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="sitemap.xml">Sitemap</a></div>
+      <div class="footer-links"><a href="${BASE}about">About</a><a href="${BASE}contact">Contact</a><a href="${BASE}privacy-policy">Privacy Policy</a><a href="${BASE}terms">Terms of Use</a><a href="${BASE}sitemap.xml">Sitemap</a></div>
     </div>
     <div class="footer-cols">${cols}</div>
     <p class="copyright">© ${year} ${esc(config.name)}. All rights reserved.</p>
   </div>
 </footer>
-<script src="assets/js/registry.js?v=${VERSION}"></script>
-<script src="assets/js/core.js?v=${VERSION}"></script>
+<script src="${BASE}assets/js/registry.js?v=${VERSION}"></script>
+<script src="${BASE}assets/js/core.js?v=${VERSION}"></script>
 ${scripts}
 </body>
 </html>
@@ -97,7 +106,7 @@ ${scripts}
 
 function card(t) {
   const c = catById[t.cat];
-  return `<a class="tool-card-link" href="${t.slug}.html" data-search="${esc((t.name + ' ' + t.kw + ' ' + c.name).toLowerCase())}">
+  return `<a class="tool-card-link" href="${BASE}${t.slug}" data-slug="${t.slug}" data-search="${esc((t.name + ' ' + t.kw + ' ' + c.name).toLowerCase())}">
   <span class="tool-icon" style="--c:${c.color}">${t.icon}</span>
   <span class="tool-card-body"><strong>${esc(t.name)}</strong><span>${esc(t.desc)}</span></span>
 </a>`;
@@ -149,7 +158,7 @@ for (const t of TOOLS) {
   const preset = t.preset ? JSON.stringify(t.preset).replace(/</g, '\\u003c') : '{}';
   write(file, head({ title, desc: t.desc, file, jsonld }) + `
 <main class="container page">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>›</span><a href="${c.slug}.html">${esc(c.name)}</a><span>›</span><span>${esc(t.name)}</span></nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="${BASE}">Home</a><span>›</span><a href="${BASE}${c.slug}">${esc(c.name)}</a><span>›</span><span>${esc(t.name)}</span></nav>
   <div class="tool-head">
     <span class="tool-icon lg" style="--c:${c.color}">${t.icon}</span>
     <div>
@@ -167,20 +176,20 @@ for (const t of TOOLS) {
       <h2>How to use the ${esc(t.name)}</h2>
       <ol class="steps">${t.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
       <h2>About this tool</h2>
-      <p>${esc(t.desc)} ${esc(t.name)} is part of ${esc(config.name)}'s collection of free ${esc(c.name.toLowerCase())}. ${['pdf', 'image', 'media'].includes(c.id) ? 'All processing happens locally in your browser, so your files stay private and nothing is uploaded.' : 'It works instantly in your browser with no account and no installation.'}</p>
+      <p>${esc(t.desc)} ${esc(t.name)} is part of ${esc(config.name)}'s collection of free ${esc(c.name.toLowerCase())}. ${['pdf', 'image', 'media'].includes(c.id) ? 'All processing happens locally in your browser, so your files stay private and nothing is uploaded.' : 'It works instantly in your browser with no account and no installation.'}</p>${CONTENT[t.slug] || ''}
       <h2>Frequently asked questions</h2>
       <div class="faq">${fq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div>
     </article>
     <aside class="sidebar">
       <h3>More ${esc(c.name)}</h3>
-      <ul class="side-list">${related.map(r => `<li><a href="${r.slug}.html"><span>${r.icon}</span>${esc(r.name)}</a></li>`).join('')}</ul>
-      <a class="side-more" href="${c.slug}.html">View all ${esc(c.name)} →</a>
+      <ul class="side-list">${related.map(r => `<li><a href="${BASE}${r.slug}"><span>${r.icon}</span>${esc(r.name)}</a></li>`).join('')}</ul>
+      <a class="side-more" href="${BASE}${c.slug}">View all ${esc(c.name)} →</a>
       <h3>Popular tools</h3>
-      <ul class="side-list">${more.map(r => `<li><a href="${r.slug}.html"><span>${r.icon}</span>${esc(r.name)}</a></li>`).join('')}</ul>
+      <ul class="side-list">${more.map(r => `<li><a href="${BASE}${r.slug}"><span>${r.icon}</span>${esc(r.name)}</a></li>`).join('')}</ul>
     </aside>
   </div>
 </main>
-` + footer(`<script src="assets/js/tools/${catById[base.cat].id}.js?v=${VERSION}"></script>
+` + footer(`<script src="${BASE}assets/js/tools/${catById[base.cat].id}.js?v=${VERSION}"></script>
 <script>Tools.mount(${JSON.stringify(base.slug)}, document.getElementById('tool'), ${preset});</script>`));
 }
 
@@ -192,13 +201,13 @@ for (const c of CATEGORIES) {
     jsonld: [{ '@context': 'https://schema.org', '@type': 'CollectionPage', name: c.name, description: c.desc, url: abs(file) }],
   }) + `
 <main class="container page">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>›</span><span>${esc(c.name)}</span></nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="${BASE}">Home</a><span>›</span><span>${esc(c.name)}</span></nav>
   <div class="tool-head">
     <span class="tool-icon lg" style="--c:${c.color}">${c.icon}</span>
     <div><h1>${esc(c.name)}</h1><p class="lead">${esc(c.desc)}</p></div>
   </div>
   <div class="tool-grid">${list.map(card).join('')}</div>
-  <section class="cat-strip"><h2>Explore other categories</h2><div class="chips">${CATEGORIES.filter(x => x.id !== c.id).map(x => `<a class="chip" href="${x.slug}.html">${x.icon} ${esc(x.name)}</a>`).join('')}</div></section>
+  <section class="cat-strip"><h2>Explore other categories</h2><div class="chips">${CATEGORIES.filter(x => x.id !== c.id).map(x => `<a class="chip" href="${BASE}${x.slug}">${x.icon} ${esc(x.name)}</a>`).join('')}</div></section>
 </main>
 ` + footer());
 }
@@ -208,7 +217,7 @@ for (const c of CATEGORIES) {
   const desc = `${COUNT}+ free online tools in one place: PDF converter, image compressor, video converter, CGPA calculator, ATS resume checker, QR code generator and more. No sign-up, works in your browser.`;
   write('index.html', head({
     title: `${config.name} – ${COUNT}+ Free Online Tools: PDF, Image, Video, Calculators`, desc, file: 'index.html',
-    jsonld: [{ '@context': 'https://schema.org', '@type': 'WebSite', name: config.name, url: abs('index.html'), potentialAction: { '@type': 'SearchAction', target: `${config.url}/?q={search_term_string}`, 'query-input': 'required name=search_term_string' } }],
+    jsonld: [{ '@context': 'https://schema.org', '@type': 'WebSite', name: config.name, url: abs('index.html'), potentialAction: { '@type': 'SearchAction', target: `${SITE}/?q={search_term_string}`, 'query-input': 'required name=search_term_string' } }],
   }) + `
 <main>
   <section class="hero">
@@ -228,7 +237,7 @@ for (const c of CATEGORIES) {
       <div class="tool-grid">${popular.map(card).join('')}</div>
     </section>
     ${CATEGORIES.map(c => `<section class="home-section" id="${c.id}" data-section>
-      <div class="section-head"><h2>${c.icon} ${esc(c.name)}</h2><a href="${c.slug}.html">View all →</a></div>
+      <div class="section-head"><h2>${c.icon} ${esc(c.name)}</h2><a href="${BASE}${c.slug}">View all →</a></div>
       <div class="tool-grid">${TOOLS.filter(t => t.cat === c.id).map(card).join('')}</div>
     </section>`).join('\n')}
     <section class="why">
@@ -254,7 +263,7 @@ staticPage('about.html', 'About Us', `About ${config.name} — free online tools
   <ul><li><strong>Privacy first.</strong> Almost every tool runs entirely in your browser. Files you open are processed on your own device and are never uploaded to us.</li>
   <li><strong>Free forever.</strong> No account, no watermarks, no daily limits.</li>
   <li><strong>Fast and simple.</strong> Each tool does one job well, with a clean interface that works on phones and computers.</li></ul>
-  <p>Have an idea for a new tool? <a href="contact.html">Let us know</a>.</p>`);
+  <p>Have an idea for a new tool? <a href="${BASE}contact">Let us know</a>.</p>`);
 staticPage('contact.html', 'Contact Us', `Contact the ${config.name} team.`, `
   <p>We'd love to hear from you — whether you found a bug, want to suggest a new tool or have a business enquiry.</p>
   <p>Email: <a href="mailto:${esc(config.contactEmail)}">${esc(config.contactEmail)}</a></p>
@@ -283,20 +292,23 @@ staticPage('terms.html', 'Terms of Use', `Terms of use for ${config.name}.`, `
   <p>Do not use the site to break the law, infringe copyright or attempt to disrupt the service.</p>
   <h2>Changes</h2>
   <p>We may update these terms and the tools at any time. Continued use means you accept the updated terms.</p>`);
-write('404.html', head({ title: `Page not found | ${config.name}`, desc: 'Page not found', file: '404.html' }) + `
+write('404.html', head({ title: `Page not found | ${config.name}`, desc: 'Page not found', file: '404.html', noindex: true }) + `
 <main class="container page narrow center-text">
   <h1>Page not found</h1>
-  <p class="lead">The page you're looking for doesn't exist. Try searching for a tool above or go back to the <a href="index.html">home page</a>.</p>
+  <p class="lead">The page you're looking for doesn't exist. Try searching for a tool above or go back to the <a href="${BASE}">home page</a>.</p>
 </main>
 ` + footer());
 
 const urls = pages.filter(p => p !== '404.html');
 fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(p => `  <url><loc>${esc(abs(p))}</loc><lastmod>${today}</lastmod><priority>${p === 'index.html' ? '1.0' : toolBySlug[p.replace('.html', '')] ? '0.8' : '0.6'}</priority></url>`).join('\n')}
+${urls.map(p => `  <url><loc>${esc(abs(p))}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
 </urlset>
 `);
-fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${config.url}/sitemap.xml\n`);
+// ads.txt is required for AdSense to pay out at full rate
+if (config.adsenseClient) fs.writeFileSync(path.join(OUT, 'ads.txt'), `google.com, ${config.adsenseClient.replace(/^ca-/, '')}, DIRECT, f08c47fec0942fa0
+`);
+fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 
 const distinct = TOOLS.filter(t => !t.of).length;
 console.log(`Built ${pages.length} pages: ${distinct} tools + ${TOOLS.length - distinct} format pages, ${CATEGORIES.length} categories → ./site`);

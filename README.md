@@ -48,6 +48,7 @@ site/                   ← deploy this folder
   assets/css/style.css  Design system (light + dark mode)
   assets/js/registry.js All tools: name, category, description, how-to steps, keywords
   assets/js/core.js     Shared UI kit: file picker, calculators, text tools, downloads, search, theme
+  assets/js/assistant.js  "Ask AI" chat assistant that recommends tools
   assets/js/tools/*.js  Tool implementations, one file per category
   *.html                Generated pages (do not edit by hand — run the build)
 test/                   Local browser test helpers (not deployed)
@@ -57,7 +58,17 @@ test/                   Local browser test helpers (not deployed)
 
 1. Add one line to `site/assets/js/registry.js` with the slug, name, category, icon, description and 3 how-to steps.
 2. Implement it in the matching `site/assets/js/tools/<category>.js` with `Tools.define('your-slug', root => { ... })`. For calculators, `UI.calc(root, { fields, compute })` does most of the work; for text transforms use `UI.textTool`.
-3. Run `npm run build`. The page, sitemap entry, search entry and related-tool links are created automatically.
+3. Run `npm run build`. The page, sitemap entry, search entry and related-tool links are created automatically. The AI assistant picks the new tool up from the registry too — good keywords (`kw`) help it match the way people phrase requests.
+
+## AI assistant
+
+Every page has an **✨ Ask AI** button (bottom right). Visitors describe what they want in plain words — *"make my PDF smaller for email"*, *"usd to pkr"*, *"how old am I"* — and the assistant replies with the best matching tools. Each result shows what the tool does, its how-to steps, privacy notes (runs in the browser, uses an online service, needs camera or microphone permission, and so on) and a button to open it. It also answers common questions (is it free, are my files safe, does it work on phones), lists categories, and offers "Show more" and "Tools like this" follow-ups.
+
+It runs entirely in the browser using `registry.js`: no API key, no server and no cost. It understands synonyms (photo → image, join → merge, CV → resume), typos (*compres pdf*), format pairs (*jpeg into png*) and word variants. The conversation is kept for the browser tab session, so it survives moving between pages. To tune matching, edit the `SYN` (synonyms) and `PHRASES` tables at the top of `assistant.js`.
+
+The home page also links to it from the hero, and both search boxes offer it when a search finds nothing.
+
+You can test it from the browser console with `Assistant.rank('compress pdf')` (scores) or `Assistant.answer('compress pdf')` (full reply).
 
 ## SEO built in
 

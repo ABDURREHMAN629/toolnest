@@ -498,7 +498,7 @@
       const res = UI.searchTools(input.value).slice(0, 8);
       active = -1;
       if (!input.value.trim()) { box.classList.remove('show'); return; }
-      box.innerHTML = res.length ? res.map(t => `<a href="${window.BASE || ''}${t.slug}" role="option"><span class="tool-icon" style="--c:${cats[t.cat].color};width:34px;height:34px;font-size:1rem">${t.icon}</span><span><strong>${esc(t.name)}</strong><small>${esc(cats[t.cat].name)}</small></span></a>`).join('') : '<div class="empty">No tools found. Try another word.</div>';
+      box.innerHTML = res.length ? res.map(t => `<a href="${window.BASE || ''}${t.slug}" role="option"><span class="tool-icon" style="--c:${cats[t.cat].color};width:34px;height:34px;font-size:1rem">${t.icon}</span><span><strong>${esc(t.name)}</strong><small>${esc(cats[t.cat].name)}</small></span></a>`).join('') : '<div class="empty">No tools found. <button type="button" class="link-btn" data-ask="site-search">Ask the AI assistant</button></div>';
       box.classList.add('show');
     };
     input.addEventListener('input', render);

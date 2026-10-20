@@ -99,6 +99,7 @@ function footer(scripts = '') {
 <script src="${BASE}assets/js/registry.js?v=${VERSION}"></script>
 <script src="${BASE}assets/js/core.js?v=${VERSION}"></script>
 ${scripts}
+<script src="${BASE}assets/js/assistant.js?v=${VERSION}" defer></script>
 </body>
 </html>
 `;
@@ -227,11 +228,12 @@ for (const c of CATEGORIES) {
       <div class="hero-search">
         <input type="search" id="home-search" placeholder="Search tools — try “compress pdf”, “cgpa” or “qr code”" autocomplete="off" aria-label="Search all tools">
       </div>
+      <p class="hero-ask">Not sure which tool you need? <button type="button" class="link-btn" data-ask>✨ Ask the AI assistant</button></p>
       <div class="chips center">${CATEGORIES.map(c => `<a class="chip" href="#${c.id}">${c.icon} ${esc(c.name)}</a>`).join('')}</div>
     </div>
   </section>
   <div class="container page">
-    <section id="no-results" class="notice" hidden>No tools match your search. Try a different word.</section>
+    <section id="no-results" class="notice" hidden>No tools match your search. Try a different word, or <button type="button" class="link-btn" data-ask="home-search">ask the AI assistant</button> to find the right tool.</section>
     <section class="home-section" data-section>
       <div class="section-head"><h2>🔥 Most popular tools</h2></div>
       <div class="tool-grid">${popular.map(card).join('')}</div>

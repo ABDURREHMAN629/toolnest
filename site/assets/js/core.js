@@ -490,16 +490,15 @@
     return window.TOOLS.map(t => [score(t, q), t]).filter(x => x[0] > 0).sort((a, b) => b[0] - a[0]).map(x => x[1]);
   };
 
-  function initSearch() {
-    const input = document.getElementById('site-search'), box = document.getElementById('search-results');
-    if (!input || !window.TOOLS) return;
+  // Live result dropdown under a search box; used by the header search and the big search box on the home page.
+  function searchDropdown(input, box, wrapSel) {
     const cats = Object.fromEntries((window.CATEGORIES || []).map(c => [c.id, c]));
     let active = -1;
     const render = () => {
       const res = UI.searchTools(input.value).slice(0, 8);
       active = -1;
       if (!input.value.trim()) { box.classList.remove('show'); return; }
-      box.innerHTML = res.length ? res.map(t => `<a href="${window.BASE || ''}${t.slug}" role="option"><span class="tool-icon" style="--c:${cats[t.cat].color};width:34px;height:34px;font-size:1rem">${t.icon}</span><span><strong>${esc(t.name)}</strong><small>${esc(cats[t.cat].name)}</small></span></a>`).join('') : '<div class="empty">No tools found. <button type="button" class="link-btn" data-ask="site-search">Ask the AI assistant</button></div>';
+      box.innerHTML = res.length ? res.map(t => `<a href="${window.BASE || ''}${t.slug}" role="option"><span class="tool-icon" style="--c:${cats[t.cat].color};width:34px;height:34px;font-size:1rem">${t.icon}</span><span><strong>${esc(t.name)}</strong><small>${esc(cats[t.cat].name)}</small></span></a>`).join('') : `<div class="empty">No tools found. <button type="button" class="link-btn" data-ask="${input.id}">Ask the AI assistant</button></div>`;
       box.classList.add('show');
     };
     input.addEventListener('input', render);
@@ -514,14 +513,21 @@
         const l = links[active] || links[0]; if (l) location.href = l.href;
       } else if (e.key === 'Escape') { box.classList.remove('show'); input.blur(); }
     });
-    document.addEventListener('click', e => { if (!e.target.closest('.header-search')) box.classList.remove('show'); });
+    document.addEventListener('click', e => { if (!e.target.closest(wrapSel)) box.classList.remove('show'); });
+  }
+
+  function initSearch() {
+    const input = document.getElementById('site-search'), box = document.getElementById('search-results');
+    if (!input || !window.TOOLS) return;
+    searchDropdown(input, box, '.header-search');
     document.addEventListener('keydown', e => {
-      if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) && !document.activeElement.isContentEditable) { e.preventDefault(); input.focus(); }
+      if (e.key === '/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) && !document.activeElement.isContentEditable) { e.preventDefault(); (document.getElementById('home-search') || input).focus(); }
     });
   }
 
   function initHomeSearch() {
     const input = document.getElementById('home-search'); if (!input) return;
+    if (window.TOOLS) { const box = UI.h('<div class="search-results" role="listbox"></div>'); input.after(box); searchDropdown(input, box, '.hero-search'); }
     const sections = [...document.querySelectorAll('[data-section]')];
     const none = document.getElementById('no-results');
     const filter = () => {

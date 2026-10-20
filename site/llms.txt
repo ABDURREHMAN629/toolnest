@@ -1,4 +1,4 @@
-# ToolNest
+# WebToolNest
 
 > 160+ free online tools that run entirely in the browser: PDF, image, video and audio converters, calculators, student, developer and everyday utilities. No sign-up, no watermarks, no limits, and files are processed on the visitor's own device instead of being uploaded.
 
@@ -240,5 +240,5 @@ QR codes, barcodes, passwords, signature maker, invoice generator, to-do list an
 
 ## About
 
-- [About ToolNest](https://www.webtoolnest.com/about)
+- [About WebToolNest](https://www.webtoolnest.com/about)
 - [Privacy policy](https://www.webtoolnest.com/privacy-policy)

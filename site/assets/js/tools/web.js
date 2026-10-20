@@ -85,10 +85,10 @@
     root.innerHTML = '<div class="grid-2" style="align-items:start"><div class="row opts"></div><div class="stack"><div class="small muted">Google search preview</div><div class="card-sub serp" style="font-family:Arial,sans-serif"></div><div class="small muted">Social share preview</div><div class="card-sub soc" style="padding:0;overflow:hidden"></div><div class="field"><label>Your meta tags</label><textarea class="textarea mono code" style="min-height:300px" readonly></textarea></div><button class="btn cp">📋 Copy tags</button></div></div>';
     const $ = UI.q(root);
     const form = UI.fields($('.opts'), [
-      { id: 'title', label: 'Page title (50–60 characters)', type: 'text', value: 'Free Online Tools – PDF, Image & Video | ToolNest', full: true },
+      { id: 'title', label: 'Page title (50–60 characters)', type: 'text', value: 'Free Online Tools – PDF, Image & Video | WebToolNest', full: true },
       { id: 'desc', label: 'Meta description (120–160 characters)', type: 'textarea', rows: 3, value: '150+ free online tools: merge and compress PDFs, convert images and videos, calculate CGPA and more. No sign-up, fast and private.', full: true },
       { id: 'url', label: 'Page URL', type: 'text', value: 'https://example.com/', full: true }, { id: 'image', label: 'Share image URL (1200×630)', type: 'text', value: 'https://example.com/og-image.jpg', full: true },
-      { id: 'site', label: 'Site name', type: 'text', value: 'ToolNest' }, { id: 'tw', label: 'X / Twitter handle', type: 'text', value: '@toolnest' }, { id: 'author', label: 'Author', type: 'text', value: '' }, { id: 'kw', label: 'Keywords (optional)', type: 'text', value: '' },
+      { id: 'site', label: 'Site name', type: 'text', value: 'WebToolNest' }, { id: 'tw', label: 'X / Twitter handle', type: 'text', value: '@toolnest' }, { id: 'author', label: 'Author', type: 'text', value: '' }, { id: 'kw', label: 'Keywords (optional)', type: 'text', value: '' },
       { id: 'type', label: 'Content type', type: 'select', value: 'website', options: ['website', 'article', 'product', 'profile'] }, { id: 'robots', label: 'Search engines', type: 'select', value: 'index, follow', options: ['index, follow', 'noindex, follow', 'index, nofollow', 'noindex, nofollow'] }, { id: 'lang', label: 'Language', type: 'text', value: 'en' },
     ], () => draw());
     const draw = () => {

@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'ToolNest',
+  name: 'WebToolNest',
   tagline: 'Free online tools for everyday tasks',
   // Your live domain, no trailing slash. Change this once the custom domain is connected,
   // e.g. 'https://www.yourdomain.com' — canonical links, sitemap and robots.txt all follow it.

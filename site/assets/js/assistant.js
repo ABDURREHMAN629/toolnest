@@ -9,7 +9,7 @@
   const words = s => String(s).toLowerCase().split(/[^a-z0-9+#]+/).filter(Boolean);
   const uniq = a => a.filter((x, i) => a.indexOf(x) === i);
   const logo = document.querySelector('.site-header .logo');
-  const SITE = (logo && logo.textContent.replace(/[^\w\s]/g, '').trim()) || 'ToolNest';
+  const SITE = (logo && logo.textContent.replace(/[^\w\s]/g, '').trim()) || 'WebToolNest';
   const TOTAL = TOOLS.filter(t => !t.of).length;
   const BASE = window.BASE || '';
   const countIn = id => TOOLS.filter(t => t.cat === id && !t.of).length;

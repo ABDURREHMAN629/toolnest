@@ -22,7 +22,7 @@
   Tools.define('json-formatter', root => {
     root.innerHTML = `<div class="stack"><div class="row" style="align-items:flex-end"><div class="field small"><label>Indent</label><select class="select ind"><option value="2">2 spaces</option><option value="4">4 spaces</option><option value="tab">Tab</option></select></div><label class="check"><input type="checkbox" class="sk"> Sort keys</label>
       <div class="btn-row"><button class="btn fmt">Format / Beautify</button><button class="btn secondary min">Minify</button><button class="btn ghost tree">🌳 Tree view</button><button class="btn ghost cp">📋 Copy</button><button class="btn ghost dl">⬇ Download</button></div></div>
-      <textarea class="textarea mono io" style="min-height:340px" spellcheck="false">{"name":"ToolNest","tools":150,"free":true,"categories":["PDF","Image","Video"],"owner":{"country":"Pakistan","since":2026}}</textarea><div class="msg"></div><div class="tv card-sub mono small" hidden style="max-height:420px;overflow:auto"></div></div>`;
+      <textarea class="textarea mono io" style="min-height:340px" spellcheck="false">{"name":"WebToolNest","tools":150,"free":true,"categories":["PDF","Image","Video"],"owner":{"country":"Pakistan","since":2026}}</textarea><div class="msg"></div><div class="tv card-sub mono small" hidden style="max-height:420px;overflow:auto"></div></div>`;
     const $ = UI.q(root), io = $('.io');
     const go = mode => {
       $('.tv').hidden = true;
@@ -254,7 +254,7 @@ Sales: sales.team+pk@company.co.uk — not an email: test@@bad</textarea></div>
     root.innerHTML = `<div class="stack"><div class="lang"></div><div class="grid-2"><div class="field"><label>Input code</label><textarea class="textarea mono in" style="min-height:300px" spellcheck="false"></textarea></div><div class="field"><label>Output</label><textarea class="textarea mono out" style="min-height:300px" readonly></textarea></div></div>
       <div class="btn-row"><button class="btn min">📦 Minify</button><button class="btn secondary beau">✨ Beautify</button><button class="btn ghost cp">📋 Copy</button><span class="small muted info"></span></div><div class="err"></div></div>`;
     const $ = UI.q(root);
-    const SAMPLES = { css: '/* Main button */\n.button {\n  color: #ffffff;\n  background-color: #4f46e5;\n  padding: 10px 20px;\n  margin: 0px;\n}\n\n.button:hover {\n  opacity: 0.9;\n}', js: '// Add two numbers\nfunction addNumbers(firstNumber, secondNumber) {\n  const result = firstNumber + secondNumber;\n  console.log("The result is", result);\n  return result;\n}\n\naddNumbers(5, 10);', html: '<!-- Header -->\n<div class="card">\n    <h1>  Hello   World </h1>\n    <p>\n      Free online tools\n    </p>\n</div>', json: '{\n  "name": "ToolNest",\n  "version": 1,\n  "tags": ["free", "online"]\n}' };
+    const SAMPLES = { css: '/* Main button */\n.button {\n  color: #ffffff;\n  background-color: #4f46e5;\n  padding: 10px 20px;\n  margin: 0px;\n}\n\n.button:hover {\n  opacity: 0.9;\n}', js: '// Add two numbers\nfunction addNumbers(firstNumber, secondNumber) {\n  const result = firstNumber + secondNumber;\n  console.log("The result is", result);\n  return result;\n}\n\naddNumbers(5, 10);', html: '<!-- Header -->\n<div class="card">\n    <h1>  Hello   World </h1>\n    <p>\n      Free online tools\n    </p>\n</div>', json: '{\n  "name": "WebToolNest",\n  "version": 1,\n  "tags": ["free", "online"]\n}' };
     let lang = 'css';
     $('.lang').append(UI.seg([['css', 'CSS'], ['js', 'JavaScript'], ['html', 'HTML'], ['json', 'JSON']], 'css', v => { lang = v; $('.in').value = SAMPLES[v]; $('.out').value = ''; $('.info').textContent = ''; }));
     $('.in').value = SAMPLES.css;
@@ -298,7 +298,7 @@ Write **bold**, *italic* and \`inline code\`.
 ## A list
 - Free online tools
 - Works in your browser
-- [Visit ToolNest](https://example.com)
+- [Visit WebToolNest](https://www.webtoolnest.com)
 
 | Tool | Category |
 |------|----------|

@@ -1,4 +1,4 @@
-# ToolNest — 160+ free online tools
+# WebToolNest — 160+ free online tools
 
 A fast, static website with **163 tools** (plus 9 extra format pages like *PNG to JPG*, *MP4 to MP3* and *Black Screen*) across 12 categories. Every tool runs **in the visitor's browser**: files are never uploaded, there is no server or database, and hosting is free.
 

@@ -358,7 +358,7 @@
         }
         prog.el.remove();
         if (chars < 20) throw new Error('No selectable text was found. This PDF is probably scanned — use the Image to Text (OCR) tool to extract its text first.');
-        const doc = new D.Document({ creator: 'ToolNest', styles: { default: { document: { run: { font: 'Calibri' } } } }, sections: [{ children }] });
+        const doc = new D.Document({ creator: 'WebToolNest', styles: { default: { document: { run: { font: 'Calibri' } } } }, sections: [{ children }] });
         const blob = await D.Packer.toBlob(doc);
         showResult(ctx, blob, outName(ctx.file, '', 'docx'), 'Converted to Word.');
         ctx.out.append(UI.h('<p class="small muted">Text, headings and paragraphs are converted. Complex layouts, tables and images may need small manual touch-ups.</p>'));

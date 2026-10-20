@@ -344,4 +344,160 @@
     $('.list').addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.classList.contains('txt')) { e.preventDefault(); e.target.blur(); } });
     draw();
   });
+
+  Tools.define('tally-counter', root => {
+    const st = UI.store.get('tally', null) || { counters: [{ name: 'Counter 1', n: 0 }], active: 0, step: 1, sound: false };
+    root.innerHTML = `<div class="stack">
+      <div class="card-sub stack" style="align-items:center;text-align:center">
+        <input class="input cname" aria-label="Counter name" style="max-width:320px;text-align:center;font-weight:600">
+        <div class="big" aria-live="polite" style="font:800 clamp(4rem,16vw,7.5rem)/1 var(--font);font-variant-numeric:tabular-nums;letter-spacing:-.03em">0</div>
+        <div class="btn-row" style="justify-content:center">
+          <button class="btn secondary dec" aria-label="Decrease" style="width:84px;height:84px;font-size:2.2rem;border-radius:50%">−</button>
+          <button class="btn inc" aria-label="Increase" style="width:120px;height:120px;font-size:3rem;border-radius:50%">+</button>
+          <button class="btn ghost zero" aria-label="Reset to zero" style="width:84px;height:84px;border-radius:50%">↺</button>
+        </div>
+        <div class="small muted">Keyboard: <kbd>Space</kbd> or <kbd>↑</kbd> to count up, <kbd>↓</kbd> to count down</div>
+      </div>
+      <div class="row"><div class="field"><label>Step</label><input class="input step" type="number" min="1" value="1"></div>
+        <div class="field" style="justify-content:flex-end"><label class="check"><input type="checkbox" class="snd"> Click sound</label></div>
+        <div class="field" style="justify-content:flex-end"><button class="btn secondary add">+ Add counter</button></div></div>
+      <div class="list stack" style="gap:8px"></div>
+      <div class="total small muted"></div></div>`;
+    const $ = UI.q(root);
+    const save = () => UI.store.set('tally', st);
+    const cur = () => st.counters[st.active];
+    const draw = () => {
+      if (!st.counters[st.active]) st.active = 0;
+      $('.big').textContent = UI.fmt(cur().n, 6);
+      if (document.activeElement !== $('.cname')) $('.cname').value = cur().name;
+      $('.step').value = st.step; $('.snd').checked = st.sound;
+      $('.list').innerHTML = st.counters.length > 1 ? st.counters.map((c, i) => `<div class="row" style="flex-wrap:nowrap;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;border:1px solid ${i === st.active ? 'var(--primary)' : 'var(--border)'};background:var(--card)">
+        <button class="btn sm ghost" data-sel="${i}" style="flex:1;justify-content:flex-start">${esc(c.name)}</button><strong style="min-width:56px;text-align:right">${UI.fmt(c.n, 6)}</strong>
+        <button class="btn sm secondary" data-d="${i}" aria-label="Decrease ${esc(c.name)}">−</button><button class="btn sm" data-i="${i}" aria-label="Increase ${esc(c.name)}">+</button><button class="btn sm ghost" data-rm="${i}" aria-label="Remove ${esc(c.name)}">✕</button></div>`).join('') : '';
+      $('.total').textContent = st.counters.length > 1 ? `Total of all counters: ${UI.fmt(st.counters.reduce((s, c) => s + c.n, 0), 6)}` : '';
+      save();
+    };
+    const bump = (i, dir) => {
+      const c = st.counters[i], s = Math.max(1, Math.round(st.step) || 1);
+      c.n = Math.round((c.n + dir * s) * 1e6) / 1e6;
+      if (st.sound) UI.beep(dir > 0 ? 1200 : 600, 0.04, 0.15, 'square');
+      draw();
+    };
+    $('.inc').onclick = () => bump(st.active, 1);
+    $('.dec').onclick = () => bump(st.active, -1);
+    $('.zero').onclick = () => { cur().n = 0; draw(); };
+    $('.cname').addEventListener('input', e => { cur().name = e.target.value || 'Counter'; draw(); });
+    $('.step').addEventListener('input', e => { st.step = Math.max(1, Math.round(UI.num(e.target.value)) || 1); save(); });
+    $('.snd').addEventListener('change', e => { st.sound = e.target.checked; save(); });
+    $('.add').onclick = () => { st.counters.push({ name: 'Counter ' + (st.counters.length + 1), n: 0 }); st.active = st.counters.length - 1; draw(); };
+    $('.list').addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      if (b.dataset.sel != null) st.active = +b.dataset.sel;
+      else if (b.dataset.i != null) return bump(+b.dataset.i, 1);
+      else if (b.dataset.d != null) return bump(+b.dataset.d, -1);
+      else if (b.dataset.rm != null) { st.counters.splice(+b.dataset.rm, 1); if (st.active >= st.counters.length) st.active = st.counters.length - 1; }
+      draw();
+    });
+    const onKey = e => {
+      if (!root.isConnected) { document.removeEventListener('keydown', onKey); return; }
+      const t = e.target;
+      if (t && (/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || t.isContentEditable || (t.tagName === 'BUTTON' && !root.contains(t)))) return;
+      if (e.key === ' ' || e.key === 'ArrowUp' || e.key === '+') { e.preventDefault(); if (t && t.blur && root.contains(t)) t.blur(); bump(st.active, 1); }
+      else if (e.key === 'ArrowDown' || e.key === '-') { e.preventDefault(); bump(st.active, -1); }
+    };
+    document.addEventListener('keydown', onKey);
+    draw();
+  });
+
+  const KAABA = [21.422487, 39.826206];
+  const CITIES = [
+    ['Karachi, Pakistan', 24.8607, 67.0011], ['Lahore, Pakistan', 31.5204, 74.3587], ['Islamabad, Pakistan', 33.6844, 73.0479], ['Rawalpindi, Pakistan', 33.5651, 73.0169],
+    ['Faisalabad, Pakistan', 31.4504, 73.135], ['Multan, Pakistan', 30.1575, 71.5249], ['Peshawar, Pakistan', 34.0151, 71.5249], ['Quetta, Pakistan', 30.1798, 66.975],
+    ['Delhi, India', 28.6139, 77.209], ['Mumbai, India', 19.076, 72.8777], ['Hyderabad, India', 17.385, 78.4867], ['Kolkata, India', 22.5726, 88.3639],
+    ['Dhaka, Bangladesh', 23.8103, 90.4125], ['Kabul, Afghanistan', 34.5553, 69.2075], ['Tehran, Iran', 35.6892, 51.389], ['Dubai, UAE', 25.2048, 55.2708],
+    ['Abu Dhabi, UAE', 24.4539, 54.3773], ['Doha, Qatar', 25.2854, 51.531], ['Riyadh, Saudi Arabia', 24.7136, 46.6753], ['Jeddah, Saudi Arabia', 21.4858, 39.1925],
+    ['Madinah, Saudi Arabia', 24.5247, 39.5692], ['Kuwait City, Kuwait', 29.3759, 47.9774], ['Muscat, Oman', 23.588, 58.3829], ['Istanbul, Türkiye', 41.0082, 28.9784],
+    ['Cairo, Egypt', 30.0444, 31.2357], ['Casablanca, Morocco', 33.5731, -7.5898], ['Lagos, Nigeria', 6.5244, 3.3792], ['Nairobi, Kenya', -1.2921, 36.8219],
+    ['Johannesburg, South Africa', -26.2041, 28.0473], ['Jakarta, Indonesia', -6.2088, 106.8456], ['Kuala Lumpur, Malaysia', 3.139, 101.6869], ['Singapore', 1.3521, 103.8198],
+    ['London, UK', 51.5074, -0.1278], ['Birmingham, UK', 52.4862, -1.8904], ['Manchester, UK', 53.4808, -2.2426], ['Paris, France', 48.8566, 2.3522],
+    ['Berlin, Germany', 52.52, 13.405], ['Amsterdam, Netherlands', 52.3676, 4.9041], ['New York, USA', 40.7128, -74.006], ['Chicago, USA', 41.8781, -87.6298],
+    ['Houston, USA', 29.7604, -95.3698], ['Los Angeles, USA', 34.0522, -118.2437], ['Toronto, Canada', 43.6532, -79.3832], ['Sydney, Australia', -33.8688, 151.2093],
+  ];
+  const rad = d => d * Math.PI / 180, deg = r => r * 180 / Math.PI;
+  const qibla = (lat, lon) => {
+    const [la2, lo2] = KAABA.map(rad), la1 = rad(lat), dl = lo2 - rad(lon);
+    const b = (deg(Math.atan2(Math.sin(dl) * Math.cos(la2), Math.cos(la1) * Math.sin(la2) - Math.sin(la1) * Math.cos(la2) * Math.cos(dl))) + 360) % 360;
+    const h = Math.sin((la2 - la1) / 2) ** 2 + Math.cos(la1) * Math.cos(la2) * Math.sin(dl / 2) ** 2;
+    return { bearing: b, km: 2 * 6371.0088 * Math.asin(Math.sqrt(h)) };
+  };
+  const POINTS = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW'];
+
+  Tools.define('qibla-direction', root => {
+    const saved = UI.store.get('qibla', null);
+    let lat = saved ? saved.lat : 24.8607, lon = saved ? saved.lon : 67.0011, place = saved ? saved.place : 'Karachi, Pakistan', heading = null, listening = false;
+    root.innerHTML = `<div class="stack">
+      <div class="row"><div class="field grow"><label>City</label><select class="select city"><option value="">— Choose a city —</option>${CITIES.map((c, i) => `<option value="${i}">${esc(c[0])}</option>`).join('')}</select></div>
+        <div class="field" style="justify-content:flex-end"><button class="btn secondary loc">📍 Use my location</button></div></div>
+      <div class="row"><div class="field"><label>Latitude</label><input class="input lat" type="number" step="any"></div><div class="field"><label>Longitude</label><input class="input lon" type="number" step="any"></div></div>
+      <div class="err"></div>
+      <div class="grid-2" style="align-items:center">
+        <div style="display:grid;place-items:center"><svg class="dial" viewBox="0 0 220 220" width="260" height="260" role="img" aria-label="Qibla compass" style="max-width:100%">
+          <g class="rose" style="transition:transform .25s ease-out;transform-origin:110px 110px">
+            <circle cx="110" cy="110" r="86" fill="var(--card)" stroke="var(--border)" stroke-width="2"/>
+            ${Array.from({ length: 72 }, (_, i) => `<line x1="110" y1="24" x2="110" y2="${i % 18 === 0 ? 34 : i % 2 ? 28 : 31}" stroke="var(--muted)" stroke-width="${i % 18 === 0 ? 2.5 : 1}" transform="rotate(${i * 5} 110 110)"/>`).join('')}
+            ${[['N', 0], ['E', 90], ['S', 180], ['W', 270]].map(([l, a]) => `<text x="110" y="18" text-anchor="middle" font-size="15" font-weight="800" fill="${l === 'N' ? '#dc2626' : 'var(--text)'}" font-family="system-ui,sans-serif" transform="rotate(${a} 110 110)">${l}</text>`).join('')}
+            <g class="arrow" style="transform-origin:110px 110px"><line x1="110" y1="110" x2="110" y2="66" stroke="#059669" stroke-width="6" stroke-linecap="round"/><polygon points="110,50 100,68 120,68" fill="#059669"/><text x="110" y="46" text-anchor="middle" font-size="16">🕋</text></g>
+            <circle cx="110" cy="110" r="7" fill="var(--text)"/>
+          </g></svg></div>
+        <div class="out"></div></div>
+      <div class="btn-row"><button class="btn live">🧭 Use phone compass</button><span class="small muted face"></span></div>
+      <p class="small muted">🔒 Your location is used only on your device to calculate the direction — it is never sent anywhere.</p></div>`;
+    const $ = UI.q(root);
+    const draw = () => {
+      if (!(Math.abs(lat) <= 90 && Math.abs(lon) <= 180)) { $('.out').innerHTML = '<div class="notice error">Enter a valid latitude (−90 to 90) and longitude (−180 to 180).</div>'; return; }
+      const { bearing, km } = qibla(lat, lon), p = POINTS[Math.round(bearing / 22.5) % 16];
+      $('.arrow').style.transform = `rotate(${bearing}deg)`;
+      $('.rose').style.transform = heading == null ? '' : `rotate(${-heading}deg)`;
+      $('.out').innerHTML = UI.resultsHTML([
+        { k: 'Qibla direction', v: `${bearing.toFixed(1)}°`, main: true, s: `${p} — clockwise from true north${place ? ' · ' + esc(place) : ''}` },
+        { k: 'Distance to the Kaaba', v: `${UI.fmt(km, 0)} km`, s: `${UI.fmt(km * 0.621371, 0)} miles` },
+        { k: 'Your coordinates', v: `${lat.toFixed(4)}, ${lon.toFixed(4)}` },
+      ]);
+      if (heading != null) {
+        const off = ((bearing - heading + 540) % 360) - 180;
+        $('.face').textContent = Math.abs(off) <= 5 ? '✅ You are facing the Qibla' : `Turn ${off > 0 ? 'right' : 'left'} ${Math.abs(off).toFixed(0)}°`;
+      }
+      UI.store.set('qibla', { lat, lon, place });
+    };
+    const setPos = (a, b, name) => { lat = a; lon = b; place = name || ''; $('.lat').value = +a.toFixed(5); $('.lon').value = +b.toFixed(5); draw(); };
+    $('.lat').value = lat; $('.lon').value = lon;
+    const ci = CITIES.findIndex(c => c[0] === place); if (ci >= 0) $('.city').value = ci;
+    $('.city').onchange = e => { const c = CITIES[+e.target.value]; if (c) setPos(c[1], c[2], c[0]); };
+    root.addEventListener('input', e => { if (e.target.matches('.lat, .lon')) { lat = UI.num($('.lat').value); lon = UI.num($('.lon').value); place = ''; $('.city').value = ''; draw(); } });
+    $('.loc').onclick = () => {
+      UI.notice($('.err'), '');
+      if (!navigator.geolocation) return UI.notice($('.err'), 'Location is not available in this browser. Choose a city or enter coordinates.', 'error');
+      $('.loc').disabled = true;
+      navigator.geolocation.getCurrentPosition(p => { $('.loc').disabled = false; $('.city').value = ''; setPos(p.coords.latitude, p.coords.longitude, 'Your location'); },
+        e => { $('.loc').disabled = false; UI.notice($('.err'), e.code === 1 ? 'Location permission was denied. Choose a city or type your coordinates instead.' : 'Could not get your location. Choose a city or type your coordinates.', 'error'); },
+        { enableHighAccuracy: true, timeout: 15000, maximumAge: 600000 });
+    };
+    const onOrient = e => {
+      if (!root.isConnected) { window.removeEventListener('deviceorientationabsolute', onOrient); window.removeEventListener('deviceorientation', onOrient); return; }
+      const h = e.webkitCompassHeading != null ? e.webkitCompassHeading : (e.absolute && e.alpha != null ? (360 - e.alpha) % 360 : null);
+      if (h == null) return;
+      heading = h; draw();
+    };
+    $('.live').onclick = async () => {
+      if (listening) return;
+      if (typeof DeviceOrientationEvent === 'undefined') return UI.notice($('.err'), 'This device has no compass. Use the direction in degrees with a physical compass instead.', 'warn');
+      try { if (typeof DeviceOrientationEvent.requestPermission === 'function' && await DeviceOrientationEvent.requestPermission() !== 'granted') throw new Error('denied'); }
+      catch (e) { return UI.notice($('.err'), 'Compass permission was not granted.', 'error'); }
+      listening = true;
+      window.addEventListener('deviceorientationabsolute', onOrient); window.addEventListener('deviceorientation', onOrient);
+      $('.face').textContent = 'Hold your phone flat. Move it in a figure 8 to calibrate.';
+      setTimeout(() => { if (heading == null) UI.notice($('.err'), 'No compass readings from this device. On a computer, use the degrees shown with a physical compass.', 'warn'); }, 3000);
+    };
+    draw();
+  });
 })();

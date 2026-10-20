@@ -63,4 +63,79 @@ module.exports = {
       <p>Banks expect the amount in words to match the figure exactly and to end with “only” so nothing can be added afterwards. For 1,250,075.50 rupees the converter writes: <em>Twelve Lakh Fifty Thousand Seventy-Five Rupees and Fifty Paisa Only</em>. Write it on one line starting at the far left, and draw a line through any space left over.</p>
       <h2>Decimals</h2>
       <p>With a currency selected, decimals become the minor unit (paisa, cents, pence, fils, halalas). With no currency, decimals are read digit by digit — 3.14 becomes “three point one four”.</p>`,
+  'week-number': `
+      <h2>How week numbers work</h2>
+      <p>There are two common systems, and they can give different answers for the same date:</p>
+      <ul>
+        <li><strong>ISO 8601</strong> — used in Europe, most of Asia and international business. Weeks start on <strong>Monday</strong>, and week 1 is the week that contains the year's first Thursday (so it always contains 4 January). A year has 52 or 53 weeks, and the first days of January can belong to the last week of the previous year. Example: Sunday 3 January 2021 is in <strong>week 53 of 2020</strong>.</li>
+        <li><strong>US system</strong> — weeks start on <strong>Sunday</strong> and week 1 is simply the week that contains 1 January, even if it is only one day long. Example: Thursday 1 January 2026 is in week 1, and Sunday 4 January starts week 2.</li>
+      </ul>
+      <h2>Week numbers in Excel and Google Sheets</h2>
+      <p><code>=ISOWEEKNUM(A1)</code> returns the ISO week. <code>=WEEKNUM(A1)</code> returns the US-style week (Sunday start); <code>=WEEKNUM(A1, 2)</code> starts weeks on Monday but still counts 1 January as week 1, so it is not the same as ISO.</p>
+      <h2>Why it matters</h2>
+      <p>Factories, schools, payroll and project plans often schedule by week number ("delivery in week 43"). When working with people in other countries, confirm which system they use — the ISO and US numbers differ for many dates.</p>`,
+
+  'hijri-date-converter': `
+      <h2>How the Hijri calendar works</h2>
+      <p>The Islamic (Hijri) calendar is lunar. Each of its 12 months begins with the new crescent moon and lasts 29 or 30 days, so a Hijri year is about 354 days — 11 days shorter than the Gregorian year. That is why Ramadan and Eid move about 11 days earlier every year. Years are counted from the Hijrah of the Prophet ﷺ to Madinah in 622 CE and are written with "AH".</p>
+      <h2>Umm al-Qura and moon sighting</h2>
+      <p>This converter uses the <strong>Umm al-Qura</strong> calendar, the official calendar of Saudi Arabia, which is calculated in advance. Many countries — including Pakistan, India and Bangladesh — begin each month after the moon is actually sighted locally, so their date is often <strong>one day behind</strong> Saudi Arabia. Use the moon-sighting adjustment to match your local calendar, and follow your local moon-sighting committee for the start of Ramadan and the Eids.</p>
+      <h2>Examples</h2>
+      <ul>
+        <li>1 Muharram 1446 AH (Islamic New Year) = 7 July 2024</li>
+        <li>1 Ramadan 1446 AH = 1 March 2025</li>
+        <li>1 Shawwal 1446 AH (Eid al-Fitr) = 30 March 2025</li>
+        <li>1 Ramadan 1447 AH = 18 February 2026 (Umm al-Qura)</li>
+      </ul>
+      <h2>The 12 Islamic months</h2>
+      <p>Muharram, Safar, Rabi al-Awwal, Rabi al-Thani, Jumada al-Ula, Jumada al-Akhirah, Rajab, Sha'ban, Ramadan, Shawwal, Dhu al-Qa'dah and Dhu al-Hijjah.</p>`,
+
+  'qibla-direction': `
+      <h2>How the Qibla direction is calculated</h2>
+      <p>The Qibla is the direction of the Kaaba in Makkah (21.4225° N, 39.8262° E). Because the Earth is round, the correct direction is the <strong>great-circle</strong> direction — the shortest path over the globe — not a straight line on a flat map. This finder calculates that bearing from your coordinates and shows it in degrees clockwise from <strong>true north</strong>.</p>
+      <h2>Examples</h2>
+      <ul>
+        <li>Karachi: about 268° (just south of west)</li>
+        <li>London: about 119° (east-south-east)</li>
+        <li>New York: about 58° (north-east — not south-east as a flat map suggests)</li>
+        <li>Jakarta: about 295° (west-north-west)</li>
+      </ul>
+      <h2>Using a compass correctly</h2>
+      <ul>
+        <li>A magnetic compass points to <strong>magnetic north</strong>, which differs from true north by a few degrees in most places (the "magnetic declination"). For everyday prayer this small difference is usually acceptable; for building a masjid, check your local declination.</li>
+        <li>Keep the phone flat and away from metal, magnets, speakers and laptops, and move it in a figure 8 to calibrate before reading.</li>
+        <li>On a computer there is no compass: read the angle and use the sun or a physical compass instead.</li>
+      </ul>`,
+
+  'invisible-character': `
+      <h2>What is an invisible character?</h2>
+      <p>An invisible character is a real Unicode character that shows up as empty space. Apps and games usually reject a name or message made only of normal spaces, because they trim spaces automatically — but they accept these characters, so you can create a blank name, an empty message, or extra spacing in a bio or caption.</p>
+      <h2>Which one should I use?</h2>
+      <ul>
+        <li><strong>Hangul Filler (U+3164)</strong> — the most widely accepted blank character for usernames and game names.</li>
+        <li><strong>Braille Pattern Blank (U+2800)</strong> — looks like a space and is rarely removed; good for blank messages and line spacing.</li>
+        <li><strong>Zero Width Space (U+200B)</strong> — takes up no width at all; useful for breaking links and hashtags.</li>
+      </ul>
+      <p>Every app filters characters differently and rules change, so if one character is removed or rejected, simply try the next one in the list.</p>
+      <h2>Find and remove hidden characters</h2>
+      <p>Text copied from websites, PDFs or chat apps can contain hidden characters that break code, spreadsheets, passwords or search. Paste the text into the detector to see exactly which hidden characters it contains, then clean it with one click.</p>`,
+
+  'military-time-converter': `
+      <h2>How to convert military time</h2>
+      <ul>
+        <li><strong>0000 to 1159</strong> — morning. Drop any leading zero and add AM: 0730 = 7:30 AM. The one exception is 00xx, which is the 12 o'clock hour: 0015 = 12:15 AM.</li>
+        <li><strong>1200 to 1259</strong> — the noon hour: 1230 = 12:30 PM.</li>
+        <li><strong>1300 to 2359</strong> — afternoon and evening. Subtract 12 and add PM: 1845 = 6:45 PM.</li>
+      </ul>
+      <p>To go the other way, add 12 to any PM hour except 12 PM, and turn 12 AM into 00.</p>
+      <h2>How military time is spoken</h2>
+      <p>Military time is written without a colon and spoken as two pairs of digits: 1430 is "fourteen thirty hours", 0600 is "zero six hundred hours" and 0905 is "zero nine zero five hours". 2400 is sometimes used for midnight at the end of a day, and is the same moment as 0000 the next day.</p>`,
+
+  'hours-to-decimal': `
+      <h2>How to convert minutes to decimal hours</h2>
+      <p>Divide the minutes by 60 and add the result to the hours: <code>decimal hours = hours + minutes ÷ 60</code>. For example, 7 hours 45 minutes = 7 + 45 ÷ 60 = <strong>7.75 hours</strong>, and 1 hour 20 minutes = <strong>1.33 hours</strong>.</p>
+      <h2>Decimal hours back to hours and minutes</h2>
+      <p>Keep the whole number as hours and multiply the decimal part by 60 to get minutes. For example, 8.6 hours = 8 hours + 0.6 × 60 = <strong>8 hours 36 minutes</strong>.</p>
+      <h2>Why payroll uses decimal hours</h2>
+      <p>Pay is calculated by multiplying hours by the hourly rate, which only works with decimals. A common mistake is to treat 7:45 as 7.45 — that underpays 18 minutes. At 20 per hour, 7 h 45 min is 7.75 × 20 = <strong>155.00</strong>, not 149.00.</p>`,
 };

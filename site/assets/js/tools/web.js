@@ -238,4 +238,78 @@
     };
     live();
   });
+
+  const SCREENS = [['#ffffff', 'White'], ['#000000', 'Black'], ['#ffe2bd', 'Warm white'], ['#ff0000', 'Red'], ['#00ff00', 'Green'], ['#0000ff', 'Blue'], ['#ffff00', 'Yellow'], ['#ff8800', 'Orange'], ['#ff69b4', 'Pink'], ['#8000ff', 'Purple'], ['#808080', 'Gray'], ['#00ffff', 'Cyan']];
+  Tools.define('white-screen', (root, preset) => {
+    let color = preset.color || '#ffffff';
+    root.innerHTML = `<div class="stack">
+      <button class="screen-prev" aria-label="Show full screen" style="width:100%;height:clamp(200px,40vh,360px);border-radius:16px;border:1px solid var(--border);cursor:pointer;display:grid;place-items:center;font:600 1.05rem var(--font);box-shadow:var(--shadow)"><span class="lbl" style="padding:10px 18px;border-radius:999px;background:rgba(0,0,0,.55);color:#fff">⛶ Click to go full screen</span></button>
+      <div class="chips sw">${SCREENS.map(([c, n]) => `<button type="button" class="chip" data-c="${c}"><span style="width:16px;height:16px;border-radius:50%;background:${c};border:1px solid var(--border);display:inline-block"></span>${n}</button>`).join('')}</div>
+      <div class="row"><div class="field"><label>Custom color</label><input type="color" class="custom" value="${color}"></div>
+        <div class="field" style="justify-content:flex-end"><button class="btn lg go">⛶ Full screen</button></div></div>
+      <p class="small muted">Tip: in full screen use ← → to change colors, and click or press Esc to exit. Turn your screen brightness up for the brightest light.</p></div>`;
+    const $ = UI.q(root);
+    const paint = () => { $('.screen-prev').style.background = color; $('.custom').value = color; root.querySelectorAll('.sw .chip').forEach(b => b.style.borderColor = b.dataset.c === color ? 'var(--primary)' : ''); };
+    root.addEventListener('click', e => { const b = e.target.closest('.sw [data-c]'); if (b) { color = b.dataset.c; paint(); } });
+    $('.custom').addEventListener('input', e => { color = e.target.value; paint(); });
+    const full = () => {
+      const ov = document.createElement('div'), hint = document.createElement('div');
+      ov.className = 'screen-overlay';
+      ov.style.cssText = `position:fixed;inset:0;z-index:10000;background:${color};cursor:none`;
+      hint.textContent = 'Click or press Esc to exit · ← → change color';
+      hint.style.cssText = 'position:absolute;left:50%;bottom:32px;transform:translateX(-50%);padding:10px 18px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font:600 .95rem var(--font);transition:opacity .6s;pointer-events:none;cursor:default';
+      ov.append(hint); document.body.append(ov);
+      let idx = Math.max(0, SCREENS.findIndex(s => s[0] === color)), hideT;
+      const show = () => { hint.style.opacity = 1; ov.style.cursor = 'default'; clearTimeout(hideT); hideT = setTimeout(() => { hint.style.opacity = 0; ov.style.cursor = 'none'; }, 2200); };
+      const close = () => { clearTimeout(hideT); document.removeEventListener('keydown', key, true); document.removeEventListener('fullscreenchange', fsc); ov.remove(); if (document.fullscreenElement) document.exitFullscreen().catch(() => { }); paint(); };
+      const key = e => {
+        if (e.key === 'Escape') { e.preventDefault(); close(); }
+        else if (e.key === 'ArrowRight' || e.key === 'ArrowLeft' || e.key === ' ') { e.preventDefault(); idx = (idx + (e.key === 'ArrowLeft' ? -1 : 1) + SCREENS.length) % SCREENS.length; color = SCREENS[idx][0]; ov.style.background = color; show(); }
+      };
+      const fsc = () => { if (!document.fullscreenElement) close(); };
+      ov.addEventListener('click', close); ov.addEventListener('mousemove', show);
+      document.addEventListener('keydown', key, true);
+      if (ov.requestFullscreen) ov.requestFullscreen().then(() => document.addEventListener('fullscreenchange', fsc)).catch(() => { });
+      show();
+    };
+    $('.screen-prev').onclick = full; $('.go').onclick = full;
+    paint();
+  });
+
+  Tools.define('spacebar-counter', root => {
+    let dur = 10, count = 0, t0 = 0, iv = null, done = false;
+    root.innerHTML = `<div class="stack" style="align-items:center"><div class="dur"></div><div class="results w-100 live"></div>
+      <button class="pad" style="width:100%;height:260px;border-radius:18px;border:2px dashed var(--primary);background:var(--primary-soft);color:var(--text);font:700 1.5rem var(--font);cursor:pointer;user-select:none;touch-action:manipulation">Press <kbd>SPACE</kbd> to start<br><small style="font-weight:500;font-size:.9rem;color:var(--muted)">or tap here on a phone</small></button>
+      <div class="final w-100"></div><button class="btn ghost sm reset">↻ Reset</button></div>`;
+    const $ = UI.q(root), key = () => 'space-best-' + dur, best = () => UI.store.get(key(), 0);
+    const live = () => {
+      const el = t0 ? (performance.now() - t0) / 1000 : 0, lim = dur ? Math.min(dur, el) : el;
+      $('.live').innerHTML = UI.resultsHTML([{ k: 'Presses', v: count }, dur ? { k: 'Time left', v: (dur - lim).toFixed(1) + 's' } : { k: 'Time', v: el.toFixed(1) + 's' }, { k: 'Per second', v: lim > 0.05 ? (count / lim).toFixed(2) : '0.00' }, dur && { k: `Best (${dur}s)`, v: best() ? best().toFixed(2) + '/s' : '—' }]);
+    };
+    const reset = () => { clearInterval(iv); count = 0; t0 = 0; done = false; $('.pad').innerHTML = 'Press <kbd>SPACE</kbd> to start<br><small style="font-weight:500;font-size:.9rem;color:var(--muted)">or tap here on a phone</small>'; $('.final').innerHTML = ''; live(); };
+    const finish = () => {
+      clearInterval(iv); done = true; const rate = count / dur, b = best(); if (rate > b) UI.store.set(key(), rate);
+      $('.pad').textContent = 'Done!'; live();
+      $('.final').innerHTML = UI.resultsHTML([{ k: 'Your spacebar speed', v: rate.toFixed(2) + ' per second', main: true, s: `${count} presses in ${dur} seconds${rate > b ? ' · New best! 🏆' : ''}` }]);
+    };
+    const hit = () => {
+      if (done) return;
+      if (!t0) { t0 = performance.now(); iv = setInterval(() => { live(); if (dur && performance.now() - t0 >= dur * 1000) finish(); }, 50); }
+      count++; $('.pad').textContent = count; live();
+    };
+    $('.dur').append(UI.seg([['5', '5 sec'], ['10', '10 sec'], ['30', '30 sec'], ['60', '60 sec'], ['0', 'No limit']], '10', v => { dur = +v; reset(); $('.pad').focus(); }));
+    $('.reset').onclick = () => { reset(); $('.pad').focus(); };
+    $('.pad').addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') { e.preventDefault(); hit(); } });
+    const onKey = e => {
+      if (!root.isConnected) { document.removeEventListener('keydown', onKey); clearInterval(iv); return; }
+      if (e.code !== 'Space' && e.key !== ' ') return;
+      const t = e.target;
+      if (t && (/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || t.isContentEditable || (t.tagName === 'BUTTON' && !root.contains(t)))) return;
+      e.preventDefault();
+      if (t && t.tagName === 'BUTTON' && t !== $('.pad')) $('.pad').focus();
+      if (!e.repeat) hit();
+    };
+    document.addEventListener('keydown', onKey);
+    live();
+  });
 })();

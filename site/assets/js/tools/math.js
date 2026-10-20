@@ -213,8 +213,10 @@
         if (raw.replace(/^-/, '').split('.')[0].length > 21) return '<div class="notice error">Number is too large.</div>';
         const neg = raw.startsWith('-'), [ip, dp = ''] = raw.replace('-', '').split('.');
         const [major, minor] = CUR[v.cur];
-        let w = toWords(ip, v.sys);
-        if (major) { w += ' ' + major; const c = Math.round(parseFloat('0.' + (dp || '0')) * 100); if (c) w += ' and ' + toWords(c, 'intl') + ' ' + minor; w += ' only'; }
+        let c = major ? Math.round(parseFloat('0.' + (dp || '0')) * 100) : 0;
+        let w = toWords(c === 100 ? BigInt(ip) + 1n : ip, v.sys);
+        if (c === 100) c = 0;
+        if (major) { w += ' ' + major; if (c) w += ' and ' + toWords(c, 'intl') + ' ' + minor; w += ' only'; }
         else if (dp) w += ' point ' + [...dp].map(d => d === '0' ? 'zero' : ONES[+d]).join(' ');
         if (neg) w = 'minus ' + w;
         w = v.case === 'upper' ? w.toUpperCase() : v.case === 'title' ? w.replace(/\b[a-z]/g, c => c.toUpperCase()) : v.case === 'sentence' ? w[0].toUpperCase() + w.slice(1) : w;

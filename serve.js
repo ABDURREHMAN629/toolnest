@@ -3,11 +3,14 @@ const fs = require('fs');
 const path = require('path');
 
 const root = path.join(__dirname, 'site');
+const BASE = new URL(require('./site.config').url.replace(/\/$/, '')).pathname.replace(/\/?$/, '/');
 const port = +process.argv[2] || +process.env.PORT || 8080;
 const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.xml': 'application/xml', '.txt': 'text/plain; charset=utf-8', '.json': 'application/json', '.webp': 'image/webp' };
 
 http.createServer((req, res) => {
   let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+  if (BASE !== '/' && p === BASE.slice(0, -1)) { res.writeHead(301, { Location: BASE }); return res.end(); }
+  if (BASE !== '/' && p.startsWith(BASE)) p = p.slice(BASE.length - 1);
   if (p.endsWith('/')) p += 'index.html';
   const base = p.startsWith('/__test/') ? path.join(__dirname, 'test') : root;
   if (base !== root) p = p.slice('/__test'.length);
@@ -22,4 +25,4 @@ http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': types[path.extname(file)] || 'application/octet-stream', 'Cache-Control': 'no-cache' });
     res.end(data);
   });
-}).listen(port, () => console.log(`Serving ./site at http://localhost:${port}`));
+}).listen(port, () => console.log(`Serving ./site at http://localhost:${port}${BASE}`));

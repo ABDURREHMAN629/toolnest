@@ -30,6 +30,7 @@
     'voice-recorder': ['🎙️ Asks for microphone permission'],
     'speech-to-text': ['🎙️ Asks for microphone permission', '⚠️ Not supported in Firefox'],
     'screen-recorder': ['🖥️ Asks for screen-sharing permission', '⚠️ Works on desktop browsers only'],
+    'qibla-direction': ['📍 Uses your location only if you allow it — it never leaves your device'],
   };
 
   const STOP = new Set(('i im ive me my mine myself we our you your u a an the of for in on at by with and or but is are am was were be been being it its this that these those ' +
@@ -92,6 +93,9 @@
     sign: 'sign signature', signature: 'sign signature', esign: 'sign', todo: 'todo task', task: 'todo', tasks: 'todo', checklist: 'todo',
     visa: 'passport', ico: 'favicon', icon: 'favicon', logo: 'watermark', stamp: 'watermark', blur: 'filters', grayscale: 'filters', brightness: 'filters', edit: 'editor filters', editor: 'filters',
     grid: 'collage', eyedropper: 'color picker', flip: 'rotate flip', mirror: 'flip',
+    blank: 'invisible blank', empty: 'invisible blank', hidden: 'invisible', islamic: 'hijri', arabic: 'hijri', muslim: 'hijri qibla', ramadan: 'hijri', eid: 'hijri',
+    kaaba: 'qibla', makkah: 'qibla', mecca: 'qibla', namaz: 'qibla', prayer: 'qibla', salah: 'qibla', ampm: 'military', timesheet: 'decimal hours', payroll: 'decimal',
+    presentation: 'speech minutes', flashlight: 'white light', torch: 'white light', tasbih: 'tally', clicker: 'tally spacebar', weekday: 'day week',
   };
 
   const PHRASES = [

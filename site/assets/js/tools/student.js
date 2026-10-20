@@ -162,8 +162,8 @@
         if (v.att > v.held) return '<div class="notice error">Attended classes cannot be more than classes held.</div>';
         const r = v.req / 100, cur = v.att / v.held * 100;
         let s;
-        if (cur >= v.req) { const k = Math.floor(v.att / r - v.held); s = { k: 'You can miss', v: `${Math.max(0, k)} class${k === 1 ? '' : 'es'}`, s: `and still stay at or above ${v.req}%` }; }
-        else { const y = r >= 1 ? Infinity : Math.ceil((r * v.held - v.att) / (1 - r)); s = { k: 'You must attend', v: isFinite(y) ? `${y} more class${y === 1 ? '' : 'es'}` : 'All classes', s: `in a row to reach ${v.req}%` }; }
+        if (cur >= v.req) { const k = Math.floor(v.att * 100 / v.req - v.held + 1e-9); s = { k: 'You can miss', v: `${Math.max(0, k)} class${k === 1 ? '' : 'es'}`, s: `and still stay at or above ${v.req}%` }; }
+        else { const y = r >= 1 ? Infinity : Math.ceil((v.req * v.held - 100 * v.att) / (100 - v.req) - 1e-9); s = { k: 'You must attend', v: isFinite(y) ? `${y} more class${y === 1 ? '' : 'es'}` : 'All classes', s: `in a row to reach ${v.req}%` }; }
         return { results: [{ k: 'Current attendance', v: cur.toFixed(2) + '%', main: true, s: cur >= v.req ? '✅ Above the requirement' : '⚠️ Below the requirement' }, s, { k: 'Classes missed', v: v.held - v.att }] };
       },
     });

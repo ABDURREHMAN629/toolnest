@@ -229,4 +229,208 @@
     root.addEventListener('click', e => { const b = e.target.closest('[data-rm]'); if (b) { alarms.splice(+b.dataset.rm, 1); save(); draw(); } });
     draw(); tick();
   });
+
+  const short = d => d.toLocaleDateString('en', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+  const addD = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+  function isoWeek(d) {
+    const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    t.setUTCDate(t.getUTCDate() + 3 - (t.getUTCDay() + 6) % 7);
+    const y = t.getUTCFullYear(), jan4 = new Date(Date.UTC(y, 0, 4));
+    return { week: 1 + Math.round(((t - jan4) / DAY - 3 + (jan4.getUTCDay() + 6) % 7) / 7), year: y };
+  }
+  const isoWeeksIn = y => { const j = new Date(y, 0, 1).getDay(), leap = new Date(y, 1, 29).getDate() === 29; return j === 4 || (leap && j === 3) ? 53 : 52; };
+  const dayOfYear = d => Math.round((new Date(d.getFullYear(), d.getMonth(), d.getDate()) - new Date(d.getFullYear(), 0, 1)) / DAY) + 1;
+  const daysInYear = y => new Date(y, 1, 29).getDate() === 29 ? 366 : 365;
+
+  Tools.define('week-number', root => {
+    UI.calc(root, {
+      fields: [
+        { id: 'date', label: 'Date', type: 'date', value: iso(new Date()) },
+        { id: 'sys', label: 'Week numbering', type: 'seg', value: 'iso', options: [['iso', 'ISO 8601 (Monday start)'], ['us', 'US (Sunday start)']] },
+      ],
+      compute(v) {
+        const d = parse(v.date); if (!d) return null;
+        let week, wy, start, end, total;
+        if (v.sys === 'iso') {
+          ({ week, year: wy } = isoWeek(d));
+          start = addD(d, -((d.getDay() + 6) % 7)); end = addD(start, 6); total = isoWeeksIn(wy);
+        } else {
+          wy = d.getFullYear();
+          week = Math.ceil((dayOfYear(d) + new Date(wy, 0, 1).getDay()) / 7);
+          start = addD(d, -d.getDay()); end = addD(start, 6);
+          if (start.getFullYear() < wy) start = new Date(wy, 0, 1);
+          if (end.getFullYear() > wy) end = new Date(wy, 11, 31);
+          total = Math.ceil((daysInYear(wy) + new Date(wy, 0, 1).getDay()) / 7);
+        }
+        const doy = dayOfYear(d), diy = daysInYear(d.getFullYear()), isToday = iso(d) === iso(new Date());
+        const rows = [];
+        if (v.sys === 'iso') {
+          let s = addD(new Date(wy, 0, 4), -((new Date(wy, 0, 4).getDay() + 6) % 7));
+          for (let i = 1; i <= total; i++, s = addD(s, 7)) rows.push([i, s, addD(s, 6)]);
+        } else {
+          let s = new Date(wy, 0, 1);
+          for (let i = 1; i <= total; i++) { const e = i === 1 ? addD(s, 6 - s.getDay()) : addD(s, 6); const ee = e.getFullYear() > wy ? new Date(wy, 11, 31) : e; rows.push([i, s, ee]); s = addD(ee, 1); }
+        }
+        const f = x => x.toLocaleDateString('en', { day: 'numeric', month: 'short' });
+        return {
+          results: [
+            { k: isToday ? 'This week is' : 'Week number', v: `Week ${week}`, main: true, s: `of ${wy} · ${v.sys === 'iso' ? 'ISO 8601' : 'US system'}` },
+            { k: 'Week runs', v: `${short(start)} – ${short(end)}` },
+            { k: 'Day of the year', v: `${doy} of ${diy}`, s: `${diy - doy} days left in ${d.getFullYear()}` },
+            { k: 'Quarter', v: `Q${Math.floor(d.getMonth() / 3) + 1}` },
+            { k: `Weeks in ${wy}`, v: total },
+          ],
+          html: `<details class="card-sub mt"><summary style="cursor:pointer;font-weight:600">All week numbers in ${wy}</summary><div class="table-wrap mt"><table class="table"><thead><tr><th>Week</th><th>From</th><th>To</th></tr></thead><tbody>${rows.map(([n, a, b]) => `<tr${n === week ? ' style="font-weight:700;background:var(--primary-soft)"' : ''}><td>${n}</td><td>${f(a)} ${a.getFullYear() !== wy ? a.getFullYear() : ''}</td><td>${f(b)} ${b.getFullYear() !== wy ? b.getFullYear() : ''}</td></tr>`).join('')}</tbody></table></div></details>`,
+          note: v.sys === 'iso' ? 'ISO weeks start on Monday, and week 1 is the week with the year\'s first Thursday — the standard in Europe, most of Asia and in Excel\'s ISOWEEKNUM.' : 'In the US system weeks start on Sunday and week 1 is the week that contains January 1 — as in Excel\'s WEEKNUM.',
+        };
+      },
+    });
+  });
+
+  Tools.define('day-of-week-calculator', root => {
+    UI.calc(root, {
+      fields: [{ id: 'date', label: 'Date (e.g. your birthday)', type: 'date', value: '2000-01-15' }],
+      compute(v) {
+        const d = parse(v.date); if (!d) return null;
+        const wd = d.toLocaleDateString('en', { weekday: 'long' }), nth = Math.ceil(d.getDate() / 7);
+        const last = addD(d, 7).getMonth() !== d.getMonth();
+        const ord = ['', 'first', 'second', 'third', 'fourth', 'fifth'][nth];
+        const t = new Date(); t.setHours(0, 0, 0, 0);
+        const diff = Math.round((d - t) / DAY);
+        const rhyme = { Monday: "Monday's child is fair of face", Tuesday: "Tuesday's child is full of grace", Wednesday: "Wednesday's child is full of woe", Thursday: "Thursday's child has far to go", Friday: "Friday's child is loving and giving", Saturday: "Saturday's child works hard for a living", Sunday: "The child born on the Sabbath day is bonny and blithe, and good and gay" }[wd];
+        return {
+          results: [
+            { k: diff < 0 ? 'That day was a' : diff > 0 ? 'That day will be a' : 'Today is', v: wd, main: true, s: long(d) },
+            { k: 'In the month', v: `The ${ord}${last && nth >= 4 ? ' (and last)' : ''} ${wd}`, s: `of ${d.toLocaleDateString('en', { month: 'long', year: 'numeric' })}` },
+            { k: 'Day of the year', v: `${dayOfYear(d)} of ${daysInYear(d.getFullYear())}` },
+            { k: 'ISO week', v: `Week ${isoWeek(d).week}` },
+            { k: diff < 0 ? 'How long ago' : 'How far away', v: diff === 0 ? 'Today' : plural(Math.abs(diff), 'day') },
+          ],
+          note: `Old nursery rhyme: “${rhyme}.” Dates before 1582 use the modern (proleptic Gregorian) calendar.`,
+        };
+      },
+    });
+  });
+
+  const HIJRI_MONTHS = ['Muharram', 'Safar', 'Rabi al-Awwal', 'Rabi al-Thani', 'Jumada al-Ula', 'Jumada al-Akhirah', 'Rajab', "Sha'ban", 'Ramadan', 'Shawwal', "Dhu al-Qa'dah", 'Dhu al-Hijjah'];
+  const hijriCal = (() => { try { return new Intl.DateTimeFormat('en-u-ca-islamic-umalqura').resolvedOptions().calendar === 'islamic-umalqura' ? 'islamic-umalqura' : 'islamic-civil'; } catch (e) { return 'islamic-civil'; } })();
+  const hijriFmt = new Intl.DateTimeFormat('en-u-ca-' + hijriCal + '-nu-latn', { day: 'numeric', month: 'numeric', year: 'numeric', timeZone: 'UTC' });
+  const toHijri = d => {
+    const p = Object.fromEntries(hijriFmt.formatToParts(new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate(), 12))).map(x => [x.type, x.value]));
+    return { y: parseInt(p.year, 10), m: +p.month, d: +p.day };
+  };
+  const fromHijri = (y, m, dd) => {
+    const jd = dd + Math.ceil(29.5 * (m - 1)) + (y - 1) * 354 + Math.floor((3 + 11 * y) / 30) + 1948439.5 - 1;
+    const guess = new Date((jd - 2440587.5) * DAY + DAY / 2);
+    const g = new Date(guess.getUTCFullYear(), guess.getUTCMonth(), guess.getUTCDate());
+    for (let k = 0; k <= 6; k++) for (const s of k ? [k, -k] : [0]) { const c = addD(g, s), h = toHijri(c); if (h.y === y && h.m === m && h.d === dd) return c; }
+    return null;
+  };
+  const hijriStr = h => `${h.d} ${HIJRI_MONTHS[h.m - 1]} ${h.y} AH`;
+  const hijriAr = d => { try { return new Intl.DateTimeFormat('ar-SA-u-ca-' + hijriCal, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate(), 12))); } catch (e) { return ''; } };
+
+  Tools.define('hijri-date-converter', root => {
+    const today = toHijri(new Date());
+    UI.calc(root, {
+      fields: [
+        { id: 'dir', label: 'Convert', type: 'seg', value: 'g2h', options: [['g2h', 'Gregorian → Hijri'], ['h2g', 'Hijri → Gregorian']], full: true },
+        { id: 'date', label: 'Gregorian date', type: 'date', value: iso(new Date()), show: v => v.dir === 'g2h' },
+        { id: 'hd', label: 'Hijri day', type: 'number', value: today.d, min: 1, max: 30, show: v => v.dir === 'h2g' },
+        { id: 'hm', label: 'Hijri month', type: 'select', value: String(today.m), options: HIJRI_MONTHS.map((n, i) => [String(i + 1), `${i + 1}. ${n}`]), show: v => v.dir === 'h2g' },
+        { id: 'hy', label: 'Hijri year', type: 'number', value: today.y, show: v => v.dir === 'h2g' },
+        { id: 'adj', label: 'Moon-sighting adjustment', type: 'select', value: '0', options: [['-2', '−2 days'], ['-1', '−1 day (e.g. Pakistan, India often)'], ['0', 'None (Umm al-Qura)'], ['1', '+1 day'], ['2', '+2 days']] },
+      ],
+      compute(v) {
+        const adj = +v.adj || 0;
+        let g, h;
+        if (v.dir === 'g2h') {
+          g = parse(v.date); if (!g) return null;
+          h = toHijri(addD(g, adj));
+        } else {
+          if (!(v.hy >= 1 && v.hd >= 1 && v.hd <= 30)) return null;
+          const base = fromHijri(Math.round(v.hy), +v.hm, Math.round(v.hd));
+          if (!base) return `<div class="notice error">${HIJRI_MONTHS[v.hm - 1]} ${Math.round(v.hy)} does not have a day ${Math.round(v.hd)} in this calendar. Try day 29.</div>`;
+          g = addD(base, -adj); h = { y: Math.round(v.hy), m: +v.hm, d: Math.round(v.hd) };
+        }
+        const ar = hijriAr(addD(g, adj));
+        return {
+          results: v.dir === 'g2h'
+            ? [{ k: 'Hijri date', v: hijriStr(h), main: true, s: ar }, { k: 'Gregorian date', v: long(g) }, { k: 'Islamic month', v: `${h.m}. ${HIJRI_MONTHS[h.m - 1]}` }]
+            : [{ k: 'Gregorian date', v: long(g), main: true, s: g.toLocaleDateString('en', { weekday: 'long' }) }, { k: 'Hijri date', v: hijriStr(h), s: ar }],
+          note: `Calculated with the ${hijriCal === 'islamic-umalqura' ? 'Umm al-Qura calendar used in Saudi Arabia' : 'tabular Islamic calendar'}. Many countries begin each month by local moon sighting, so the date there can differ by a day — use the adjustment to match your local calendar.`,
+        };
+      },
+    });
+  });
+
+  const NUMW = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+  const TENW = ['', '', 'twenty', 'thirty', 'forty', 'fifty'];
+  const say = n => n < 20 ? NUMW[n] : TENW[Math.floor(n / 10)] + (n % 10 ? '-' + NUMW[n % 10] : '');
+  const spokenMil = (h, m) => (h < 10 ? 'zero ' + NUMW[h] : say(h)) + ' ' + (m === 0 ? 'hundred' : m < 10 ? 'zero ' + NUMW[m] : say(m)) + ' hours';
+  function parseClock(s) {
+    s = String(s).trim().toLowerCase().replace(/\./g, '');
+    const ap = /(a|p)\s*m?$/.exec(s), core = s.replace(/\s*(a|p)\s*m?$/, '').replace(/\s*(hours|hrs|h)$/, '').trim();
+    let h, m = 0, sec = 0, mm;
+    if ((mm = /^(\d{1,2})(?::(\d{2}))?(?::(\d{2}))?$/.exec(core))) { h = +mm[1]; m = +(mm[2] || 0); sec = +(mm[3] || 0); }
+    else if ((mm = /^(\d{3,4})$/.exec(core))) { const x = mm[1].padStart(4, '0'); h = +x.slice(0, 2); m = +x.slice(2); }
+    else return { err: 'Enter a time like 1430, 14:30 or 2:30 PM.' };
+    if (m > 59 || sec > 59) return { err: 'Minutes and seconds must be between 00 and 59.' };
+    if (ap) {
+      if (h < 1 || h > 12) return { err: 'With AM/PM the hour must be between 1 and 12.' };
+      h = h % 12 + (ap[1] === 'p' ? 12 : 0);
+      return { h, m, sec, from: '12' };
+    }
+    if (h === 24 && m === 0 && sec === 0) return { h: 0, m, sec, from: '24', midnight: true };
+    if (h > 23) return { err: 'Hours must be between 00 and 23 in 24-hour time.' };
+    return { h, m, sec, from: '24' };
+  }
+  const pad2 = n => String(n).padStart(2, '0');
+
+  Tools.define('military-time-converter', root => {
+    UI.calc(root, {
+      fields: [{ id: 't', label: 'Time (military or standard)', type: 'text', value: '1430', placeholder: 'e.g. 1430, 0600, 9:45 PM', cls: 'grow' }],
+      compute(v) {
+        if (!v.t.trim()) return null;
+        const c = parseClock(v.t); if (c.err) return `<div class="notice error">${c.err}</div>`;
+        const ss = c.sec ? ':' + pad2(c.sec) : '';
+        const std = `${c.h % 12 || 12}:${pad2(c.m)}${ss} ${c.h < 12 ? 'AM' : 'PM'}`;
+        const mil = `${pad2(c.h)}${pad2(c.m)}`;
+        const main = c.from === '12' ? { k: 'Military time', v: `${mil} hours`, main: true, s: `${pad2(c.h)}:${pad2(c.m)}${ss} in 24-hour format` } : { k: 'Standard time', v: std, main: true, s: c.midnight ? '2400 is midnight at the end of the day' : '12-hour format' };
+        return {
+          results: [main, c.from === '12' ? { k: 'Standard time', v: std } : { k: 'Military time', v: `${c.midnight ? '2400' : mil} hours` }, { k: 'Spoken as', v: c.midnight ? 'twenty-four hundred hours' : spokenMil(c.h, c.m) }],
+          html: `<details class="card-sub mt"><summary style="cursor:pointer;font-weight:600">Military time chart</summary><div class="table-wrap mt"><table class="table"><thead><tr><th>Military</th><th>Standard</th><th>Military</th><th>Standard</th></tr></thead><tbody>${Array.from({ length: 12 }, (_, i) => `<tr><td>${pad2(i)}00</td><td>${i % 12 || 12}:00 AM</td><td>${pad2(i + 12)}00</td><td>${i % 12 || 12}:00 PM</td></tr>`).join('')}</tbody></table></div></details>`,
+        };
+      },
+    });
+  });
+
+  Tools.define('hours-to-decimal', root => {
+    UI.calc(root, {
+      fields: [
+        { id: 'dir', label: 'Convert', type: 'seg', value: 't2d', options: [['t2d', 'Hours & minutes → decimal'], ['d2t', 'Decimal → hours & minutes']], full: true },
+        { id: 'h', label: 'Hours', type: 'number', value: 7, min: 0, show: v => v.dir === 't2d' },
+        { id: 'm', label: 'Minutes', type: 'number', value: 45, min: 0, show: v => v.dir === 't2d' },
+        { id: 's', label: 'Seconds', type: 'number', value: 0, min: 0, show: v => v.dir === 't2d' },
+        { id: 'dec', label: 'Decimal hours', type: 'number', value: 8.6, min: 0, show: v => v.dir === 'd2t' },
+        { id: 'rate', label: 'Hourly rate (optional)', type: 'number', value: '', placeholder: 'to work out pay' },
+      ],
+      compute(v) {
+        const z = x => (x > 0 ? x : 0);
+        let hours;
+        if (v.dir === 't2d') { if (!(v.h >= 0 || v.m >= 0 || v.s >= 0)) return null; hours = z(v.h) + z(v.m) / 60 + z(v.s) / 3600; }
+        else { if (!(v.dec >= 0)) return null; hours = v.dec; }
+        const totalSec = Math.round(hours * 3600), H = Math.floor(totalSec / 3600), M = Math.floor(totalSec % 3600 / 60), S = totalSec % 60;
+        const hm = `${H} h ${M} min${S ? ` ${S} s` : ''}`;
+        const res = v.dir === 't2d'
+          ? [{ k: 'Decimal hours', v: fmt(hours, 4), main: true, s: `${hm} = ${hours.toFixed(2)} hours (rounded)` }, { k: 'Total minutes', v: fmt(hours * 60, 2) }, { k: 'Total seconds', v: fmt(totalSec) }]
+          : [{ k: 'Hours & minutes', v: hm, main: true, s: `${pad2(H)}:${pad2(M)}:${pad2(S)}` }, { k: 'Total minutes', v: fmt(hours * 60, 2) }, { k: 'Total seconds', v: fmt(totalSec) }];
+        if (v.rate > 0) res.push({ k: 'Pay', v: fmt(hours * v.rate, 2, 2), s: `${fmt(hours, 4)} h × ${fmt(v.rate, 2)}` });
+        return {
+          results: res,
+          html: `<details class="card-sub mt"><summary style="cursor:pointer;font-weight:600">Minutes to decimal hours chart</summary><div class="table-wrap mt"><table class="table"><thead><tr><th>Minutes</th><th>Decimal</th><th>Minutes</th><th>Decimal</th><th>Minutes</th><th>Decimal</th></tr></thead><tbody>${Array.from({ length: 20 }, (_, i) => `<tr>${[i + 1, i + 21, i + 41].map(n => `<td>${n}</td><td>${(n / 60).toFixed(2)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></details>`,
+          note: 'Decimal hours = hours + minutes ÷ 60 + seconds ÷ 3600. Payroll systems usually round to 2 decimal places.',
+        };
+      },
+    });
+  });
 })();

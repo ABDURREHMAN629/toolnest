@@ -278,4 +278,76 @@ New line added here.</textarea></div></div>
     $('.cp').onclick = () => UI.copy($('.ed').value);
     open(cur);
   });
+
+  const INVIS = [
+    ['\u3164', 'Hangul Filler', 'U+3164', 'Most popular blank character — shows as an empty but real character in usernames, game names and messages.'],
+    ['\u2800', 'Braille Pattern Blank', 'U+2800', 'Looks like a normal space but is not removed by apps — good for blank messages and bio spacing.'],
+    ['\u200B', 'Zero Width Space', 'U+200B', 'Takes no space at all. Used to break links or hashtags and for “empty” messages.'],
+    ['\uFFA0', 'Halfwidth Hangul Filler', 'U+FFA0', 'A narrower blank filler that some games and apps accept when U+3164 is blocked.'],
+    ['\u00A0', 'No-Break Space', 'U+00A0', 'A normal-width space that keeps words together and is not collapsed in many apps.'],
+    ['\u2003', 'Em Space', 'U+2003', 'A wide space — useful for indenting text in bios and captions.'],
+    ['\u200C', 'Zero Width Non-Joiner', 'U+200C', 'Invisible and zero width. Another option for blank messages.'],
+  ];
+  const HIDDEN = /[\u00A0\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u2000-\u200F\u2028-\u202F\u205F-\u2064\u206A-\u206F\u2800\u3000\u3164\uFEFF\uFFA0]/g;
+  const cpName = ch => { const f = INVIS.find(x => x[0] === ch); return f ? f[1] : 'U+' + ch.codePointAt(0).toString(16).toUpperCase().padStart(4, '0'); };
+
+  Tools.define('invisible-character', root => {
+    root.innerHTML = `<div class="stack">
+      <div class="card-sub stack" style="align-items:center;text-align:center"><div class="small muted">Invisible character (Hangul Filler) — copied with one click</div>
+        <div class="main-box" aria-label="Invisible character" style="width:min(320px,100%);height:72px;border:2px dashed var(--primary);border-radius:14px;background:var(--primary-soft);display:grid;place-items:center;font-size:1.5rem">\u3164</div>
+        <button class="btn lg cp-main">📋 Copy invisible character</button></div>
+      <div class="row"><div class="field"><label>Character</label><select class="select which">${INVIS.map((c, i) => `<option value="${i}">${c[1]} (${c[2]})</option>`).join('')}</select></div>
+        <div class="field"><label>How many</label><input class="input count" type="number" value="1" min="1" max="5000"></div>
+        <div class="field" style="justify-content:flex-end"><button class="btn secondary cp-many">📋 Copy</button></div></div>
+      <p class="small muted desc"></p>
+      <div class="table-wrap"><table class="table"><thead><tr><th>Character</th><th>Code</th><th>Best for</th><th></th></tr></thead><tbody>${INVIS.map((c, i) => `<tr><td><strong>${c[1]}</strong></td><td class="mono">${c[2]}</td><td class="small">${c[3]}</td><td><button class="btn sm secondary" data-cp="${i}">Copy</button></td></tr>`).join('')}</tbody></table></div>
+      <div class="card-sub stack"><strong>🔍 Invisible character detector & remover</strong><div class="small muted">Paste any text to find hidden characters, zero-width spaces and blank fillers.</div>
+        <textarea class="textarea det" placeholder="Paste text here…" style="min-height:110px"></textarea><div class="det-out small"></div>
+        <div class="btn-row"><button class="btn sm secondary clean">🧹 Remove hidden characters & copy</button></div></div></div>`;
+    const $ = UI.q(root);
+    const many = () => { const c = INVIS[+$('.which').value]; $('.desc').textContent = c[3]; return c[0].repeat(UI.clamp(Math.round(UI.num($('.count').value)) || 1, 1, 5000)); };
+    $('.which').onchange = many; many();
+    $('.cp-main').onclick = () => UI.copy('\u3164', 'Invisible character copied');
+    $('.cp-many').onclick = () => { const s = many(); UI.copy(s, `Copied ${s.length} invisible character${s.length === 1 ? '' : 's'}`); };
+    root.addEventListener('click', e => { const b = e.target.closest('[data-cp]'); if (b) UI.copy(INVIS[+b.dataset.cp][0], `${INVIS[+b.dataset.cp][1]} copied`); });
+    const detect = () => {
+      const t = $('.det').value, found = t.match(HIDDEN) || [];
+      if (!t) { $('.det-out').innerHTML = ''; return; }
+      const counts = {}; found.forEach(ch => { const n = cpName(ch); counts[n] = (counts[n] || 0) + 1; });
+      $('.det-out').innerHTML = found.length ? `⚠️ Found <strong>${found.length}</strong> hidden character${found.length === 1 ? '' : 's'}: ${Object.entries(counts).map(([n, c]) => `${esc(n)} × ${c}`).join(', ')}` : '✅ No hidden characters found.';
+    };
+    $('.det').addEventListener('input', detect);
+    $('.clean').onclick = () => { const t = $('.det').value.replace(HIDDEN, m => /[\u00A0\u2000-\u200A\u202F\u205F\u3000]/.test(m) ? ' ' : ''); $('.det').value = t; detect(); UI.copy(t, 'Cleaned text copied'); };
+  });
+
+  Tools.define('words-to-minutes', root => {
+    UI.calc(root, {
+      fields: [
+        { id: 'dir', label: 'Calculate', type: 'seg', value: 'w2m', options: [['w2m', 'Words → minutes'], ['m2w', 'Minutes → words']], full: true },
+        { id: 'words', label: 'Number of words', type: 'number', value: 1300, min: 0, show: v => v.dir === 'w2m' },
+        { id: 'text', label: '…or paste your speech / text', type: 'textarea', rows: 4, value: '', placeholder: 'Paste text to count its words automatically', full: true, show: v => v.dir === 'w2m' },
+        { id: 'mins', label: 'Speech length', type: 'number', value: 5, min: 0, unit: 'min', show: v => v.dir === 'm2w' },
+        { id: 'pace', label: 'Speaking pace', type: 'select', value: '130', options: [['100', 'Slow — 100 wpm'], ['130', 'Average — 130 wpm'], ['160', 'Fast — 160 wpm'], ['c', 'Custom']] },
+        { id: 'custom', label: 'Custom pace', type: 'number', value: 150, unit: 'wpm', show: v => v.pace === 'c' },
+      ],
+      compute(v) {
+        const pace = v.pace === 'c' ? v.custom : +v.pace; if (!(pace > 0)) return null;
+        const mmss = min => { const s = Math.round(min * 60); return s >= 3600 ? `${Math.floor(s / 3600)} h ${Math.floor(s % 3600 / 60)} min` : `${Math.floor(s / 60)} min ${s % 60} s`; };
+        if (v.dir === 'm2w') {
+          if (!(v.mins > 0)) return null;
+          return { results: [{ k: `Words for a ${fmt(v.mins)}-minute speech`, v: `${fmt(Math.round(v.mins * pace))} words`, main: true, s: `at ${pace} words per minute` }, { k: 'Slow (100 wpm)', v: fmt(v.mins * 100) + ' words' }, { k: 'Fast (160 wpm)', v: fmt(v.mins * 160) + ' words' }, { k: 'Pages (≈ 500 words, single-spaced)', v: fmt(v.mins * pace / 500, 1) }] };
+        }
+        const typed = v.text.trim() ? v.text.trim().split(/\s+/).length : null, n = typed ?? v.words;
+        if (!(n > 0)) return null;
+        return {
+          results: [
+            { k: 'Speaking time', v: mmss(n / pace), main: true, s: `${fmt(n)} words at ${pace} wpm${typed != null ? ' (counted from your text)' : ''}` },
+            { k: 'Silent reading time', v: mmss(n / 238), s: 'average adult: 238 wpm' },
+            { k: 'Slow speaker (100 wpm)', v: mmss(n / 100) }, { k: 'Fast speaker (160 wpm)', v: mmss(n / 160) },
+          ],
+          note: 'Most people speak at 120–150 words per minute in presentations and read silently at about 238 words per minute. Practise out loud with a timer for the most accurate result.',
+        };
+      },
+    });
+  });
 })();

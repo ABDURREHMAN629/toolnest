@@ -1,6 +1,6 @@
-# ToolNest — 150+ free online tools
+# ToolNest — 160+ free online tools
 
-A fast, static website with **152 tools** (plus 8 extra format pages like *PNG to JPG* and *MP4 to MP3*) across 12 categories. Every tool runs **in the visitor's browser**: files are never uploaded, there is no server or database, and hosting is free.
+A fast, static website with **163 tools** (plus 9 extra format pages like *PNG to JPG*, *MP4 to MP3* and *Black Screen*) across 12 categories. Every tool runs **in the visitor's browser**: files are never uploaded, there is no server or database, and hosting is free.
 
 ## Quick start
 
@@ -8,7 +8,7 @@ A fast, static website with **152 tools** (plus 8 extra format pages like *PNG t
 npm start
 ```
 
-This builds the pages and serves the site at http://localhost:8080. Node.js 18+ is the only requirement — there are no npm dependencies.
+This builds the pages and serves the site at http://localhost:8080 (under the same path as the live site, for example http://localhost:8080/toolnest/). Node.js 18+ is the only requirement — there are no npm dependencies.
 
 | Command | What it does |
 |---|---|
@@ -105,15 +105,15 @@ Everything else works without any API keys.
 
 **Math (10):** Percentage, Scientific Calculator, Fraction, Average & Statistics, Unit Converter, Random Number, Number to Words (lakh/crore & international), Roman Numerals, LCM & GCD, Quadratic Solver
 
-**Date & Time (9):** Age Calculator, Days Between Dates, Date Calculator, Time Calculator, Stopwatch, Countdown Timer, Pomodoro Timer, Time Zone Converter, Alarm Clock
+**Date & Time (14):** Age Calculator, Days Between Dates, Date Calculator, Time Calculator, Stopwatch, Countdown Timer, Pomodoro Timer, Time Zone Converter, Alarm Clock, What Week Is It (week number), Day of the Week, Hijri Date Converter, Military Time Converter, Time to Decimal
 
-**Text (15):** Word Counter (+Character Counter), Case Converter, Lorem Ipsum, Text Compare (Diff), Remove Duplicate Lines, Sort Lines, Reverse Text, Fancy Text Generator, Remove Line Breaks, Find & Replace, Keyword Density, Morse Code, Binary Translator, Text Repeater, Online Notepad
+**Text (17):** Word Counter (+Character Counter), Case Converter, Lorem Ipsum, Text Compare (Diff), Remove Duplicate Lines, Sort Lines, Reverse Text, Fancy Text Generator, Remove Line Breaks, Find & Replace, Keyword Density, Morse Code, Binary Translator, Text Repeater, Online Notepad, Invisible Character, Words to Minutes
 
 **Developer (18):** JSON Formatter, Base64, URL Encode/Decode, HTML Entities, UUID (v4/v7), Hash (MD5/SHA), JWT Decoder, Regex Tester, Color Picker, Palette Generator, CSS Gradient, Box Shadow, HTML/CSS/JS Minifier, Unix Timestamp, Markdown to HTML, CSV↔JSON, Number Base Converter, SQL Formatter
 
-**Web & Device (12):** Internet Speed Test, What Is My IP, YouTube Thumbnail Downloader, Meta Tag Generator, UTM Builder, Robots.txt Generator, Slug Generator, Screen Resolution, Browser Info, Keyboard Tester, Dead Pixel Test, CPS Test
+**Web & Device (14):** Internet Speed Test, What Is My IP, YouTube Thumbnail Downloader, Meta Tag Generator, UTM Builder, Robots.txt Generator, Slug Generator, Screen Resolution, Browser Info, Keyboard Tester, Dead Pixel Test, CPS Test, White Screen (+Black Screen), Spacebar Counter
 
-**Utilities (11):** QR Code Generator, QR Code Scanner, Barcode Generator, Password Generator, Password Strength Checker, Spin the Wheel, Coin Flip, Dice Roller, Signature Generator, Invoice Generator, To-Do List
+**Utilities (13):** QR Code Generator, QR Code Scanner, Barcode Generator, Password Generator, Password Strength Checker, Spin the Wheel, Coin Flip, Dice Roller, Signature Generator, Invoice Generator, To-Do List, Tally Counter, Qibla Direction Finder
 
 ## Testing
 
@@ -123,6 +123,16 @@ With `npm start` running, open any page and run in the browser console:
 await UI.script('/__test/smoke.js');
 await smoke('pdf');   // mounts every tool in a category and reports errors
 ```
+
+To check that calculators give **correct answers**, load every category script and run the known-answer tests (about 90 checks with independently worked-out results — CGPA formulas, attendance, zakat, number to words, week numbers, Hijri dates, Qibla bearings, military time and more):
+
+```js
+for (const c of CATEGORIES) await UI.script(BASE + 'assets/js/tools/' + c.id + '.js');
+await UI.script('/__test/known-answers.js');
+await knownAnswers();   // { passed, total, fails: [...] }
+```
+
+Run it after changing any calculator. Add a check to `test/known-answers.js` whenever you add a tool.
 
 `test/harness.js` adds helpers (`runTool`, `mkPdf`, `mkImg`) for end-to-end checks with generated files.
 

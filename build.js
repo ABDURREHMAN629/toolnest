@@ -147,7 +147,7 @@ for (const t of TOOLS) {
   const c = catById[t.cat];
   const base = t.of ? toolBySlug[t.of] : t;
   const file = `${t.slug}.html`;
-  const title = t.title || `${t.name} – Free Online ${/calculator/i.test(t.name) ? 'Calculator' : 'Tool'} | ${config.name}`;
+  const title = t.title ? `${t.title} | ${config.name}` : `${t.name} – Free Online ${/calculator/i.test(t.name) ? 'Calculator' : 'Tool'} | ${config.name}`;
   const fq = faqs(t);
   const related = TOOLS.filter(x => x.cat === t.cat && x.slug !== t.slug && !x.of).slice(0, 8);
   const more = TOOLS.filter(x => x.popular && x.cat !== t.cat).slice(0, 6);

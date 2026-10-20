@@ -218,7 +218,10 @@ for (const c of CATEGORIES) {
   const desc = `${COUNT}+ free online tools in one place: PDF converter, image compressor, video converter, CGPA calculator, ATS resume checker, QR code generator and more. No sign-up, works in your browser.`;
   write('index.html', head({
     title: `${config.name} – ${COUNT}+ Free Online Tools: PDF, Image, Video, Calculators`, desc, file: 'index.html',
-    jsonld: [{ '@context': 'https://schema.org', '@type': 'WebSite', name: config.name, url: abs('index.html'), potentialAction: { '@type': 'SearchAction', target: `${SITE}/?q={search_term_string}`, 'query-input': 'required name=search_term_string' } }],
+    jsonld: [
+      { '@context': 'https://schema.org', '@type': 'WebSite', name: config.name, url: abs('index.html'), potentialAction: { '@type': 'SearchAction', target: `${SITE}/?q={search_term_string}`, 'query-input': 'required name=search_term_string' } },
+      { '@context': 'https://schema.org', '@type': 'Organization', name: config.name, url: abs('index.html'), logo: `${SITE}/assets/img/logo.png`, email: config.contactEmail, description: desc },
+    ],
   }) + `
 <main>
   <section class="hero">
@@ -310,7 +313,30 @@ ${urls.map(p => `  <url><loc>${esc(abs(p))}</loc><lastmod>${today}</lastmod></ur
 // ads.txt is required for AdSense to pay out at full rate
 if (config.adsenseClient) fs.writeFileSync(path.join(OUT, 'ads.txt'), `google.com, ${config.adsenseClient.replace(/^ca-/, '')}, DIRECT, f08c47fec0942fa0
 `);
-fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
+// AI search and assistant crawlers are welcomed by name so ChatGPT, Claude, Perplexity, Gemini, Copilot etc. can read and cite the tools.
+const AI_BOTS = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot-Extended', 'Amazonbot', 'meta-externalagent', 'DuckAssistBot', 'CCBot'];
+fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\n${AI_BOTS.map(b => `User-agent: ${b}`).join('\n')}\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
+
+// llms.txt (https://llmstxt.org): a plain-Markdown map of the site for AI assistants.
+fs.writeFileSync(path.join(OUT, 'llms.txt'), `# ${config.name}
+
+> ${COUNT}+ free online tools that run entirely in the browser: PDF, image, video and audio converters, calculators, student, developer and everyday utilities. No sign-up, no watermarks, no limits, and files are processed on the visitor's own device instead of being uploaded.
+
+- Website: ${SITE}/
+- Contact: ${config.contactEmail}
+- Every tool is free and works on phones and computers.
+
+${CATEGORIES.map(c => `## ${c.name}
+
+${c.desc}
+
+${TOOLS.filter(t => t.cat === c.id).map(t => `- [${t.name}](${abs(t.slug + '.html')}): ${t.desc}`).join('\n')}`).join('\n\n')}
+
+## About
+
+- [About ${config.name}](${abs('about.html')})
+- [Privacy policy](${abs('privacy-policy.html')})
+`);
 
 const distinct = TOOLS.filter(t => !t.of).length;
 console.log(`Built ${pages.length} pages: ${distinct} tools + ${TOOLS.length - distinct} format pages, ${CATEGORIES.length} categories → ./site`);

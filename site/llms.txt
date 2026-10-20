@@ -1,0 +1,244 @@
+# ToolNest
+
+> 160+ free online tools that run entirely in the browser: PDF, image, video and audio converters, calculators, student, developer and everyday utilities. No sign-up, no watermarks, no limits, and files are processed on the visitor's own device instead of being uploaded.
+
+- Website: https://www.webtoolnest.com/
+- Contact: contact@webtoolnest.com
+- Every tool is free and works on phones and computers.
+
+## PDF Tools
+
+Merge, split, compress, convert, sign and edit PDF files online for free. Everything runs in your browser, so your documents are never uploaded.
+
+- [Merge PDF](https://www.webtoolnest.com/merge-pdf): Combine multiple PDF files into one document. Reorder the files before merging and download a single PDF — free, fast and private.
+- [Split PDF](https://www.webtoolnest.com/split-pdf): Split a PDF into single pages or extract custom page ranges such as 1-3, 5, 8-10 into separate PDF files.
+- [Compress PDF](https://www.webtoolnest.com/compress-pdf): Reduce PDF file size to meet email and upload limits. Pick a compression level and compare the before and after size.
+- [PDF to JPG](https://www.webtoolnest.com/pdf-to-jpg): Convert every page of a PDF into high-quality JPG or PNG images. Download single pages or all pages as a ZIP.
+- [PDF to PNG](https://www.webtoolnest.com/pdf-to-png): Convert PDF pages to sharp, lossless PNG images online. Free, no sign-up and your file never leaves your device.
+- [JPG to PDF](https://www.webtoolnest.com/jpg-to-pdf): Turn JPG, PNG, WebP and other images into one PDF. Choose page size, orientation and margins.
+- [PDF to Word](https://www.webtoolnest.com/pdf-to-word): Convert PDF documents into editable Word (DOCX) files. Text and paragraphs are extracted so you can edit them in Word or Google Docs.
+- [Word to PDF](https://www.webtoolnest.com/word-to-pdf): Convert Microsoft Word DOCX documents to PDF while keeping fonts, headings, tables and images.
+- [Rotate PDF](https://www.webtoolnest.com/rotate-pdf): Rotate all pages or selected pages of a PDF by 90, 180 or 270 degrees and save the result permanently.
+- [Organize PDF](https://www.webtoolnest.com/organize-pdf): Reorder, rotate and delete PDF pages visually using page thumbnails, then save a new PDF.
+- [Delete PDF Pages](https://www.webtoolnest.com/delete-pdf-pages): Remove unwanted pages from a PDF by entering page numbers or ranges, and download the cleaned file.
+- [Add Page Numbers to PDF](https://www.webtoolnest.com/add-page-numbers): Insert page numbers into a PDF. Choose the position, format (1, Page 1, 1 of N), font size and starting number.
+- [Watermark PDF](https://www.webtoolnest.com/watermark-pdf): Stamp a text watermark such as CONFIDENTIAL or DRAFT on every page of a PDF with your own opacity, size, color and angle.
+- [PDF to Text](https://www.webtoolnest.com/pdf-to-text): Extract all the text from a PDF file. Copy it to the clipboard or download it as a TXT file.
+- [Sign PDF](https://www.webtoolnest.com/sign-pdf): Add your signature to a PDF online. Draw or type a signature, place it on any page and download the signed document.
+
+## Image Tools
+
+Compress, resize, crop and convert images, remove backgrounds, extract text and make memes and collages — free and private.
+
+- [Compress Image](https://www.webtoolnest.com/compress-image): Reduce JPG, PNG and WebP image size by up to 80% while keeping good quality. Compress many images at once or target an exact size in KB.
+- [Resize Image](https://www.webtoolnest.com/resize-image): Resize images to exact pixel dimensions or by percentage. Keep the aspect ratio and resize many photos in one go.
+- [Crop Image](https://www.webtoolnest.com/crop-image): Crop photos online with free-form or fixed aspect ratios like 1:1, 4:3 and 16:9, or crop to a circle for profile pictures.
+- [Image Converter](https://www.webtoolnest.com/image-converter): Convert images between JPG, PNG and WebP. Batch convert multiple files and download them all as a ZIP.
+- [PNG to JPG](https://www.webtoolnest.com/png-to-jpg): Convert PNG images to JPG online for free. Transparent areas are filled with white or a color you choose.
+- [JPG to PNG](https://www.webtoolnest.com/jpg-to-png): Convert JPG and JPEG photos to lossless PNG images online, in bulk and for free.
+- [WebP to JPG](https://www.webtoolnest.com/webp-to-jpg): Convert WebP images to JPG so they open everywhere. Batch convert and download as ZIP.
+- [WebP to PNG](https://www.webtoolnest.com/webp-to-png): Convert WebP images to PNG with transparency preserved. Free, fast and private.
+- [JPG to WebP](https://www.webtoolnest.com/jpg-to-webp): Convert JPG and PNG images to WebP for faster websites — smaller files with the same visual quality.
+- [HEIC to JPG](https://www.webtoolnest.com/heic-to-jpg): Convert iPhone HEIC and HEIF photos to JPG or PNG so you can open and share them on any device.
+- [Rotate & Flip Image](https://www.webtoolnest.com/rotate-image): Rotate images by 90° steps or any custom angle, and flip them horizontally or vertically.
+- [Background Remover](https://www.webtoolnest.com/remove-background): Remove the background from photos automatically with AI. Download a transparent PNG or add a new background color.
+- [Image to Text (OCR)](https://www.webtoolnest.com/image-to-text): Extract text from images, screenshots and scanned documents with OCR. Supports English, Urdu, Arabic, Hindi and many more languages.
+- [Image to Base64](https://www.webtoolnest.com/image-to-base64): Convert images to Base64 data URIs for HTML and CSS, or decode a Base64 string back into an image.
+- [Add Watermark to Image](https://www.webtoolnest.com/watermark-image): Add a text or logo watermark to your photos with custom position, size, opacity and color.
+- [Photo Editor & Filters](https://www.webtoolnest.com/photo-filters): Adjust brightness, contrast, saturation and blur, or apply grayscale, sepia and invert filters to your photos.
+- [Meme Generator](https://www.webtoolnest.com/meme-generator): Make memes by adding top and bottom text to any image. Change font size, color and outline, then download.
+- [Favicon Generator](https://www.webtoolnest.com/favicon-generator): Create favicon.ico and PNG app icons in every standard size from an image, text or an emoji.
+- [Image Color Picker](https://www.webtoolnest.com/image-color-picker): Pick colors from any image and get HEX, RGB and HSL codes. Also extracts the main color palette of the picture.
+- [SVG to PNG](https://www.webtoolnest.com/svg-to-png): Convert SVG vector graphics to PNG or JPG images at any size, with a transparent or colored background.
+- [Passport Photo Maker](https://www.webtoolnest.com/passport-photo-maker): Make passport and visa photos in standard sizes like 2x2 inch and 35x45 mm, then print several on a 4x6 sheet.
+- [Photo Collage Maker](https://www.webtoolnest.com/collage-maker): Combine multiple photos into a collage grid with custom spacing, rounded corners and background color.
+
+## Video & Audio
+
+Convert, compress and trim videos, extract MP3 audio, cut ringtones, record your screen and voice, and turn text into speech.
+
+- [Video Converter](https://www.webtoolnest.com/video-converter): Convert videos between MP4, WebM, MOV, MKV and AVI formats right in your browser — no upload and no watermark.
+- [Video Compressor](https://www.webtoolnest.com/video-compressor): Reduce video file size by lowering resolution and bitrate. Ideal for WhatsApp, email and Discord upload limits.
+- [Video to MP3](https://www.webtoolnest.com/video-to-mp3): Extract the audio track from any video and save it as MP3, WAV or M4A.
+- [MP4 to MP3](https://www.webtoolnest.com/mp4-to-mp3): Convert MP4 videos to MP3 audio online. Free, fast and private — your video is processed on your device.
+- [Video Trimmer](https://www.webtoolnest.com/video-trimmer): Cut and trim videos online by choosing a start and end time. Fast trimming for MP4, WebM, MOV and more.
+- [Video to GIF](https://www.webtoolnest.com/video-to-gif): Turn video clips into animated GIFs. Choose the start time, length, width and frame rate.
+- [Audio Converter](https://www.webtoolnest.com/audio-converter): Convert audio files between MP3, WAV, OGG, M4A, AAC and FLAC formats.
+- [MP3 Cutter](https://www.webtoolnest.com/mp3-cutter): Cut MP3 and other audio files to make ringtones or clips, with optional fade in and fade out.
+- [Mute Video](https://www.webtoolnest.com/mute-video): Remove the audio track from a video file without re-encoding the picture, so quality stays the same.
+- [Screen Recorder](https://www.webtoolnest.com/screen-recorder): Record your screen, an app window or a browser tab with system audio and microphone. No install and no watermark.
+- [Voice Recorder](https://www.webtoolnest.com/voice-recorder): Record audio from your microphone online and download it as WAV or WebM.
+- [Webcam Test](https://www.webtoolnest.com/webcam-test): Check if your webcam works, see its resolution and frame rate, take snapshots and record short clips.
+- [Mic Test](https://www.webtoolnest.com/mic-test): Test your microphone online with a live volume meter, then record and play back a short sample.
+- [Text to Speech](https://www.webtoolnest.com/text-to-speech): Convert text to natural-sounding speech with different voices, languages, speed and pitch.
+- [Speech to Text](https://www.webtoolnest.com/speech-to-text): Type with your voice. Convert speech to text in real time in many languages, then copy or download it.
+
+## Student & Career
+
+CGPA and GPA calculators, ATS resume checker, resume builder, typing test, citation generator and more tools for students and job seekers.
+
+- [CGPA Calculator](https://www.webtoolnest.com/cgpa-calculator): Calculate your cumulative GPA (CGPA) from semester GPAs and credit hours or from course grades. Supports 4.0, 5.0 and 10-point scales.
+- [GPA Calculator](https://www.webtoolnest.com/gpa-calculator): Calculate your semester GPA from course grades and credit hours on a 4.0 or 10-point scale with plus/minus grades.
+- [Grade Calculator](https://www.webtoolnest.com/grade-calculator): Work out your weighted course grade from assignments, quizzes and exams, and find the score you need on the final.
+- [CGPA to Percentage](https://www.webtoolnest.com/cgpa-to-percentage): Convert CGPA to percentage and percentage to CGPA for 4.0 and 10-point grading systems.
+- [Attendance Calculator](https://www.webtoolnest.com/attendance-calculator): Find your attendance percentage and how many classes you can miss — or must attend — to stay above 75%.
+- [ATS Resume Checker](https://www.webtoolnest.com/ats-resume-checker): Check your resume against applicant tracking systems. Get an ATS score, the keywords you are missing from the job description and tips to improve.
+- [Resume Builder](https://www.webtoolnest.com/resume-builder): Build a clean, ATS-friendly resume in minutes. Fill in your details, preview it live and download it as a PDF.
+- [Text to Handwriting](https://www.webtoolnest.com/text-to-handwriting): Convert typed text into realistic handwriting on lined paper. Great for assignments — download as image or PDF.
+- [Citation Generator](https://www.webtoolnest.com/citation-generator): Generate APA, MLA, Harvard and Chicago citations for websites, books and journal articles.
+- [Typing Speed Test](https://www.webtoolnest.com/typing-speed-test): Test your typing speed in words per minute (WPM) and accuracy with a 30, 60 or 120 second test.
+
+## Finance Calculators
+
+Loan EMI, mortgage, compound interest, SIP, GST/VAT, discount, zakat and currency calculators with clear breakdowns.
+
+- [Loan EMI Calculator](https://www.webtoolnest.com/loan-calculator): Calculate your monthly loan EMI, total interest and total payment, with a full amortization schedule.
+- [Mortgage Calculator](https://www.webtoolnest.com/mortgage-calculator): Estimate your monthly mortgage payment including property tax, insurance and HOA, plus total interest over the term.
+- [Compound Interest Calculator](https://www.webtoolnest.com/compound-interest-calculator): Calculate compound interest with regular monthly contributions and see your savings grow year by year.
+- [Simple Interest Calculator](https://www.webtoolnest.com/simple-interest-calculator): Calculate simple interest and the total amount from principal, rate and time.
+- [SIP Calculator](https://www.webtoolnest.com/sip-calculator): Estimate the future value of your monthly SIP investments in mutual funds with an expected return rate.
+- [Discount Calculator](https://www.webtoolnest.com/discount-calculator): Find the sale price and how much you save after a percentage discount, including an extra second discount.
+- [Tip Calculator](https://www.webtoolnest.com/tip-calculator): Calculate the tip and split the bill evenly between any number of people.
+- [GST / VAT Calculator](https://www.webtoolnest.com/gst-calculator): Add or remove GST, VAT or sales tax from any amount. Shows the net price, tax amount and gross price.
+- [Profit Margin Calculator](https://www.webtoolnest.com/profit-margin-calculator): Calculate profit, margin and markup percentage from cost and selling price, or find the price for a target margin.
+- [Salary Calculator](https://www.webtoolnest.com/salary-calculator): Convert pay between hourly, daily, weekly, monthly and yearly salary.
+- [Currency Converter](https://www.webtoolnest.com/currency-converter): Convert between 160+ world currencies with daily updated exchange rates, including USD, EUR, GBP, PKR, INR, AED and SAR.
+- [Zakat Calculator](https://www.webtoolnest.com/zakat-calculator): Calculate the zakat you owe on cash, gold, silver, investments and business assets using the nisab threshold.
+- [Fuel Cost Calculator](https://www.webtoolnest.com/fuel-cost-calculator): Calculate the fuel cost of a trip from distance, fuel efficiency and fuel price, and split it between passengers.
+
+## Health & Fitness
+
+BMI, calorie, BMR, body fat, ideal weight, pregnancy, ovulation and sleep calculators.
+
+- [BMI Calculator](https://www.webtoolnest.com/bmi-calculator): Calculate your Body Mass Index in metric or imperial units and see your weight category and healthy weight range.
+- [Calorie Calculator](https://www.webtoolnest.com/calorie-calculator): Find how many calories you need per day to maintain, lose or gain weight based on your age, size and activity level.
+- [BMR Calculator](https://www.webtoolnest.com/bmr-calculator): Calculate your Basal Metabolic Rate using the Mifflin-St Jeor, Harris-Benedict and Katch-McArdle formulas.
+- [Body Fat Calculator](https://www.webtoolnest.com/body-fat-calculator): Estimate body fat percentage with the U.S. Navy method using simple tape measurements.
+- [Ideal Weight Calculator](https://www.webtoolnest.com/ideal-weight-calculator): Find your ideal body weight by height and gender using the Robinson, Miller, Devine and Hamwi formulas.
+- [Pregnancy Due Date Calculator](https://www.webtoolnest.com/pregnancy-calculator): Calculate your baby's due date, current week of pregnancy and trimester from the first day of your last period.
+- [Ovulation Calculator](https://www.webtoolnest.com/ovulation-calculator): Predict your fertile window and ovulation dates for the next six cycles.
+- [Water Intake Calculator](https://www.webtoolnest.com/water-intake-calculator): Find out how much water you should drink every day based on your weight, activity and climate.
+- [Sleep Calculator](https://www.webtoolnest.com/sleep-calculator): Find the best time to go to bed or wake up based on 90-minute sleep cycles.
+
+## Math & Converters
+
+Percentage, scientific and fraction calculators, unit converter, random numbers, number to words and more math tools.
+
+- [Percentage Calculator](https://www.webtoolnest.com/percentage-calculator): Calculate percentages easily: X% of Y, what percent X is of Y, percentage increase or decrease and marks percentage.
+- [Scientific Calculator](https://www.webtoolnest.com/scientific-calculator): Free online scientific calculator with trigonometry, logarithms, powers, roots, factorials and keyboard support.
+- [Fraction Calculator](https://www.webtoolnest.com/fraction-calculator): Add, subtract, multiply and divide fractions and mixed numbers, with simplified and decimal results.
+- [Average Calculator](https://www.webtoolnest.com/average-calculator): Calculate the mean, median, mode, range, sum and standard deviation of a list of numbers.
+- [Unit Converter](https://www.webtoolnest.com/unit-converter): Convert length, weight, temperature, area, volume, speed, time, data, pressure and energy units instantly.
+- [Random Number Generator](https://www.webtoolnest.com/random-number-generator): Generate random numbers in any range, one or many at a time, with or without duplicates.
+- [Number to Words](https://www.webtoolnest.com/number-to-words): Convert numbers to words in English for cheques and documents, in international or lakh/crore systems, with currency.
+- [Roman Numeral Converter](https://www.webtoolnest.com/roman-numeral-converter): Convert numbers to Roman numerals and Roman numerals back to numbers, from 1 to 3,999.
+- [LCM & GCD Calculator](https://www.webtoolnest.com/lcm-gcd-calculator): Find the least common multiple (LCM) and greatest common divisor (GCD/HCF) of two or more numbers.
+- [Quadratic Equation Solver](https://www.webtoolnest.com/quadratic-equation-solver): Solve quadratic equations ax² + bx + c = 0, including complex roots, with step-by-step working.
+
+## Date & Time
+
+Age calculator, days between dates, time calculator, stopwatch, countdown and pomodoro timers, time zones and alarm clock.
+
+- [Age Calculator](https://www.webtoolnest.com/age-calculator): Calculate your exact age in years, months and days, plus total days lived and the countdown to your next birthday.
+- [Days Between Dates](https://www.webtoolnest.com/date-difference-calculator): Count the days, weeks, months and years between two dates, including business days.
+- [Date Calculator](https://www.webtoolnest.com/date-calculator): Add or subtract days, weeks, months or years from a date to find the resulting date.
+- [Time Calculator](https://www.webtoolnest.com/time-calculator): Calculate the hours and minutes between two times, and add or subtract durations.
+- [Online Stopwatch](https://www.webtoolnest.com/stopwatch): Free online stopwatch with lap times, accurate to the hundredth of a second, with keyboard shortcuts.
+- [Countdown Timer](https://www.webtoolnest.com/countdown-timer): Set an online countdown timer with an alarm sound. Use quick presets or set any duration.
+- [Pomodoro Timer](https://www.webtoolnest.com/pomodoro-timer): Boost focus with the Pomodoro technique: 25-minute work sessions with short and long breaks.
+- [Time Zone Converter](https://www.webtoolnest.com/time-zone-converter): Convert time between time zones and see the current time in cities around the world.
+- [Online Alarm Clock](https://www.webtoolnest.com/alarm-clock): Set an online alarm clock that rings in your browser at the time you choose.
+- [What Week Is It? Week Number](https://www.webtoolnest.com/week-number): See the current week number instantly, or find the week number of any date. Supports ISO 8601 (Monday start) and US (Sunday start) weeks, with a full list of the year's weeks.
+- [Day of the Week Calculator](https://www.webtoolnest.com/day-of-week-calculator): Find out which day of the week any date falls on — like the day you were born — plus its week number and day of the year.
+- [Hijri Date Converter](https://www.webtoolnest.com/hijri-date-converter): Convert Gregorian dates to the Islamic Hijri calendar and back, using the Umm al-Qura calendar, with a moon-sighting adjustment for your country.
+- [Military Time Converter](https://www.webtoolnest.com/military-time-converter): Convert military (24-hour) time to standard 12-hour AM/PM time and back, see how it is spoken, and use the full military time chart.
+- [Time to Decimal Converter](https://www.webtoolnest.com/hours-to-decimal): Convert hours and minutes to decimal hours for timesheets and payroll — and decimal hours back to hours and minutes — with an optional pay calculation.
+
+## Text Tools
+
+Word counter, case converter, text compare, fancy fonts, lorem ipsum and other writing and text editing tools.
+
+- [Word Counter](https://www.webtoolnest.com/word-counter): Count words, characters, sentences, paragraphs and reading time as you type or paste text.
+- [Character Counter](https://www.webtoolnest.com/character-counter): Count characters with and without spaces, and check limits for Twitter/X, Instagram, meta descriptions and SMS.
+- [Case Converter](https://www.webtoolnest.com/case-converter): Convert text to UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case and more.
+- [Lorem Ipsum Generator](https://www.webtoolnest.com/lorem-ipsum-generator): Generate lorem ipsum placeholder text by paragraphs, sentences or words.
+- [Text Compare (Diff Checker)](https://www.webtoolnest.com/text-compare): Compare two texts and highlight the differences line by line and word by word.
+- [Remove Duplicate Lines](https://www.webtoolnest.com/remove-duplicate-lines): Remove duplicate lines from a list or text, with options to ignore case and trim spaces.
+- [Sort Text Lines](https://www.webtoolnest.com/sort-lines): Sort lines alphabetically, numerically or by length, reverse them, or shuffle them randomly.
+- [Reverse Text](https://www.webtoolnest.com/reverse-text): Reverse text backwards, reverse each word, or reverse the order of words or lines.
+- [Fancy Text Generator](https://www.webtoolnest.com/fancy-text-generator): Generate stylish fonts for Instagram, Facebook and WhatsApp: bold, italic, cursive, bubble, upside-down and more. Copy and paste anywhere.
+- [Remove Line Breaks](https://www.webtoolnest.com/remove-line-breaks): Remove line breaks and extra spaces from text copied from PDFs and emails, while keeping paragraphs if you want.
+- [Find and Replace Text](https://www.webtoolnest.com/find-and-replace): Find and replace words or phrases in text, with case-sensitive, whole word and regular expression options.
+- [Keyword Density Checker](https://www.webtoolnest.com/keyword-density-checker): Analyze word frequency and keyword density of any text for SEO, including 2 and 3 word phrases.
+- [Morse Code Translator](https://www.webtoolnest.com/morse-code-translator): Translate text to Morse code and Morse code to text, and play it as sound.
+- [Binary Translator](https://www.webtoolnest.com/binary-translator): Convert text to binary code and binary back to text. Also shows hex and decimal codes.
+- [Text Repeater](https://www.webtoolnest.com/text-repeater): Repeat a word or text many times with a new line, space or custom separator.
+- [Online Notepad](https://www.webtoolnest.com/online-notepad): A simple online notepad that saves automatically in your browser. Download your notes as a text file anytime.
+- [Invisible Character](https://www.webtoolnest.com/invisible-character): Copy an invisible character (blank text) with one click for empty names, blank messages and bio spacing — and detect or remove hidden characters in any text.
+- [Words to Minutes Converter](https://www.webtoolnest.com/words-to-minutes): Find out how long your speech or presentation will take from its word count — or how many words you need for a speech of a given length.
+
+## Developer Tools
+
+JSON formatter, Base64, hashes, UUIDs, regex tester, minifiers, color and CSS generators for developers and designers.
+
+- [JSON Formatter & Validator](https://www.webtoolnest.com/json-formatter): Format, beautify, validate and minify JSON with clear error messages and a collapsible tree view.
+- [Base64 Encode / Decode](https://www.webtoolnest.com/base64-encode-decode): Encode text or files to Base64 and decode Base64 back to text. Supports UTF-8 and URL-safe Base64.
+- [URL Encode / Decode](https://www.webtoolnest.com/url-encode-decode): Encode or decode URLs and query strings, and break a URL into its parts and parameters.
+- [HTML Encoder / Decoder](https://www.webtoolnest.com/html-entity-encoder): Escape special characters to HTML entities and decode entities back into plain text.
+- [UUID Generator](https://www.webtoolnest.com/uuid-generator): Generate random UUID v4 (GUID) values in bulk, with uppercase, braces and no-hyphen options.
+- [Hash Generator](https://www.webtoolnest.com/hash-generator): Generate MD5, SHA-1, SHA-256, SHA-384 and SHA-512 hashes from text or files, and verify checksums.
+- [JWT Decoder](https://www.webtoolnest.com/jwt-decoder): Decode JSON Web Tokens to read the header, payload, issued and expiry times. Runs locally — tokens are never sent anywhere.
+- [Regex Tester](https://www.webtoolnest.com/regex-tester): Test JavaScript regular expressions with live match highlighting, capture groups and a replace preview.
+- [Color Picker & Converter](https://www.webtoolnest.com/color-picker): Pick a color and convert between HEX, RGB, HSL and CMYK. See tints, shades and WCAG contrast ratio.
+- [Color Palette Generator](https://www.webtoolnest.com/color-palette-generator): Generate beautiful color palettes — complementary, analogous, triadic, monochrome or random — and copy the codes.
+- [CSS Gradient Generator](https://www.webtoolnest.com/css-gradient-generator): Create linear and radial CSS gradients with multiple color stops and copy the CSS code.
+- [CSS Box Shadow Generator](https://www.webtoolnest.com/box-shadow-generator): Design CSS box shadows visually with offset, blur, spread, color and inset, then copy the code.
+- [HTML / CSS / JS Minifier](https://www.webtoolnest.com/code-minifier): Minify CSS, JavaScript and HTML to reduce file size and speed up your website.
+- [Unix Timestamp Converter](https://www.webtoolnest.com/unix-timestamp-converter): Convert Unix epoch timestamps to human dates and dates back to timestamps, in seconds or milliseconds.
+- [Markdown to HTML](https://www.webtoolnest.com/markdown-to-html): Convert Markdown to clean HTML with a live preview. Supports tables, code blocks and GitHub-flavored Markdown.
+- [CSV to JSON Converter](https://www.webtoolnest.com/csv-to-json): Convert CSV to JSON and JSON to CSV. Handles quoted fields, custom delimiters and header rows.
+- [Number Base Converter](https://www.webtoolnest.com/number-base-converter): Convert numbers between binary, octal, decimal and hexadecimal — or any base from 2 to 36.
+- [SQL Formatter](https://www.webtoolnest.com/sql-formatter): Format and beautify SQL queries for MySQL, PostgreSQL, SQL Server and more, with keyword case options.
+
+## Web & Device
+
+Internet speed test, what is my IP, SEO tag generators, YouTube thumbnails and device tests for keyboard, screen and mouse.
+
+- [Internet Speed Test](https://www.webtoolnest.com/internet-speed-test): Test your internet download speed, upload speed, ping and jitter in seconds — no app needed.
+- [What Is My IP](https://www.webtoolnest.com/what-is-my-ip): See your public IP address, approximate location, ISP and time zone.
+- [YouTube Thumbnail Downloader](https://www.webtoolnest.com/youtube-thumbnail-downloader): Download YouTube video thumbnails in HD, SD and all available sizes from any video or Shorts link.
+- [Meta Tag Generator](https://www.webtoolnest.com/meta-tag-generator): Generate SEO meta tags, Open Graph and Twitter Card tags for your website, with a Google search preview.
+- [UTM Link Builder](https://www.webtoolnest.com/utm-builder): Build campaign URLs with UTM parameters for Google Analytics and track where your traffic comes from.
+- [Robots.txt Generator](https://www.webtoolnest.com/robots-txt-generator): Create a robots.txt file for your website, with rules for search engines and AI crawlers and your sitemap.
+- [URL Slug Generator](https://www.webtoolnest.com/slug-generator): Turn titles into clean, SEO-friendly URL slugs with lowercase words and hyphens.
+- [What Is My Screen Resolution](https://www.webtoolnest.com/screen-resolution): Find your screen resolution, browser window size, device pixel ratio and color depth.
+- [What Is My Browser](https://www.webtoolnest.com/browser-info): Detect your browser, version, operating system, user agent and which features are enabled.
+- [Keyboard Tester](https://www.webtoolnest.com/keyboard-tester): Test every key on your keyboard online and find stuck or broken keys.
+- [Dead Pixel Test](https://www.webtoolnest.com/dead-pixel-test): Check your monitor or phone screen for dead and stuck pixels with full-screen color tests.
+- [CPS Test (Click Speed)](https://www.webtoolnest.com/cps-test): Test how many clicks per second (CPS) you can do in 1, 5, 10 or 30 seconds.
+- [White Screen](https://www.webtoolnest.com/white-screen): A full-screen white screen for lighting, cleaning your monitor, tracing or video calls — plus black, red, green, blue and any custom color.
+- [Black Screen](https://www.webtoolnest.com/black-screen): A full-screen black screen to rest your display, check for backlight bleed, or keep a blank screen while you work. Any other color is one click away.
+- [Spacebar Counter](https://www.webtoolnest.com/spacebar-counter): Test how fast you can press the spacebar. Choose 5, 10, 30 or 60 seconds, or count without a limit, and beat your best score.
+
+## Everyday Utilities
+
+QR codes, barcodes, passwords, signature maker, invoice generator, to-do list and random pickers.
+
+- [QR Code Generator](https://www.webtoolnest.com/qr-code-generator): Create QR codes for links, text, WiFi, email, phone, SMS and contacts (vCard). Custom colors and logo; download PNG or SVG.
+- [QR Code Scanner](https://www.webtoolnest.com/qr-code-scanner): Scan QR codes with your camera or from an image file, right in your browser.
+- [Barcode Generator](https://www.webtoolnest.com/barcode-generator): Generate barcodes in CODE128, EAN-13, UPC, CODE39, ITF and more formats. Download as PNG or SVG.
+- [Password Generator](https://www.webtoolnest.com/password-generator): Generate strong, random and secure passwords with custom length and characters, plus a strength meter.
+- [Password Strength Checker](https://www.webtoolnest.com/password-strength-checker): Check how strong your password is, estimate how long it would take to crack and get tips. Nothing is sent online.
+- [Spin the Wheel](https://www.webtoolnest.com/spin-the-wheel): Random name picker wheel. Add names or options, spin the wheel and pick a random winner.
+- [Flip a Coin](https://www.webtoolnest.com/coin-flip): Flip a virtual coin online for heads or tails, and keep track of your results.
+- [Dice Roller](https://www.webtoolnest.com/dice-roller): Roll one or more virtual dice — D6, D4, D8, D10, D12 or D20 — and see the total.
+- [Signature Generator](https://www.webtoolnest.com/signature-generator): Draw or type your signature and download it as a transparent PNG for documents and emails.
+- [Invoice Generator](https://www.webtoolnest.com/invoice-generator): Create professional invoices with your logo, line items, tax and discount. Download as PDF for free.
+- [To-Do List](https://www.webtoolnest.com/todo-list): A simple online to-do list that saves in your browser. Add tasks, check them off and filter by status.
+- [Tally Counter](https://www.webtoolnest.com/tally-counter): An online tally counter (clicker) for counting people, laps, stitches, tasbih or inventory. Use several named counters, keyboard shortcuts and sound — saved automatically.
+- [Qibla Direction Finder](https://www.webtoolnest.com/qibla-direction): Find the Qibla direction from anywhere in the world in degrees from north, with a compass, the distance to the Kaaba and a live compass on your phone.
+
+## About
+
+- [About ToolNest](https://www.webtoolnest.com/about)
+- [Privacy policy](https://www.webtoolnest.com/privacy-policy)

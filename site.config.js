@@ -3,7 +3,7 @@ module.exports = {
   tagline: 'Free online tools for everyday tasks',
   // Your live domain, no trailing slash. Change this once the custom domain is connected,
   // e.g. 'https://www.yourdomain.com' — canonical links, sitemap and robots.txt all follow it.
-  url: 'https://abdurrehman629.github.io/toolnest',
+  url: 'https://www.webtoolnest.com',
   contactEmail: 'gabdurrehman493@gmail.com',
   contactPhone: '',
   gaId: '',              // Google Analytics 4 ID, e.g. 'G-XXXXXXXXXX'

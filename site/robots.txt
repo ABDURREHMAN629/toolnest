@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://abdurrehman629.github.io/toolnest/sitemap.xml
+Sitemap: https://www.webtoolnest.com/sitemap.xml

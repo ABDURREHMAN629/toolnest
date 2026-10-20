@@ -25,6 +25,7 @@ Merge, split, compress, convert, sign and edit PDF files online for free. Everyt
 - [Watermark PDF](https://www.webtoolnest.com/watermark-pdf): Stamp a text watermark such as CONFIDENTIAL or DRAFT on every page of a PDF with your own opacity, size, color and angle.
 - [PDF to Text](https://www.webtoolnest.com/pdf-to-text): Extract all the text from a PDF file. Copy it to the clipboard or download it as a TXT file.
 - [Sign PDF](https://www.webtoolnest.com/sign-pdf): Add your signature to a PDF online. Draw or type a signature, place it on any page and download the signed document.
+- [PDF Booklet Maker](https://www.webtoolnest.com/pdf-booklet-maker): Turn any PDF into a printable booklet. Pages are rearranged two per sheet so you can print double-sided, fold in half and staple — with A4, Letter, signatures and right-to-left support.
 
 ## Image Tools
 
@@ -86,7 +87,10 @@ CGPA and GPA calculators, ATS resume checker, resume builder, typing test, citat
 - [Resume Builder](https://www.webtoolnest.com/resume-builder): Build a clean, ATS-friendly resume in minutes. Fill in your details, preview it live and download it as a PDF.
 - [Text to Handwriting](https://www.webtoolnest.com/text-to-handwriting): Convert typed text into realistic handwriting on lined paper. Great for assignments — download as image or PDF.
 - [Citation Generator](https://www.webtoolnest.com/citation-generator): Generate APA, MLA, Harvard and Chicago citations for websites, books and journal articles.
-- [Typing Speed Test](https://www.webtoolnest.com/typing-speed-test): Test your typing speed in words per minute (WPM) and accuracy with a 30, 60 or 120 second test.
+- [Typing Speed Test](https://www.webtoolnest.com/typing-speed-test): Test your typing speed in words per minute (WPM) and accuracy with 15-second to 10-minute tests, a punctuation mode, a speed chart and the keys you mistype most.
+- [1 Minute Typing Test](https://www.webtoolnest.com/1-minute-typing-test): Take a free 1 minute typing test and get your WPM, accuracy, characters per minute and the keys you mistype most.
+- [3 Minute Typing Test](https://www.webtoolnest.com/3-minute-typing-test): A 3 minute typing test that measures steady typing speed and accuracy — a length many job and admission typing tests use.
+- [5 Minute Typing Test](https://www.webtoolnest.com/5-minute-typing-test): Take a 5 minute typing test for an accurate words-per-minute score, with accuracy, CPM and a speed chart.
 
 ## Finance Calculators
 
@@ -153,6 +157,7 @@ Age calculator, days between dates, time calculator, stopwatch, countdown and po
 - [Hijri Date Converter](https://www.webtoolnest.com/hijri-date-converter): Convert Gregorian dates to the Islamic Hijri calendar and back, using the Umm al-Qura calendar, with a moon-sighting adjustment for your country.
 - [Military Time Converter](https://www.webtoolnest.com/military-time-converter): Convert military (24-hour) time to standard 12-hour AM/PM time and back, see how it is spoken, and use the full military time chart.
 - [Time to Decimal Converter](https://www.webtoolnest.com/hours-to-decimal): Convert hours and minutes to decimal hours for timesheets and payroll — and decimal hours back to hours and minutes — with an optional pay calculation.
+- [Discord Timestamp Generator](https://www.webtoolnest.com/discord-timestamp-generator): Create Discord timestamps that show the right time for everyone in their own time zone. Copy codes for all 7 styles, including relative "in 2 hours".
 
 ## Text Tools
 
@@ -213,12 +218,23 @@ Internet speed test, what is my IP, SEO tag generators, YouTube thumbnails and d
 - [URL Slug Generator](https://www.webtoolnest.com/slug-generator): Turn titles into clean, SEO-friendly URL slugs with lowercase words and hyphens.
 - [What Is My Screen Resolution](https://www.webtoolnest.com/screen-resolution): Find your screen resolution, browser window size, device pixel ratio and color depth.
 - [What Is My Browser](https://www.webtoolnest.com/browser-info): Detect your browser, version, operating system, user agent and which features are enabled.
-- [Keyboard Tester](https://www.webtoolnest.com/keyboard-tester): Test every key on your keyboard online and find stuck or broken keys.
+- [Keyboard Tester](https://www.webtoolnest.com/keyboard-tester): Test every key on your keyboard online. Choose full-size, TKL, 75%, 65%, 60%, laptop (Dell, HP, Lenovo, ASUS, Acer) or MacBook layouts, and check ghosting and double presses.
+- [Laptop Keyboard Test](https://www.webtoolnest.com/laptop-keyboard-test): Test every key on your laptop keyboard online — function row, arrow keys and the number pad found on 15 and 17 inch laptops.
+- [Dell Keyboard Test](https://www.webtoolnest.com/dell-keyboard-test): Test every key on your Dell laptop keyboard online — Inspiron, Latitude, Vostro, XPS and G series. Find dead, stuck or double-typing keys.
+- [HP Keyboard Test](https://www.webtoolnest.com/hp-keyboard-test): Test every key on your HP laptop keyboard online — Pavilion, Victus, EliteBook, ProBook, Envy and Omen. Find dead, stuck or double-typing keys.
+- [Lenovo Keyboard Test](https://www.webtoolnest.com/lenovo-keyboard-test): Test every key on your Lenovo keyboard online with the ThinkPad and IdeaPad layout — Fn on the left, PgUp and PgDn beside the arrows.
+- [ASUS Keyboard Test](https://www.webtoolnest.com/asus-keyboard-test): Test every key on your ASUS laptop keyboard online — VivoBook, ZenBook, TUF and ROG. Find dead, stuck or double-typing keys.
+- [Acer Keyboard Test](https://www.webtoolnest.com/acer-keyboard-test): Test every key on your Acer laptop keyboard online — Aspire, Swift, Nitro and Predator. Find dead, stuck or double-typing keys.
+- [MacBook Keyboard Test](https://www.webtoolnest.com/macbook-keyboard-test): Test every key on your MacBook Air or MacBook Pro keyboard online with the Apple layout — command, option, control and the function row.
+- [Keyboard Ghosting Test](https://www.webtoolnest.com/keyboard-ghosting-test): Check how many keys your keyboard can register at the same time. Find ghosting and key-rollover limits on gaming and office keyboards.
 - [Dead Pixel Test](https://www.webtoolnest.com/dead-pixel-test): Check your monitor or phone screen for dead and stuck pixels with full-screen color tests.
 - [CPS Test (Click Speed)](https://www.webtoolnest.com/cps-test): Test how many clicks per second (CPS) you can do in 1, 5, 10 or 30 seconds.
 - [White Screen](https://www.webtoolnest.com/white-screen): A full-screen white screen for lighting, cleaning your monitor, tracing or video calls — plus black, red, green, blue and any custom color.
 - [Black Screen](https://www.webtoolnest.com/black-screen): A full-screen black screen to rest your display, check for backlight bleed, or keep a blank screen while you work. Any other color is one click away.
 - [Spacebar Counter](https://www.webtoolnest.com/spacebar-counter): Test how fast you can press the spacebar. Choose 5, 10, 30 or 60 seconds, or count without a limit, and beat your best score.
+- [Controller Tester](https://www.webtoolnest.com/gamepad-tester): Test your PS5, PS4, Xbox, Switch Pro or PC controller online: every button, both sticks, triggers, stick drift and vibration.
+- [Stick Drift Test](https://www.webtoolnest.com/stick-drift-test): Check your controller for stick drift in 5 seconds. See exactly how far each analog stick moves when nobody is touching it.
+- [Mouse Double Click Test](https://www.webtoolnest.com/mouse-double-click-test): Check if your mouse double-clicks by itself. Test left, right, middle and side buttons plus the scroll wheel, with a click-by-click log.
 
 ## Everyday Utilities
 
@@ -236,6 +252,11 @@ QR codes, barcodes, passwords, signature maker, invoice generator, to-do list an
 - [Invoice Generator](https://www.webtoolnest.com/invoice-generator): Create professional invoices with your logo, line items, tax and discount. Download as PDF for free.
 - [To-Do List](https://www.webtoolnest.com/todo-list): A simple online to-do list that saves in your browser. Add tasks, check them off and filter by status.
 - [Tally Counter](https://www.webtoolnest.com/tally-counter): An online tally counter (clicker) for counting people, laps, stitches, tasbih or inventory. Use several named counters, keyboard shortcuts and sound — saved automatically.
+- [VCF Converter (Contacts)](https://www.webtoolnest.com/vcf-converter): Convert contacts between CSV, Excel and VCF (vCard) files. Move contacts to iPhone, Android, Gmail or Outlook — privately, without uploading them.
+- [CSV to VCF](https://www.webtoolnest.com/csv-to-vcf): Convert a CSV file of names and phone numbers into a VCF (vCard) contacts file you can import on iPhone, Android, Gmail and Outlook.
+- [Excel to VCF](https://www.webtoolnest.com/excel-to-vcf): Convert an Excel sheet (XLSX or XLS) of contacts into a VCF file in seconds — hundreds of contacts at once.
+- [VCF to CSV](https://www.webtoolnest.com/vcf-to-csv): Convert a VCF (vCard) contacts file into a CSV spreadsheet with names, phone numbers and emails in separate columns.
+- [VCF to Excel](https://www.webtoolnest.com/vcf-to-excel): Open VCF contacts in Excel: convert a vCard file into an XLSX spreadsheet with one row per contact.
 - [Qibla Direction Finder](https://www.webtoolnest.com/qibla-direction): Find the Qibla direction from anywhere in the world in degrees from north, with a compass, the distance to the Kaaba and a live compass on your phone.
 
 ## About

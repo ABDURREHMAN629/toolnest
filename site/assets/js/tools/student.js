@@ -474,39 +474,67 @@ The water cycle describes how water moves between the earth and the atmosphere. 
 
   const COMMON = 'the be to of and a in that have it for not on with he as you do at this but his by from they we say her she or an will my one all would there their what so up out if about who get which go me when make can like time no just him know take people into year your good some could them see other than then now look only come its over think also back after use two how our work first well way even new want because any these give day most us is was are were been has had did said each tell does set three air play small end put home read hand port large spell add land here must big high such follow act why ask men change went light kind off need house picture try again animal point mother world near build self earth father head stand own page should country found answer school grow study still learn plant cover food sun four between state keep eye never last let thought city tree cross farm hard start might story saw far sea draw left late run while press close night real life few north open seem together next white children begin got walk example ease paper group always music those both mark often letter until mile river car feet care second book carry took science eat room friend began idea fish mountain stop once base hear horse cut sure watch color face wood main enough plain girl usual young ready above ever red list though feel talk bird soon body dog family direct pose leave song measure door product black short numeral class wind question happen complete ship area half rock order fire south problem piece told knew pass since top whole king space heard best hour better true during hundred five remember step early hold west ground interest reach fast verb sing listen six table travel less morning ten simple several vowel toward war lay against pattern slow center love person money serve appear road map rain rule govern pull cold notice voice unit power town fine certain fly fall lead cry dark machine note wait plan figure star box noun field rest correct able pound done beauty drive stood contain front teach week final gave green oh quick develop ocean warm free minute strong special mind behind clear tail produce fact street inch multiply nothing course stay wheel full force blue object decide surface deep moon island foot system busy test record boat common gold possible plane age dry wonder laugh thousand ago ran check game shape yes hot miss brought heat snow tire bring distant fill east paint language among'.split(' ');
   const SENTENCES = ['Practice makes progress, so keep your eyes on the screen and your fingers on the home row.', 'A small habit repeated every day can change the direction of your whole year.', 'The best way to learn something new is to teach it to someone else.', 'Good typing is about rhythm and accuracy first; speed follows naturally with time.', 'Bright mornings in Lahore often begin with fresh bread, warm tea and busy streets.', 'Technology moves quickly, but curiosity and patience never go out of style.', 'She checked the weather, packed an umbrella and walked to the station before eight.', 'Clear writing comes from clear thinking, so plan your ideas before you begin.', 'The library was quiet except for the soft sound of pages turning in the afternoon.', 'Every expert was once a beginner who refused to give up after the first mistake.', 'Our team shipped the update on Friday, fixed two bugs and celebrated with pizza.', 'Mountains look close in the morning light, yet the trail to the top is long and steep.'];
-  Tools.define('typing-speed-test', root => {
+  const DUR_LABEL = d => (d < 60 ? d + ' sec' : d / 60 + ' min');
+  Tools.define('typing-speed-test', (root, preset) => {
     root.innerHTML = `<div class="stack"><div class="row" style="align-items:flex-end"><div class="field small"><label>Duration</label><div class="dur"></div></div><div class="field small"><label>Text</label><div class="mode"></div></div><button class="btn ghost restart">↻ Restart</button></div>
       <div class="results live"></div>
       <div class="box" style="position:relative;height:150px;overflow:hidden;padding:14px 18px;background:var(--bg);border:1px solid var(--border);border-radius:14px;font-family:var(--mono);font-size:1.35rem;line-height:2.2;cursor:text"><div class="words"></div></div>
       <input class="input typer" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Click here and start typing — the timer starts on your first key" aria-label="Type here">
       <div class="final"></div></div>`;
     const $ = UI.q(root);
-    let dur = 60, mode = 'words', target = '', spans = [], timer = null, start = 0, done = false, typed = '';
-    const best = () => UI.store.get('typing-best', 0);
-    $('.dur').append(UI.seg([['30', '30s'], ['60', '60s'], ['120', '2 min']], '60', v => { dur = +v; reset(); }));
-    $('.mode').append(UI.seg([['words', 'Common words'], ['sentences', 'Sentences']], 'words', v => { mode = v; reset(); }));
-    const gen = () => { let t = ''; if (mode === 'words') { while (t.length < dur * 14) t += COMMON[Math.floor(Math.random() * COMMON.length)] + ' '; } else { const s = [...SENTENCES].sort(() => Math.random() - 0.5); let k = 0; while (t.length < dur * 14) t += s[k++ % s.length] + ' '; } return t.trim(); };
-    const stats = () => { const el = start ? (Date.now() - start) / 1000 : 0; let ok = 0; for (let i = 0; i < typed.length; i++) if (typed[i] === target[i]) ok++; const min = Math.max(el, 1) / 60; return { el, ok, err: typed.length - ok, wpm: Math.round(ok / 5 / min), raw: Math.round(typed.length / 5 / min), acc: typed.length ? Math.round(ok / typed.length * 100) : 100 }; };
-    const showLive = () => { const s = stats(); $('.live').innerHTML = UI.resultsHTML([{ k: 'Time left', v: Math.max(0, Math.ceil(dur - s.el)) + 's' }, { k: 'WPM', v: start ? s.wpm : 0 }, { k: 'Accuracy', v: s.acc + '%' }, { k: 'Personal best', v: best() + ' WPM' }]); };
+    const DURS = [15, 30, 60, 120, 180, 300, 600];
+    let dur = DURS.includes(+preset.dur) ? +preset.dur : 60, mode = 'words', target = '', spans = [], timer = null, start = 0, done = false, typed = '', miss = {}, samples = [];
+    const best = () => UI.store.get('typing-best-' + dur, dur === 60 ? UI.store.get('typing-best', 0) : 0);
+    $('.dur').append(UI.seg(DURS.map(d => [String(d), DUR_LABEL(d)]), String(dur), v => { dur = +v; reset(); }));
+    $('.mode').append(UI.seg([['words', 'Common words'], ['punct', 'Punctuation & numbers'], ['sentences', 'Sentences']], 'words', v => { mode = v; reset(); }));
+    const pick = a => a[Math.floor(Math.random() * a.length)];
+    const gen = () => {
+      let t = '';
+      if (mode === 'sentences') { const s = [...SENTENCES].sort(() => Math.random() - 0.5); let k = 0; while (t.length < dur * 14) t += s[k++ % s.length] + ' '; }
+      else while (t.length < dur * 14) {
+        let w = pick(COMMON);
+        if (mode === 'punct') {
+          const r = Math.random();
+          if (r < 0.12) w = String(Math.floor(Math.random() * (r < 0.04 ? 2030 : 100)));
+          else if (r < 0.3) w = w[0].toUpperCase() + w.slice(1);
+          w += Math.random() < 0.22 ? pick([',', ',', '.', '.', '?', '!', ';', ':']) : '';
+          if (Math.random() < 0.04) w = `"${w}"`; else if (Math.random() < 0.03) w = `(${w})`;
+        }
+        t += w + ' ';
+      }
+      return t.trim();
+    };
+    const stats = () => { const el = start ? (Date.now() - start) / 1000 : 0; let ok = 0; for (let i = 0; i < typed.length; i++) if (typed[i] === target[i]) ok++; const min = Math.max(el, 1) / 60; return { el, ok, err: typed.length - ok, wpm: Math.round(ok / 5 / min), raw: Math.round(typed.length / 5 / min), cpm: Math.round(ok / min), acc: typed.length ? Math.round(ok / typed.length * 100) : 100 }; };
+    const showLive = () => { const s = stats(); $('.live').innerHTML = UI.resultsHTML([{ k: 'Time left', v: UI.fmtTime(Math.max(0, Math.ceil(dur - s.el))) }, { k: 'WPM', v: start ? s.wpm : 0 }, { k: 'Accuracy', v: s.acc + '%' }, { k: `Best (${DUR_LABEL(dur)})`, v: best() + ' WPM' }]); };
     const reset = () => {
-      clearInterval(timer); timer = null; start = 0; done = false; typed = ''; target = gen();
+      clearInterval(timer); timer = null; start = 0; done = false; typed = ''; miss = {}; samples = []; target = gen();
       $('.words').innerHTML = [...target].map(c => `<span>${c === ' ' ? ' ' : esc(c)}</span>`).join('');
       spans = [...$('.words').children]; spans[0].style.borderLeft = '2px solid var(--primary)';
       $('.typer').value = ''; $('.typer').disabled = false; $('.final').innerHTML = ''; $('.words').style.transform = '';
       showLive();
     };
+    const spark = () => {
+      if (samples.length < 3) return '';
+      const W = 600, H = 90, mx = Math.max(...samples, 10), pts = samples.map((v, i) => `${(i / (samples.length - 1) * W).toFixed(1)},${(H - v / mx * (H - 10) - 4).toFixed(1)}`).join(' ');
+      return `<div class="card-sub mt"><div class="small muted">Your speed during the test (WPM, peak ${Math.max(...samples)})</div><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="width:100%;height:90px;display:block"><polyline points="${pts}" fill="none" stroke="var(--primary)" stroke-width="2.5" vector-effect="non-scaling-stroke"/></svg></div>`;
+    };
     const finish = () => {
       done = true; clearInterval(timer); $('.typer').disabled = true;
-      const s = stats(), b = best(); if (s.wpm > b) UI.store.set('typing-best', s.wpm);
+      const s = stats(), b = best(); if (s.wpm > b) UI.store.set('typing-best-' + dur, s.wpm);
       const lvl = s.wpm >= 70 ? 'Excellent — professional typist level! 🚀' : s.wpm >= 50 ? 'Great — faster than most people. 👏' : s.wpm >= 35 ? 'Good — that is around the average typing speed.' : 'Keep practicing — accuracy first, then speed.';
-      $('.final').innerHTML = UI.resultsHTML([{ k: 'Your typing speed', v: s.wpm + ' WPM', main: true, s: lvl + (s.wpm > b ? ' New personal best!' : '') }, { k: 'Accuracy', v: s.acc + '%' }, { k: 'Raw speed', v: s.raw + ' WPM' }, { k: 'Correct characters', v: s.ok }, { k: 'Mistakes', v: s.err }]) + '<div class="btn-row mt"><button class="btn again">↻ Try again</button></div>';
+      const worst = Object.entries(miss).sort((a, b) => b[1] - a[1]).slice(0, 6);
+      $('.final').innerHTML = UI.resultsHTML([{ k: 'Your typing speed', v: s.wpm + ' WPM', main: true, s: lvl + (s.wpm > b ? ' New personal best!' : '') }, { k: 'Accuracy', v: s.acc + '%' }, { k: 'Characters per minute', v: s.cpm + ' CPM' }, { k: 'Raw speed', v: s.raw + ' WPM', s: 'including mistakes' }, { k: 'Mistakes', v: s.err }])
+        + (worst.length ? `<p class="small mt">Keys to practice: ${worst.map(([c, n]) => `<kbd>${c === ' ' ? 'Space' : esc(c)}</kbd> ×${n}`).join(' ')}</p>` : '')
+        + spark() + '<div class="btn-row mt"><button class="btn again">↻ Try again</button></div>';
       $('.final .again').onclick = () => { reset(); $('.typer').focus(); };
       showLive();
     };
     $('.typer').addEventListener('input', e => {
       if (done) return;
-      if (!start) { start = Date.now(); timer = setInterval(() => { showLive(); if ((Date.now() - start) / 1000 >= dur) finish(); }, 200); }
+      if (!start) { start = Date.now(); let lastSec = 0; timer = setInterval(() => { const el = (Date.now() - start) / 1000; if (Math.floor(el) > lastSec) { lastSec = Math.floor(el); samples.push(stats().wpm); } showLive(); if (el >= dur) finish(); }, 200); }
+      const prev = typed.length;
       typed = e.target.value.slice(0, target.length);
+      for (let i = prev; i < typed.length; i++) if (typed[i] !== target[i]) miss[target[i]] = (miss[target[i]] || 0) + 1;
       spans.forEach((sp, i) => { sp.style.borderLeft = ''; sp.style.color = i < typed.length ? (typed[i] === target[i] ? 'var(--success)' : 'var(--danger)') : ''; sp.style.background = i < typed.length && typed[i] !== target[i] ? 'var(--danger-soft)' : ''; });
       const cur = spans[typed.length]; if (cur) { cur.style.borderLeft = '2px solid var(--primary)'; const top = cur.offsetTop; $('.words').style.transform = `translateY(${-Math.max(0, top - 50)}px)`; }
       if (typed.length >= target.length) finish(); else showLive();

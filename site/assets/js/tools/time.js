@@ -433,4 +433,55 @@
       },
     });
   });
+
+  // Discord renders <t:UNIX:STYLE> in each reader's own time zone and language; previews here use the visitor's locale.
+  const DISCORD_STYLES = [
+    ['t', 'Short time', { timeStyle: 'short' }], ['T', 'Long time', { timeStyle: 'medium' }],
+    ['d', 'Short date', { dateStyle: 'short' }], ['D', 'Long date', { dateStyle: 'long' }],
+    ['f', 'Short date & time (default)', { dateStyle: 'long', timeStyle: 'short' }], ['F', 'Long date & time', { dateStyle: 'full', timeStyle: 'short' }],
+    ['R', 'Relative time', null],
+  ];
+  const relTime = ms => {
+    const s = Math.round((ms - Date.now()) / 1000), a = Math.abs(s), rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+    const [n, u] = a < 45 ? [s, 'second'] : a < 2700 ? [s / 60, 'minute'] : a < 79200 ? [s / 3600, 'hour'] : a < 2246400 ? [s / 86400, 'day'] : a < 29808000 ? [s / 2629800, 'month'] : [s / 31557600, 'year'];
+    return rtf.format(Math.round(n), u);
+  };
+  Tools.define('discord-timestamp-generator', root => {
+    const here = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+    const next = new Date(Math.ceil(Date.now() / 3.6e6) * 3.6e6), pad = n => String(n).padStart(2, '0');
+    root.innerHTML = `<div class="stack">
+      <div class="row" style="align-items:flex-end">
+        <div class="field"><label>Date & time</label><input class="input dt" type="datetime-local" step="60" value="${next.getFullYear()}-${pad(next.getMonth() + 1)}-${pad(next.getDate())}T${pad(next.getHours())}:00"></div>
+        <div class="field"><label>Time zone of that time</label><select class="select tz">${ZONES.map(z => `<option${z === here ? ' selected' : ''}>${esc(z)}</option>`).join('')}</select></div>
+        <div class="field" style="justify-content:flex-end"><div class="btn-row"><button class="btn sm ghost now">Now</button><button class="btn sm ghost plus" data-h="1">+1 hour</button><button class="btn sm ghost plus" data-h="24">+1 day</button></div></div>
+      </div>
+      <div class="small muted unix"></div>
+      <div class="table-wrap"><table class="table"><thead><tr><th>Style</th><th>Paste this in Discord</th><th>Shows as</th><th></th></tr></thead><tbody class="tb"></tbody></table></div>
+      <div class="card-sub stack"><strong>Decode a timestamp</strong><div class="row" style="align-items:flex-end"><div class="field grow"><label>Discord timestamp or Unix time</label><input class="input dec" placeholder="&lt;t:1792500000:F&gt; or 1792500000"></div></div><div class="small decout"></div></div>
+    </div>`;
+    const $ = UI.q(root);
+    let unix = 0;
+    const calc = () => {
+      const m = $('.dt').value.match(/^(\d{4})-(\d\d)-(\d\d)T(\d\d):(\d\d)/);
+      if (!m) { $('.tb').innerHTML = ''; return; }
+      unix = Math.floor(wallToUtc(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], $('.tz').value) / 1000);
+      const ms = unix * 1000;
+      $('.unix').innerHTML = `Unix timestamp: <strong class="mono">${unix}</strong> · Your local time: ${esc(new Date(ms).toLocaleString('en', { dateStyle: 'full', timeStyle: 'short' }))}`;
+      $('.tb').innerHTML = DISCORD_STYLES.map(([s, name, f]) => `<tr><td>${esc(name)}</td><td class="mono">&lt;t:${unix}:${s}&gt;</td><td>${esc(f ? new Intl.DateTimeFormat('en', f).format(ms) : relTime(ms))}</td><td><button class="btn sm cp" data-c="<t:${unix}:${s}>">📋 Copy</button></td></tr>`).join('');
+    };
+    root.addEventListener('click', e => { const b = e.target.closest('.cp'); if (b) UI.copy(b.dataset.c, 'Copied — paste it into your Discord message'); });
+    const setDate = d => { $('.tz').value = here; $('.dt').value = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`; calc(); };
+    $('.now').onclick = () => setDate(new Date());
+    root.querySelectorAll('.plus').forEach(b => b.onclick = () => setDate(new Date(unix * 1000 + +b.dataset.h * 3.6e6)));
+    $('.dt').oninput = calc; $('.tz').onchange = calc;
+    $('.dec').oninput = () => {
+      const v = $('.dec').value.trim(), m = v.match(/<?t:(-?\d+)(?::([tTdDfFR]))?>?/) || v.match(/^(-?\d{9,13})$/);
+      if (!v) { $('.decout').innerHTML = ''; return; }
+      if (!m) { $('.decout').innerHTML = '<span style="color:var(--danger)">Paste something like &lt;t:1792500000:F&gt; or a Unix time.</span>'; return; }
+      let ms = +m[1]; if (String(Math.abs(ms)).length <= 11) ms *= 1000;
+      $('.decout').innerHTML = `📅 <strong>${esc(new Date(ms).toLocaleString('en', { dateStyle: 'full', timeStyle: 'long' }))}</strong> (${esc(relTime(ms))}) · UTC: ${esc(new Date(ms).toISOString().replace('T', ' ').slice(0, 19))}`;
+    };
+    calc();
+    const tick = setInterval(() => { if (!root.isConnected) return clearInterval(tick); calc(); }, 30000);
+  });
 })();

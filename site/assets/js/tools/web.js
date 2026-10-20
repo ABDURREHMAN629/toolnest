@@ -174,29 +174,186 @@
     })();
   });
 
-  const KB = [
-    [['Escape', 'Esc', 1.5], ['F1'], ['F2'], ['F3'], ['F4'], ['F5'], ['F6'], ['F7'], ['F8'], ['F9'], ['F10'], ['F11'], ['F12'], ['Delete', 'Del', 1.5]],
-    [['Backquote', '`'], ['Digit1', '1'], ['Digit2', '2'], ['Digit3', '3'], ['Digit4', '4'], ['Digit5', '5'], ['Digit6', '6'], ['Digit7', '7'], ['Digit8', '8'], ['Digit9', '9'], ['Digit0', '0'], ['Minus', '-'], ['Equal', '='], ['Backspace', '⌫ Back', 2]],
-    [['Tab', 'Tab', 1.5], ...'QWERTYUIOP'.split('').map(c => ['Key' + c, c]), ['BracketLeft', '['], ['BracketRight', ']'], ['Backslash', '\\', 1.5]],
-    [['CapsLock', 'Caps', 1.8], ...'ASDFGHJKL'.split('').map(c => ['Key' + c, c]), ['Semicolon', ';'], ['Quote', "'"], ['Enter', 'Enter ⏎', 2.2]],
-    [['ShiftLeft', 'Shift', 2.4], ...'ZXCVBNM'.split('').map(c => ['Key' + c, c]), ['Comma', ','], ['Period', '.'], ['Slash', '/'], ['ShiftRight', 'Shift', 2.6]],
-    [['ControlLeft', 'Ctrl', 1.4], ['MetaLeft', 'Win', 1.2], ['AltLeft', 'Alt', 1.2], ['Space', 'Space', 6.2], ['AltRight', 'Alt', 1.2], ['ContextMenu', 'Menu', 1.2], ['ControlRight', 'Ctrl', 1.4], ['ArrowLeft', '←'], ['ArrowUp', '↑'], ['ArrowDown', '↓'], ['ArrowRight', '→']],
-  ];
-  Tools.define('keyboard-tester', root => {
-    root.innerHTML = `<div class="stack"><div class="row" style="align-items:center;justify-content:space-between"><div class="small">Press any key. Last key: <strong class="last">—</strong> <span class="muted info"></span></div><div class="btn-row"><span class="badge cnt">0 keys tested</span><button class="btn sm ghost rst">Reset</button></div></div>
-      <div class="kb scroll-x" style="padding:10px;background:var(--bg);border:1px solid var(--border);border-radius:14px">${KB.map(r => `<div style="display:flex;gap:5px;margin-bottom:5px;min-width:720px">${r.map(([code, label, w]) => `<div class="k" data-code="${code}" style="flex:${w || 1};height:46px;display:grid;place-items:center;border:1px solid var(--border);border-bottom-width:3px;border-radius:8px;background:var(--card);font-size:.8rem;font-weight:600;user-select:none;transition:background .1s">${esc(label || code)}</div>`).join('')}</div>`).join('')}</div>
-      <p class="small muted">Tested keys turn green. Keys that stay grey after pressing may be faulty. Some keys (Fn, Print Screen, media keys) cannot be detected by browsers.</p></div>`;
-    const $ = UI.q(root), tested = new Set();
-    const onKey = e => {
-      if (!root.isConnected) return document.removeEventListener('keydown', onKey);
-      if (!(e.ctrlKey && /^(KeyR|KeyW|KeyT|F5)$/.test(e.code))) e.preventDefault();
-      tested.add(e.code);
-      const el = root.querySelector(`[data-code="${e.code}"]`);
-      if (el) { el.style.background = 'var(--primary)'; el.style.color = '#fff'; setTimeout(() => { el.style.background = 'var(--success-soft)'; el.style.color = ''; el.style.borderColor = 'var(--success)'; }, 140); }
-      $('.last').textContent = e.key === ' ' ? 'Space' : e.key; $('.info').textContent = `code: ${e.code} · keyCode: ${e.keyCode}`; $('.cnt').textContent = `${tested.size} keys tested`;
+  // Keyboard layouts are built from rows of keys measured in "units" (1u = one letter key), then drawn with
+  // percentage positions so the whole board scales to any width. [code, label, width, height, dy]; a bare number is a gap.
+  const KR = {
+    num: [['Backquote', '`'], ...'1234567890'.split('').map(d => ['Digit' + d, d]), ['Minus', '-'], ['Equal', '=']],
+    q: [...'QWERTYUIOP'.split('').map(c => ['Key' + c, c]), ['BracketLeft', '['], ['BracketRight', ']']],
+    a: [...'ASDFGHJKL'.split('').map(c => ['Key' + c, c]), ['Semicolon', ';'], ['Quote', "'"]],
+    z: [...'ZXCVBNM'.split('').map(c => ['Key' + c, c]), ['Comma', ','], ['Period', '.'], ['Slash', '/']],
+  };
+  const fkeys = (a, b, w = 1) => Array.from({ length: b - a + 1 }, (_, i) => ['F' + (a + i), 'F' + (a + i), w]);
+  function place(out, y, x, items, h = 1) {
+    for (const it of items) {
+      if (typeof it === 'number') { x += it; continue; }
+      const [code, label, w = 1, kh = h, dy = 0] = it;
+      out.push({ code, label: label || code, x, y: y + dy, w, h: kh });
+      x += w;
+    }
+    return x;
+  }
+  // Inverted-T arrow cluster with half-height keys, as on most laptops. Optional keys above ← and → (ThinkPad PgUp/PgDn).
+  const halfArrows = (out, x, y, above) => {
+    if (above) { out.push({ code: above[0], label: above[1], x, y, w: 1, h: 0.5 }, { code: above[2], label: above[3], x: x + 2, y, w: 1, h: 0.5 }); }
+    out.push({ code: 'ArrowUp', label: '↑', x: x + 1, y, w: 1, h: 0.5 }, { code: 'ArrowLeft', label: '←', x, y: y + 0.5, w: 1, h: 0.5 }, { code: 'ArrowDown', label: '↓', x: x + 1, y: y + 0.5, w: 1, h: 0.5 }, { code: 'ArrowRight', label: '→', x: x + 2, y: y + 0.5, w: 1, h: 0.5 });
+  };
+  // The four alphanumeric rows shared by every layout. Returns the y of the bottom row.
+  function letterRows(out, y, { iso, mac, right = [] }) {
+    const L = mac ? { bs: 'delete', tab: 'tab', caps: 'caps lock', enter: 'return', shift: 'shift' } : { bs: 'Backspace', tab: 'Tab', caps: 'Caps Lock', enter: 'Enter', shift: 'Shift' };
+    const w = right.length ? 14 : 15; // compact boards shorten right Shift to fit ↑
+    place(out, y, 0, [...KR.num, ['Backspace', L.bs, 2], ...(right[0] || [])]);
+    if (iso) {
+      place(out, y + 1, 0, [['Tab', L.tab, 1.5], ...KR.q]);
+      out.push({ code: 'Enter', label: L.enter, x: 13.75, y: y + 1, w: 1.25, h: 2 });
+      place(out, y + 1, 15, right[1] || []);
+      place(out, y + 2, 0, [['CapsLock', L.caps, 1.75], ...KR.a, ['Backslash', '#']]);
+      place(out, y + 2, 15, right[2] || []);
+      place(out, y + 3, 0, [['ShiftLeft', L.shift, 1.25], ['IntlBackslash', '\\'], ...KR.z, ['ShiftRight', L.shift, w === 15 ? 2.75 : 1.75], ...(right[3] || [])]);
+    } else {
+      place(out, y + 1, 0, [['Tab', L.tab, 1.5], ...KR.q, ['Backslash', '\\', 1.5], ...(right[1] || [])]);
+      place(out, y + 2, 0, [['CapsLock', L.caps, 1.75], ...KR.a, ['Enter', L.enter, 2.25], ...(right[2] || [])]);
+      place(out, y + 3, 0, [['ShiftLeft', L.shift, 2.25], ...KR.z, ['ShiftRight', L.shift, w === 15 ? 2.75 : 1.75], ...(right[3] || [])]);
+    }
+    return y + 4;
+  }
+  const DESK_BOTTOM = [['ControlLeft', 'Ctrl', 1.25], ['MetaLeft', 'Win', 1.25], ['AltLeft', 'Alt', 1.25], ['Space', 'Space', 6.25], ['AltRight', 'Alt', 1.25], ['MetaRight', 'Win', 1.25], ['ContextMenu', 'Menu', 1.25], ['ControlRight', 'Ctrl', 1.25]];
+  const FN = [null, 'Fn'];
+  const numpad = (out, x, y) => {
+    place(out, y, x, [['NumLock', 'Num'], ['NumpadDivide', '/'], ['NumpadMultiply', '*'], ['NumpadSubtract', '−']]);
+    place(out, y + 1, x, [['Numpad7', '7'], ['Numpad8', '8'], ['Numpad9', '9'], ['NumpadAdd', '+', 1, 2]]);
+    place(out, y + 2, x, [['Numpad4', '4'], ['Numpad5', '5'], ['Numpad6', '6']]);
+    place(out, y + 3, x, [['Numpad1', '1'], ['Numpad2', '2'], ['Numpad3', '3'], ['NumpadEnter', 'Enter', 1, 2]]);
+    place(out, y + 4, x, [['Numpad0', '0', 2], ['NumpadDecimal', '.']]);
+  };
+  const KB_LAYOUTS = {
+    full: { name: 'Full-size (100%) with numpad', group: 'Desktop' },
+    tkl: { name: 'Tenkeyless (TKL, 87%)', group: 'Desktop' },
+    '75': { name: '75% compact', group: 'Desktop' },
+    '65': { name: '65% compact', group: 'Desktop' },
+    '60': { name: '60% mini', group: 'Desktop' },
+    laptop: { name: 'Windows laptop (Dell, HP, ASUS, Acer…)', group: 'Laptop', numpadOpt: true },
+    lenovo: { name: 'Lenovo ThinkPad / IdeaPad', group: 'Laptop', numpadOpt: true },
+    mac: { name: 'Apple MacBook', group: 'Laptop' },
+  };
+  function buildKeyboard(id, { iso = false, pad = false } = {}) {
+    const k = [];
+    if (id === 'full' || id === 'tkl' || id === '60') {
+      if (id !== '60') {
+        place(k, 0, 0, [['Escape', 'Esc'], 1, ...fkeys(1, 4), 0.5, ...fkeys(5, 8), 0.5, ...fkeys(9, 12)]);
+        place(k, 0, 15.25, [['PrintScreen', 'PrtSc'], ['ScrollLock', 'ScrLk'], ['Pause', 'Pause']]);
+      }
+      const y = id === '60' ? 0 : 1.5;
+      const yb = letterRows(k, y, { iso });
+      place(k, yb, 0, DESK_BOTTOM);
+      if (id !== '60') {
+        place(k, y, 15.25, [['Insert', 'Ins'], ['Home', 'Home'], ['PageUp', 'PgUp']]);
+        place(k, y + 1, 15.25, [['Delete', 'Del'], ['End', 'End'], ['PageDown', 'PgDn']]);
+        place(k, y + 3, 16.25, [['ArrowUp', '↑']]);
+        place(k, yb, 15.25, [['ArrowLeft', '←'], ['ArrowDown', '↓'], ['ArrowRight', '→']]);
+      }
+      if (id === 'full') numpad(k, 18.5, y);
+    } else if (id === '75' || id === '65') {
+      let y = 0;
+      if (id === '75') { place(k, 0, 0, [['Escape', 'Esc'], 0.25, ...fkeys(1, 4), 0.25, ...fkeys(5, 8), 0.25, ...fkeys(9, 12), 0.25, ['PrintScreen', 'PrtSc'], ['Delete', 'Del']]); y = 1.25; }
+      const yb = letterRows(k, y, { iso, right: [[[id === '75' ? 'Home' : 'Delete', id === '75' ? 'Home' : 'Del']], [['PageUp', 'PgUp']], [['PageDown', 'PgDn']], [['ArrowUp', '↑'], ['End', 'End']]] });
+      place(k, yb, 0, [['ControlLeft', 'Ctrl', 1.25], ['MetaLeft', 'Win', 1.25], ['AltLeft', 'Alt', 1.25], ['Space', 'Space', 6.25], ['AltRight', 'Alt'], FN, ['ControlRight', 'Ctrl'], ['ArrowLeft', '←'], ['ArrowDown', '↓'], ['ArrowRight', '→']]);
+    } else if (id === 'mac') {
+      place(k, 0, 0, [['Escape', 'esc', 1.5], ...fkeys(1, 12, 1.0417), [null, 'Touch ID']], 0.6);
+      const yb = letterRows(k, 0.75, { iso, mac: true });
+      place(k, yb, 0, [FN, ['ControlLeft', 'control'], ['AltLeft', 'option'], ['MetaLeft', 'command', 1.25], ['Space', '', 5.5], ['MetaRight', 'command', 1.25], ['AltRight', 'option']]);
+      halfArrows(k, 12, yb);
+    } else { // Windows laptops; Lenovo moves Fn to the far left, PrtSc next to the arrows and PgUp/PgDn above ← →
+      const len = id === 'lenovo';
+      place(k, 0, 0, [['Escape', 'Esc', 15 / 16], ...fkeys(1, 12, 15 / 16), ...(len ? [['Home', 'Home', 15 / 16], ['End', 'End', 15 / 16], ['Delete', 'Del', 15 / 16]] : [['PrintScreen', 'PrtSc', 15 / 16], ['Insert', 'Ins', 15 / 16], ['Delete', 'Del', 15 / 16]])], 0.6);
+      const yb = letterRows(k, 0.75, { iso });
+      place(k, yb, 0, len
+        ? [FN, ['ControlLeft', 'Ctrl', 1.25], ['MetaLeft', 'Win'], ['AltLeft', 'Alt'], ['Space', 'Space', 4.75], ['AltRight', 'Alt'], ['PrintScreen', 'PrtSc'], ['ControlRight', 'Ctrl']]
+        : [['ControlLeft', 'Ctrl', 1.25], FN, ['MetaLeft', 'Win'], ['AltLeft', 'Alt'], ['Space', 'Space', 4.75], ['AltRight', 'Alt'], ['ContextMenu', 'Menu'], ['ControlRight', 'Ctrl']]);
+      halfArrows(k, 12, yb, len ? ['PageUp', 'PgUp', 'PageDown', 'PgDn'] : null);
+      if (pad) numpad(k, 15.25, 0.75);
+    }
+    return k;
+  }
+
+  Tools.define('keyboard-tester', (root, preset) => {
+    const opts = Object.entries(KB_LAYOUTS);
+    const groups = [...new Set(opts.map(([, l]) => l.group))];
+    let layout = preset.layout || UI.store.get('kb-layout', 'full'), iso = !!UI.store.get('kb-iso', false), pad = preset.pad != null ? preset.pad : !!UI.store.get('kb-pad', false);
+    if (!KB_LAYOUTS[layout]) layout = 'full';
+    root.innerHTML = `<style>
+      .kbt-wrap{overflow-x:auto;padding:10px;background:var(--bg);border:1px solid var(--border);border-radius:14px}
+      .kbt{position:relative;min-width:620px;container-type:inline-size}
+      .kbt .k{position:absolute;padding:.22%;box-sizing:border-box}
+      .kbt .k>span{display:flex;align-items:center;justify-content:center;width:100%;height:100%;box-sizing:border-box;border:1px solid var(--border);border-bottom-width:3px;border-radius:7px;background:var(--card);font-weight:600;font-size:.62rem;font-size:min(1.25cqw,.85rem);line-height:1.05;text-align:center;user-select:none;transition:background .08s,color .08s;overflow:hidden;white-space:nowrap}
+      .kbt .k.ok>span{background:var(--success-soft);border-color:var(--success)}
+      .kbt .k.down>span{background:var(--primary);color:#fff;border-color:var(--primary)}
+      .kbt .k.nd>span{opacity:.45;border-style:dashed}
+      .kbt .k.miss>span{border-color:var(--danger);box-shadow:inset 0 0 0 1px var(--danger)}
+      .kbt .k.chat>span{background:var(--danger-soft);border-color:var(--danger)}
+    </style>
+    <div class="stack">
+      <div class="row" style="align-items:flex-end">
+        <div class="field"><label>Keyboard layout</label><select class="select lay">${groups.map(g => `<optgroup label="${g}">${opts.filter(([, l]) => l.group === g).map(([id, l]) => `<option value="${id}"${id === layout ? ' selected' : ''}>${esc(l.name)}</option>`).join('')}</optgroup>`).join('')}</select></div>
+        <div class="field" style="justify-content:flex-end"><label class="check"><input type="checkbox" class="iso"${iso ? ' checked' : ''}> UK / EU (ISO) layout</label></div>
+        <div class="field padf" style="justify-content:flex-end"><label class="check"><input type="checkbox" class="pad"${pad ? ' checked' : ''}> Numeric keypad (15–17" laptops)</label></div>
+        <div class="field" style="justify-content:flex-end"><button class="btn ghost rst">↻ Reset</button></div>
+      </div>
+      ${preset.focus === 'rollover' ? '<div class="notice">👻 <strong>Ghosting test:</strong> hold down several keys at the same time — try <kbd>W</kbd>+<kbd>A</kbd>+<kbd>Shift</kbd>+<kbd>Space</kbd>, or roll your fingers across a whole row. Every key you hold should turn blue. If one stays grey while others are held, your keyboard is ghosting (it has limited key rollover).</div>' : ''}
+      <div class="results live"></div>
+      <div class="kbt-wrap"><div class="kbt"></div></div>
+      <div class="small muted">Press every key: tested keys turn <span style="color:var(--success);font-weight:700">green</span>, keys being held turn <span style="color:var(--primary);font-weight:700">blue</span>. Dashed keys (Fn, Touch ID) work inside the keyboard itself and can't be seen by any website — test them through their shortcuts (e.g. Fn + brightness). <span class="other"></span></div>
+      <div class="btn-row"><button class="btn sm secondary showmiss">Highlight untested keys</button><span class="small muted chatinfo"></span></div>
+    </div>`;
+    const $ = UI.q(root);
+    let keys = [], byCode = new Map(), tested = new Set(), held = new Set(), maxHeld = 0, other = new Set(), chatter = new Map(), lastUp = new Map(), last = null;
+    const draw = () => {
+      keys = buildKeyboard(layout, { iso, pad: pad && KB_LAYOUTS[layout].numpadOpt });
+      const W = Math.max(...keys.map(k => k.x + k.w)), H = Math.max(...keys.map(k => k.y + k.h));
+      const kb = $('.kbt'); kb.style.aspectRatio = `${W} / ${H}`;
+      kb.innerHTML = keys.map((k, i) => `<div class="k${k.code ? '' : ' nd'}" data-i="${i}" title="${k.code ? esc(k.code) : 'Not detectable by browsers'}" style="left:${k.x / W * 100}%;top:${k.y / H * 100}%;width:${k.w / W * 100}%;height:${k.h / H * 100}%"><span>${esc(k.label)}</span></div>`).join('');
+      byCode = new Map();
+      keys.forEach((k, i) => { if (k.code) { if (!byCode.has(k.code)) byCode.set(k.code, []); byCode.get(k.code).push(kb.children[i]); } });
+      $('.padf').hidden = !KB_LAYOUTS[layout].numpadOpt;
+      paint(); stats();
     };
-    document.addEventListener('keydown', onKey);
-    $('.rst').onclick = () => { tested.clear(); root.querySelectorAll('.k').forEach(k => { k.style.background = ''; k.style.borderColor = ''; }); $('.cnt').textContent = '0 keys tested'; };
+    const paint = () => byCode.forEach((els, code) => els.forEach(el => { el.classList.toggle('ok', tested.has(code)); el.classList.toggle('down', held.has(code)); el.classList.toggle('chat', chatter.has(code)); }));
+    const stats = () => {
+      const total = byCode.size, done = [...byCode.keys()].filter(c => tested.has(c)).length;
+      $('.live').innerHTML = UI.resultsHTML([
+        { k: 'Keys tested', v: `${done} / ${total}`, main: done === total && total > 0, s: done === total && total ? 'Every key works ✅' : `${total - done} left` },
+        { k: 'Last key', v: last ? esc(last.key === ' ' ? 'Space' : last.key) : '—', s: last ? `code ${esc(last.code)} · keyCode ${last.keyCode}` : 'Press any key' },
+        { k: 'Held at once', v: `${held.size}`, s: `Max so far: ${maxHeld} keys${maxHeld >= 6 ? ' — good rollover' : ''}` },
+        { k: 'Double-press warnings', v: `${chatter.size}`, s: chatter.size ? 'Some keys fired twice' : 'None detected' },
+      ]);
+      $('.other').innerHTML = other.size ? `Other keys detected: ${[...other].map(c => `<kbd>${esc(c)}</kbd>`).join(' ')}` : '';
+      $('.chatinfo').innerHTML = chatter.size ? `⚠️ Possible key chatter (one press registered twice within 25 ms): ${[...chatter.keys()].map(c => `<kbd>${esc(c)}</kbd>`).join(' ')}` : '';
+    };
+    const onDown = e => {
+      if (!root.isConnected) return cleanup();
+      if (!(e.ctrlKey && /^(KeyR|KeyW|KeyT|KeyN)$/.test(e.code))) e.preventDefault();
+      if (!e.code) return;
+      if (!e.repeat) { const t = lastUp.get(e.code); if (t && performance.now() - t < 25) chatter.set(e.code, (chatter.get(e.code) || 0) + 1); }
+      last = e; tested.add(e.code); held.add(e.code); maxHeld = Math.max(maxHeld, held.size);
+      if (!byCode.has(e.code)) other.add(e.code);
+      paint(); stats();
+    };
+    const onUp = e => {
+      if (!root.isConnected) return cleanup();
+      if (!e.code) return;
+      if (!tested.has(e.code)) { tested.add(e.code); last = e; if (!byCode.has(e.code)) other.add(e.code); } // PrintScreen only fires keyup on Windows
+      held.delete(e.code); lastUp.set(e.code, performance.now());
+      if (/^Meta/.test(e.code)) held.clear(); // macOS drops keyup events for keys pressed while ⌘ is down
+      paint(); stats();
+    };
+    const onBlur = () => { held.clear(); paint(); stats(); };
+    const cleanup = () => { document.removeEventListener('keydown', onDown); document.removeEventListener('keyup', onUp); window.removeEventListener('blur', onBlur); };
+    document.addEventListener('keydown', onDown); document.addEventListener('keyup', onUp); window.addEventListener('blur', onBlur);
+    $('.lay').onchange = e => { layout = e.target.value; if (!preset.layout) UI.store.set('kb-layout', layout); draw(); e.target.blur(); };
+    $('.iso').onchange = e => { iso = e.target.checked; UI.store.set('kb-iso', iso); draw(); e.target.blur(); };
+    $('.pad').onchange = e => { pad = e.target.checked; UI.store.set('kb-pad', pad); draw(); e.target.blur(); };
+    $('.rst').onclick = e => { tested.clear(); held.clear(); other.clear(); chatter.clear(); lastUp.clear(); maxHeld = 0; last = null; root.querySelectorAll('.kbt .miss').forEach(x => x.classList.remove('miss')); paint(); stats(); e.currentTarget.blur(); };
+    $('.showmiss').onclick = e => { byCode.forEach((els, code) => els.forEach(el => el.classList.toggle('miss', !tested.has(code)))); e.currentTarget.blur(); };
+    draw();
   });
 
   Tools.define('dead-pixel-test', root => {
@@ -311,5 +468,137 @@
     };
     document.addEventListener('keydown', onKey);
     live();
+  });
+
+  // Controller tester: reads the browser Gamepad API about 60 times a second.
+  const PAD_NAMES = {
+    xbox: ['A', 'B', 'X', 'Y', 'LB', 'RB', 'LT', 'RT', 'View', 'Menu', 'L-stick', 'R-stick', 'D-pad ↑', 'D-pad ↓', 'D-pad ←', 'D-pad →', 'Xbox', 'Share'],
+    ps: ['✕ Cross', '○ Circle', '□ Square', '△ Triangle', 'L1', 'R1', 'L2', 'R2', 'Create', 'Options', 'L3', 'R3', 'D-pad ↑', 'D-pad ↓', 'D-pad ←', 'D-pad →', 'PS', 'Touchpad'],
+    nin: ['B', 'A', 'Y', 'X', 'L', 'R', 'ZL', 'ZR', '−', '+', 'L-stick', 'R-stick', 'D-pad ↑', 'D-pad ↓', 'D-pad ←', 'D-pad →', 'Home', 'Capture'],
+  };
+  const padStyle = id => /054c|playstation|dualsense|dualshock|wireless controller/i.test(id) ? 'ps' : /057e|nintendo|pro controller|joy-con/i.test(id) ? 'nin' : 'xbox';
+  const driftVerdict = m => m < 0.05 ? ['✅ Centred', 'var(--success)'] : m < 0.12 ? ['🟡 Slight offset', 'var(--warn, #d97706)'] : ['🔴 Drift likely', 'var(--danger)'];
+
+  Tools.define('gamepad-tester', (root, preset) => {
+    root.innerHTML = `<div class="stack">
+      <div class="notice status">🎮 Connect your controller (USB or Bluetooth), then <strong>press any button</strong> — browsers only show a controller after a button press.</div>
+      <div class="pads row" hidden></div>
+      <div class="work stack" hidden>
+        <div class="small muted ident"></div>
+        <div class="grid-2">
+          ${['Left', 'Right'].map((s, i) => `<div class="card-sub stack" style="align-items:center"><strong>${s} stick</strong>
+            <canvas class="stick s${i}" width="220" height="220" style="width:180px;height:180px;border-radius:50%;background:var(--bg);border:1px solid var(--border)"></canvas>
+            <div class="small mono sv${i}">X 0.000 · Y 0.000</div><div class="small sd${i}" style="font-weight:700"></div></div>`).join('')}
+        </div>
+        <div class="row" style="align-items:center"><button class="btn drift">⏱ 5-second drift test</button><button class="btn secondary rumble">📳 Test vibration</button><button class="btn ghost clr">Clear stick trails</button></div>
+        <div class="driftout"></div>
+        <div><strong>Triggers</strong><div class="trig grid-2 mt"></div></div>
+        <div><strong>Buttons</strong><div class="btns mt" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px"></div></div>
+        <details class="small"><summary>Raw axes values</summary><div class="axes mono mt"></div></details>
+      </div></div>`;
+    const $ = UI.q(root);
+    let idx = null, raf = 0, trails = [[], []], driftRun = null;
+    const pads = () => [...(navigator.getGamepads ? navigator.getGamepads() : [])].filter(Boolean);
+    const draw = (c, x, y, trail) => {
+      const g = c.getContext('2d'), r = c.width / 2 - 14, cx = c.width / 2, cy = c.height / 2;
+      g.clearRect(0, 0, c.width, c.height);
+      g.strokeStyle = 'rgba(128,128,128,.35)'; g.lineWidth = 1;
+      [1, 0.12].forEach(f => { g.beginPath(); g.arc(cx, cy, r * f, 0, Math.PI * 2); g.stroke(); });
+      g.beginPath(); g.moveTo(cx - r, cy); g.lineTo(cx + r, cy); g.moveTo(cx, cy - r); g.lineTo(cx, cy + r); g.stroke();
+      g.fillStyle = 'rgba(79,70,229,.35)'; trail.forEach(([tx, ty]) => g.fillRect(cx + tx * r - 1, cy + ty * r - 1, 2, 2));
+      g.fillStyle = '#4f46e5'; g.beginPath(); g.arc(cx + x * r, cy + y * r, 9, 0, Math.PI * 2); g.fill();
+    };
+    const renderPicker = list => {
+      $('.pads').hidden = list.length < 2;
+      $('.pads').innerHTML = list.map(p => `<button class="btn sm ${p.index === idx ? '' : 'ghost'}" data-i="${p.index}">🎮 ${esc(p.id.replace(/\(.*?\)/g, '').trim().slice(0, 40) || 'Controller ' + (p.index + 1))}</button>`).join('');
+    };
+    const frame = () => {
+      if (!root.isConnected) return cancelAnimationFrame(raf);
+      const list = pads();
+      if (idx == null || !list.some(p => p.index === idx)) idx = list.length ? list[0].index : null;
+      const gp = list.find(p => p.index === idx);
+      if (!gp) { $('.work').hidden = true; $('.status').hidden = false; $('.pads').hidden = true; raf = requestAnimationFrame(frame); return; }
+      if ($('.work').hidden) { $('.work').hidden = false; $('.status').hidden = true; renderPicker(list); }
+      const style = padStyle(gp.id), names = PAD_NAMES[style];
+      $('.ident').textContent = `${gp.id} · ${gp.buttons.length} buttons · ${gp.axes.length} axes · mapping: ${gp.mapping || 'non-standard'}`;
+      for (let s = 0; s < 2; s++) {
+        const x = gp.axes[s * 2] || 0, y = gp.axes[s * 2 + 1] || 0, m = Math.hypot(x, y), t = trails[s];
+        t.push([x, y]); if (t.length > 600) t.shift();
+        draw($('.s' + s), x, y, t);
+        $('.sv' + s).textContent = `X ${x.toFixed(3)} · Y ${y.toFixed(3)} · offset ${m.toFixed(3)}`;
+        if (driftRun) driftRun.max[s] = Math.max(driftRun.max[s], m);
+      }
+      const isStd = gp.mapping === 'standard';
+      $('.trig').innerHTML = [6, 7].map(i => { const v = gp.buttons[i] ? gp.buttons[i].value : 0; return `<div><div class="small">${isStd ? names[i] : 'Button ' + i}: ${(v * 100).toFixed(0)}%</div><div class="progress"><div style="width:${v * 100}%"></div></div></div>`; }).join('');
+      $('.btns').innerHTML = gp.buttons.map((b, i) => `<div style="padding:10px 6px;border-radius:10px;text-align:center;font-weight:600;font-size:.82rem;border:1px solid ${b.pressed ? 'var(--primary)' : 'var(--border)'};background:${b.pressed ? 'var(--primary)' : b.touched ? 'var(--primary-soft)' : 'var(--card)'};color:${b.pressed ? '#fff' : 'inherit'}">${esc(isStd && names[i] ? names[i] : 'Button ' + i)}${b.value > 0 && b.value < 1 ? ` ${(b.value * 100).toFixed(0)}%` : ''}</div>`).join('');
+      $('.axes').textContent = gp.axes.map((a, i) => `axis ${i}: ${a.toFixed(4)}`).join('   ');
+      raf = requestAnimationFrame(frame);
+    };
+    const restDrift = () => { const gp = pads().find(p => p.index === idx); if (!gp) return; for (let s = 0; s < 2; s++) { const m = Math.hypot(gp.axes[s * 2] || 0, gp.axes[s * 2 + 1] || 0), [v, c] = driftVerdict(m); $('.sd' + s).innerHTML = `<span style="color:${c}">${v}</span> <span class="muted" style="font-weight:400">(at rest: ${m.toFixed(3)})</span>`; } };
+    const restT = setInterval(() => { if (!root.isConnected) return clearInterval(restT); restDrift(); }, 500);
+    $('.pads').onclick = e => { const b = e.target.closest('[data-i]'); if (b) { idx = +b.dataset.i; trails = [[], []]; renderPicker(pads()); } };
+    $('.clr').onclick = () => { trails = [[], []]; };
+    $('.drift').onclick = e => {
+      const btn = e.currentTarget; if (driftRun) return;
+      driftRun = { max: [0, 0] }; let left = 5; btn.disabled = true;
+      $('.driftout').innerHTML = '<div class="notice">🙌 Let go of both sticks and put the controller down… <strong class="cd">5</strong></div>';
+      const t = setInterval(() => {
+        left--; const cd = root.querySelector('.cd'); if (cd) cd.textContent = left;
+        if (left > 0) return;
+        clearInterval(t); btn.disabled = false;
+        const r = driftRun.max; driftRun = null;
+        $('.driftout').innerHTML = UI.resultsHTML(r.map((m, s) => { const [v] = driftVerdict(m); return { k: `${s ? 'Right' : 'Left'} stick — worst offset at rest`, v: m.toFixed(3), main: m >= 0.12, s: v + (m >= 0.12 ? ' — games may move on their own unless you raise the deadzone' : m >= 0.05 ? ' — within what most games\' deadzones ignore' : ' — no drift') }; }));
+      }, 1000);
+    };
+    $('.rumble').onclick = async () => {
+      const gp = pads().find(p => p.index === idx), act = gp && gp.vibrationActuator;
+      if (!act || !act.playEffect) return UI.toast('This browser or controller does not support vibration from websites — try Chrome or Edge.', 4000);
+      try { await act.playEffect('dual-rumble', { duration: 900, strongMagnitude: 1, weakMagnitude: 1 }); UI.toast('📳 Did it vibrate? Both motors were set to 100%.'); } catch (e) { UI.toast('Vibration failed: ' + e.message, 4000); }
+    };
+    const onConn = () => renderPicker(pads());
+    window.addEventListener('gamepadconnected', onConn); window.addEventListener('gamepaddisconnected', onConn);
+    if (!navigator.getGamepads) $('.status').innerHTML = '⚠️ This browser does not support game controllers. Please use Chrome, Edge, Firefox or Safari.';
+    if (preset.focus === 'drift') $('.status').innerHTML += '<br>Then let go of the sticks and click <strong>5-second drift test</strong>.';
+    raf = requestAnimationFrame(frame);
+  });
+
+  // Mouse tester: counts presses per button and flags two presses closer together than a human can click.
+  Tools.define('mouse-double-click-test', root => {
+    const BTN = ['Left', 'Middle (wheel)', 'Right', 'Back (side)', 'Forward (side)'];
+    root.innerHTML = `<div class="stack">
+      <div class="row" style="align-items:flex-end"><div class="field"><label>Double-click threshold</label><div class="thr"></div></div><div class="field" style="justify-content:flex-end"><button class="btn ghost rst">↻ Reset</button></div></div>
+      <div class="pad" tabindex="0" style="height:240px;border-radius:18px;border:2px dashed var(--primary);background:var(--primary-soft);display:grid;place-items:center;text-align:center;user-select:none;cursor:pointer;touch-action:none"><div><div style="font-size:1.4rem;font-weight:700" class="ptxt">Click here with each mouse button</div><div class="small muted">Click slowly and normally — single clicks only. Scroll the wheel here too.</div></div></div>
+      <div class="results verdict"></div>
+      <div class="table-wrap"><table class="table"><thead><tr><th>Button</th><th>Clicks</th><th>Double-click faults</th><th>Shortest gap</th></tr></thead><tbody class="tb"></tbody></table></div>
+      <div class="small muted wheel"></div>
+      <div class="small mono log" style="white-space:pre-wrap"></div></div>`;
+    const $ = UI.q(root);
+    let thr = 80, st, wheel, log;
+    const reset = () => { st = BTN.map(() => ({ n: 0, bad: 0, min: Infinity, last: 0, lastUp: 0 })); wheel = { up: 0, down: 0 }; log = []; render(); };
+    $('.thr').append(UI.seg([['50', '50 ms'], ['80', '80 ms'], ['120', '120 ms']], '80', v => { thr = +v; render(); }));
+    const render = () => {
+      const tot = st.reduce((a, b) => a + b.n, 0), bad = st.reduce((a, b) => a + b.bad, 0);
+      $('.tb').innerHTML = st.map((s, i) => `<tr${s.bad ? ' style="color:var(--danger);font-weight:700"' : ''}><td>${BTN[i]}</td><td>${s.n}</td><td>${s.bad}${s.bad ? ' ⚠️' : ''}</td><td>${isFinite(s.min) ? Math.round(s.min) + ' ms' : '—'}</td></tr>`).join('');
+      $('.verdict').innerHTML = !tot ? '' : UI.resultsHTML([bad
+        ? { k: 'Result', v: `${bad} suspected double-click${bad > 1 ? 's' : ''}`, main: true, s: `${st.map((s, i) => s.bad ? BTN[i] : '').filter(Boolean).join(', ')} registered two clicks within ${thr} ms. That is almost always a worn switch inside the mouse.` }
+        : { k: 'Result', v: '✅ No double-clicking', main: true, s: `${tot} clicks tested. ${tot < 30 ? 'Keep clicking — faults often show up only after 30–100 clicks.' : 'Your buttons look healthy.'}` }]);
+      $('.wheel').textContent = wheel.up + wheel.down ? `Scroll wheel: ${wheel.up} up · ${wheel.down} down${wheel.up && wheel.down ? '' : ' — scroll both ways to test it'}` : '';
+      $('.log').textContent = log.slice(-8).join('\n');
+    };
+    const pad = $('.pad');
+    pad.addEventListener('mousedown', e => {
+      e.preventDefault(); const b = e.button, s = st[b]; if (!s) return;
+      const now = performance.now(), gap = s.last ? now - s.last : null;
+      s.n++; if (gap != null) { s.min = Math.min(s.min, gap); if (gap < thr) s.bad++; }
+      s.last = now;
+      log.push(`${BTN[b].padEnd(16)} ${gap == null ? 'first click' : Math.round(gap) + ' ms after previous'}${gap != null && gap < thr ? '   ⚠️ DOUBLE' : ''}`);
+      $('.ptxt').textContent = `${BTN[b]} click #${s.n}`;
+      pad.style.background = gap != null && gap < thr ? 'var(--danger-soft)' : 'var(--primary-soft)';
+      render();
+    });
+    ['mouseup', 'auxclick', 'contextmenu'].forEach(ev => pad.addEventListener(ev, e => e.preventDefault()));
+    pad.addEventListener('wheel', e => { e.preventDefault(); if (e.deltaY < 0) wheel.up++; else if (e.deltaY > 0) wheel.down++; render(); }, { passive: false });
+    $('.rst').onclick = reset;
+    reset();
   });
 })();

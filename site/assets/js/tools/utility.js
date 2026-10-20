@@ -500,4 +500,194 @@
     };
     draw();
   });
+
+  // ---- Contacts converter: CSV / Excel <-> vCard (.vcf). Everything happens in the browser; contacts are never uploaded.
+  const csvParse = (text, delim) => {
+    const rows = []; let row = [], f = '', q = false;
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (q) { if (c === '"') { if (text[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+      else if (c === '"' && f === '') q = true;
+      else if (c === delim) { row.push(f); f = ''; }
+      else if (c === '\n' || c === '\r') { if (c === '\r' && text[i + 1] === '\n') i++; row.push(f); rows.push(row); row = []; f = ''; }
+      else f += c;
+    }
+    if (f !== '' || row.length) { row.push(f); rows.push(row); }
+    return rows.filter(r => r.some(x => String(x).trim() !== ''));
+  };
+  const VC_FIELDS = [
+    ['full', 'Full name', /^(full ?name|name|display ?name|contact ?name|naam)$/i],
+    ['first', 'First name', /^(first|first ?name|given ?name|fname)$/i],
+    ['last', 'Last name', /^(last|last ?name|surname|family ?name|lname)$/i],
+    ['tel', 'Mobile phone', /(mobile|cell|phone|tel|number|contact ?no|whatsapp)/i],
+    ['tel2', 'Other phone', /(phone ?2|work ?phone|home ?phone|landline|office ?phone|other ?phone)/i],
+    ['email', 'Email', /e-?mail/i],
+    ['org', 'Company', /(company|organi[sz]ation|^org$|business)/i],
+    ['title', 'Job title', /(job|title|designation|position)/i],
+    ['adr', 'Address', /(address|street|city)/i],
+    ['url', 'Website', /(website|url|web)/i],
+    ['bday', 'Birthday', /(birthday|birth ?date|dob)/i],
+    ['note', 'Notes', /(note|remark|comment)/i],
+  ];
+  const guessMap = (head, sample) => {
+    const used = new Set(), map = {};
+    for (const [id, , re] of VC_FIELDS) {
+      const i = head.findIndex((h, j) => !used.has(j) && re.test(String(h).trim()));
+      if (i >= 0) { map[id] = i; used.add(i); }
+    }
+    if (map.tel == null && sample) { const i = sample.findIndex((v, j) => !used.has(j) && /^\+?[\d\s()-]{7,}$/.test(String(v).trim())); if (i >= 0) { map.tel = i; used.add(i); } }
+    if (map.email == null && sample) { const i = sample.findIndex((v, j) => !used.has(j) && /@/.test(v)); if (i >= 0) { map.email = i; used.add(i); } }
+    if (map.full == null && map.first == null && sample) { const i = sample.findIndex((v, j) => !used.has(j) && /[^\d\s+()-]/.test(String(v))); if (i >= 0) map.full = i; }
+    return map;
+  };
+  const vcEsc = s => String(s).replace(/\\/g, '\\\\').replace(/\n/g, '\\n').replace(/,/g, '\\,').replace(/;/g, '\\;');
+  const toVcard = (c, ver) => {
+    const cs = s => (ver === '2.1' && /[^\x00-\x7f]/.test(s) ? ';CHARSET=UTF-8' : '');
+    const fn = c.full || [c.first, c.last].filter(Boolean).join(' ') || c.org || c.tel || c.email;
+    let first = c.first || '', last = c.last || '';
+    if (!first && !last && c.full) {
+      if (c.full.includes(',')) { [last, first] = c.full.split(',', 2).map(s => s.trim()); } // "Khan, Ayesha" = Surname, First name
+      else { const p = c.full.trim().split(/\s+/); if (p.length > 1) { last = p.pop(); first = p.join(' '); } else first = p[0]; }
+    }
+    const ty = s => (ver === '2.1' ? ';' + s.toUpperCase() : ';TYPE=' + (ver === '4.0' ? s : s.toUpperCase()));
+    const L = ['BEGIN:VCARD', 'VERSION:' + ver, `N${cs(first + last)}:${vcEsc(last)};${vcEsc(first)};;;`, `FN${cs(fn)}:${vcEsc(fn)}`];
+    if (c.tel) L.push(`TEL${ty('cell')}:${c.tel.trim()}`);
+    if (c.tel2) L.push(`TEL${ty('voice')}:${c.tel2.trim()}`);
+    if (c.email) L.push(`EMAIL${ver === '2.1' ? ';INTERNET' : ty('internet')}:${c.email.trim()}`);
+    if (c.org) L.push(`ORG${cs(c.org)}:${vcEsc(c.org)}`);
+    if (c.title) L.push(`TITLE${cs(c.title)}:${vcEsc(c.title)}`);
+    if (c.adr) L.push(`ADR${cs(c.adr)}${ver === '2.1' ? '' : ty('home')}:;;${vcEsc(c.adr)};;;;`);
+    if (c.url) L.push(`URL:${c.url.trim()}`);
+    if (c.bday) L.push(`BDAY:${c.bday.trim()}`);
+    if (c.note) L.push(`NOTE${cs(c.note)}:${vcEsc(c.note)}`);
+    L.push('END:VCARD');
+    return L.join('\r\n');
+  };
+  const qpDecode = s => { const bytes = []; s = s.replace(/=\r?\n/g, ''); for (let i = 0; i < s.length; i++) { if (s[i] === '=' && /^[0-9A-F]{2}$/i.test(s.substr(i + 1, 2))) { bytes.push(parseInt(s.substr(i + 1, 2), 16)); i += 2; } else bytes.push(s.charCodeAt(i) & 255); } return new TextDecoder().decode(new Uint8Array(bytes)); };
+  const vUnesc = s => s.replace(/\\n/gi, '\n').replace(/\\([,;\\])/g, '$1');
+  function parseVcf(text) {
+    // Unfold continuation lines (RFC 6350) and quoted-printable soft breaks (vCard 2.1 exports from Android).
+    const raw = text.replace(/\r\n?/g, '\n').split('\n'), lines = [];
+    for (const l of raw) {
+      if (lines.length && (/^[ \t]/.test(l) || /=$/.test(lines[lines.length - 1]) && /QUOTED-PRINTABLE/i.test(lines[lines.length - 1]))) lines[lines.length - 1] = /=$/.test(lines[lines.length - 1]) && !/^[ \t]/.test(l) ? lines[lines.length - 1].slice(0, -1) + l : lines[lines.length - 1] + l.slice(1);
+      else lines.push(l);
+    }
+    const out = []; let c = null;
+    for (const line of lines) {
+      if (/^BEGIN:VCARD/i.test(line)) { c = { tel: [], email: [] }; continue; }
+      if (/^END:VCARD/i.test(line)) { if (c) out.push(c); c = null; continue; }
+      if (!c) continue;
+      const i = line.indexOf(':'); if (i < 0) continue;
+      const [nameRaw, ...params] = line.slice(0, i).split(';'), name = nameRaw.replace(/^item\d+\./i, '').toUpperCase();
+      let val = line.slice(i + 1);
+      if (params.some(p => /quoted-printable/i.test(p))) val = qpDecode(val);
+      const types = params.map(p => p.replace(/^type=/i, '').toLowerCase()).join(',').split(',').filter(x => x && !/charset|encoding|pref|^x-|internet|voice|quoted/.test(x));
+      if (name === 'FN') c.full = vUnesc(val);
+      else if (name === 'N') { const [l = '', f = '', m = ''] = val.split(';').map(vUnesc); c.last = l; c.first = [f, m].filter(Boolean).join(' '); }
+      else if (name === 'TEL') c.tel.push([val.replace(/^tel:/i, '').trim(), types[0] || '']);
+      else if (name === 'EMAIL') c.email.push(val.trim());
+      else if (name === 'ORG') c.org = vUnesc(val.split(';').filter(Boolean).join(', '));
+      else if (name === 'TITLE') c.title = vUnesc(val);
+      else if (name === 'ADR') c.adr = val.split(';').map(vUnesc).filter(Boolean).join(', ');
+      else if (name === 'URL') c.url = val;
+      else if (name === 'BDAY') c.bday = val;
+      else if (name === 'NOTE') c.note = vUnesc(val);
+    }
+    return out;
+  }
+
+  Tools.define('vcf-converter', (root, preset) => {
+    let dir = preset.dir || 'to-vcf', outFmt = preset.out || 'csv', rows = [], map = {}, contacts = [];
+    root.innerHTML = `<div class="stack">
+      <div class="row" style="align-items:flex-end"><div class="field"><label>Convert</label><div class="dirseg"></div></div><div class="field fmtf"><label>Save as</label><div class="fmtseg"></div></div></div>
+      <div class="notice small">🔒 Your contacts stay on your device — the file is read and converted inside your browser and never uploaded.</div>
+      <div class="dz"></div>
+      <div class="work stack" hidden>
+        <div class="cur"></div>
+        <div class="mapbox stack"></div>
+        <div class="opts row"></div>
+        <div class="preview"></div>
+        <div class="btn-row"><button class="btn lg go">⬇ Download</button><button class="btn ghost zipb" hidden>One file per contact (ZIP)</button></div>
+        <div class="err"></div>
+      </div></div>`;
+    const $ = UI.q(root);
+    const opts = UI.fields($('.opts'), [
+      { id: 'head', label: 'First row is column names', type: 'checkbox', value: true, show: () => dir === 'to-vcf' },
+      { id: 'ver', label: 'vCard version', type: 'select', value: '3.0', options: [['3.0', '3.0 — iPhone, Android, Google, Outlook (recommended)'], ['2.1', '2.1 — older Android & feature phones'], ['4.0', '4.0 — newest standard']], show: () => dir === 'to-vcf' },
+    ], v => { if (dir === 'to-vcf' && rows.length) { map = guessMap(v.head ? rows[0] : [], rows[v.head ? 1 : 0]); drawMap(); } });
+    const dz = UI.dropzone({ icon: '👥', title: 'Choose a file', hint: 'or drag & drop it here', onFiles: ([f]) => UI.busy(null, () => load(f), '', $('.err')) });
+    $('.dz').append(dz);
+    const setDir = () => {
+      const to = dir === 'to-vcf';
+      dz.querySelector('strong').textContent = to ? 'Choose a CSV or Excel file' : 'Choose a .vcf contacts file';
+      dz.querySelector('input').accept = to ? '.csv,.txt,.tsv,.xlsx,.xls,.ods,text/csv' : '.vcf,.vcard,text/vcard,text/x-vcard';
+      $('.fmtf').hidden = to; $('.work').hidden = true; rows = []; contacts = []; $('.dz').hidden = false; $('.err').innerHTML = ''; opts.refresh();
+    };
+    $('.dirseg').append(UI.seg([['to-vcf', 'CSV / Excel → VCF'], ['from-vcf', 'VCF → CSV / Excel']], dir, v => { dir = v; setDir(); }));
+    $('.fmtseg').append(UI.seg([['csv', 'CSV'], ['xlsx', 'Excel (.xlsx)']], outFmt, v => { outFmt = v; }));
+    const fileRow = f => { $('.cur').innerHTML = ''; const r = UI.fileRow({ name: f.name, sub: UI.fmtBytes(f.size), icon: '📇', extra: '<button class="btn sm ghost">Change file</button>' }); r.querySelector('button').onclick = () => dz.pick(); $('.cur').append(r); };
+    async function load(f) {
+      $('.err').innerHTML = '';
+      if (dir === 'to-vcf') {
+        if (/\.(xlsx|xls|ods)$/i.test(f.name)) {
+          const XLSX = await UI.lib('xlsx'), wb = XLSX.read(await f.arrayBuffer(), { type: 'array' });
+          rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], { header: 1, raw: false, defval: '' }).filter(r => r.some(x => String(x).trim()));
+        } else {
+          const t = (await UI.readFile(f)).replace(/^\uFEFF/, ''), first = t.split('\n')[0] || '';
+          rows = csvParse(t, [',', ';', '\t', '|'].map(c => [c, first.split(c).length]).sort((a, b) => b[1] - a[1])[0][0]);
+        }
+        if (!rows.length) throw new Error('No rows found in this file.');
+        const head = opts.get().head;
+        map = guessMap(head ? rows[0] : [], rows[head ? 1 : 0]);
+        drawMap();
+      } else {
+        contacts = parseVcf(await UI.readFile(f));
+        if (!contacts.length) throw new Error('No contacts found. Is this a .vcf (vCard) file?');
+        drawTable();
+      }
+      fileRow(f); $('.dz').hidden = true; $('.work').hidden = false;
+    }
+    const built = () => {
+      const head = opts.get().head, data = head ? rows.slice(1) : rows, cell = (r, id) => (map[id] != null ? String(r[map[id]] ?? '').trim() : '');
+      return data.map(r => Object.fromEntries(VC_FIELDS.map(([id]) => [id, cell(r, id)]))).filter(c => c.full || c.first || c.last || c.tel || c.email);
+    };
+    function drawMap() {
+      const head = opts.get().head, cols = (rows[0] || []).map((h, i) => head ? (String(h).trim() || `Column ${i + 1}`) : `Column ${i + 1} (e.g. ${String(rows[0][i]).slice(0, 18)})`);
+      $('.mapbox').innerHTML = `<strong>Match your columns</strong><div class="row">${VC_FIELDS.map(([id, label]) => `<div class="field"><label>${label}</label><select class="select" data-f="${id}"><option value="">— not used —</option>${cols.map((c, i) => `<option value="${i}"${map[id] === i ? ' selected' : ''}>${esc(c)}</option>`).join('')}</select></div>`).join('')}</div>`;
+      $('.mapbox').querySelectorAll('select').forEach(s => s.onchange = () => { if (s.value === '') delete map[s.dataset.f]; else map[s.dataset.f] = +s.value; preview(); });
+      $('.zipb').hidden = false; preview();
+    }
+    function preview() {
+      const list = built(), ver = opts.get().ver;
+      $('.preview').innerHTML = list.length ? `<div class="notice success">✓ ${list.length} contact${list.length > 1 ? 's' : ''} ready. Preview of the first one:</div><pre class="small mono card-sub" style="white-space:pre-wrap;margin:0">${esc(toVcard(list[0], ver))}</pre>` : '<div class="notice error">No contacts found yet — choose which columns hold the name and phone number.</div>';
+    }
+    const toRows = list => {
+      const nt = Math.min(5, Math.max(1, ...list.map(c => c.tel.length))), ne = Math.min(3, Math.max(1, ...list.map(c => c.email.length)));
+      const head = ['Full name', 'First name', 'Last name', ...Array.from({ length: nt }, (_, i) => [`Phone ${i + 1}`, `Phone ${i + 1} type`]).flat(), ...Array.from({ length: ne }, (_, i) => `Email ${i + 1}`), 'Company', 'Job title', 'Address', 'Website', 'Birthday', 'Notes'];
+      return [head, ...list.map(c => [c.full || '', c.first || '', c.last || '', ...Array.from({ length: nt }, (_, i) => c.tel[i] || ['', '']).flat(), ...Array.from({ length: ne }, (_, i) => c.email[i] || ''), c.org || '', c.title || '', c.adr || '', c.url || '', c.bday || '', c.note || ''])];
+    };
+    function drawTable() {
+      const r = toRows(contacts);
+      $('.mapbox').innerHTML = ''; $('.zipb').hidden = true;
+      $('.preview').innerHTML = `<div class="notice success">✓ ${contacts.length} contact${contacts.length > 1 ? 's' : ''} found.</div><div class="table-wrap"><table class="table"><thead><tr>${r[0].map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${r.slice(1, 11).map(x => `<tr>${x.map(v => `<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${contacts.length > 10 ? `<p class="small muted">Showing 10 of ${contacts.length}.</p>` : ''}`;
+    }
+    const base = () => UI.baseName(($('.cur .name') || {}).textContent || 'contacts');
+    $('.go').onclick = e => UI.busy(e.currentTarget, async () => {
+      if (dir === 'to-vcf') {
+        const list = built(); if (!list.length) throw new Error('No contacts to convert.');
+        const ver = opts.get().ver;
+        UI.download(new Blob([list.map(c => toVcard(c, ver)).join('\r\n') + '\r\n'], { type: 'text/vcard;charset=utf-8' }), base() + '.vcf');
+        UI.toast(`✓ ${list.length} contacts saved to one .vcf file`);
+      } else {
+        const r = toRows(contacts);
+        if (outFmt === 'xlsx') { const XLSX = await UI.lib('xlsx'), wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(r), 'Contacts'); XLSX.writeFile(wb, base() + '.xlsx'); }
+        else UI.download(new Blob(['\uFEFF' + r.map(x => x.map(v => /[",\n\r]/.test(v) ? `"${String(v).replace(/"/g, '""')}"` : v).join(',')).join('\r\n')], { type: 'text/csv;charset=utf-8' }), base() + '.csv');
+      }
+    }, 'Converting…', $('.err'));
+    $('.zipb').onclick = e => UI.busy(e.currentTarget, async () => {
+      const list = built(), ver = opts.get().ver;
+      await UI.zip(list.map((c, i) => ({ name: `${(c.full || [c.first, c.last].join(' ').trim() || 'contact-' + (i + 1)).replace(/[\\/:*?"<>|]/g, '').slice(0, 60)}.vcf`, blob: new Blob([toVcard(c, ver)], { type: 'text/vcard' }) })), base() + '-vcards.zip');
+    }, 'Zipping…', $('.err'));
+    setDir();
+  });
 })();

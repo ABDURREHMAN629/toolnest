@@ -513,6 +513,60 @@
     });
   });
 
+  // Booklet imposition: pages are placed two per sheet side so that a double-sided print, folded in the middle,
+  // reads in order (saddle stitch). Optional signatures split thick documents into several nested booklets.
+  const bookletSides = (n, sheetsPerSig) => {
+    const sides = [], size = sheetsPerSig ? sheetsPerSig * 4 : Math.ceil(n / 4) * 4;
+    for (let start = 0; start < n; start += size) {
+      const m = Math.ceil(Math.min(size, n - start) / 4) * 4;
+      const p = Array.from({ length: m }, (_, i) => (start + i < n ? start + i + 1 : 0));
+      for (let i = 0; i < m / 4; i++) sides.push([p[m - 1 - 2 * i], p[2 * i]], [p[2 * i + 1], p[m - 2 - 2 * i]]);
+    }
+    return sides;
+  };
+  const SHEETS = { a4: [841.89, 595.28], letter: [792, 612], a3: [1190.55, 841.89], legal: [1008, 612] };
+  Tools.define('pdf-booklet-maker', root => {
+    const plan = (ctx, o) => {
+      if (!ctx.pages) return;
+      const sides = bookletSides(ctx.pages, +o.sig), blanks = sides.flat().filter(p => !p).length;
+      const show = s => (o.dir === 'rtl' ? [...s].reverse() : s).map(p => p || 'blank').join(' | ');
+      ctx.extra.innerHTML = `<div class="notice">📖 ${ctx.pages} pages → <strong>${sides.length / 2} sheet${sides.length > 2 ? 's' : ''} of paper</strong>${blanks ? ` (${blanks} blank page${blanks > 1 ? 's' : ''} added at the end — booklets need a multiple of 4 pages)` : ''}.<br>Sheet 1 front: <strong>${show(sides[0])}</strong> · back: <strong>${show(sides[1])}</strong></div>`;
+    };
+    pdfTool(root, {
+      button: 'Make booklet', busy: 'Arranging pages…',
+      fields: [
+        { id: 'paper', label: 'Paper size', type: 'select', value: 'auto', options: [['auto', 'Automatic (2 pages side by side)'], ['a4', 'A4'], ['letter', 'US Letter'], ['a3', 'A3 (for A4 pages)'], ['legal', 'US Legal']] },
+        { id: 'sig', label: 'Binding', type: 'select', value: '0', options: [['0', 'One booklet (fold & staple)'], ['4', 'Signatures of 16 pages (4 sheets)'], ['5', 'Signatures of 20 pages (5 sheets)'], ['8', 'Signatures of 32 pages (8 sheets)']] },
+        { id: 'dir', label: 'Reading direction', type: 'seg', value: 'ltr', options: [['ltr', 'Left to right'], ['rtl', 'Right to left (Urdu, Arabic, manga)']] },
+        { id: 'gap', label: 'Extra margin at the fold', type: 'number', value: 0, min: 0, max: 72, unit: 'pt' },
+      ],
+      onFile: ctx => plan(ctx, ctx.opts()),
+      onOpts: (o, ctx) => plan(ctx, o),
+      async run(ctx, o) {
+        const { PDFDocument, degrees } = await UI.lib('pdflib');
+        const src = await ctx.pdflib(), out = await PDFDocument.create();
+        const srcPages = src.getPages(), emb = await out.embedPages(srcPages);
+        const first = srcPages[0], rot0 = first.getRotation().angle % 180;
+        const [SW, SH] = SHEETS[o.paper] || (rot0 ? [first.getHeight() * 2, first.getWidth()] : [first.getWidth() * 2, first.getHeight()]);
+        const gap = Math.max(0, o.gap || 0), half = (SW - gap) / 2;
+        const sides = bookletSides(srcPages.length, +o.sig);
+        for (const side of sides) {
+          const page = out.addPage([SW, SH]);
+          (o.dir === 'rtl' ? [...side].reverse() : side).forEach((num, slot) => {
+            if (!num) return;
+            const e = emb[num - 1], r = ((srcPages[num - 1].getRotation().angle % 360) + 360) % 360;
+            const [dw, dh] = r % 180 ? [e.height, e.width] : [e.width, e.height];
+            const s = Math.min(half / dw, SH / dh), w = e.width * s, h = e.height * s;
+            const X = slot ? half + gap + (half - dw * s) / 2 : (half - dw * s) / 2, Y = (SH - dh * s) / 2;
+            const at = { 0: [X, Y], 90: [X, Y + w], 180: [X + w, Y + h], 270: [X + h, Y] }[r] || [X, Y];
+            page.drawPage(e, { x: at[0], y: at[1], width: w, height: h, rotate: degrees(-r) });
+          });
+        }
+        showResult(ctx, await pdfBlob(out), outName(ctx.file, '-booklet'), `Booklet ready: ${sides.length / 2} sheets. Print it <strong>double-sided, flip on short edge</strong>, then fold the stack in half${+o.sig ? ' (fold each signature separately, then stack them in order)' : ''} and staple along the fold.`);
+      },
+    });
+  });
+
   Tools.define('watermark-pdf', root => {
     pdfTool(root, {
       button: 'Add watermark', busy: 'Adding watermark…',

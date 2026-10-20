@@ -690,4 +690,102 @@
     }, 'Zipping…', $('.err'));
     setDir();
   });
+
+  // ---- GPX <-> KML: both are XML, parsed with DOMParser into one simple model {points, lines} and written back out.
+  const xmlEsc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const kids = (el, name) => el ? [...el.getElementsByTagName('*')].filter(n => n.localName === name) : [];
+  const kid = (el, name) => kids(el, name)[0];
+  const txt = (el, name) => { const n = kid(el, name); return n ? n.textContent.trim() : ''; };
+  const geoDist = pts => { let d = 0; for (let i = 1; i < pts.length; i++) { const [a, b] = [pts[i - 1], pts[i]], R = 6371000, r = Math.PI / 180, dLat = (b.lat - a.lat) * r, dLon = (b.lon - a.lon) * r, h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLon / 2) ** 2; d += 2 * R * Math.asin(Math.sqrt(h)); } return d; };
+  function readGpx(doc) {
+    const pt = n => ({ lat: +n.getAttribute('lat'), lon: +n.getAttribute('lon'), ele: txt(n, 'ele'), time: txt(n, 'time') });
+    const points = kids(doc, 'wpt').map(n => ({ ...pt(n), name: txt(n, 'name'), desc: txt(n, 'desc') }));
+    const lines = [
+      ...kids(doc, 'trk').map(t => ({ name: [...t.children].find(c => c.localName === 'name')?.textContent.trim() || 'Track', pts: kids(t, 'trkpt').map(pt) })),
+      ...kids(doc, 'rte').map(t => ({ name: [...t.children].find(c => c.localName === 'name')?.textContent.trim() || 'Route', pts: kids(t, 'rtept').map(pt) })),
+    ].filter(l => l.pts.length);
+    return { name: txt(kid(doc, 'metadata'), 'name') || '', points, lines };
+  }
+  function readKml(doc) {
+    const coords = s => s.trim().split(/\s+/).map(c => c.split(',')).filter(c => c.length >= 2).map(([lon, lat, ele]) => ({ lat: +lat, lon: +lon, ele: ele && +ele ? ele : '' }));
+    const points = [], lines = [];
+    for (const pm of kids(doc, 'Placemark')) {
+      const name = [...pm.children].find(c => c.localName === 'name')?.textContent.trim() || '', desc = [...pm.children].find(c => c.localName === 'description')?.textContent.trim() || '';
+      kids(pm, 'Point').forEach(p => { const c = coords(txt(p, 'coordinates'))[0]; if (c) points.push({ ...c, name, desc }); });
+      kids(pm, 'LineString').forEach((l, i) => lines.push({ name: name || 'Track', pts: coords(txt(l, 'coordinates')) }));
+      kids(pm, 'LinearRing').forEach(l => lines.push({ name: name || 'Area', pts: coords(txt(l, 'coordinates')) }));
+      kids(pm, 'Track').forEach(t => { // gx:Track keeps timestamps
+        const when = kids(t, 'when').map(w => w.textContent.trim());
+        lines.push({ name: name || 'Track', pts: kids(t, 'coord').map((c, i) => { const [lon, lat, ele] = c.textContent.trim().split(/\s+/); return { lat: +lat, lon: +lon, ele: ele || '', time: when[i] || '' }; }) });
+      });
+    }
+    return { name: txt(kid(doc, 'Document'), 'name') || '', points, lines: lines.filter(l => l.pts.length) };
+  }
+  function writeKml(g, o) {
+    const hex = o.color.replace('#', ''), kmlColor = 'ff' + hex.slice(4, 6) + hex.slice(2, 4) + hex.slice(0, 2); // KML colors are aabbggrr
+    const c = p => `${p.lon},${p.lat}${p.ele !== '' ? ',' + p.ele : ''}`;
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+<name>${xmlEsc(g.name || o.title)}</name>
+<Style id="track"><LineStyle><color>${kmlColor}</color><width>${o.width}</width></LineStyle></Style>
+${g.points.map(p => `<Placemark><name>${xmlEsc(p.name)}</name>${p.desc ? `<description>${xmlEsc(p.desc)}</description>` : ''}<Point><coordinates>${c(p)}</coordinates></Point></Placemark>`).join('\n')}
+${g.lines.map(l => `<Placemark><name>${xmlEsc(l.name)}</name><styleUrl>#track</styleUrl><LineString><tessellate>1</tessellate>${l.pts.some(p => p.ele !== '') ? '<altitudeMode>clampToGround</altitudeMode>' : ''}<coordinates>${l.pts.map(c).join(' ')}</coordinates></LineString></Placemark>`).join('\n')}
+</Document>
+</kml>
+`;
+  }
+  function writeGpx(g, o) {
+    const p = (tag, q) => `<${tag} lat="${q.lat}" lon="${q.lon}">${q.ele !== '' ? `<ele>${q.ele}</ele>` : ''}${q.time ? `<time>${xmlEsc(q.time)}</time>` : ''}${q.name ? `<name>${xmlEsc(q.name)}</name>` : ''}${q.desc ? `<desc>${xmlEsc(q.desc)}</desc>` : ''}</${tag}>`;
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="WebToolNest" xmlns="http://www.topografix.com/GPX/1/1">
+<metadata><name>${xmlEsc(g.name || o.title)}</name></metadata>
+${g.points.map(q => p('wpt', q)).join('\n')}
+${g.lines.map(l => o.asRoute ? `<rte><name>${xmlEsc(l.name)}</name>${l.pts.map(q => p('rtept', q)).join('')}</rte>` : `<trk><name>${xmlEsc(l.name)}</name><trkseg>${l.pts.map(q => p('trkpt', q)).join('')}</trkseg></trk>`).join('\n')}
+</gpx>
+`;
+  }
+
+  Tools.define('gpx-kml-converter', (root, preset) => {
+    let geo = null, src = null, fname = 'track';
+    root.innerHTML = `<div class="stack">
+      <div class="notice small">🔒 Your GPS files are converted inside your browser — your routes and locations are never uploaded.</div>
+      <div class="dz"></div>
+      <div class="work stack" hidden><div class="cur"></div><div class="sum"></div><div class="row opts"></div>
+        <div class="btn-row"><button class="btn lg go"></button></div><div class="err2"></div></div>
+      <div class="err"></div></div>`;
+    const $ = UI.q(root);
+    const opts = UI.fields($('.opts'), [
+      { id: 'color', label: 'Track colour (KML)', type: 'color', value: '#e11d48', show: () => src !== 'kml' },
+      { id: 'width', label: 'Line width (KML)', type: 'number', value: 4, min: 1, max: 20, show: () => src !== 'kml' },
+      { id: 'asRoute', label: 'Save lines as GPX routes instead of tracks', type: 'checkbox', value: false, show: () => src === 'kml' },
+    ]);
+    const dz = UI.dropzone({ accept: '.gpx,.kml,.kmz,application/gpx+xml,application/vnd.google-earth.kml+xml,application/vnd.google-earth.kmz', icon: '🗺️', title: preset.from === 'kml' ? 'Choose a KML or KMZ file' : preset.from === 'gpx' ? 'Choose a GPX file' : 'Choose a GPX, KML or KMZ file', hint: 'or drag & drop it here', onFiles: ([f]) => UI.busy(null, () => load(f), '', $('.err')) });
+    $('.dz').append(dz);
+    async function load(f) {
+      let text;
+      if (/\.kmz$/i.test(f.name)) {
+        const zip = await (await UI.lib('jszip')).loadAsync(await f.arrayBuffer());
+        const entry = Object.values(zip.files).find(e => /\.kml$/i.test(e.name));
+        if (!entry) throw new Error('This KMZ file has no KML inside.');
+        text = await entry.async('string');
+      } else text = await UI.readFile(f);
+      const doc = new DOMParser().parseFromString(text, 'application/xml');
+      if (doc.getElementsByTagName('parsererror').length) throw new Error('This file is not valid XML. Is it really a GPX or KML file?');
+      const root0 = doc.documentElement.localName;
+      if (root0 === 'gpx') { src = 'gpx'; geo = readGpx(doc); } else if (root0 === 'kml') { src = 'kml'; geo = readKml(doc); } else throw new Error('Not a GPX or KML file.');
+      if (!geo.points.length && !geo.lines.length) throw new Error('No waypoints or tracks found in this file.');
+      fname = UI.baseName(f.name);
+      const npts = geo.lines.reduce((a, l) => a + l.pts.length, 0), km = geo.lines.reduce((a, l) => a + geoDist(l.pts), 0) / 1000;
+      $('.sum').innerHTML = UI.resultsHTML([{ k: 'Converting', v: src === 'gpx' ? 'GPX → KML' : 'KML → GPX', main: true }, { k: 'Waypoints', v: geo.points.length }, { k: src === 'gpx' ? 'Tracks & routes' : 'Lines & paths', v: geo.lines.length, s: `${npts.toLocaleString()} points` }, { k: 'Total length', v: km >= 1 ? km.toFixed(2) + ' km' : Math.round(km * 1000) + ' m', s: (km * 0.621371).toFixed(2) + ' miles' }]);
+      $('.go').textContent = src === 'gpx' ? '⬇ Download KML' : '⬇ Download GPX';
+      $('.cur').innerHTML = ''; const r = UI.fileRow({ name: f.name, sub: UI.fmtBytes(f.size), icon: '🗺️', extra: '<button class="btn sm ghost">Change file</button>' }); r.querySelector('button').onclick = () => dz.pick(); $('.cur').append(r);
+      opts.refresh(); $('.dz').hidden = true; $('.work').hidden = false;
+    }
+    $('.go').onclick = () => {
+      const o = { ...opts.get(), title: fname };
+      if (src === 'gpx') UI.downloadText(writeKml(geo, o), fname + '.kml', 'application/vnd.google-earth.kml+xml');
+      else UI.downloadText(writeGpx(geo, o), fname + '.gpx', 'application/gpx+xml');
+    };
+  });
 })();

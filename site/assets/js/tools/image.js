@@ -829,4 +829,82 @@
     };
     $('.go').onclick = async () => UI.download(await UI.canvasBlob(canvas, 'image/jpeg', 0.92), 'collage.jpg');
   });
+
+  // Image splitter for Instagram: crops the photo to the grid's shape, cuts equal tiles and numbers them in posting order.
+  const TILE_SHAPES = { square: [1080, 1080, '1:1 square (1080×1080)'], portrait: [1080, 1350, '4:5 portrait (1080×1350)'], grid34: [1080, 1440, '3:4 grid (1080×1440)'], original: [0, 0, 'Original (no crop)'] };
+  Tools.define('image-splitter', (root, preset) => {
+    singleImage(root, {
+      title: 'Choose a photo to split',
+      onImage(img, file, work, change) {
+        const W = img.naturalWidth, H = img.naturalHeight;
+        let mode = preset.mode || 'grid', rows = preset.rows || 1, cols = preset.cols || 3, shape = 'square', px = 50, py = 50, tiles = [];
+        work.innerHTML = `<div class="row" style="align-items:flex-end"><div class="field"><label>Split for</label><div class="mode"></div></div></div>
+          <div class="row opts"></div>
+          <div class="row" style="align-items:flex-end"><div class="field"><label>Move image left / right</label><input type="range" class="px" min="0" max="100" value="50"></div><div class="field"><label>Move image up / down</label><input type="range" class="py" min="0" max="100" value="50"></div></div>
+          <canvas class="pv" style="max-width:100%;max-height:520px;border-radius:10px;border:1px solid var(--border);align-self:center"></canvas>
+          <div class="notice small hint"></div>
+          <div class="btn-row"><button class="btn lg go">⬇ Download all tiles (ZIP)</button><button class="btn ghost chg">Choose another photo</button></div>
+          <div class="out"></div>`;
+        const $ = UI.q(work);
+        const optsFor = () => mode === 'carousel'
+          ? [{ id: 'cols', label: 'Number of slides', type: 'select', value: String(Math.max(2, cols)), options: ['2', '3', '4', '5', '6', '7', '8', '10'] }]
+          : mode === 'grid'
+            ? [{ id: 'rows', label: 'Rows (3 posts each)', type: 'select', value: String(rows), options: [['1', '1 row — 3 posts'], ['2', '2 rows — 6 posts'], ['3', '3 rows — 9 posts'], ['4', '4 rows — 12 posts'], ['5', '5 rows — 15 posts']] }]
+            : [{ id: 'rows', label: 'Rows', type: 'number', value: rows, min: 1, max: 10 }, { id: 'cols', label: 'Columns', type: 'number', value: cols, min: 1, max: 10 }];
+        let form;
+        const setMode = () => {
+          if (mode === 'grid') cols = 3; if (mode === 'carousel') { rows = 1; cols = Math.max(2, cols); }
+          form = UI.fields($('.opts'), [...optsFor(), { id: 'shape', label: 'Tile shape', type: 'select', value: shape, options: Object.entries(TILE_SHAPES).map(([k, v]) => [k, v[2]]) }], v => { if (v.rows) rows = UI.clamp(v.rows | 0, 1, 10); if (v.cols) cols = UI.clamp(v.cols | 0, 1, 10); shape = v.shape; draw(); });
+          draw();
+        };
+        // posting order: profile grid = bottom-right first (Instagram shows newest top-left); carousel/custom = reading order
+        const order = (r, c) => mode === 'grid' ? (rows - 1 - r) * cols + (cols - 1 - c) + 1 : r * cols + c + 1;
+        const crop = () => {
+          const [tw, th] = TILE_SHAPES[shape];
+          if (!tw) return { sx: 0, sy: 0, sw: W, sh: H, tw: Math.round(W / cols), th: Math.round(H / rows) };
+          const want = (cols * tw) / (rows * th);
+          let sw = W, sh = W / want; if (sh > H) { sh = H; sw = H * want; }
+          return { sx: (W - sw) * px / 100, sy: (H - sh) * py / 100, sw, sh, tw, th };
+        };
+        const draw = () => {
+          const k = crop(), cv = $('.pv'), s = Math.min(1, 900 / Math.max(k.sw, k.sh));
+          cv.width = Math.round(k.sw * s); cv.height = Math.round(k.sh * s);
+          const g = cv.getContext('2d'); g.drawImage(img, k.sx, k.sy, k.sw, k.sh, 0, 0, cv.width, cv.height);
+          g.strokeStyle = '#fff'; g.lineWidth = 3; g.font = `bold ${Math.round(Math.min(cv.width / cols, cv.height / rows) / 5)}px system-ui`; g.textAlign = 'center'; g.textBaseline = 'middle';
+          for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+            const x = c * cv.width / cols, y = r * cv.height / rows, w = cv.width / cols, h = cv.height / rows;
+            g.strokeRect(x, y, w, h);
+            g.fillStyle = 'rgba(0,0,0,.55)'; g.beginPath(); g.arc(x + w / 2, y + h / 2, Math.min(w, h) / 6, 0, Math.PI * 2); g.fill();
+            g.fillStyle = '#fff'; g.fillText(order(r, c), x + w / 2, y + h / 2);
+          }
+          $('.hint').innerHTML = mode === 'grid'
+            ? `📲 <strong>Post in number order: 1 first, ${rows * cols} last.</strong> Instagram puts your newest post at the top-left, so posting the bottom-right tile first makes the full picture appear on your profile. Don't post anything else in between.`
+            : mode === 'carousel' ? `📲 Add all ${cols} images to <strong>one post</strong> in order 1 → ${cols}. When people swipe, the picture continues seamlessly from slide to slide.`
+              : `${rows * cols} tiles, numbered left to right, top to bottom.`;
+        };
+        const makeTiles = async () => {
+          const k = crop(), list = [], fw = k.sw / cols, fh = k.sh / rows;
+          for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+            const cv = UI.canvas(k.tw, k.th), g = cv.getContext('2d');
+            g.imageSmoothingQuality = 'high'; g.drawImage(img, k.sx + c * fw, k.sy + r * fh, fw, fh, 0, 0, cv.width, cv.height);
+            const n = order(r, c);
+            list.push({ n, name: `${UI.baseName(file.name)}-${String(n).padStart(2, '0')}.jpg`, blob: await UI.canvasBlob(cv, 'image/jpeg', 0.93), thumb: cv.toDataURL('image/jpeg', 0.5) });
+          }
+          return list.sort((a, b) => a.n - b.n);
+        };
+        $('.mode').append(UI.seg([['grid', 'Profile grid'], ['carousel', 'Carousel (swipe)'], ['custom', 'Custom grid']], mode, v => { mode = v; setMode(); }));
+        $('.px').oninput = e => { px = +e.target.value; draw(); };
+        $('.py').oninput = e => { py = +e.target.value; draw(); };
+        $('.chg').onclick = change;
+        $('.go').onclick = e => UI.busy(e.currentTarget, async () => {
+          tiles = await makeTiles();
+          const list = UI.h('<div class="file-list"></div>');
+          tiles.forEach(t => list.append(UI.fileRow({ name: t.name, sub: `Post #${t.n} · ${UI.fmtBytes(t.blob.size)}`, thumb: t.thumb, blob: t.blob })));
+          $('.out').innerHTML = ''; $('.out').append(list);
+          await UI.zip(tiles.map(t => ({ name: t.name, blob: t.blob })), `${UI.baseName(file.name)}-${mode === 'carousel' ? 'carousel' : 'grid'}.zip`);
+        }, 'Cutting tiles…');
+        setMode();
+      },
+    });
+  });
 })();

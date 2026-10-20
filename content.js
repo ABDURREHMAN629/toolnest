@@ -540,4 +540,72 @@ module.exports = {
         <li><strong>CPM</strong> (characters per minute) is used by some employers instead of WPM; it is roughly WPM × 5.</li>
         <li>The <strong>speed chart</strong> shows your pace minute by minute. A falling line means fatigue — short daily practice builds the stamina to keep it flat.</li>
       </ul>`,
+
+  'image-splitter': `
+      <h2>How Instagram grid posts work</h2>
+      <p>Your Instagram profile shows posts three across, newest first. If you cut one big picture into tiles and post them in the right order, your profile shows the whole picture — a “grid post” or “puzzle feed”. The catch is the order: the newest post appears at the top-left, so the <strong>bottom-right tile must be posted first</strong> and the top-left tile last. This tool numbers every tile in that posting order for you.</p>
+      <h2>Grid, carousel or custom?</h2>
+      <ul>
+        <li><strong>Profile grid</strong> — 1 to 5 rows of 3 posts (3, 6, 9, 12 or 15 tiles) that join up on your profile.</li>
+        <li><strong>Carousel (swipe)</strong> — 2 to 10 slides in a single post. Perfect for panoramas: as people swipe, the photo continues seamlessly.</li>
+        <li><strong>Custom grid</strong> — any number of rows and columns, for printing, puzzles or other platforms.</li>
+      </ul>
+      <h2>Which tile shape?</h2>
+      <ul>
+        <li><strong>1:1 square (1080×1080)</strong> — the classic Instagram shape.</li>
+        <li><strong>4:5 portrait (1080×1350)</strong> — the tallest feed post Instagram allows; takes up more screen in the feed.</li>
+        <li><strong>3:4 (1080×1440)</strong> — matches the taller thumbnails Instagram's profile grid now shows, so tiles line up without being cut off on your profile.</li>
+      </ul>
+      <p>Use the two sliders to move the picture inside the frame before cutting. Tiles are saved as high-quality JPGs at Instagram's recommended 1080-pixel width and downloaded together in a ZIP.</p>`,
+
+  'split-image-for-instagram': `
+      <h2>Split one photo into 3 Instagram posts</h2>
+      <p>A three-part photo fills one whole row of your Instagram profile — great for landscapes, group photos, product launches and announcements. Choose a wide photo, keep <strong>1 row</strong> selected, and the tool crops it to the right shape and cuts three equal tiles.</p>
+      <h2>Posting order matters</h2>
+      <ol>
+        <li>Post tile <strong>1</strong> first — it is the right-hand third of your picture.</li>
+        <li>Then post tile <strong>2</strong> (the middle) and finally tile <strong>3</strong> (the left).</li>
+        <li>Post all three in a row without anything in between, or the picture will be split across two rows.</li>
+      </ol>
+      <p>Already have posts on your profile? The three tiles only line up if the number of posts before them is a multiple of three — otherwise post one or two extra images first, or archive them, to align the row.</p>`,
+
+  'instagram-carousel-splitter': `
+      <h2>Seamless Instagram carousel from a panorama</h2>
+      <p>A carousel post can hold up to 20 images, and people swipe through them in order. Cut a panorama into equal slides and the picture flows from one slide to the next as they swipe — one of the most engaging post types, because every swipe counts as interaction.</p>
+      <h2>Tips</h2>
+      <ul>
+        <li><strong>Pick the slide count from the photo's shape.</strong> A photo about three times wider than it is tall works well as 3 square slides; a very wide phone panorama suits 4–6 slides.</li>
+        <li><strong>Choose 4:5 portrait</strong> for slides that take up more of the screen in the feed.</li>
+        <li><strong>Upload all slides in one post</strong>, selecting them in order 1, 2, 3… Instagram keeps that order.</li>
+        <li>Avoid placing faces or text exactly on a cut line — use the sliders to shift the picture slightly.</li>
+      </ul>`,
+
+  'gpx-kml-converter': `
+      <h2>GPX vs KML — what's the difference?</h2>
+      <ul>
+        <li><strong>GPX</strong> is the standard format of GPS devices and fitness apps: Garmin, Strava, Komoot, AllTrails, Wikiloc, OsmAnd and most hiking and cycling apps. It stores waypoints, tracks (where you went, with times) and routes (where you plan to go).</li>
+        <li><strong>KML</strong> (and zipped <strong>KMZ</strong>) is Google's format for Google Earth and Google My Maps. It also stores styling such as line colour and width.</li>
+      </ul>
+      <p>This converter reads either format and writes the other: waypoints become placemarks, and tracks and routes become lines (and back again). Elevation is kept, and timestamps are kept when converting KML tracks that include them. It also shows the total length of your tracks in kilometres and miles.</p>
+      <h2>Private by design</h2>
+      <p>GPS files show exactly where you live, work and travel. Most online converters upload them to a server; this one converts the file inside your browser, so your location data never leaves your device.</p>`,
+
+  'gpx-to-kml': `
+      <h2>Open a GPX track in Google Earth or My Maps</h2>
+      <ol>
+        <li>Export the GPX from your app or device (Strava: activity → ⋯ → Export GPX; Garmin Connect: activity → ⚙ → Export to GPX).</li>
+        <li>Convert it here. Pick a track colour and line width — they are saved inside the KML.</li>
+        <li><strong>Google Earth:</strong> File → Open (or drag the KML onto the globe). <strong>Google My Maps:</strong> create a map → Add layer → Import, then choose the KML.</li>
+      </ol>
+      <p>Google Earth on the web can open GPX directly too, but Google My Maps works more reliably with KML, and KML keeps your chosen colour and width when you share the map.</p>`,
+
+  'kml-to-gpx': `
+      <h2>Take a Google Earth or My Maps route to your GPS</h2>
+      <ol>
+        <li><strong>From Google My Maps:</strong> open the map → ⋮ menu → Export to KML/KMZ. <strong>From Google Earth:</strong> right-click the place or folder → Save Place As → KML or KMZ.</li>
+        <li>Convert it here — KMZ files are unzipped automatically.</li>
+        <li>Copy the GPX to your device or import it into your app (Garmin Connect, Komoot, OsmAnd, AllTrails, Wikiloc…).</li>
+      </ol>
+      <h2>Tracks or routes?</h2>
+      <p>By default lines become GPX <strong>tracks</strong>, which every app and device can display. Tick “Save lines as GPX routes” if your device needs <strong>routes</strong> for turn-by-turn navigation. Placemarks become waypoints. Shapes drawn as areas are converted to their outline.</p>`,
 };

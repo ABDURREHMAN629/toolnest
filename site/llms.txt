@@ -1,6 +1,6 @@
 # WebToolNest
 
-> 160+ free online tools that run entirely in the browser: PDF, image, video and audio converters, calculators, student, developer and everyday utilities. No sign-up, no watermarks, no limits, and files are processed on the visitor's own device instead of being uploaded.
+> 170+ free online tools that run entirely in the browser: PDF, image, video and audio converters, calculators, student, developer and everyday utilities. No sign-up, no watermarks, no limits, and files are processed on the visitor's own device instead of being uploaded.
 
 - Website: https://www.webtoolnest.com/
 - Contact: contact@webtoolnest.com
@@ -53,6 +53,9 @@ Compress, resize, crop and convert images, remove backgrounds, extract text and 
 - [SVG to PNG](https://www.webtoolnest.com/svg-to-png): Convert SVG vector graphics to PNG or JPG images at any size, with a transparent or colored background.
 - [Passport Photo Maker](https://www.webtoolnest.com/passport-photo-maker): Make passport and visa photos in standard sizes like 2x2 inch and 35x45 mm, then print several on a 4x6 sheet.
 - [Photo Collage Maker](https://www.webtoolnest.com/collage-maker): Combine multiple photos into a collage grid with custom spacing, rounded corners and background color.
+- [Instagram Grid Maker & Image Splitter](https://www.webtoolnest.com/image-splitter): Split one photo into a 3, 6 or 9-post Instagram grid or a seamless swipe carousel. Tiles are cut to 1:1, 4:5 or 3:4 and numbered in posting order.
+- [Split Image into 3 for Instagram](https://www.webtoolnest.com/split-image-for-instagram): Split a wide photo into 3 square posts that line up as one picture across your Instagram profile row.
+- [Instagram Carousel Splitter](https://www.webtoolnest.com/instagram-carousel-splitter): Turn a panorama into a seamless Instagram carousel — the picture continues as people swipe from slide to slide.
 
 ## Video & Audio
 
@@ -257,6 +260,9 @@ QR codes, barcodes, passwords, signature maker, invoice generator, to-do list an
 - [Excel to VCF](https://www.webtoolnest.com/excel-to-vcf): Convert an Excel sheet (XLSX or XLS) of contacts into a VCF file in seconds — hundreds of contacts at once.
 - [VCF to CSV](https://www.webtoolnest.com/vcf-to-csv): Convert a VCF (vCard) contacts file into a CSV spreadsheet with names, phone numbers and emails in separate columns.
 - [VCF to Excel](https://www.webtoolnest.com/vcf-to-excel): Open VCF contacts in Excel: convert a vCard file into an XLSX spreadsheet with one row per contact.
+- [GPX to KML Converter](https://www.webtoolnest.com/gpx-kml-converter): Convert GPS tracks and waypoints between GPX and KML/KMZ for Google Earth, Google My Maps, Garmin, Strava and hiking apps — without uploading your routes.
+- [GPX to KML](https://www.webtoolnest.com/gpx-to-kml): Convert a GPX track from Garmin, Strava or a hiking app into a KML file you can open in Google Earth or Google My Maps.
+- [KML to GPX](https://www.webtoolnest.com/kml-to-gpx): Convert KML or KMZ files from Google Earth or Google My Maps into GPX for Garmin, GPS devices and hiking apps.
 - [Qibla Direction Finder](https://www.webtoolnest.com/qibla-direction): Find the Qibla direction from anywhere in the world in degrees from north, with a compass, the distance to the Kaaba and a live compass on your phone.
 
 ## About

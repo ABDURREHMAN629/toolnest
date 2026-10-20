@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node build.js",
     "start": "node build.js && node serve.js",
-    "serve": "node serve.js"
+    "serve": "node serve.js",
+    "indexnow": "node indexnow.js"
   }
 }

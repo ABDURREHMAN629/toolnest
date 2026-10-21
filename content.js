@@ -2006,4 +2006,161 @@ module.exports = {
       <p>The same equation factors as (x − 2)(x − 3) = 0. Factoring is quicker when the roots are whole numbers; the formula always works. This <strong>quadratic equation solver by factoring</strong> check (a <strong>quadratic equation solver with steps by factoring</strong>) lets you confirm your factors give the same roots.</p>
       <h2>On a TI-84, in Excel or Python</h2>
       <p>On a TI-84 (<strong>quadratic equation solver ti 84</strong>, or a <strong>quadratic formula solver for ti 84</strong> program), use the PlySmlt2 app or a program. A <strong>quadratic equation solver in excel</strong> uses <code>=(-B1+SQRT(B1^2-4*A1*C1))/(2*A1)</code>; a <strong>quadratic equation solver in python</strong> uses <code>cmath.sqrt</code> to handle complex roots. This <strong>quadratic equation solver online</strong> is quicker for checking homework — a simple <strong>quadratic equation solver</strong>.</p>`,
+
+  'date-difference-calculator': `
+      <h2>Days between dates calculator</h2>
+      <p>Pick a start and an end date to count the <strong>days between dates</strong> — and see the same gap in years, months and days, in weeks, and as <strong>business days</strong>. Tick <strong>Include end date</strong> to count both the first and last day (handy for holidays and hotel stays), and choose which days are your weekend: Saturday & Sunday, Friday & Saturday, Friday only or Sunday only. It's a <strong>days between dates calculator</strong> and a <strong>days between dates counter</strong> in one.</p>
+      <h2>Example</h2>
+      <p>1 January 2026 → 25 December 2026 = <strong>358 days</strong> (51 weeks and 1 day, or 11 months and 24 days), of which <strong>256</strong> are weekdays. Business days skip weekends only, not public holidays, so subtract any holidays yourself. Prefer to see it on a <strong>days between dates calendar</strong>? The result also shows both dates with their weekdays.</p>
+      <h2>Days between dates formula</h2>
+      <p>The <strong>days between dates formula</strong> is simply end date − start date. Here's how to do it in other tools:</p>
+      <ul>
+        <li><strong>days between dates in excel</strong> — the <strong>days between dates excel formula</strong> is <code>=B2-A2</code> or <code>=DAYS(B2,A2)</code>; for working days, <code>=NETWORKDAYS(A2,B2)</code>. Any <strong>days between dates formula excel</strong> users write works the same in a <strong>days between dates excel</strong> sheet.</li>
+        <li><strong>days between dates in google sheets</strong> — the same <code>=DAYS(B2,A2)</code> or <code>=DATEDIF(A2,B2,"D")</code> is the <strong>days between dates formula google sheets</strong> users need (or any <strong>days between dates google sheets</strong> template).</li>
+        <li><strong>days between dates in sql</strong> — SQL Server: <code>DATEDIFF(day, start_date, end_date)</code>; MySQL: <code>DATEDIFF(end_date, start_date)</code>.</li>
+        <li><strong>days between dates in oracle</strong> — subtract the dates directly: <code>end_date - start_date</code>.</li>
+        <li><strong>days between dates in snowflake</strong> — <code>DATEDIFF(day, start_date, end_date)</code>.</li>
+        <li><strong>days between dates in power bi</strong> (DAX) — <code>DATEDIFF([Start], [End], DAY)</code>.</li>
+        <li><strong>days between dates in power query</strong> — <code>Duration.Days([End] - [Start])</code>.</li>
+      </ul>
+      <p>(Searching for “Days Between” by the Grateful Dead? That's the Jerry Garcia song — this page is for counting dates.)</p>`,
+
+  'date-calculator': `
+      <h2>Date calculator — add or subtract days</h2>
+      <p>Pick a start date, choose <strong>Add</strong> or <strong>Subtract</strong>, and enter any mix of years, months, weeks and days. You'll get the resulting date with its weekday, the ISO date (YYYY-MM-DD), its day of the year and how many days away it is. It's a <strong>date calculator add days</strong> tool — or a <strong>date calculator add</strong> months and years tool — that's ideal for deadlines.</p>
+      <h2>Examples</h2>
+      <ul>
+        <li>21 October 2026 + 90 days = <strong>Tuesday, 19 January 2027</strong>.</li>
+        <li>31 January + 1 month = <strong>28 February</strong> (29 in a leap year) — the calculator keeps you inside the shorter month instead of spilling into March.</li>
+        <li>A <strong>date calculator for weeks</strong>: today + 6 weeks for a follow-up appointment.</li>
+      </ul>
+      <h2>Courts, medication and pregnancy</h2>
+      <ul>
+        <li><strong>date calculator for court</strong> deadlines — “within 30 days of service” = service date + 30 days. Court rules often extend deadlines that land on weekends or holidays, so check your court's rules.</li>
+        <li><strong>date calculator for medication</strong> — when a 28-day pack or a 90-day prescription runs out.</li>
+        <li><strong>date calculator for pregnancy</strong> — the <a href="/pregnancy-calculator">Pregnancy Due Date Calculator</a> works out weeks and the due date for you.</li>
+        <li><strong>date calculator for age</strong> — the <a href="/age-calculator">Age Calculator</a> gives exact years, months and days.</li>
+      </ul>
+      <h2>Counting days between two dates</h2>
+      <p>To go the other way — a <strong>date calculator between two dates</strong>, a <strong>date calculator days between</strong> or <strong>date calculator count days</strong> tool, or a <strong>date calculator for business days</strong> — use <a href="/date-difference-calculator">Days Between Dates</a>. It's the <strong>date calculator for number of days</strong> (a <strong>date calculator for days</strong>) that also counts weekdays.</p>
+      <h2>In Excel</h2>
+      <p>For a <strong>date calculator for excel</strong>, the <strong>date calculator formula in excel</strong> is <code>=A2+90</code> for days, <code>=EDATE(A2,3)</code> for months and <code>=WORKDAY(A2,10)</code> for 10 working days. Planning for <strong>date calculator 2026</strong> or 2027 deadlines? Any year from 1 to 9999 works — a simple <strong>date calculator</strong>.</p>`,
+
+  'time-calculator': `
+      <h2>Time calculator for work hours</h2>
+      <p>Pick one of three modes:</p>
+      <ul>
+        <li><strong>Hours between two times</strong> — enter a start and end time and an <strong>unpaid break</strong>. You'll get the total in hours and minutes, in <strong>decimal hours</strong> and in minutes; add an hourly rate to see the pay. Overnight shifts (22:00 → 06:00) are handled automatically.</li>
+        <li><strong>Add / subtract time</strong> — e.g. 08:45 + 3 h 20 m = 12:05 PM, with a “+1 day” note if you cross midnight.</li>
+        <li><strong>Total of many durations</strong> — one per line, like <code>1:30</code>, <code>2h 15m</code> or <code>45m</code>, with the total and the average.</li>
+      </ul>
+      <h2>Time calculator for work with lunch</h2>
+      <p>As a <strong>time calculator for work</strong> (a <strong>time calculator for work hours</strong>), enter 9:00 to 17:30 with a 30-minute lunch → <strong>8h 00m</strong> (8.00 decimal hours). That's the <strong>time calculator with lunch</strong> — or <strong>time calculator for work with lunch</strong> — most timesheets need.</p>
+      <h2>For the week and payroll</h2>
+      <p>For a <strong>time calculator for the week</strong>, switch to “Total of many durations” and enter each day: 8:00, 7:45, 8:30, 8:00, 6:15 → <strong>38h 30m</strong>. Payroll systems use decimal hours, so this <strong>time calculator for payroll</strong> shows 38.50 as well (see also <a href="/hours-to-decimal">Hours to Decimal</a>).</p>
+      <h2>Hours, minutes and seconds</h2>
+      <p>As a <strong>time calculator hours and minutes</strong> (a <strong>time calculator for hours and minutes</strong>) tool it's precise to the minute. For a <strong>time calculator minutes</strong> total (a <strong>time calculator for minutes</strong>), enter <code>45m</code> lines; for a <strong>time calculator minutes and seconds</strong> (or <strong>time calculator for minutes and seconds</strong>) sum, type h:mm:ss like <code>0:04:30</code> — totals are shown rounded to the minute. It's a quick <strong>time calculator for hours</strong> and a <strong>time calculator hours</strong> adder too.</p>
+      <h2>Division, dates and time zones</h2>
+      <p>For <strong>time calculator division</strong>, divide the decimal hours: 7.5 h ÷ 3 = 2.5 h = 2h 30m (the average in the list mode does this for you). A <strong>time calculator between dates</strong> is <a href="/date-difference-calculator">Days Between Dates</a>, and a <strong>time calculator for time zones</strong> is the <a href="/time-zone-converter">Time Zone Converter</a>. A simple <strong>time calculator</strong>.</p>`,
+
+  'stopwatch': `
+      <h2>Online stopwatch with laps</h2>
+      <p>Press <strong>Start</strong> — or the <kbd>Space</kbd> bar — and this <strong>online stopwatch</strong> counts to the hundredth of a second. Press <kbd>L</kbd> or <strong>Lap</strong> to record split times, and <kbd>R</kbd> to reset. Each lap shows its own time and the running total; once you have three or more laps, the fastest is highlighted green and the slowest red. It's an <strong>online stopwatch with laps</strong> that's completely free — an <strong>online stopwatch for free</strong> with no ads in the way of the timer.</p>
+      <h2>Accurate timing</h2>
+      <p>The time is measured with your browser's high-resolution clock, so it stays accurate even if the display briefly stutters. For a bigger display, press <kbd>F11</kbd> for an <strong>online stopwatch full screen</strong> view. Need to count down instead? Use the <a href="/countdown-timer">Countdown Timer</a> — the <strong>online stopwatch countdown</strong> mode with an alarm and its own full-screen button. Together they make an <strong>online stopwatch timer</strong> set.</p>
+      <h2>Sport, study and the classroom</h2>
+      <ul>
+        <li><strong>online stopwatch for running</strong> — use Lap for each lap of the track or each kilometre.</li>
+        <li><strong>online stopwatch race</strong> — time sprints and swimming lengths; laps show who improved.</li>
+        <li><strong>online stopwatch for rubik's cube</strong> solves — Space to start and stop, just like a cube timer.</li>
+        <li><strong>online stopwatch for chess</strong> — times a whole game or a single move (a two-sided chess clock is a different tool).</li>
+        <li><strong>online stopwatch for study</strong> sessions (an <strong>online stopwatch for study free</strong>) — or try the <a href="/pomodoro-timer">Pomodoro Timer</a>.</li>
+        <li><strong>online stopwatch for classroom</strong> activities and an <strong>online stopwatch for kids</strong> — simple big numbers anyone can read; for a countdown, the <strong>online timer for kids</strong> is the Countdown Timer.</li>
+        <li><strong>online stopwatch game</strong> challenges — try stopping it at exactly 10.00 seconds. (An <strong>online stopwatch for game</strong> nights works too.)</li>
+      </ul>
+      <p>Looking for the <strong>online stopwatch duck race</strong>, <strong>online stopwatch horse race</strong> or <strong>online stopwatch bomb</strong> timers? Those are themed classroom timers on other sites; this one is a clean, distraction-free stopwatch.</p>`,
+
+  'countdown-timer': `
+      <h2>Countdown timer online with alarm</h2>
+      <p>Click a preset — 1, 3, 5, 10, 15, 20, 30 or 45 minutes, or 1 hour — or set any hours, minutes and seconds, then press <strong>Start</strong>. A progress bar shows the time left, the browser tab shows the remaining time too, and when it reaches zero an alarm rings until you stop it. It's a <strong>countdown timer online</strong> that's completely <strong>countdown timer free</strong>, with a full-screen button (⛶).</p>
+      <h2>Classroom, kids and presentations</h2>
+      <ul>
+        <li><strong>countdown timer for classroom</strong> activities — go full screen on the projector so the whole class can see it.</li>
+        <li><strong>countdown timer for kids</strong> — screen-time limits, tidy-up races and homework blocks.</li>
+        <li><strong>countdown timer for powerpoint</strong> talks — keep it full screen on a second display, or switch to it between slides.</li>
+      </ul>
+      <h2>Streaming, OBS and Discord</h2>
+      <p>As a <strong>countdown timer for stream</strong> starts (“starting in 5 minutes”) or a <strong>countdown timer for obs</strong>, add this page as a Window Capture or Browser Source and crop to the timer. For a <strong>countdown timer for discord</strong> event, share your screen — or post a live countdown with the <a href="/discord-timestamp-generator">Discord Timestamp Generator</a>.</p>
+      <h2>Phone, desktop and widgets</h2>
+      <p>It works in any browser, so it's a <strong>countdown timer for desktop</strong> computers and a <strong>countdown timer for iphone</strong> (a <strong>countdown timer iphone</strong> users can add to the Home Screen) — like a <strong>countdown timer app</strong> or <strong>countdown timer widget</strong> without installing anything. It's the same idea as the <strong>countdown timer google</strong> shows when you search “set timer”, with presets and full screen. Keep the tab open; your device's volume must be up to hear the alarm.</p>
+      <h2>Counting down to a date</h2>
+      <p>This timer counts down a duration. For a <strong>countdown timer date</strong> — days until a wedding, exam or New Year — use <a href="/date-difference-calculator">Days Between Dates</a>. (Social posts like a <strong>countdown timer for whatsapp</strong> status or <strong>countdown timer for facebook</strong> event usually just share the number of days left.) A simple <strong>countdown timer</strong>.</p>`,
+
+  'pomodoro-timer': `
+      <h2>Pomodoro timer online</h2>
+      <p>Press <strong>Start</strong> for a 25-minute focus session. When the timer rings, take a 5-minute short break; every 4th break is a 15-minute long break. The <strong>pomodoro timer online</strong> counts your completed sessions, shows the countdown in the browser tab, and can start the next session automatically. Change the focus, short-break and long-break lengths in ⚙️ Settings — they're remembered on this device.</p>
+      <h2>Pomodoro timer meaning</h2>
+      <p>The <strong>pomodoro timer technique</strong> was created by Francesco Cirillo in the late 1980s. “Pomodoro” is Italian for tomato — he used a tomato-shaped kitchen timer. That's the <strong>pomodoro timer meaning</strong>: short, timed bursts of single-task focus with regular breaks to beat procrastination and fatigue.</p>
+      <h2>Studying and ADHD</h2>
+      <ul>
+        <li><strong>pomodoro timer for studying</strong> — one subject per session; use the break to stand up and stretch, not scroll.</li>
+        <li><strong>pomodoro timer for adhd</strong> — many people find shorter sessions (15 minutes work, 5 break) easier to start; set them in Settings.</li>
+        <li><strong>pomodoro timer for kids</strong> — try 10–15 minute focus blocks for homework.</li>
+      </ul>
+      <h2>Mac, Windows and desktop</h2>
+      <p>It runs in the browser, so it's a <strong>pomodoro timer for mac</strong> (a <strong>pomodoro timer for macbook</strong>), a <strong>pomodoro timer for windows</strong> and a <strong>pomodoro timer for desktop</strong> without an install — like a <strong>pomodoro timer app</strong>. Keep it in a tab beside your study notes or a <strong>pomodoro timer for notion</strong> workspace, and allow notifications to get a ping when a session ends.</p>
+      <h2>YouTube, aesthetic and physical timers</h2>
+      <p>A <strong>pomodoro timer youtube</strong> video plays fixed sessions; this one is adjustable and pauses when you need it. If you prefer a <strong>pomodoro timer aesthetic</strong> or <strong>pomodoro timer cute</strong> look, use full-screen with a calm wallpaper. Physical options — a <strong>pomodoro timer cube</strong> you flip, or a classic tomato timer from Amazon — make a nice <strong>pomodoro timer for desk</strong> setup, but this free <strong>pomodoro timer</strong> does the same job.</p>`,
+
+  'time-zone-converter': `
+      <h2>Time zone converter with date</h2>
+      <p>Pick a date and time and the time zone it's in, and see the same moment in every city on your list — with each place's date, UTC offset and a ☀️/🌙 day-or-night icon. Add any city or time zone from the full world list, remove the ones you don't need, and press <strong>Now</strong> for the current time everywhere. Your list is remembered on this device. Daylight saving time is applied automatically for the date you choose, so this <strong>time zone converter with date</strong> stays correct all year.</p>
+      <h2>Example</h2>
+      <p>A 9:00 AM meeting in New York is <strong>7:30 PM</strong> in India in winter (EST, UTC−5) but <strong>6:30 PM</strong> in summer (EDT, UTC−4) — because India (UTC+5:30) doesn't use daylight saving. That's why a <strong>time zone converter for india</strong> and a <strong>time zone converter for usa</strong> (Eastern, Central, Mountain, Pacific) need the date.</p>
+      <h2>Meetings across countries</h2>
+      <p>As a <strong>time zone converter for meetings</strong> (a <strong>time zone converter meeting planner</strong>), add every attendee's city and slide the time until it's daytime ☀️ for everyone — a <strong>time zone converter for multiple countries</strong> at a glance, like a <strong>time zone converter chart</strong>. It's a <strong>time zone calculator for travel</strong> too: check the local time when you land.</p>
+      <h2>Forex market hours</h2>
+      <p>As a <strong>time zone converter forex</strong> traders use, convert the session opens to your time. In <strong>time zone converter forex market hours</strong> terms (UTC, winter): Sydney about 21:00–06:00, Tokyo 00:00–09:00, London 08:00–17:00, New York 13:00–22:00 — about an hour earlier when daylight saving is on.</p>
+      <h2>Discord, Excel and Google</h2>
+      <ul>
+        <li><strong>time zone converter for discord</strong> (a <strong>time zone converter discord</strong> trick) — the <a href="/discord-timestamp-generator">Discord Timestamp Generator</a> shows a time in each reader's own zone.</li>
+        <li><strong>time zone converter for excel</strong> — add the offset as a fraction of a day: <code>=A2+5/24</code>, or <code>=A2+TIME(5,30,0)</code> for +5:30.</li>
+        <li>Unlike a quick <strong>time zone converter google</strong> answer, a <strong>time zone converter map</strong> or the <strong>time zone converter classic</strong> pages, this <strong>time zone converter calculator</strong> keeps your own city list and works like a <strong>time zone converter app</strong>.</li>
+      </ul>
+      <p>A simple <strong>time zone converter</strong>.</p>`,
+
+  'alarm-clock': `
+      <h2>Online alarm clock with sound</h2>
+      <p>Set an alarm time, give it a label (“Wake up”, “Take medicine”) and pick a sound — <strong>Classic</strong>, <strong>Beep</strong>, <strong>Bell</strong> or <strong>Digital</strong>. Add as many as you like: it's an <strong>online alarm clock multiple alarms</strong> tool, and each one can be switched on or off. When an alarm rings, choose <strong>Stop</strong> or <strong>Snooze 5 min</strong>. Your alarms are saved in this browser, and the page shows a big live clock and today's date. It's an <strong>online alarm clock free</strong> of sign-ups — an <strong>online alarm clock with sound</strong> that keeps ringing until you stop it.</p>
+      <h2>Make sure it rings</h2>
+      <ul>
+        <li>Keep this tab open and your computer awake — the <strong>online alarm clock for computer</strong> rings in your browser, so a sleeping laptop can't ring.</li>
+        <li>Turn the volume up. For an <strong>online alarm clock loud</strong> enough — or an <strong>online alarm clock for heavy sleepers</strong> — choose Digital or Beep and use external speakers.</li>
+        <li>Allow notifications so you see a pop-up even in another tab.</li>
+      </ul>
+      <h2>Laptop, PC and classroom</h2>
+      <p>It works as an <strong>online alarm clock for laptop</strong> and an <strong>online alarm clock for pc</strong> users at their desk, and an <strong>online alarm clock for students</strong> to mark the end of study blocks. Teachers use it as an <strong>online alarm clock for classroom</strong> and an <strong>online alarm clock for kids</strong> to signal tidy-up time. On a projector, the big clock doubles as an <strong>online digital clock for classroom</strong> and an <strong>online digital clock for exams</strong> — or an <strong>online digital clock for desktop</strong> on a spare screen.</p>
+      <h2>Alarm or timer?</h2>
+      <p>An alarm rings at a time of day; a timer rings after a duration. For an <strong>online alarm clock timer</strong> (“ring in 20 minutes”), use the <a href="/countdown-timer">Countdown Timer</a>. Like the <strong>online alarm clock - vclock</strong> style sites, it needs no download, and its clean big-number display gives an <strong>online alarm clock aesthetic</strong> on any screen. A simple <strong>online alarm clock</strong>.</p>`,
+
+  'day-of-week-calculator': `
+      <h2>Day of the week calculator for any date</h2>
+      <p>Enter any date — past or future — to see which weekday it falls on. You also get which one it is in the month (“the third Saturday”), the day of the year, the ISO week number and how many days ago or away it is. It's a <strong>day of the week calculator for any date</strong>, <strong>day of the week calculator free</strong> of sign-ups and works as a <strong>day of the week calculator online</strong> on any device.</p>
+      <h2>What day was I born on?</h2>
+      <p>This is the <strong>day of the week i was born calculator</strong> — a <strong>what day was i born calculator</strong> that's <strong>what day was i born calculator free</strong> to use. Answering <strong>what day was i born on by date of birth</strong> takes one step: type your birthday — 15 January 2000 was a <strong>Saturday</strong> — and you'll also see the old nursery rhyme for your day (“Saturday's child works hard for a living”). As a <strong>day of week calculator birthday</strong> tool (or <strong>birth day of week calculator</strong>), try your birthday in a future year to see which weekday your next party falls on. It's a <strong>day finder by date of birth</strong>, a <strong>day finder by date</strong> for any event, and a <strong>day in the week calculator</strong> that answers any <strong>day of week calculator from date</strong> question instantly.</p>
+      <h2>Famous dates</h2>
+      <p>A <strong>historical day of week calculator</strong> makes trivia easy:</p>
+      <ul>
+        <li><strong>what day of the week was july 4 1776</strong>? A <strong>Thursday</strong>.</li>
+        <li><strong>what day of the week was d day</strong> (<strong>what day of the week was june 6 1944</strong>)? A <strong>Tuesday</strong>.</li>
+        <li><strong>what day of the week was september 11 2001</strong> (<strong>what day of the week was 9/11</strong>)? Also a <strong>Tuesday</strong>.</li>
+        <li>20 July 1969 (the Moon landing) was a Sunday.</li>
+        <li><strong>what day of the week is fourth of july 2026</strong>? A Saturday. <strong>what day of the week is halloween 2026</strong>? Also a Saturday. <strong>what day of the week is christmas 2026</strong>? A Friday.</li>
+      </ul>
+      <h2>Day of the week calculator formula</h2>
+      <p>The classic <strong>day of the week calculator formula</strong> is Zeller's congruence: <code>h = (q + ⌊13(m+1)/5⌋ + K + ⌊K/4⌋ + ⌊J/4⌋ + 5J) mod 7</code>, where q is the day, m the month (March = 3 … February = 14 of the previous year), K the year of the century and J the century; h = 0 is Saturday. It's the <strong>day of the week calculator for any date formula</strong> taught in maths classes. It's also the usual <strong>day finder formula</strong>. For mental <strong>day of the week calculator math</strong>, try John Conway's Doomsday rule — 4/4, 6/6, 8/8, 10/10 and 12/12 always fall on the same weekday in any year.</p>
+      <h2>In Excel</h2>
+      <p>For an <strong>excel day of week calculator</strong> (<strong>what day of the week formula excel</strong>), use <code>=TEXT(A2,"dddd")</code> for the name or <code>=WEEKDAY(A2)</code> for a number (1 = Sunday).</p>
+      <h2>Julian calendar and BC dates</h2>
+      <p>Dates before 1582 are calculated on the modern Gregorian calendar extended backwards. Historians usually quote older dates on the Julian calendar, so a <strong>day of the week calculator julian calendar</strong> answer can differ — convert the date to Gregorian first. Browser date pickers start at year 1, so a <strong>day of the week calculator bc</strong> date isn't supported.</p>`,
 };

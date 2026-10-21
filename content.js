@@ -1266,4 +1266,333 @@ module.exports = {
       </ul>
       <p>It's a <strong>photo collage maker online</strong> that works on Windows, Mac and as a <strong>photo collage maker iphone</strong> alternative — no <strong>photo collage maker app</strong> or <strong>photo collage maker free download</strong> needed, though it's as easy as a <strong>photo collage maker app free</strong>. Use this <strong>photo collage maker</strong> — a <strong>photo collage maker for free</strong> — whenever you like.</p>
       <p>Everything happens in your browser: your photos never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'video-converter': `
+      <h2>Free video converter — MP4, WebM, MOV, MKV and AVI</h2>
+      <p>This <strong>video converter free</strong> tool changes a video into the format you need: <strong>MP4</strong>, WebM, MOV, MKV or AVI. As a <strong>video converter to mp4</strong> it fixes the most common problem — a file that won't play on a phone, TV or social app. Choose <strong>High</strong>, <strong>Balanced</strong> or <strong>Small file</strong> quality, or tick <strong>Fast mode</strong> to keep the original codecs when possible (much quicker, no quality loss).</p>
+      <h2>Which format should I choose?</h2>
+      <ul>
+        <li><strong>MP4</strong> — plays everywhere; best for WhatsApp, YouTube and Instagram. Use it as a <strong>video converter for youtube</strong>, a <strong>video converter for instagram</strong> and a <strong>video converter for discord</strong> upload.</li>
+        <li><strong>WebM</strong> — smaller files for websites.</li>
+        <li><strong>MOV</strong> — Apple editing apps; <strong>MKV</strong> — keeps multiple audio and subtitle tracks.</li>
+      </ul>
+      <h2>Works on every device</h2>
+      <p>It runs in the browser, so it's a <strong>video converter for windows</strong>, Mac and Linux, a <strong>video converter for chromebook</strong>, a <strong>video converter for android</strong> and a <strong>video converter for iphone</strong> — no <strong>video converter app</strong>, no <strong>video converter free download</strong> and no <strong>video converter for pc free download</strong> needed, even though it works just like a <strong>video converter for pc</strong>.</p>
+      <h2>Audio and GIFs</h2>
+      <p>Need sound only? Use <a href="/video-to-mp3">Video to MP3</a> — the <strong>video converter to mp3</strong> (or <strong>video converter mp4 to mp3</strong>) job. Want a short loop? Try <a href="/video-to-gif">Video to GIF</a>, the <strong>video converter to gif</strong>. This <strong>video converter online</strong> handles everyday files of a few hundred MB on a modern computer.</p>
+      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+
+  'video-compressor': `
+      <h2>Video compressor — make videos smaller without losing quality</h2>
+      <p>Compress by <strong>level</strong> (Light, Recommended, Strong, Maximum) or by <strong>target size</strong>: type the size you need and the compressor works out the right bitrate. You can also lower the resolution (1080p, 720p, 480p, 360p) and audio quality, or remove audio entirely. It's a <strong>video compressor free</strong> tool with no watermark — a <strong>video compressor for free</strong>.</p>
+      <h2>Video compressor for Discord</h2>
+      <p>Discord limits uploads on free accounts (10 MB at the time of writing). As a <strong>video compressor for discord</strong>, set the target size to about 9.5 MB to stay safely under it — the <strong>video compressor for discord 10mb</strong> and <strong>video compressor to 10mb</strong> setting. Nitro users can go bigger, up to the <strong>video compressor for discord 500mb</strong> limit. A <strong>video compressor for discord free</strong> of sign-ups, as people often recommend on Reddit (<strong>video compressor for discord reddit</strong>, <strong>video compressor reddit</strong>).</p>
+      <h2>Other common targets</h2>
+      <ul>
+        <li><strong>video compressor for email</strong> — Gmail attachments max out at 25 MB.</li>
+        <li><strong>video compressor for instagram</strong> and WhatsApp — 720p at the Recommended level looks sharp on phones.</li>
+      </ul>
+      <h2>Without losing quality</h2>
+      <p>For a <strong>video compressor without losing quality</strong> look, use <strong>Light</strong> or <strong>Recommended</strong> and keep the original resolution. Phone videos are recorded at very high bitrates, so they often shrink 50–70% with no visible difference.</p>
+      <p>No <strong>video compressor app</strong> or <strong>video compressor download</strong> needed: it's a <strong>video compressor online</strong> and <strong>video compressor online free</strong> page that works as a <strong>video compressor for pc</strong> and a <strong>video compressor for iphone</strong>.</p>
+      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+
+  'video-to-mp3': `
+      <h2>Video to MP3 converter — free</h2>
+      <p>Extract the sound from any video and save it as an audio file. This <strong>video to mp3 converter free</strong> tool supports <strong>MP3</strong>, M4A, WAV and OGG, at quality from 96 kbps (small) to 320 kbps (best). It's a quick <strong>video to mp3 audio</strong> extractor for lectures, podcasts recorded on video, interviews and music clips you own.</p>
+      <h2>Quality guide</h2>
+      <ul>
+        <li><strong>320 kbps</strong> — best for music.</li>
+        <li><strong>192 kbps</strong> — great quality, smaller <strong>video to mp3 file</strong>.</li>
+        <li><strong>96–128 kbps</strong> — speech, lectures and podcasts.</li>
+      </ul>
+      <h2>Make a ringtone</h2>
+      <p>For <strong>video to mp3 for ringtone</strong> use, extract the audio here, then cut the best 30 seconds with the <a href="/mp3-cutter">MP3 Cutter</a>.</p>
+      <h2>On phone or computer</h2>
+      <p>Works as <strong>video to mp3 android</strong> (<strong>video to mp3 for android</strong>), <strong>video to mp3 iphone</strong> (<strong>video to mp3 for iphone</strong>) and <strong>video to mp3 for pc</strong> — no app and no <strong>video to mp3 download</strong> of software. It's a <strong>video to mp3 converter online</strong> and a <strong>video to mp3 format converter</strong> for the universal <strong>video to mp3 format</strong>: <strong>video to mp3 free</strong>, <strong>video to mp3 for free</strong> and <strong>video to mp3 for free online</strong> — a simple <strong>video to mp3 converter</strong>.</p>
+      <p>Please only convert videos you own or have permission to use. This tool converts files on your device; it doesn't download from YouTube or other sites.</p>
+      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+
+  'mp4-to-mp3': `
+      <h2>MP4 to MP3 converter — free</h2>
+      <p>This <strong>mp4 to mp3 converter free</strong> tool pulls the audio track out of an MP4 video and saves it as MP3 (or M4A, WAV, OGG). Pick 320 kbps for music or 128 kbps for speech. It's the easiest <strong>mp4 to mp3 file converter</strong> for recordings, lectures and voice notes saved as video.</p>
+      <h2>Large files</h2>
+      <p>Because conversion happens on your own computer, there's no upload limit: <strong>mp4 to mp3 for large files</strong> works as long as your device has enough memory — files of several hundred MB are fine on a modern laptop.</p>
+      <h2>Mac, PC and iPhone</h2>
+      <p>It works as <strong>mp4 to mp3 for mac</strong>, <strong>mp4 to mp3 for pc</strong> and <strong>mp4 to mp3 for iphone</strong> in the browser — no Format Factory install (<strong>mp4 to mp3 format factory</strong>) and no <strong>mp4 to mp3 converter download for android</strong>. It's an <strong>mp4 to mp3 converter online</strong>, an <strong>mp4 to mp3 converter online free</strong> and an <strong>mp4 to mp3 format converter</strong> for the <strong>mp4 to mp3 format</strong>.</p>
+      <h2>Spotify and music apps</h2>
+      <p>For <strong>mp4 to mp3 for spotify</strong>, convert your own audio here and add it to Spotify as a local file (Settings → Local files). Only convert content you own or have the right to use.</p>
+      <p><strong>mp4 to mp3 free</strong>, <strong>mp4 to mp3 for free</strong> and <strong>mp4 to mp3 for free online</strong> — a no-signup <strong>mp4 to mp3 converter</strong> that often comes recommended on Reddit (<strong>mp4 to mp3 reddit</strong>) because it doesn't upload your files. No <strong>mp4 to mp3 download</strong> of software needed.</p>
+      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+
+  'video-trimmer': `
+      <h2>Video trimmer online — cut the start and end</h2>
+      <p>Set the <strong>start</strong> and <strong>end</strong> times and download only the part you want. This <strong>video trimmer online free</strong> tool has two modes: <strong>Fast</strong> (no re-encoding — instant and no quality loss, cutting at the nearest keyframe) and <strong>Frame-accurate</strong> (re-encodes for an exact cut).</p>
+      <h2>Popular uses</h2>
+      <ul>
+        <li><strong>video trimmer for whatsapp status</strong> — trim to 60 seconds or less.</li>
+        <li><strong>video trimmer for discord</strong> — keep the clip short to fit the upload limit, then shrink it with the <a href="/video-compressor">Video Compressor</a>.</li>
+        <li>Remove the boring start of a screen recording or lecture.</li>
+      </ul>
+      <h2>Large files, any computer</h2>
+      <p>As a <strong>video trimmer for large files</strong> (a <strong>video trimmer for large files free</strong> of upload limits), Fast mode handles big recordings quickly because it just copies the selected part. It works as a <strong>video trimmer for windows</strong> (or <strong>video trimmer windows</strong>), a <strong>video trimmer for pc</strong>, a <strong>video trimmer for linux</strong> (<strong>video trimmer linux</strong>) and a <strong>video trimmer for android</strong> — no <strong>video trimmer app</strong> or <strong>video trimmer download</strong>. It's a <strong>video trimmer for pc free</strong> of installs: <strong>video trimmer free</strong>, <strong>video trimmer for free</strong>, <strong>video trimmer online</strong>.</p>
+      <p>Need a <strong>video trimmer and cropper</strong> to change the frame shape too? Trim here, then use the <a href="/video-converter">Video Converter</a> or an editor for cropping.</p>
+      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+
+  'video-to-gif': `
+      <h2>Video to GIF converter — high quality</h2>
+      <p>Choose a video, set the start time and length, then pick the width (320–800 px) and frame rate (8–20 fps). This <strong>video to gif converter free</strong> tool uses a smart colour palette so GIFs look sharp — a <strong>video to gif high quality</strong> result without the grainy look of quick converters.</p>
+      <h2>Size tips</h2>
+      <ul>
+        <li>GIFs get big fast. Keep clips to 2–6 seconds.</li>
+        <li><strong>480 px at 12–15 fps</strong> is the sweet spot for chats and websites.</li>
+        <li>Even a <strong>video to gif 4k</strong> source works — the GIF is scaled to the width you choose.</li>
+      </ul>
+      <h2>For every platform</h2>
+      <ul>
+        <li><strong>video to gif for discord</strong> (and <strong>video to gif discord</strong> reactions) — 320–480 px; a <strong>video to gif for discord banner</strong> needs Nitro and a 600 × 240 crop; a <strong>video to gif for discord sticker</strong> must be under 512 KB.</li>
+        <li><strong>video to gif for reddit</strong>, <strong>video to gif for whatsapp</strong>, <strong>video to gif for instagram</strong> and <strong>video to gif for tiktok</strong> profile loops.</li>
+      </ul>
+      <p>It's a <strong>video to gif maker</strong> and <strong>video to gif format converter</strong> in your browser — <strong>video to gif iphone</strong> users can use it in Safari. Convert <strong>video to gif online</strong>, <strong>video to gif free</strong> and <strong>video to gif for free</strong> into the classic <strong>video to gif format</strong> — a simple <strong>video to gif converter</strong>.</p>
+      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+
+  'audio-converter': `
+      <h2>Free audio converter — MP3, WAV, M4A, AAC, OGG, FLAC, OPUS</h2>
+      <p>This <strong>audio converter free</strong> tool converts music, voice notes and recordings between all common formats and lets you choose the bitrate (64–320 kbps). Use it as an <strong>audio converter to mp3</strong> for maximum compatibility, an <strong>audio converter to wav</strong> for editing, or to FLAC for lossless archiving.</p>
+      <h2>Which format?</h2>
+      <ul>
+        <li><strong>MP3</strong> — plays everywhere. <strong>M4A / AAC</strong> — iPhone and Apple Music.</li>
+        <li><strong>WAV / FLAC</strong> — lossless; best for editing and archiving.</li>
+        <li><strong>OGG / OPUS</strong> — great quality at small sizes; OPUS is what WhatsApp voice notes use.</li>
+      </ul>
+      <h2>WhatsApp voice notes and video</h2>
+      <p>As an <strong>audio converter for whatsapp</strong>, turn .opus voice notes into MP3 to play them anywhere. As an <strong>audio converter from video</strong> (the <strong>audio converter - mp4 to mp3</strong> case), use <a href="/video-to-mp3">Video to MP3</a>.</p>
+      <h2>No app needed</h2>
+      <p>It runs in your browser: an <strong>audio converter for windows</strong>, an <strong>audio converter for mac</strong>, an <strong>audio converter for android</strong> and an <strong>audio converter for iphone</strong> — no <strong>audio converter app</strong>, no <strong>audio converter for pc free download</strong> or <strong>audio converter for pc download</strong>, yet it works as an <strong>audio converter for pc</strong>. For <strong>audio converter for spotify</strong> uploads, convert your own tracks to MP3 and add them as local files. This is an <strong>audio converter online</strong> — an <strong>audio converter for free</strong>, with no <strong>audio converter ai</strong> changes to your sound.</p>
+      <p>Your audio files are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+
+  'mp3-cutter': `
+      <h2>MP3 cutter and ringtone maker</h2>
+      <p>Pick the start and end of the part you want, add an optional 2-second <strong>fade in</strong> or <strong>fade out</strong>, and save as MP3, M4A or WAV. It's an <strong>mp3 cutter and ringtone maker</strong> in one — the quickest way to make an <strong>mp3 cutter for ringtone</strong> clip from your favourite song.</p>
+      <h2>Ringtones for iPhone and Android</h2>
+      <ul>
+        <li><strong>Android</strong> — save as MP3 and pick it in Settings → Sound → Ringtone. A handy <strong>mp3 cutter for android</strong>.</li>
+        <li><strong>iPhone</strong> — save as M4A, rename it to <code>.m4r</code>, and add it with Finder or iTunes (or GarageBand on the phone). This <strong>mp3 cutter for iphone</strong> keeps ringtones under 30 seconds as iPhones require.</li>
+      </ul>
+      <h2>On any computer</h2>
+      <p>It works as an <strong>mp3 cutter for windows</strong> (including <strong>mp3 cutter for windows 10</strong> and <strong>mp3 cutter for windows 11</strong>) and as an <strong>mp3 cutter for pc</strong> — no <strong>mp3 cutter download</strong>, <strong>mp3 cutter download for pc</strong>, <strong>mp3 cutter for pc free download</strong> or <strong>mp3 cutter app</strong> needed.</p>
+      <h2>Joining songs</h2>
+      <p>This is a cutter; an <strong>mp3 cutter and joiner</strong> that merges clips isn't available here yet. To make a mashup (<strong>mp3 cutter and joiner online</strong>), cut each part here first.</p>
+      <p>Use it as an <strong>mp3 cutter online</strong> — <strong>mp3 cutter online free</strong>, <strong>mp3 cutter free</strong>, an <strong>mp3 cutter for free</strong> and <strong>mp3 cutter for free online</strong>. It's the simplest <strong>mp3 cutter</strong> around.</p>
+      <p>Your audio files are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+
+  'mute-video': `
+      <h2>Mute video online — remove the sound</h2>
+      <p>Choose a video and click <strong>Remove audio</strong>: you get the same video with its audio track removed entirely. Because the picture isn't re-encoded, it's fast and there's no quality loss. You can <strong>mute video online free</strong>, with no watermark and no sign-up — <strong>mute video for free</strong>.</p>
+      <h2>Why remove the audio?</h2>
+      <ul>
+        <li><strong>mute video for instagram</strong> (and every <strong>mute video for instagram post</strong>) — so you can add licensed music in the app.</li>
+        <li>Remove background noise, private conversations or copyrighted music before sharing.</li>
+        <li>Make a <strong>silent video for kids</strong> to watch quietly, or a clean clip for presentations.</li>
+      </ul>
+      <h2>Mute video on iPhone, Android and PC</h2>
+      <p>It works in any browser — to <strong>mute video on iphone</strong>, on Android or on a computer. Social apps can <strong>mute videos on tiktok</strong> or <strong>mute videos on facebook</strong> only while you watch; this tool removes the <strong>mute video audio</strong> from the file itself, so it stays silent everywhere you upload it. It's also handy before you <strong>mute video in figma</strong> prototypes.</p>
+      <p>It's a <strong>mute video online</strong> tool — a <strong>mute video for free online</strong> option to <strong>mute video</strong> files in seconds. Want to keep only the sound instead? Use <a href="/video-to-mp3">Video to MP3</a>.</p>
+      <h2>Remove audio from video — free</h2>
+      <p>This is the quickest way to <strong>remove audio from video</strong> files: <strong>remove audio from video online free</strong> (or <strong>remove sound from video online free</strong>) without editing software. Instead of learning to <strong>remove audio from video capcut</strong>, <strong>remove audio from video canva</strong> or <strong>remove audio from video davinci resolve</strong>-style, just choose the file. It works to <strong>remove audio from video iphone</strong> and <strong>remove audio from video android</strong> users record, and to <strong>remove audio from video windows</strong> PCs store — <strong>remove sound from video</strong> in one click, <strong>remove audio from video free</strong>.</p>
+      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+
+  'screen-recorder': `
+      <h2>Free screen recorder — no download</h2>
+      <p>Record your whole screen, a single window or one browser tab, with your <strong>microphone</strong> and the <strong>system / tab audio</strong>. Choose quality (720p, 1080p or 2K) and an optional 3- or 5-second countdown, then pause, resume and stop. The video plays back on the page and downloads in one click — with no watermark and no time limit.</p>
+      <h2>Windows, Mac and Chromebook</h2>
+      <p>It's a <strong>screen recorder for windows</strong> — including a <strong>screen recorder windows 11</strong> and <strong>screen recorder windows 10</strong> option (a <strong>screen recorder for windows 11</strong> too) — a <strong>screen recorder for mac</strong> (on a <strong>screen recorder mac</strong>, allow your browser under System Settings → Privacy &amp; Security → Screen Recording), and a <strong>screen recorder for chromebook</strong>. Basically a <strong>screen recorder for pc</strong> that runs as a <strong>screen recorder for google chrome</strong>, Edge or Firefox — no <strong>screen recorder chrome extension</strong> or <strong>screen recorder app</strong> needed.</p>
+      <h2>Phones and tablets</h2>
+      <p>Mobile browsers don't allow websites to record the screen. As a <strong>screen recorder for iphone</strong> or <strong>screen recorder for ipad</strong>, use Control Center → Screen Recording; as a <strong>screen recorder for android</strong> (or <strong>screen recorder android</strong>), use the Screen record tile in Quick Settings.</p>
+      <h2>Tips</h2>
+      <ul>
+        <li>Record a single tab for the cleanest audio in tutorials and online classes.</li>
+        <li>As a <strong>screen recorder for gaming</strong>, 1080p works well; very fast games may need dedicated software like OBS.</li>
+        <li>Recordings save as WebM in Chrome and Edge — convert to MP4 with the <a href="/video-converter">Video Converter</a> if needed.</li>
+      </ul>
+      <p>Everything is recorded on your own computer — a private <strong>screen recorder</strong> where nothing is uploaded.</p>`,
+
+  'voice-recorder': `
+      <h2>Free online voice recorder</h2>
+      <p>Click <strong>Start recording</strong>, speak, then pause or stop. Your recordings are listed on the page so you can play them back, download them as <strong>MP3</strong> or <strong>WAV</strong>, or delete them. It's a <strong>voice recorder online free</strong> — no sign-up, no time limit and no app.</p>
+      <h2>What people use it for</h2>
+      <ul>
+        <li><strong>voice recorder for lectures students</strong> rely on — and a <strong>voice recorder for college lectures</strong> (ask permission first).</li>
+        <li><strong>voice recorder for meetings</strong>, interviews and quick voice memos.</li>
+        <li><strong>voice recorder for singing</strong> practice and podcast tests — WAV keeps full quality.</li>
+        <li><strong>voice recorder for kids</strong> to record stories and songs for family.</li>
+      </ul>
+      <h2>On any device</h2>
+      <p>Use it as a <strong>voice recorder for iphone</strong> and <strong>voice recorder on iphone</strong> (in Safari), a <strong>voice recorder android</strong> and <strong>voice recorder for android</strong> option, or a <strong>voice recorder for pc</strong> with any USB or headset mic — unlike a <strong>voice recorder app</strong> (even a <strong>voice recorder app free</strong> one), there's nothing to install.</p>
+      <h2>Need a physical recorder?</h2>
+      <p>If you're shopping for a <strong>voice recorder device</strong> (or searching for a <strong>voice recorder near me</strong>, <strong>voice recorder for sale</strong>, or a <strong>voice recorder for stuffed animals</strong> to sew into a teddy bear), test your phone first — this page often does the job for free.</p>
+      <p>Recordings stay on your device; nothing is uploaded. A simple <strong>voice recorder online</strong> — a <strong>voice recorder free</strong> to use — and a reliable <strong>voice recorder</strong> when you need one. Check your microphone first with the <a href="/mic-test">Mic Test</a>.</p>`,
+
+  'webcam-test': `
+      <h2>Webcam test online — check your camera in seconds</h2>
+      <p>Click <strong>Start camera</strong> and allow access: you'll see a live preview plus your camera's details — <strong>resolution</strong>, <strong>frame rate</strong>, <strong>aspect ratio</strong> and how many <strong>cameras were found</strong>. Switch between cameras, take a test photo, or record a short clip to check quality. It's a <strong>webcam test online free</strong> with nothing to install.</p>
+      <h2>Before an exam or meeting</h2>
+      <ul>
+        <li><strong>webcam test for online exam</strong> and <strong>webcam test for proctored exam</strong> sessions — check the camera works and your face is well lit before the exam starts (a common <strong>webcam test for exam</strong> requirement).</li>
+        <li><strong>webcam test for zoom</strong> (or <strong>webcam test zoom</strong>) and <strong>webcam test for teams</strong> calls — confirm the right camera is selected.</li>
+      </ul>
+      <p>Checking sound as well? This is a <strong>webcam test and mic</strong> pair: run the <a href="/mic-test">Mic Test</a> next.</p>
+      <h2>Troubleshooting</h2>
+      <ul>
+        <li>Black screen? Close other apps using the camera (Zoom, Teams, Camera app) and try again.</li>
+        <li><strong>webcam test windows 11</strong> — check Settings → Privacy &amp; security → Camera, and allow your browser. On a <strong>webcam test for mac</strong>, check System Settings → Privacy &amp; Security → Camera.</li>
+        <li>Is the preview mirrored? That's normal — the <strong>webcam test mirror</strong> view is how most apps show you; others see you the right way round.</li>
+      </ul>
+      <p>Works as a <strong>webcam test for laptop</strong>, a <strong>webcam test for pc</strong>, a <strong>webcam test for mobile</strong> and even a <strong>webcam test for windows 7</strong> in a modern browser — a trusted <strong>webcam test site</strong> (recommended on Reddit as a <strong>webcam test reddit</strong> pick) for a quick <strong>webcam test online</strong>. Nothing is recorded or uploaded — a private <strong>webcam test</strong>.</p>`,
+
+  'mic-test': `
+      <h2>Mic test online — hear yourself and check levels</h2>
+      <p>Click <strong>Start mic test</strong>, allow access and speak: a live level meter and waveform show that your microphone is picking up sound. Pick a different <strong>device</strong> if you have several, and see the <strong>sample rate</strong>, <strong>channels</strong>, <strong>echo cancellation</strong> and <strong>noise suppression</strong> settings. To <strong>mic test hear myself</strong>, use <strong>Record 5-second sample</strong> and play it back — a true <strong>mic test playback</strong> check, like a mini <strong>mic test recorder</strong>.</p>
+      <h2>For every app and device</h2>
+      <ul>
+        <li><strong>mic test for discord</strong> (also <strong>mic test discord</strong> voice) and <strong>mic test for zoom</strong> before calls.</li>
+        <li><strong>mic test for airpods</strong>, <strong>mic test for headphones</strong> and <strong>mic test for earphones</strong> — make sure the headset mic is selected, not the laptop's.</li>
+        <li><strong>mic test for laptop</strong>, <strong>mic test for pc</strong>, <strong>mic test for android</strong> and <strong>mic test iphone</strong> in the browser — even <strong>mic test for roblox</strong> voice chat.</li>
+      </ul>
+      <h2>Background noise and left/right</h2>
+      <p>For a <strong>mic test for background noise</strong>, stay silent for a few seconds: the meter should drop near zero. Hiss or hum suggests a noisy room, a bad cable or a cheap mic. For a stereo <strong>mic test left right</strong>, check the channels value shows 2.</p>
+      <p>Need something to read? A classic <strong>mic test script</strong> is “Testing, one, two, three.” This <strong>mic test online</strong> keeps everything on your device — nothing is uploaded. (Looking for the antibiotic <strong>mic test microbiology</strong> instead? That's a lab test; this <strong>mic test</strong> is for microphones.)</p>`,
+
+  'text-to-speech': `
+      <h2>Free text to speech — natural voices, many languages</h2>
+      <p>Paste or type text, choose a voice and language, and press play. Adjust <strong>speed</strong>, <strong>pitch</strong> and <strong>volume</strong> to taste. This <strong>text to speech free</strong> tool uses the voices built into your device and browser, so there's no account, no word limit and no cost — <strong>text to speech for free</strong>.</p>
+      <h2>Languages</h2>
+      <p>English (US, UK and India), Urdu, Hindi, Arabic, Bengali, Punjabi, Persian, Spanish, French, German, Portuguese, Italian, Russian, Turkish, Indonesian, Malay, Chinese, Japanese, Korean and more — the exact <strong>text to speech voices</strong> available depend on your device. Chrome often offers Google voices (<strong>text to speech google</strong>), while Edge offers Microsoft's very natural ones.</p>
+      <h2>Ways to use it</h2>
+      <ul>
+        <li><strong>text to speech reader</strong> for articles, emails and study notes — easier on the eyes.</li>
+        <li><strong>text to speech for pdf</strong> files: copy text with <a href="/pdf-to-text">PDF to Text</a>, then paste it here. The same works as <strong>text to speech for books</strong>, <strong>text to speech for kindle books</strong> you own and <strong>text to speech for google docs</strong>.</li>
+        <li><strong>text to speech for mute people</strong> who want to speak in calls, and <strong>text to speech for discord</strong> or <strong>text to speech for discord voice chat</strong> (play it through your mic with a virtual cable).</li>
+        <li><strong>text to speech for edits</strong> and voiceovers in short videos.</li>
+      </ul>
+      <p>It runs in Chrome, Edge and Safari (<strong>text to speech for chrome</strong> users need no extension) as a <strong>text to speech online</strong> page — no <strong>text to speech app</strong> download. Prefer a <strong>text to speech no ai</strong> option? These are your device's standard voices, not cloned voices. A simple <strong>text to speech generator</strong> and <strong>text to speech</strong> reader — not a <strong>text to speech ai</strong> voice cloner.</p>`,
+
+  'speech-to-text': `
+      <h2>Free speech to text — type with your voice</h2>
+      <p>Click <strong>Start listening</strong>, allow the microphone, and speak: your words appear as text that you can edit, copy or download as a .txt file. Say “comma”, “period”, “question mark” or “new line” to add punctuation in English. It's <strong>speech to text free</strong>, with no account — <strong>speech to text for free</strong>.</p>
+      <h2>Supported browsers and privacy</h2>
+      <p>Voice typing uses your browser's built-in speech recognition. It works in Google Chrome, Microsoft Edge and Safari. In Chrome and Edge the audio is processed by the browser maker's speech service (Google or Microsoft) to produce the text, so avoid dictating anything highly confidential.</p>
+      <h2>Who it helps</h2>
+      <ul>
+        <li><strong>speech to text for writing a book</strong>, essays and long emails — speaking is about three times faster than typing.</li>
+        <li><strong>speech to text for deaf people</strong>, <strong>speech to text for deaf</strong> users and <strong>speech to text for hearing impaired</strong> people as live captions of what someone says.</li>
+        <li><strong>speech to text for google docs</strong> (or <strong>speech to text google docs</strong>): dictate here and paste — or use Docs' own Tools → Voice typing in Chrome.</li>
+      </ul>
+      <h2>On every device</h2>
+      <p>It works as <strong>speech to text for computer</strong> use, <strong>speech to text for laptop</strong>, <strong>speech to text for windows</strong> (also <strong>speech to text windows</strong> and <strong>speech to text for windows 11</strong>), <strong>speech to text on mac</strong>, <strong>speech to text android</strong> and <strong>speech to text iphone</strong> in Safari — no <strong>speech to text app</strong> (or <strong>speech to text app free</strong>) needed. Need another language? Pick it from the Language list; to translate the result, paste it into a translator (a two-step <strong>speech to text translator</strong>). A simple <strong>speech to text</strong> page.</p>`,
+
+  'cgpa-calculator': `
+      <h2>CGPA calculator for all semesters</h2>
+      <p>Calculate your <strong>Cumulative Grade Point Average</strong> two ways: enter each <strong>semester's GPA</strong> with its credit hours, or enter <strong>individual course grades</strong>. It handles any number of terms — a <strong>cgpa calculator for all semester</strong> results, whether you need a <strong>cgpa calculator for 2 semester</strong>, a <strong>cgpa calculator for 4 semesters</strong>, a <strong>cgpa calculator for 6 semesters</strong> or a <strong>cgpa calculator for 8 semesters</strong>.</p>
+      <h2>CGPA calculator formula</h2>
+      <p>The <strong>cgpa calculator formula</strong> is a credit-weighted average: <code>CGPA = Σ(GPA × credits) ÷ Σ credits</code>. A 3.2 GPA over 18 credits and a 3.8 GPA over 15 credits gives (57.6 + 57) ÷ 33 = <strong>3.47</strong>. That's how a <strong>cgpa calculator from gpa</strong> values works. Simply averaging the GPAs would be wrong whenever semesters have different credit loads.</p>
+      <h2>4.0 and 10-point scales</h2>
+      <ul>
+        <li><strong>cgpa calculator 4.0 scale</strong> — used in the USA and by HEC Pakistan universities such as UAF (<strong>cgpa calculator uaf</strong>), plus UTM (<strong>cgpa calculator utm</strong>) and other Malaysian universities.</li>
+        <li><strong>10-point scale</strong> — Indian universities such as VTU (<strong>cgpa calculator vtu</strong>), Anna University (<strong>cgpa calculator anna university</strong>), KTU (<strong>cgpa calculator ktu</strong>) and VIT (<strong>cgpa calculator vit</strong>) — a <strong>cgpa calculator for engineering</strong> and a <strong>cgpa calculator for arts and science</strong> programs.</li>
+      </ul>
+      <p>School students can use it as a <strong>cgpa calculator for class 10 cbse</strong> or a <strong>cgpa calculator for 10th state board</strong> on the 10-point scale. Need a percentage? Use the <strong>cgpa calculator to percentage</strong> tool: <a href="/cgpa-to-percentage">CGPA to Percentage</a>. Universities sometimes round or weight courses differently, so confirm important results with your exam office — this <strong>cgpa calculator</strong> gives you a reliable estimate.</p>`,
+
+  'gpa-calculator': `
+      <h2>GPA calculator — semester and cumulative</h2>
+      <p>Add your courses with their <strong>credits</strong> and <strong>grades</strong> to get your semester GPA. Enter your <strong>current CGPA</strong> and the <strong>credits completed so far</strong> to see your <strong>new cumulative GPA</strong> as well — a <strong>gpa calculator with current gpa</strong> built in. Choose the 4.0 scale (USA, HEC Pakistan) or the 10-point scale (India).</p>
+      <h2>How GPA is calculated</h2>
+      <p>The <strong>gpa calculator formula</strong>: multiply each course's grade points by its credits, add them up, and divide by the total credits. A (4.0) in a 3-credit class and B (3.0) in a 4-credit class: (12 + 12) ÷ 7 = <strong>3.43</strong>.</p>
+      <h2>College, university and high school</h2>
+      <ul>
+        <li><strong>gpa calculator college</strong> and <strong>gpa calculator university</strong> students — a <strong>gpa calculator for college</strong> each <strong>gpa calculator for semester</strong>, including UIUC (<strong>gpa calculator uiuc</strong>), UF (<strong>gpa calculator uf</strong>) and most US schools on the 4.0 scale.</li>
+        <li><strong>gpa calculator high school</strong> (a <strong>gpa calculator for high school</strong>) and <strong>gpa calculator middle school</strong> (a <strong>gpa calculator for middle school</strong>) — unweighted 4.0 GPAs. Schools that give extra points for AP/honors use a <strong>gpa calculator weighted</strong> scale (often 5.0); add those adjustments by hand.</li>
+        <li><strong>gpa calculator for medical school</strong> applications — AMCAS recalculates your GPA from every course, so enter each class.</li>
+        <li><strong>gpa calculator for all 4 years</strong> — enter your cumulative GPA and credits, then add this term; it works as a <strong>gpa calculator for multiple colleges</strong> too.</li>
+      </ul>
+      <p>Only have percentages? Convert with <strong>gpa calculator from percentage</strong> help: <a href="/cgpa-to-percentage">CGPA to Percentage</a> works both ways. Need a quick <strong>gpa calculator for one class</strong>? Add a single course — or a whole <strong>gpa calculator for class</strong> list. A simple <strong>gpa calculator</strong>.</p>`,
+
+  'grade-calculator': `
+      <h2>Weighted grade calculator</h2>
+      <p>Add each assessment — assignments, quizzes, midterm, labs — with your <strong>score %</strong> and its <strong>weight %</strong>, and see your <strong>current weighted grade</strong>. It's a <strong>grade calculator with weights</strong>, so a 90% on a 10% quiz counts less than 75% on a 40% exam — exactly how teachers calculate it.</p>
+      <h2>What do I need on the final?</h2>
+      <p>Enter the <strong>final exam weight</strong> and your <strong>target overall grade</strong>, and the calculator tells you the score you need — a <strong>grade calculator final</strong> (or <strong>grade calculator for final exam</strong>) answer that removes the guesswork. Example: 82% so far, final worth 30%, target 85% → you need <strong>92%</strong> on the final.</p>
+      <h2>Points-based and percentage grades</h2>
+      <p>If your class uses points instead, convert each item to a percentage (points earned ÷ points possible × 100) and use the weight of its category — a <strong>grade calculator points</strong>, <strong>grade calculator point based</strong> and <strong>grade calculator percentage</strong> method in one.</p>
+      <h2>For every situation</h2>
+      <ul>
+        <li><strong>grade calculator college</strong> courses (a <strong>grade calculator for college</strong>) and a <strong>grade calculator semester</strong> plan.</li>
+        <li><strong>grade calculator for test</strong> (or <strong>grade calculator test</strong>), <strong>grade calculator for quiz</strong>, <strong>grade calculator for exam</strong>, <strong>grade calculator for assignments</strong> and <strong>grade calculator for final</strong>.</li>
+        <li><strong>grade calculator for teachers</strong> checking a student's standing, or a <strong>grade calculator for one class</strong> (a <strong>grade calculator for class</strong>).</li>
+      </ul>
+      <p>For your overall GPA across courses, use the <a href="/gpa-calculator">GPA Calculator</a>. A simple <strong>grade calculator</strong>.</p>`,
+
+  'ats-resume-checker': `
+      <h2>Free ATS resume checker with job description</h2>
+      <p>Upload your resume (PDF, DOCX or TXT) or paste it, then paste the job description. You get an <strong>ATS score</strong>, the <strong>keywords you're missing</strong>, and a checklist covering sections, contact details, length, action verbs, measurable results and writing style. It's an <strong>ats resume checker free online without login</strong> — and nothing is uploaded.</p>
+      <h2>What does ATS stand for?</h2>
+      <p>The <strong>ats resume checker meaning</strong> is simple — <strong>ats resume checker what does ats stand for</strong>? <strong>Applicant Tracking System</strong>: software employers use to collect, parse and rank resumes. Many resumes are filtered out before a human reads them, usually because they're missing key terms from the job ad or use layouts the software can't read.</p>
+      <h2>How to raise your ATS score</h2>
+      <ul>
+        <li>Use the <strong>ats resume checker with job description</strong> (an <strong>ats resume checker against job description</strong>) for every application — an <strong>ats resume checker for job description</strong> and an <strong>ats resume checker for specific job</strong> match beats a generic resume.</li>
+        <li>Add missing skills only if you really have them, using the exact wording from the ad.</li>
+        <li>Use standard headings (Experience, Education, Skills), a single column and no text inside images or tables.</li>
+        <li>Start bullets with action verbs and add numbers (“reduced costs by 15%”).</li>
+      </ul>
+      <h2>For every career stage</h2>
+      <p>It works as an <strong>ats resume checker for freshers</strong>, an <strong>ats resume checker for internship</strong> applications, an <strong>ats resume checker for data analyst</strong> and <strong>ats resume checker for hr</strong> roles, for large employers (an <strong>ats resume checker for deloitte</strong>-style application) and for Gulf jobs (<strong>ats resume checker for uae</strong>). Unlike Grammarly-style tools (<strong>ats resume checker grammarly</strong>), it focuses on ATS matching. People on Reddit (<strong>ats resume checker reddit</strong>) recommend checking every application — this <strong>ats resume checker for free</strong> (and <strong>ats resume checker free online</strong>) makes that easy. A simple <strong>ats resume checker</strong>. Need a clean template? Try the <a href="/resume-builder">Resume Builder</a>.</p>`,
+
+  'resume-builder': `
+      <h2>Free resume builder — no sign-up, no watermark</h2>
+      <p>Fill in your details — summary, experience, education, skills, projects, certifications and languages — and watch your resume update live. Choose a template (<strong>Modern</strong>, <strong>Classic</strong>, <strong>Compact</strong>, <strong>Sans</strong> or <strong>Serif</strong>) and download a clean PDF. It's a <strong>resume builder free</strong> of hidden fees: no account and no paywall at the download step — a true <strong>resume builder for free</strong>.</p>
+      <h2>ATS-friendly by design</h2>
+      <p>Every resume builder template here is single-column with standard headings and real text, so applicant tracking systems can read it. Check it against a job ad with the <a href="/ats-resume-checker">ATS Resume Checker</a>.</p>
+      <h2>Resumes for every stage</h2>
+      <ul>
+        <li><strong>resume builder for students</strong> and <strong>resume builder for college students</strong> — lead with education and projects.</li>
+        <li><strong>resume builder for high school students</strong> and <strong>resume builder for teens</strong> — volunteering, clubs and part-time work count.</li>
+        <li><strong>resume builder for no work experience</strong> — use the Projects section for coursework, freelance or personal projects.</li>
+        <li><strong>resume builder for nurses</strong> — list licences and certifications prominently.</li>
+        <li><strong>resume builder for veterans</strong> — translate military roles into civilian skills.</li>
+      </ul>
+      <h2>No app, no download</h2>
+      <p>It's a <strong>resume builder online free</strong> (a <strong>resume builder for free online</strong>) that works on any device, so there's no <strong>resume builder app</strong> or <strong>resume builder free download</strong> needed — no <strong>resume builder for free download</strong> either. Unlike a <strong>resume builder ai</strong> or <strong>resume builder ai free</strong> tool, it doesn't invent experience — you stay in control. Your data stays in your browser. A simple <strong>resume builder template</strong> page — and a no-nonsense <strong>resume builder</strong>.</p>`,
+
+  'text-to-handwriting': `
+      <h2>Text to handwriting converter</h2>
+      <p>Type or paste your text and this <strong>text to handwriting converter</strong> writes it out in realistic handwriting on paper. Choose the <strong>handwriting style</strong>, <strong>ink</strong> colour (blue, black, red or green), <strong>paper</strong> (ruled, plain or grid), text size, a red margin line and <strong>natural variation</strong> so letters aren't identical. Download the pages as images or a PDF.</p>
+      <h2>For assignments</h2>
+      <p>It's a popular <strong>text to handwriting for assignment</strong> helper (also searched as <strong>text to handwriting assignment</strong> or <strong>text to handwriting converter for assignment</strong>): blue ink on ruled paper with a red margin looks most like a school notebook. Check your teacher's rules first — some assignments must be handwritten by you.</p>
+      <h2>Notes, GoodNotes and more</h2>
+      <ul>
+        <li><strong>text to handwriting for goodnotes</strong> (and <strong>text to handwriting goodnotes</strong>) — download as PDF and import it into GoodNotes or Notability.</li>
+        <li><strong>text to handwriting for math</strong> — grid paper suits worked solutions.</li>
+        <li>Hindi and other scripts depend on the fonts installed; Latin-script text works best (a <strong>text to handwriting for hindi</strong> or <strong>text to handwriting converter for hindi</strong> needs a Devanagari font).</li>
+      </ul>
+      <p>It's a <strong>text to handwriting generator</strong> in the browser — no <strong>text to handwriting app</strong> to install and no <strong>text to handwriting ai</strong> guesswork. Use it <strong>text to handwriting free</strong>, as a <strong>text to handwriting converter online free</strong>, <strong>text to handwriting free online</strong>, a <strong>text to handwriting for free</strong> and <strong>text to handwriting converter for free</strong> option — download in image or PDF <strong>text to handwriting format</strong>. A simple <strong>text to handwriting</strong> tool.</p>`,
+
+  'citation-generator': `
+      <h2>Free citation generator — APA, MLA, Harvard and Chicago</h2>
+      <p>Pick a style and a source type — <strong>website</strong>, <strong>book</strong> or <strong>journal article</strong> — fill in the details, and copy a correctly formatted reference. It's a <strong>citation generator free</strong> of ads and sign-ups — a <strong>citation generator for free</strong>.</p>
+      <h2>Styles included</h2>
+      <ul>
+        <li><strong>citation generator apa</strong> — APA 7 (a <strong>citation generator apa 7th edition</strong> and <strong>citation generator for apa 7th edition</strong>, the <strong>citation generator for apa</strong> most universities use).</li>
+        <li><strong>citation generator mla</strong> — MLA 9 for humanities.</li>
+        <li><strong>citation generator chicago</strong> (<strong>citation generator chicago style</strong>) — notes and bibliography.</li>
+        <li><strong>Harvard</strong> — common in the UK, Australia and Pakistan.</li>
+      </ul>
+      <p>AMA (<strong>citation generator ama</strong>) and ACS (<strong>citation generator acs</strong>) styles aren't included yet — for those, follow your department's guide or Purdue OWL (<strong>citation generator purdue owl</strong> guides are excellent references).</p>
+      <h2>Citing different sources</h2>
+      <ul>
+        <li><strong>citation generator for website</strong> pages — include the author or organisation, the date published and your access date.</li>
+        <li><strong>citation generator for books</strong> — publisher, year and edition; add the DOI or URL for e-books.</li>
+        <li><strong>citation generator for scientific paper</strong> references — journal, volume, issue, pages and DOI.</li>
+        <li><strong>citation generator for youtube video</strong> (and <strong>citation generator for videos</strong>), <strong>citation generator for pdf</strong> reports and <strong>citation generator for images</strong> — use the Website type with the creator, title and URL.</li>
+      </ul>
+      <p>Always double-check names and dates against the source — a <strong>citation generator</strong> can only format what you enter.</p>`,
 };

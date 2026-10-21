@@ -2440,4 +2440,306 @@ module.exports = {
       <h2>Words per minute speech averages</h2>
       <p>The <strong>words per minute speech average</strong> is 120–150 for presentations and up to 160 in conversation. The <strong>average words per minute for speech</strong> making is lower when you pause for effect — a good thing. As <strong>words per minute for presentation</strong> advice, aim for 120–140, and practise out loud with a timer: your real pace is the best number to enter here. Silent reading is faster, so a <strong>words to minutes reading time</strong> estimate is shown separately.</p>
       <p>This <strong>words to minutes speech calculator</strong> (a <strong>words to minutes speech</strong> and <strong>words per minute speech</strong> tool) also works as a <strong>speaking time calculator</strong> — a <strong>speaking time calculator from text</strong> when you paste a script — and a <strong>speech time estimator</strong> (<strong>speech time calculator free</strong>). A simple <strong>words to minutes</strong> converter.</p>`,
+
+  'base64-encode-decode': `
+      <h2>Base64 encode decode online</h2>
+      <p>Paste text and click <strong>Encode to Base64</strong>, or paste Base64 and click <strong>Decode from Base64</strong>. Text is handled as UTF-8, so accents, Arabic, Urdu and emoji survive the round trip. Tick <strong>URL-safe Base64</strong> to use <code>-</code> and <code>_</code> instead of <code>+</code> and <code>/</code> (as JWTs and URLs need). You can also drop any file to get it as a Base64 data URL. It's a <strong>base64 encode decode online</strong> tool — <strong>base64 encode to decode online</strong> in one place.</p>
+      <h2>Example</h2>
+      <p>“Hello” → <code>SGVsbG8=</code>. Base64 turns every 3 bytes into 4 characters, so encoded data is about 33% larger. It's an encoding, not encryption — anyone can decode it, and a <strong>base64 encode decode with key</strong> doesn't exist; use real encryption for secrets.</p>
+      <h2>In code and on the command line</h2>
+      <ul>
+        <li><strong>base64 encode decode python</strong> (<strong>base64 encode decode in python</strong>) — <code>base64.b64encode(s.encode()).decode()</code> and <code>base64.b64decode(b).decode()</code>.</li>
+        <li><strong>base64 encode decode javascript</strong> (<strong>base64 encode decode in javascript</strong>) — <code>btoa()</code> / <code>atob()</code> only handle Latin-1, so encode UTF-8 with <code>TextEncoder</code> first; in Node, <code>Buffer.from(s).toString('base64')</code>.</li>
+        <li><strong>base64 encode decode java</strong> (<strong>base64 encode decode in java 8</strong> and later) — <code>Base64.getEncoder().encodeToString(bytes)</code> and <code>Base64.getDecoder().decode(s)</code>; the same in any <strong>base64 encode decode in java</strong> project.</li>
+        <li><strong>base64 encode decode php</strong> (<strong>base64 encode and decode in php</strong>) — <code>base64_encode()</code> and <code>base64_decode()</code>.</li>
+        <li><strong>base64 encode decode linux</strong> / <strong>base64 encode decode command line</strong> — <code>base64 file.txt</code> to encode, <code>base64 -d</code> to decode (a <strong>base64 encode decode command</strong> built into Linux and macOS).</li>
+        <li><strong>base64 encode decode c++</strong> and <strong>base64 encode decode in c</strong> — there's no standard function; use a library such as OpenSSL's <code>EVP_EncodeBlock</code>.</li>
+        <li><strong>base64 encode decode in notepad ++</strong> — Plugins → MIME Tools → Base64 Encode / Decode.</li>
+      </ul>
+      <p>A simple <strong>base64 encode decode</strong> tool.</p>
+      <p class="small muted">🔒 Everything runs in your browser — nothing you paste is uploaded.</p>`,
+
+  'url-encode-decode': `
+      <h2>URL encoder and decoder online</h2>
+      <p>Paste text or a link and choose <strong>Encode (component)</strong> for a single value such as a search term or parameter, <strong>Encode full URL</strong> to keep <code>:/?&amp;=</code> intact, or <strong>Decode</strong> to turn <code>%20</code>-style codes back into text (a <code>+</code> is read as a space too). Paste a full URL and you'll also see its parts — protocol, host, path, query and hash — and every query parameter in a table. It's a <strong>url encode decode online</strong> <strong>url encode decode tool</strong>: a <strong>url encoder online</strong> and <strong>url decoder online</strong> together.</p>
+      <h2>What is URL encoding?</h2>
+      <p><strong>what is url encode</strong>? URLs can only contain certain characters, so others are written as % plus their UTF-8 bytes in hex. Common ones:</p>
+      <ul>
+        <li><strong>url encoding for space</strong>: <code>%20</code> (or <code>+</code> in <strong>url encoded form data</strong>).</li>
+        <li><strong>url encode forward slash</strong>: <code>%2F</code>; <strong>url encoding for ampersand</strong>: <code>%26</code>; ? = <code>%3F</code>; # = <code>%23</code>.</li>
+        <li><strong>url encoding for special characters</strong> beyond ASCII uses UTF-8 (<strong>url encoding to utf 8</strong>): é = <code>%C3%A9</code>.</li>
+      </ul>
+      <p>Example: “free online tools &amp; more/?” → <code>free%20online%20tools%20%26%20more%2F%3F</code>. A <strong>url decode to text</strong> reverses it.</p>
+      <h2>In code</h2>
+      <ul>
+        <li><strong>url encode in javascript</strong> / <strong>url encode decode javascript</strong> — <code>encodeURIComponent()</code> and <code>decodeURIComponent()</code>.</li>
+        <li><strong>url encode in python</strong> / <strong>url encode decode python</strong> — <code>urllib.parse.quote()</code> and <code>unquote()</code>.</li>
+        <li><strong>url encode in java</strong> / <strong>url encode decode java</strong> — <code>URLEncoder.encode(s, StandardCharsets.UTF_8)</code> (spaces become +).</li>
+        <li><strong>url encode in php</strong> / <strong>url encode and decode in php</strong> — <code>rawurlencode()</code> (%20) or <code>urlencode()</code> (+).</li>
+        <li><strong>url encode decode c#</strong> — <code>Uri.EscapeDataString()</code> and <code>Uri.UnescapeDataString()</code>.</li>
+        <li><strong>url decode in excel</strong> — Excel has <code>=ENCODEURL()</code> but no decode function, so paste the text here.</li>
+      </ul>
+      <p>As a <strong>url encoder for svg</strong> data URIs in CSS, use Encode (component) on the SVG code. No <strong>url encode decode extension</strong> needed — a simple <strong>url encode decode</strong> page.</p>
+      <p class="small muted">🔒 Everything runs in your browser — nothing you paste is uploaded.</p>`,
+
+  'html-entity-encoder': `
+      <h2>HTML encoder and decoder</h2>
+      <p>Paste text and click <strong>Encode HTML</strong> to escape the five special characters — <code>&amp;</code> → <code>&amp;amp;</code>, <code>&lt;</code> → <code>&amp;lt;</code>, <code>&gt;</code> → <code>&amp;gt;</code>, <code>"</code> → <code>&amp;quot;</code> and <code>'</code> → <code>&amp;#39;</code> — or <strong>Decode HTML</strong> to turn entities back into plain text. Tick “Also encode non-ASCII characters” to write © or emoji as numeric entities like <code>&amp;#169;</code>. It's an <strong>html encoder decoder online</strong>: an <strong>html encode online</strong> and <strong>html decode online</strong> tool, and an <strong>html entity encoder online</strong>.</p>
+      <h2>What are HTML entities?</h2>
+      <p><strong>what are html entities</strong>? They're codes that display a character the browser would otherwise treat as markup, or that's hard to type. A few from the <strong>html entities list</strong>:</p>
+      <ul>
+        <li><strong>html encoded ampersand</strong>: <code>&amp;amp;</code> · less than <code>&amp;lt;</code> · greater than <code>&amp;gt;</code></li>
+        <li><strong>html escape single quote</strong>: <code>&amp;#39;</code> (or <code>&amp;apos;</code>) · double quote <code>&amp;quot;</code></li>
+        <li><strong>html encode space</strong> that won't break: <code>&amp;nbsp;</code> · © <code>&amp;copy;</code> · ™ <code>&amp;trade;</code> · → <code>&amp;rarr;</code></li>
+      </ul>
+      <h2>Escape HTML to prevent XSS</h2>
+      <p>The main reason to <strong>html escape</strong> text: if user input is shown on a page without escaping, someone can inject scripts. Always <strong>escape html to prevent xss</strong> when inserting text into HTML — the <strong>html escape characters</strong> above are exactly the ones that matter. This page is handy for checking output and preparing snippets, such as showing code on a blog.</p>
+      <h2>In code</h2>
+      <ul>
+        <li><strong>html encode in javascript</strong> — set <code>element.textContent</code> instead of <code>innerHTML</code>, or replace the five characters.</li>
+        <li><strong>html encode in php</strong> — <code>htmlspecialchars($s, ENT_QUOTES)</code>; decode with <code>html_entity_decode()</code>.</li>
+        <li><strong>html encode in c#</strong> — <code>WebUtility.HtmlEncode()</code> / <code>HtmlDecode()</code>.</li>
+      </ul>
+      <p>To decode a page full of <code>&amp;amp;</code> codes (<strong>html entities decode</strong>, <strong>html entities to text</strong> or <strong>html unescape online</strong>), paste and click Decode. A simple <strong>html encode decode</strong> (<strong>html encode decode online</strong>) <strong>html entity converter online</strong> — an <strong>html entities online converter</strong> that's also an <strong>html escape online</strong> and <strong>html entity decode online</strong> tool, with <strong>html entities encode</strong> and an <strong>html decoder</strong> in one.</p>
+      <p class="small muted">🔒 Everything runs in your browser — nothing you paste is uploaded.</p>`,
+
+  'uuid-generator': `
+      <h2>UUID generator — v4 and v7</h2>
+      <p>Choose <strong>v4 (random)</strong> or <strong>v7 (time-ordered)</strong>, how many you need (up to 10,000), and options for <strong>UPPERCASE</strong>, <strong>no hyphens</strong> or <strong>{braces}</strong> (GUID style). Copy them all or download a .txt file. UUIDs are made with your browser's cryptographically secure random generator. It's a <strong>uuid generator online</strong> for bulk lists.</p>
+      <h2>v4 or v7?</h2>
+      <p>A <strong>uuid generator v4</strong> makes 122 random bits — the chance of a duplicate is effectively zero. A <strong>uuid generator v7</strong> puts a millisecond timestamp first, so new IDs sort in creation order; that makes database indexes faster. Use v7 for primary keys, v4 for everything else. The <strong>uuid generator format</strong> is 8-4-4-4-12 hex digits, e.g. <code>f47ac10b-58cc-4372-a567-0e02b2c3d479</code> (the “4” marks version 4).</p>
+      <h2>Minecraft</h2>
+      <p>As a <strong>uuid generator for minecraft bedrock</strong> (or <strong>uuid generator minecraft bedrock</strong>) add-on, every <code>manifest.json</code> needs unique v4 UUIDs — one for the header and one for each module. Generate a few here and paste them in. A <strong>uuid generator minecraft java</strong> player UUID is different: it comes from the player's Mojang account and can't be generated. That's the whole story for any <strong>uuid generator for minecraft</strong> (or <strong>uuid generator minecraft</strong>) search.</p>
+      <h2>In code</h2>
+      <ul>
+        <li><strong>uuid generator python</strong> (<strong>uuid generator for python</strong>) — <code>import uuid; uuid.uuid4()</code>.</li>
+        <li><strong>uuid generator javascript</strong> (<strong>uuid generator for js</strong> and <strong>uuid generator for react</strong>) — <code>crypto.randomUUID()</code> in modern browsers and Node.</li>
+        <li><strong>uuid generator java</strong> (<strong>uuid generator for java</strong>) — <code>UUID.randomUUID()</code>.</li>
+        <li><strong>uuid generator for postgres</strong> — <code>gen_random_uuid()</code> (PostgreSQL 13+); <code>uuidv7()</code> arrives in PostgreSQL 18.</li>
+        <li><strong>uuid generator for postman</strong> — the <code>{{$guid}}</code> or <code>{{$randomUUID}}</code> variable.</li>
+        <li><strong>uuid generator for excel</strong> — generate a list here and paste it into a column.</li>
+      </ul>
+      <p>A simple <strong>uuid generator</strong>.</p>`,
+
+  'hash-generator': `
+      <h2>Hash generator — MD5, SHA-1, SHA-256, SHA-512</h2>
+      <p>Type or paste text and see its <strong>MD5</strong>, <strong>SHA-1</strong>, <strong>SHA-256</strong>, <strong>SHA-384</strong> and <strong>SHA-512</strong> hashes instantly, or drop a file to get its checksums. Paste an expected hash in “Verify” and a ✓ appears next to the matching algorithm. It's a <strong>hash generator online</strong> — a <strong>hash generator sha256</strong> (an <strong>hash generator online sha256</strong>), <strong>hash generator sha512</strong> and <strong>hash generator md5</strong> (or <strong>hash generator online md5</strong>) in one.</p>
+      <h2>Examples</h2>
+      <p>For the text “hello world”: MD5 = <code>5eb63bbbe01eeed093cb22bb8f5acdc3</code>; SHA-256 = <code>b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9</code>. Change one letter and the hash changes completely. A hash only goes one way — there's no <strong>hash generator to text</strong> that reverses it.</p>
+      <h2>Verify a download (file checksum)</h2>
+      <p>As a <strong>hash generator for file</strong> checks (an <strong>md5 hash generator for file</strong>), drop the file you downloaded, paste the checksum from the publisher's site, and look for the ✓. On Windows (a <strong>hash generator for windows</strong> without installing anything), you can also run <code>Get-FileHash file.iso</code> in PowerShell or <code>certutil -hashfile file.iso SHA256</code>. No <strong>hash generator download</strong> is needed.</p>
+      <h2>Passwords, salt and keys</h2>
+      <p>As a <strong>hash generator for password</strong> (or <strong>hash generator password</strong>) storage, plain MD5 or SHA hashes aren't safe — attackers can test billions per second. Real systems use a slow, salted algorithm such as bcrypt or Argon2. A <strong>hash generator with salt</strong> here means adding the salt to the text yourself; a <strong>hash generator with key</strong> (HMAC) isn't included.</p>
+      <h2>In Python</h2>
+      <p>A <strong>hash generator in python</strong>: <code>hashlib.sha256("text".encode()).hexdigest()</code> — the same as a <strong>hash generator from string</strong> here. (Looking for a <strong>hash generator for youtube</strong>? That's usually a hashtag generator — a different tool.) A simple <strong>hash generator</strong>.</p>
+      <p class="small muted">🔒 Everything runs in your browser — nothing you paste is uploaded.</p>`,
+
+  'jwt-decoder': `
+      <h2>JWT decoder online — decode JWT tokens locally</h2>
+      <p>Paste a JSON Web Token (with or without “Bearer ”) to <strong>decode jwt token</strong> data instantly: the <strong>header</strong> (algorithm and type), the <strong>payload</strong> (claims), and the issued-at, not-before and expiry times in your local time and UTC. A badge shows whether the token is <strong>expired</strong>. It's a <strong>jwt decoder online</strong> and <strong>jwt decoder tool</strong> — the quick way to <strong>decode jwt token online</strong>, <strong>decode jwt expiration time online</strong> and check <strong>jwt decode token expiry</strong>.</p>
+      <h2>Decode JWT locally</h2>
+      <p>Tokens can grant access to accounts, so never paste them into sites that upload them. This page is a <strong>jwt decoder offline</strong>-style tool: you can <strong>decode jwt locally</strong> (<strong>jwt decode locally</strong>) — the <strong>jwt decode in browser</strong> happens on your device and nothing is sent anywhere. Like the <strong>jwt io decode online</strong> debugger, it's a <strong>json web token decode online</strong> tool, without uploading your token.</p>
+      <h2>Decoding vs verifying</h2>
+      <p>A JWT's header and payload are just Base64URL-encoded JSON, so anyone can read them — never put secrets in a payload. Checking the <em>signature</em> needs the secret or public key; this page decodes but doesn't verify, so it isn't a <strong>jwt token decoder and verifier</strong> or <strong>jwt decode with secret key</strong> tool. Verify signatures in your server code. For a <strong>jwt decoder and encoder</strong> (or <strong>jwt decoder to encoder</strong>), sign new tokens with a library on your server.</p>
+      <h2>In code</h2>
+      <ul>
+        <li><strong>jwt decode python</strong> — PyJWT: <code>jwt.decode(token, options={"verify_signature": False})</code> to inspect (verify in production).</li>
+        <li><strong>jwt decode in javascript</strong> — the <code>jwt-decode</code> npm package, or <code>JSON.parse(atob(token.split('.')[1]))</code> for simple tokens.</li>
+        <li><strong>java jwt decode</strong> / <strong>spring boot jwt decode</strong> — <code>JwtDecoder</code> in Spring Security, or the jjwt library.</li>
+        <li><strong>jwt decoder flutter</strong> (<strong>jwt decoder in flutter</strong>) — the <code>jwt_decoder</code> package.</li>
+        <li><strong>jwt decode bash</strong> / <strong>jwt decoder cli</strong> — <code>cut -d. -f2 | base64 -d</code> (add padding if needed); in PowerShell (<strong>jwt decode powershell</strong>), split on “.” and Base64-decode the second part.</li>
+        <li><strong>decode jwt in postman</strong> — <code>JSON.parse(atob(token.split('.')[1]))</code> in a test script.</li>
+      </ul>
+      <p>The <strong>jwt encode format</strong> is <code>header.payload.signature</code>, and decoding gives you the claims as JSON — a <strong>jwt decode to json</strong> view of any <strong>jwt decoder microsoft</strong> Entra ID token or other provider's token. A simple <strong>jwt decoder</strong> — just <strong>jwt decode</strong>, <strong>decode jwt</strong>, <strong>jwt decode online</strong>.</p>`,
+
+  'regex-tester': `
+      <h2>Regex tester online with live highlighting</h2>
+      <p>Type a regular expression and its flags (<code>g</code>, <code>i</code>, <code>m</code>, <code>s</code>, <code>u</code>, <code>y</code>) and every match in your test text is highlighted as you type, with a match count and a table of <strong>capture groups</strong>. Add a replacement (using <code>$1</code> or <code>$&lt;name&gt;</code>) to preview the result. Quick patterns for email, URL, phone, date, IPv4, hex colour and numbers get you started. It's a <strong>regex tester online</strong> that runs entirely in your browser.</p>
+      <h2>Regex tester for JavaScript</h2>
+      <p>It uses the JavaScript engine, so it's an exact <strong>regex tester javascript</strong> (<strong>regex tester js</strong> and <strong>regex tester for javascript</strong>) — named groups, lookbehind and Unicode property escapes like <code>\p{L}</code> all work.</p>
+      <h2>Python, Java, C# and other languages</h2>
+      <p>Most everyday syntax — character classes, quantifiers, groups, alternation, anchors — works the same across languages, so it's useful as a <strong>regex tester python</strong>, <strong>regex tester java</strong>, <strong>regex tester c#</strong> (<strong>regex tester .net</strong>), <strong>regex tester powershell</strong> or <strong>regex tester for r</strong>. Watch for flavour differences:</p>
+      <ul>
+        <li><strong>regex tester for python</strong>: named groups are written <code>(?P&lt;name&gt;…)</code>; use <code>(?&lt;name&gt;…)</code> here.</li>
+        <li><strong>regex tester for java</strong> and <strong>regex tester for c#</strong>/<strong>regex tester for .net</strong>: possessive quantifiers and atomic groups aren't available in JavaScript.</li>
+        <li><strong>regex tester for sed</strong> and <strong>regex tester for bash</strong> (grep): POSIX regex has no <code>\d</code> or lookarounds — use <code>[0-9]</code>.</li>
+      </ul>
+      <h2>Common tests</h2>
+      <ul>
+        <li><strong>regex test for numbers</strong>: <code>^\d+$</code> (whole number) or <code>-?\d+(\.\d+)?</code> (decimals).</li>
+        <li><strong>regex test for special characters</strong>: <code>[^a-zA-Z0-9\s]</code> finds anything that isn't a letter, digit or space.</li>
+      </ul>
+      <p>Like <strong>regex tester 101</strong>-style sites, but lightweight — a simple <strong>regex tester</strong>.</p>
+      <p class="small muted">🔒 Everything runs in your browser — nothing you paste is uploaded.</p>`,
+
+  'color-picker': `
+      <h2>Color picker and converter — HEX, RGB, HSL, CMYK</h2>
+      <p>Pick a colour from the swatch or type any colour — HEX, RGB, HSL or a CSS name like “teal” — and get every format at once: <strong>HEX</strong>, <strong>RGB</strong>, <strong>HSL</strong>, <strong>HSV</strong> and <strong>CMYK</strong>, each with a copy button. You also get 11 <strong>tints and shades</strong> (click to copy) and the <strong>WCAG contrast</strong> ratio with white and black text, marked AA or AAA. It's a <strong>color picker online</strong>, a <strong>color picker tool</strong> and a <strong>color picker converter</strong> in one — a <strong>css color picker and converter</strong> for any <strong>color picker color code</strong>.</p>
+      <h2>Hex to RGB and RGB to hex</h2>
+      <p>As a <strong>hex to rgb converter</strong> (and <strong>rgb to hex converter</strong>), type either and copy the other. The <strong>hex to rgb formula</strong>: split the hex into pairs and convert each from base 16 — <code>#4F46E5</code> → 4F = 79, 46 = 70, E5 = 229 → <code>rgb(79, 70, 229)</code>. The <strong>rgb to hex formula</strong> reverses it. Need <strong>hex to rgba</strong> or <strong>hex to rgb with opacity</strong>? Add the alpha yourself: <code>rgba(79, 70, 229, 0.5)</code> or the 8-digit hex <code>#4F46E580</code>. It's a <strong>color picker to rgb</strong> and <strong>color picker to hex</strong> converter, and a <strong>hex to rgb and cmyk</strong> one too (CMYK here is a simple conversion — ask your printer for exact print values).</p>
+      <h2>Hex color picker for CSS and websites</h2>
+      <p>As a <strong>hex color picker online</strong> (<strong>color picker hex</strong> or <strong>color picker hex code</strong>), the swatch opens your system's colour wheel (a <strong>color picker wheel</strong>); in Chrome and Edge on desktop it includes an eyedropper for picking a <strong>color picker from screen</strong>. Check contrast before you use a colour as a <strong>color picker for website</strong> text — WCAG AA needs 4.5:1 for normal text and 3:1 for large text. It's a <strong>color picker for css</strong> code and a <strong>hex color picker to rgb</strong>.</p>
+      <h2>From an image, Photoshop, Canva and Word</h2>
+      <ul>
+        <li><strong>color picker from image</strong> — upload a photo to the <a href="/image-color-picker">Image Color Picker</a> and click any pixel.</li>
+        <li><strong>color picker in photoshop</strong> — press I for the Eyedropper; the hex code is in the Color Picker dialog.</li>
+        <li><strong>color picker in canva</strong> — click a colour, then the + tile, and paste a hex code.</li>
+        <li><strong>color picker in word</strong> — Font Color → More Colors → Custom shows RGB and Hex.</li>
+      </ul>
+      <p>Opacity isn't adjustable here, so for a <strong>hex color picker with opacity</strong>, add the alpha as shown above. A simple <strong>color picker</strong> and <strong>hex color picker</strong> — <strong>hex to rgb</strong> and <strong>rgb to hex</strong> (a <strong>rgb to hex code</strong> copy) in one click.</p>`,
+
+  'color-palette-generator': `
+      <h2>Color palette generator</h2>
+      <p>Pick a base colour and a harmony — <strong>analogous</strong>, <strong>complementary</strong>, <strong>split-complementary</strong>, <strong>triadic</strong>, <strong>tetradic</strong>, <strong>monochrome</strong> or <strong>random</strong> — and get a five-colour palette. Click a colour to copy its hex code, 🔒 lock the ones you like, and press <kbd>Space</kbd> for a new random palette. Copy all codes or a ready-made block of CSS variables. It's a <strong>color palette generator free</strong> of sign-ups.</p>
+      <h2>Based on one color or hex code</h2>
+      <p>As a <strong>color palette generator based on one color</strong> (or <strong>color palette generator from hex</strong>), set your brand colour as the base and switch harmonies: monochrome gives tints and shades of it, complementary adds its opposite for accents, analogous gives calm neighbours.</p>
+      <h2>From a photo or image</h2>
+      <p>For a <strong>color palette generator from photo</strong> (or <strong>color palette generator from image</strong> — a <strong>color palette generator from photo free</strong> of watermarks), upload the picture to the <a href="/image-color-picker">Image Color Picker</a>, which extracts its main colours; then paste one here as the base to build a matching scheme.</p>
+      <h2>For brands, websites, homes and weddings</h2>
+      <ul>
+        <li><strong>color palette generator for brand</strong> and <strong>color palette generator for website</strong> — use one main colour, one accent and neutrals; check text contrast with the <a href="/color-picker">Color Picker</a>.</li>
+        <li><strong>color palette generator for interior design</strong> and a <strong>color palette generator for home</strong> — the classic 60-30-10 rule: 60% main, 30% secondary, 10% accent.</li>
+        <li><strong>color palette generator for wedding</strong> invitations, flowers and decor — analogous palettes feel soft and romantic.</li>
+        <li><strong>color palette generator for clothes</strong> — complementary pairs make bold outfits; a <strong>color palette generator for skin tone</strong> is best done with a mirror and natural light.</li>
+        <li><strong>color palette generator for coloring books</strong> and <strong>color palette generator for ohuhu markers</strong> — match the hex codes to your closest marker colours.</li>
+        <li><strong>color palette generator for minecraft</strong> (or <strong>color palette generator minecraft</strong>) builds — pick blocks close to each palette colour.</li>
+      </ul>
+      <p>Naming palettes from words (a <strong>color palette generator from words</strong> or <strong>color palette generator by name</strong>) isn't supported, but random mode is great for inspiration. A simple <strong>color palette generator</strong>.</p>`,
+
+  'css-gradient-generator': `
+      <h2>CSS gradient generator</h2>
+      <p>Choose <strong>linear</strong> (with any angle), <strong>radial</strong> (circle or ellipse) or <strong>conic</strong>, add as many colour stops as you like and drag their positions, then copy the CSS. The code includes a solid fallback colour for very old browsers. Press 🎲 Random for inspiration. It's a <strong>css gradient generator online</strong> — a <strong>gradient generator for css</strong> and a <strong>css gradient generator tool</strong> for any <strong>css gradient generator background</strong>.</p>
+      <h2>3 colors, transparency and opacity</h2>
+      <ul>
+        <li><strong>css gradient generator 3 colors</strong> — click “+ Add color stop” and place it at 50%.</li>
+        <li><strong>css gradient generator transparent</strong> or <strong>css gradient generator with opacity</strong> — the colour pickers are solid, so in the copied code replace a stop with <code>transparent</code> or <code>rgba(79, 70, 229, 0.5)</code>.</li>
+      </ul>
+      <h2>Gradient text</h2>
+      <p>As a <strong>css gradient generator for text</strong> (or <strong>css gradient generator text</strong>), copy the background and add: <code>-webkit-background-clip: text; background-clip: text; color: transparent;</code>.</p>
+      <h2>Tailwind and animation</h2>
+      <ul>
+        <li><strong>css gradient generator tailwind</strong> — use Tailwind's <code>bg-linear-to-r from-indigo-600 to-pink-500</code> (v4; <code>bg-gradient-to-r</code> in v3), or paste the exact CSS as an arbitrary value: <code>bg-[linear-gradient(135deg,#4f46e5_0%,#ec4899_100%)]</code>.</li>
+        <li><strong>css gradient generator animated</strong> — set <code>background-size: 200% 200%</code> and animate <code>background-position</code> with <code>@keyframes</code>.</li>
+      </ul>
+      <h2>From an image or existing code</h2>
+      <p>For a <strong>css gradient generator from image</strong> (a <strong>linear gradient generator from image</strong> or <strong>linear gradient css generator from image</strong>), pick the colours with the <a href="/image-color-picker">Image Color Picker</a> and enter them as stops. To edit an existing gradient (a <strong>css gradient generator from code</strong>), copy its colours and angle into the controls. A simple <strong>css gradient generator</strong>.</p>`,
+
+  'box-shadow-generator': `
+      <h2>CSS box shadow generator</h2>
+      <p>Drag the sliders for <strong>horizontal offset</strong>, <strong>vertical offset</strong>, <strong>blur</strong>, <strong>spread</strong> and <strong>opacity</strong>, pick the shadow, box and background colours, and tick <strong>Inset</strong> for an inner shadow. The preview updates live and the CSS is ready to copy. It's a <strong>box shadow generator</strong> — a <strong>css box shadow generator online</strong>, <strong>box shadow generator css</strong> and <strong>css shadow generator</strong> in one.</p>
+      <h2>Box shadow CSS syntax</h2>
+      <p>The <strong>box shadow css syntax</strong> is <code>box-shadow: [inset] x y blur spread color;</code>. Some <strong>box shadow css examples</strong>:</p>
+      <ul>
+        <li><strong>box shadow css for card</strong>: <code>0 4px 12px rgba(0, 0, 0, 0.1)</code></li>
+        <li><strong>box shadow css for button</strong>: <code>0 2px 4px rgba(0, 0, 0, 0.2)</code></li>
+        <li><strong>css box shadow generator bottom only</strong>: <code>0 8px 6px -6px rgba(0, 0, 0, 0.3)</code> — negative spread hides the sides. A <strong>box shadow css top only</strong> uses a negative y offset instead.</li>
+        <li><strong>css box shadow generator all sides</strong> (<strong>box shadow css for all sides</strong>): <code>0 0 12px rgba(0, 0, 0, 0.2)</code></li>
+        <li><strong>box shadow css inset</strong> (a <strong>box shadow generator inset</strong> or <strong>css inner box shadow generator</strong>): <code>inset 0 2px 6px rgba(0, 0, 0, 0.25)</code></li>
+      </ul>
+      <p>For a <strong>css box shadow generator smooth</strong> look, combine two or three soft shadows separated by commas. On a <strong>box shadow css for dark theme</strong>, shadows barely show — use a lighter border or a soft glow instead.</p>
+      <h2>Tailwind, drop shadows and React Native</h2>
+      <ul>
+        <li><strong>tailwind css box shadow generator</strong> (a <strong>box shadow generator tailwind</strong>, or <strong>box shadow css to tailwind</strong>) — use an arbitrary value: <code>shadow-[0_4px_12px_rgba(0,0,0,0.1)]</code>.</li>
+        <li><strong>css drop shadow generator</strong> (a <strong>drop shadow css generator</strong>) — <code>filter: drop-shadow(0 4px 6px rgba(0,0,0,.3))</code> follows the shape of transparent PNGs and SVGs; it has no spread or inset.</li>
+        <li><strong>box shadow generator react native</strong> — React Native 0.76+ (New Architecture) accepts the same <code>boxShadow</code> string.</li>
+      </ul>
+      <h2>Box shadow not working?</h2>
+      <p>If your <strong>box shadow not working</strong> problem shows no shadow: check that the parent doesn't have <code>overflow: hidden</code> (it clips shadows), the colour isn't fully transparent, and the element has a size. A simple <strong>css3 box shadow generator</strong> — a <strong>css box shadow creator</strong> for any <strong>box shadow css</strong>.</p>`,
+
+  'code-minifier': `
+      <h2>HTML, CSS and JS minifier</h2>
+      <p>Choose <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>HTML</strong> or <strong>JSON</strong>, paste your code and click <strong>📦 Minify</strong> — or <strong>✨ Beautify</strong> to make minified code readable again. You'll see the size before and after and the percentage saved. JavaScript uses Terser, the minifier behind most build tools, which also shortens variable names safely. It's an <strong>html css js minifier</strong> (and <strong>html css js compressor</strong>) for any <strong>minify html css js online</strong> job.</p>
+      <h2>What does minify JavaScript mean?</h2>
+      <p>The <strong>minify javascript meaning</strong>: removing comments, spaces and line breaks — and for JS, renaming local variables — so files download faster, without changing what they do. A typical stylesheet shrinks 20–40%, and your server's gzip compression comes on top.</p>
+      <ul>
+        <li><strong>css minifier</strong> / <strong>minify css</strong> (a <strong>css minifier online</strong> and <strong>css compressor online</strong>) — strips comments and whitespace and shortens <code>0px</code> to <code>0</code>.</li>
+        <li><strong>js minifier</strong> / <strong>minify javascript</strong> (a <strong>js minifier online</strong>, <strong>minify javascript online</strong> or <strong>js compressor online</strong>) — compresses and mangles with Terser.</li>
+        <li><strong>html minifier</strong> (an <strong>html minifier online</strong> and <strong>html compressor online</strong>) — removes comments and whitespace between tags, the way to <strong>compress html to one line</strong>.</li>
+      </ul>
+      <p>For <strong>minify css and js</strong> together, run each through its own tab.</p>
+      <h2>Unminify: back to normal</h2>
+      <p>For <strong>css minify to normal</strong> or <strong>js minify to normal</strong>, click Beautify — it turns <strong>minified javascript to readable</strong> code with proper indentation. Original variable names and comments can't be recovered once removed.</p>
+      <h2>How to minify CSS and HTML elsewhere</h2>
+      <ul>
+        <li><strong>how to minify css</strong> or <strong>how to minify html</strong> by hand: paste here, minify, copy into your production file — keep the readable original for editing.</li>
+        <li><strong>minify js in vs code</strong> or <strong>minify css in vscode</strong> — install a minify extension, or use a build tool like Vite or esbuild that minifies automatically.</li>
+        <li><strong>how to minify css in wordpress</strong> — caching plugins such as Autoptimize or LiteSpeed Cache have a minify option.</li>
+      </ul>
+      <p class="small muted">🔒 Everything runs in your browser — nothing you paste is uploaded.</p>`,
+
+  'unix-timestamp-converter': `
+      <h2>Unix timestamp converter</h2>
+      <p>See the current Unix timestamp ticking live (with a copy button), convert a <strong>timestamp to a date</strong>, or pick a <strong>date to get its timestamp</strong>. Results show your local time, <strong>UTC</strong>, ISO 8601 and how long ago or ahead it is. It's a <strong>unix timestamp converter online</strong> — a <strong>unix timestamp converter to date</strong> and <strong>unix timestamp converter to utc</strong> in one.</p>
+      <h2>Seconds or milliseconds</h2>
+      <p>Paste either: the converter detects <strong>milliseconds</strong> automatically (13 digits) — a <strong>unix timestamp converter milliseconds</strong> (<strong>unix timestamp converter with milliseconds</strong>) mode built in. Example: <code>1767225600</code> = <strong>1 January 2026, 00:00:00 UTC</strong>; in milliseconds, <code>1767225600000</code>. Fun fact: 32-bit systems overflow at <code>2147483647</code> — 19 January 2038, 03:14:07 UTC.</p>
+      <h2>Time zones: EST, CST, IST</h2>
+      <p>A Unix timestamp has no time zone — it's seconds since 1 January 1970 UTC. The converter shows it in UTC and your device's own zone. As a <strong>unix timestamp converter with time zone</strong>, for a <strong>unix timestamp converter to est</strong> (UTC−5, −4 in summer), <strong>unix timestamp converter to cst</strong> (UTC−6, −5 in summer) or <strong>unix timestamp converter to ist</strong> (India, UTC+5:30), take the UTC time and use the <a href="/time-zone-converter">Time Zone Converter</a>.</p>
+      <h2>In Excel</h2>
+      <p>As a <strong>unix timestamp converter excel</strong> (or <strong>unix timestamp converter in excel</strong>), the <strong>unix timestamp converter excel formula</strong> — the <strong>unix timestamp converter formula</strong> — is <code>=A1/86400+DATE(1970,1,1)</code>; format the cell as a date and time. Add <code>+5.5/24</code> for IST, or <code>-5/24</code> for EST. For milliseconds, divide by 86,400,000.</p>
+      <h2>In Python and Discord</h2>
+      <p>A <strong>unix timestamp converter python</strong> one-liner: <code>datetime.fromtimestamp(ts, tz=timezone.utc)</code>. As a <strong>unix timestamp converter for discord</strong> (<strong>unix timestamp converter discord</strong>), the <a href="/discord-timestamp-generator">Discord Timestamp Generator</a> writes the <code>&lt;t:1767225600:F&gt;</code> code that shows in each reader's own time. A simple <strong>unix timestamp converter</strong>.</p>`,
+
+  'markdown-to-html': `
+      <h2>Markdown to HTML converter with live preview</h2>
+      <p>Type or paste Markdown on the left and see the rendered preview and the clean HTML output as you type. It supports GitHub-flavoured Markdown: headings, bold and italic, links, images, lists, task lists, blockquotes, code blocks and <strong>tables</strong>. Copy the HTML or <strong>download a complete .html file</strong> with simple styling. It's a <strong>markdown to html converter</strong> and <strong>markdown to html online</strong> tool — a <strong>markdown to html formatter</strong> that runs in your browser.</p>
+      <h2>Tables and code</h2>
+      <ul>
+        <li><strong>markdown to html table</strong> — pipe tables like <code>| Name | Price |</code> with a <code>|---|---|</code> line become proper <code>&lt;table&gt;</code> markup.</li>
+        <li><strong>markdown to html code</strong> blocks — fenced code with a language (<code>\`\`\`js</code>) gets a <code>class="language-js"</code>, so you can add Prism or highlight.js for <strong>markdown to html with syntax highlighting</strong>.</li>
+      </ul>
+      <h2>Styling and email</h2>
+      <p>For <strong>markdown to html with css</strong>, the downloaded file has basic styles — replace them with your own stylesheet. For <strong>markdown to html for email</strong>, copy the HTML into your email builder; many email clients ignore stylesheets, so keep it simple. Diagrams and maths (a <strong>markdown to html with mermaid</strong> or <strong>markdown to html with latex</strong> render) aren't converted here.</p>
+      <h2>In Python, JavaScript, VS Code and the command line</h2>
+      <ul>
+        <li><strong>markdown to html python</strong> (<strong>markdown to html in python</strong>) — <code>pip install markdown</code>, then <code>markdown.markdown(text)</code>.</li>
+        <li><strong>markdown to html js</strong> (<strong>markdown to html in javascript</strong>) — the <code>marked</code> library (the same one this page uses): <code>marked.parse(text)</code>.</li>
+        <li><strong>markdown to html vscode</strong> — Ctrl + Shift + V previews Markdown; extensions like “Markdown All in One” can export HTML.</li>
+        <li><strong>markdown to html cli</strong> / <strong>markdown to html linux</strong> — <code>pandoc input.md -o output.html</code>.</li>
+      </ul>
+      <p>The <strong>markdown to html format</strong> is predictable — <code># Title</code> becomes <code>&lt;h1&gt;</code>, <code>**bold**</code> becomes <code>&lt;strong&gt;</code> — so it's a simple <strong>markdown to html</strong> converter.</p>
+      <p class="small muted">🔒 Everything runs in your browser — nothing you paste is uploaded.</p>`,
+
+  'csv-to-json': `
+      <h2>CSV to JSON converter online — and JSON to CSV</h2>
+      <p>Paste CSV (or open a .csv file) to get a JSON array, or switch to <strong>JSON → CSV</strong> to go the other way. The delimiter is auto-detected — comma, semicolon, tab or pipe — and quoted fields with commas or line breaks are handled correctly. Options: <strong>first row is header</strong> (gives an array of objects) and <strong>detect numbers &amp; booleans</strong> (so <code>22</code> becomes a number, not <code>"22"</code>). Copy or download the result. It's a <strong>csv to json converter online free</strong> (a <strong>csv to json converter free</strong> of sign-ups) — a <strong>csv to json format converter</strong> with no <strong>csv to json converter download</strong>.</p>
+      <h2>Example</h2>
+      <p><code>name,age</code> / <code>Ayesha,22</code> → <code>[{"name": "Ayesha", "age": 22}]</code>. Leading zeros (like phone numbers <code>0300…</code>) are kept as text.</p>
+      <h2>From Excel</h2>
+      <p>For an <strong>excel to json format converter</strong> (an <strong>excel to json converter for free</strong>), save the sheet as CSV (File → Save As → CSV) or copy the cells — Excel copies as tab-separated text, which is auto-detected — and paste here.</p>
+      <h2>GST and income tax JSON (India)</h2>
+      <p>Searching for a <strong>csv to json converter for gstr1</strong>, <strong>csv to json converter for gst</strong>, <strong>excel to json converter for gstr1</strong>, <strong>excel to json converter for gst</strong>, <strong>excel to json converter for income tax return</strong> or <strong>excel to json converter for e invoice</strong>? Those portals need JSON in their own exact schema, created by the official offline utilities (such as the GST Returns Offline Tool). Generic JSON from this page won't upload there — use the government tool for filing.</p>
+      <h2>In Python and VS Code</h2>
+      <p>A <strong>csv to json converter python</strong> (<strong>csv to json converter in python</strong>) script: <code>json.dumps(list(csv.DictReader(open("data.csv"))))</code>, or with pandas, <code>df.to_json(orient="records")</code>. In VS Code (a <strong>csv to json converter vscode</strong>), paste the CSV here and the JSON back — no extension needed. Once the page has loaded, your data never leaves the device, like a <strong>csv to json converter offline</strong> app. A simple <strong>csv to json converter</strong> (a <strong>csv to json converter online</strong>).</p>`,
+
+  'number-base-converter': `
+      <h2>Number base converter — binary, decimal, octal, hex</h2>
+      <p>Type a number in any box — <strong>decimal</strong>, <strong>binary</strong>, <strong>octal</strong> or <strong>hexadecimal</strong> — and the others update instantly. A custom box converts to and from any base from 2 to 36. It works with very large numbers and negatives, accepts prefixes like <code>0x</code> and <code>0b</code>, and shows how many bits the number needs. It's a <strong>number base converter online</strong> and a <strong>number base calculator</strong> for any <strong>number base conversion</strong>.</p>
+      <h2>Binary to decimal</h2>
+      <p>The <strong>binary to decimal formula</strong>: multiply each digit by its power of 2 and add them up. <strong>binary to decimal for 1101</strong>: 1×8 + 1×4 + 0×2 + 1×1 = <strong>13</strong>. <strong>binary to decimal for 1010</strong>: 8 + 2 = <strong>10</strong>. A <strong>binary to decimal chart</strong> for 4 bits runs 0000 = 0 to 1111 = 15. This <strong>binary to decimal converter</strong> does it instantly; work it on paper like this for a <strong>binary to decimal converter with steps</strong>.</p>
+      <h2>Decimal to binary</h2>
+      <p>The <strong>decimal to binary formula</strong>: divide by 2 repeatedly and read the remainders from bottom to top. <strong>decimal to binary for 25</strong>: 25 → 12 r1 → 6 r0 → 3 r0 → 1 r1 → 0 r1 = <strong>11001</strong>. <strong>decimal to binary for 10</strong> = <strong>1010</strong>. A quick <strong>decimal to binary converter</strong>.</p>
+      <h2>Hex to decimal and decimal to hex</h2>
+      <p>Hex digits go 0–9 then A–F (10–15). <strong>hex to decimal</strong>: FF = 15×16 + 15 = <strong>255</strong>; <strong>decimal to hex</strong>: 255 = FF. That's also how a <strong>decimal to hex color</strong> works: rgb(255, 128, 0) → FF, 80, 00 → <code>#FF8000</code>. 255 in octal is 377 and in binary 11111111 — handy for a <strong>binary to decimal to hexadecimal</strong> check (a <strong>hex to decimal converter</strong> and <strong>decimal to hex converter</strong> in one).</p>
+      <h2>In Excel and Python</h2>
+      <ul>
+        <li><strong>binary to decimal in excel</strong>: <code>=BIN2DEC("1101")</code>; <strong>hex to decimal in excel</strong>: <code>=HEX2DEC("FF")</code>; also <code>=DEC2BIN(25)</code> and <code>=DEC2HEX(255)</code>.</li>
+        <li><strong>binary to decimal in python</strong>: <code>int("1101", 2)</code>; <strong>decimal to binary in python</strong>: <code>bin(25)</code>; <strong>hex to decimal in python</strong>: <code>int("ff", 16)</code> — a one-line <strong>number base converter python</strong>.</li>
+      </ul>
+      <p>Whole numbers only (no fractions). Also useful for <strong>number base conversion in digital electronics</strong> classes and their <strong>number base conversion examples</strong> — a simple <strong>number base converter</strong> covering <strong>binary to decimal</strong> and <strong>decimal to binary</strong>.</p>`,
+
+  'sql-formatter': `
+      <h2>SQL formatter and beautifier online</h2>
+      <p>Paste a query and click <strong>✨ Format</strong> to get clean, indented SQL. Choose the dialect — <strong>Standard SQL</strong>, <strong>MySQL</strong>, <strong>MariaDB</strong>, <strong>PostgreSQL</strong>, <strong>SQL Server (T-SQL)</strong>, <strong>Oracle PL/SQL</strong>, <strong>SQLite</strong> or <strong>BigQuery</strong> — keyword case (UPPERCASE, lowercase or keep as is) and 2- or 4-space indents. If the query uses another dialect's syntax, it switches automatically. Click <strong>Minify</strong> to squeeze it onto one line. It's a <strong>sql formatter online</strong>, an <strong>sql formatter & beautifier online</strong> and an <strong>sql formatter online free</strong> tool — an <strong>sql formatter free</strong> of sign-ups.</p>
+      <h2>PostgreSQL and Snowflake</h2>
+      <p>As an <strong>sql formatter for postgresql</strong>, choose PostgreSQL to keep <code>::</code> casts and <code>$1</code> parameters intact. For an <strong>sql formatter for snowflake</strong>, use Standard SQL — Snowflake's syntax is close to it.</p>
+      <h2>SSMS, VS Code, DBeaver and Notepad++</h2>
+      <ul>
+        <li><strong>sql formatter ssms</strong> (an <strong>sql formatter for ssms</strong>, including <strong>sql formatter for ssms 21</strong> and <strong>sql formatter for ssms 22</strong>) — SSMS has no built-in formatter; paste here, or use an add-in such as <strong>sql formatter redgate</strong> SQL Prompt (paid).</li>
+        <li><strong>sql formatter vscode</strong> (<strong>sql formatter for vscode</strong>) — install an <strong>sql formatter extension</strong>, then Shift + Alt + F. The same works as an <strong>sql formatter for cursor</strong>.</li>
+        <li><strong>sql formatter for dbeaver</strong> — Ctrl + Shift + F formats the current query.</li>
+        <li><strong>sql formatter in notepad++</strong> (<strong>sql formatter for notepad++</strong>) — use a plugin, or paste here and copy back.</li>
+        <li><strong>sql formatter for visual studio</strong> — paste the query here and copy it back, or add a formatting extension.</li>
+      </ul>
+      <p>Your query stays in your browser, so it's safe for production SQL — a simple <strong>sql formatter</strong>.</p>
+      <p class="small muted">🔒 Everything runs in your browser — nothing you paste is uploaded.</p>`,
 };

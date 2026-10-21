@@ -376,7 +376,7 @@ Sara,"Islamabad",19,true</textarea></div><div class="field"><label class="lout">
       <div class="row" style="align-items:flex-end"><div class="field small"><label>Custom base</label><input class="input cb" type="number" min="2" max="36" value="36"></div><div class="field grow"><label>Value in custom base</label><input class="input mono" data-b="custom" autocomplete="off"></div></div><div class="msg small"></div></div>`;
     const $ = UI.q(root);
     const DIG = '0123456789abcdefghijklmnopqrstuvwxyz';
-    const parseBig = (s, b) => { s = s.trim().toLowerCase().replace(/^0[xbo]/, '').replace(/[\s_]/g, ''); const neg = s.startsWith('-'); if (neg) s = s.slice(1); if (!s) return null; let n = 0n; for (const ch of s) { const d = DIG.indexOf(ch); if (d < 0 || d >= b) throw new Error(`"${ch}" is not a valid base-${b} digit`); n = n * BigInt(b) + BigInt(d); } return neg ? -n : n; };
+    const parseBig = (s, b) => { s = s.trim().toLowerCase().replace(/[\s_]/g, ''); const neg = s.startsWith('-'); if (neg) s = s.slice(1); const pre = { 2: '0b', 8: '0o', 16: '0x' }[b]; if (pre && s.startsWith(pre)) s = s.slice(2); if (!s) return null; let n = 0n; for (const ch of s) { const d = DIG.indexOf(ch); if (d < 0 || d >= b) throw new Error(`"${ch}" is not a valid base-${b} digit`); n = n * BigInt(b) + BigInt(d); } return neg ? -n : n; };
     const toBase = (n, b) => (n < 0n ? '-' : '') + (n < 0n ? -n : n).toString(b);
     const update = src => {
       const cb = UI.clamp(Math.round(UI.num($('.cb').value) || 36), 2, 36);

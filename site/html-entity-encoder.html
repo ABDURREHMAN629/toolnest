@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#4f46e5">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/css/style.css?v=mvid7tzv">
+<link rel="stylesheet" href="/assets/css/style.css?v=mvidg7qa">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"HTML Encoder / Decoder","url":"https://www.webtoolnest.com/html-entity-encoder","description":"Escape special characters to HTML entities and decode entities back into plain text.","applicationCategory":"DeveloperApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Abdur Rehman","url":"https://www.webtoolnest.com/about","sameAs":["https://abdurrehman629.github.io","https://github.com/ABDURREHMAN629/case-studies","https://www.linkedin.com/in/abdur-rehman-ar03247440629","https://github.com/ABDURREHMAN629"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.webtoolnest.com/"},{"@type":"ListItem","position":2,"name":"Developer Tools","item":"https://www.webtoolnest.com/developer-tools"},{"@type":"ListItem","position":3,"name":"HTML Encoder / Decoder","item":"https://www.webtoolnest.com/html-entity-encoder"}]}</script>
@@ -65,6 +65,25 @@
       <ol class="steps"><li>Paste your text or HTML</li><li>Click Encode or Decode</li><li>Copy the result</li></ol>
       <h2>About this tool</h2>
       <p>Escape special characters to HTML entities and decode entities back into plain text. HTML Encoder / Decoder is part of WebToolNest's collection of free developer tools. It works instantly in your browser with no account and no installation.</p>
+      <h2>HTML encoder and decoder</h2>
+      <p>Paste text and click <strong>Encode HTML</strong> to escape the five special characters — <code>&amp;</code> → <code>&amp;amp;</code>, <code>&lt;</code> → <code>&amp;lt;</code>, <code>&gt;</code> → <code>&amp;gt;</code>, <code>"</code> → <code>&amp;quot;</code> and <code>'</code> → <code>&amp;#39;</code> — or <strong>Decode HTML</strong> to turn entities back into plain text. Tick “Also encode non-ASCII characters” to write © or emoji as numeric entities like <code>&amp;#169;</code>. It's an <strong>html encoder decoder online</strong>: an <strong>html encode online</strong> and <strong>html decode online</strong> tool, and an <strong>html entity encoder online</strong>.</p>
+      <h2>What are HTML entities?</h2>
+      <p><strong>what are html entities</strong>? They're codes that display a character the browser would otherwise treat as markup, or that's hard to type. A few from the <strong>html entities list</strong>:</p>
+      <ul>
+        <li><strong>html encoded ampersand</strong>: <code>&amp;amp;</code> · less than <code>&amp;lt;</code> · greater than <code>&amp;gt;</code></li>
+        <li><strong>html escape single quote</strong>: <code>&amp;#39;</code> (or <code>&amp;apos;</code>) · double quote <code>&amp;quot;</code></li>
+        <li><strong>html encode space</strong> that won't break: <code>&amp;nbsp;</code> · © <code>&amp;copy;</code> · ™ <code>&amp;trade;</code> · → <code>&amp;rarr;</code></li>
+      </ul>
+      <h2>Escape HTML to prevent XSS</h2>
+      <p>The main reason to <strong>html escape</strong> text: if user input is shown on a page without escaping, someone can inject scripts. Always <strong>escape html to prevent xss</strong> when inserting text into HTML — the <strong>html escape characters</strong> above are exactly the ones that matter. This page is handy for checking output and preparing snippets, such as showing code on a blog.</p>
+      <h2>In code</h2>
+      <ul>
+        <li><strong>html encode in javascript</strong> — set <code>element.textContent</code> instead of <code>innerHTML</code>, or replace the five characters.</li>
+        <li><strong>html encode in php</strong> — <code>htmlspecialchars($s, ENT_QUOTES)</code>; decode with <code>html_entity_decode()</code>.</li>
+        <li><strong>html encode in c#</strong> — <code>WebUtility.HtmlEncode()</code> / <code>HtmlDecode()</code>.</li>
+      </ul>
+      <p>To decode a page full of <code>&amp;amp;</code> codes (<strong>html entities decode</strong>, <strong>html entities to text</strong> or <strong>html unescape online</strong>), paste and click Decode. A simple <strong>html encode decode</strong> (<strong>html encode decode online</strong>) <strong>html entity converter online</strong> — an <strong>html entities online converter</strong> that's also an <strong>html escape online</strong> and <strong>html entity decode online</strong> tool, with <strong>html entities encode</strong> and an <strong>html decoder</strong> in one.</p>
+      <p class="small muted">🔒 Everything runs in your browser — nothing you paste is uploaded.</p>
       <h2>Frequently asked questions</h2>
       <div class="faq"><details><summary>Is the HTML Encoder / Decoder free to use?</summary><p>Yes. HTML Encoder / Decoder on WebToolNest is completely free, with no sign-up, no watermark and no daily limits.</p></details><details><summary>Is my data private?</summary><p>Yes. HTML Encoder / Decoder runs entirely in your browser. Your text and data are not uploaded or stored on our servers.</p></details><details><summary>Does HTML Encoder / Decoder work on mobile phones?</summary><p>Yes. WebToolNest works in any modern browser on Android, iPhone, iPad, Windows, Mac and Linux. There is nothing to install.</p></details></div>
     </article>
@@ -90,10 +109,10 @@
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mvid7tzv"></script>
-<script src="/assets/js/core.js?v=mvid7tzv"></script>
-<script src="/assets/js/tools/dev.js?v=mvid7tzv"></script>
+<script src="/assets/js/registry.js?v=mvidg7qa"></script>
+<script src="/assets/js/core.js?v=mvidg7qa"></script>
+<script src="/assets/js/tools/dev.js?v=mvidg7qa"></script>
 <script>Tools.mount("html-entity-encoder", document.getElementById('tool'), {});</script>
-<script src="/assets/js/assistant.js?v=mvid7tzv" defer></script>
+<script src="/assets/js/assistant.js?v=mvidg7qa" defer></script>
 </body>
 </html>

@@ -788,4 +788,145 @@ ${g.lines.map(l => o.asRoute ? `<rte><name>${xmlEsc(l.name)}</name>${l.pts.map(q
       else UI.downloadText(writeGpx(geo, o), fname + '.gpx', 'application/gpx+xml');
     };
   });
+
+  // ---- Instagram unfollowers tracker: reads the official "Download your information" export in the browser — no login needed.
+  function igUsers(text, isHtml) {
+    const users = new Map();
+    const add = (u, ts) => { u = String(u || '').trim().replace(/^@/, ''); if (u && !users.has(u.toLowerCase())) users.set(u.toLowerCase(), { u, ts: ts || 0 }); };
+    const fromHref = h => { const m = String(h || '').match(/instagram\.com\/(?:_u\/)?([A-Za-z0-9._]+)/); return m ? m[1] : ''; };
+    if (isHtml) {
+      const doc = new DOMParser().parseFromString(text, 'text/html');
+      doc.querySelectorAll('a[href*="instagram.com"]').forEach(a => add(a.textContent.trim() && !/\s/.test(a.textContent.trim()) ? a.textContent : fromHref(a.href)));
+    } else {
+      const walk = n => {
+        if (Array.isArray(n)) return n.forEach(walk);
+        if (n && typeof n === 'object') {
+          if (Array.isArray(n.string_list_data)) { const s = n.string_list_data[0] || {}; add(s.value || n.title || fromHref(s.href), s.timestamp); return; }
+          Object.values(n).forEach(walk);
+        }
+      };
+      walk(JSON.parse(text));
+    }
+    return users;
+  }
+  Tools.define('instagram-unfollowers-tracker', root => {
+    let followers = null, following = null;
+    root.innerHTML = `<div class="stack">
+      <div class="notice small">🔒 No Instagram login needed. Your file is read inside your browser and never uploaded — unlike apps that ask for your password and can get your account restricted.</div>
+      <details class="card-sub"><summary><strong>How to get your Instagram data file (2 minutes)</strong></summary><ol class="small mt">
+        <li>In the Instagram app open <strong>Settings → Accounts Center → Your information and permissions → Download your information</strong>.</li>
+        <li>Choose <strong>Download or transfer information</strong>, pick your account, then <strong>Some of your information</strong>.</li>
+        <li>Tick only <strong>Followers and following</strong> → <strong>Download to device</strong>.</li>
+        <li>Set <strong>Date range: All time</strong> and <strong>Format: JSON</strong>, then <strong>Create files</strong>. Instagram emails you when the ZIP is ready (usually within minutes).</li>
+        <li>Drop that ZIP file below — or the <em>followers_1.json</em> and <em>following.json</em> files from inside it.</li></ol></details>
+      <div class="dz"></div><div class="err"></div><div class="out stack"></div></div>`;
+    const $ = UI.q(root);
+    const dz = UI.dropzone({ multiple: true, accept: '.zip,.json,.html,application/zip,application/json,text/html', icon: '📸', title: 'Choose your Instagram ZIP or followers / following files', hint: 'or drag & drop them here', onFiles: files => UI.busy(null, () => load(files), '', $('.err')) });
+    $('.dz').append(dz);
+    const kind = name => { const n = name.toLowerCase().split('/').pop(); return /^followers(_\d+)?\.(json|html)$/.test(n) ? 'followers' : /^following\.(json|html)$/.test(n) ? 'following' : null; };
+    async function load(files) {
+      const parts = [];
+      for (const f of files) {
+        if (/\.zip$/i.test(f.name)) {
+          const zip = await (await UI.lib('jszip')).loadAsync(await f.arrayBuffer());
+          for (const e of Object.values(zip.files)) { const k = kind(e.name); if (k && !e.dir) parts.push({ k, html: /\.html$/i.test(e.name), text: await e.async('string') }); }
+        } else { const k = kind(f.name); if (k) parts.push({ k, html: /\.html$/i.test(f.name), text: await UI.readFile(f) }); }
+      }
+      if (!parts.some(p => p.k === 'followers') || !parts.some(p => p.k === 'following')) throw new Error('Could not find both your followers and following lists. Please choose the ZIP from Instagram, or both followers_1.json and following.json.');
+      followers = new Map(); following = new Map();
+      for (const p of parts) igUsers(p.text, p.html).forEach((v, k) => (p.k === 'followers' ? followers : following).set(k, v));
+      show();
+    }
+    const fmtDate = ts => ts ? new Date(ts * 1000).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+    function show() {
+      const notBack = [...following].filter(([k]) => !followers.has(k)).map(([, v]) => v);
+      const fans = [...followers].filter(([k]) => !following.has(k)).map(([, v]) => v);
+      const mutual = [...following].filter(([k]) => followers.has(k)).map(([, v]) => v);
+      const lists = { notBack, fans, mutual };
+      let tab = 'notBack', q = '';
+      $('.out').innerHTML = UI.resultsHTML([{ k: 'Not following you back', v: notBack.length, main: true }, { k: 'Followers', v: followers.size }, { k: 'Following', v: following.size }, { k: 'Mutual', v: mutual.length }])
+        + `<div class="row" style="align-items:flex-end"><div class="field"><label>Show</label><div class="tabs"></div></div><div class="field grow"><label>Search</label><input class="input q" placeholder="Filter by username"></div></div>
+        <div class="btn-row"><button class="btn sm secondary cp">📋 Copy usernames</button><button class="btn sm ghost csv">⬇ Download CSV</button><span class="small muted cnt"></span></div>
+        <div class="table-wrap"><table class="table"><thead><tr><th>#</th><th>Username</th><th class="since">Since</th><th></th></tr></thead><tbody class="tb"></tbody></table></div>`;
+      const rows = () => lists[tab].filter(v => !q || v.u.toLowerCase().includes(q)).sort((a, b) => (b.ts || 0) - (a.ts || 0));
+      const draw = () => {
+        const r = rows();
+        $('.tb').innerHTML = r.map((v, i) => `<tr><td>${i + 1}</td><td><strong>${esc(v.u)}</strong></td><td class="small muted">${fmtDate(v.ts)}</td><td><a class="btn sm ghost" href="https://www.instagram.com/${encodeURIComponent(v.u)}/" target="_blank" rel="noopener nofollow">Open ↗</a></td></tr>`).join('') || '<tr><td colspan="4" class="muted">Nobody here 🎉</td></tr>';
+        $('.cnt').textContent = `${r.length} account${r.length === 1 ? '' : 's'}`;
+      };
+      $('.tabs').append(UI.seg([['notBack', `Don't follow you back (${notBack.length})`], ['fans', `You don't follow back (${fans.length})`], ['mutual', `Mutual (${mutual.length})`]], tab, v => { tab = v; draw(); }));
+      $('.q').oninput = e => { q = e.target.value.trim().toLowerCase(); draw(); };
+      $('.cp').onclick = () => UI.copy(rows().map(v => v.u).join('\n'));
+      $('.csv').onclick = () => UI.downloadText('username,profile,since\n' + rows().map(v => `${v.u},https://www.instagram.com/${v.u}/,${fmtDate(v.ts).replace(/,/g, '')}`).join('\n'), `instagram-${tab}.csv`, 'text/csv');
+      draw();
+    }
+  });
+
+  // ---- Sun, Moon & Rising sign calculator (Western/tropical zodiac), using the Astronomy Engine library for exact positions.
+  const ZODIAC = [
+    ['Aries', '♈', 'Fire', 'bold, energetic, direct and competitive'], ['Taurus', '♉', 'Earth', 'steady, patient, sensual and loyal'],
+    ['Gemini', '♊', 'Air', 'curious, quick-witted, talkative and adaptable'], ['Cancer', '♋', 'Water', 'caring, protective, intuitive and home-loving'],
+    ['Leo', '♌', 'Fire', 'warm, confident, generous and expressive'], ['Virgo', '♍', 'Earth', 'practical, precise, helpful and analytical'],
+    ['Libra', '♎', 'Air', 'diplomatic, social, fair-minded and charming'], ['Scorpio', '♏', 'Water', 'intense, private, determined and perceptive'],
+    ['Sagittarius', '♐', 'Fire', 'adventurous, optimistic, honest and free-spirited'], ['Capricorn', '♑', 'Earth', 'ambitious, disciplined, responsible and patient'],
+    ['Aquarius', '♒', 'Air', 'independent, original, idealistic and friendly'], ['Pisces', '♓', 'Water', 'imaginative, compassionate, sensitive and dreamy'],
+  ];
+  // Major BIRTH_CITIES: name|country|lat|lon|IANA time zone (used offline, so birthplaces are never sent anywhere).
+  const BIRTH_CITIES = `Karachi|Pakistan|24.86|67.01|Asia/Karachi;Lahore|Pakistan|31.55|74.34|Asia/Karachi;Islamabad|Pakistan|33.68|73.05|Asia/Karachi;Rawalpindi|Pakistan|33.6|73.04|Asia/Karachi;Faisalabad|Pakistan|31.42|73.08|Asia/Karachi;Multan|Pakistan|30.2|71.47|Asia/Karachi;Peshawar|Pakistan|34.01|71.58|Asia/Karachi;Quetta|Pakistan|30.18|66.99|Asia/Karachi;Hyderabad|Pakistan|25.4|68.37|Asia/Karachi;Gujranwala|Pakistan|32.16|74.19|Asia/Karachi;Sialkot|Pakistan|32.49|74.53|Asia/Karachi;Delhi|India|28.61|77.21|Asia/Kolkata;Mumbai|India|19.08|72.88|Asia/Kolkata;Bengaluru|India|12.97|77.59|Asia/Kolkata;Chennai|India|13.08|80.27|Asia/Kolkata;Kolkata|India|22.57|88.36|Asia/Kolkata;Hyderabad|India|17.39|78.49|Asia/Kolkata;Ahmedabad|India|23.02|72.57|Asia/Kolkata;Pune|India|18.52|73.86|Asia/Kolkata;Jaipur|India|26.91|75.79|Asia/Kolkata;Lucknow|India|26.85|80.95|Asia/Kolkata;Dhaka|Bangladesh|23.81|90.41|Asia/Dhaka;Chittagong|Bangladesh|22.36|91.78|Asia/Dhaka;Kathmandu|Nepal|27.72|85.32|Asia/Kathmandu;Colombo|Sri Lanka|6.93|79.86|Asia/Colombo;Kabul|Afghanistan|34.56|69.21|Asia/Kabul;Tehran|Iran|35.69|51.39|Asia/Tehran;Dubai|UAE|25.2|55.27|Asia/Dubai;Abu Dhabi|UAE|24.45|54.38|Asia/Dubai;Riyadh|Saudi Arabia|24.71|46.68|Asia/Riyadh;Jeddah|Saudi Arabia|21.49|39.19|Asia/Riyadh;Mecca|Saudi Arabia|21.39|39.86|Asia/Riyadh;Medina|Saudi Arabia|24.47|39.61|Asia/Riyadh;Doha|Qatar|25.29|51.53|Asia/Qatar;Kuwait City|Kuwait|29.38|47.99|Asia/Kuwait;Muscat|Oman|23.59|58.41|Asia/Muscat;Manama|Bahrain|26.23|50.59|Asia/Bahrain;Baghdad|Iraq|33.31|44.37|Asia/Baghdad;Amman|Jordan|31.95|35.93|Asia/Amman;Beirut|Lebanon|33.89|35.5|Asia/Beirut;Jerusalem|Israel|31.77|35.21|Asia/Jerusalem;Istanbul|Turkey|41.01|28.98|Europe/Istanbul;Ankara|Turkey|39.93|32.86|Europe/Istanbul;Cairo|Egypt|30.04|31.24|Africa/Cairo;Alexandria|Egypt|31.2|29.92|Africa/Cairo;Casablanca|Morocco|33.57|-7.59|Africa/Casablanca;Lagos|Nigeria|6.52|3.38|Africa/Lagos;Abuja|Nigeria|9.08|7.4|Africa/Lagos;Accra|Ghana|5.6|-0.19|Africa/Accra;Nairobi|Kenya|-1.29|36.82|Africa/Nairobi;Addis Ababa|Ethiopia|8.98|38.76|Africa/Addis_Ababa;Johannesburg|South Africa|-26.2|28.05|Africa/Johannesburg;Cape Town|South Africa|-33.92|18.42|Africa/Johannesburg;Algiers|Algeria|36.75|3.06|Africa/Algiers;Tunis|Tunisia|36.81|10.18|Africa/Tunis;Khartoum|Sudan|15.5|32.56|Africa/Khartoum;London|United Kingdom|51.51|-0.13|Europe/London;Manchester|United Kingdom|53.48|-2.24|Europe/London;Birmingham|United Kingdom|52.49|-1.89|Europe/London;Glasgow|United Kingdom|55.86|-4.25|Europe/London;Edinburgh|United Kingdom|55.95|-3.19|Europe/London;Dublin|Ireland|53.35|-6.26|Europe/Dublin;Paris|France|48.86|2.35|Europe/Paris;Marseille|France|43.3|5.37|Europe/Paris;Berlin|Germany|52.52|13.4|Europe/Berlin;Munich|Germany|48.14|11.58|Europe/Berlin;Hamburg|Germany|53.55|9.99|Europe/Berlin;Frankfurt|Germany|50.11|8.68|Europe/Berlin;Amsterdam|Netherlands|52.37|4.9|Europe/Amsterdam;Brussels|Belgium|50.85|4.35|Europe/Brussels;Madrid|Spain|40.42|-3.7|Europe/Madrid;Barcelona|Spain|41.39|2.17|Europe/Madrid;Lisbon|Portugal|38.72|-9.14|Europe/Lisbon;Rome|Italy|41.9|12.5|Europe/Rome;Milan|Italy|45.46|9.19|Europe/Rome;Zurich|Switzerland|47.38|8.54|Europe/Zurich;Vienna|Austria|48.21|16.37|Europe/Vienna;Prague|Czechia|50.08|14.44|Europe/Prague;Warsaw|Poland|52.23|21.01|Europe/Warsaw;Budapest|Hungary|47.5|19.04|Europe/Budapest;Athens|Greece|37.98|23.73|Europe/Athens;Bucharest|Romania|44.43|26.1|Europe/Bucharest;Stockholm|Sweden|59.33|18.07|Europe/Stockholm;Oslo|Norway|59.91|10.75|Europe/Oslo;Copenhagen|Denmark|55.68|12.57|Europe/Copenhagen;Helsinki|Finland|60.17|24.94|Europe/Helsinki;Kyiv|Ukraine|50.45|30.52|Europe/Kyiv;Moscow|Russia|55.76|37.62|Europe/Moscow;Saint Petersburg|Russia|59.93|30.34|Europe/Moscow;New York|United States|40.71|-74.01|America/New_York;Los Angeles|United States|34.05|-118.24|America/Los_Angeles;Chicago|United States|41.88|-87.63|America/Chicago;Houston|United States|29.76|-95.37|America/Chicago;Phoenix|United States|33.45|-112.07|America/Phoenix;Philadelphia|United States|39.95|-75.17|America/New_York;San Antonio|United States|29.42|-98.49|America/Chicago;San Diego|United States|32.72|-117.16|America/Los_Angeles;Dallas|United States|32.78|-96.8|America/Chicago;Austin|United States|30.27|-97.74|America/Chicago;San Francisco|United States|37.77|-122.42|America/Los_Angeles;San Jose|United States|37.34|-121.89|America/Los_Angeles;Seattle|United States|47.61|-122.33|America/Los_Angeles;Denver|United States|39.74|-104.99|America/Denver;Las Vegas|United States|36.17|-115.14|America/Los_Angeles;Boston|United States|42.36|-71.06|America/New_York;Washington DC|United States|38.91|-77.04|America/New_York;Atlanta|United States|33.75|-84.39|America/New_York;Miami|United States|25.76|-80.19|America/New_York;Orlando|United States|28.54|-81.38|America/New_York;Detroit|United States|42.33|-83.05|America/Detroit;Minneapolis|United States|44.98|-93.27|America/Chicago;Nashville|United States|36.16|-86.78|America/Chicago;New Orleans|United States|29.95|-90.07|America/Chicago;Portland|United States|45.52|-122.68|America/Los_Angeles;Salt Lake City|United States|40.76|-111.89|America/Denver;Honolulu|United States|21.31|-157.86|Pacific/Honolulu;Anchorage|United States|61.22|-149.9|America/Anchorage;Toronto|Canada|43.65|-79.38|America/Toronto;Montreal|Canada|45.5|-73.57|America/Toronto;Vancouver|Canada|49.28|-123.12|America/Vancouver;Calgary|Canada|51.05|-114.07|America/Edmonton;Ottawa|Canada|45.42|-75.7|America/Toronto;Mexico City|Mexico|19.43|-99.13|America/Mexico_City;Guadalajara|Mexico|20.66|-103.35|America/Mexico_City;Bogota|Colombia|4.71|-74.07|America/Bogota;Lima|Peru|-12.05|-77.04|America/Lima;Santiago|Chile|-33.45|-70.67|America/Santiago;Buenos Aires|Argentina|-34.6|-58.38|America/Argentina/Buenos_Aires;Sao Paulo|Brazil|-23.55|-46.63|America/Sao_Paulo;Rio de Janeiro|Brazil|-22.91|-43.17|America/Sao_Paulo;Caracas|Venezuela|10.48|-66.9|America/Caracas;Havana|Cuba|23.11|-82.37|America/Havana;Kingston|Jamaica|18.02|-76.8|America/Jamaica;Tokyo|Japan|35.68|139.69|Asia/Tokyo;Osaka|Japan|34.69|135.5|Asia/Tokyo;Seoul|South Korea|37.57|126.98|Asia/Seoul;Beijing|China|39.9|116.41|Asia/Shanghai;Shanghai|China|31.23|121.47|Asia/Shanghai;Guangzhou|China|23.13|113.26|Asia/Shanghai;Shenzhen|China|22.54|114.06|Asia/Shanghai;Hong Kong|China|22.32|114.17|Asia/Hong_Kong;Taipei|Taiwan|25.03|121.57|Asia/Taipei;Singapore|Singapore|1.35|103.82|Asia/Singapore;Kuala Lumpur|Malaysia|3.14|101.69|Asia/Kuala_Lumpur;Jakarta|Indonesia|-6.21|106.85|Asia/Jakarta;Bangkok|Thailand|13.76|100.5|Asia/Bangkok;Manila|Philippines|14.6|120.98|Asia/Manila;Ho Chi Minh City|Vietnam|10.82|106.63|Asia/Ho_Chi_Minh;Hanoi|Vietnam|21.03|105.85|Asia/Ho_Chi_Minh;Yangon|Myanmar|16.84|96.17|Asia/Yangon;Tashkent|Uzbekistan|41.3|69.24|Asia/Tashkent;Almaty|Kazakhstan|43.24|76.89|Asia/Almaty;Baku|Azerbaijan|40.41|49.87|Asia/Baku;Sydney|Australia|-33.87|151.21|Australia/Sydney;Melbourne|Australia|-37.81|144.96|Australia/Melbourne;Brisbane|Australia|-27.47|153.03|Australia/Brisbane;Perth|Australia|-31.95|115.86|Australia/Perth;Adelaide|Australia|-34.93|138.6|Australia/Adelaide;Auckland|New Zealand|-36.85|174.76|Pacific/Auckland;Wellington|New Zealand|-41.29|174.78|Pacific/Auckland`.split(';').map(s => { const [n, c, la, lo, tz] = s.split('|'); return { n, c, lat: +la, lon: +lo, tz }; });
+  const zoneOffsetMs = (t, tz) => { const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: tz, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).formatToParts(t).map(x => [x.type, x.value])); return Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute, +p.second) - Math.floor(t / 1000) * 1000; };
+  const localToUtc = (y, mo, d, h, mi, tz) => { const g = Date.UTC(y, mo, d, h, mi); let t = g - zoneOffsetMs(g, tz); return g - zoneOffsetMs(t, tz); };
+  const signOf = lon => { const l = ((lon % 360) + 360) % 360; return { i: Math.floor(l / 30), deg: l % 30 }; };
+  function bigThree(A, utcMs, lat, lon) {
+    const date = new Date(utcMs), time = A.MakeTime(date);
+    const sun = A.SunPosition(date).elon, moon = A.EclipticGeoMoon(date).lon;
+    const T = time.tt / 36525, eps = (23.439291 - 0.0130042 * T) * Math.PI / 180, ramc = ((A.SiderealTime(date) * 15 + lon) % 360) * Math.PI / 180, phi = lat * Math.PI / 180;
+    const asc = Math.atan2(Math.cos(ramc), -(Math.sin(ramc) * Math.cos(eps) + Math.tan(phi) * Math.sin(eps))) * 180 / Math.PI;
+    return { sun, moon, asc: ((asc % 360) + 360) % 360 };
+  }
+  Tools.define('sun-moon-rising-calculator', (root, preset) => {
+    root.innerHTML = `<div class="stack">
+      <div class="row">
+        <div class="field"><label>Date of birth</label><input class="input dob" type="date" value="2000-01-01" min="1900-01-01" max="2100-12-31"></div>
+        <div class="field"><label>Time of birth</label><input class="input tob" type="time" value="12:00"></div>
+        <div class="field" style="justify-content:flex-end"><label class="check"><input type="checkbox" class="unk"> I don't know my birth time</label></div>
+      </div>
+      <div class="field"><label>Place of birth</label><input class="input city" list="tn-BIRTH_CITIES" placeholder="Start typing a city — e.g. Lahore, London, New York" autocomplete="off">
+        <datalist id="tn-BIRTH_CITIES">${BIRTH_CITIES.map(c => `<option value="${esc(c.n)}, ${esc(c.c)}">`).join('')}</datalist>
+        <small class="muted">Not in the list? <button type="button" class="link-btn manual">Enter coordinates and time zone yourself</button></small></div>
+      <div class="row man" hidden>
+        <div class="field"><label>Latitude (north +, south −)</label><input class="input lat" type="number" step="0.01" placeholder="e.g. 31.55"></div>
+        <div class="field"><label>Longitude (east +, west −)</label><input class="input lon" type="number" step="0.01" placeholder="e.g. 74.34"></div>
+        <div class="field"><label>Time zone</label><select class="select tz">${(Intl.supportedValuesOf ? Intl.supportedValuesOf('timeZone') : ['UTC']).map(z => `<option${z === (Intl.DateTimeFormat().resolvedOptions().timeZone) ? ' selected' : ''}>${esc(z)}</option>`).join('')}</select></div>
+      </div>
+      <div class="btn-row"><button class="btn lg go">✨ Find my Sun, Moon & Rising</button></div>
+      <div class="err"></div><div class="out"></div></div>`;
+    const $ = UI.q(root);
+    $('.manual').onclick = () => { $('.man').hidden = !$('.man').hidden; };
+    $('.unk').onchange = e => { $('.tob').disabled = e.target.checked; };
+    const place = () => {
+      const v = $('.city').value.trim().toLowerCase();
+      if (!$('.man').hidden && $('.lat').value && $('.lon').value) return { lat: +$('.lat').value, lon: +$('.lon').value, tz: $('.tz').value, label: `${$('.lat').value}, ${$('.lon').value}` };
+      const c = BIRTH_CITIES.find(c => `${c.n}, ${c.c}`.toLowerCase() === v) || BIRTH_CITIES.find(c => c.n.toLowerCase() === v.split(',')[0].trim());
+      return c ? { lat: c.lat, lon: c.lon, tz: c.tz, label: `${c.n}, ${c.c}` } : null;
+    };
+    $('.go').onclick = e => UI.busy(e.currentTarget, async () => {
+      const A = await UI.lib('astronomy');
+      const [y, mo, d] = $('.dob').value.split('-').map(Number);
+      if (!y) throw new Error('Please enter your date of birth.');
+      const p = place();
+      if (!p) throw new Error('Please choose your birth city from the list, or enter its coordinates and time zone.');
+      const unknown = $('.unk').checked, [hh, mm] = (unknown ? '12:00' : $('.tob').value || '12:00').split(':').map(Number);
+      const utc = localToUtc(y, mo - 1, d, hh, mm, p.tz), r = bigThree(A, utc, p.lat, p.lon);
+      // with an unknown time, check whether the Moon changes sign during that day
+      const m0 = signOf(bigThree(A, localToUtc(y, mo - 1, d, 0, 0, p.tz), p.lat, p.lon).moon).i, m1 = signOf(bigThree(A, localToUtc(y, mo - 1, d, 23, 59, p.tz), p.lat, p.lon).moon).i;
+      const card = (label, what, lon, note) => { const s = signOf(lon), z = ZODIAC[s.i]; return `<div class="card-sub stack" style="gap:6px"><div class="small muted">${label}</div><div style="font-size:1.6rem;font-weight:800">${z[1]} ${z[0]}</div><div class="small">${Math.floor(s.deg)}° ${String(Math.floor(s.deg % 1 * 60)).padStart(2, '0')}′ · ${z[2]} sign</div><p class="small" style="margin:0">${what} — <strong>${z[3]}</strong>.</p>${note ? `<p class="small muted" style="margin:0">${note}</p>` : ''}</div>`; };
+      $('.out').innerHTML = `<div class="notice">Born ${esc(new Date(utc).toLocaleString('en', { timeZone: p.tz, dateStyle: 'long', timeStyle: unknown ? undefined : 'short' }))} in ${esc(p.label)}${unknown ? ' (time unknown — using noon)' : ''}.</div>
+        <div class="grid-3 mt" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+          ${card('☀️ Sun sign', 'Your core identity and what drives you', r.sun)}
+          ${card('🌙 Moon sign', 'Your emotions, needs and inner self', r.moon, unknown && m0 !== m1 ? `⚠️ The Moon moved from ${ZODIAC[m0][0]} into ${ZODIAC[m1][0]} on this day — your Moon sign depends on your birth time.` : '')}
+          ${unknown ? `<div class="card-sub stack" style="gap:6px"><div class="small muted">⬆️ Rising sign</div><div style="font-size:1.2rem;font-weight:700">Needs your birth time</div><p class="small" style="margin:0">The rising sign changes about every two hours, so it can't be found without the time of birth. Check your birth certificate or ask a parent.</p></div>` : card('⬆️ Rising sign (Ascendant)', 'The first impression you give and how you approach the world', r.asc)}
+        </div>
+        <p class="small muted mt">Western (tropical) zodiac, calculated from the exact positions of the Sun and Moon and your local sidereal time. Signs near the edge of a sign (0° or 29°) are sensitive to the exact minute of birth.</p>`;
+    }, 'Calculating…', $('.err'));
+  });
 })();

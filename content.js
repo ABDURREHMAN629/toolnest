@@ -608,4 +608,290 @@ module.exports = {
       </ol>
       <h2>Tracks or routes?</h2>
       <p>By default lines become GPX <strong>tracks</strong>, which every app and device can display. Tick “Save lines as GPX routes” if your device needs <strong>routes</strong> for turn-by-turn navigation. Placemarks become waypoints. Shapes drawn as areas are converted to their outline.</p>`,
+
+  'instagram-unfollowers-tracker': `
+      <h2>Why this tracker never asks for your password</h2>
+      <p>Most “unfollowers” apps ask you to log in with your Instagram password. That gives a stranger full access to your account, and Instagram regularly restricts or locks accounts that use them. This tracker works differently: it reads the copy of your followers and following lists that <strong>Instagram itself</strong> gives you through <em>Download your information</em>. You never log in here, and the file is read inside your browser — it is not uploaded.</p>
+      <h2>What the three lists mean</h2>
+      <ul>
+        <li><strong>Don't follow you back</strong> — accounts you follow that don't follow you. This is the list most people want.</li>
+        <li><strong>You don't follow back</strong> — your followers that you don't follow (your “fans”).</li>
+        <li><strong>Mutual</strong> — you follow each other.</li>
+      </ul>
+      <p>Each name links to the profile, so you can review and unfollow by hand. Lists can be searched, copied or saved as a CSV spreadsheet.</p>
+      <h2>Good to know</h2>
+      <ul>
+        <li>The results are a snapshot from the moment you requested the download. Request a fresh download to check again later.</li>
+        <li>Brands, celebrities and creators rarely follow back — that's normal, not a sign of an unfollow.</li>
+        <li>Unfollow slowly. Removing hundreds of accounts in a few minutes can trigger Instagram's limits; a few dozen per hour is safer.</li>
+      </ul>`,
+
+  'instagram-not-following-back': `
+      <h2>See who doesn't follow you back — without risking your account</h2>
+      <p>Instagram doesn't show a “not following back” list, and third-party apps that promise one usually want your password. This page uses Instagram's own data download instead: request your <em>Followers and following</em> data in JSON format, drop the ZIP file here, and you instantly get the list of accounts you follow that don't follow you.</p>
+      <h2>Step by step</h2>
+      <ol>
+        <li>Instagram → <strong>Settings → Accounts Center → Your information and permissions → Download your information</strong>.</li>
+        <li><strong>Download or transfer information</strong> → your account → <strong>Some of your information</strong> → tick <strong>Followers and following</strong>.</li>
+        <li><strong>Download to device</strong>, date range <strong>All time</strong>, format <strong>JSON</strong> → <strong>Create files</strong>.</li>
+        <li>When Instagram's email arrives, download the ZIP and drop it on this page.</li>
+      </ol>
+      <p>Everything is processed in your browser; nothing is sent to us or to anyone else.</p>`,
+
+  'sun-moon-rising-calculator': `
+      <h2>Your Big Three</h2>
+      <p>In Western astrology the three most important placements in a birth chart are often called the <strong>Big Three</strong>:</p>
+      <ul>
+        <li><strong>Sun sign</strong> — your core identity. It is the sign most people know, based on your birthday.</li>
+        <li><strong>Moon sign</strong> — your emotional side: what you need to feel safe and how you react. The Moon changes sign about every two and a half days.</li>
+        <li><strong>Rising sign (Ascendant)</strong> — the sign rising on the eastern horizon at the moment you were born. It describes your outward style and first impressions, and it changes roughly every two hours, which is why your birth time matters.</li>
+      </ul>
+      <h2>How it is calculated</h2>
+      <p>The calculator converts your birth time to Universal Time using your birthplace's time zone (including daylight saving rules for that date), then computes the exact positions of the Sun and Moon along the zodiac with a professional astronomy library. The rising sign comes from the local sidereal time and the latitude of your birthplace. It uses the <strong>tropical zodiac</strong> used in Western astrology; Vedic (sidereal) astrology gives signs about 24° earlier.</p>
+      <p>Don't know your birth time? You will still get your Sun sign, and your Moon sign unless the Moon changed sign that day — the tool tells you when it did.</p>`,
+
+  'rising-sign-calculator': `
+      <h2>What is a rising sign?</h2>
+      <p>Your rising sign, or <strong>Ascendant</strong>, is the zodiac sign that was rising over the eastern horizon at the exact time and place you were born. Astrologers read it as your “mask”: the energy you show to new people, your style and your instinctive way of starting things.</p>
+      <h2>Why the exact birth time matters</h2>
+      <p>The Earth turns a full circle every day, so all twelve signs rise in turn — each for about two hours on average (much less for some signs at high latitudes). A difference of even 10–20 minutes can change your rising sign if you were born near the boundary, so use the time from your birth certificate when you can. Your birthplace matters too: the same moment gives different rising signs in London and Karachi.</p>
+      <p>The degree shown with your result tells you how close you are to a boundary: near 0° or 29° means a small error in the time could move it to the neighbouring sign.</p>`,
+
+  'moon-sign-calculator': `
+      <h2>What is a Moon sign?</h2>
+      <p>Your Moon sign is the zodiac sign the Moon was in when you were born. While your Sun sign describes your identity, the Moon describes your emotional world — your moods, comfort needs and how you care for others. Many people relate to their Moon sign more than to their Sun sign.</p>
+      <h2>Do I need my birth time?</h2>
+      <p>Usually not. The Moon spends about two and a half days in each sign, so on most dates the whole day falls in one sign and the calculator gives a definite answer. If the Moon changed sign on your birthday, the tool warns you and shows both signs — then your birth time decides which one is yours.</p>
+      <p>Results use the tropical (Western) zodiac and the Moon's exact position from an astronomy library, adjusted for your birthplace's time zone on that date.</p>`,
+
+  'merge-pdf': `
+      <h2>How to merge PDF files</h2>
+      <p>Select two or more PDFs, put them in the right order with the arrows, and click <strong>Merge PDF</strong>. Pages keep their original size, orientation, text and links; the files are simply joined one after another into a single document.</p>
+      <h2>Tips</h2>
+      <ul>
+        <li><strong>Only need some pages?</strong> Merge first, then use <a href="/delete-pdf-pages">Delete PDF Pages</a> or <a href="/organize-pdf">Organize PDF</a> to remove or reorder pages.</li>
+        <li><strong>Adding scans or photos?</strong> Convert them with <a href="/jpg-to-pdf">JPG to PDF</a>, then merge.</li>
+        <li><strong>File too big to email afterwards?</strong> Run the result through <a href="/compress-pdf">Compress PDF</a>.</li>
+        <li>Password-protected PDFs must be opened and saved without a password first.</li>
+      </ul>
+      <h2>Is it safe for private documents?</h2>
+      <p>Yes. The tool runs inside your web browser, so your documents are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+
+  'compress-pdf': `
+      <h2>Which compression level should I choose?</h2>
+      <ul>
+        <li><strong>Lossless</strong> — cleans up and re-packs the file without touching image quality. Best for text documents; savings are usually small.</li>
+        <li><strong>Recommended</strong> — re-compresses the images inside the PDF at good quality. The right choice for most files.</li>
+        <li><strong>Strong</strong> — smaller images and lower quality. Good for scans you only need to read on screen.</li>
+        <li><strong>Extreme</strong> — turns every page into a compressed image. Gives the smallest file, but text can no longer be selected or searched, so use it only when you must hit a strict size limit (for example 1 MB or 2 MB on an application portal).</li>
+      </ul>
+      <p>Ticking <strong>grayscale</strong> removes colour from images and often halves the size of scanned documents.</p>
+      <h2>Why some PDFs barely shrink</h2>
+      <p>PDFs made of plain text (exported from Word, for example) are already small; most of a PDF's size comes from images and embedded fonts. If the tool can't make your file noticeably smaller it tells you, instead of giving you a worse copy.</p>
+      <h2>Is it safe for private documents?</h2>
+      <p>Yes. The tool runs inside your web browser, so your documents are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+
+  'pdf-to-jpg': `
+      <h2>Convert PDF pages to images</h2>
+      <p>Every page is rendered as a separate image. Choose <strong>JPG</strong> for small files that are easy to share in WhatsApp or email, or <strong>PNG</strong> for sharp text and diagrams with no compression artefacts. Download single pages or all of them in one ZIP file.</p>
+      <h2>Which resolution?</h2>
+      <ul>
+        <li><strong>Low (72 DPI)</strong> — small previews and thumbnails.</li>
+        <li><strong>Medium (150 DPI)</strong> — sharing on screens, WhatsApp and social media.</li>
+        <li><strong>High (220 DPI)</strong> or <strong>Print (300 DPI)</strong> — printing, or zooming into small text.</li>
+      </ul>
+      <p>Higher resolutions make bigger files and take longer for long documents, so start in the middle and only go higher if the text looks soft.</p>
+      <h2>Is it safe for private documents?</h2>
+      <p>Yes. The tool runs inside your web browser, so your documents are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+
+  'jpg-to-pdf': `
+      <h2>Turn photos and scans into one PDF</h2>
+      <p>Add JPG, PNG, WebP or other images, drag them into order, and choose the page size: <strong>A4</strong>, <strong>US Letter</strong> or <strong>Legal</strong> for documents you will print or submit, or <strong>Same as image</strong> to keep each photo's own size. Margins and portrait/landscape orientation are adjustable.</p>
+      <h2>Typical uses</h2>
+      <ul>
+        <li>Combining photos of a multi-page form, receipt or ID into one file for an application.</li>
+        <li>Sending assignments or notes you photographed with your phone.</li>
+        <li>Making a simple photo album or portfolio PDF.</li>
+      </ul>
+      <p>Tip: phone photos are often large. If the PDF must stay under an upload limit, run it through <a href="/compress-pdf">Compress PDF</a> afterwards.</p>
+      <h2>Is it safe for private photos?</h2>
+      <p>Yes. The tool runs inside your web browser, so your photos are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+
+  'pdf-to-word': `
+      <h2>What gets converted</h2>
+      <p>The converter reads the text of your PDF and rebuilds it as paragraphs in an editable Word (.docx) file that opens in Microsoft Word, Google Docs and LibreOffice. It is ideal when you need to edit or reuse the <em>words</em> of a document: reports, letters, articles and CVs.</p>
+      <h2>Limitations to know</h2>
+      <ul>
+        <li><strong>Scanned PDFs</strong> are pictures of text, so there is nothing to extract. Run the pages through <a href="/image-to-text">Image to Text (OCR)</a> first.</li>
+        <li><strong>Complex layouts</strong> — columns, tables and text boxes — are simplified into ordinary paragraphs, so check the formatting before you send the file.</li>
+        <li>Images inside the PDF are not copied into the Word file.</li>
+      </ul>
+      <h2>Is it safe for private documents?</h2>
+      <p>Yes. The tool runs inside your web browser, so your documents are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+
+  'word-to-pdf': `
+      <h2>How it works</h2>
+      <p>Your .docx file is rendered in the browser with its fonts, headings, tables and images, and you save it as a PDF using the print dialog (choose <strong>Save as PDF</strong> as the printer). The result looks the same on every device, which is why PDF is the safest format for CVs, applications and anything you submit.</p>
+      <h2>Tips for a perfect PDF</h2>
+      <ul>
+        <li>Turn off “Headers and footers” in the print dialog so the browser doesn't add a date or web address.</li>
+        <li>Set the paper size (A4 or Letter) and margins to match your document.</li>
+        <li>Only .docx files are supported. Save older .doc files as .docx in Word or Google Docs first.</li>
+      </ul>
+      <h2>Is it safe for private documents?</h2>
+      <p>Yes. The tool runs inside your web browser, so your documents are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+
+  'split-pdf': `
+      <h2>Two ways to split</h2>
+      <ul>
+        <li><strong>Every page</strong> — each page becomes its own PDF, downloaded together as a ZIP.</li>
+        <li><strong>Custom ranges</strong> — type ranges such as <code>1-3, 5, 8-10</code> to extract exactly the pages you need, each range as a separate file.</li>
+      </ul>
+      <h2>Common uses</h2>
+      <p>Sending only the relevant pages of a long contract, separating scanned documents that were captured in one batch, or pulling a single chapter out of a book or manual. To remove pages instead of extracting them, use <a href="/delete-pdf-pages">Delete PDF Pages</a>.</p>
+      <h2>Is it safe for private documents?</h2>
+      <p>Yes. The tool runs inside your web browser, so your documents are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+
+  'compress-image': `
+      <h2>How image compression works</h2>
+      <p>JPG and WebP images can be stored at different quality levels. Lowering the quality slightly removes detail your eyes barely notice and can cut the file size by 50–80%. The before/after sizes are shown for every image so you can find the right balance.</p>
+      <h2>Tips for the smallest files</h2>
+      <ul>
+        <li><strong>Resize first.</strong> A 4000-pixel phone photo shown on a website at 1200 pixels wastes most of its size — use <a href="/resize-image">Resize Image</a>.</li>
+        <li><strong>Choose the right format.</strong> WebP is usually 25–35% smaller than JPG at the same quality and works in all modern browsers. Keep PNG for logos and screenshots with sharp edges.</li>
+        <li>Quality around 70–80% is the sweet spot for photos; below 60% blocky artefacts start to show.</li>
+      </ul>
+      <h2>Is it safe for private images?</h2>
+      <p>Yes. The tool runs inside your web browser, so your images are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+
+  'resize-image': `
+      <h2>Resize by pixels or percentage</h2>
+      <p>Enter a new width and height in pixels, or scale by a percentage. When you set both width and height, choose <strong>Fit inside (keep ratio)</strong> to avoid stretching, <strong>Crop to exact size</strong> to fill the frame exactly, or <strong>Stretch</strong> if distortion doesn't matter. Several images can be resized at once.</p>
+      <h2>Common sizes</h2>
+      <ul>
+        <li><strong>Instagram post:</strong> 1080 × 1080 (square) or 1080 × 1350 (portrait)</li>
+        <li><strong>Facebook / LinkedIn link image:</strong> 1200 × 630</li>
+        <li><strong>YouTube thumbnail:</strong> 1280 × 720</li>
+        <li><strong>Website hero image:</strong> 1600–2000 pixels wide</li>
+        <li><strong>Passport photo:</strong> use the <a href="/passport-photo-maker">Passport Photo Maker</a>, which handles country sizes for you.</li>
+      </ul>
+      <p>Making an image bigger can't add detail that isn't there, so enlarging small photos will look soft. Shrinking always looks sharp.</p>
+      <h2>Is it safe for private images?</h2>
+      <p>Yes. The tool runs inside your web browser, so your images are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+
+  'remove-background': `
+      <h2>AI background removal in your browser</h2>
+      <p>A small AI model trained to separate people and objects from their background runs directly in your browser. The first time, it downloads the model (a few MB); after that, removing a background takes a few seconds. You get a transparent PNG, or you can fill the background with a solid colour such as white for ID and passport photos.</p>
+      <h2>For the cleanest cut-out</h2>
+      <ul>
+        <li>Use a photo where the subject is in focus and clearly separated from the background.</li>
+        <li>Good, even lighting helps more than a high resolution.</li>
+        <li>Fine details such as flyaway hair are the hardest part for any tool — a plain background behind the subject gives the best edges.</li>
+      </ul>
+      <h2>Is it safe for private photos?</h2>
+      <p>Yes. The tool runs inside your web browser, so your photos are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+
+  'image-to-text': `
+      <h2>Extract text from images and scans (OCR)</h2>
+      <p>Optical character recognition (OCR) reads the letters in a photo or screenshot and turns them into text you can copy, edit and search. Choose the language of the text first — English, Urdu, Arabic, Hindi, Bengali, Persian, Spanish, French, German and more are supported, including English + Urdu for mixed documents.</p>
+      <h2>Getting accurate results</h2>
+      <ul>
+        <li>Take the photo straight on, with the page filling the frame and no shadows.</li>
+        <li>Higher contrast (dark text on a light background) works best; crop away anything that isn't text.</li>
+        <li>Handwriting and decorative fonts are much harder than printed text — always proofread the result.</li>
+      </ul>
+      <h2>Is it safe for private images?</h2>
+      <p>Yes. The tool runs inside your web browser, so your images are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+
+  'heic-to-jpg': `
+      <h2>What is a HEIC file?</h2>
+      <p>iPhones save photos as <strong>HEIC</strong> (High Efficiency Image Container) because it takes about half the space of JPG. The problem is that many Windows programs, websites and upload forms don't accept HEIC. Converting to JPG makes the photo open everywhere.</p>
+      <h2>Converting several photos</h2>
+      <p>Add as many HEIC files as you like; each is converted to JPG and you can download them together as a ZIP.</p>
+      <p>Want your iPhone to save JPG from now on? Go to <strong>Settings → Camera → Formats</strong> and choose <strong>Most Compatible</strong>.</p>
+      <h2>Is it safe for private photos?</h2>
+      <p>Yes. The tool runs inside your web browser, so your photos are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+
+  'qr-code-generator': `
+      <h2>What can a QR code hold?</h2>
+      <p>Besides website links, this generator creates QR codes for plain text, <strong>Wi-Fi logins</strong> (guests scan to join without typing the password), email, phone numbers, SMS and contact cards (vCard). Choose colours, add a logo in the middle, and download as PNG for screens or SVG for print.</p>
+      <h2>Printing QR codes that scan every time</h2>
+      <ul>
+        <li>Keep strong contrast — dark code on a light background. Light-on-dark codes fail on some phones.</li>
+        <li>Print at least 2 × 2 cm, and bigger the further away people will scan it from (posters: 10 cm+).</li>
+        <li>Leave the white border (quiet zone) around the code.</li>
+        <li>Test with two different phones before printing hundreds of copies.</li>
+      </ul>
+      <p>These are static QR codes: they never expire and don't depend on any service staying online.</p>`,
+
+  'password-generator': `
+      <h2>What makes a password strong?</h2>
+      <p>Length matters more than anything else. Every extra character multiplies the number of guesses an attacker needs. A random 16-character password using letters, numbers and symbols would take longer than the age of the universe to brute-force; an 8-character one can fall in hours.</p>
+      <h2>Random characters or a passphrase?</h2>
+      <ul>
+        <li><strong>Random password</strong> (e.g. <code>t7#Vq2!mLp9@xR4s</code>) — maximum strength per character. Ideal with a password manager.</li>
+        <li><strong>Passphrase</strong> — several random words such as <code>Lamp-River-Orbit-Velvet-42</code>. Easier to type and remember, and still very strong at 5+ words.</li>
+      </ul>
+      <p>Use “avoid look-alikes” if you'll have to type the password by hand. Passwords are generated with your browser's cryptographically secure random number generator and are never sent anywhere — and never reuse the same password on two sites.</p>`,
+
+  'bmi-calculator': `
+      <h2>What your BMI means</h2>
+      <p>Body Mass Index is your weight in kilograms divided by your height in metres squared. The World Health Organization uses these adult ranges:</p>
+      <ul>
+        <li><strong>Below 18.5</strong> — underweight</li>
+        <li><strong>18.5 – 24.9</strong> — healthy weight</li>
+        <li><strong>25 – 29.9</strong> — overweight</li>
+        <li><strong>30 and above</strong> — obesity</li>
+      </ul>
+      <p>For example, 70 kg at 1.75 m gives 70 ÷ 1.75² = <strong>22.9</strong>, a healthy BMI. For people of South Asian origin, the WHO suggests a lower threshold: health risks start to rise from a BMI of about 23.</p>
+      <h2>Limits of BMI</h2>
+      <p>BMI doesn't distinguish muscle from fat, so athletes can score as “overweight” while being very fit, and it isn't designed for children or pregnancy. Waist size and the <a href="/body-fat-calculator">Body Fat Calculator</a> add useful context. For health decisions, talk to a doctor.</p>`,
+
+  'age-calculator': `
+      <h2>Exact age in years, months and days</h2>
+      <p>Enter your date of birth to see your exact age, the total number of months, weeks and days you have lived, the weekday you were born on and a countdown to your next birthday. Change the “age at” date to find your age on a past or future date — useful for exam, job and visa forms that ask for age on a specific cut-off date.</p>
+      <h2>How age is counted</h2>
+      <p>Age is counted in completed years, then completed months, then the remaining days. If you were born on 29 February, most countries treat 28 February (or 1 March) as your birthday in non-leap years; the calculator follows the calendar exactly so you can see both dates.</p>`,
+
+  'percentage-calculator': `
+      <h2>Three percentage questions, solved</h2>
+      <ul>
+        <li><strong>What is X% of Y?</strong> — multiply: 15% of 2,400 = 2,400 × 0.15 = <strong>360</strong>.</li>
+        <li><strong>X is what percent of Y?</strong> — divide and ×100: 45 out of 60 = 45 ÷ 60 × 100 = <strong>75%</strong>.</li>
+        <li><strong>Percentage change</strong> — (new − old) ÷ old × 100: from 80 to 100 is <strong>+25%</strong>; from 100 to 80 is <strong>−20%</strong>.</li>
+      </ul>
+      <h2>A common mistake</h2>
+      <p>Percentage changes don't cancel out. A price that rises 20% and then falls 20% ends up 4% lower than where it started (100 → 120 → 96), because the second percentage is taken from a bigger number. For discounts and sale prices, the <a href="/discount-calculator">Discount Calculator</a> does the maths for you.</p>`,
+
+  'word-counter': `
+      <h2>More than a word count</h2>
+      <p>Paste or type your text to see words, characters (with and without spaces), sentences, paragraphs, reading time and speaking time — updated as you type. Nothing you type is uploaded or saved.</p>
+      <h2>Useful limits to know</h2>
+      <ul>
+        <li><strong>X (Twitter) post:</strong> 280 characters</li>
+        <li><strong>Instagram caption:</strong> 2,200 characters</li>
+        <li><strong>Meta description for Google:</strong> about 150–160 characters</li>
+        <li><strong>Common App personal essay:</strong> 650 words</li>
+        <li><strong>Reading speed:</strong> about 200–250 words per minute; speaking about 130–150</li>
+      </ul>
+      <p>Need to fit a strict character limit? The <a href="/character-counter">Character Counter</a> focuses on characters only.</p>`,
+
+  'loan-calculator': `
+      <h2>How the EMI is calculated</h2>
+      <p>An EMI (equated monthly instalment) is the fixed monthly payment that pays off a loan with interest over its term. The formula is <code>EMI = P × r × (1 + r)ⁿ ÷ ((1 + r)ⁿ − 1)</code>, where P is the loan amount, r the monthly interest rate (annual rate ÷ 12 ÷ 100) and n the number of months.</p>
+      <p>Example: 1,000,000 at 12% a year for 5 years (60 months) → r = 0.01 → EMI ≈ <strong>22,244</strong> a month, and about 334,667 paid in interest in total.</p>
+      <h2>Reading the schedule</h2>
+      <p>In the early months most of each payment goes to interest; later, most goes to the principal. That's why paying extra early in the loan saves the most interest. Compare offers by total interest, not just the monthly amount — a longer term lowers the EMI but usually costs much more overall.</p>`,
+
+  'json-formatter': `
+      <h2>Format, validate and minify JSON</h2>
+      <p>Paste JSON to pretty-print it with your choice of indentation, check that it is valid, or minify it into one compact line for APIs and config files. When the JSON is invalid, the error message points to the line and position of the problem.</p>
+      <h2>Most common JSON errors</h2>
+      <ul>
+        <li><strong>Trailing commas</strong> — <code>{"a": 1,}</code> is not allowed in JSON.</li>
+        <li><strong>Single quotes</strong> — strings and keys must use double quotes: <code>"name"</code>, not <code>'name'</code>.</li>
+        <li><strong>Unquoted keys</strong> — <code>{name: "x"}</code> is JavaScript, not JSON.</li>
+        <li><strong>Comments</strong> — JSON has no comments; remove <code>//</code> and <code>/* */</code>.</li>
+      </ul>
+      <p>Your data stays in your browser, so it is safe to format API responses containing tokens or personal data.</p>`,
 };

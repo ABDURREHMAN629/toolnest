@@ -176,6 +176,7 @@
     upng: [CDN + 'upng-js/2.1.0/UPNG.min.js', 'UPNG', ['pako']],
     lamejs: [CDN + 'lamejs/1.2.1/lame.min.js', 'lamejs'],
     xlsx: [CDN + 'xlsx/0.18.5/xlsx.full.min.js', 'XLSX'],
+    astronomy: [JSD + 'astronomy-engine@2.1.19/astronomy.browser.min.js', 'Astronomy'],
   };
   const scriptCache = {};
   UI.script = src => scriptCache[src] || (scriptCache[src] = new Promise((res, rej) => {

@@ -263,6 +263,11 @@ QR codes, barcodes, passwords, signature maker, invoice generator, to-do list an
 - [GPX to KML Converter](https://www.webtoolnest.com/gpx-kml-converter): Convert GPS tracks and waypoints between GPX and KML/KMZ for Google Earth, Google My Maps, Garmin, Strava and hiking apps — without uploading your routes.
 - [GPX to KML](https://www.webtoolnest.com/gpx-to-kml): Convert a GPX track from Garmin, Strava or a hiking app into a KML file you can open in Google Earth or Google My Maps.
 - [KML to GPX](https://www.webtoolnest.com/kml-to-gpx): Convert KML or KMZ files from Google Earth or Google My Maps into GPX for Garmin, GPS devices and hiking apps.
+- [Instagram Unfollowers Tracker](https://www.webtoolnest.com/instagram-unfollowers-tracker): See who doesn’t follow you back on Instagram — safely. Uses Instagram’s own data download, so there is no login, no password and nothing is uploaded.
+- [Who Doesn’t Follow Me Back on Instagram](https://www.webtoolnest.com/instagram-not-following-back): Find every Instagram account you follow that doesn’t follow you back, without giving any app your password.
+- [Sun, Moon & Rising Sign Calculator](https://www.webtoolnest.com/sun-moon-rising-calculator): Find your Big Three — Sun, Moon and Rising signs — from your birth date, time and city, calculated from exact planetary positions.
+- [Rising Sign Calculator](https://www.webtoolnest.com/rising-sign-calculator): Find your rising sign (Ascendant) from your birth time and place — the sign rising on the eastern horizon when you were born.
+- [Moon Sign Calculator](https://www.webtoolnest.com/moon-sign-calculator): Find your Moon sign from your birth date, time and city — the zodiac sign the Moon was in when you were born.
 - [Qibla Direction Finder](https://www.webtoolnest.com/qibla-direction): Find the Qibla direction from anywhere in the world in degrees from north, with a compass, the distance to the Kaaba and a live compass on your phone.
 
 ## About

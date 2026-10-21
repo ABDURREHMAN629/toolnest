@@ -894,4 +894,376 @@ module.exports = {
         <li><strong>Comments</strong> — JSON has no comments; remove <code>//</code> and <code>/* */</code>.</li>
       </ul>
       <p>Your data stays in your browser, so it is safe to format API responses containing tokens or personal data.</p>`,
+
+  'pdf-to-png': `
+      <h2>PDF to PNG converter — free and high quality</h2>
+      <p>This <strong>pdf to png converter free</strong> tool turns every page of a PDF into a separate PNG image. PNG is lossless, so text, lines and diagrams stay perfectly sharp — the best <strong>pdf to png format</strong> for screenshots, slides, charts and anything you will edit later. It works as a <strong>pdf to png converter free online</strong> on Windows, on a Mac and on phones, with no app to install.</p>
+      <h2>Choosing the resolution</h2>
+      <ul>
+        <li><strong>Medium (150 DPI)</strong> — good for screens, websites and presentations.</li>
+        <li><strong>High (220 DPI)</strong> — a <strong>pdf to png high quality</strong> result for zooming into small text.</li>
+        <li><strong>Print (300 DPI)</strong> — <strong>pdf to png high resolution</strong> output for <strong>pdf to png for printing</strong>.</li>
+      </ul>
+      <h2>Common uses</h2>
+      <ul>
+        <li><strong>pdf to png for signature</strong> — export the page with your signature, then crop it with the <a href="/crop-image">Crop Image</a> tool.</li>
+        <li><strong>pdf to png for logo</strong> — convert a logo supplied as PDF into an image for a website or social profile.</li>
+        <li><strong>pdf to png for mac</strong> and Windows users who don't have Adobe Acrobat.</li>
+      </ul>
+      <p>Pages render on a white background. Need <strong>pdf to png with transparent background</strong>? Convert first, then remove the white with the <a href="/remove-background">Background Remover</a>. You can convert <strong>pdf to png for free</strong> with no watermark and no sign-up, and download all pages as a ZIP.</p>
+      <p>Exporting <strong>pdf to png adobe</strong>-style needs Acrobat Pro; this <strong>pdf to png format converter</strong> is <strong>pdf to png free</strong>, works on Windows and as a <strong>pdf to png mac</strong> option, and runs as <strong>pdf to png for free online</strong> on phones too.</p>
+      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'rotate-pdf': `
+      <h2>Rotate PDF pages and save them that way</h2>
+      <p>Scanned a page sideways or upside down? This tool lets you <strong>rotate pdf pages</strong> 90° right, 90° left or 180° and download a new file — so you can <strong>rotate pdf and save it that way</strong> permanently. Viewers such as <strong>rotate pdf in google drive</strong> or <strong>rotate pdf in firefox</strong> only turn the page on your screen; the file itself stays wrong the next time you open it.</p>
+      <h2>Rotate by page, or all at once</h2>
+      <ul>
+        <li><strong>All pages</strong> — fix a whole document scanned in the wrong orientation.</li>
+        <li><strong>Odd or even pages</strong> — useful for double-sided scans where every other page came out upside down.</li>
+        <li><strong>Custom pages</strong> — <strong>rotate pdf by page</strong> with a list such as <code>2, 5-7</code>.</li>
+      </ul>
+      <p>You can <strong>rotate pdf by degrees</strong> in 90° steps (90, 180 or 270), which is how PDF page rotation works in every reader. To <strong>rotate pdf online free</strong>, just choose the file, pick the angle and download — there's no need to <strong>rotate pdf in adobe</strong> Acrobat or remember a <strong>rotate pdf shortcut</strong>. You can <strong>rotate pdf for free online</strong> from Chrome on Windows, Mac, Android, and <strong>rotate pdf on iphone</strong> in Safari.</p>
+      <p>This is a free way to <strong>rotate pdf online</strong> with no watermark, no file limit and no account — <strong>rotate pdf for free</strong> as often as you need.</p>
+      <p>In short: <strong>rotate pdf free</strong> here instead of paying to <strong>rotate pdf adobe</strong>-style — the simplest <strong>rotate for pdf</strong> pages scanned the wrong way.</p>
+      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'organize-pdf': `
+      <h2>Organize PDF pages online — free</h2>
+      <p>Drag and drop thumbnails to <strong>organize pdf pages</strong>: move pages into the right order, turn sideways pages with ↻, and remove pages you don't need with ✕. When it looks right, save a new PDF. It's the simplest way to <strong>organize pdf pages online free</strong> without installing software or paying for an editor.</p>
+      <h2>What you can do</h2>
+      <ul>
+        <li><strong>Reorder</strong> — drag pages to <strong>organize pdf by page number</strong> after scanning them out of order.</li>
+        <li><strong>Rotate</strong> — fix individual pages that came out sideways.</li>
+        <li><strong>Delete</strong> — drop blank or duplicate pages in the same step.</li>
+      </ul>
+      <h2>Organize PDF files from several sources</h2>
+      <p>To <strong>organize pdf files</strong> that are split across documents, combine them first with <a href="/merge-pdf">Merge PDF</a>, then rearrange the pages here. Planning to print a booklet? You don't have to <strong>arrange pdf for booklet printing</strong> by hand — the <a href="/pdf-booklet-maker">PDF Booklet Maker</a> does the imposition for you. And if you need to <strong>arrange pdf for printing</strong> on two sides, organize first, then print.</p>
+      <p>You can <strong>organize pdf free</strong> as often as you like and <strong>organize pdf online free</strong> on any device — another way to <strong>organize pdf for free online</strong> without the limits of desktop apps. Once arranged, you can convert the result with <strong>organize pdf to word</strong> (<a href="/pdf-to-word">PDF to Word</a>) or <strong>organize pdf to jpg</strong> (<a href="/pdf-to-jpg">PDF to JPG</a>).</p>
+      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'delete-pdf-pages': `
+      <h2>Delete PDF pages online — free</h2>
+      <p>Type the pages you want to remove — for example <code>2, 5-7, 12</code> — and download a new PDF without them. It's the fastest way to <strong>delete pdf pages online free</strong>: no Adobe subscription, no sign-up and no watermark. You can <strong>delete pdf pages for free</strong> on Windows, Linux, Chromebooks and phones alike.</p>
+      <h2>On Mac and iPhone</h2>
+      <p>On a Mac you can <strong>delete pdf pages in preview</strong> (View → Thumbnails, select a page, press Delete), but this page works the same everywhere, so you can <strong>delete pdf pages on mac</strong>, <strong>delete pdf pages on iphone</strong> in Safari, or on Android in Chrome. No need to <strong>delete pdf pages in adobe</strong> Acrobat Pro, and unlike trying to <strong>delete pdf pages in google drive</strong>, you get a new file you can keep.</p>
+      <h2>Tips</h2>
+      <ul>
+        <li>To <strong>remove pdf pages for free</strong> and also reorder the rest, use <a href="/organize-pdf">Organize PDF</a> instead.</li>
+        <li>Want to keep only a few pages? <a href="/split-pdf">Split PDF</a> can extract them directly.</li>
+        <li>To <strong>delete pdf pages mac</strong> users and Windows users alike can use this page — it's the same tool on every system.</li>
+      </ul>
+      <p>Whether you need to <strong>delete pdf pages</strong> from a contract, a scanned book or a bank statement, you can <strong>remove pdf pages for free online</strong> here — another way to <strong>delete pdf pages online</strong> or <strong>delete pdf pages for free online</strong> without uploading anything.</p>
+      <p>It's a way to <strong>delete pdf pages free</strong> without the <strong>delete pdf pages adobe</strong> subscription — and to <strong>delete pdf pages iphone</strong> users can do in Safari without an app.</p>
+      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'add-page-numbers': `
+      <h2>Add page numbers to PDF — free</h2>
+      <p>Upload a document and <strong>add page numbers to pdf</strong> in seconds. Choose where the numbers go (bottom or top; left, center or right), the format (<code>1</code>, <code>Page 1</code>, <code>1 of 10</code>, <code>Page 1 of 10</code> or <code>- 1 -</code>), the starting number, font size, margin and colour. To <strong>add page numbers to pdf free</strong> with no watermark, that's all it takes.</p>
+      <h2>Without Acrobat or Preview</h2>
+      <p>Many guides explain how to <strong>add page numbers to pdf in acrobat</strong> or <strong>add page numbers to pdf in adobe</strong> using Bates or header/footer tools — but that needs <strong>Acrobat Pro</strong>. Here you can <strong>add page numbers to pdf for free</strong> in any browser. Mac users can <strong>add page numbers to pdf on mac</strong> without Preview (which can't do it), so it's an easy way to <strong>add page numbers to pdf mac</strong> owners can use right away.</p>
+      <h2>Useful options</h2>
+      <ul>
+        <li><strong>Skip the first page</strong> — leave the cover unnumbered.</li>
+        <li><strong>Start at</strong> any number — continue numbering from a previous document.</li>
+        <li><strong>add page numbers to pdf for printing</strong> — use a margin of 28–40 pt so printers don't cut them off.</li>
+      </ul>
+      <p>Need a reference that points to a page, such as <strong>add page numbers to pdf url</strong> or <strong>add page numbers to pdf link</strong>? Most viewers open a page with <code>#page=5</code> added to the link. Roman numerals for front matter aren't supported yet, so to <strong>add page numbers to pdf in roman</strong> numerals, number the main section here and keep the preface separate. This is the quickest way to <strong>add page numbers to pdf in adobe acrobat pro</strong> style — without the subscription.</p>
+      <p>On a Mac you can't <strong>add page numbers to pdf in preview</strong> — Preview has no numbering feature — and you'd need to <strong>add page numbers to pdf acrobat pro</strong> (or <strong>add page numbers to pdf in acrobat pro</strong>) or <strong>add page numbers to pdf in bluebeam</strong> on paid software. This page does the same job for free.</p>
+      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'watermark-pdf': `
+      <h2>Watermark PDF free — text watermark on every page</h2>
+      <p>Type your watermark text — CONFIDENTIAL, DRAFT, COPY or your company name — and choose the font size, colour, opacity and angle. Place it once in the <strong>center</strong> of each page, or <strong>tiled</strong> across the whole page so it can't simply be cropped out. It's a <strong>watermark pdf free</strong> tool with no sign-up and no watermark of our own.</p>
+      <h2>Why watermark a PDF?</h2>
+      <ul>
+        <li>Mark drafts and confidential reports before sharing them.</li>
+        <li>Protect designs, quotes and portfolios sent to clients.</li>
+        <li>Stamp copies of ID documents with “For visa application only” — a simple <strong>stamp pdf for free</strong> alternative.</li>
+      </ul>
+      <h2>Online, without Adobe</h2>
+      <p>You don't need to <strong>watermark pdf in adobe</strong> Acrobat: <strong>watermark pdf online free</strong> here in any browser. It works as a <strong>pdf watermark for mac</strong>, Windows and phones, and you can <strong>watermark pdf for free</strong> as many times as you like. Looking for a <strong>watermark for pdf online</strong> that never uploads your file? This one doesn't — another reason to <strong>watermark pdf online</strong> here, or <strong>watermark pdf for free online</strong> for every document you send.</p>
+      <p>This tool adds text watermarks. To <strong>watermark pdf with image</strong> such as a logo, add the logo to images with <a href="/watermark-image">Watermark Image</a> before building the PDF. Note that a watermark discourages copying but isn't encryption — and we don't offer a <strong>watermark pdf remover</strong>, because removing other people's watermarks is usually not permitted. It's the simplest <strong>watermark for pdf</strong> files you own.</p>
+      <p>It's a light <strong>watermark pdf editor</strong> that saves a ready <strong>watermark pdf download</strong> — no <strong>watermark pdf adobe</strong> subscription. Need the text editable afterwards? Watermark last, after any <strong>watermark pdf to word</strong> conversion and editing.</p>
+      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'pdf-to-text': `
+      <h2>PDF to text converter — free</h2>
+      <p>This <strong>pdf to text converter free</strong> tool pulls all the text out of a PDF so you can copy it, search it or save it as a .txt file. Tick <strong>Add page separators</strong> to keep track of which page each part came from. It's a quick <strong>pdf to text extractor</strong> for reports, books, papers and contracts — a free <strong>pdf to text file</strong> conversion in your browser.</p>
+      <h2>Copy text for ChatGPT, Claude and other AI</h2>
+      <p>AI chat tools work best with clean text. Use this as a <strong>pdf to text for chatgpt</strong>, <strong>pdf to text for claude</strong> or general <strong>pdf to text for ai</strong> and <strong>pdf to text for llm</strong> step: extract, check the text, then paste it into the chat. It's also handy as a <strong>pdf to text for copy</strong> helper when a PDF blocks normal text selection.</p>
+      <h2>Good to know</h2>
+      <ul>
+        <li><strong>Scanned PDFs</strong> are images, so there's no text to extract — use <a href="/image-to-text">Image to Text (OCR)</a> instead.</li>
+        <li>Columns and tables are flattened into plain lines — perfect for reading or AI, less so for keeping layout. Need an editable layout? Try <a href="/pdf-to-word">PDF to Word</a>.</li>
+        <li>Want it read aloud? A <strong>pdf to text to speech</strong> workflow is simple: extract here, then paste into <a href="/text-to-speech">Text to Speech</a>.</li>
+      </ul>
+      <p>Developers often reach for <strong>pdf to text python</strong> libraries; for one-off files this <strong>pdf to text online</strong> page is faster. Convert <strong>pdf to text for free</strong>, as a <strong>pdf to text converter free online</strong>, as often as you like.</p>
+      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'sign-pdf': `
+      <h2>Sign PDF online free — no sign up</h2>
+      <p>Open your document, create a signature and click where it should go. You can <strong>draw</strong> it with a mouse or finger, <strong>type</strong> it in a handwriting font, or <strong>upload</strong> a picture of your real signature. Then download the signed file. It's a way to <strong>sign pdf for free no sign up</strong> — no account, no email address and no watermark.</p>
+      <h2>Sign on any device</h2>
+      <ul>
+        <li><strong>sign pdf on iphone</strong> or Android — draw your signature with your finger for the most natural result.</li>
+        <li><strong>sign pdf on mac</strong> or Windows — type it, draw it with a trackpad, or upload a scan.</li>
+        <li><strong>sign pdf in chrome</strong>, Edge, Firefox or Safari — nothing to install.</li>
+      </ul>
+      <p>You don't need Acrobat to <strong>sign pdf adobe</strong>-style: this is a simple way to <strong>sign pdf online free</strong>, <strong>sign pdf free</strong> and <strong>sign pdf for free online</strong>. It's ideal to <strong>sign pdf form</strong> pages — rental agreements, offer letters, school forms — and to <strong>sign pdf document</strong> files you need to send back today. To <strong>sign pdf form online free</strong>, open the form, place the signature next to the signature line, and download.</p>
+      <h2>Is it legally valid?</h2>
+      <p>A drawn or typed signature is an <em>electronic signature</em>, which most countries accept for everyday agreements (for example under the US ESIGN Act and EU eIDAS rules). Some documents — wills, property deeds, certain government forms — require a wet-ink or certified digital signature, so check if in doubt. To <strong>sign pdf online</strong> without sharing the contract with a third-party service, this tool keeps everything on your device — the private way to <strong>sign pdf for free</strong>.</p>`,
+
+  'crop-image': `
+      <h2>Crop images online — free and exact</h2>
+      <p>Drag the frame over your photo to <strong>crop image online</strong>, or pick a ratio to lock its shape: free, 1:1, 4:3, 3:4, 16:9, 9:16, 3:2 or a ⭕ circle. You can also type the exact width and height in pixels. Download as JPG, PNG or WebP.</p>
+      <h2>Crop for every platform</h2>
+      <ul>
+        <li><strong>crop image for instagram</strong> — 1:1 for square posts, 4:5 (choose 3:4 and adjust) for portrait.</li>
+        <li><strong>crop image for profile picture</strong> and <strong>crop image for pfp</strong> — choose ⭕ circle; it saves as a transparent PNG, perfect to <strong>crop image for discord pfp</strong>, WhatsApp and LinkedIn.</li>
+        <li><strong>crop image for youtube thumbnail</strong> — 16:9, then resize to 1280 × 720.</li>
+        <li><strong>crop image for youtube banner</strong> — 16:9 at 2560 × 1440, keeping key content in the centre.</li>
+        <li><strong>crop image for tiktok</strong> and <strong>crop image for phone wallpaper</strong> — 9:16 vertical.</li>
+        <li><strong>crop image for passport size free</strong> — use the <a href="/passport-photo-maker">Passport Photo Maker</a>, which crops to official sizes.</li>
+      </ul>
+      <h2>No Photoshop needed</h2>
+      <p>There's no need to <strong>crop image photoshop</strong>-style, <strong>crop image in canva</strong> or <strong>crop image in illustrator</strong> for a quick edit, and it works where built-in tools are fiddly — such as when you <strong>crop image in preview</strong> or <strong>crop image on mac</strong>. Want to <strong>crop image into circle</strong>? Choose ⭕ and you're done. <strong>crop image for free online</strong> with no watermark and no sign-up.</p>
+      <p>Everything happens in your browser: your photos never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'image-converter': `
+      <h2>Free image converter — JPG, PNG, WebP and more</h2>
+      <p>Convert photos and graphics between the formats people use every day. This <strong>image converter free</strong> tool works as an <strong>image converter to jpg</strong>, an <strong>image converter to png</strong> and to WebP, in bulk, right in your browser. Choose the quality, and pick a background colour for transparent areas when converting to JPG (which can't store transparency).</p>
+      <h2>Which format should I use?</h2>
+      <ul>
+        <li><strong>JPG</strong> — photos; small files that open everywhere. An <strong>image converter to jpeg</strong> is what most upload forms need.</li>
+        <li><strong>PNG</strong> — logos, screenshots and anything with transparency or sharp text.</li>
+        <li><strong>WebP</strong> — about 30% smaller than JPG for websites.</li>
+      </ul>
+      <h2>Popular conversions</h2>
+      <ul>
+        <li><strong>image converter heic to jpg</strong> — use <a href="/heic-to-jpg">HEIC to JPG</a> for iPhone photos.</li>
+        <li><strong>image converter to pdf</strong> — use <a href="/jpg-to-pdf">JPG to PDF</a> to combine images into one document.</li>
+        <li><strong>image converter to svg</strong> — SVG is a vector format, so photos can't truly become SVG; logos are best recreated as vectors.</li>
+      </ul>
+      <h2>Size and use-case tips</h2>
+      <p>This works as an <strong>image converter for windows</strong>, Mac and phones, so there's no need for an <strong>image converter for pc</strong> download. Combine it with <a href="/resize-image">Resize Image</a> when you need an exact <strong>image converter size</strong>: for example a 3000 × 3000 album cover (the classic <strong>image converter 3000x3000</strong> search), an <strong>image converter for instagram post</strong> (1080 × 1350), an <strong>image converter for whatsapp dp</strong> (square), an <strong>image converter for youtube banner</strong> (2560 × 1440) or an <strong>image converter for cricut</strong> PNG. Convert <strong>image converter for free</strong>, as often as you like.</p>
+      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'png-to-jpg': `
+      <h2>PNG to JPG converter — free</h2>
+      <p>This <strong>png to jpg converter free</strong> tool changes PNG images into JPG in bulk. JPG files are usually much smaller than PNG for photos, and they're accepted by every website, upload form and email client — which is why <strong>png to jpg</strong> is one of the most common conversions.</p>
+      <h2>What happens to transparency?</h2>
+      <p>JPG can't store transparent areas, so they're filled with a colour of your choice. White is the default, giving you <strong>png to jpg with white background</strong> — ideal for product photos, logos on documents and ID uploads. Pick any other colour if you prefer.</p>
+      <h2>Quality and size</h2>
+      <p>Use a quality around 85–92% for photos; lower it to shrink files further. For <strong>png to jpg for web</strong> use, combine with <a href="/resize-image">Resize Image</a> so pictures aren't larger than they're displayed.</p>
+      <h2>On any device</h2>
+      <p>Convert <strong>png to jpg on iphone</strong> in Safari, <strong>png to jpg on mac</strong>, Windows or Android — it's a <strong>png to jpg converter free online</strong> with nothing to install. It's a quick <strong>png to jpg format converter</strong> (and <strong>png to jpg format converter online</strong>) for a fast <strong>png to jpg format change</strong>, so you can switch <strong>png to jpg format</strong> without editing software. Convert <strong>png to jpg online</strong>, <strong>png to jpg free</strong>, <strong>png to jpg for free</strong> and <strong>png to jpg for free online</strong> as many images as you like — a simple <strong>png to jpg converter</strong> with no watermark.</p>
+      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'jpg-to-png': `
+      <h2>JPG to PNG converter — free</h2>
+      <p>This <strong>jpg to png converter free</strong> tool turns JPG and JPEG photos into PNG files in bulk. PNG is lossless, so converting stops any further quality loss every time the image is edited and saved — useful for graphics you'll keep working on.</p>
+      <h2>Do I get a transparent background?</h2>
+      <p>Converting alone doesn't make the background clear — a JPG has no transparency to keep. For <strong>jpg to png transparent background</strong>, convert here and then use the <a href="/remove-background">Background Remover</a>: it's the way to <strong>jpg to png remove background</strong> and get a true <strong>jpg to png transparent</strong> image.</p>
+      <h2>When to convert JPG to PNG</h2>
+      <ul>
+        <li><strong>jpg to png for signature</strong> (and <strong>jpg to png for sign</strong> images) — convert a photographed signature, then remove the paper background; or create one with the <a href="/signature-generator">Signature Generator</a>.</li>
+        <li><strong>jpg to png for logo</strong> — PNG keeps edges crisp on websites and documents.</li>
+        <li><strong>jpg to png for website</strong> graphics with text, and <strong>jpg to png for printing</strong> where you want no further compression.</li>
+      </ul>
+      <p>PNG files are larger than JPG for photos, so keep photos as JPG unless you need these benefits. It's a <strong>jpg to png format converter</strong> that changes the <strong>jpg to png extension</strong> the proper way (renaming a file doesn't convert it). Convert <strong>jpg to png free</strong>, <strong>jpg to png for free</strong> — the easy way to <strong>convert jpg to png for free</strong> in your browser, with no <strong>jpg to png format converter free download</strong> needed.</p>
+      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'webp-to-jpg': `
+      <h2>WebP to JPG converter — free</h2>
+      <p>Saved an image from a website and got a .webp file that won't open or upload? This <strong>webp to jpg converter free</strong> tool turns WebP images into ordinary JPG files that work everywhere — Word, PowerPoint, old photo viewers and upload forms.</p>
+      <h2>Convert WebP to JPG in bulk</h2>
+      <p>Add as many files as you like — it's <strong>webp to jpg bulk</strong> conversion (also called <strong>webp to jpg in bulk</strong>) with a single click, then download them together as a ZIP. Transparent areas are filled with white (or a colour you choose), because JPG can't store transparency.</p>
+      <h2>On Windows and Mac</h2>
+      <p>Use it as a <strong>webp to jpg for windows</strong> or <strong>webp to jpg for mac</strong> solution — on a <strong>webp to jpg mac</strong> it saves opening Preview and exporting each file. No <strong>webp to jpg extension for chrome</strong> is needed either: there's no <strong>webp to jpg extension</strong> to install, so it's a simple way to <strong>change webp to jpg for free</strong>.</p>
+      <h2>Why websites use WebP</h2>
+      <p>WebP files are about 25–35% smaller than JPG at the same quality, so websites serve them to load faster. That's great for the web but not every program reads them, which is why people <strong>convert webp to jpg for free</strong>. Need transparency? Convert to PNG with <a href="/webp-to-png">WebP to PNG</a> instead.</p>
+      <p>Convert <strong>webp to jpg</strong>, <strong>webp to jpg free</strong>, <strong>webp to jpg for free</strong> and <strong>webp to jpg online for free</strong> (or <strong>webp to jpg online free</strong>) — an easy <strong>webp to jpg converter</strong> for the <strong>webp to jpg format</strong>.</p>
+      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'webp-to-png': `
+      <h2>WebP to PNG converter — free, keeps transparency</h2>
+      <p>This <strong>webp to png converter free</strong> tool changes WebP images into PNG files that every editor and app can open. Unlike JPG, PNG supports transparency, so <strong>webp to png with transparency</strong> keeps see-through areas intact — a <strong>webp to png transparent</strong> result, ideal for logos, stickers and cut-out product shots (<strong>webp to png with transparent background</strong>).</p>
+      <h2>Convert WebP to PNG in bulk</h2>
+      <p>Drop a whole folder of images for <strong>webp to png bulk</strong> conversion — <strong>webp to png in bulk</strong> with one click — and download them together as a ZIP. It runs in your browser on Windows, Linux and <strong>webp to png on mac</strong> without installing anything, and no <strong>webp to png extension</strong> is needed.</p>
+      <h2>From a URL or link</h2>
+      <p>To convert <strong>webp to png from url</strong> or <strong>webp to png from link</strong>, open the image link in your browser, right-click → Save image as, then drop the saved .webp file here.</p>
+      <h2>PNG or JPG?</h2>
+      <p>Choose <strong>webp to png</strong> for graphics, screenshots and anything transparent; choose JPG (<a href="/webp-to-jpg">WebP to JPG</a>) for photos when small files matter — the converter covers <strong>webp to png jpg</strong> both ways. It's a straightforward <strong>webp to png format converter</strong> for the <strong>webp to png format</strong>: <strong>webp to png free</strong>, <strong>webp to png for free</strong>, and the quickest way to <strong>convert webp to png for free</strong> — a simple <strong>webp to png converter</strong> with no watermark.</p>
+      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'jpg-to-webp': `
+      <h2>JPG to WebP converter — smaller images, same quality</h2>
+      <p>WebP images are typically 25–35% smaller than JPG at the same visual quality, so websites load faster and score better in Google's page-speed tests. This <strong>jpg to webp converter free</strong> tool converts your photos in seconds — a handy <strong>jpg to webp compressor</strong> for blogs, online stores and portfolios.</p>
+      <h2>Bulk conversion</h2>
+      <p>Add dozens of images at once — <strong>jpg to webp bulk</strong> (or <strong>jpg to webp in bulk</strong>) conversion — and download them all as a ZIP. It's a free <strong>jpg to webp bulk converter</strong> that works on Windows, Linux and <strong>jpg to webp on mac</strong>.</p>
+      <h2>Choosing quality</h2>
+      <p>A quality around 75–85% is usually indistinguishable from the original JPG while saving the most space. Go higher for detailed product photos.</p>
+      <h2>Using WebP on your site</h2>
+      <ul>
+        <li>All modern browsers display WebP; very old ones fall back if you use a <code>&lt;picture&gt;</code> element with a JPG source.</li>
+        <li>WordPress, Shopify and most site builders accept WebP uploads directly.</li>
+        <li>Prefer a design tool? You don't need to convert <strong>jpg to webp in photoshop</strong> or <strong>jpg to webp in canva</strong> — export as JPG and convert here.</li>
+      </ul>
+      <p>This works as a <strong>jpg to webp converter online</strong>: change <strong>jpg to webp</strong>, <strong>jpg to webp free</strong>, <strong>jpg to webp for free</strong> — the simple way to <strong>convert jpg to webp for free</strong>. It's a <strong>jpg to webp format converter</strong> for any <strong>image to webp format</strong> need, and the right <strong>jpg to webp format</strong> for a fast site — sometimes searched as <strong>jpg to web format</strong>. A free <strong>jpg to webp converter</strong> with no limits.</p>
+      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'rotate-image': `
+      <h2>Rotate and flip images online</h2>
+      <p>Turn a photo the right way up or mirror it in one click. Use <strong>⟲ Rotate left</strong> and <strong>⟳ Rotate right</strong> for 90° turns, and <strong>⇋ Flip horizontal</strong> or <strong>⇵ Flip vertical</strong> to mirror the picture. This <strong>rotate flip image</strong> tool previews every change instantly; <strong>Reset</strong> takes you back to the original, and <strong>Download</strong> saves the result.</p>
+      <h2>How to flip an image horizontally</h2>
+      <p>Wondering <strong>how to flip an image horizontally</strong>? Choose the photo and click ⇋ Flip horizontal — left becomes right. It's the quickest way to <strong>rotate mirror image</strong> selfies (front cameras often save them reversed) or text photographed in a mirror.</p>
+      <h2>Common uses</h2>
+      <ul>
+        <li>Fix sideways phone photos before uploading them to forms that don't read the photo's rotation tag.</li>
+        <li>Mirror an image for t-shirt transfers and iron-on prints, which must be printed reversed.</li>
+        <li>Create symmetrical designs or reverse the direction a subject faces in a layout.</li>
+      </ul>
+      <p>This works as a <strong>rotate flip image online</strong> tool and a <strong>rotate mirror image online</strong> tool in any browser — no <strong>flip rotate image extension</strong> to install, and no need to <strong>mirror rotate image powerpoint</strong>-style inside slides.</p>
+      <h2>Rotate image online on any device</h2>
+      <p>This <strong>rotate image online</strong> tool works wherever you are: <strong>rotate image iphone</strong> photos in Safari, fix pictures on Android, or on a PC — no need to <strong>rotate image in photoshop</strong>, <strong>rotate image in canva</strong> or <strong>rotate image in word</strong>. Likewise you can <strong>flip image online</strong> instead of trying to <strong>flip image in word</strong>, <strong>flip image in powerpoint</strong> or <strong>flip image in google docs</strong>, where flipped pictures often can't be saved as a separate file.</p>
+      <ul><li><strong>flip image horizontally</strong> — creates a <strong>mirror image</strong>, left to right.</li><li><strong>flip image upside down</strong> — use ⇵ Flip vertical (or rotate 180°).</li><li><strong>flip image iphone</strong> selfies that came out reversed.</li></ul>
+      <p>To <strong>rotate image</strong> or <strong>flip image</strong> files and keep the result, just download — the change is saved into the picture itself.</p>
+      <p>Everything happens in your browser: your photos never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'image-to-base64': `
+      <h2>Image to Base64 converter — and back</h2>
+      <p>Base64 turns an image file into plain text, so it can be embedded directly in HTML, CSS, JSON or email without a separate file. This <strong>image to base64 converter</strong> works both ways: <strong>Image → Base64</strong> to encode, and <strong>Base64 → Image</strong> to decode a string back into a picture (an <strong>image to base64 decode</strong> in reverse).</p>
+      <h2>Outputs you can copy</h2>
+      <ul>
+        <li><strong>image to base64 string</strong> — the raw encoded text.</li>
+        <li><strong>image to base64 data url</strong> (also called an <strong>image to base64 url</strong>) — starts with <code>data:image/png;base64,</code> and works anywhere a URL does.</li>
+        <li><strong>image to base64 for html</strong> — a ready <code>&lt;img src="…"&gt;</code> tag; <strong>convert image to base64 for html</strong> pages that must be a single file.</li>
+        <li>CSS <code>background-image</code> snippets.</li>
+      </ul>
+      <h2>When to use Base64 images</h2>
+      <p>Good for small icons, <strong>image to base64 for email</strong> signatures and templates, <strong>image to base64 for markdown</strong> documents, and offline single-file pages. Avoid it for large photos: Base64 is about 33% bigger than the original file and can't be cached separately by browsers.</p>
+      <p>Developers often write <strong>image to base64 python</strong> scripts; for quick jobs this <strong>image to base64 online</strong> page is faster — an <strong>image to base64 encoder</strong> that lets you <strong>image to base64 encode</strong> any PNG, JPG, GIF, WebP or SVG. It's an <strong>image to base64 encode online</strong> tool and an <strong>image to base64 converter online</strong> in one: <strong>image to base64</strong> in your browser — the easiest way to <strong>convert image to base64 format</strong> or pick the <strong>image to base64 format</strong> you need.</p>
+      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'watermark-image': `
+      <h2>Add watermark to image — free</h2>
+      <p>Protect your photos before you post them. This tool lets you <strong>add watermark to image</strong> files with your own text — your name, @handle, website or “©” — and set the colour, size, opacity, angle and an optional shadow. Place it in a corner, the centre, or <strong>tiled</strong> across the whole photo so it can't be cropped out. It's a way to <strong>add watermark to image free</strong> with no watermark of ours added on top.</p>
+      <h2>Logo watermark</h2>
+      <p>Switch to <strong>Logo watermark</strong> to <strong>add logo to image for free</strong> — upload a transparent PNG of your logo and place it the same way. Ideal for photographers, online sellers and real-estate listings.</p>
+      <h2>Watermark many photos</h2>
+      <p>To <strong>add watermark to image bulk</strong>, add all your photos together and the same watermark is applied to each, then download them as a ZIP.</p>
+      <h2>No editing software needed</h2>
+      <p>There's no need to <strong>add watermark to image in photoshop</strong>, <strong>add watermark to image in lightroom</strong>, <strong>add watermark to image in canva</strong> (or <strong>add watermark to image canva</strong> Pro), or struggle to <strong>add watermark to image in paint</strong>, <strong>add watermark to image in word</strong> or <strong>add watermark to image in powerpoint</strong>. It works in any browser — including on Android and Samsung phones (<strong>add watermark to image samsung</strong>) and to <strong>add watermark to image on iphone</strong>.</p>
+      <p>Use it to <strong>add watermark to image online</strong>, <strong>add watermark to image online free</strong>, <strong>add watermark to image for free</strong> or <strong>add watermark to photo for free</strong>.</p>
+      <p>Everything happens in your browser: your photos never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'photo-filters': `
+      <h2>Photo editor with filters — free and online</h2>
+      <p>Give your pictures a new look in seconds. This <strong>photo editor with filters free</strong> tool lets you adjust <strong>brightness</strong>, <strong>contrast</strong> and <strong>saturation</strong>, add <strong>blur</strong>, rotate the hue, and apply classic effects — <strong>grayscale</strong> (black &amp; white), <strong>sepia</strong> (vintage) and <strong>invert</strong>. Changes preview instantly, and <strong>Original</strong> or <strong>Reset</strong> takes you back anytime.</p>
+      <h2>Quick recipes</h2>
+      <ul>
+        <li><strong>Vintage</strong> — sepia, slightly lower saturation, a touch more contrast.</li>
+        <li><strong>Moody black &amp; white</strong> — grayscale plus extra contrast.</li>
+        <li><strong>Bright and airy</strong> — raise brightness a little, lower contrast.</li>
+        <li><strong>Dreamy background</strong> — a small amount of blur.</li>
+      </ul>
+      <h2>No app needed</h2>
+      <p>Unlike a <strong>photo editor filters app</strong>, there's nothing to download — it's a <strong>photo editor filters online</strong> page that works on phones and computers, a simple <strong>image editor filters online</strong> option for quick edits without a <strong>photo editor filter photoshop</strong> subscription. It isn't a face-tracking camera app, so if you want a <strong>photo editor with filters like snapchat</strong>, use those apps; for clean, classic adjustments this is quicker.</p>
+      <p>Use it as an <strong>image editor with filters</strong>, a <strong>photo editor for filters</strong> and a <strong>photo editor for effects</strong> — a <strong>photo editor with effects free</strong> of watermarks. It's a <strong>photo editor with filters online free</strong> that works as a <strong>photo editor with filters online</strong> on any device — <strong>photo editor filters free</strong>, a free <strong>image editor filters</strong> tool and <strong>photo editor filters online free</strong> — perhaps the <strong>best photo editor for filters</strong> when you just need a fast fix.</p>
+      <p>Everything happens in your browser: your photos never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'meme-generator': `
+      <h2>Free meme generator — no watermark</h2>
+      <p>Make a meme in seconds: upload any picture, type your <strong>top text</strong> and <strong>bottom text</strong>, and download. You can change the font size, text colour and outline colour, and switch UPPERCASE on or off for the classic white-text-with-black-outline meme style. This <strong>meme generator free</strong> tool adds no watermark.</p>
+      <h2>Using popular templates</h2>
+      <p>Find the template you want — the Drake format, Bernie Sanders, Forrest Gump and so on — save the image, and add your captions here. Searching for a <strong>meme generator drake</strong>, <strong>meme generator bernie sanders</strong> or <strong>meme generator forrest gump</strong> layout? Any image works with these <strong>meme generator templates</strong>, including your own photos — the <strong>meme generator for frodo</strong> one-liners and classics like “<strong>meme generator for ants</strong>” included.</p>
+      <h2>Tips for funny memes</h2>
+      <ul>
+        <li>Keep the text short — one line top, one line bottom reads best on phones.</li>
+        <li>Use a thick outline so the text is readable on any background.</li>
+        <li>Square or 4:5 images look best on Instagram; crop first with <a href="/crop-image">Crop Image</a>.</li>
+      </ul>
+      <p>This is an image <strong>meme generator text</strong> tool — not a <strong>meme generator for videos</strong> or a <strong>meme generator gif</strong> maker (turn video clips into GIFs with <a href="/video-to-gif">Video to GIF</a> first). It works in your browser, so there's no <strong>meme generator app</strong> to install — a handy <strong>meme generator for iphone</strong>, Android and PC. Make memes with this <strong>meme generator</strong> as often as you like — a <strong>meme generator for free</strong>, with no <strong>meme generator ai</strong> guesswork, just your words.</p>
+      <p>Everything happens in your browser: your pictures never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'favicon-generator': `
+      <h2>Favicon generator — from text, emoji or image</h2>
+      <p>A favicon is the small icon shown in browser tabs, bookmarks and Google search results. This <strong>favicon generator free</strong> tool creates one two ways:</p>
+      <ul>
+        <li><strong>From text / emoji</strong> — a <strong>favicon generator from text</strong>: type a letter or emoji, choose colours, a square, rounded or circle shape, and a font.</li>
+        <li><strong>From image</strong> — a <strong>favicon generator from image</strong> (or <strong>favicon generator from png</strong>, JPG or <strong>favicon generator from svg</strong>): upload your logo and get every size.</li>
+      </ul>
+      <p>You get favicon.ico plus PNG sizes (16×16, 32×32, 180×180 for Apple touch icons and 192/512 for Android) — a <strong>favicon generator for all devices</strong>, including PWA icons (<strong>favicon generator for pwa</strong>).</p>
+      <h2>Adding it to your site</h2>
+      <ul>
+        <li><strong>favicon generator for wordpress</strong> — Appearance → Customize → Site Identity → Site Icon (upload the 512 PNG).</li>
+        <li><strong>favicon generator for shopify</strong> — Online Store → Themes → Customize → Theme settings → Favicon.</li>
+        <li><strong>favicon generator for blogger</strong> — Layout → Favicon → Edit.</li>
+        <li><strong>favicon generator for nextjs</strong> and <strong>favicon generator for react</strong> apps — put the files in <code>public/</code> (or <code>app/</code> for Next.js) and add the <code>&lt;link&gt;</code> tags.</li>
+      </ul>
+      <p>A <strong>favicon generator for website</strong> owners who want a quick, sharp icon: this <strong>favicon generator online</strong> is a <strong>favicon generator free online</strong> with no account — a <strong>favicon generator for free</strong>.</p>`,
+
+  'image-color-picker': `
+      <h2>Image color picker — get HEX, RGB and HSL codes</h2>
+      <p>Upload a photo, screenshot or logo and click anywhere on it to pick the exact colour. This <strong>image color picker online</strong> shows the code in <strong>HEX</strong>, <strong>RGB</strong> and <strong>HSL</strong>, keeps a list of the colours you've picked, and automatically shows the <strong>main colors in this image</strong> as a ready palette.</p>
+      <h2>Who uses it</h2>
+      <ul>
+        <li><strong>Designers</strong> matching a brand colour from a logo or photo.</li>
+        <li><strong>Developers</strong> copying an <strong>image color picker hex code</strong> straight into CSS.</li>
+        <li><strong>Crafters and painters</strong> — a <strong>color picker from image for paint</strong> matching at the hardware store.</li>
+      </ul>
+      <h2>Pick colours from a website or screen</h2>
+      <p>To use it as an <strong>image color picker from website</strong> or <strong>image color picker from screen</strong>, take a screenshot (Windows: Win + Shift + S; Mac: Cmd + Shift + 4), then paste or upload it here. For an <strong>image color picker from url</strong>, save the image first. This <strong>image color picker from image</strong> workflow also works as an <strong>image colour picker from file</strong> — any PNG, JPG or WebP.</p>
+      <p>It's a free <strong>image color picker tool</strong> — an <strong>image color picker with hex code</strong> (also an <strong>image color picker hex</strong> and <strong>image color picker rgb</strong> tool) and a <strong>hex color picker for image</strong> files, with no <strong>image color picker app</strong> or Adobe subscription needed. Use this <strong>image color picker free</strong> any time — a <strong>color picker for image online</strong> that also works as a plain <strong>image color picker</strong>. Need complementary colours? Try the <a href="/color-palette-generator">Color Palette Generator</a>.</p>
+      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'svg-to-png': `
+      <h2>SVG to PNG converter — any size, sharp edges</h2>
+      <p>SVG files are vectors: they stay sharp at any size, but many apps, social networks and document editors can't open them. This <strong>svg to png converter free</strong> tool renders your SVG into a crisp PNG at the width you choose — so you get <strong>svg to png high resolution</strong> output for print, or small icons for apps.</p>
+      <h2>Transparent or white background</h2>
+      <p>By default you get <strong>svg to png with transparent background</strong> — a true <strong>svg to png transparent</strong> image for logos and icons. Tick “Fill background” for <strong>svg to png with white background</strong> (or any colour) when the PNG will go into a document or slide.</p>
+      <h2>Choosing the size</h2>
+      <p>Set the output width and the height follows the SVG's proportions — this is <strong>svg to png with size</strong> control. For example: 512 px for app icons, 1200 px for web graphics, 3000 px+ for printing.</p>
+      <h2>From a URL</h2>
+      <p>To convert <strong>svg to png from url</strong> or <strong>svg to png from link</strong>, open the SVG link, save it (Ctrl/Cmd + S), and drop the file here.</p>
+      <p>No need for Inkscape or Illustrator — convert <strong>svg to png on mac</strong> (or with a <strong>svg to png mac</strong> shortcut), Windows or phones. It's <strong>svg to png online</strong>, <strong>svg to png free</strong> and <strong>svg to png for free</strong>: the easiest way to <strong>convert svg to png for free</strong> into the <strong>svg to png format</strong> you need — a simple <strong>svg to png converter</strong> (and <strong>convert svg to png format</strong> tool) for <strong>svg to png</strong> jobs of any size.</p>
+      <p>Everything happens in your browser: your files never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'passport-photo-maker': `
+      <h2>Passport photo maker — free and online</h2>
+      <p>Take a photo against a plain wall, upload it, and this <strong>passport photo maker free</strong> tool crops it to the official size for your country, lets you set the background colour (white is standard), and prepares a print sheet. It works as a <strong>passport photo maker online free</strong> — no app download and no studio fee.</p>
+      <h2>Sizes included</h2>
+      <ul>
+        <li><strong>35 × 45 mm</strong> — UK, EU, Pakistan, India, Australia and most countries.</li>
+        <li><strong>2 × 2 in (51 × 51 mm)</strong> — USA and India visa.</li>
+        <li><strong>50 × 70 mm</strong> Canada · <strong>33 × 48 mm</strong> China · <strong>40 × 60 mm</strong> Saudi Arabia · <strong>35 × 50 mm</strong> Malaysia · <strong>40 × 50 mm</strong> UAE visa.</li>
+      </ul>
+      <p>Choose this <strong>passport photo maker for visa</strong> applications and ID cards too.</p>
+      <h2>Print at home or a shop</h2>
+      <p>Download a <strong>passport photo maker 4x6</strong> sheet (10 × 15 cm) to print at any photo kiosk for very little, or an A4 sheet for home printers — making it a true <strong>passport photo maker for print</strong>. Print at 100% scale so the size stays exact.</p>
+      <h2>Tips for an accepted photo</h2>
+      <ul><li>Even lighting, no shadows on face or background.</li><li>Look straight at the camera with a neutral expression; no glasses glare.</li><li>Need a white background? Use the <a href="/remove-background">Background Remover</a> first.</li></ul>
+      <p>No <strong>passport photo maker software</strong> or <strong>passport photo maker for pc free download</strong> needed — it runs in the browser on Windows (<strong>passport photo maker for windows</strong>, including <strong>passport photo maker for windows 10</strong> and <strong>passport photo maker for windows 7</strong>), Mac and phones, so you don't need a <strong>passport photo maker for pc</strong> install or a <strong>passport photo maker app</strong>. It's a <strong>passport photo maker for free online</strong> — a <strong>passport photo maker online</strong> and <strong>passport photo maker for free</strong>.</p>
+      <p>Everything happens in your browser: your photos never leave your device, which makes this safe for private and confidential files.</p>`,
+
+  'collage-maker': `
+      <h2>Photo collage maker — free, no watermark</h2>
+      <p>Add your photos, choose a layout, and download a finished collage. This <strong>photo collage maker free</strong> tool lets you set the number of columns, spacing between photos, rounded corners and background colour. It's a <strong>photo collage maker online free</strong> with no sign-up and no watermark.</p>
+      <h2>Sizes for every use</h2>
+      <ul>
+        <li><strong>Square 1080 × 1080</strong> — a <strong>photo collage maker for instagram</strong> feed (a <strong>photo collage maker for instagram post</strong>).</li>
+        <li><strong>Portrait 1080 × 1350</strong> — taller Instagram and Facebook posts.</li>
+        <li><strong>Story 1080 × 1920</strong> — Instagram and WhatsApp stories; also a <strong>photo collage maker for phone wallpaper</strong>.</li>
+        <li><strong>Landscape 1920 × 1080</strong> — a <strong>photo collage maker for desktop background</strong>, for laptops (<strong>photo collage maker for laptop wallpaper</strong>), for <strong>photo collage maker for computer backgrounds</strong> and as a <strong>photo collage maker for mac wallpaper</strong>.</li>
+        <li><strong>Large square 2400 × 2400</strong> — a <strong>photo collage maker for printing</strong> photo books and frames.</li>
+      </ul>
+      <h2>Tips for a great collage</h2>
+      <ul>
+        <li>Use an even number of photos for tidy rows, or 3 / 6 / 9 for square grids.</li>
+        <li>A little spacing and rounded corners make collages look modern.</li>
+        <li>Pick a background colour from one of your photos for a matching look.</li>
+      </ul>
+      <p>It's a <strong>photo collage maker online</strong> that works on Windows, Mac and as a <strong>photo collage maker iphone</strong> alternative — no <strong>photo collage maker app</strong> or <strong>photo collage maker free download</strong> needed, though it's as easy as a <strong>photo collage maker app free</strong>. Use this <strong>photo collage maker</strong> — a <strong>photo collage maker for free</strong> — whenever you like.</p>
+      <p>Everything happens in your browser: your photos never leave your device, which makes this safe for private and confidential files.</p>`,
 };

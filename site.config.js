@@ -6,6 +6,13 @@ module.exports = {
   url: 'https://www.webtoolnest.com',
   contactEmail: 'contact@webtoolnest.com',
   contactPhone: '',
+  whatsapp: '923444594523', // WhatsApp number with country code, digits only — adds "Chat on WhatsApp" links
+  owner: {               // shown on the About page
+    name: 'Abdur Rehman',
+    role: 'ERP developer and AI & automation engineer',
+    location: 'Pakistan',
+    links: [['Portfolio', 'https://abdurrehman629.github.io'], ['Case studies', 'https://github.com/ABDURREHMAN629/case-studies'], ['LinkedIn', 'https://www.linkedin.com/in/abdur-rehman-ar03247440629'], ['GitHub', 'https://github.com/ABDURREHMAN629']],
+  },
   gaId: '',              // Google Analytics 4 ID, e.g. 'G-XXXXXXXXXX'
   adsenseClient: '',     // AdSense publisher ID, e.g. 'ca-pub-1234567890123456'
   googleVerification: '', // Search Console "HTML tag" content value (optional if you verify by DNS)

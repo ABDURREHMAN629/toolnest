@@ -17,6 +17,8 @@ const SITE = config.url.replace(/\/$/, '');
 const BASE = new URL(SITE).pathname.replace(/\/?$/, '/');
 const abs = p => `${SITE}/${p === 'index.html' ? '' : p.replace(/\.html$/, '')}`;
 const year = new Date().getFullYear();
+const owner = config.owner || {};
+const waLink = config.whatsapp ? `https://wa.me/${config.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(`Hi, I'm messaging from ${config.name}`)}` : '';
 
 function head({ title, desc, file, extraHead = '', jsonld = [], noindex = false }) {
   const ga = config.gaId ? `
@@ -90,7 +92,7 @@ function footer(scripts = '') {
         <a class="logo" href="${BASE}"><span class="logo-mark">◆</span>${esc(config.name)}</a>
         <p>${esc(config.tagline)}. ${COUNT}+ free tools that run right in your browser — no sign-up, no uploads, no limits.</p>
       </div>
-      <div class="footer-links"><a href="${BASE}about">About</a><a href="${BASE}contact">Contact</a><a href="${BASE}privacy-policy">Privacy Policy</a><a href="${BASE}terms">Terms of Use</a><a href="${BASE}sitemap.xml">Sitemap</a></div>
+      <div class="footer-links"><a href="${BASE}about">About</a><a href="${BASE}contact">Contact</a><a href="${BASE}privacy-policy">Privacy Policy</a><a href="${BASE}terms">Terms of Use</a><a href="${BASE}sitemap.xml">Sitemap</a>${waLink ? `<a href="${waLink}" rel="noopener" target="_blank">💬 WhatsApp</a>` : ''}</div>
     </div>
     <div class="footer-cols">${cols}</div>
     <p class="copyright">© ${year} ${esc(config.name)}. All rights reserved.</p>
@@ -262,8 +264,13 @@ function staticPage(file, title, desc, body) {
 </main>
 ` + footer());
 }
-staticPage('about.html', 'About Us', `About ${config.name} — free online tools that run in your browser.`, `
+staticPage('about.html', 'About Us', `About ${config.name} — free online tools built by ${owner.name || 'an independent developer'}.`, `
   <p>${esc(config.name)} is a collection of ${COUNT}+ free online tools for the tasks people do every day: converting and compressing PDFs, editing images, converting videos, calculating grades and loans, writing, coding and more.</p>
+  ${owner.name ? `<h2>Who builds ${esc(config.name)}</h2>
+  <p>Hi, I'm <strong>${esc(owner.name)}</strong>, ${/^[aeiou]/i.test(owner.role || 'developer') ? 'an' : 'a'} ${esc(owner.role || 'developer')} from ${esc(owner.location || 'Pakistan')}. I design, build and maintain every tool on this site myself.</p>
+  <p>In my day job I build business software for manufacturing: I developed a complete ERP system for a textile company — production planning, inventory and reporting — together with an AI assistant that lets staff ask it questions by text or voice, and a computer-vision safety system that stops factory machines when a person comes too close. I also build e-commerce stores, Android apps and web apps, and I'm available for freelance projects worldwide.</p>
+  <p>I started ${esc(config.name)} because simple everyday jobs — merging a PDF, compressing a photo, moving contacts to a new phone — kept sending me to websites that upload your private files, bury the tool under ads, or ask you to sign up first. So I built the tools I wanted to use: fast, free, and running inside your own browser so your files never leave your device.</p>
+  ${(owner.links || []).length || waLink ? `<p>${[...(owner.links || []).map(([l, u]) => `<a href="${esc(u)}" rel="noopener" target="_blank">${esc(l)}</a>`), waLink ? `<a href="${waLink}" rel="noopener" target="_blank">WhatsApp</a>` : ''].filter(Boolean).join(' · ')}</p>` : ''}` : ''}
   <h2>Our approach</h2>
   <ul><li><strong>Privacy first.</strong> Almost every tool runs entirely in your browser. Files you open are processed on your own device and are never uploaded to us.</li>
   <li><strong>Free forever.</strong> No account, no watermarks, no daily limits.</li>
@@ -272,7 +279,8 @@ staticPage('about.html', 'About Us', `About ${config.name} — free online tools
 staticPage('contact.html', 'Contact Us', `Contact the ${config.name} team.`, `
   <p>We'd love to hear from you — whether you found a bug, want to suggest a new tool or have a business enquiry.</p>
   <p>Email: <a href="mailto:${esc(config.contactEmail)}">${esc(config.contactEmail)}</a></p>
-  ${config.contactPhone ? `<p>Phone / WhatsApp: <a href="tel:${esc(config.contactPhone.replace(/[^\d+]/g, ''))}">${esc(config.contactPhone)}</a></p>` : ''}
+  ${waLink ? `<p><a class="btn" href="${waLink}" rel="noopener" target="_blank" style="background:#25D366;border-color:#25D366;color:#fff">💬 Chat on WhatsApp</a></p>` : ''}
+  ${config.contactPhone ? `<p>Phone: <a href="tel:${esc(config.contactPhone.replace(/[^\d+]/g, ''))}">${esc(config.contactPhone)}</a></p>` : ''}
   <p>We usually reply within 2 business days.</p>`);
 staticPage('privacy-policy.html', 'Privacy Policy', `Privacy policy for ${config.name}.`, `
   <p><em>Last updated: ${today}</em></p>

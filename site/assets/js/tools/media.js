@@ -341,25 +341,35 @@
     ]);
     let rec, streams = [], t0, acc = 0, tick, ac;
     const cleanup = () => { streams.forEach(s => s.getTracks().forEach(t => t.stop())); streams = []; clearInterval(tick); if (ac) ac.close(); ac = null; $('.live').hidden = true; $('.pause').hidden = $('.stop').hidden = true; $('.start').hidden = false; };
-    $('.start').onclick = () => UI.busy($('.start'), async () => {
-      const o = form.get(), h = +o.q;
-      const display = await navigator.mediaDevices.getDisplayMedia({ video: { frameRate: 30, height: { ideal: h }, width: { ideal: Math.round(h * 16 / 9) } }, audio: o.sys });
+    $('.start').onclick = () => {
+      // Create the audio mixer inside the click: Chrome only lets an AudioContext run if it starts during a user gesture,
+      // and the screen picker takes longer than that gesture lasts — a suspended mixer gives silent or empty recordings.
+      const o = form.get(), mixer = o.mic && o.sys && window.AudioContext ? new AudioContext() : null;
+      return UI.busy($('.start'), async () => {
+      const h = +o.q;
+      let display;
+      try { display = await navigator.mediaDevices.getDisplayMedia({ video: { frameRate: 30, height: { ideal: h }, width: { ideal: Math.round(h * 16 / 9) } }, audio: o.sys }); }
+      catch (e) { if (mixer) mixer.close(); throw new Error(e.name === 'NotAllowedError' ? 'Recording was cancelled or blocked. Click “Start recording” and choose a screen, window or tab to share. (On macOS, also allow your browser under System Settings → Privacy & Security → Screen Recording.)' : 'Could not start screen capture: ' + e.message); }
       streams.push(display);
       let mic = null;
       if (o.mic) { mic = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } }).catch(() => { UI.toast('Microphone not available — recording without it'); return null; }); if (mic) streams.push(mic); }
       const tracks = [...display.getVideoTracks()];
       const aud = [display, mic].filter(s => s && s.getAudioTracks().length);
-      if (aud.length > 1) { ac = new AudioContext(); const dest = ac.createMediaStreamDestination(); aud.forEach(s => ac.createMediaStreamSource(s).connect(dest)); tracks.push(...dest.stream.getAudioTracks()); }
-      else if (aud.length) tracks.push(...aud[0].getAudioTracks());
+      if (aud.length > 1 && mixer) { ac = mixer; await ac.resume().catch(() => {}); const dest = ac.createMediaStreamDestination(); aud.forEach(s => ac.createMediaStreamSource(s).connect(dest)); tracks.push(...dest.stream.getAudioTracks()); }
+      else { if (mixer) mixer.close(); if (aud.length) tracks.push(...aud[0].getAudioTracks()); }
       const stream = new MediaStream(tracks);
       for (let i = +o.cd; i > 0; i--) { $('.timer').hidden = false; $('.timer').textContent = `Starting in ${i}…`; await new Promise(r => setTimeout(r, 1000)); }
-      const mime = pickMime(['video/mp4;codecs=avc1,mp4a.40.2', 'video/webm;codecs=vp9,opus', 'video/webm;codecs=vp8,opus', 'video/webm', 'video/mp4']);
-      rec = new MediaRecorder(stream, { mimeType: mime || undefined, videoBitsPerSecond: h >= 1440 ? 8e6 : h >= 1080 ? 5e6 : 3e6 });
+      // WebM is the most reliable in Chrome, Edge and Firefox; Safari only records MP4.
+      const mime = pickMime(['video/webm;codecs=vp9,opus', 'video/webm;codecs=vp8,opus', 'video/webm', 'video/mp4;codecs=avc1,mp4a.40.2', 'video/mp4']);
+      const bps = h >= 1440 ? 8e6 : h >= 1080 ? 5e6 : 3e6;
+      try { rec = new MediaRecorder(stream, { mimeType: mime || undefined, videoBitsPerSecond: bps }); } catch (e) { rec = new MediaRecorder(stream); }
       const chunks = [];
       rec.ondataavailable = e => e.data.size && chunks.push(e.data);
+      rec.onerror = e => UI.notice($('.err'), '⚠️ Recording stopped because of an error: ' + esc((e.error && e.error.message) || 'unknown'), 'error');
       rec.onstop = () => {
         const type = rec.mimeType || 'video/webm', ext = type.includes('mp4') ? 'mp4' : 'webm', blob = new Blob(chunks, { type });
         cleanup();
+        if (!blob.size) { UI.notice($('.err'), '⚠️ The recording came out empty. Please try again — if it keeps happening, untick “Record system / tab audio” or try another browser.', 'error'); return; }
         const url = URL.createObjectURL(blob), name = `screen-recording-${new Date().toISOString().slice(0, 19).replace(/[T:]/g, '-')}.${ext}`;
         $('.out').prepend(UI.h(`<div class="card-sub stack"><video controls playsinline src="${url}" style="width:100%;max-height:380px;border-radius:10px;background:#000"></video></div>`));
         $('.out .card-sub').append(UI.fileRow({ name, sub: `${UI.fmtBytes(blob.size)} · ${timerText(acc)}`, icon: '🎬', blob }));
@@ -370,7 +380,8 @@
       const live = $('.live'); live.srcObject = display; live.hidden = false; live.play().catch(() => {});
       $('.start').hidden = true; $('.pause').hidden = $('.stop').hidden = false; $('.timer').hidden = false; $('.pause').textContent = '⏸ Pause';
       tick = setInterval(() => { $('.timer').textContent = '🔴 ' + timerText(acc + (rec.state === 'recording' ? Date.now() - t0 : 0)); }, 250);
-    }, 'Starting…', $('.err'));
+      }, 'Starting…', $('.err'));
+    };
     $('.pause').onclick = () => {
       if (rec.state === 'recording') { rec.pause(); acc += Date.now() - t0; $('.pause').textContent = '▶ Resume'; }
       else { rec.resume(); t0 = Date.now(); $('.pause').textContent = '⏸ Pause'; }

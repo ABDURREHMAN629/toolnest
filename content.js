@@ -1595,4 +1595,415 @@ module.exports = {
         <li><strong>citation generator for youtube video</strong> (and <strong>citation generator for videos</strong>), <strong>citation generator for pdf</strong> reports and <strong>citation generator for images</strong> — use the Website type with the creator, title and URL.</li>
       </ul>
       <p>Always double-check names and dates against the source — a <strong>citation generator</strong> can only format what you enter.</p>`,
+
+  'mortgage-calculator': `
+      <h2>Mortgage calculator with taxes, insurance and HOA</h2>
+      <p>Enter the home price, down payment, interest rate and loan term (10–30 years), then add yearly property tax, home insurance and monthly HOA fees. You'll see your full monthly <strong>mortgage calculator payment</strong> — principal and interest plus escrow costs — and the total interest over the life of the loan. It's a <strong>mortgage calculator free</strong> of sign-ups.</p>
+      <h2>Mortgage calculator formula</h2>
+      <p>The <strong>mortgage calculator formula</strong> for principal and interest is <code>M = P × r(1 + r)ⁿ ÷ ((1 + r)ⁿ − 1)</code>, where r is the monthly rate and n the number of payments. Example: $300,000 at 6.5% for 30 years → about <strong>$1,896</strong> a month before taxes and insurance — the same maths behind the <strong>mortgage calculator google</strong> shows.</p>
+      <h2>Paying off early and extra payments</h2>
+      <p>This version doesn't model extra payments directly. To use it as a <strong>mortgage calculator for paying off early</strong>, compare a 30-year and a 15- or 20-year term: the shorter term shows how much interest extra payments can save. (A full <strong>mortgage calculator with extra payments</strong> — or <strong>mortgage calculator for extra payments</strong> — schedule is on our list.)</p>
+      <h2>Other uses</h2>
+      <ul>
+        <li><strong>mortgage calculator for refinance</strong> — enter your remaining balance as the price with zero down.</li>
+        <li><strong>mortgage calculator for investment property</strong>, a <strong>mortgage calculator for second home</strong> or a <strong>mortgage calculator for land</strong> — use the higher rates and down payments those loans usually need.</li>
+        <li><strong>mortgage calculator for va loan</strong> — set the down payment to 0; a <strong>mortgage calculator for mobile home</strong> works the same way with its own rate.</li>
+        <li><strong>mortgage calculator for commercial property</strong> — commercial loans often have shorter terms, so try 10–20 years.</li>
+      </ul>
+      <p>Property tax varies by state, which is why a <strong>mortgage calculator florida</strong>, <strong>mortgage calculator california</strong>, <strong>mortgage calculator ohio</strong>, <strong>mortgage calculator utah</strong> or <strong>mortgage calculator pa</strong> search gives different results — enter your county's tax for accuracy. A simple <strong>mortgage calculator</strong>.</p>
+      <p class="small muted">Results are estimates for planning. For loans, investments and taxes, confirm the exact figures with your bank, provider or a qualified adviser.</p>`,
+
+  'compound-interest-calculator': `
+      <h2>Compound interest calculator with monthly contributions</h2>
+      <p>Enter your starting amount, a <strong>monthly contribution</strong>, the yearly interest rate and the number of years, then pick how often interest compounds — yearly, half-yearly, quarterly, monthly or daily. You'll see the final balance, how much you contributed and how much came from interest. It's a <strong>compound interest calculator with monthly contributions</strong> built in, and a <strong>compound interest calculator monthly</strong> by default.</p>
+      <h2>Compound interest calculator formula</h2>
+      <p>The <strong>compound interest calculator formula</strong> is <code>A = P(1 + r/n)ⁿᵗ</code>. Example: $10,000 at 8% compounded monthly for 10 years grows to about <strong>$22,196</strong> — more than doubling with no extra deposits. Add $200 a month and it reaches roughly $58,800. That's the same calculation the SEC's <strong>compound interest calculator investor.gov</strong> uses.</p>
+      <h2>Retirement and investing</h2>
+      <ul>
+        <li><strong>compound interest calculator retirement</strong> (a <strong>compound interest calculator for retirement</strong>) planning — try 6–8% for a diversified long-term portfolio.</li>
+        <li><strong>compound interest calculator 401k</strong> (a <strong>compound interest calculator for 401k</strong>) and <strong>compound interest calculator for roth ira</strong> — enter your monthly contribution including any employer match.</li>
+        <li><strong>compound interest calculator for stocks</strong> and other <strong>compound interest calculator for investments</strong> — a <strong>compound interest calculator for monthly investment</strong> plans; returns vary year to year, so test a range.</li>
+        <li><strong>compound interest calculator for cd</strong> — use the CD's rate and term.</li>
+      </ul>
+      <p>For a <strong>compound interest calculator for loan</strong> or <strong>compound interest calculator for car loan</strong> payments, the <a href="/loan-calculator">Loan EMI Calculator</a> is the right tool. Withdrawals, inflation and rising contributions aren't modelled here — for a <strong>compound interest calculator with inflation</strong>, subtract expected inflation (say 3%) from your return. A simple <strong>compound interest calculator</strong>.</p>
+      <p class="small muted">Results are estimates for planning. For loans, investments and taxes, confirm the exact figures with your bank, provider or a qualified adviser.</p>`,
+
+  'simple-interest-calculator': `
+      <h2>Simple interest calculator</h2>
+      <p>Enter the principal, the yearly interest rate and the time — in <strong>years</strong>, <strong>months</strong> or <strong>days</strong> — to get the interest and the total amount. It's a <strong>simple interest calculator monthly</strong> or daily, as you prefer.</p>
+      <h2>Simple interest calculator formula</h2>
+      <p>The <strong>simple interest calculator formula</strong> is <code>SI = P × R × T ÷ 100</code>. Example: 50,000 at 10% a year for 3 years → 50,000 × 10 × 3 ÷ 100 = <strong>15,000</strong> interest, 65,000 in total. Unlike compound interest, the interest is never added to the principal, so it grows in a straight line.</p>
+      <h2>Days, months and dates</h2>
+      <ul>
+        <li><strong>simple interest calculator days</strong> (a <strong>simple interest calculator for days</strong>) — interest for 90 days = P × R × 90 ÷ 36500.</li>
+        <li><strong>simple interest calculator for months</strong> — 18 months = 1.5 years.</li>
+        <li><strong>simple interest calculator by date</strong> or <strong>simple interest calculator between two dates</strong> — count the days with <a href="/date-difference-calculator">Days Between Dates</a>, then enter them here.</li>
+      </ul>
+      <h2>Loans and savings</h2>
+      <p>Many personal loans and car loans in the US are simple-interest loans, so a <strong>simple interest calculator for car loan</strong> or <strong>simple interest calculator loan</strong> estimate is useful. For the actual <strong>simple interest calculator monthly payment</strong> (a <strong>simple interest calculator for monthly payments</strong> or <strong>simple interest calculator payment</strong>), use the <a href="/loan-calculator">Loan EMI Calculator</a>. It also works as a <strong>simple interest calculator savings</strong> estimate (a <strong>simple interest calculator for savings account</strong> or <strong>simple interest calculator for cd</strong>), a <strong>simple interest calculator for loan</strong> or <strong>simple interest calculator for housing loan</strong> comparison, a <strong>simple interest calculator india</strong> users and <strong>simple interest calculator for bank staff</strong> rely on. A simple <strong>simple interest calculator</strong>.</p>
+      <p class="small muted">Results are estimates for planning. For loans, investments and taxes, confirm the exact figures with your bank, provider or a qualified adviser.</p>`,
+
+  'sip-calculator': `
+      <h2>SIP calculator with step up</h2>
+      <p>Enter your monthly investment, expected yearly return and time period. Add an optional <strong>annual step-up</strong> — raising your SIP by, say, 10% each year — to see the effect of investing more as your income grows. It's a <strong>sip calculator with step up</strong> built in (a <strong>sip calculator india with step up</strong> favourite).</p>
+      <h2>SIP calculator formula</h2>
+      <p>The <strong>sip calculator formula</strong> is <code>FV = P × [((1 + i)ⁿ − 1) ÷ i] × (1 + i)</code>, where i is the monthly return and n the number of months. Example: 5,000 a month at 12% for 10 years → about <strong>11.6 lakh</strong> (1,161,695), from 6 lakh invested.</p>
+      <h2>Long-term SIPs</h2>
+      <p>Compounding rewards patience. Compare a <strong>sip calculator for 10 years</strong>, a <strong>sip calculator for 20 years</strong> and a <strong>sip calculator for 50 years</strong> — the last decade usually adds more than the first two combined. (A <strong>sip calculator for 60 years</strong> or <strong>sip calculator for 100 years</strong> shows the extreme of a <strong>sip calculator for long term</strong>.)</p>
+      <h2>Mutual funds, lumpsum and other countries</h2>
+      <ul>
+        <li><strong>sip calculator for mutual funds</strong> — use 10–12% for equity funds and 6–8% for debt funds as rough long-term assumptions.</li>
+        <li><strong>sip calculator lumpsum</strong> — for a <strong>sip calculator for lumpsum amount</strong> or <strong>sip calculator for one time investment</strong>, use the <a href="/compound-interest-calculator">Compound Interest Calculator</a> with no monthly contribution.</li>
+        <li>Works as a <strong>sip calculator india</strong>, a <strong>sip calculator nepal</strong> or a <strong>sip calculator usa</strong> tool — a <strong>sip calculator dollars</strong> works the same as rupees.</li>
+      </ul>
+      <p>It gives the same results as the <strong>sip calculator groww</strong> or <strong>sip calculator sbi</strong> pages without logging in. Returns are not guaranteed; a simple <strong>sip calculator</strong>.</p>
+      <p class="small muted">Results are estimates for planning. For loans, investments and taxes, confirm the exact figures with your bank, provider or a qualified adviser.</p>`,
+
+  'discount-calculator': `
+      <h2>Discount calculator with tax</h2>
+      <p>Enter the original price and the discount — as a percentage or an amount — and see how much you save and what you'll pay. Add an <strong>extra discount</strong> (like “extra 10% off at checkout”) and <strong>sales tax</strong> for the real final price — a <strong>discount calculator with tax</strong> (and <strong>discount calculator with sales tax</strong>) in one.</p>
+      <h2>Discount calculator formula</h2>
+      <p>The <strong>discount calculator formula</strong> (the <strong>discount formula for selling price</strong>) is <code>Sale price = Price × (1 − discount%)</code>. Stacked discounts multiply rather than add: 20% off and then an extra 10% off is <strong>28%</strong> off in total, not 30%. Example: $80 → 20% off = $64 → extra 10% = $57.60 → plus 8% tax = <strong>$62.21</strong>.</p>
+      <h2>Common uses</h2>
+      <ul>
+        <li>Shopping sales — a <strong>discount calculator percentage</strong> check before buying.</li>
+        <li>A <strong>discount calculator for senior citizen</strong> and student discounts at restaurants and pharmacies.</li>
+        <li>A <strong>discount calculator for rupees</strong>, dollars or any currency — the maths is the same.</li>
+        <li>Homework: the <strong>discount formula for class 8</strong> maths uses exactly these steps.</li>
+      </ul>
+      <h2>In Excel</h2>
+      <p>For a <strong>discount calculator excel</strong> sheet (or <strong>discount calculator for excel</strong>), the <strong>discount calculator formula in excel</strong> — the <strong>discount formula for excel</strong> — is <code>=A2*(1-B2)</code>, with the price in A2 and the discount as a percentage in B2. This <strong>discount calculator online</strong> needs no <strong>discount calculator app</strong>. A simple <strong>discount calculator</strong>.</p>`,
+
+  'tip-calculator': `
+      <h2>Tip calculator — split the bill</h2>
+      <p>Enter the bill, pick a tip (10%, 15%, 18%, 20%, 25% or a custom amount) and the number of people. You'll see the tip, the total and what each person pays — with an option to <strong>round up</strong> each share. It's a <strong>tip calculator free</strong> of ads and sign-ups.</p>
+      <h2>Tip calculator formula</h2>
+      <p>The <strong>tip calculator formula</strong>: tip = bill × tip%; each person pays (bill + tip) ÷ people. Quick mental trick for 20%: move the decimal one place and double it ($45 → $4.50 → $9).</p>
+      <h2>How much to tip in the US</h2>
+      <ul>
+        <li><strong>tip calculator restaurant</strong> service: 15–20% is standard, 18–20% in big cities — a <strong>tip calculator nyc</strong> (or <strong>tip calculator ny</strong>) user will usually choose 20%, while a <strong>tip calculator texas</strong> or <strong>tip calculator ca</strong> bill typically gets 15–20%.</li>
+        <li><strong>tip calculator for hair salon</strong>, a <strong>tip calculator for haircut</strong> or a <strong>tip calculator for hairdresser</strong> (or <strong>tip calculator for hair</strong>): 15–20%.</li>
+        <li><strong>tip calculator for nail salon</strong> (or <strong>tip calculator for nails</strong>): 15–20%.</li>
+        <li><strong>tip calculator for tattoo</strong> artists: 15–25% depending on the work.</li>
+        <li><strong>tip calculator for delivery</strong> and <strong>tip calculator for doordash</strong> orders: 15–20%, more for bad weather or long distances.</li>
+      </ul>
+      <p>Customs differ by country — in much of Europe and Asia, service is included or a small round-up is enough. This page works on your phone like a <strong>tip calculator app</strong> (a <strong>tip calculator iphone</strong> home-screen shortcut works great). A simple <strong>tip calculator</strong>.</p>`,
+
+  'gst-calculator': `
+      <h2>GST and VAT calculator — add or remove tax</h2>
+      <p>This <strong>gst calculator</strong> and <strong>vat calculator</strong> works both ways. Choose <strong>Add tax</strong> to get the price including tax, or <strong>Remove tax</strong> to split a tax-inclusive price into its net amount and tax — a <strong>reverse gst calculator</strong>. Ready-made rates include 5% (GST India / VAT UAE), 12%, 18% and 28% (GST India), 15% (VAT Saudi Arabia), 17% and 18% (GST Pakistan) and 20% (VAT UK), plus any custom rate.</p>
+      <h2>GST calculator formula</h2>
+      <ul>
+        <li><strong>Add tax:</strong> total = amount × (1 + rate). 1,000 + 18% = <strong>1,180</strong>.</li>
+        <li><strong>Remove tax</strong> (the <strong>gst inclusive formula</strong> and <strong>reverse gst calculator formula</strong>): net = total ÷ (1 + rate). 1,180 ÷ 1.18 = 1,000, so the tax is 180. A common mistake is taking 18% of 1,180 (212.40) — that's wrong.</li>
+      </ul>
+      <p>That's the whole <strong>gst calculator formula</strong>.</p>
+      <h2>Rates around the world</h2>
+      <ul>
+        <li><strong>gst calculator india</strong> (5/12/18/28%) and Pakistan (17–18%).</li>
+        <li><strong>gst calculator australia</strong> — 10%, e.g. a <strong>gst calculator nsw</strong> or <strong>reverse gst calculator australia</strong> check; <strong>gst calculator nz</strong> — 15%.</li>
+        <li><strong>gst calculator canada</strong> — 5% federal GST (a <strong>gst calculator alberta</strong> uses 5%); a <strong>reverse gst calculator canada</strong>, <strong>reverse gst calculator alberta</strong>, <strong>reverse gst calculator bc</strong>, <strong>reverse gst calculator manitoba</strong> or <strong>reverse gst calculator ontario</strong> check may need provincial tax too (HST 13% in Ontario).</li>
+        <li><strong>vat calculator</strong> Europe: <strong>vat calculator germany</strong> 19%, <strong>vat calculator france</strong> 20%, <strong>vat calculator italy</strong> 22%, <strong>vat calculator spain</strong> 21%, <strong>vat calculator ireland</strong> 23%; <strong>vat calculator south africa</strong> 15%, <strong>vat calculator philippines</strong> 12%.</li>
+      </ul>
+      <p>The US has state sales tax instead (a <strong>vat calculator usa</strong> search usually means sales tax) — use the custom rate. This <strong>gst calculator online</strong> (a <strong>vat calculator online</strong> and <strong>reverse gst calculator online</strong> too) is a <strong>gst vat calculator</strong> for any country. Rates change, so check your tax authority's current rate.</p>`,
+
+  'profit-margin-calculator': `
+      <h2>Profit margin calculator — margin and markup</h2>
+      <p>Tell the calculator what you know — <strong>cost and selling price</strong>, <strong>cost and target margin</strong>, or <strong>cost and markup</strong> — and it fills in the rest: profit, margin % and markup %. It's a <strong>profit margin calculator free</strong> of sign-ups and a handy <strong>profit margin calculator percentage</strong> check.</p>
+      <h2>Profit margin calculator formula</h2>
+      <ul>
+        <li><strong>Margin</strong> = (price − cost) ÷ price × 100 — the <strong>profit margin calculator formula</strong>.</li>
+        <li><strong>Markup</strong> = (price − cost) ÷ cost × 100.</li>
+      </ul>
+      <p>Example: cost 60, price 100 → profit 40, margin <strong>40%</strong>, markup <strong>66.7%</strong>. Margin can never reach 100%; mixing up margin and markup is the most common pricing mistake. To hit a 40% margin on a $60 cost, the price is 60 ÷ (1 − 0.40) = <strong>$100</strong> — that's the <strong>profit margin formula for a product</strong>.</p>
+      <h2>For your type of business</h2>
+      <ul>
+        <li><strong>profit margin calculator for product</strong> sellers and <strong>profit margin calculator for dropshipping</strong> stores — include shipping and platform fees in the cost.</li>
+        <li><strong>profit margin calculator for food</strong> businesses — restaurants often target 60–70% gross margin on dishes.</li>
+        <li><strong>profit margin calculator for service business</strong> owners — use your hourly cost, including overheads.</li>
+        <li>A <strong>profit margin calculator for business</strong> owners in the UK or India works the same in pounds or rupees (a <strong>profit margin calculator uk</strong> or <strong>profit margin calculator india</strong>) — add VAT/GST separately.</li>
+      </ul>
+      <p>In a spreadsheet (a <strong>profit margin calculator excel</strong>), the <strong>profit margin calculator formula excel</strong> is <code>=(B2-A2)/B2</code> with cost in A2 and price in B2 — the <strong>profit margin calculation for excel</strong> sheets. This page works like a <strong>profit margin calculator app</strong>. Trading? A <strong>profit margin calculator forex</strong> refers to trading margin, which is different. A simple <strong>profit margin calculator</strong>.</p>`,
+
+  'salary-calculator': `
+      <h2>Salary calculator — hourly, weekly, monthly and yearly</h2>
+      <p>Enter what you're paid and how often — per hour, day, week, 2 weeks, month or year — plus your hours per week, days per week and any unpaid weeks off. The calculator converts it into every other period. It's a <strong>salary calculator hourly</strong> rate converter and a <strong>salary calculator for hourly rate</strong> questions such as “what is $25 an hour per year?” (about <strong>$52,000</strong> at 40 hours × 52 weeks).</p>
+      <h2>Before tax</h2>
+      <p>The results are <strong>gross pay</strong> (before tax). Take-home pay depends on federal, state and local taxes: a <strong>salary calculator texas</strong> (or <strong>salary calculator for texas</strong>) and <strong>salary calculator florida</strong> (a <strong>salary calculator for florida</strong>) result has no state income tax, while a <strong>salary calculator california</strong> (a <strong>salary calculator for california</strong>), <strong>salary calculator new york</strong> or <strong>salary calculator nyc</strong> estimate does, as do a <strong>salary calculator illinois</strong>, <strong>salary calculator georgia</strong>, <strong>salary calculator north carolina</strong> and a <strong>salary calculator for maryland</strong>.</p>
+      <h2>Other uses</h2>
+      <ul>
+        <li><strong>salary calculator for raises</strong> — compare your current and new pay in every period.</li>
+        <li><strong>salary calculator for teachers</strong> and others paid for fewer weeks — add the unpaid weeks.</li>
+        <li><strong>salary calculator for mortgage</strong> planning — lenders often like housing costs under 28% of gross monthly income.</li>
+        <li><strong>salary calculator for different cities</strong> and a <strong>salary calculator for inflation</strong> — compare offers knowing living costs and prices differ.</li>
+      </ul>
+      <p>A simple <strong>salary calculator</strong>.</p>
+      <p class="small muted">Results are estimates for planning. For loans, investments and taxes, confirm the exact figures with your bank, provider or a qualified adviser.</p>`,
+
+  'currency-converter': `
+      <h2>Currency converter with live exchange rates</h2>
+      <p>Pick two currencies and an amount to convert instantly — dollars, euros, pounds, rupees, dirhams, riyals and most other world currencies. Press ⇄ to swap. Rates come from ExchangeRate-API and are refreshed daily, so this <strong>currency converter calculator</strong> is ideal for travel budgets, online shopping and invoices.</p>
+      <h2>Popular conversions</h2>
+      <ul>
+        <li><strong>currency converter euro to usd</strong> and a <strong>currency converter to usd</strong> from almost any currency.</li>
+        <li><strong>currency converter pounds to dollars</strong> (GBP → USD).</li>
+        <li><strong>currency converter cad to usd</strong> — a <strong>currency converter canadian to us</strong> dollars check.</li>
+        <li><strong>currency converter for pesos to dollars</strong> — a <strong>currency converter for mexico</strong> trips.</li>
+        <li>Travel: a <strong>currency converter for thailand</strong> (THB), a <strong>currency converter for italy</strong> (EUR) and a <strong>currency converter for iceland</strong> (ISK).</li>
+      </ul>
+      <h2>Good to know</h2>
+      <ul>
+        <li>These are mid-market rates. Banks, card companies and exchange counters add a margin, so you'll usually get a little less.</li>
+        <li>Historical rates aren't available here; for a <strong>currency converter for past dates</strong> (or a <strong>currency converter for specific date</strong>), use your bank or a historical rates service like the <strong>currency converter foreign exchange rates oanda</strong> page.</li>
+        <li>Looking for a <strong>currency converter for time</strong>? You probably want the <a href="/time-zone-converter">Time Zone Converter</a>.</li>
+      </ul>
+      <p>Bookmark it on your phone and it works just like a <strong>currency converter app</strong> — a <strong>currency converter for android</strong> and iPhone with nothing to install, giving the same rates you'd see in a <strong>currency converter google</strong> search. (The <strong>currency converter mtg</strong> search is about Magic cards — not this.) A simple <strong>currency converter</strong>.</p>`,
+
+  'fuel-cost-calculator': `
+      <h2>Fuel cost calculator for road trips</h2>
+      <p>Enter the trip distance, your car's fuel efficiency and the fuel price to see how much fuel you'll use and what it will cost. Tick <strong>round trip</strong> to double it, and <strong>split between</strong> friends to see each person's share. Units work both ways: <strong>km and litres</strong> (km per litre or litres per 100 km) or <strong>miles and gallons</strong>. It's a <strong>fuel cost calculator road trip</strong> planner — a <strong>fuel cost calculator for road trip</strong> budgets and any <strong>fuel cost calculator trip</strong>.</p>
+      <h2>Fuel cost calculator formula</h2>
+      <p>The <strong>fuel cost calculator formula</strong>: cost = distance ÷ efficiency × price. Example: 450 km in a car doing 14 km/l with fuel at 270 per litre → 32.1 litres → about <strong>8,680</strong>. In US units: 300 miles at 30 mpg and $3.50/gal → 10 gallons → <strong>$35</strong>.</p>
+      <h2>Tips for an accurate estimate</h2>
+      <ul>
+        <li>Get the distance from Google Maps — a <strong>fuel cost calculator google maps</strong> combination — and enter it here.</li>
+        <li>Use your real consumption, not the brochure figure: a <strong>fuel cost calculator based on car</strong> (or <strong>fuel cost calculator by car</strong>) estimate is only as good as the efficiency you enter. Highway driving is usually more efficient than city driving.</li>
+        <li><strong>fuel cost calculator for diesel</strong> — enter the diesel price; a <strong>fuel cost calculator for semi trucks</strong> is often around 6–7 mpg.</li>
+        <li>A <strong>fuel cost calculator comparison</strong>: run it twice with two cars' efficiencies to see which is cheaper.</li>
+      </ul>
+      <p>It's a <strong>fuel cost calculator for car</strong> (a <strong>fuel cost calculator for my car</strong>), a <strong>fuel cost calculator for bike</strong> trips and a <strong>fuel cost calculator for journey</strong> planning, from a <strong>fuel cost calculator uk</strong> commute to a <strong>fuel cost calculator for trip india</strong> holiday — a <strong>fuel cost calculator km</strong> or miles. Use it as a <strong>fuel cost calculator for trip</strong> costs — the simple <strong>fuel cost calculator</strong>.</p>`,
+
+  'calorie-calculator': `
+      <h2>Calorie calculator for weight loss, maintenance and gain</h2>
+      <p>Enter your age, sex, height, weight and <strong>activity level</strong>, then choose a goal. The calculator estimates your daily calories using the <strong>Mifflin-St Jeor</strong> equation (the most accurate standard formula for most adults) multiplied by your activity level, then adjusts for your goal.</p>
+      <h2>Calorie calculator to lose weight</h2>
+      <p>As a <strong>calorie calculator for weight loss</strong> (a <strong>calorie calculator to lose weight</strong>), it subtracts about 500 calories a day from maintenance — roughly 0.5 kg (1 lb) a week. Larger cuts are hard to sustain and can cost muscle. A <strong>calorie calculator for women</strong> gives lower numbers than for men of the same size because of body composition.</p>
+      <h2>Calorie calculator to gain weight</h2>
+      <p>As a <strong>calorie calculator to gain weight</strong> (a <strong>calorie calculator for weight gain</strong>) or <strong>calorie calculator for muscle gain</strong>, add about 250–500 calories a day and pair it with strength training and enough protein (around 1.6 g per kg of body weight).</p>
+      <h2>Food, meals and recipes</h2>
+      <p>This tool tells you how many calories you need. A <strong>calorie calculator food</strong> lookup (a <strong>calorie calculator for food</strong>, <strong>calorie calculator for meal</strong> or <strong>calorie calculator for recipes</strong>) tells you what you eat — read nutrition labels or use a food database, then compare with your target. One food calorie (kcal) = 4,184 joules (the familiar “1 calorie <strong>= 4.18400 joules</strong>” refers to the small calorie).</p>
+      <p>Not designed as a <strong>calorie calculator for kids</strong> — children's needs depend on growth, so ask a paediatrician — or as a <strong>calorie calculator for dogs</strong> or <strong>calorie calculator for cats</strong> (ask your vet). It gives the same results as the <strong>calorie calculator.net</strong> formula, and on your phone it works like a <strong>calorie calculator app</strong>. A simple <strong>calorie calculator</strong>.</p>
+      <p class="small muted">For general information only — not medical advice. Talk to a doctor or registered dietitian about your personal needs.</p>`,
+
+  'bmr-calculator': `
+      <h2>BMR calculator — your basal metabolic rate</h2>
+      <p>Your BMR is the number of calories your body burns at complete rest just to stay alive — breathing, circulation, temperature. This <strong>bmr calculator</strong> uses the <strong>Mifflin-St Jeor</strong> equation, and if you enter your body fat percentage it also uses <strong>Katch-McArdle</strong>, which is more accurate for lean or muscular people — a <strong>bmr calculator with body fat</strong> (or <strong>bmr calculator with body fat percentage</strong>) option.</p>
+      <h2>BMR calculator formula</h2>
+      <p>The <strong>bmr calculator formula</strong> (Mifflin-St Jeor): men = 10 × weight(kg) + 6.25 × height(cm) − 5 × age + 5; women use −161 instead of +5. Example: a 30-year-old man, 80 kg, 180 cm → <strong>1,780</strong> kcal a day. As a <strong>bmr calculator for men</strong> (or <strong>bmr calculator for men with body fat</strong>) and a <strong>bmr calculator for women</strong> (a <strong>bmr calculator for women free</strong> of sign-ups), the formulas differ only by that constant.</p>
+      <h2>Using BMR to lose weight</h2>
+      <p>BMR isn't your daily calorie need — multiply it by your activity level, or use the <a href="/calorie-calculator">Calorie Calculator</a>. As a <strong>bmr calculator to lose weight</strong> (a <strong>bmr calculator for weight loss</strong>, or <strong>bmr calculator for women to lose weight</strong>), aim to eat a little below your total daily needs but not below your BMR for long periods.</p>
+      <p>Teens are still growing, so a <strong>bmr calculator for teens</strong> (or <strong>bmr calculator for 13 year old</strong>) gives only a rough figure, and it isn't intended as a <strong>bmr calculator for kids</strong>. These are the same equations the <strong>bmr calculator mayo clinic</strong> and other health sites reference.</p>
+      <p class="small muted">For general information only — not medical advice. Talk to a doctor or registered dietitian about your personal needs.</p>`,
+
+  'body-fat-calculator': `
+      <h2>Body fat calculator with measurements</h2>
+      <p>This <strong>body fat calculator with measurements</strong> uses the <strong>U.S. Navy method</strong>: you need only a tape measure. Enter your height, neck and waist (at the navel) — plus hips for women — in cm or inches. It's a <strong>body fat calculator based on measurements</strong>, so no machine or calipers are needed.</p>
+      <h2>Navy, Army and Air Force</h2>
+      <p>The <strong>body fat calculator navy</strong> formula is the tape method used for military fitness checks. The <strong>body fat calculator army</strong> standard (a <strong>body fat calculator for army</strong>, or <strong>body fat calculator for men army</strong>) uses a similar tape approach, and a <strong>body fat calculator for air force</strong> assessment is similar too — always follow your service's current regulations.</p>
+      <h2>Healthy ranges</h2>
+      <ul>
+        <li><strong>body fat calculator for men</strong>: about 8–19% is healthy for adults; athletes are often 6–13%.</li>
+        <li><strong>body fat calculator for women</strong>: about 21–32% is healthy; athletes are often 14–20%.</li>
+      </ul>
+      <h2>How accurate is it?</h2>
+      <p>Tape methods are usually within 3–4% of lab results if you measure carefully (same spot, tape snug but not tight, relaxed stomach). A <strong>body fat calculator caliper</strong> (or <strong>body fat calculator for calipers</strong>) skinfold test or a <strong>body fat calculator machine</strong> (bioimpedance scale, DEXA scan) can be more precise — if you're searching for a <strong>body fat calculator near me</strong>, gyms and clinics offer those. The formula isn't designed as a <strong>body fat calculator for kids</strong> or <strong>body fat calculator for teens</strong>, and a <strong>body fat calculator for athletes</strong> with large necks may read slightly high.</p>
+      <p>The <strong>body fat calculator formula</strong> uses the logarithm of waist minus neck (plus hips for women) against height. A simple <strong>body fat calculator</strong>.</p>
+      <p class="small muted">For general information only — not medical advice. Talk to a doctor or registered dietitian about your personal needs.</p>`,
+
+  'ideal-weight-calculator': `
+      <h2>Ideal weight calculator — four formulas</h2>
+      <p>Enter your height and sex to see your ideal weight by the four classic formulas — <strong>Devine</strong>, <strong>Robinson</strong>, <strong>Miller</strong> and <strong>Hamwi</strong> — plus the healthy weight range for a BMI of 18.5–24.9. Results show as an <strong>ideal weight calculator in kg</strong> and an <strong>ideal weight calculator in lbs</strong>.</p>
+      <h2>Ideal weight calculator formula</h2>
+      <p>The best-known <strong>ideal weight calculator formula</strong> (Devine) is 50 kg + 2.3 kg per inch over 5 feet for men, and 45.5 kg + 2.3 kg per inch for women. A 5'10" man → <strong>73 kg</strong> (161 lb). The formulas disagree by a few kilograms, which is why the BMI range is the most useful guide.</p>
+      <h2>Men and women</h2>
+      <p>As an <strong>ideal weight calculator male</strong> (an <strong>ideal weight calculator for men</strong>) and an <strong>ideal weight calculator female</strong> (an <strong>ideal weight calculator for women</strong>), each formula uses a different base weight. Height formulas don't include age; an <strong>ideal weight calculator age</strong> adjustment isn't standard, though older adults are often advised that a slightly higher BMI is fine.</p>
+      <h2>Asian and South Asian adults</h2>
+      <p>For an <strong>ideal weight calculator for asian</strong> adults — including an <strong>ideal weight calculator for indian male</strong> or <strong>ideal weight calculator for indian female</strong> — the WHO suggests health risks start at a lower BMI (around 23), so aim for the lower half of the range.</p>
+      <h2>Limits</h2>
+      <p>These formulas ignore muscle and <strong>ideal weight calculator frame size</strong> — an <strong>ideal weight calculator for athletes</strong> will read low because muscle weighs more than fat. It isn't an <strong>ideal weight calculator for kids</strong> or an <strong>ideal weight calculator for baby</strong> (children use growth charts), nor an <strong>ideal weight calculator for dogs</strong> (an <strong>ideal weight calculator dog</strong> owners need is a vet's body-condition score). People on Reddit (<strong>ideal weight calculator reddit</strong>) often prefer the BMI range for that reason. A simple <strong>ideal weight calculator</strong>.</p>
+      <p class="small muted">For general information only — not medical advice. Talk to a doctor or registered dietitian about your personal needs.</p>`,
+
+  'pregnancy-calculator': `
+      <h2>Pregnancy due date calculator</h2>
+      <p>Calculate from the <strong>first day of your last period</strong> (LMP) or from your <strong>conception date</strong>, and adjust for your average cycle length. You'll see your estimated due date, how many weeks and days pregnant you are, your trimester and key milestones. It's a <strong>pregnancy due date calculator free</strong> of sign-ups.</p>
+      <h2>Pregnancy due date calculator formula</h2>
+      <p>The standard <strong>pregnancy due date calculator formula</strong> (Naegele's rule) is LMP + 280 days (40 weeks), adjusted if your cycle is longer or shorter than 28 days. A <strong>pregnancy due date calculator lmp</strong> result is what most clinics use first.</p>
+      <h2>From conception or ovulation</h2>
+      <p>A <strong>pregnancy due date calculator based on conception</strong> (or <strong>pregnancy due date calculator from conception</strong>) adds 266 days to the conception date — useful as a <strong>pregnancy due date calculator based on ovulation</strong> if you tracked ovulation.</p>
+      <h2>IVF and irregular cycles</h2>
+      <ul>
+        <li>As a <strong>pregnancy due date calculator ivf</strong> (a <strong>pregnancy due date calculator for ivf</strong>, or <strong>baby due date calculator for ivf</strong>): use the conception option with your transfer date plus the embryo's age (e.g. a 5-day embryo transferred on 1 March → conception 24 February).</li>
+        <li>As a <strong>pregnancy due date calculator for irregular periods</strong>, set your typical cycle length — but an early ultrasound gives the most reliable date.</li>
+        <li>A <strong>pregnancy due date calculator by ultrasound</strong> date from your scan always takes priority over this estimate.</li>
+      </ul>
+      <p>Only about 4% of babies arrive exactly on the due date; most come within two weeks either side. A <strong>pregnancy due date calculator for twins</strong> uses the same date, though twins often arrive around 36–37 weeks. Track progress <strong>pregnancy due date calculator week by week</strong> (a <strong>pregnancy due date calculator by week</strong>) on this page — a simple <strong>pregnancy due date calculator</strong>.</p>
+      <p class="small muted">For general information only — not medical advice. Talk to a doctor or registered dietitian about your personal needs.</p>`,
+
+  'ovulation-calculator': `
+      <h2>Ovulation calculator — your fertile window</h2>
+      <p>Enter the first day of your last period and your average cycle length. The <strong>ovulation calculator</strong> estimates your ovulation day, your <strong>fertile window</strong> (from 5 days before ovulation to the day after), your next period and the earliest day to take a pregnancy test — for the next six cycles. It's an <strong>ovulation calculator free</strong> of sign-ups.</p>
+      <h2>How it's calculated</h2>
+      <p>Ovulation usually happens about 14 days <em>before</em> your next period. In a 28-day cycle that's around day 14 — an <strong>ovulation calculator for 30 days cycle</strong> puts it near day 16. Sperm can survive up to five days, which is why the fertile window starts before ovulation.</p>
+      <h2>Trying to get pregnant</h2>
+      <p>As an <strong>ovulation calculator for pregnancy</strong>, focus on the two to three days before ovulation. Combine it with ovulation test strips or tracking basal body temperature for more certainty. Once pregnant, use the <a href="/pregnancy-calculator">Pregnancy Due Date Calculator</a> for an <strong>ovulation calculator due date</strong> (or <strong>ovulation calculator for due date</strong>) estimate.</p>
+      <h2>Irregular periods and PCOS</h2>
+      <p>An <strong>ovulation calculator for irregular periods</strong> (or <strong>ovulation calculator for irregular periods free</strong> tool) is less reliable because ovulation varies cycle to cycle; an <strong>ovulation calculator for pcos</strong> is even less predictable. Use your average cycle as a starting point and confirm with tests or your doctor.</p>
+      <h2>Boy or girl and twins</h2>
+      <p>Timing-based methods for choosing a baby's sex — an <strong>ovulation calculator boy or girl</strong>, <strong>ovulation calculator boy</strong> (or <strong>ovulation calculator for boy</strong>), <strong>ovulation calculator girl</strong> (an <strong>ovulation calculator for girl</strong>) — are popular but not scientifically proven, and no calendar can make an <strong>ovulation calculator for twins</strong> or <strong>ovulation calculator for boy twins</strong> happen. The results match the <strong>ovulation calculator babycenter</strong> or <strong>ovulation calculator first response</strong> pages, and it works like an <strong>ovulation calculator app</strong> on your phone.</p>
+      <p class="small muted">For general information only — not medical advice. Talk to a doctor or registered dietitian about your personal needs.</p>`,
+
+  'water-intake-calculator': `
+      <h2>Water intake calculator by weight</h2>
+      <p>Enter your body weight, how many minutes you exercise per day, and whether you live in a hot or humid climate. The <strong>water intake calculator by weight</strong> starts from about 35 ml per kg of body weight and adds water for exercise and heat, giving a daily target in litres or ounces — a <strong>water intake calculator kg litre</strong> or lb/oz result.</p>
+      <h2>Water intake calculator formula</h2>
+      <p>The <strong>water intake calculator formula</strong>: weight (kg) × 35 ml, plus extra for activity and heat. Example: 70 kg × 35 ml = <strong>2.45 litres</strong> a day before exercise. Food provides about 20% of most people's water, and tea, coffee and milk count too.</p>
+      <h2>Men, women and age</h2>
+      <p>A <strong>water intake calculator for men</strong> usually gives more than a <strong>water intake calculator for women</strong> because of body size. Older adults feel less thirsty, so a <strong>water intake calculator by age</strong> (or <strong>water intake calculator by age and weight</strong>) reminder to drink regularly matters more with age. Height matters little once weight is known, so a <strong>water intake calculator by weight and height</strong> gives the same answer.</p>
+      <h2>Special situations</h2>
+      <ul>
+        <li><strong>water intake calculator for athletes</strong> — add roughly 0.4–0.8 litres per hour of training, more in heat.</li>
+        <li><strong>water intake calculator with creatine</strong> (a <strong>water intake calculator for creatine</strong>) — creatine draws water into muscles, so many people add about half a litre a day.</li>
+        <li><strong>water intake calculator for weight loss</strong> (a <strong>water intake calculator for weight loss female</strong>) — a glass before meals can help you feel full.</li>
+        <li><strong>water intake calculator pregnancy</strong> (or <strong>water intake calculator for pregnancy</strong>) — needs rise to around 2.3–3 litres; ask your midwife.</li>
+        <li>Not a <strong>water intake calculator for kids</strong> or a <strong>water intake calculator for dogs</strong> (<strong>water intake calculator dog</strong>) — ask a doctor or vet.</li>
+      </ul>
+      <p>A simple <strong>water intake calculator</strong>.</p>
+      <p class="small muted">For general information only — not medical advice. Talk to a doctor or registered dietitian about your personal needs.</p>`,
+
+  'sleep-calculator': `
+      <h2>Sleep calculator — wake up refreshed</h2>
+      <p>Sleep runs in cycles of about 90 minutes. Waking at the end of a cycle feels much easier than waking in the middle of deep sleep. Choose <strong>Wake up at…</strong> to find good bedtimes, <strong>Go to bed at…</strong> to find good wake-up times, or <strong>Sleep now</strong>. Adjust the <strong>time to fall asleep</strong> (about 15 minutes for most people). It's a <strong>sleep calculator cycle</strong> planner and a <strong>sleep calculator for rem cycle</strong> timing in one.</p>
+      <h2>How much sleep do I need?</h2>
+      <ul>
+        <li>Adults: 7–9 hours (5–6 cycles) — a <strong>sleep calculator hours</strong> rule of thumb for a <strong>sleep calculator for women</strong> and men alike.</li>
+        <li>Teens: 8–10 hours — a <strong>sleep calculator for teens</strong> should aim for 6 cycles.</li>
+        <li>Children 6–12: 9–12 hours; a <strong>sleep calculator for kids</strong> works best with a fixed bedtime.</li>
+        <li>A <strong>sleep calculator for toddlers</strong> (11–14 hours including naps) or <strong>sleep calculator for babies</strong> (12–16 hours) is a rough guide only — little ones sleep in shorter cycles.</li>
+      </ul>
+      <p>These follow the American Academy of Sleep Medicine's <strong>sleep calculator by age</strong> recommendations; a <strong>sleep calculator by age and gender</strong> (or <strong>sleep calculator for women by age</strong>) differs little, as needs are similar for men and women.</p>
+      <h2>Naps and travel</h2>
+      <ul>
+        <li><strong>sleep calculator for naps</strong> (or <strong>sleep calculator nap</strong>): 20 minutes for a quick boost, or a full 90-minute cycle — avoid 45–60 minutes, which ends in deep sleep.</li>
+        <li><strong>sleep calculator for jet lag</strong> (a <strong>sleep calculator for travel</strong>): shift your bedtime by an hour a day before you fly, and get morning light at your destination.</li>
+      </ul>
+      <p>Bookmark this <strong>sleep calculator time</strong> planner and it works like a <strong>sleep calculator app</strong> — a simple <strong>sleep calculator</strong>.</p>`,
+
+  'scientific-calculator': `
+      <h2>Free scientific calculator online</h2>
+      <p>This <strong>scientific calculator online</strong> handles everything from basic arithmetic to trigonometry and logarithms: <strong>sin</strong>, <strong>cos</strong>, <strong>tan</strong> and their inverses, <strong>log</strong> and <strong>ln</strong>, square roots, powers (x², xʸ), π, e, percentages, scientific notation (EXP), the previous answer (Ans), memory (MC, MR) and a history of your calculations. Switch between degrees (DEG) and radians, and type with your keyboard or click the buttons.</p>
+      <h2>For school and college</h2>
+      <ul>
+        <li><strong>scientific calculator for high school</strong> and <strong>scientific calculator for middle school</strong> maths — fractions, powers and percentages; even a <strong>scientific calculator for 7th grade</strong> homework.</li>
+        <li><strong>scientific calculator for geometry</strong> — trig functions in degrees for angles and triangles.</li>
+        <li><strong>scientific calculator for chemistry</strong> — logs for pH and EXP for scientific notation (6.022 EXP 23).</li>
+        <li><strong>scientific calculator for statistics</strong> — for mean, median and standard deviation use the <a href="/average-calculator">Average Calculator</a>.</li>
+        <li><strong>scientific calculator for calculus</strong> and a <strong>scientific calculator for college</strong> course — handy for evaluating expressions; graphing tools like the <strong>scientific calculator desmos</strong> offers are better for plotting functions.</li>
+      </ul>
+      <h2>Buying a calculator for exams?</h2>
+      <p>Most exams require a physical calculator. Popular models are the <strong>scientific calculator casio</strong> fx-991 series and the <strong>scientific calculator ti-30xs</strong>. If you're checking <strong>scientific calculator price</strong> or looking for a <strong>scientific calculator for sale</strong> — at a <strong>scientific calculator walmart</strong> store, a stationery shop in Lahore (<strong>scientific calculator lahore</strong>) or searching <strong>scientific calculator near me</strong> or <strong>scientific calculator nearby</strong> — this page is perfect for practice in the meantime. A free <strong>scientific calculator for school</strong> — a simple <strong>scientific calculator</strong>.</p>`,
+
+  'fraction-calculator': `
+      <h2>Fraction calculator with whole numbers and mixed numbers</h2>
+      <p>Add, subtract, multiply and divide fractions — including <strong>mixed numbers</strong> such as 2 ¾ — by entering the whole number, numerator and denominator. The answer is shown <strong>simplified</strong>, as a mixed number, as a decimal and as a percentage. It's a <strong>fraction calculator with whole numbers</strong> and a <strong>fraction calculator mixed numbers</strong> tool in one.</p>
+      <h2>How fraction maths works</h2>
+      <ul>
+        <li><strong>Add / subtract</strong> — find a common denominator: 1/3 + 1/4 = 4/12 + 3/12 = <strong>7/12</strong>.</li>
+        <li><strong>Multiply</strong> — multiply across: 2/3 × 3/5 = 6/15 = <strong>2/5</strong>.</li>
+        <li><strong>Divide</strong> (<strong>fraction calculator division</strong>) — flip the second fraction and multiply: 3/4 ÷ 1/2 = 3/4 × 2 = <strong>1 ½</strong>.</li>
+        <li><strong>Simplify</strong> (<strong>fraction calculator simplify</strong>) — divide top and bottom by their greatest common divisor.</li>
+      </ul>
+      <p>That's the whole <strong>fraction calculator formula</strong>. Negative fractions work too — a <strong>fraction calculator with negatives</strong>.</p>
+      <h2>Measurements, construction and woodworking</h2>
+      <p>As a <strong>fraction calculator for inches</strong> and a <strong>fraction calculator for measurements</strong> — a <strong>fraction calculator for construction</strong> and <strong>fraction calculator for woodworking</strong> — it adds tape-measure values like 5 ⅜" + 2 ¾" = <strong>8 ⅛"</strong>.</p>
+      <h2>For students</h2>
+      <p>A friendly <strong>fraction calculator for kids</strong> (a <strong>fraction calculator for grade 4</strong> and up): check homework and see the decimal and percentage at the same time. For a <strong>fraction calculator for 3 fractions</strong>, combine the first two, then the result with the third. Exponents aren't supported (a <strong>fraction calculator with exponents</strong> can raise each part separately). And <strong>can you do fractions on a calculator</strong>? Yes — this <strong>fraction calculator online</strong> does, with no <strong>fraction calculator app</strong> needed, matching what a <strong>fraction calculator google</strong> search gives. A simple <strong>fraction calculator</strong>.</p>`,
+
+  'average-calculator': `
+      <h2>Average calculator — mean, median, mode and more</h2>
+      <p>Paste or type your numbers (separated by commas, spaces or new lines) to get the <strong>average (mean)</strong>, <strong>median</strong>, <strong>mode</strong>, <strong>range</strong>, <strong>sum</strong>, count, minimum and maximum, plus the <strong>standard deviation</strong> (population and sample), variance and geometric mean.</p>
+      <h2>Average calculator formula</h2>
+      <p>The <strong>average calculator formula</strong>: mean = sum ÷ count. For 70, 85, 90 and 95: 340 ÷ 4 = <strong>85</strong>. The median is the middle value when sorted (87.5 here), and the mode is the most frequent value.</p>
+      <h2>Grades and GPA</h2>
+      <p>As an <strong>average calculator for grades</strong> (an <strong>average calculator grade</strong>) and an <strong>average calculator for percentages</strong> (an <strong>average calculator percentage</strong> check), enter your marks to see your mean. If assignments carry different weights, use the <a href="/grade-calculator">Grade Calculator</a> — an <strong>average calculator with weight</strong>; for an <strong>average calculator gpa</strong>, use the <a href="/gpa-calculator">GPA Calculator</a>.</p>
+      <h2>Stocks and shares</h2>
+      <p>For an <strong>average calculator for stocks</strong> (an <strong>average calculator stock</strong>) or <strong>average calculator for shares</strong> — your average buy price — you need a weighted average: total cost ÷ total shares. 10 shares at $50 plus 30 at $40 → $1,700 ÷ 40 = <strong>$42.50</strong>, not the simple average of $45.</p>
+      <h2>Other averages</h2>
+      <ul>
+        <li><strong>average calculator for car</strong> and <strong>average calculator for bike</strong> mileage (an <strong>average calculator for car in india</strong> favourite): km driven ÷ litres used.</li>
+        <li><strong>average calculator for time</strong> — convert minutes and seconds to decimals first.</li>
+        <li><strong>average calculator baseball</strong> — batting average = hits ÷ at-bats.</li>
+      </ul>
+      <p>In a spreadsheet (an <strong>average calculator excel</strong>), the <strong>average calculator formula in excel</strong> is <code>=AVERAGE(A1:A10)</code>. Speed or distance averages for a route (an <strong>average calculator map</strong>)? Divide total distance by total time. A simple <strong>average calculator</strong>.</p>`,
+
+  'unit-converter': `
+      <h2>Unit converter — length, weight, temperature and more</h2>
+      <p>Convert between metric and imperial units in ten categories: <strong>length</strong>, <strong>weight</strong>, <strong>temperature</strong>, <strong>area</strong>, <strong>volume</strong>, <strong>speed</strong>, <strong>time</strong>, <strong>digital storage</strong>, <strong>pressure</strong> and <strong>energy</strong>. Type a value, choose the units, and press ⇄ to swap. It's a <strong>unit converter calculator</strong> that updates as you type.</p>
+      <h2>Popular conversions</h2>
+      <ul>
+        <li><strong>unit converter length</strong> — e.g. the <strong>unit converter mm to inches</strong> case: 25.4 mm = 1 inch; also cm, m, km, ft, yd and miles.</li>
+        <li><strong>unit converter weight</strong> — kg ↔ lb (1 kg = 2.205 lb), grams, ounces, stones, tola and maund.</li>
+        <li><strong>unit converter volume</strong> — litres, millilitres, US gallons, cups and fluid ounces.</li>
+        <li><strong>unit converter for area</strong> — a <strong>unit converter for land</strong> measurement: m², ft², square yards, acres, hectares, marla and kanal.</li>
+        <li><strong>unit converter for pressure</strong> — bar, psi, kPa, atm (tyre pressures).</li>
+        <li><strong>unit converter force</strong> (a <strong>unit converter force newton</strong> conversion) — use energy and pressure units for engineering basics.</li>
+        <li><strong>unit converter for electricity</strong> bills — energy in kWh, kJ and kcal.</li>
+      </ul>
+      <h2>Unit converter formula</h2>
+      <p>Most conversions are a single multiplication — the <strong>unit converter formula</strong> is value × factor (miles × 1.609 = km). Temperature is the exception: °F = °C × 9/5 + 32. The full <strong>unit converter list</strong> of units is in each category's menu.</p>
+      <p>It works in the browser on any device — a <strong>unit converter for windows</strong>, a <strong>unit converter for pc</strong> and a <strong>unit converter for iphone</strong> with no <strong>unit converter app</strong> or <strong>unit converter download</strong>. For <strong>unit converter money</strong> conversions, use the <a href="/currency-converter">Currency Converter</a>. A simple <strong>unit converter</strong>.</p>`,
+
+  'random-number-generator': `
+      <h2>Random number generator</h2>
+      <p>Set a <strong>minimum</strong> and <strong>maximum</strong>, choose <strong>how many</strong> numbers you want and any decimal places, and generate. Tick <strong>No duplicates</strong> for unique numbers — a <strong>random number generator no repeats</strong> — and <strong>Sort results</strong> to list them in order. Numbers come from your browser's cryptographically secure generator, so they're genuinely unpredictable.</p>
+      <h2>Quick ranges</h2>
+      <p>Popular settings: <strong>random number generator 1-10</strong>, <strong>random number generator 1-100</strong>, <strong>random number generator 1-6</strong> (a dice roll — or try the <a href="/dice-roller">Dice Roller</a>), <strong>random number generator 1-3</strong>, <strong>random number generator 1-4</strong>, <strong>random number generator 1-5</strong> and <strong>random number generator 1-12</strong>. Just type the range.</p>
+      <h2>Lottery, raffles and games</h2>
+      <ul>
+        <li><strong>random number generator for lottery</strong> picks — a <strong>random number generator for powerball</strong> (5 unique from 1–69, plus 1 from 1–26) or <strong>random number generator for mega millions</strong> (5 from 1–70, plus 1 from 1–24). Every combination has exactly the same odds.</li>
+        <li><strong>random number generator for raffle</strong> draws — number the tickets and draw winners with no duplicates.</li>
+        <li><strong>random number generator for football squares</strong> and <strong>random number generator for fantasy football</strong> draft order — generate 0–9 or 1–12 with no repeats.</li>
+        <li><strong>random number generator for names</strong> — number your list, or use the <a href="/spin-the-wheel">Spin the Wheel</a> picker (a <strong>random number generator wheel</strong> alternative).</li>
+      </ul>
+      <h2>In Excel</h2>
+      <p>For a <strong>random number generator for excel</strong>, the <strong>random number generator formula excel</strong> is <code>=RANDBETWEEN(1,100)</code> — but it recalculates every time the sheet changes. Generate a <strong>random number generator for multiple numbers</strong> list here and paste it. A simple <strong>random number generator</strong>.</p>`,
+
+  'roman-numeral-converter': `
+      <h2>Roman numeral converter — both ways</h2>
+      <p>Type a number from 1 to 3999 to get its Roman numerals, or type Roman numerals to get the number — a <strong>roman numeral converter to numbers</strong> and back, with a step-by-step breakdown (2026 = M + M + X + X + V + I = <strong>MMXXVI</strong>).</p>
+      <h2>Dates and birthdays</h2>
+      <p>As a <strong>roman numeral converter date</strong> tool (a <strong>roman numeral converter for dates</strong>), convert each part separately: the day, the month and the year. A <strong>roman numeral converter date of birth</strong> example — 14 August 1995 = <strong>XIV · VIII · MCMXCV</strong>. That's the format people use with a <strong>roman numeral converter birthday</strong> (or <strong>roman numerals converter for birthday</strong>) — and <strong>roman numerals converter 2020</strong> gives MMXX. A <strong>roman numeral calculator for dates</strong> works the same way.</p>
+      <h2>Tattoos</h2>
+      <p>A <strong>roman numeral converter tattoo</strong> (or <strong>roman numeral converter for tattoo</strong>) design must be exactly right — double-check the result and the separators (dots or spaces) before the appointment. The standard form never repeats a symbol more than three times: 4 is IV, not IIII (except on some clock faces).</p>
+      <h2>How Roman numerals work</h2>
+      <p>I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000. A smaller numeral before a larger one subtracts (IX = 9, XC = 90, CM = 900). The <strong>roman numeral converter to english</strong> (or <strong>roman numeral converter to hindu arabic</strong> numbers — <strong>roman numerals convert to arabic</strong> digits) simply adds and subtracts these values; <strong>roman numerals converter to letters</strong> works in reverse.</p>
+      <p>It's the same everywhere — UK (<strong>roman numeral converter uk</strong>) or Australia (<strong>roman numeral converter australia</strong>). Coding it yourself? A <strong>roman numeral converter python</strong> (a <strong>roman numeral converter in python</strong>) loop uses the same value table. A simple <strong>roman numeral converter</strong>.</p>`,
+
+  'lcm-gcd-calculator': `
+      <h2>LCM and GCD (HCF) calculator</h2>
+      <p>Enter two or more numbers, separated by commas or spaces, to get both the <strong>LCM</strong> (least common multiple) and the <strong>GCD</strong> — also called the HCF or GCF (greatest common factor). It's an <strong>lcm calculator</strong>, a <strong>gcd calculator</strong> and an <strong>hcf calculator</strong> in one — an <strong>lcm gcd calculator</strong> and <strong>lcm gcf calculator</strong> for any count of numbers.</p>
+      <h2>Worked examples</h2>
+      <ul>
+        <li><strong>what is the lcm of 24 and 36</strong>? 24 = 2³ × 3 and 36 = 2² × 3², so the LCM takes the highest powers: 2³ × 3² = <strong>72</strong>; the GCD takes the lowest: 2² × 3 = <strong>12</strong>.</li>
+        <li><strong>what is the lcm of 8 24 and 36</strong>? 2³ × 3² = <strong>72</strong>.</li>
+        <li>Shortcut for two numbers: LCM = a × b ÷ GCD → 24 × 36 ÷ 12 = 72.</li>
+      </ul>
+      <h2>Methods you'll see in class</h2>
+      <ul>
+        <li><strong>hcf calculator prime factorization</strong> (an <strong>hcf calculator with steps prime factorization</strong> approach) — break each number into primes, as above.</li>
+        <li><strong>hcf calculator by division method</strong> (an <strong>hcf calculator with steps division method</strong>) — the <strong>gcd calculator euclidean algorithm</strong>: divide, keep the remainder, repeat. 36 ÷ 24 = 1 r 12; 24 ÷ 12 = 2 r 0 → GCD 12.</li>
+        <li><strong>lcm calculator ladder method</strong> — divide all numbers by common primes in a ladder, then multiply the side and bottom numbers.</li>
+      </ul>
+      <p>Alongside the answers, the tool lists each number's prime factorization, so use it as an <strong>lcm calculator online</strong> (or <strong>gcd calculator online</strong>, <strong>hcf calculator online</strong>) to check your <strong>lcm calculator with steps</strong> or <strong>gcd calculator with steps</strong> homework. Programmers can write a <strong>gcd calculator python</strong> with <code>math.gcd</code>. A <strong>gcd calculator of two numbers</strong> or more — and a quick <strong>hcf calculator maths</strong> check.</p>`,
+
+  'quadratic-equation-solver': `
+      <h2>Quadratic equation solver with steps</h2>
+      <p>Enter the coefficients <strong>a</strong>, <strong>b</strong> and <strong>c</strong> of ax² + bx + c = 0 and get both roots, the discriminant and a <strong>step by step</strong> solution. It handles real and complex roots — a <strong>quadratic equation solver with steps</strong> and a <strong>quadratic equation solver calculator</strong> in one.</p>
+      <h2>Quadratic equation solver formula</h2>
+      <p>The <strong>quadratic equation solver formula</strong> is the quadratic formula: <code>x = (−b ± √(b² − 4ac)) ÷ 2a</code>. The discriminant b² − 4ac tells you what to expect: positive → two real roots; zero → one repeated root; negative → two complex roots. That's the method for <strong>quadratic equation solving for x</strong> (and <strong>quadratic formula solving for x</strong>) — the standard <strong>quadratic equation for solving</strong> any second-degree equation, and <strong>quadratic equation solving for roots</strong>.</p>
+      <h2>Example</h2>
+      <p>x² − 5x + 6 = 0 → a = 1, b = −5, c = 6 → discriminant = 25 − 24 = 1 → x = (5 ± 1) ÷ 2 → <strong>x = 3</strong> or <strong>x = 2</strong>.</p>
+      <h2>By factoring</h2>
+      <p>The same equation factors as (x − 2)(x − 3) = 0. Factoring is quicker when the roots are whole numbers; the formula always works. This <strong>quadratic equation solver by factoring</strong> check (a <strong>quadratic equation solver with steps by factoring</strong>) lets you confirm your factors give the same roots.</p>
+      <h2>On a TI-84, in Excel or Python</h2>
+      <p>On a TI-84 (<strong>quadratic equation solver ti 84</strong>, or a <strong>quadratic formula solver for ti 84</strong> program), use the PlySmlt2 app or a program. A <strong>quadratic equation solver in excel</strong> uses <code>=(-B1+SQRT(B1^2-4*A1*C1))/(2*A1)</code>; a <strong>quadratic equation solver in python</strong> uses <code>cmath.sqrt</code> to handle complex roots. This <strong>quadratic equation solver online</strong> is quicker for checking homework — a simple <strong>quadratic equation solver</strong>.</p>`,
 };

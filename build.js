@@ -154,7 +154,7 @@ for (const t of TOOLS) {
   const related = TOOLS.filter(x => x.cat === t.cat && x.slug !== t.slug && !x.of).slice(0, 8);
   const more = TOOLS.filter(x => x.popular && x.cat !== t.cat).slice(0, 6);
   const jsonld = [
-    { '@context': 'https://schema.org', '@type': 'WebApplication', name: t.name, url: abs(file), description: t.desc, applicationCategory: c.id === 'dev' ? 'DeveloperApplication' : 'UtilitiesApplication', operatingSystem: 'Any', browserRequirements: 'Requires JavaScript', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' } },
+    { '@context': 'https://schema.org', '@type': 'WebApplication', name: t.name, url: abs(file), description: t.desc, applicationCategory: c.id === 'dev' ? 'DeveloperApplication' : 'UtilitiesApplication', operatingSystem: 'Any', browserRequirements: 'Requires JavaScript', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, ...(owner.name ? { author: { '@type': 'Person', name: owner.name, url: abs('about.html'), sameAs: (owner.links || []).map(l => l[1]) } } : {}) },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: abs('index.html') }, { '@type': 'ListItem', position: 2, name: c.name, item: abs(c.slug + '.html') }, { '@type': 'ListItem', position: 3, name: t.name, item: abs(file) }] },
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: fq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
   ];
@@ -167,6 +167,7 @@ for (const t of TOOLS) {
     <div>
       <h1>${esc(t.name)}</h1>
       <p class="lead">${esc(t.desc)}</p>
+      ${owner.name ? `<p class="small muted" style="margin:6px 0 0">Built and maintained by <a href="${BASE}about">${esc(owner.name)}</a> · Free, no sign-up</p>` : ''}
     </div>
   </div>
   <section id="tool" class="tool-app" data-tool="${base.slug}" aria-label="${esc(t.name)} tool">

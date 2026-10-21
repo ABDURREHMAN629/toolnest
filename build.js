@@ -39,14 +39,18 @@ ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" hr
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${esc(abs(file))}">
-<meta property="og:image" content="${SITE}/assets/img/og.png">
+<meta property="og:image" content="${SITE}/assets/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">${config.googleVerification ? `
 <meta name="google-site-verification" content="${esc(config.googleVerification)}">` : ''}${config.bingVerification ? `
 <meta name="msvalidate.01" content="${esc(config.bingVerification)}">` : ''}
 <meta name="theme-color" content="#4f46e5">
-<link rel="icon" href="${BASE}assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="${BASE}favicon.ico" sizes="48x48">
+<link rel="icon" href="${BASE}assets/img/favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="${BASE}assets/img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="${BASE}apple-touch-icon.png">
+<link rel="manifest" href="${BASE}site.webmanifest">
 <link rel="stylesheet" href="${BASE}assets/css/style.css?v=${VERSION}">
 <script>window.BASE=${JSON.stringify(BASE)};try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>${ga}${ads}
 ${jsonld.map(j => `<script type="application/ld+json">${JSON.stringify(j)}</script>`).join('\n')}${extraHead}
@@ -59,7 +63,7 @@ function header() {
   const cats = CATEGORIES.map(c => `<a href="${BASE}${c.slug}"><span>${c.icon}</span>${esc(c.name)}</a>`).join('');
   return `<header class="site-header">
   <div class="container header-inner">
-    <a class="logo" href="${BASE}" aria-label="${esc(config.name)} home"><span class="logo-mark">◆</span>${esc(config.name)}</a>
+    <a class="logo" href="${BASE}" aria-label="${esc(config.name)} home"><img class="logo-mark" src="${BASE}assets/img/favicon.svg?v=2" alt="" width="30" height="30">${esc(config.name)}</a>
     <nav class="main-nav">
       <div class="dropdown">
         <button class="nav-btn" aria-haspopup="true" aria-expanded="false">All Tools <span aria-hidden="true">▾</span></button>
@@ -89,7 +93,7 @@ function footer(scripts = '') {
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="logo" href="${BASE}"><span class="logo-mark">◆</span>${esc(config.name)}</a>
+        <a class="logo" href="${BASE}"><img class="logo-mark" src="${BASE}assets/img/favicon.svg?v=2" alt="" width="30" height="30">${esc(config.name)}</a>
         <p>${esc(config.tagline)}. ${COUNT}+ free tools that run right in your browser — no sign-up, no uploads, no limits.</p>
       </div>
       <div class="footer-links"><a href="${BASE}about">About</a><a href="${BASE}contact">Contact</a><a href="${BASE}privacy-policy">Privacy Policy</a><a href="${BASE}terms">Terms of Use</a><a href="${BASE}sitemap.xml">Sitemap</a>${waLink ? `<a href="${waLink}" rel="noopener" target="_blank">💬 WhatsApp</a>` : ''}</div>

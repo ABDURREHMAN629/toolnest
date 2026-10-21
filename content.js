@@ -2742,4 +2742,280 @@ module.exports = {
       </ul>
       <p>Your query stays in your browser, so it's safe for production SQL — a simple <strong>sql formatter</strong>.</p>
       <p class="small muted">🔒 Everything runs in your browser — nothing you paste is uploaded.</p>`,
+
+  'internet-speed-test': `
+      <h2>Free internet speed test</h2>
+      <p>Press <strong>Start test</strong> to measure your <strong>download</strong> speed, <strong>upload</strong> speed, <strong>ping</strong> and <strong>jitter</strong> in about 20 seconds. The test runs against Cloudflare's global network, shows your internet provider and approximate location, and finishes with a plain-English verdict on what your connection can handle. It's an <strong>internet speed test free</strong> of apps and sign-ups. A full test uses about 50–200 MB of data.</p>
+      <h2>What speed do I need?</h2>
+      <ul>
+        <li><strong>internet speed test for streaming</strong> — about 5 Mbps for HD and 15–25 Mbps for 4K, per stream.</li>
+        <li><strong>internet speed test for streaming on twitch</strong> — upload matters: 1080p at 60 fps streams at about 6 Mbps, so aim for 8–10 Mbps upload.</li>
+        <li><strong>internet speed test for video call</strong> and an <strong>internet speed test for zoom meeting</strong> — 3–4 Mbps in both directions for HD video.</li>
+        <li><strong>internet speed test for gaming</strong> (and an <strong>internet speed test for fortnite</strong>) — 10–25 Mbps is plenty; ping under 50 ms and low jitter matter far more than raw speed.</li>
+      </ul>
+      <h2>Spectrum, Xfinity, Cox, Verizon, AT&amp;T and Starlink</h2>
+      <p>Every provider has its own test — the <strong>internet speed test spectrum</strong>, <strong>internet speed test xfinity</strong> (or <strong>internet speed test for xfinity</strong>), <strong>internet speed test cox</strong>, <strong>internet speed test verizon</strong> and <strong>internet speed test att</strong> pages — but those often measure to the provider's own servers. Testing against an independent network gives a more realistic picture to compare with the speed on your bill. As an <strong>internet speed test for starlink</strong>, run it at different times of day, as satellite speeds vary with load and weather.</p>
+      <h2>On a phone or PC</h2>
+      <p>It works in any browser, so it's an <strong>internet speed test for phone</strong> and an <strong>internet speed test for pc</strong> with no <strong>internet speed test app</strong> to install. On mobile data, remember the test uses data. For the most accurate result, pause downloads and streaming on other devices, and test over a cable as well as Wi-Fi to see if Wi-Fi is the bottleneck.</p>
+      <p>Like the <strong>internet speed test ookla</strong> and <strong>internet speed test google</strong> tools, it's quick and free — a simple <strong>internet speed test</strong>.</p>`,
+
+  'what-is-my-ip': `
+      <h2>What is my IP address?</h2>
+      <p>This page shows your <strong>public IP address</strong> straight away — the address websites see — with a copy button, plus your approximate <strong>location</strong>, <strong>internet provider</strong>, time zone and coordinates. It answers <strong>what is my ip</strong> and <strong>what is my ip address</strong> in one glance, for <strong>what is my ip for this device</strong> and network. Location is usually the city of your provider's equipment, not your home. We don't store your IP.</p>
+      <h2>IPv4 or IPv6</h2>
+      <p>If your connection uses IPv6, you'll see a longer address with colons. Looking for <strong>what is my ipv4</strong> (<strong>what is my ipv4 address</strong> or <strong>what is my ip address ipv4</strong>)? It's the four-number format like 203.0.113.42; if this page shows IPv6, your IPv4 may differ.</p>
+      <h2>Phone, computer and router</h2>
+      <ul>
+        <li><strong>what is my ip address on my phone</strong> — open this page on the phone. On Wi-Fi it shows your router's public IP; on mobile data, your carrier's.</li>
+        <li><strong>what is my ip address on my computer</strong> — every device on your Wi-Fi shares the same public IP. The <em>local</em> IP (like 192.168.1.5) is in <code>ipconfig</code> on Windows or System Settings → Network on a Mac.</li>
+        <li><strong>what is my ip for router</strong> settings — that's the “Default Gateway” in <code>ipconfig</code>, usually 192.168.0.1 or 192.168.1.1.</li>
+      </ul>
+      <h2>VPN check</h2>
+      <p>With a VPN on, this page should show the VPN server's address and city instead of yours — a quick <strong>what is my ip address vpn</strong> test that works for <strong>what is my ip address nordvpn</strong> or any provider. If you still see your real location, the VPN isn't working.</p>
+      <h2>Game servers: Minecraft, Terraria, Palworld</h2>
+      <p>To host a game for friends outside your home, they connect to your public IP and you forward the game's port on your router:</p>
+      <ul>
+        <li><strong>what is my ip for minecraft server</strong> (<strong>what is my ip for minecraft</strong>) — port 25565 (Java) or 19132 UDP (Bedrock).</li>
+        <li><strong>what is my ip for terraria server</strong> (<strong>what is my ip for terraria</strong>) — port 7777.</li>
+        <li><strong>what is my ip for palworld dedicated server</strong> (<strong>what is my ip for palworld</strong>) — port 8211 UDP.</li>
+      </ul>
+      <p>Friends on the same Wi-Fi should use your local IP instead. Your <strong>what is my ip location</strong> result also helps check which region a service thinks you're in — a simple <strong>what is my ip for internet</strong> check.</p>`,
+
+  'youtube-thumbnail-downloader': `
+      <h2>YouTube thumbnail downloader — HD and all sizes</h2>
+      <p>Paste a YouTube link — a normal video, a Short, a live stream, an embed or a youtu.be link — and you'll instantly see the thumbnail in every size: <strong>HD (1280×720)</strong>, <strong>SD (640×480)</strong>, High (480×360), Medium (320×180) and Small (120×90). Click to download any of them as a JPG. It's a <strong>youtube thumbnail downloader</strong> and <strong>youtube thumbnail grabber online</strong> — a <strong>youtube thumbnail downloader all image</strong> sizes view, free to <strong>download youtube thumbnail free online</strong>.</p>
+      <h2>Get YouTube thumbnail from URL or video ID</h2>
+      <p>To <strong>get youtube thumbnail from url</strong> or <strong>get youtube thumbnail from link</strong>, paste the address; to <strong>get youtube thumbnail from video id</strong>, paste the 11-character ID on its own. Behind the scenes, thumbnails live at <code>https://i.ytimg.com/vi/VIDEO_ID/maxresdefault.jpg</code>. It's a <strong>youtube thumbnail download from video link</strong> — or <strong>youtube thumbnail download for link</strong> — in one step.</p>
+      <h2>HD, full size and 4K</h2>
+      <p>To <strong>download youtube thumbnail in hd</strong> (<strong>download youtube video thumbnail in hd</strong>, or <strong>download youtube thumbnail full size</strong>), choose the 1280×720 version — the largest YouTube stores, so a <strong>youtube thumbnail download in 4k quality</strong> doesn't exist. HD only appears if the creator uploaded an HD thumbnail; otherwise SD is the <strong>download youtube thumbnail in high quality</strong> best option, and this <strong>youtube thumbnail grabber high quality</strong> hides sizes that don't exist.</p>
+      <h2>Shorts and live streams</h2>
+      <p><strong>download youtube thumbnail short</strong> videos and <strong>youtube shorts thumbnail download online</strong> the same way. For a <strong>youtube thumbnail download from live</strong> stream (<strong>download youtube thumbnail live</strong>, or a <strong>youtube thumbnail downloader livestream</strong>), paste the live link.</p>
+      <h2>On mobile and PC</h2>
+      <p><strong>how to download youtube thumbnail on mobile</strong>: open this page in your phone's browser, paste the link and tap Download — Android saves to Downloads (a <strong>youtube thumbnail download in gallery</strong>); on iPhone, long-press the image and choose Save to Photos. On a computer it's a <strong>youtube thumbnail download hd for pc</strong> with no <strong>youtube thumbnail downloader app</strong> or <strong>youtube thumbnail downloader extension chrome</strong> needed.</p>
+      <p><strong>can you download youtube thumbnail</strong> images freely? Yes for reference, but they belong to their creators — ask permission before reusing one. YouTube thumbnails don't include the play button, so a <strong>download youtube thumbnail with play button</strong> means adding it yourself.</p>`,
+
+  'meta-tag-generator': `
+      <h2>Meta tag generator for SEO and social sharing</h2>
+      <p>Fill in your page title, meta description, URL, share image, site name, X handle and author, choose the content type and search-engine setting, and copy ready-made HTML. You get the SEO tags (title, description, robots, canonical), <strong>Open Graph</strong> tags for Facebook, WhatsApp and LinkedIn, and <strong>Twitter Card</strong> tags — with a live Google search preview, a social share preview and character counters. It's a <strong>meta tag generator free</strong> to use — a <strong>meta tag generator online</strong> (<strong>meta tag generator tool</strong>) and <strong>free meta tag generator</strong> with no account. It's also a <strong>meta tags generator</strong> and <strong>meta tag generator html</strong> output in one.</p>
+      <h2>Meta tags for SEO</h2>
+      <p>The <strong>meta tags for seo</strong> that matter most are the title (50–60 characters) and the <strong>meta description for seo</strong> (120–160 characters) — they become your headline and snippet on Google. <strong>meta tags in seo</strong> don't directly raise rankings, but a clear title and description earn more clicks. Google ignores the keywords tag, so it's optional here.</p>
+      <p><strong>meta description for seo example</strong>: “Merge, compress and convert PDFs for free in your browser. No sign-up, no watermarks — your files never leave your device.” (122 characters.) As <strong>meta tags for seo examples</strong> show, lead with what the page does and why it's better.</p>
+      <h2>Open Graph generator</h2>
+      <p><strong>what are og tags</strong>? Open Graph tags control the title, description and image shown when your link is shared. As an <strong>open graph generator</strong> (an <strong>open graph generator online</strong>, <strong>open graph tag generator</strong>, <strong>open graph tags generator</strong>, <strong>og tags generator</strong>, <strong>og meta tags generator</strong> or <strong>og tag generator online</strong>), it writes <code>og:title</code>, <code>og:description</code>, <code>og:image</code>, <code>og:url</code>, <code>og:type</code>, <code>og:site_name</code> and <code>og:locale</code>. <strong>og tags example</strong>: <code>&lt;meta property="og:image" content="https://example.com/og.jpg"&gt;</code> — use a 1200×630 image.</p>
+      <h2>How to add meta tags for SEO</h2>
+      <p><strong>how to add meta tags for seo</strong> (and <strong>how to write meta tags for seo</strong>): paste the code inside the <code>&lt;head&gt;</code> of each page, with a unique title and description per page. That's the <strong>meta tag for seo in html</strong>.</p>
+      <ul>
+        <li><strong>meta tag generator for website</strong> (<strong>meta tags generator for website</strong>) builders — use your platform's SEO settings, or paste into a custom head-code box.</li>
+        <li><strong>meta tag generator for blogger</strong> (<strong>meta tags generator for blogger</strong>) — Theme → Edit HTML, paste inside <code>&lt;head&gt;</code>; also fill in “Search description” in Settings.</li>
+        <li>WordPress — an SEO plugin such as Yoast or Rank Math adds these tags for you.</li>
+      </ul>
+      <p>It doesn't read an existing page, so a <strong>meta tag generator from url</strong> means filling the fields yourself; it isn't a <strong>meta tag generator ai</strong> or <strong>meta tags generator for youtube</strong> (video tags are a different thing). A simple <strong>meta tag generator</strong> and <strong>meta tags for seo generator</strong>.</p>`,
+
+  'utm-builder': `
+      <h2>UTM link builder for Google Analytics</h2>
+      <p>Enter your website URL and the campaign details — <strong>source</strong>, <strong>medium</strong> and <strong>campaign name</strong>, plus optional term, content and ID — and copy a tagged link. One-click presets fill in Facebook, Instagram, WhatsApp, LinkedIn, Email, Google Ads and YouTube. Spaces become underscores, and an option converts everything to lowercase so “Facebook” and “facebook” don't split your reports. It's a <strong>utm link builder free</strong> to use — a <strong>utm builder</strong>, <strong>utm generator</strong>, <strong>utm url builder</strong>, <strong>utm tag builder</strong> and <strong>utm code builder</strong> in one, and a <strong>free utm link builder</strong> (<strong>utm builder free</strong>, <strong>utm generator free</strong>).</p>
+      <h2>UTM links explained</h2>
+      <p><strong>utm links explained</strong>: UTM parameters are labels added to a link so Google Analytics knows where a visitor came from. The <strong>utm link meaning</strong> of each part:</p>
+      <ul>
+        <li><code>utm_source</code> — who sent the traffic (facebook, newsletter, google).</li>
+        <li><code>utm_medium</code> — the type (social, email, cpc).</li>
+        <li><code>utm_campaign</code> — your campaign name (summer_sale).</li>
+        <li><code>utm_term</code>, <code>utm_content</code>, <code>utm_id</code> — keyword, ad variation and campaign ID.</li>
+      </ul>
+      <p><strong>utm examples</strong> — the <strong>utm code format</strong>: <code>https://example.com/landing-page?utm_source=facebook&amp;utm_medium=social&amp;utm_campaign=summer_sale</code>.</p>
+      <h2>How to build UTM links</h2>
+      <p><strong>how to build utm links</strong> (or <strong>create utm link</strong> tags): use one naming style and stick to it, keep everything lowercase, and never put UTMs on links within your own site — they restart the visit. <strong>is utm free</strong>? Yes — UTM tags cost nothing; this <strong>utm builder online</strong> (<strong>utm builder tool</strong>) just writes them.</p>
+      <h2>GA4, Google Ads, Meta and LinkedIn</h2>
+      <ul>
+        <li><strong>utm builder ga4</strong> (<strong>utm builder google analytics</strong>, <strong>campaign url builder ga4</strong>) — for <strong>utm tracking in ga4</strong>, see Reports → Acquisition → Traffic acquisition (session source / medium and campaign).</li>
+        <li><strong>utm builder for google ads</strong> — Google Ads auto-tagging already tracks clicks; use UTMs for other platforms.</li>
+        <li><strong>utm builder for meta ads</strong> and <strong>utm builder for facebook ads</strong> — use source facebook or instagram and medium paid_social.</li>
+        <li><strong>utm builder for linkedin</strong> posts and ads, and <strong>utm tracking instagram</strong> bio links.</li>
+      </ul>
+      <p>It works like the <strong>utm link builder google</strong> (<strong>utm builder google</strong>, <strong>utm url builder google</strong>, <strong>utm tag builder google</strong>) Campaign URL Builder — the <strong>campaign url builder</strong> and <strong>campaign url builder google analytics</strong> tool. <strong>what is utm builder</strong>? Exactly this.</p>
+      <h2>In a spreadsheet</h2>
+      <p>For a <strong>utm link builder spreadsheet</strong> (<strong>utm link builder excel</strong>, <strong>utm generator excel</strong>, <strong>utm generator google sheets</strong> or <strong>utm builder excel template</strong>), the <strong>utm builder formula</strong> is <code>=A2&amp;"?utm_source="&amp;B2&amp;"&amp;utm_medium="&amp;C2&amp;"&amp;utm_campaign="&amp;D2</code>. A simple <strong>utm link builder</strong>.</p>`,
+
+  'robots-txt-generator': `
+      <h2>Robots.txt generator</h2>
+      <p>Choose whether robots may crawl everything or nothing, list paths to block (one per line) and paths to always allow, add an optional crawl delay and your sitemap URL, and tick <strong>Block AI training crawlers</strong> to add rules for GPTBot, ClaudeBot, CCBot, Google-Extended and other AI bots. Copy the result or download it as a ready <strong>robots.txt file</strong>. It's a <strong>robots.txt generator free</strong> to use — a <strong>robots.txt generator tool</strong> and <strong>robots.txt file generator</strong>.</p>
+      <h2>What is a robots.txt file?</h2>
+      <p><strong>what is a robots.txt file</strong>? A plain text file at the root of your site that tells crawlers which pages they may visit — the <strong>robots.txt file meaning</strong> in one line. <strong>how robots.txt works</strong> — <strong>robots.txt explained</strong>: before crawling, a bot reads <code>yoursite.com/robots.txt</code> and follows the rules for its user-agent. The <strong>robots.txt file location</strong> must be the root; it won't work in a sub-folder.</p>
+      <h2>Robots.txt example</h2>
+      <p>A <strong>robots.txt example</strong> (<strong>robots.txt file example</strong>) in the standard <strong>robots.txt format</strong>:</p>
+      <pre class="out-box">User-agent: *
+Disallow: /admin/
+Allow: /admin/help/
+
+Sitemap: https://example.com/sitemap.xml</pre>
+      <p>Two <strong>robots.txt rules</strong> to know: <strong>robots.txt disallow all</strong> (or <strong>robots.txt to disallow all</strong>, <strong>robots.txt to block all crawlers</strong>) is <code>Disallow: /</code>, and an empty <code>Disallow:</code> allows everything. Google ignores Crawl-delay; Bing respects it.</p>
+      <h2>Robots.txt for AI crawlers</h2>
+      <p>As a <strong>robots.txt for ai</strong> (<strong>robots.txt for ai crawlers</strong>, <strong>robots.txt disallow ai</strong> or <strong>robots.txt ai bots</strong>) setup, the AI option adds a <code>Disallow: /</code> group for each AI crawler. Be aware it also blocks AI search bots such as OAI-SearchBot and PerplexityBot, so your pages may stop appearing in AI answers — remove those lines if you want that traffic.</p>
+      <h2>Blogger, WordPress and Cloudflare</h2>
+      <ul>
+        <li><strong>robots.txt generator for blogger</strong> — a <strong>custom robots txt generator for blogger</strong> (<strong>custom robots txt generator for blogger free</strong>) setting: go to Settings → Crawlers and indexing and switch on “Enable custom robots.txt” (the step people search as <strong>enable custom robots txt generator for blogger</strong>), then paste. Keep <code>Disallow: /search</code> to avoid indexing label pages.</li>
+        <li><strong>robots txt generator for wordpress</strong> (<strong>robots txt generator wordpress</strong>) — WordPress serves a virtual file; to edit <strong>robots.txt in wordpress</strong>, use your SEO plugin's file editor or upload a real file to the site root.</li>
+        <li><strong>robots.txt in cloudflare</strong> — Cloudflare can add AI-bot rules to your robots.txt automatically; check the result after enabling it.</li>
+      </ul>
+      <h2>Is robots.txt necessary?</h2>
+      <p><strong>is robots.txt necessary</strong>? Not strictly — without one, everything may be crawled — but it's good practice for the sitemap line. It isn't security: <strong>is robots.txt legally binding</strong>? No, it's a request well-behaved bots follow. To keep a page out of Google, use a <code>noindex</code> tag instead. <strong>robots.txt for seo</strong>: never block CSS, JS or pages you want ranked. Test it with a <strong>robots.txt tester</strong> or <strong>robots.txt checker</strong> such as Search Console's robots.txt report. A simple <strong>robots.txt generator</strong> — <strong>robots txt generator online</strong>, a <strong>robots txt creator</strong> like the <strong>robots txt generator small seo tools</strong> one, without ads (not a <strong>robots txt generator ai</strong> or <strong>robots txt generator google</strong> product).</p>`,
+
+  'slug-generator': `
+      <h2>URL slug generator</h2>
+      <p>Paste one title per line and get clean, SEO-friendly URL slugs instantly — lowercase words joined by <strong>hyphens</strong> (or underscores), with accents removed (“Café” → “cafe”), “&amp;” turned into “and” and punctuation stripped. Options let you <strong>remove stop words</strong> (a, the, of…) and set a <strong>max length</strong> that cuts at a whole word. It's a <strong>url slug generator online</strong> and <strong>bulk url slug generator</strong> — a <strong>slug generator online</strong> (<strong>slug generator tool</strong>) and <strong>url slug creator</strong> that's also a <strong>website slug generator</strong>.</p>
+      <h2>URL slug example</h2>
+      <p><strong>url slug example</strong>: “10 Best Free Online Tools for Students in 2026!” → <code>10-best-free-online-tools-for-students-in-2026</code>; with stop words removed, <code>10-best-free-online-tools-students-2026</code>.</p>
+      <h2>What is a slug URL?</h2>
+      <p><strong>what is a slug url</strong>? The slug is the readable last part of an address that identifies the page — in <code>example.com/blog/merge-pdf-files</code>, it's <code>merge-pdf-files</code>. That's the <strong>slug meaning url</strong> (<strong>url slug meaning</strong>, or <strong>slug in url meaning</strong>). <strong>url slug vs path</strong>: the path is everything after the domain (<code>/blog/merge-pdf-files</code>); the slug is just the page's own part.</p>
+      <h2>URL slug best practices for SEO</h2>
+      <p>A <strong>seo friendly url slug generator</strong> follows the <strong>url slug best practices</strong> — the <strong>url slug for seo</strong> and <strong>url slug format</strong> rules:</p>
+      <ul>
+        <li>Lowercase, words separated by hyphens — Google recommends hyphens over underscores.</li>
+        <li>Short and descriptive, with the main keyword; 3–6 words is plenty.</li>
+        <li>Skip dates in evergreen content so the URL never looks outdated.</li>
+        <li>Don't change a published slug without a 301 redirect.</li>
+      </ul>
+      <h2>WordPress, Shopify and Wix</h2>
+      <ul>
+        <li><strong>what is url slug in wordpress</strong> — the “URL” or “Permalink” field in the post sidebar; set Settings → Permalinks to “Post name”.</li>
+        <li><strong>how to change url slug in shopify</strong> — on the product or page, edit “Search engine listing” → URL handle (tick the redirect box).</li>
+        <li><strong>how to change url slug in wix</strong> — open the page's SEO settings and edit the URL slug.</li>
+      </ul>
+      <h2>Slugify in code</h2>
+      <p>To <strong>slugify</strong> (the <strong>slugify meaning</strong>: turn text into a slug) in code — or <strong>slugify online</strong> and <strong>slugify text online</strong> here, a <strong>url slug generator slugify online</strong> — or the <strong>url to slug</strong> shortcut:</p>
+      <ul>
+        <li><strong>slugify python</strong> / <strong>slug generator python</strong> — the <code>python-slugify</code> package; <strong>slugify in django</strong> — <code>django.utils.text.slugify()</code>.</li>
+        <li><strong>slugify js</strong> — the <code>slugify</code> npm package.</li>
+        <li><strong>slugify in php</strong> / <strong>slug generator laravel</strong> — <code>Str::slug($title)</code>.</li>
+      </ul>
+      <p>A simple <strong>url slug generator</strong> and <strong>slug generator</strong> for any <strong>url slug</strong>.</p>`,
+
+  'screen-resolution': `
+      <h2>What is my screen resolution?</h2>
+      <p>Open this page to see your <strong>screen resolution</strong> instantly — plus the physical pixels behind any display scaling, your browser window (viewport) size, the available screen area, device pixel ratio, colour depth, orientation and <strong>aspect ratio</strong>. It answers <strong>what is my screen resolution</strong> (and <strong>what is my screen resolution size</strong>) on any phone, tablet or computer, and updates as you resize.</p>
+      <h2>In pixels and inches</h2>
+      <p><strong>what is my screen resolution in pixels</strong>: the main number, e.g. 1920 × 1080. On a scaled display — Windows at 150%, or any Retina screen — the page also shows the real physical pixels. <strong>what is my screen resolution in inches</strong>? Resolution is measured in pixels; screen <em>size</em> is the diagonal in inches. Pixels per inch = diagonal pixels ÷ diagonal inches — a 15.6" Full HD laptop is about 141 PPI. <strong>what is my screen resolution and aspect ratio</strong>: 1920 × 1080 is 16:9, 2560 × 1600 is 16:10.</p>
+      <h2>Common resolutions</h2>
+      <ul>
+        <li><strong>what is the screen resolution for 4k</strong>? 3840 × 2160. <strong>what is the screen resolution for 2k</strong>? Usually 2560 × 1440 (QHD) on monitors; the cinema standard is 2048 × 1080.</li>
+        <li><strong>what is the screen resolution for a laptop</strong>? Most are 1920 × 1080; premium models go higher.</li>
+        <li><strong>what is the screen resolution for steam deck</strong>? 1280 × 800 (LCD and OLED).</li>
+        <li><strong>what is the screen resolution for macbook air</strong>? 13-inch (M2 and later): 2560 × 1664; 15-inch: 2880 × 1864.</li>
+        <li><strong>what is the screen resolution for macbook pro</strong>? 14-inch: 3024 × 1964; 16-inch: 3456 × 2234.</li>
+        <li><strong>what is the screen resolution for iphone 15 pro</strong>? 2556 × 1179. <strong>what is the screen resolution for iphone 15 pro max</strong>? 2796 × 1290. <strong>what is the screen resolution for iphone 16 pro max</strong> and <strong>what is the screen resolution for iphone 17 pro max</strong>? 2868 × 1320.</li>
+      </ul>
+      <h2>Windows 10, Mac and Android</h2>
+      <ul>
+        <li><strong>what is my screen resolution windows 10</strong> (and 11) — Settings → System → Display → Display resolution.</li>
+        <li><strong>what is my screen resolution mac</strong> — System Settings → Displays (hover over a size to see its resolution).</li>
+        <li><strong>what is my screen resolution android</strong> — many phones show it in Settings → Display → Screen resolution; or just open this page.</li>
+      </ul>
+      <p>Like <strong>what is my screen resolution.net</strong>-style sites, but with physical pixels and aspect ratio included.</p>`,
+
+  'browser-info': `
+      <h2>What is my browser?</h2>
+      <p>This page detects your <strong>browser and version</strong>, your operating system (including Windows 10 vs 11, Android and iOS versions), whether you're on a phone or desktop, and your language, time zone, CPU cores, memory, graphics card and screen size. It also checks whether cookies, a touch screen and Do Not Track are enabled, and shows your full user agent with a copy button. It answers <strong>what is my browser</strong> and <strong>what is my browser version</strong> in one look — handy when support asks.</p>
+      <h2>On your phone, iPhone or iPad</h2>
+      <p>Open this page in the app you use to browse: <strong>what is my browser on this phone</strong> (or <strong>what is my browser for this phone</strong>) is shown at the top. <strong>what is my browser on my iphone</strong> or <strong>what is my browser on my ipad</strong>? Usually Safari, unless you installed Chrome or another <strong>what is my browser app</strong>. <strong>what is my browser on my computer</strong> works the same way.</p>
+      <h2>Default browsers by device</h2>
+      <ul>
+        <li><strong>what is the browser for iphone</strong>, <strong>what is the browser for apple</strong> and <strong>what is the browser for mac</strong>? Safari.</li>
+        <li><strong>what is the browser for microsoft</strong> Windows? Microsoft Edge.</li>
+        <li><strong>what is the browser for android</strong> and <strong>what is the browser for google</strong>? Chrome. <strong>what is the browser for samsung</strong>? Samsung Internet (Chrome is also installed on most).</li>
+        <li><strong>what is the browser for ps5</strong> and <strong>what is the browser for roku tv</strong>? Neither has an official general web browser.</li>
+      </ul>
+      <h2>Browser size, cache and settings</h2>
+      <ul>
+        <li><strong>what is my browser size</strong> — the window size is on the <a href="/screen-resolution">Screen Resolution</a> page.</li>
+        <li><strong>what is my browser cache</strong> — saved copies of websites that make them load faster. To clear it in Chrome, Edge or Firefox, press Ctrl + Shift + Delete.</li>
+        <li><strong>what is my browser setting</strong> — open the menu (⋮ or ⋯) → Settings; this page shows the key ones, like cookies and language.</li>
+      </ul>`,
+
+  'dead-pixel-test': `
+      <h2>Dead pixel test — full screen</h2>
+      <p>Press <strong>Start full-screen test</strong> and your whole screen fills with one colour at a time: black, white, red, green, blue, gray, cyan, magenta and yellow. Click or press → for the next colour, ← to go back and Esc to exit. Look closely for dots that don't match. It's a <strong>dead pixel test full screen</strong> — a <strong>dead pixel tester</strong> that works on any device.</p>
+      <h2>Dead, stuck or hot?</h2>
+      <ul>
+        <li><strong>Dead pixel</strong> — always black; easiest to see on the white screen.</li>
+        <li><strong>Stuck pixel</strong> — always one colour (red, green or blue); look on black and the other colours.</li>
+        <li><strong>Hot pixel</strong> — always white; shows up on black.</li>
+      </ul>
+      <p>Clean your screen first so dust isn't mistaken for a pixel.</p>
+      <h2>Test and fix</h2>
+      <p>As a <strong>dead pixel test and fix</strong>: stuck pixels can sometimes be revived by rapidly flashing colours over them for a few minutes, or by gently massaging the spot through a soft cloth (with the screen off). Truly dead pixels usually can't be fixed — check your warranty, as many brands replace screens with a set number of bad pixels.</p>
+      <h2>Monitor, laptop, TV and Mac</h2>
+      <p>As a <strong>dead pixel test monitor</strong> (a <strong>dead pixel test for monitor</strong> and <strong>dead pixel test for laptop</strong>), test a new display within the return window. A <strong>dead pixel test for mac</strong> works in Safari or Chrome. For a <strong>dead pixel test for tv</strong>, open this page in the TV's browser or connect a laptop by HDMI.</p>
+      <h2>Phone, iPhone, Android and iPad</h2>
+      <p>It works as a <strong>dead pixel test phone</strong> (or <strong>dead pixel test for phone</strong>, <strong>dead pixel test for mobile</strong>) check on Android — a <strong>dead pixel test android</strong> and <strong>dead pixel test samsung</strong> check — and as a <strong>dead pixel test for ipad</strong>. As a <strong>dead pixel test iphone</strong> (<strong>dead pixel test for iphone</strong>), note that Safari on iPhone doesn't allow true full screen, so the colour fills the browser window — scroll to hide the bars and check the edges separately.</p>
+      <h2>OLED screens</h2>
+      <p>As a <strong>dead pixel test oled</strong> (<strong>dead pixel test for oled</strong>), the gray screen is also good for spotting burn-in — faint ghost images of keyboards or status bars.</p>
+      <p>A <strong>dead pixel test for camera</strong> sensors is different: take a photo with the lens cap on and look for bright dots. A simple <strong>dead pixel test</strong>.</p>`,
+
+  'cps-test': `
+      <h2>CPS test — clicks per second</h2>
+      <p>Choose a time — <strong>1, 5, 10, 30 or 60 seconds</strong> — then click the big box as fast as you can. The timer starts with your first click, and you'll see your live clicks, time left and CPS, then a final score with a rank from “Warming up” to “Lightning fast”. Your best score for each duration is saved on this device. It's a <strong>cps tester</strong> and <strong>cps test clicker</strong> with no ads in the way.</p>
+      <h2>Right click, mobile and the 1-second test</h2>
+      <ul>
+        <li><strong>cps test right click</strong> (<strong>cps test for right click</strong>) — right-clicks count too, and the menu is blocked inside the box.</li>
+        <li><strong>cps test mobile</strong> (<strong>cps test for mobile</strong>, <strong>cps test for phone</strong>) — tap with one or two fingers.</li>
+        <li><strong>cps test 1 second</strong> — a burst test; longer tests show your real stamina.</li>
+      </ul>
+      <h2>Spacebar and keyboard</h2>
+      <p>For a <strong>cps test spacebar</strong> (<strong>cps test for spacebar</strong>), <strong>cps test keyboard</strong> (<strong>cps test for keyboard</strong>) or <strong>cps test any key</strong> challenge, use the <a href="/spacebar-counter">Spacebar Counter</a>. A <strong>cps test for controller</strong> or <strong>cps test for xbox controller</strong> isn't possible here — use the <a href="/gamepad-tester">Gamepad Tester</a> to check your buttons.</p>
+      <h2>CPS test for Minecraft</h2>
+      <p>As a <strong>cps test for minecraft</strong> PvP practice: most players click 6–8 CPS normally. Jitter clicking (tensing your arm) reaches 10–14, butterfly clicking (two fingers alternating) 15–20, and drag clicking even more — though some servers limit high CPS. As a <strong>cps test for mouse</strong>, a sudden double count on single clicks can mean a failing switch — check with the <a href="/mouse-double-click-test">Mouse Double Click Test</a>.</p>
+      <p>Like <strong>cps test.org</strong>-style pages, but clean and fast — a simple <strong>cps test</strong>.</p>`,
+
+  'white-screen': `
+      <h2>White screen — full screen light</h2>
+      <p>Click the preview to fill your whole screen with pure white. Choose another colour — black, warm white, red, green, blue, yellow, orange, pink, purple, gray, cyan — or any custom colour. In full screen, use ← → to change colours, and click or press Esc to exit. Turn your screen brightness up for the brightest <strong>white screen</strong>.</p>
+      <h2>White screen for light</h2>
+      <ul>
+        <li><strong>white screen for light</strong> on video calls — a second monitor or tablet with a <strong>white screen bright</strong> enough to act as a soft fill light (warm white is flattering).</li>
+        <li><strong>white screen for pictures</strong> — a simple light source for product photos and makeup.</li>
+        <li><strong>white screen for flashlight</strong> — in a pinch, a phone or laptop at full brightness lights a room.</li>
+      </ul>
+      <h2>Tracing, cleaning and testing</h2>
+      <ul>
+        <li><strong>white screen for tracing</strong> — put paper over a tablet showing white to trace drawings, like a lightbox.</li>
+        <li><strong>white screen for cleaning</strong> — a <strong>white screen for cleaning monitor</strong> glass shows dust and specks clearly (black shows smudges better).</li>
+        <li><strong>white screen test</strong> — check for uneven brightness, tint or dead pixels; for a full colour cycle, try the <a href="/dead-pixel-test">Dead Pixel Test</a>.</li>
+      </ul>
+      <h2>Projectors, phones and Windows</h2>
+      <p>A <strong>white screen for projector</strong> (or <strong>white screen for projector outdoor</strong> movie nights) helps you focus the image and check the brightness and colour. It works on a <strong>white screen iphone</strong> or Android in the browser and as a <strong>white screen for windows</strong> PCs — no app.</p>
+      <h2>Backgrounds and edits</h2>
+      <p>Need a <strong>white screen background</strong>, <strong>white screen image</strong> or <strong>white screen wallpaper</strong> for <strong>white screen for edits</strong>? Go full screen and take a screenshot, or record the screen for a video clip — no <strong>white screen youtube</strong> video needed. (A <strong>white screen door</strong> is a home-improvement product — not this.)</p>`,
+
+  'black-screen': `
+      <h2>Black screen — full screen</h2>
+      <p>Click the preview to fill your whole screen with pure black. Want another colour? Pick white, warm white, red, green, blue or any custom colour, or press ← → in full screen. Click or press Esc to exit. It's a <strong>black screen</strong> you can use on any device without an app.</p>
+      <h2>Black screen for OLED, sleep and focus</h2>
+      <ul>
+        <li><strong>black screen for oled</strong> — black pixels are switched off on OLED, so it rests the panel and saves battery while keeping the device awake.</li>
+        <li><strong>black screen for sleep</strong> — a dark screen when something must stay open overnight, like a music or white-noise tab.</li>
+        <li><strong>black screen for projector</strong> — blank the projection between slides or talks without switching it off.</li>
+      </ul>
+      <h2>Cleaning and backlight bleed</h2>
+      <p>A <strong>black screen for cleaning monitor</strong> glass makes fingerprints and streaks easy to see. In a dark room, black also reveals backlight bleed — light leaking at the edges of LCD screens.</p>
+      <h2>Edits, CapCut and Instagram stories</h2>
+      <p>For a <strong>black screen for edits</strong>, a <strong>black screen for capcut</strong> intro or a <strong>black screen for instagram story</strong>, go full screen and take a screenshot to get a <strong>black screen image</strong> or <strong>black screen wallpaper</strong>, or screen-record it for a <strong>black screen video</strong>. No <strong>black screen youtube</strong> video needed.</p>
+      <h2>Phone, iPhone, laptop and Windows</h2>
+      <p>It works as a <strong>black screen for iphone</strong> (or <strong>black screen on iphone</strong>), a <strong>black screen on laptop</strong> and a <strong>black screen for windows</strong>. On iPhone, Safari doesn't allow true full screen, so the black fills the browser window.</p>
+      <h2>Black screen of death?</h2>
+      <p>If your computer shows a <strong>black screen of death</strong> by itself, this page won't fix it — on Windows, try Win + Ctrl + Shift + B to restart the graphics driver; on iPhone, force-restart (volume up, volume down, then hold the side button). (A <strong>black screen door</strong> or <strong>black screen for porch</strong> is a different product, and <strong>black screen records</strong> is a music label.)</p>`,
+
+  'spacebar-counter': `
+      <h2>Spacebar counter — how fast can you press space?</h2>
+      <p>Pick a time — <strong>5, 10, 30 or 60 seconds</strong>, or <strong>No limit</strong> — and press the spacebar as fast as you can. The count, time left and presses per second update live, and your best score for each time is saved. Holding the key down doesn't count, so every press is real. On a phone, tap the box. It's a <strong>spacebar counter online</strong> — a <strong>spacebar counter with timer</strong> (a <strong>space bar clicker with timer</strong>) and a <strong>spacebar counter game</strong> in one.</p>
+      <h2>Spacebar speed test</h2>
+      <p>As a <strong>spacebar speed test</strong> — a <strong>spacebar click speed test</strong>, <strong>spacebar tap speed test</strong> or <strong>click speed test for space bar</strong> — the result is presses per second, like CPS for a mouse. Try the <strong>spacebar counter 5 seconds</strong> (<strong>spacebar speed test 5 seconds</strong>) for a sprint and the <strong>spacebar counter 10 seconds</strong> (<strong>spacebar speed test 10 seconds</strong>) for the classic challenge. A <strong>spacebar speed test 1 second</strong> is too short to be fair, so 5 seconds is the minimum here.</p>
+      <h2>How fast is fast?</h2>
+      <p><strong>how fast can you click spacebar test</strong> results: most people manage 5–7 presses per second; 8+ is fast, and 10+ is excellent. Alternate two fingers or both thumbs for more speed. The <strong>world record for space bar clicker</strong> challenges online vary by site and rules, so beat your own best first.</p>
+      <h2>CPS, per second and no limit</h2>
+      <ul>
+        <li><strong>spacebar counter cps</strong> (<strong>spacebar counter per second</strong>) — shown live during every test.</li>
+        <li><strong>No limit</strong> mode — a plain <strong>spacebar counter clicker</strong> and <strong>space bar clicker counter</strong> for counting anything.</li>
+        <li>For a mouse, use the <a href="/cps-test">CPS Test</a>.</li>
+      </ul>
+      <p>Like <strong>spacebar counter.io</strong> or <strong>hooda math spacebar clicker</strong> and other <strong>space bar clicker online games</strong>, but clean, free and fast — a simple <strong>spacebar counter</strong>, <strong>spacebar counter test</strong>, <strong>space bar clicker</strong> and <strong>space bar clicker test</strong> (a <strong>space bar clicker speed test</strong>).</p>`,
 };

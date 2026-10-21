@@ -386,6 +386,7 @@
       if (!t0) { t0 = performance.now(); iv = setInterval(() => { live(); if (performance.now() - t0 >= dur * 1000) finish(); }, 50); }
       clicks++; $('.pad').textContent = clicks; live();
     });
+    $('.pad').addEventListener('contextmenu', e => e.preventDefault());
     const finish = () => {
       clearInterval(iv); done = true; const cps = clicks / dur, b = best(); if (cps > b) UI.store.set('cps-best-' + dur, cps);
       const rank = cps >= 10 ? 'Lightning fast ⚡' : cps >= 8 ? 'Very fast 🐆' : cps >= 6 ? 'Fast 🐇' : cps >= 4 ? 'Average 🐢' : 'Warming up 🐌';

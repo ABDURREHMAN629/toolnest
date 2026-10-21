@@ -3018,4 +3018,178 @@ Sitemap: https://example.com/sitemap.xml</pre>
         <li>For a mouse, use the <a href="/cps-test">CPS Test</a>.</li>
       </ul>
       <p>Like <strong>spacebar counter.io</strong> or <strong>hooda math spacebar clicker</strong> and other <strong>space bar clicker online games</strong>, but clean, free and fast — a simple <strong>spacebar counter</strong>, <strong>spacebar counter test</strong>, <strong>space bar clicker</strong> and <strong>space bar clicker test</strong> (a <strong>space bar clicker speed test</strong>).</p>`,
+
+  'qr-code-scanner': `
+      <h2>QR code scanner online</h2>
+      <p>Click <strong>Scan with camera</strong> and point your camera at a QR code — it's read instantly with a beep. No camera handy? Drop a screenshot or photo, choose a file, or paste an image with Ctrl + V. You can copy the result, open links (with a warning to check them first, as QR codes can lead to scam sites), and see the network name of Wi-Fi QR codes. A history lists everything you scanned this session. It's a <strong>qr code scanner online</strong> and <strong>qr code scanner free</strong> to use — a <strong>qr code scanner for free</strong> with nothing to install, and decoding happens on your device.</p>
+      <h2>QR code scanner from image</h2>
+      <p>As a <strong>qr code scanner from image</strong> (or <strong>qr code scanner for pictures</strong>), it's perfect when the QR code is already on your screen — in an email, a PDF or a website — where you can't point a camera at it. Take a screenshot (Win + Shift + S on Windows, Cmd + Shift + 4 on a Mac) and paste it here.</p>
+      <h2>On PC, laptop and Mac</h2>
+      <p>As a <strong>qr code scanner for pc</strong> or <strong>qr code scanner for computer</strong>, use a screenshot as above, or hold a printed code up to your webcam. It works as a <strong>qr code scanner for laptop</strong> with a built-in camera, and as a <strong>qr code scanner for mac</strong> (or <strong>qr code scanner for macbook</strong>) in Safari or Chrome.</p>
+      <h2>On Android and iPhone</h2>
+      <p>As a <strong>qr code scanner online mobile</strong>, open this page and allow the camera — it uses the rear camera. On an iPhone (a <strong>qr code scanner for iphone</strong>), the built-in Camera app also reads QR codes; on Android (a <strong>qr code scanner android</strong>, <strong>qr code scanner for android</strong> or <strong>qr code scanner for android phone</strong>), the camera or Google Lens does — the <strong>qr code scanner google</strong> option. This page is handy when those aren't available, or for scanning images, without another <strong>qr code scanner app</strong>.</p>
+      <p>It reads QR codes, not regular barcodes. To make your own code, use the <a href="/qr-code-generator">QR Code Generator</a>. A simple <strong>qr code scanner</strong>.</p>`,
+
+  'barcode-generator': `
+      <h2>Free barcode generator online</h2>
+      <p>Choose a barcode type — <strong>Code 128</strong>, <strong>EAN-13</strong>, <strong>EAN-8</strong>, <strong>UPC-A</strong>, <strong>Code 39</strong>, <strong>ITF-14</strong>, Codabar, MSI or Pharmacode — enter the value, and adjust the bar width, height, colour and whether the number shows underneath. The barcode updates live and warns you if the value isn't valid for that type. Download as a high-resolution <strong>PNG</strong> or a scalable <strong>SVG</strong> for print. It's a <strong>barcode generator free online</strong> — a <strong>barcode generator for free</strong> with no watermark or sign-up.</p>
+      <h2>Which barcode should I use?</h2>
+      <ul>
+        <li><strong>barcode generator 128</strong> — Code 128 holds any letters and numbers compactly; the best choice for a <strong>barcode generator for inventory</strong>, asset tags and shipping labels.</li>
+        <li><strong>barcode generator for products</strong> in shops — EAN-13 (worldwide) or UPC-A (USA, Canada). Real retail numbers must come from GS1; made-up numbers won't be accepted by stores or Amazon.</li>
+        <li><strong>barcode generator for books</strong> — an ISBN-13 is an EAN-13: enter the 13 digits without hyphens.</li>
+        <li>ITF-14 for outer cartons; Code 39 for older systems that need it.</li>
+      </ul>
+      <h2>In Excel and Word</h2>
+      <p>As a <strong>barcode generator for excel</strong> (<strong>barcode generator excel</strong>) or <strong>barcode generator for word</strong>, download each barcode as PNG or SVG and use Insert → Pictures. For hundreds of codes, a barcode font or label software is faster — but for a few labels, this beats installing <strong>barcode generator software</strong> or a <strong>barcode generator app</strong>.</p>
+      <h2>POS systems, links and websites</h2>
+      <ul>
+        <li><strong>barcode generator for square</strong> or other POS systems — use the same value you enter as the item's SKU or barcode in the system, so the scanner finds it.</li>
+        <li><strong>barcode generator for link</strong> or <strong>barcode generator for website</strong> addresses — phones scan QR codes far more easily; use the <a href="/qr-code-generator">QR Code Generator</a>.</li>
+        <li><strong>barcode generator for username and password</strong> — avoid it: anyone with a scanner can read a barcode.</li>
+      </ul>
+      <p>A simple <strong>barcode generator</strong> — a <strong>barcode generator online</strong> and <strong>barcode generator free</strong> tool.</p>`,
+
+  'password-strength-checker': `
+      <h2>Password strength checker — how long to crack?</h2>
+      <p>Type a password to see its strength, its estimated entropy in bits, and how long it would take to crack — both in a <strong>fast offline attack</strong> (10 billion guesses per second, as with stolen password databases) and an <strong>online attack</strong> (100 guesses per second against a login page). A checklist shows what's missing (12+ characters, uppercase, lowercase, numbers, symbols), and warnings flag common passwords, repeated characters, sequences like “123” or “qwerty”, and years. It's a <strong>password strength checker online</strong> and a <strong>password strength checker how long to crack</strong> estimate in one.</p>
+      <h2>Is it safe to type my password here?</h2>
+      <p>The check runs entirely in your browser — the password is never sent anywhere or stored. Even so, it's good practice to test a similar password rather than your real one.</p>
+      <h2>Brute force and what makes a password strong</h2>
+      <p>As a <strong>password strength checker brute force</strong> estimate: every extra character multiplies the guesses an attacker needs. Length beats complexity — a four-word passphrase like “maple-orbit-candle-river” is far stronger than “P@ss1”. Avoid names, dates and common words with a number on the end; attackers try those first. Use a different password for every site and a password manager to remember them.</p>
+      <h2>Checker and generator</h2>
+      <p>For a <strong>password strength checker and generator</strong> pair, create a strong password with the <a href="/password-generator">Password Generator</a>, then check it here. It's simple enough for a <strong>password strength checker for kids</strong> lesson in online safety.</p>
+      <h2>Build one: projects in Python, JavaScript and more</h2>
+      <p>A <strong>password strength checker project</strong> is a classic <strong>password strength checker project in cyber security</strong> courses. The logic this page uses is a good starting point: count the character types, estimate entropy as length × log₂(pool size), then subtract for common passwords, repeats and sequences.</p>
+      <ul>
+        <li><strong>password strength checker python</strong> (<strong>password strength checker in python</strong>, <strong>password strength checker program in python</strong> or <strong>password strength checker code in python</strong>) — use regular expressions for each character class and <code>math.log2</code>; the <code>zxcvbn</code> package gives realistic estimates.</li>
+        <li><strong>password strength checker in javascript</strong> (<strong>password strength checker js</strong> or <strong>password strength checker in react js</strong>) — the zxcvbn library works in the browser; update a meter on every input event.</li>
+        <li><strong>password strength checker in java</strong> or <strong>password strength checker in c</strong> — the same rules with <code>Character.isUpperCase()</code> or <code>isupper()</code> loops.</li>
+      </ul>
+      <p>Search <strong>password strength checker github</strong> for open-source examples, and document your rules and test cases for a <strong>password strength checker project report pdf</strong>. A simple <strong>password strength checker</strong>.</p>`,
+
+  'spin-the-wheel': `
+      <h2>Spin the wheel — random name picker</h2>
+      <p>Type your entries, one per line, and click the wheel or <strong>Spin</strong>. It spins for about five seconds with a ticking sound and lands on a random winner. Tick the option to remove the winner after each spin for draws with several prizes. Shuffle or sort the list with one click; your entries are saved for next time, and a history lists every winner. It's a <strong>spin the wheel - random picker</strong> that's <strong>spin the wheel for free</strong> — a <strong>spin the wheel generator</strong> and <strong>spin the wheel picker</strong> with no ads on the wheel.</p>
+      <h2>Spin the wheel for names</h2>
+      <p>As a <strong>spin the wheel names</strong> (or <strong>spin the wheel for names</strong>) picker, it's ideal for choosing who goes first, picking a student to answer, assigning chores or drawing Secret Santa pairs.</p>
+      <h2>Instagram giveaways</h2>
+      <p>As a <strong>spin the wheel for instagram giveaway</strong>, paste the usernames of everyone who entered, then screen-record the spin so followers can see the draw was fair.</p>
+      <h2>Yes or no, numbers and colours</h2>
+      <ul>
+        <li><strong>spin the wheel yes or no</strong> — enter “Yes” and “No” (add “Maybe” for fun).</li>
+        <li><strong>spin the wheel number</strong> — enter 1 to 10; for big ranges, the <a href="/random-number-generator">Random Number Generator</a> is quicker.</li>
+        <li><strong>spin the wheel colors</strong> (<strong>spin the wheel for colors</strong>) — type colour names for art prompts or games.</li>
+      </ul>
+      <h2>Food, games and challenges</h2>
+      <ul>
+        <li><strong>spin the wheel for food</strong> and <strong>spin the wheel for dinner</strong> — list restaurants or recipes and let the wheel end the debate.</li>
+        <li><strong>spin the wheel fortnite</strong> and <strong>spin the wheel fortnite challenges</strong> — drop spots, loadout rules or “no-build” challenges.</li>
+        <li><strong>spin the wheel forsaken</strong> or any Roblox game — characters or challenges to try.</li>
+        <li>A classroom <strong>spin the wheel game</strong> — topics, questions or rewards.</li>
+      </ul>
+      <p>It's a fully <strong>spin the wheel custom</strong> wheel — any text works. (A physical prize wheel <strong>spin the wheel for sale</strong> is a different thing.) A simple <strong>spin the wheel</strong>.</p>
+      <p class="small muted">Results use your browser's cryptographically secure random generator, so every outcome is equally likely.</p>`,
+
+  'coin-flip': `
+      <h2>Flip a coin — heads or tails</h2>
+      <p>Click the coin or <strong>Flip coin</strong> to toss it with a 3D spin. You'll see <strong>Heads!</strong> or <strong>Tails!</strong>, a running count with percentages, and your last 40 results. <strong>Flip 10 times</strong> tosses ten at once. It's a <strong>flip a coin generator</strong> that's fair, free and instant — <strong>flip a coin heads or tails</strong> (or <strong>flip a coin for heads or tails</strong>) in one click.</p>
+      <h2>Flip a coin for me</h2>
+      <p>Need a quick decision? <strong>flip a coin for me</strong> — or <strong>flip a coin for me please</strong> — and let chance decide. Assign each side before you flip: it's a <strong>flip a coin for yes or no</strong> (<strong>flip a coin yes or no</strong>) answer, or a <strong>flip a coin for two options</strong> tie-breaker, like which film to watch. It works as a <strong>flip a coin for me heads or tails</strong> and <strong>flip a coin for me online</strong> tool — <strong>flip a coin please</strong>, and it's done.</p>
+      <h2>Best of 3, or 100 times</h2>
+      <ul>
+        <li><strong>flip a coin 3 times</strong> (<strong>flip a coin for me 3 times</strong>) — best of three settles arguments fairly; the count keeps score.</li>
+        <li><strong>flip a coin 100 times</strong> — press “Flip 10 times” ten times and watch the percentages settle near 50/50 (the law of large numbers in action).</li>
+      </ul>
+      <h2>For two people</h2>
+      <p>To <strong>flip a coin for us</strong> — two people deciding who goes first or who pays — agree on who is heads before flipping. Like the <strong>flip a coin google</strong> (<strong>flip a coin for me google</strong>) answer, it's instant, but this one keeps a tally and needs no <strong>flip a coin app</strong>. A simple <strong>flip a coin</strong>.</p>
+      <p class="small muted">Results use your browser's cryptographically secure random generator, so every outcome is equally likely.</p>`,
+
+  'dice-roller': `
+      <h2>Online dice roller — D4 to D100</h2>
+      <p>Pick how many dice to roll (1 to 10) and the dice type — <strong>D4</strong>, <strong>D6</strong>, <strong>D8</strong>, <strong>D10</strong>, <strong>D12</strong>, <strong>D20</strong> or <strong>D100</strong> — and press <strong>Roll</strong>. Six-sided dice show real pips; you get the total and a history of recent rolls (like “2d6: 4+3=7”). It's a <strong>dice roller online</strong> that's <strong>dice roller for free</strong>, with no <strong>dice roller app</strong> to install.</p>
+      <h2>Dice roller for DnD (5e)</h2>
+      <p>As a <strong>dice roller dnd</strong> (<strong>dice roller for dnd</strong> or <strong>dice roller 5e</strong>) companion:</p>
+      <ul>
+        <li><strong>dice roller d20</strong> — attack rolls, saving throws and ability checks. For advantage, roll 2 D20 and keep the higher.</li>
+        <li><strong>dice roller for dnd stats</strong> — roll 4 D6, drop the lowest, and repeat six times.</li>
+        <li><strong>dice roller d100</strong> — percentile rolls for loot tables and wild magic.</li>
+        <li>Damage — 2d6 for a greatsword, 8d6 for a fireball (roll 8 D6).</li>
+      </ul>
+      <h2>Board games and 40k</h2>
+      <ul>
+        <li><strong>dice roller 1-6</strong> — one D6 for any board game.</li>
+        <li><strong>dice roller for monopoly</strong> — roll 2 D6; matching numbers are doubles.</li>
+        <li><strong>dice roller for 40k</strong> — Warhammer 40,000 uses lots of D6; roll up to 10 at once and count the hits.</li>
+      </ul>
+      <h2>Kids, Discord and fun</h2>
+      <p>A <strong>dice roller for kids</strong> makes maths games easy (add the dice, then check the total). For a <strong>dice roller for discord</strong> game night, roll here and share the result on screen. Use it as a <strong>dice roller game</strong> for party challenges, or a <strong>dice roller for food</strong> — number six meals and roll a D6. Roblox players use it for a <strong>dice roller for sab</strong> (<strong>dice roller for steal a brainrot</strong>) challenge. Like the <strong>dice roller google</strong> shows, but with more dice types — a simple <strong>dice roller</strong>.</p>
+      <p class="small muted">Results use your browser's cryptographically secure random generator, so every outcome is equally likely.</p>`,
+
+  'signature-generator': `
+      <h2>Signature generator — draw or type</h2>
+      <p>Choose <strong>✍️ Draw</strong> to sign with your mouse, finger or stylus, or <strong>⌨️ Type</strong> to write your name in nine handwriting-style fonts. Pick black, blue or red ink and the pen size, then <strong>download a transparent PNG</strong> — or tick white background — or copy the image to paste straight into a document. It's a <strong>signature generator free</strong> to use (a <strong>signature generator for free</strong>), and your signature never leaves your device.</p>
+      <h2>Signature generator for my name</h2>
+      <p>As a <strong>signature generator for my name</strong> (a <strong>signature generator for name</strong>, or a <strong>signature generator for my name free</strong> of watermarks), type your name and click the style you like. The <strong>signature generator cursive</strong> fonts — Great Vibes, Allura, Alex Brush, Pinyon Script and more — make a <strong>signature generator for my name cursive</strong> look in seconds (a <strong>signature generator cursive free</strong> option). For a truly <strong>signature generator handwritten</strong> result, use Draw mode on a phone or tablet with your finger.</p>
+      <h2>For PDF, Word and documents</h2>
+      <ul>
+        <li><strong>signature generator for pdf</strong> — download the PNG, then place it on your document with <a href="/sign-pdf">Sign PDF</a>.</li>
+        <li><strong>signature generator for word</strong> — Insert → Pictures, then set Wrap Text to “In Front of Text” to position it over the line.</li>
+        <li><strong>signature generator for documents</strong> like forms and letters — the transparent background sits neatly on any page.</li>
+      </ul>
+      <h2>Email and Outlook</h2>
+      <p>As a <strong>signature generator for email</strong> or <strong>signature generator for outlook</strong>, add the PNG as an image in your email signature settings (in Outlook, search Settings for “Signatures”).</p>
+      <h2>Copy and paste</h2>
+      <p>For <strong>signature generator copy and paste</strong>, click “Copy image” and paste with Ctrl + V into Word, Google Docs, email or chat. This isn't a <strong>signature generator ai</strong> — it's your own signature or name. For contracts that need verified identity, use a certified e-signature service. A simple <strong>signature generator</strong>.</p>`,
+
+  'invoice-generator': `
+      <h2>Free invoice generator online</h2>
+      <p>Fill in your business details and your client's, the invoice number, date and due date, then add line items with quantity and rate. Set any currency, a discount %, tax %, shipping and notes, add your <strong>logo</strong> and pick an accent colour. The preview updates live, and <strong>Download PDF</strong> saves a clean A4 invoice (choose “Save as PDF” in the print window). Everything is saved in your browser, and <strong>New invoice</strong> keeps your details and moves to the next invoice number. It's an <strong>invoice generator free</strong> — an <strong>invoice generator online free</strong> (or <strong>invoice generator for free online</strong>) with no watermark, sign-up or <strong>invoice generator free download</strong> needed.</p>
+      <h2>Invoice generator format</h2>
+      <p>The standard <strong>invoice generator format</strong> includes: your name and contact details, the client's details, a unique invoice number, the issue and due dates, itemised services or products, subtotal, discount, tax, total, and payment instructions in the notes (bank details or payment link). This template includes all of them.</p>
+      <h2>For freelancers, contractors and small businesses</h2>
+      <ul>
+        <li><strong>invoice generator for freelancers</strong> — list hours or projects as items; put payment terms such as “Net 14” in the notes.</li>
+        <li><strong>invoice generator for contractor</strong> work — separate labour and materials as line items.</li>
+        <li><strong>invoice generator for small business</strong> owners — add your logo and tax number for a professional look.</li>
+        <li><strong>invoice generator for influencers</strong> — invoice brands for posts, reels and usage rights.</li>
+        <li><strong>invoice generator for travel agency</strong> and <strong>invoice generator for hotel</strong> bills — itemise rooms, nights, tickets and services.</li>
+      </ul>
+      <h2>Compared with apps</h2>
+      <p>Full accounting apps like the <strong>invoice generator zoho</strong> offers track payments and clients, but need an account. For simple invoicing, people on Reddit (<strong>invoice generator reddit</strong>, <strong>invoice generator free reddit</strong>) often recommend lightweight tools like this one. It runs in any browser, so it's an <strong>invoice generator for pc</strong> and phone without an <strong>invoice generator app</strong>. It isn't an <strong>invoice generator ai</strong> — you stay in control of every line. Your data stays on your device; download each PDF to keep records. A simple <strong>invoice generator online</strong> — the <strong>invoice generator</strong> for any business.</p>`,
+
+  'todo-list': `
+      <h2>Simple online to-do list</h2>
+      <p>Type a task and press Enter to add it. Tick tasks off as you finish them, click any task to edit it, and delete with ✕. Filter by <strong>All</strong>, <strong>Active</strong> or <strong>Completed</strong>, and clear finished tasks in one click. A counter shows how many are left. Your list is saved automatically in this browser, so it's there when you come back — a free <strong>to-do list app</strong> without an account.</p>
+      <h2>To-do list for today</h2>
+      <p>A <strong>to-do list for today</strong> works best when it's short: pick three must-do tasks, then add smaller ones. Start with the hardest task while your energy is highest, and break big jobs into steps you can finish in under an hour.</p>
+      <h2>To-do list for ADHD adults</h2>
+      <p>As a <strong>to-do list for adhd adults</strong>, keep it visible and small: write tasks as actions (“email Sara about rent”, not “rent”), check off even tiny wins, and pair it with the <a href="/pomodoro-timer">Pomodoro Timer</a> to start. Clearing completed tasks keeps the list from feeling overwhelming.</p>
+      <h2>For students, school and kids</h2>
+      <ul>
+        <li><strong>to-do list for students</strong> (a <strong>to-do list for students free</strong> option) — homework, revision topics and deadlines, oldest due first.</li>
+        <li><strong>to-do list for school</strong> — one task per subject, ticked off after each study session.</li>
+        <li><strong>to-do list for kids</strong> — morning routine and chores; ticking boxes is motivating.</li>
+      </ul>
+      <h2>Template and format</h2>
+      <p>A good <strong>to-do list format</strong>: one action per line, starting with a verb, with a deadline if it has one. This page is a ready-made <strong>to-do list template</strong>. If you prefer files, a <strong>to-do list template excel</strong> needs just three columns — Task, Due date, Done (a checkbox) — and a <strong>to-do list template word</strong> is a bulleted checklist. List <strong>to-do list items</strong> like “Pay electricity bill” rather than vague goals.</p>
+      <h2>Desktop and Windows</h2>
+      <p>Bookmark it and it's a <strong>to do list for desktop</strong> and a <strong>to do list for windows</strong>, Mac or phone — no install. Lists are stored per browser and device, so use the same browser each time. A simple <strong>to-do list</strong>.</p>`,
+
+  'tally-counter': `
+      <h2>Online tally counter</h2>
+      <p>Tap the big <strong>+</strong> button to count, <strong>−</strong> to undo and <strong>↺</strong> to reset. On a keyboard, press <kbd>Space</kbd> or <kbd>↑</kbd> to count up and <kbd>↓</kbd> to count down. Name your counter, set a step size (count by 2s, 5s or 10s) and switch on a click sound. Everything is saved automatically, so your count survives a refresh. It's a <strong>tally counter online</strong> — a <strong>tally counter clicker</strong> that works like a <strong>tally counter app</strong> without installing anything.</p>
+      <h2>Tally counter for multiple things</h2>
+      <p>Click <strong>+ Add counter</strong> to track several things at once, each with its own name and +/− buttons, plus a grand total. That makes it a <strong>tally counter for multiple things</strong> — cars vs bikes in a traffic count, or items by type in a stock take — and a <strong>tally counter for two people</strong> or a <strong>tally counter for 3 people</strong>: one counter per person for scores, laps or reps.</p>
+      <h2>Prayer, tasbih and naam jap</h2>
+      <p>As a <strong>tally counter for prayer</strong>, it works for tasbih and dhikr (33 or 99 counts), rosary prayers and a <strong>tally counter for naam jap</strong> — 108 repetitions for a mala. Turn on the click sound so you can count without looking.</p>
+      <h2>Other uses</h2>
+      <ul>
+        <li>People at an event door, laps on a track, stitches and rows in knitting, birds or plants in a survey.</li>
+        <li>Inventory — count by 6s or 12s with the step setting.</li>
+      </ul>
+      <h2>Physical clickers</h2>
+      <p>A metal hand clicker or a <strong>tally counter for finger</strong> ring (popular for dhikr) works without a screen — you'll find them as a <strong>tally counter amazon</strong> or <strong>tally counter walmart</strong> listing, a <strong>tally counter for sale</strong> online, or at a stationery shop <strong>tally counter near me</strong> (<strong>tally counter nearby</strong>). This page is the free alternative on your phone, with multiple counters and a saved history.</p>
+      <h2>Terraria</h2>
+      <p>The <strong>tally counter terraria</strong> item (also in the <strong>tally counter calamity</strong> mod) is an accessory that shows how many of the last enemy type you've killed — a game item, not this tool. A simple <strong>tally counter</strong>.</p>`,
 };

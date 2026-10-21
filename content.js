@@ -2163,4 +2163,281 @@ module.exports = {
       <p>For an <strong>excel day of week calculator</strong> (<strong>what day of the week formula excel</strong>), use <code>=TEXT(A2,"dddd")</code> for the name or <code>=WEEKDAY(A2)</code> for a number (1 = Sunday).</p>
       <h2>Julian calendar and BC dates</h2>
       <p>Dates before 1582 are calculated on the modern Gregorian calendar extended backwards. Historians usually quote older dates on the Julian calendar, so a <strong>day of the week calculator julian calendar</strong> answer can differ — convert the date to Gregorian first. Browser date pickers start at year 1, so a <strong>day of the week calculator bc</strong> date isn't supported.</p>`,
+
+  'character-counter': `
+      <h2>Character counter with and without spaces</h2>
+      <p>Type or paste your text and this <strong>character counter online</strong> updates instantly: characters <strong>including spaces</strong> and without spaces, words, sentences, paragraphs, reading and speaking time, plus your top keywords. Your text is saved in your browser, so it's still there if you close the tab. It's a <strong>character counter with spaces</strong> and a <strong>character counter including spaces</strong> or not — the <strong>character counter tool</strong> for any <strong>character counter text</strong> check.</p>
+      <h2>Character limits for social media and SMS</h2>
+      <p>Bars show how close you are to each platform's limit, turning red when you go over — a <strong>character counter for social media</strong> in one view:</p>
+      <ul>
+        <li><strong>character counter for twitter</strong> / <strong>character counter for x</strong> — 280 characters per post (longer posts need X Premium). X counts each emoji as 2.</li>
+        <li><strong>character counter for instagram</strong> — 2,200 characters per caption; only the first ~125 show before “more”.</li>
+        <li><strong>character counter for sms</strong> — 160 characters per message (70 if it contains emoji or non-Latin letters).</li>
+        <li>Also: SEO meta title (60) and description (160), YouTube title (100), LinkedIn post (3,000) and Facebook's “See more” cut-off (477).</li>
+      </ul>
+      <h2>Essays and personal statements</h2>
+      <p>As a <strong>character counter for essay</strong> limits and a <strong>character counter for personal statement</strong> — the UCAS personal statement allows 4,000 characters including spaces — paste your draft and watch the total. It's a <strong>character counter for words</strong> too, showing the word count beside it, and works as a <strong>character counter for text</strong> messages and forms.</p>
+      <h2>In Word, Excel and Grammarly</h2>
+      <ul>
+        <li><strong>character counter in word</strong> — Review → Word Count shows characters with and without spaces.</li>
+        <li><strong>character counter excel</strong> — the <strong>character counter formula excel</strong> is <code>=LEN(A1)</code>; without spaces, <code>=LEN(SUBSTITUTE(A1," ",""))</code>.</li>
+        <li><strong>character counter grammarly</strong> — Grammarly shows counts too, but needs an account; this page doesn't.</li>
+      </ul>
+      <p>Prefer counting words first? Use the <a href="/word-counter">Word Counter</a>. A simple <strong>character counter</strong>.</p>`,
+
+  'case-converter': `
+      <h2>Case converter — uppercase, lowercase, title case and more</h2>
+      <p>Paste your text and click a button to convert it: <strong>UPPER CASE</strong>, <strong>lower case</strong>, <strong>Title Case</strong>, <strong>Sentence case</strong>, Capitalize Each Word, <strong>camelCase</strong>, PascalCase, <strong>snake_case</strong>, kebab-case, CONSTANT_CASE, aLtErNaTiNg and iNVERSE. Then copy the result. It's a <strong>case converter online</strong> and <strong>case converter free</strong> tool — a <strong>case converter online free</strong> of sign-ups.</p>
+      <h2>Uppercase to lowercase and back</h2>
+      <p>Accidentally typed with Caps Lock on? This <strong>uppercase to lowercase converter</strong> fixes it in one click — <strong>convert capital letters to lowercase online</strong> or <strong>caps to lowercase online</strong> and back. As a <strong>lowercase to uppercase converter</strong>, <strong>convert text to uppercase online</strong> for headings and labels — <strong>uppercase to lowercase online</strong>, <strong>lowercase to uppercase online</strong>, or simply <strong>convert to uppercase online</strong>.</p>
+      <h2>Title case converter (AP and Chicago style)</h2>
+      <p>As a <strong>title case converter</strong> and <strong>title case converter online</strong>, it follows the common rule from the <strong>title case converter ap style</strong> guides: short articles, conjunctions and prepositions (a, an, the, and, but, for, of, on, to, by…) stay lowercase unless they're the first word. A <strong>title case converter chicago</strong> style also lowercases longer prepositions like “with” and “between”, so adjust those by hand. To <strong>convert text to title case</strong> or turn <strong>sentence case to title case</strong>, paste and click.</p>
+      <p>The <strong>difference between sentence case and title case</strong>: sentence case capitalises only the first word (and names) — “How to write a great headline”; title case capitalises the main words — “How to Write a Great Headline”. This <strong>sentence case converter</strong> (<strong>sentence case converter online</strong>) also fixes a lone “i” to “I”, and the “Capitalize Each Word” button works as a <strong>proper case converter</strong>.</p>
+      <h2>In Word, Excel, Google Docs and Python</h2>
+      <ul>
+        <li><strong>uppercase to lowercase in word</strong> — select the text and press Shift + F3 (the <strong>uppercase to lowercase shortcut</strong>; also the <strong>lowercase to uppercase shortcut</strong>) to cycle cases.</li>
+        <li><strong>uppercase to lowercase in excel</strong> / <strong>lowercase to uppercase in excel</strong> — the <strong>uppercase to lowercase formula excel</strong> is <code>=LOWER(A1)</code>; to <strong>convert to uppercase in excel</strong>, <code>=UPPER(A1)</code>; proper case, <code>=PROPER(A1)</code>.</li>
+        <li><strong>uppercase to lowercase in google docs</strong> — Format → Text → Capitalisation.</li>
+        <li><strong>uppercase to lowercase python</strong> — <code>s.lower()</code>, <code>s.upper()</code>, <code>s.title()</code>.</li>
+      </ul>
+      <p>A simple <strong>case converter</strong> for both <strong>uppercase to lowercase</strong> and <strong>lowercase to uppercase</strong> — or anything to <strong>convert to uppercase</strong>.</p>`,
+
+  'lorem-ipsum-generator': `
+      <h2>Lorem ipsum generator — paragraphs, sentences, words or lists</h2>
+      <p>Choose what to generate — <strong>paragraphs</strong>, <strong>sentences</strong>, <strong>words</strong> or <strong>list items</strong> — and how many (up to 500). Tick “Start with Lorem ipsum dolor sit amet…” for the classic opening, and “Wrap in HTML tags” to get <code>&lt;p&gt;</code> paragraphs or a <code>&lt;ul&gt;</code> list. The word and character count is shown under the result. It's a <strong>lorem ipsum generator free</strong> to use for any mock-up.</p>
+      <h2>For web designers, Figma and HTML</h2>
+      <ul>
+        <li><strong>lorem ipsum generator for web designers</strong> — the <strong>lorem ipsum generator for html</strong> option wraps everything in tags, ready to paste into your page.</li>
+        <li><strong>lorem ipsum generator for figma</strong> (or <strong>lorem ipsum generator figma</strong> mock-ups) — generate a few sentences, copy, and paste into a text layer.</li>
+        <li><strong>lorem ipsum generator for typographers</strong> — paragraphs of varied sentence length show how a <strong>lorem ipsum generator font</strong> test really sets.</li>
+        <li><strong>lorem ipsum generator with headings</strong> — generate paragraphs, then add your own <code>&lt;h2&gt;</code> headings between them.</li>
+      </ul>
+      <h2>By word or character count</h2>
+      <p>As a <strong>lorem ipsum generator word</strong> tool, choose Words and enter the exact number. For a <strong>lorem ipsum generator by character count</strong> (a <strong>lorem ipsum generator characters</strong> or <strong>lorem ipsum generator by character</strong> limit), generate a few more words than you need, check the character count shown, and trim — roughly 6 characters per word, including the space.</p>
+      <h2>In Word and PowerPoint</h2>
+      <p>The <strong>lorem ipsum generator for word</strong> built into Microsoft Word is a formula: type <code>=lorem(3,5)</code> and press Enter for 3 paragraphs of 5 sentences. That <strong>lorem ipsum generator formula</strong> also works <strong>lorem ipsum generator in powerpoint</strong> text boxes. This page gives more control, plus HTML.</p>
+      <h2>Where does lorem ipsum come from?</h2>
+      <p>It's scrambled Latin from Cicero's <em>De finibus bonorum et malorum</em> (45 BC), used by printers since the 1500s because it looks like real text without distracting readers. Want a <strong>lorem ipsum generator funny</strong> or <strong>lorem ipsum generator fun</strong> version (bacon, cat or pirate ipsum)? This one sticks to the classic <strong>lorem ipsum generator text</strong>, which clients won't misread. A simple <strong>lorem ipsum generator</strong>.</p>`,
+
+  'text-compare': `
+      <h2>Text compare — find the differences</h2>
+      <p>Paste the original text on the left and the changed text on the right, then click <strong>Compare</strong>. Every line is lined up: removed lines turn red, added lines green, and changed lines yellow with the exact <strong>words</strong> that changed highlighted. A summary counts the added, removed and modified lines. Options let you ignore case and extra spaces. It's a <strong>text compare online</strong> tool — <strong>text compare online free</strong> and private, because nothing is uploaded.</p>
+      <h2>For code, documents and contracts</h2>
+      <ul>
+        <li><strong>text compare for code</strong> — compare two versions of a config file, script or JSON (format JSON first with the <a href="/json-formatter">JSON Formatter</a> so lines match up).</li>
+        <li><strong>text compare for differences</strong> between two drafts of an essay, contract or policy — see exactly which words an editor changed.</li>
+        <li><strong>text compare for large files</strong> — it handles a few thousand lines in the browser; split very long files into sections.</li>
+      </ul>
+      <h2>Similarity and plagiarism</h2>
+      <p>To <strong>compare text for similarity</strong>, paste both and look at how many lines are unchanged. It isn't a <strong>text compare for plagiarism</strong> checker that searches the web — it compares exactly the two texts you give it.</p>
+      <h2>Instagram followers</h2>
+      <p>Comparing two lists of followers? A <strong>text compare for instagram followers</strong> (or <strong>text compare for instagram</strong>) check works with the lists one name per line — but the <a href="/instagram-unfollowers-tracker">Instagram Unfollowers Tracker</a> reads your official Instagram data export and shows who doesn't follow you back automatically.</p>
+      <h2>Windows, Mac, Notepad++ and VS Code</h2>
+      <p>It runs in any browser, so it's a <strong>text compare tool for windows</strong> (a <strong>text compare for windows</strong>) and a <strong>text compare for mac</strong> with nothing to install — a <strong>text compare for free</strong> alternative to desktop apps. If you prefer an editor:</p>
+      <ul>
+        <li><strong>text compare in notepad++</strong> — install the “Compare” plugin from Plugins Admin.</li>
+        <li><strong>text compare in vs code</strong> — select two files in Explorer, right-click and choose “Compare Selected”.</li>
+        <li><strong>text compare excel</strong> — <code>=EXACT(A1,B1)</code> tells you whether two cells match exactly.</li>
+      </ul>
+      <p>A simple <strong>text compare tool online</strong> and <strong>text compare website</strong> — the quick <strong>text compare tool</strong> for any <strong>text compare</strong>.</p>`,
+
+  'remove-duplicate-lines': `
+      <h2>Remove duplicate lines online</h2>
+      <p>Paste a list and this tool will <strong>remove duplicate lines</strong> instantly, keeping the first copy of each line in its original order. Options: <strong>Ignore case</strong> (so “Apple” and “apple” count as the same), <strong>Trim spaces</strong>, <strong>Remove empty lines</strong> and <strong>Sort A → Z</strong>. You'll see how many lines were removed. It's the quick way to <strong>remove duplicate lines online</strong> — <strong>remove duplicate lines of text</strong> such as emails, keywords, URLs or names.</p>
+      <h2>From a text file</h2>
+      <p>To <strong>remove duplicate lines from text file</strong> data (<strong>remove duplicate lines in text file</strong>), open the file, copy everything, paste it here, then copy the result back. Nothing is uploaded.</p>
+      <h2>In Excel, Notepad++, VS Code and Sublime Text</h2>
+      <ul>
+        <li><strong>remove duplicate lines in excel</strong> — Data → Remove Duplicates.</li>
+        <li><strong>remove duplicate lines in notepad++</strong> (or <strong>remove duplicate lines in notepad ++</strong>) — Edit → Line Operations → Remove Duplicate Lines.</li>
+        <li><strong>remove duplicate lines in vscode</strong> — run “Delete Duplicate Lines” from the Command Palette (Ctrl + Shift + P).</li>
+        <li><strong>remove duplicate lines in sublime text</strong> — Edit → Permute Lines → Unique.</li>
+        <li><strong>remove duplicate lines in vim</strong> — <code>:sort u</code> (this also sorts the lines).</li>
+      </ul>
+      <h2>On Linux and in Bash</h2>
+      <p>To <strong>remove duplicate lines linux</strong> style (<strong>remove duplicate lines in linux</strong>), <code>sort -u file.txt</code> removes duplicates but changes the order. To <strong>remove duplicate lines from file linux</strong> while keeping the order — the classic <strong>remove duplicate lines bash</strong> one-liner — use <code>awk '!seen[$0]++' file.txt</code>, the same thing this page does to <strong>remove duplicate lines in file linux</strong> users have.</p>
+      <h2>AutoCAD and Illustrator</h2>
+      <p>For drawings, these are different “lines”: to <strong>remove duplicate lines in autocad</strong> (<strong>remove duplicate lines autocad</strong>), use the <code>OVERKILL</code> command, which deletes overlapping geometry. To <strong>remove duplicate lines in illustrator</strong>, select the overlapping paths and delete or merge them with Pathfinder. This page is for text. A simple way to <strong>remove duplicate lines</strong>.</p>`,
+
+  'sort-lines': `
+      <h2>Sort text lines alphabetically</h2>
+      <p>Paste a list — one item per line — and choose how to <strong>sort text lines</strong>: <strong>alphabetical A → Z</strong> or Z → A, <strong>numbers ascending</strong> or descending, <strong>shortest first</strong> or longest first (to <strong>sort text lines by length</strong>), <strong>reverse order</strong>, or <strong>shuffle</strong> randomly (to <strong>sort text lines random</strong>). Options: <strong>Natural sort</strong> (so “Apple 2” comes before “Apple 10”), ignore case and remove empty lines. It's the easiest way to <strong>sort text lines alphabetically online</strong> — or <strong>sort lines alphabetically online</strong> — and <strong>alphabetize list online</strong>.</p>
+      <h2>Alphabetical order generator</h2>
+      <p>Use it as an <strong>alphabetical order generator</strong> (an <strong>alphabetical order generator a to z</strong>) for names, words or titles — an <strong>alphabetize list generator</strong> that will <strong>alphabetize list for me</strong> in one click. Need to <strong>sort words alphabetically online</strong> on a single line? Put each word on its own line first.</p>
+      <ul>
+        <li><strong>alphabetical order generator names</strong> — to <strong>alphabetize list by last name</strong>, write names as “Last, First” before sorting.</li>
+        <li><strong>alphabetical order generator for references</strong> and an <strong>alphabetical order generator for bibliography</strong> — APA and MLA reference lists are sorted by the first author's surname, so paste one reference per line and sort A → Z.</li>
+      </ul>
+      <h2>In Word, Excel, Google Docs and editors</h2>
+      <ul>
+        <li><strong>sort lines alphabetically in word</strong> / <strong>alphabetize list in word</strong> — Home → Sort (A→Z).</li>
+        <li><strong>alphabetize list in excel</strong> — Data → Sort A to Z.</li>
+        <li><strong>alphabetize list in google docs</strong> / <strong>sort lines alphabetically google docs</strong> — Docs has no built-in sort; paste the list here, sort, and paste it back.</li>
+        <li><strong>sort lines alphabetically notepad ++</strong> — Edit → Line Operations → Sort Lines Lexicographically Ascending.</li>
+        <li><strong>sort lines alphabetically vscode</strong> — Command Palette → “Sort Lines Ascending”.</li>
+        <li><strong>sublime text sort lines</strong> — Edit → Sort Lines (F9) is the <strong>sublime text sort lines alphabetically</strong> command.</li>
+        <li><strong>sort lines alphabetically linux</strong> — <code>sort file.txt</code> (to <strong>sort text file lines alphabetically</strong>); add <code>-V</code> for natural order.</li>
+      </ul>
+      <p>Faster than <strong>sort text lines codebeautify</strong>-style pages and fully private — the simple way to <strong>sort lines alphabetically</strong>, <strong>sort alphabetically online</strong>, <strong>sort list online</strong> (or <strong>sort list alphabetically online</strong>) and <strong>alphabetize list</strong> items.</p>`,
+
+  'reverse-text': `
+      <h2>Reverse text generator</h2>
+      <p>Type or paste your text and choose: <strong>Reverse text</strong> (write it backwards — “hello” → “olleh”), <strong>Reverse each word</strong> (keeping word order), <strong>Reverse word order</strong> (“one two three” → “three two one”) or <strong>Reverse line order</strong>. Emoji and accented letters stay intact. It's a <strong>reverse text generator</strong> and <strong>reverse text converter</strong> — a <strong>reverse text online</strong> tool — so you can <strong>reverse text copy and paste</strong> into any app.</p>
+      <h2>Hebrew and Arabic text</h2>
+      <p>Right-to-left text sometimes appears backwards when pasted into apps or design tools that don't support RTL. A <strong>text reverse for hebrew</strong> (or Arabic) fixes it: reverse the text, then paste. (A <strong>reverse text translator</strong> doesn't translate languages — it only flips the order.)</p>
+      <h2>Mirror text for printing, cameras and teleprompters</h2>
+      <p>Backwards letters aren't the same as a mirror image. For <strong>mirror text for printing</strong> on iron-on transfers — or <strong>reverse text for printing</strong> — make an image of your text and flip it horizontally with <a href="/rotate-image">Rotate &amp; Flip Image</a>. The same goes for <strong>mirror text for teleprompter</strong> glass and <strong>reverse text for camera</strong> signs that look right in a selfie video.</p>
+      <h2>In Word, Excel, Photoshop and CapCut</h2>
+      <ul>
+        <li><strong>reverse text in word</strong> — to mirror a text box, use Format Shape → 3-D Rotation → X Rotation 180°.</li>
+        <li><strong>reverse text formula in excel</strong> (Excel 365) — <code>=TEXTJOIN("",TRUE,MID(A1,SEQUENCE(LEN(A1),,LEN(A1),-1),1))</code>.</li>
+        <li><strong>reverse text for photoshop</strong> — Edit → Transform → Flip Horizontal mirrors a text layer.</li>
+        <li><strong>reverse text for capcut</strong> — paste backwards text from here into a text layer, or mirror the clip in the editor.</li>
+      </ul>
+      <p>Fun uses: secret messages, puzzles and a <strong>reverse text font</strong> look for usernames — <strong>reverse letters for casting</strong> calls and drama games, too. Just type and click: this <strong>reverse text</strong> page will <strong>reverse text for me</strong> instantly.</p>`,
+
+  'fancy-text-generator': `
+      <h2>Fancy text generator — copy and paste</h2>
+      <p>Type your text and see it in 30+ styles at once: <strong>bold</strong>, <em>italic</em>, <strong>cursive</strong> script, gothic (Fraktur), double-struck, monospace, circled, squared, small caps, superscript, upside down, strikethrough, underline, and decorated styles like sparkles ✨, hearts ♡ and wings ꧁༺ ༻꧂. Click any style to copy it. It's a <strong>fancy text generator copy and paste</strong> tool — a <strong>fancy text generator font</strong> set that works where you can't change the font.</p>
+      <h2>How it works</h2>
+      <p>These aren't real fonts. Each letter is swapped for a look-alike Unicode character (such as the mathematical bold 𝐀), so the style stays when you paste it. That's why the <strong>fancy text generator cursive</strong> and <strong>fancy text generator symbols</strong> styles work almost everywhere. Two cautions: screen readers may read these letters oddly, and search engines may not match them, so keep important words in plain text.</p>
+      <h2>For Instagram, TikTok, Facebook and WhatsApp</h2>
+      <ul>
+        <li><strong>fancy text generator for instagram</strong> bios, names and captions.</li>
+        <li><strong>fancy text generator for tiktok</strong> bios and comments.</li>
+        <li><strong>fancy text generator for facebook</strong> posts and <strong>fancy text generator for whatsapp</strong> statuses and group names.</li>
+      </ul>
+      <h2>For Discord and games</h2>
+      <p>As a <strong>fancy text generator for discord</strong> (or <strong>fancy text generator discord</strong>) nickname and channel tool, most styles work. Games are stricter: a <strong>fancy text generator for roblox</strong> name won't pass Roblox's filter, and names for a <strong>fancy text generator for fortnite</strong>, <strong>fancy text generator for bgmi</strong>, <strong>fancy text generator for mlbb</strong> or <strong>fancy text generator for codm</strong> profile may be rejected or shown as boxes. Each game has its own rules, so try a style and pick another if it's refused. For a blank-looking name, see <a href="/invisible-character">Invisible Character</a>.</p>
+      <h2>Colours</h2>
+      <p>Plain text can't carry colour, so a <strong>fancy text generator color</strong> isn't possible in bios — but on Discord, coloured text works in <code>ansi</code> code blocks. A simple <strong>fancy text generator</strong>.</p>`,
+
+  'remove-line-breaks': `
+      <h2>Remove line breaks from text</h2>
+      <p>Text copied from a PDF or email often breaks in the middle of sentences. Paste it here to <strong>remove line breaks from text</strong> online. Choose <strong>Remove, but keep paragraphs</strong> (the usual choice), <strong>Remove all</strong> line breaks, or <strong>Replace with comma</strong> to turn a column of items into a comma-separated list. Options also <strong>join hyphenated words</strong> split across lines (“sen-<br>tences” → “sentences”) and remove extra spaces. It's the fastest way to <strong>remove line breaks online</strong> — <strong>remove line breaks from text online</strong> without uploading anything.</p>
+      <h2>From a text file</h2>
+      <p>To <strong>remove line breaks from text file</strong> content, open the file, copy everything, paste it here and copy the clean result back.</p>
+      <h2>In Word</h2>
+      <p>To <strong>remove line breaks in word</strong> (<strong>remove line breaks in word document</strong> files), use <strong>remove line breaks in word find and replace</strong>: press Ctrl + H, search for <code>^p</code> (paragraph mark) or <code>^l</code> (manual line break) and replace with a space. Careful — <code>^p</code> also removes your real paragraph breaks, which is why “keep paragraphs” here is easier.</p>
+      <h2>In Excel</h2>
+      <ul>
+        <li><strong>remove line breaks in excel</strong> — Ctrl + H, click in “Find what” and press Ctrl + J (an invisible line break), then replace with a space.</li>
+        <li><strong>remove line breaks in excel formula</strong> — the <strong>remove line break formula excel</strong> users need is <code>=SUBSTITUTE(A1,CHAR(10)," ")</code>, or <code>=CLEAN(A1)</code> to strip them entirely — the way to <strong>remove line breaks in excel cell</strong> text and <strong>remove line breaks from excel cells</strong> in bulk.</li>
+      </ul>
+      <h2>In Google Docs and Notepad++</h2>
+      <ul>
+        <li><strong>remove line breaks in google docs</strong> — paste the text here first, then paste the clean version into Docs.</li>
+        <li><strong>remove line breaks notepad++</strong> (or <strong>remove line breaks in notepad ++</strong>) — select the lines and press Ctrl + J (Join Lines), or use Ctrl + H in Extended mode to replace <code>\r\n</code> with a space.</li>
+      </ul>
+      <p>A simple way to <strong>remove line breaks</strong>.</p>`,
+
+  'find-and-replace': `
+      <h2>Find and replace text online</h2>
+      <p>Paste your text, type what to <strong>Find</strong> and what to <strong>Replace with</strong>, and every match is replaced at once — with a count of how many replacements were made. Options: <strong>Match case</strong>, <strong>Whole words only</strong> (so “cat” doesn't change “category”) and <strong>Regular expression</strong> for advanced patterns, with <code>$1</code> to reuse captured groups. It's a <strong>find and replace text online</strong> tool — a <strong>find and replace for text</strong> editing that's fully private.</p>
+      <h2>Regular expression examples</h2>
+      <ul>
+        <li>Find <code>\s+</code> → replace with one space: collapses repeated spaces.</li>
+        <li>Find <code>(\w+)@example\.com</code> → <code>$1@newdomain.com</code>: change an email domain.</li>
+        <li>Find <code>(\d{2})/(\d{2})/(\d{4})</code> → <code>$3-$2-$1</code>: turn 21/10/2026 into 2026-10-21.</li>
+      </ul>
+      <h2>Find and replace for text editing in apps</h2>
+      <ul>
+        <li><strong>find and replace text in word</strong> and <strong>find and replace text in excel</strong> — Ctrl + H.</li>
+        <li><strong>find and replace text in autocad</strong> — the <code>FIND</code> command.</li>
+        <li><strong>find and replace text in indesign</strong> — Edit → Find/Change.</li>
+        <li><strong>find and replace text in illustrator</strong> — Edit → Find and Replace.</li>
+        <li><strong>find and replace text in revit</strong> — Annotate → Find/Replace.</li>
+        <li><strong>find and replace text in bluebeam</strong> — Bluebeam Revu's search and edit-text tools (in the editions that include them).</li>
+      </ul>
+      <h2>In a PDF</h2>
+      <p>To <strong>find and replace text in pdf</strong> files — a <strong>find and replace text in pdf online</strong> (or <strong>find and replace text in pdf online free</strong>) job — extract the text with <a href="/pdf-to-text">PDF to Text</a> or convert it with <a href="/pdf-to-word">PDF to Word</a>, make your replacements here or in Word, then save it as a PDF again.</p>
+      <h2>Without an extension</h2>
+      <p>No need for a <strong>find and replace for text editing chrome extension</strong> (or <strong>find and replace for text editing extension</strong>) with page permissions — for <strong>find and replace for text editing</strong> on a web form, paste the text here, replace, and paste it back. A simple <strong>find and replace text</strong> tool.</p>`,
+
+  'keyword-density-checker': `
+      <h2>Free keyword density checker</h2>
+      <p>Paste your article or page text and this <strong>free keyword density checker</strong> lists your most-used <strong>single words</strong>, <strong>2-word phrases</strong> and <strong>3-word phrases</strong>, each with its count and density, plus the total and unique word count. Tick “Ignore common words” to hide words like “the” and “and”, and set a minimum word length. It's a <strong>keyword density checker online</strong> — a <strong>free keyword density analyzer</strong> and <strong>free keyword density tool</strong> with no sign-up (a <strong>keyword density checker free tool</strong>).</p>
+      <h2>What is keyword density?</h2>
+      <p><strong>what is keyword density</strong>? It's the share of your words taken up by a keyword or phrase — the <strong>keyword density meaning</strong> in one line. The <strong>keyword density formula</strong> (or <strong>keyword density checker formula</strong>) is count ÷ total words × 100. So for <strong>keyword density in 1000 words</strong>, a phrase used 10 times is a 1% <strong>keyword density percentage</strong>.</p>
+      <h2>Best keyword density for SEO</h2>
+      <p>There's no magic number. Google has said it doesn't use a target density, and repeating a keyword unnaturally is “keyword stuffing”, which breaks its spam policies. As a guide to <strong>keyword density for seo</strong>, most well-written pages land around 0.5–2% for their main phrase. The <strong>best keyword density for seo</strong> is the one that reads naturally — use related words and answer the reader's questions. That's how <strong>keyword density in seo</strong> is best treated: a check for overuse, not a goal.</p>
+      <h2>How to check keyword density</h2>
+      <p><strong>how to check keyword density</strong>: paste your text, look at the top 1-, 2- and 3-word lists, and make sure your main topic appears — but nothing is suspiciously high. For a <strong>keyword density in blog</strong> post, check your draft before publishing.</p>
+      <h2>Compared with other tools</h2>
+      <p>It works like the <strong>keyword density checker small seo tools</strong>, <strong>keyword density checker seo review tools</strong> or <strong>keyword density checker ahrefs</strong> pages, without ads or a <strong>keyword density checker extension</strong> (or <strong>keyword density checker chrome extension</strong>) to install. There's no <strong>keyword density checker google</strong> tool, so paste your text here — your content never leaves the browser. A simple <strong>keyword density checker</strong> (a <strong>keyword density checker free</strong> tool).</p>`,
+
+  'morse-code-translator': `
+      <h2>Morse code translator — text to Morse and back</h2>
+      <p>Type text to get Morse code, or paste dots and dashes to get text — the direction is detected automatically. Letters are separated by spaces and words by <code>/</code>. Press <strong>🔊 Play Morse</strong> to hear it as beeps and set the speed from 5 to 35 words per minute — a <strong>morse code translator audio</strong> player built in. Example: SOS = <code>... --- ...</code>.</p>
+      <h2>Morse code to text and English</h2>
+      <p>As a <strong>morse code translator morse code to text</strong> (<strong>morse code translator to english</strong>) tool, paste the code using dots (.) and dashes (-); “·” and “−” work too. Unknown codes show as �, so you can spot typos.</p>
+      <h2>Numbers</h2>
+      <p>As a <strong>morse code translator numbers</strong> (or <strong>morse code translator for numbers</strong>) chart: 1 = <code>.----</code>, 2 = <code>..---</code>, 3 = <code>...--</code>, 4 = <code>....-</code>, 5 = <code>.....</code>, 6 = <code>-....</code>, 7 = <code>--...</code>, 8 = <code>---..</code>, 9 = <code>----.</code>, 0 = <code>-----</code>. Punctuation such as . , ? ! / @ is supported too.</p>
+      <h2>Audio, images, video and light</h2>
+      <p>This tool translates text you type. For a <strong>morse code translator for audio</strong> clip, a <strong>morse code translator for videos</strong> (a <strong>morse code translator video</strong>), a <strong>morse code translator for images</strong> (a <strong>morse code translator image</strong> or <strong>morse code translator picture</strong>) or a <strong>morse code translator for light</strong> signals, write down the short (dot) and long (dash) signals and paste them here — a dash lasts three times as long as a dot, and gaps separate letters and words.</p>
+      <h2>Games, kids and ham radio</h2>
+      <ul>
+        <li>Game puzzles — a <strong>morse code translator dayz</strong> clue or a <strong>morse code translator for battlefield 1</strong> easter egg: type the dots and dashes you find.</li>
+        <li><strong>morse code translator for kids</strong> — write secret messages and play them aloud; slower speeds are easier to learn.</li>
+        <li><strong>morse code translator for ham radio</strong> practice — listen at 15–20 wpm and copy what you hear. (Looking for a <strong>morse code translator for sale</strong>? Practice here for free first.)</li>
+      </ul>
+      <p>Like the <strong>morse code translator google</strong> Gboard keyboard, but on any device — a simple <strong>morse code translator</strong>.</p>`,
+
+  'binary-translator': `
+      <h2>Binary translator — text to binary and back</h2>
+      <p>Type text and click <strong>Text → Binary</strong> to get each character as 8-bit binary, or paste binary and click <strong>Binary → Text</strong> to decode it. You can also convert text to and from <strong>hex</strong> and <strong>decimal</strong> codes. Text is encoded as UTF-8, so accented letters and emoji work too. It's a <strong>binary translator to text</strong> and back.</p>
+      <h2>Example</h2>
+      <p>“Hello” in binary is <code>01001000 01100101 01101100 01101100 01101111</code> — H = 72, e = 101, l = 108, o = 111 in decimal. That's how a <strong>binary translator to english</strong> (a <strong>binary translator to words</strong> tool) works: every 8 bits is one byte, and each byte is a letter's code. For plain English that's the same as a <strong>binary translator to ascii</strong>.</p>
+      <h2>Binary numbers and decimal</h2>
+      <p>This page translates text. A <strong>binary translator to numbers</strong>, a <strong>binary translator to decimal</strong> or a <strong>binary translator for numbers</strong> (a <strong>binary code translator for numbers</strong>) is a different job: use the <a href="/number-base-converter">Number Base Converter</a>. For example, <strong>binary translator 101</strong>: 101 in binary = 1×4 + 0×2 + 1×1 = <strong>5</strong>.</p>
+      <h2>IP addresses</h2>
+      <p>As a <strong>binary converter for ip address</strong> octets, convert each part of the address separately in the Number Base Converter: 192 = 11000000, 168 = 10101000, so 192.168.1.1 = 11000000.10101000.00000001.00000001.</p>
+      <h2>Pictures and camera</h2>
+      <p>There's no <strong>binary translator from image</strong> (or <strong>binary translator picture</strong>) reader here: copy the 0s and 1s from the picture (phone text recognition — a <strong>binary translator camera</strong> or <strong>binary translator with camera</strong> trick — works well), then paste. Unlike a <strong>binary translator to english google translate</strong> search, this decodes it properly. A simple <strong>binary translator</strong>.</p>`,
+
+  'text-repeater': `
+      <h2>Text repeater — repeat text 100 or 1000 times</h2>
+      <p>Type a word, emoji or message, choose how many times to repeat it, and pick a separator: <strong>new line</strong>, <strong>space</strong>, <strong>comma</strong>, <strong>none</strong> or a <strong>custom</strong> separator. Tick <strong>Number each line</strong> to add 1., 2., 3. Then copy the result. A <strong>text repeater 100 times</strong> or <strong>text repeater 1000 times</strong> job takes a second — it's a <strong>text repeater online</strong> and <strong>text repeater generator</strong> that lets you <strong>text repeater copy and paste</strong> anywhere.</p>
+      <h2>For WhatsApp, Instagram and Snapchat</h2>
+      <ul>
+        <li><strong>text repeater for whatsapp</strong> (a <strong>text repeater whatsapp</strong> trick) — repeat a “Happy birthday 🎉” or a row of hearts, then paste it into the chat. It's a <strong>text repeater for whatsapp messages and social posts</strong>, with no <strong>text repeater for whatsapp apk</strong> to install.</li>
+        <li><strong>text repeater for instagram</strong> (a <strong>text repeater for instagram free</strong>) — fun comments, captions and emoji lines.</li>
+        <li><strong>text repeater for snapchat</strong> and a <strong>text repeater for youtube</strong> comment — paste the result.</li>
+      </ul>
+      <p>Please use it for fun, not to spam people — apps may limit or block very long or repeated messages.</p>
+      <h2>Practical uses</h2>
+      <ul>
+        <li>Testing forms and layouts with long input.</li>
+        <li>Making numbered lists or templates (with Number each line).</li>
+        <li>Writing lines, worksheets and handwriting practice sheets.</li>
+      </ul>
+      <p>The output is capped at about 5 million characters so your browser stays responsive. It works in any browser — no <strong>text repeater app</strong> needed. A simple <strong>text repeater</strong>.</p>`,
+
+  'online-notepad': `
+      <h2>Free online notepad that saves automatically</h2>
+      <p>Start typing — this <strong>online notepad</strong> saves every change automatically in your browser, so your notes are still here when you come back. Create as many notes as you like with <strong>+ New note</strong>, switch between them in the list, and <strong>download</strong> any note as a .txt file or copy it. A live word count shows as you type. It's an <strong>online notepad free</strong> of accounts and ads — the <strong>online notepad that saves</strong> without a sign-in, and an <strong>online notepad for free</strong> forever.</p>
+      <h2>Private by design</h2>
+      <p>Your notes are stored only in this browser on this device — never on our servers. That also means clearing your browser data deletes them, and they don't sync between devices, so download anything important.</p>
+      <h2>For writing, typing and kids</h2>
+      <ul>
+        <li><strong>online notepad for writing</strong> drafts, to-do lists and ideas — a distraction-free <strong>online notepad editor</strong>.</li>
+        <li><strong>online notepad for typing</strong> practice — try the <a href="/typing-speed-test">Typing Speed Test</a> too.</li>
+        <li><strong>online notepad for kids</strong> — simple, no sign-up and nothing to install.</li>
+        <li><strong>online notepad dark mode</strong> — the site follows your device's dark-mode setting.</li>
+      </ul>
+      <h2>For HTML and coding</h2>
+      <p>As an <strong>online notepad for coding</strong> or an <strong>online notepad for html</strong> (<strong>online notepad for html coding</strong>), it keeps snippets safe in plain text; download as .txt and rename to .html. It doesn't run or highlight code.</p>
+      <h2>Sharing, drawing and pens</h2>
+      <p>There's no share link — for an <strong>online notepad share</strong> (or <strong>online notepad for sharing</strong>), copy the text or download the file and send it. It's for typed text, so an <strong>online notepad drawing</strong> pad, an <strong>online notepad for drawing</strong> or an <strong>online notepad with pen</strong> input isn't supported. Bookmark the page and it works like an <strong>online notepad app</strong> on any device.</p>`,
+
+  'words-to-minutes': `
+      <h2>Words to minutes converter for speeches</h2>
+      <p>Enter your word count — or paste your speech to count it automatically — and choose a speaking pace: <strong>slow</strong> (100 words per minute), <strong>average</strong> (130 wpm), <strong>fast</strong> (160 wpm) or a custom pace. You'll see how long the speech will take, plus the silent reading time (at about 238 wpm). Switch to <strong>Minutes → words</strong> to find how many words you need for a set time. It's a <strong>words to minutes converter</strong>, a <strong>words to minutes calculator</strong> and a <strong>speech time calculator</strong> — the <strong>speech time calculator words to minutes converter</strong> for any talk.</p>
+      <h2>How long is a 1000 word speech?</h2>
+      <p><strong>how long is a 1000 word speech</strong>? At an average 130 wpm, about <strong>7 minutes 42 seconds</strong> — between 6¼ minutes (fast) and 10 minutes (slow). <strong>how many minutes is a 1000 word speech</strong> to read silently? About 4 minutes. And <strong>how long is a 700 word speech</strong>? About 5 minutes 23 seconds.</p>
+      <h2>How many words is a 5 minute speech?</h2>
+      <p><strong>how many words is a 5 minute speech</strong>? About <strong>650 words</strong> at an average pace (500–800 depending on speed). Likewise, <strong>how many words for a 5 minute presentation</strong>: 650; <strong>how many words for a 10 minute speech</strong>: about 1,300. For <strong>how many words in a 5 minute speech toastmasters</strong> clubs expect: a 5–7 minute speech is roughly 650–900 words.</p>
+      <h2>Words per minute speech averages</h2>
+      <p>The <strong>words per minute speech average</strong> is 120–150 for presentations and up to 160 in conversation. The <strong>average words per minute for speech</strong> making is lower when you pause for effect — a good thing. As <strong>words per minute for presentation</strong> advice, aim for 120–140, and practise out loud with a timer: your real pace is the best number to enter here. Silent reading is faster, so a <strong>words to minutes reading time</strong> estimate is shown separately.</p>
+      <p>This <strong>words to minutes speech calculator</strong> (a <strong>words to minutes speech</strong> and <strong>words per minute speech</strong> tool) also works as a <strong>speaking time calculator</strong> — a <strong>speaking time calculator from text</strong> when you paste a script — and a <strong>speech time estimator</strong> (<strong>speech time calculator free</strong>). A simple <strong>words to minutes</strong> converter.</p>`,
 };

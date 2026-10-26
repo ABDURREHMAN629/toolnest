@@ -3,6 +3,12 @@ const path = require('path');
 const config = require('./site.config');
 const { CATEGORIES, TOOLS } = require('./site/assets/js/registry.js');
 const CONTENT = require('./content.js');
+// Blog articles: one module per post in ./blog — the file name is the URL slug (blog/<slug>.js → /blog/<slug>).
+const BLOG_DIR = path.join(__dirname, 'blog');
+const POSTS = (fs.existsSync(BLOG_DIR) ? fs.readdirSync(BLOG_DIR).filter(f => f.endsWith('.js')) : [])
+  .map(f => ({ slug: f.slice(0, -3), tools: [], ...require(path.join(BLOG_DIR, f)) }))
+  .sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
+const postsFor = (...slugs) => POSTS.filter(p => p.tools.some(s => slugs.includes(s)));
 
 const OUT = path.join(__dirname, 'site');
 const VERSION = Date.now().toString(36);
@@ -20,7 +26,7 @@ const year = new Date().getFullYear();
 const owner = config.owner || {};
 const waLink = config.whatsapp ? `https://wa.me/${config.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(`Hi, I'm messaging from ${config.name}`)}` : '';
 
-function head({ title, desc, file, extraHead = '', jsonld = [], noindex = false }) {
+function head({ title, desc, file, extraHead = '', jsonld = [], noindex = false, ogType = 'website' }) {
   const ga = config.gaId ? `
 <script async src="https://www.googletagmanager.com/gtag/js?id=${esc(config.gaId)}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${esc(config.gaId)}');</script>` : '';
@@ -35,7 +41,7 @@ function head({ title, desc, file, extraHead = '', jsonld = [], noindex = false 
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${esc(abs(file))}">`}
-<meta property="og:type" content="website">
+<meta property="og:type" content="${ogType}">
 <meta property="og:site_name" content="${esc(config.name)}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
@@ -61,7 +67,7 @@ ${header()}`;
 }
 
 function header() {
-  const cats = CATEGORIES.map(c => `<a href="${BASE}${c.slug}"><span>${c.icon}</span>${esc(c.name)}</a>`).join('');
+  const cats = CATEGORIES.map(c => `<a href="${BASE}${c.slug}"><span>${c.icon}</span>${esc(c.name)}</a>`).join('') + (POSTS.length ? `<a href="${BASE}blog"><span>📝</span>Blog &amp; guides</a>` : '');
   return `<header class="site-header">
   <div class="container header-inner">
     <a class="logo" href="${BASE}" aria-label="${esc(config.name)} home"><img class="logo-mark" src="${BASE}assets/img/favicon.svg?v=2" alt="" width="30" height="30">${esc(config.name)}</a>
@@ -73,7 +79,8 @@ function header() {
       <a class="nav-link hide-sm" href="${BASE}pdf-tools">PDF</a>
       <a class="nav-link hide-sm" href="${BASE}image-tools">Image</a>
       <a class="nav-link hide-sm" href="${BASE}video-audio-tools">Video</a>
-      <a class="nav-link hide-sm" href="${BASE}student-tools">Student</a>
+      <a class="nav-link hide-sm" href="${BASE}student-tools">Student</a>${POSTS.length ? `
+      <a class="nav-link hide-sm" href="${BASE}blog">Blog</a>` : ''}
     </nav>
     <div class="header-search">
       <input type="search" id="site-search" placeholder="Search ${COUNT}+ tools…" autocomplete="off" aria-label="Search tools">
@@ -97,7 +104,7 @@ function footer(scripts = '') {
         <a class="logo" href="${BASE}"><img class="logo-mark" src="${BASE}assets/img/favicon.svg?v=2" alt="" width="30" height="30">${esc(config.name)}</a>
         <p>${esc(config.tagline)}. ${COUNT}+ free tools that run right in your browser — no sign-up, no uploads, no limits.</p>
       </div>
-      <div class="footer-links"><a href="${BASE}about">About</a><a href="${BASE}contact">Contact</a><a href="${BASE}privacy-policy">Privacy Policy</a><a href="${BASE}terms">Terms of Use</a><a href="${BASE}sitemap.xml">Sitemap</a>${waLink ? `<a href="${waLink}" rel="noopener" target="_blank">💬 WhatsApp</a>` : ''}</div>
+      <div class="footer-links">${POSTS.length ? `<a href="${BASE}blog">Blog</a>` : ''}<a href="${BASE}about">About</a><a href="${BASE}contact">Contact</a><a href="${BASE}privacy-policy">Privacy Policy</a><a href="${BASE}terms">Terms of Use</a><a href="${BASE}sitemap.xml">Sitemap</a>${waLink ? `<a href="${waLink}" rel="noopener" target="_blank">💬 WhatsApp</a>` : ''}</div>
     </div>
     <div class="footer-cols">${cols}</div>
     <p class="copyright">© ${year} ${esc(config.name)}. All rights reserved.</p>
@@ -185,7 +192,8 @@ for (const t of TOOLS) {
       <h2>How to use the ${esc(t.name)}</h2>
       <ol class="steps">${t.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
       <h2>About this tool</h2>
-      <p>${esc(t.desc)} ${esc(t.name)} is part of ${esc(config.name)}'s collection of free ${esc(c.name.toLowerCase())}. ${['pdf', 'image', 'media'].includes(c.id) ? 'All processing happens locally in your browser, so your files stay private and nothing is uploaded.' : 'It works instantly in your browser with no account and no installation.'}</p>${CONTENT[t.slug] || ''}
+      <p>${esc(t.desc)} ${esc(t.name)} is part of ${esc(config.name)}'s collection of free ${esc(c.name.toLowerCase())}. ${['pdf', 'image', 'media'].includes(c.id) ? 'All processing happens locally in your browser, so your files stay private and nothing is uploaded.' : 'It works instantly in your browser with no account and no installation.'}</p>${CONTENT[t.slug] || ''}${(g => g.length ? `
+      <p class="related-guides">📝 <strong>Related guide${g.length > 1 ? 's' : ''}:</strong> ${g.map(p => `<a href="${BASE}blog/${p.slug}">${esc(p.title)}</a>`).join(' · ')}</p>` : '')(postsFor(t.slug, base.slug))}
       <h2>Frequently asked questions</h2>
       <div class="faq">${fq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div>
     </article>
@@ -312,6 +320,80 @@ staticPage('terms.html', 'Terms of Use', `Terms of use for ${config.name}.`, `
   <p>Do not use the site to break the law, infringe copyright or attempt to disrupt the service.</p>
   <h2>Changes</h2>
   <p>We may update these terms and the tools at any time. Continued use means you accept the updated terms.</p>`);
+// ---- Blog: index, one page per article, and an RSS feed.
+const lastmod = {};
+if (POSTS.length) {
+  fs.rmSync(path.join(OUT, 'blog'), { recursive: true, force: true }); // drop pages of deleted posts
+  const textOf = h => h.replace(/<[^>]+>/g, ' ').replace(/&[a-z#0-9]+;/gi, ' ');
+  const wordCount = h => textOf(h).split(/\s+/).filter(Boolean).length;
+  const anchor = h => textOf(h).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const longDate = d => new Date(d + 'T00:00:00Z').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+  const author = { '@type': 'Person', name: owner.name || config.name, url: abs('about.html'), sameAs: (owner.links || []).map(l => l[1]) };
+  const rss = `\n<link rel="alternate" type="application/rss+xml" title="${esc(config.name)} Blog" href="${SITE}/blog/rss.xml">`;
+  const toolCta = slug => {
+    const t = toolBySlug[slug]; if (!t) throw new Error(`Blog: unknown tool "${slug}"`);
+    return `<div class="tool-cta"><span class="tool-icon" style="--c:${catById[t.cat].color}">${t.icon}</span><div><strong>${esc(t.name)}</strong><p>${esc(t.desc)}</p></div><a class="btn" href="${BASE}${t.slug}">Open the tool →</a></div>`;
+  };
+  for (const p of POSTS) {
+    const file = `blog/${p.slug}.html`, url = abs(file), modified = p.updated || p.date, toc = [];
+    lastmod[file] = modified;
+    const body = p.html
+      .replace(/<h2>([\s\S]*?)<\/h2>/g, (m, h) => { const id = anchor(h); toc.push([id, h]); return `<h2 id="${id}">${h}</h2>`; })
+      .replace(/\{\{tool:([a-z0-9-]+)\}\}/g, (m, s) => toolCta(s));
+    const minutes = Math.max(1, Math.round(wordCount(p.html) / 230));
+    const related = POSTS.filter(x => x !== p).map(x => [x, x.tools.filter(s => p.tools.includes(s)).length]).sort((a, b) => b[1] - a[1]).slice(0, 4).map(x => x[0]);
+    const jsonld = [
+      { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: p.title, description: p.desc, url, mainEntityOfPage: url, image: `${SITE}/assets/img/og.jpg`, datePublished: p.date, dateModified: modified, wordCount: wordCount(p.html), author, publisher: { '@type': 'Organization', name: config.name, url: abs('index.html'), logo: { '@type': 'ImageObject', url: `${SITE}/assets/img/logo.png` } } },
+      { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: abs('index.html') }, { '@type': 'ListItem', position: 2, name: 'Blog', item: abs('blog.html') }, { '@type': 'ListItem', position: 3, name: p.title, item: url }] },
+      ...(p.faq ? [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: p.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] : []),
+    ];
+    write(file, head({ title: `${p.title} | ${config.name}`, desc: p.desc, file, jsonld, ogType: 'article', extraHead: `\n<meta property="article:published_time" content="${p.date}">\n<meta property="article:modified_time" content="${modified}">${rss}` }) + `
+<main class="container page">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="${BASE}">Home</a><span>›</span><a href="${BASE}blog">Blog</a><span>›</span><span>${esc(p.title)}</span></nav>
+  <div class="content-grid">
+    <article class="prose post">
+      <h1>${esc(p.title)}</h1>
+      <p class="post-meta"><span>By <a href="${BASE}about">${esc(author.name)}</a></span><span>${modified !== p.date ? `Updated ${longDate(modified)}` : longDate(p.date)}</span><span>${minutes} min read</span></p>
+      ${toc.length > 2 ? `<nav class="toc" aria-label="Contents"><strong>In this article</strong><ol>${toc.map(([id, h]) => `<li><a href="#${id}">${textOf(h).trim()}</a></li>`).join('')}${p.faq ? '<li><a href="#faq">Frequently asked questions</a></li>' : ''}</ol></nav>` : ''}
+      ${body}
+      ${p.faq ? `<h2 id="faq">Frequently asked questions</h2>
+      <div class="faq">${p.faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div>` : ''}
+      <div class="author-box"><img src="${BASE}assets/img/favicon.svg?v=2" alt="" width="48" height="48"><div><strong>Written by ${esc(author.name)}</strong><p>${esc(owner.role ? `${owner.role[0].toUpperCase()}${owner.role.slice(1)} who builds and maintains every tool on ${config.name}.` : `The ${config.name} team.`)} <a href="${BASE}about">More about me</a>.</p></div></div>
+    </article>
+    <aside class="sidebar">
+      <h3>Tools in this article</h3>
+      <ul class="side-list">${p.tools.map(s => toolBySlug[s]).map(t => `<li><a href="${BASE}${t.slug}"><span>${t.icon}</span>${esc(t.name)}</a></li>`).join('')}</ul>
+      ${related.length ? `<h3>More guides</h3>
+      <ul class="side-list">${related.map(r => `<li><a href="${BASE}blog/${r.slug}"><span>📝</span>${esc(r.title)}</a></li>`).join('')}</ul>` : ''}
+      <a class="side-more" href="${BASE}blog">All articles →</a>
+    </aside>
+  </div>
+</main>
+` + footer());
+  }
+  const blogDesc = `Practical how-to guides and answers from ${config.name}: speeches, typing, contacts, Instagram, gaming controllers, Discord and more — each with a free tool to do the job.`;
+  write('blog.html', head({
+    title: `Blog – Free How-To Guides | ${config.name}`, desc: blogDesc, file: 'blog.html', extraHead: rss,
+    jsonld: [{ '@context': 'https://schema.org', '@type': 'Blog', name: `${config.name} Blog`, url: abs('blog.html'), description: blogDesc, publisher: { '@type': 'Organization', name: config.name, url: abs('index.html') }, blogPost: POSTS.map(p => ({ '@type': 'BlogPosting', headline: p.title, url: abs(`blog/${p.slug}.html`), datePublished: p.date, author })) }],
+  }) + `
+<main class="container page">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="${BASE}">Home</a><span>›</span><span>Blog</span></nav>
+  <div class="tool-head">
+    <span class="tool-icon lg" style="--c:#4f46e5">📝</span>
+    <div><h1>Blog &amp; guides</h1><p class="lead">${esc(blogDesc)}</p></div>
+  </div>
+  <div class="post-grid">${POSTS.map(p => `<a class="post-card" href="${BASE}blog/${p.slug}"><span class="small muted">${longDate(p.date)} · ${Math.max(1, Math.round(wordCount(p.html) / 230))} min read</span><h2>${esc(p.title)}</h2><p>${esc(p.desc)}</p><span class="small post-tools">${p.tools.map(s => `${toolBySlug[s].icon} ${esc(toolBySlug[s].name)}`).join(' · ')}</span></a>`).join('')}</div>
+</main>
+` + footer());
+  fs.writeFileSync(path.join(OUT, 'blog', 'rss.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
+<title>${esc(config.name)} Blog</title><link>${abs('blog.html')}</link><description>${esc(blogDesc)}</description><language>en</language>
+<atom:link href="${SITE}/blog/rss.xml" rel="self" type="application/rss+xml"/>
+${POSTS.map(p => `<item><title>${esc(p.title)}</title><link>${abs(`blog/${p.slug}.html`)}</link><guid>${abs(`blog/${p.slug}.html`)}</guid><pubDate>${new Date(p.date + 'T09:00:00Z').toUTCString()}</pubDate><description>${esc(p.desc)}</description></item>`).join('\n')}
+</channel></rss>
+`);
+}
+
 write('404.html', head({ title: `Page not found | ${config.name}`, desc: 'Page not found', file: '404.html', noindex: true }) + `
 <main class="container page narrow center-text">
   <h1>Page not found</h1>
@@ -322,7 +404,7 @@ write('404.html', head({ title: `Page not found | ${config.name}`, desc: 'Page n
 const urls = pages.filter(p => p !== '404.html');
 fs.writeFileSync(path.join(OUT, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(p => `  <url><loc>${esc(abs(p))}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
+${urls.map(p => `  <url><loc>${esc(abs(p))}</loc><lastmod>${lastmod[p] || today}</lastmod></url>`).join('\n')}
 </urlset>
 `);
 // ads.txt is required for AdSense to pay out at full rate
@@ -346,7 +428,11 @@ ${CATEGORIES.map(c => `## ${c.name}
 ${c.desc}
 
 ${TOOLS.filter(t => t.cat === c.id).map(t => `- [${t.name}](${abs(t.slug + '.html')}): ${t.desc}`).join('\n')}`).join('\n\n')}
+${POSTS.length ? `
+## Guides
 
+${POSTS.map(p => `- [${p.title}](${abs(`blog/${p.slug}.html`)}): ${p.desc}`).join('\n')}
+` : ''}
 ## About
 
 - [About ${config.name}](${abs('about.html')})

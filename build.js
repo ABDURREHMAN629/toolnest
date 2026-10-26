@@ -25,6 +25,7 @@ function head({ title, desc, file, extraHead = '', jsonld = [], noindex = false 
 <script async src="https://www.googletagmanager.com/gtag/js?id=${esc(config.gaId)}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${esc(config.gaId)}');</script>` : '';
   const ads = config.adsenseClient ? `
+<meta name="google-adsense-account" content="${esc(config.adsenseClient)}">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${esc(config.adsenseClient)}" crossorigin="anonymous"></script>` : '';
   return `<!doctype html>
 <html lang="en">

@@ -371,7 +371,7 @@ if (POSTS.length) {
 </main>
 ` + footer());
   }
-  const blogDesc = `Practical how-to guides and answers from ${config.name}: speeches, typing, contacts, Instagram, gaming controllers, Discord and more — each with a free tool to do the job.`;
+  const blogDesc = `Practical how-to guides from ${config.name} — PDFs and photos, keyboards and mice, internet speed, GPA, speeches, Instagram, Discord and more — each with a free tool to do the job.`;
   write('blog.html', head({
     title: `Blog – Free How-To Guides | ${config.name}`, desc: blogDesc, file: 'blog.html', extraHead: rss,
     jsonld: [{ '@context': 'https://schema.org', '@type': 'Blog', name: `${config.name} Blog`, url: abs('blog.html'), description: blogDesc, publisher: { '@type': 'Organization', name: config.name, url: abs('index.html') }, blogPost: POSTS.map(p => ({ '@type': 'BlogPosting', headline: p.title, url: abs(`blog/${p.slug}.html`), datePublished: p.date, author })) }],

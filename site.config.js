@@ -14,7 +14,7 @@ module.exports = {
     links: [['Portfolio', 'https://abdurrehman629.github.io'], ['Case studies', 'https://github.com/ABDURREHMAN629/case-studies'], ['LinkedIn', 'https://www.linkedin.com/in/abdur-rehman-ar03247440629'], ['GitHub', 'https://github.com/ABDURREHMAN629']],
   },
   gaId: '',              // Google Analytics 4 ID, e.g. 'G-XXXXXXXXXX'
-  adsenseClient: '',     // AdSense publisher ID, e.g. 'ca-pub-1234567890123456'
+  adsenseClient: 'ca-pub-2580309541293686',     // AdSense publisher ID, e.g. 'ca-pub-1234567890123456'
   googleVerification: '', // Search Console "HTML tag" content value (optional if you verify by DNS)
   bingVerification: '',   // Bing Webmaster Tools msvalidate.01 content value (optional)
 };

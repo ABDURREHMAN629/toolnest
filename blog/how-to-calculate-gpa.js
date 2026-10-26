@@ -1,7 +1,7 @@
 module.exports = {
   title: 'How to Calculate Your GPA (Step by Step) and Convert It to a Percentage',
   desc: 'Learn the GPA formula with a worked example, how cumulative GPA works across semesters, and how to convert a 4.0 or 10-point GPA to a percentage.',
-  date: '2026-10-27',
+  date: '2026-10-26',
   tools: ['gpa-calculator', 'cgpa-calculator', 'cgpa-to-percentage'],
   faq: [
     ['What is a good GPA?', 'On a 4.0 scale, 3.0 (a B average) is generally considered good, 3.5 or above is strong, and 3.7–4.0 is excellent. What counts as good depends on your school and what you are applying for.'],

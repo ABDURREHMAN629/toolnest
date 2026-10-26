@@ -1,7 +1,7 @@
 module.exports = {
   title: 'How to Test a Laptop Keyboard (and Fix Keys That Stop Working)',
   desc: 'Test every key on your laptop keyboard online in a minute, find dead, sticky or double-pressing keys, and try the fixes that work on Windows laptops and MacBooks.',
-  date: '2026-10-27',
+  date: '2026-10-26',
   tools: ['laptop-keyboard-test', 'keyboard-tester', 'keyboard-ghosting-test'],
   faq: [
     ['How do I check if all my keyboard keys are working?', 'Open an online keyboard tester, choose your laptop layout and press every key once. Keys that turn green work. Use "Highlight untested keys" to see which ones you missed or which didn\'t respond.'],

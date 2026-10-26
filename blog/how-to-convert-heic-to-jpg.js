@@ -1,7 +1,7 @@
 module.exports = {
   title: 'How to Convert HEIC to JPG on Windows, Mac, iPhone and Android',
   desc: "iPhone photos saved as HEIC won't open everywhere. Convert HEIC to JPG for free on any device — one photo or hundreds at once — and stop your iPhone saving HEIC in future.",
-  date: '2026-10-27',
+  date: '2026-10-26',
   tools: ['heic-to-jpg', 'compress-image', 'jpg-to-pdf'],
   faq: [
     ['Does converting HEIC to JPG reduce quality?', 'Very little if you use a high quality setting (around 90%). JPG files are larger than HEIC for the same quality, so expect the converted photos to take up more space.'],

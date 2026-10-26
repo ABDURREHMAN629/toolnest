@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate Hours Worked (With Breaks, Decimals and Excel) | WebToolNest</title>
+<meta name="description" content="Work out hours worked from start and end times, subtract unpaid breaks, convert minutes to decimal hours for payroll, and total a week — with Excel and Google Sheets formulas.">
+<link rel="canonical" href="https://www.webtoolnest.com/blog/how-to-calculate-hours-worked">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WebToolNest">
+<meta property="og:title" content="How to Calculate Hours Worked (With Breaks, Decimals and Excel) | WebToolNest">
+<meta property="og:description" content="Work out hours worked from start and end times, subtract unpaid breaks, convert minutes to decimal hours for payroll, and total a week — with Excel and Google Sheets formulas.">
+<meta property="og:url" content="https://www.webtoolnest.com/blog/how-to-calculate-hours-worked">
+<meta property="og:image" content="https://www.webtoolnest.com/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/img/favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/style.css?v=mvp4lhax">
+<script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="google-adsense-account" content="ca-pub-2580309541293686">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2580309541293686" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Calculate Hours Worked (With Breaks, Decimals and Excel)","description":"Work out hours worked from start and end times, subtract unpaid breaks, convert minutes to decimal hours for payroll, and total a week — with Excel and Google Sheets formulas.","url":"https://www.webtoolnest.com/blog/how-to-calculate-hours-worked","mainEntityOfPage":"https://www.webtoolnest.com/blog/how-to-calculate-hours-worked","image":"https://www.webtoolnest.com/assets/img/og.jpg","datePublished":"2026-10-26","dateModified":"2026-10-26","wordCount":638,"author":{"@type":"Person","name":"Abdur Rehman","url":"https://www.webtoolnest.com/about","sameAs":["https://abdurrehman629.github.io","https://github.com/ABDURREHMAN629/case-studies","https://www.linkedin.com/in/abdur-rehman-ar03247440629","https://github.com/ABDURREHMAN629"]},"publisher":{"@type":"Organization","name":"WebToolNest","url":"https://www.webtoolnest.com/","logo":{"@type":"ImageObject","url":"https://www.webtoolnest.com/assets/img/logo.png"}}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.webtoolnest.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.webtoolnest.com/blog"},{"@type":"ListItem","position":3,"name":"How to Calculate Hours Worked (With Breaks, Decimals and Excel)","item":"https://www.webtoolnest.com/blog/how-to-calculate-hours-worked"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate hours worked in a day?","acceptedAnswer":{"@type":"Answer","text":"Subtract the start time from the end time, then subtract any unpaid breaks. 9:00 AM to 5:30 PM with a 30-minute lunch is 8 hours 30 minutes minus 30 minutes = 8 hours."}},{"@type":"Question","name":"How do I convert minutes to decimal hours?","acceptedAnswer":{"@type":"Answer","text":"Divide the minutes by 60. 15 minutes = 0.25 hours, 30 minutes = 0.5, 45 minutes = 0.75, and 20 minutes ≈ 0.33."}},{"@type":"Question","name":"How do I calculate hours worked overnight?","acceptedAnswer":{"@type":"Answer","text":"Count the hours to midnight and add the hours after midnight. 10:00 PM to 6:00 AM is 2 hours + 6 hours = 8 hours. In Excel, use =MOD(end-start,1)*24."}},{"@type":"Question","name":"How many hours are in a full-time work year?","acceptedAnswer":{"@type":"Answer","text":"40 hours a week × 52 weeks = 2,080 hours, before holidays and leave."}},{"@type":"Question","name":"When does overtime start?","acceptedAnswer":{"@type":"Answer","text":"It depends on where you work. In the US, the Fair Labor Standards Act requires overtime at 1.5 times the regular rate for non-exempt employees after 40 hours in a workweek. Other countries and some US states have different rules."}}]}</script>
+<meta property="article:published_time" content="2026-10-26">
+<meta property="article:modified_time" content="2026-10-26">
+<link rel="alternate" type="application/rss+xml" title="WebToolNest Blog" href="https://www.webtoolnest.com/blog/rss.xml">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/" aria-label="WebToolNest home"><img class="logo-mark" src="/assets/img/favicon.svg?v=2" alt="" width="30" height="30">WebToolNest</a>
+    <nav class="main-nav">
+      <div class="dropdown">
+        <button class="nav-btn" aria-haspopup="true" aria-expanded="false">All Tools <span aria-hidden="true">▾</span></button>
+        <div class="dropdown-menu"><a href="/pdf-tools"><span>📄</span>PDF Tools</a><a href="/image-tools"><span>🖼️</span>Image Tools</a><a href="/video-audio-tools"><span>🎬</span>Video &amp; Audio</a><a href="/student-tools"><span>🎓</span>Student &amp; Career</a><a href="/finance-calculators"><span>💰</span>Finance Calculators</a><a href="/health-calculators"><span>❤️</span>Health &amp; Fitness</a><a href="/math-tools"><span>🧮</span>Math &amp; Converters</a><a href="/date-time-tools"><span>⏰</span>Date &amp; Time</a><a href="/text-tools"><span>✍️</span>Text Tools</a><a href="/developer-tools"><span>💻</span>Developer Tools</a><a href="/web-tools"><span>🌐</span>Web &amp; Device</a><a href="/utility-tools"><span>🧰</span>Everyday Utilities</a><a href="/blog"><span>📝</span>Blog &amp; guides</a></div>
+      </div>
+      <a class="nav-link hide-sm" href="/pdf-tools">PDF</a>
+      <a class="nav-link hide-sm" href="/image-tools">Image</a>
+      <a class="nav-link hide-sm" href="/video-audio-tools">Video</a>
+      <a class="nav-link hide-sm" href="/student-tools">Student</a>
+      <a class="nav-link hide-sm" href="/blog">Blog</a>
+    </nav>
+    <div class="header-search">
+      <input type="search" id="site-search" placeholder="Search 170+ tools…" autocomplete="off" aria-label="Search tools">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+    <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌓</button>
+  </div>
+</header>
+<main class="container page">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/blog">Blog</a><span>›</span><span>How to Calculate Hours Worked (With Breaks, Decimals and Excel)</span></nav>
+  <div class="content-grid">
+    <article class="prose post">
+      <h1>How to Calculate Hours Worked (With Breaks, Decimals and Excel)</h1>
+      <p class="post-meta"><span>By <a href="/about">Abdur Rehman</a></span><span>October 26, 2026</span><span>3 min read</span></p>
+      <nav class="toc" aria-label="Contents"><strong>In this article</strong><ol><li><a href="#step-1-work-out-each-day-s-hours">Step 1: Work out each day's hours</a></li><li><a href="#step-2-convert-minutes-to-decimal-hours">Step 2: Convert minutes to decimal hours</a></li><li><a href="#step-3-total-the-week">Step 3: Total the week</a></li><li><a href="#overnight-shifts">Overnight shifts</a></li><li><a href="#how-to-calculate-hours-worked-in-excel-or-google-sheets">How to calculate hours worked in Excel or Google Sheets</a></li><li><a href="#monthly-and-yearly-hours">Monthly and yearly hours</a></li><li><a href="#overtime-basics">Overtime basics</a></li><li><a href="#common-timesheet-mistakes">Common timesheet mistakes</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></nav>
+      
+<blockquote><p><strong>Quick answer:</strong> hours worked = <strong>end time − start time − unpaid breaks</strong>. Convert the minutes to decimals (minutes ÷ 60) for payroll. Example: 9:00 AM to 5:30 PM with a 30-minute lunch = <strong>8.00 hours</strong>.</p></blockquote>
+
+<p>Whether you're filling in a timesheet, checking a payslip or running payroll for a small team, calculating hours by hand is surprisingly easy to get wrong — especially with lunch breaks, minutes and overnight shifts. Here's a simple, reliable method.</p>
+
+<h2 id="step-1-work-out-each-day-s-hours">Step 1: Work out each day's hours</h2>
+<ol class="steps">
+<li>Write the start and end times in 24-hour format if you can (5:30 PM = 17:30). It avoids AM/PM mistakes.</li>
+<li>Subtract: 17:30 − 9:00 = 8 hours 30 minutes.</li>
+<li>Subtract unpaid breaks: 8 h 30 min − 30 min = <strong>8 hours</strong>.</li>
+</ol>
+<p>Or let the time calculator do it — enter the start, end and break, and add an hourly rate to see the pay:</p>
+<div class="tool-cta"><span class="tool-icon" style="--c:#14b8a6">⏱️</span><div><strong>Time Calculator</strong><p>Calculate the hours and minutes between two times, and add or subtract durations.</p></div><a class="btn" href="/time-calculator">Open the tool →</a></div>
+
+<h2 id="step-2-convert-minutes-to-decimal-hours">Step 2: Convert minutes to decimal hours</h2>
+<p>Payroll systems and spreadsheets use <strong>decimal hours</strong>, where 7 hours 45 minutes is 7.75 — not 7.45. Divide the minutes by 60:</p>
+<div class="table-wrap"><table class="table">
+<thead><tr><th>Minutes</th><th class="num">Decimal</th><th>Minutes</th><th class="num">Decimal</th></tr></thead>
+<tbody>
+<tr><td>5</td><td class="num">0.08</td><td>35</td><td class="num">0.58</td></tr>
+<tr><td>10</td><td class="num">0.17</td><td>40</td><td class="num">0.67</td></tr>
+<tr><td>15</td><td class="num">0.25</td><td>45</td><td class="num">0.75</td></tr>
+<tr><td>20</td><td class="num">0.33</td><td>50</td><td class="num">0.83</td></tr>
+<tr><td>25</td><td class="num">0.42</td><td>55</td><td class="num">0.92</td></tr>
+<tr><td>30</td><td class="num">0.50</td><td>60</td><td class="num">1.00</td></tr>
+</tbody></table></div>
+<div class="tool-cta"><span class="tool-icon" style="--c:#14b8a6">🔢</span><div><strong>Time to Decimal Converter</strong><p>Convert hours and minutes to decimal hours for timesheets and payroll — and decimal hours back to hours and minutes — with an optional pay calculation.</p></div><a class="btn" href="/hours-to-decimal">Open the tool →</a></div>
+
+<h2 id="step-3-total-the-week">Step 3: Total the week</h2>
+<div class="table-wrap"><table class="table">
+<thead><tr><th>Day</th><th>Start</th><th>End</th><th>Unpaid break</th><th class="num">Hours</th></tr></thead>
+<tbody>
+<tr><td>Monday</td><td>9:00</td><td>17:30</td><td>30 min</td><td class="num">8.00</td></tr>
+<tr><td>Tuesday</td><td>8:45</td><td>17:15</td><td>45 min</td><td class="num">7.75</td></tr>
+<tr><td>Wednesday</td><td>9:00</td><td>18:00</td><td>60 min</td><td class="num">8.00</td></tr>
+<tr><td>Thursday</td><td>9:15</td><td>17:30</td><td>30 min</td><td class="num">7.75</td></tr>
+<tr><td>Friday</td><td>9:00</td><td>15:00</td><td>none</td><td class="num">6.00</td></tr>
+<tr><td colspan="4"><strong>Total</strong></td><td class="num"><strong>37.50</strong></td></tr>
+</tbody></table></div>
+<p>At an hourly rate of 20, that week's pay is 37.5 × 20 = <strong>750</strong>. The time calculator's "total of many durations" mode adds up a week for you: enter each day as 8:00, 7:45 and so on.</p>
+
+<h2 id="overnight-shifts">Overnight shifts</h2>
+<p>When a shift crosses midnight, the end time is "smaller" than the start time, so a simple subtraction goes negative. Count the hours to midnight and add the hours after: 22:00 to 06:00 = 2 + 6 = <strong>8 hours</strong>. The time calculator detects overnight shifts automatically.</p>
+
+<h2 id="how-to-calculate-hours-worked-in-excel-or-google-sheets">How to calculate hours worked in Excel or Google Sheets</h2>
+<p>Put the start time in A2, end time in B2 and unpaid break (as a time, such as 0:30) in C2. Format A2:C2 as Time.</p>
+<div class="table-wrap"><table class="table">
+<thead><tr><th>What you want</th><th>Formula</th></tr></thead>
+<tbody>
+<tr><td>Hours worked (decimal)</td><td><code>=(B2-A2)*24</code></td></tr>
+<tr><td>Hours worked minus lunch</td><td><code>=(B2-A2-C2)*24</code></td></tr>
+<tr><td>Overnight shifts</td><td><code>=MOD(B2-A2,1)*24</code></td></tr>
+<tr><td>Hours as h:mm instead</td><td><code>=B2-A2-C2</code>, formatted as <code>[h]:mm</code></td></tr>
+<tr><td>Pay</td><td><code>=(B2-A2-C2)*24*D2</code>, with the hourly rate in D2</td></tr>
+</tbody></table></div>
+<p>Excel stores times as fractions of a day, which is why you multiply by 24 to get hours. Use the <code>[h]:mm</code> format for weekly totals — without the square brackets, totals over 24 hours "wrap around" and show the wrong number.</p>
+
+<h2 id="monthly-and-yearly-hours">Monthly and yearly hours</h2>
+<ul>
+<li><strong>Per week:</strong> add up each day.</li>
+<li><strong>Per month:</strong> weekly hours × 52 ÷ 12. A 40-hour week averages about 173.3 hours a month.</li>
+<li><strong>Per year:</strong> 40 hours × 52 weeks = 2,080 hours, before holidays and leave.</li>
+</ul>
+
+<h2 id="overtime-basics">Overtime basics</h2>
+<p>In the United States, the Fair Labor Standards Act requires overtime of at least 1.5 times the regular rate for non-exempt employees for hours over 40 in a workweek. Some states, such as California, also have daily overtime rules, and other countries set their own limits. Check your contract and local labour law. Using the example week above, someone working 45 hours at 20 an hour would earn 40 × 20 + 5 × 30 = 950.</p>
+
+<h2 id="common-timesheet-mistakes">Common timesheet mistakes</h2>
+<ul>
+<li><strong>Writing minutes as decimals.</strong> 7 hours 45 minutes is 7.75 hours, not 7.45.</li>
+<li><strong>Forgetting unpaid breaks</strong> — or subtracting paid breaks that should count.</li>
+<li><strong>AM/PM mix-ups.</strong> Use 24-hour time to avoid them; the <a href="/military-time-converter">military time converter</a> converts between the two.</li>
+<li><strong>Rounding each day instead of the total.</strong> Round once, at the end, to two decimal places — or follow your employer's rounding policy.</li>
+</ul>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      <div class="faq"><details><summary>How do I calculate hours worked in a day?</summary><p>Subtract the start time from the end time, then subtract any unpaid breaks. 9:00 AM to 5:30 PM with a 30-minute lunch is 8 hours 30 minutes minus 30 minutes = 8 hours.</p></details><details><summary>How do I convert minutes to decimal hours?</summary><p>Divide the minutes by 60. 15 minutes = 0.25 hours, 30 minutes = 0.5, 45 minutes = 0.75, and 20 minutes ≈ 0.33.</p></details><details><summary>How do I calculate hours worked overnight?</summary><p>Count the hours to midnight and add the hours after midnight. 10:00 PM to 6:00 AM is 2 hours + 6 hours = 8 hours. In Excel, use =MOD(end-start,1)*24.</p></details><details><summary>How many hours are in a full-time work year?</summary><p>40 hours a week × 52 weeks = 2,080 hours, before holidays and leave.</p></details><details><summary>When does overtime start?</summary><p>It depends on where you work. In the US, the Fair Labor Standards Act requires overtime at 1.5 times the regular rate for non-exempt employees after 40 hours in a workweek. Other countries and some US states have different rules.</p></details></div>
+      <div class="author-box"><img src="/assets/img/favicon.svg?v=2" alt="" width="48" height="48"><div><strong>Written by Abdur Rehman</strong><p>ERP developer and AI &amp; automation engineer who builds and maintains every tool on WebToolNest. <a href="/about">More about me</a>.</p></div></div>
+    </article>
+    <aside class="sidebar">
+      <h3>Tools in this article</h3>
+      <ul class="side-list"><li><a href="/time-calculator"><span>⏱️</span>Time Calculator</a></li><li><a href="/hours-to-decimal"><span>🔢</span>Time to Decimal Converter</a></li><li><a href="/military-time-converter"><span>🎖️</span>Military Time Converter</a></li></ul>
+      <h3>More guides</h3>
+      <ul class="side-list"><li><a href="/blog/military-time-chart"><span>📝</span>Military Time Chart: How to Read and Convert 24-Hour Time</a></li><li><a href="/blog/discord-timestamps"><span>📝</span>Discord Timestamps: How to Show a Time in Everyone&#39;s Time Zone</a></li><li><a href="/blog/how-many-pages-is-1000-words"><span>📝</span>How Many Pages Is 1,000 Words? (Single and Double Spaced Chart)</a></li><li><a href="/blog/how-many-words-is-a-5-minute-speech"><span>📝</span>How Many Words Is a 5-Minute Speech? (Chart for 1 to 60 Minutes)</a></li></ul>
+      <a class="side-more" href="/blog">All articles →</a>
+    </aside>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="/"><img class="logo-mark" src="/assets/img/favicon.svg?v=2" alt="" width="30" height="30">WebToolNest</a>
+        <p>Free online tools for everyday tasks. 170+ free tools that run right in your browser — no sign-up, no uploads, no limits.</p>
+      </div>
+      <div class="footer-links"><a href="/blog">Blog</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms">Terms of Use</a><a href="/sitemap.xml">Sitemap</a><a href="https://wa.me/923444594523?text=Hi%2C%20I'm%20messaging%20from%20WebToolNest" rel="noopener" target="_blank">💬 WhatsApp</a></div>
+    </div>
+    <div class="footer-cols"><div><h4><a href="/pdf-tools">PDF Tools</a></h4><ul><li><a href="/merge-pdf">Merge PDF</a></li><li><a href="/split-pdf">Split PDF</a></li><li><a href="/compress-pdf">Compress PDF</a></li><li><a href="/pdf-to-jpg">PDF to JPG</a></li><li><a href="/jpg-to-pdf">JPG to PDF</a></li><li><a href="/pdf-to-word">PDF to Word</a></li></ul></div><div><h4><a href="/image-tools">Image Tools</a></h4><ul><li><a href="/compress-image">Compress Image</a></li><li><a href="/resize-image">Resize Image</a></li><li><a href="/crop-image">Crop Image</a></li><li><a href="/image-converter">Image Converter</a></li><li><a href="/heic-to-jpg">HEIC to JPG</a></li><li><a href="/rotate-image">Rotate &amp; Flip Image</a></li></ul></div><div><h4><a href="/video-audio-tools">Video &amp; Audio</a></h4><ul><li><a href="/video-converter">Video Converter</a></li><li><a href="/video-compressor">Video Compressor</a></li><li><a href="/video-to-mp3">Video to MP3</a></li><li><a href="/video-trimmer">Video Trimmer</a></li><li><a href="/video-to-gif">Video to GIF</a></li><li><a href="/audio-converter">Audio Converter</a></li></ul></div><div><h4><a href="/student-tools">Student &amp; Career</a></h4><ul><li><a href="/cgpa-calculator">CGPA Calculator</a></li><li><a href="/gpa-calculator">GPA Calculator</a></li><li><a href="/grade-calculator">Grade Calculator</a></li><li><a href="/cgpa-to-percentage">CGPA to Percentage</a></li><li><a href="/attendance-calculator">Attendance Calculator</a></li><li><a href="/ats-resume-checker">ATS Resume Checker</a></li></ul></div><div><h4><a href="/finance-calculators">Finance Calculators</a></h4><ul><li><a href="/loan-calculator">Loan EMI Calculator</a></li><li><a href="/mortgage-calculator">Mortgage Calculator</a></li><li><a href="/compound-interest-calculator">Compound Interest Calculator</a></li><li><a href="/simple-interest-calculator">Simple Interest Calculator</a></li><li><a href="/sip-calculator">SIP Calculator</a></li><li><a href="/discount-calculator">Discount Calculator</a></li></ul></div><div><h4><a href="/health-calculators">Health &amp; Fitness</a></h4><ul><li><a href="/bmi-calculator">BMI Calculator</a></li><li><a href="/calorie-calculator">Calorie Calculator</a></li><li><a href="/bmr-calculator">BMR Calculator</a></li><li><a href="/body-fat-calculator">Body Fat Calculator</a></li><li><a href="/ideal-weight-calculator">Ideal Weight Calculator</a></li><li><a href="/pregnancy-calculator">Pregnancy Due Date Calculator</a></li></ul></div><div><h4><a href="/math-tools">Math &amp; Converters</a></h4><ul><li><a href="/percentage-calculator">Percentage Calculator</a></li><li><a href="/scientific-calculator">Scientific Calculator</a></li><li><a href="/fraction-calculator">Fraction Calculator</a></li><li><a href="/average-calculator">Average Calculator</a></li><li><a href="/unit-converter">Unit Converter</a></li><li><a href="/random-number-generator">Random Number Generator</a></li></ul></div><div><h4><a href="/date-time-tools">Date &amp; Time</a></h4><ul><li><a href="/age-calculator">Age Calculator</a></li><li><a href="/date-difference-calculator">Days Between Dates</a></li><li><a href="/date-calculator">Date Calculator</a></li><li><a href="/time-calculator">Time Calculator</a></li><li><a href="/stopwatch">Online Stopwatch</a></li><li><a href="/countdown-timer">Countdown Timer</a></li></ul></div><div><h4><a href="/text-tools">Text Tools</a></h4><ul><li><a href="/word-counter">Word Counter</a></li><li><a href="/case-converter">Case Converter</a></li><li><a href="/lorem-ipsum-generator">Lorem Ipsum Generator</a></li><li><a href="/text-compare">Text Compare (Diff Checker)</a></li><li><a href="/remove-duplicate-lines">Remove Duplicate Lines</a></li><li><a href="/sort-lines">Sort Text Lines</a></li></ul></div><div><h4><a href="/developer-tools">Developer Tools</a></h4><ul><li><a href="/json-formatter">JSON Formatter &amp; Validator</a></li><li><a href="/base64-encode-decode">Base64 Encode / Decode</a></li><li><a href="/url-encode-decode">URL Encode / Decode</a></li><li><a href="/html-entity-encoder">HTML Encoder / Decoder</a></li><li><a href="/uuid-generator">UUID Generator</a></li><li><a href="/hash-generator">Hash Generator</a></li></ul></div><div><h4><a href="/web-tools">Web &amp; Device</a></h4><ul><li><a href="/internet-speed-test">Internet Speed Test</a></li><li><a href="/what-is-my-ip">What Is My IP</a></li><li><a href="/youtube-thumbnail-downloader">YouTube Thumbnail Downloader</a></li><li><a href="/meta-tag-generator">Meta Tag Generator</a></li><li><a href="/utm-builder">UTM Link Builder</a></li><li><a href="/robots-txt-generator">Robots.txt Generator</a></li></ul></div><div><h4><a href="/utility-tools">Everyday Utilities</a></h4><ul><li><a href="/qr-code-generator">QR Code Generator</a></li><li><a href="/qr-code-scanner">QR Code Scanner</a></li><li><a href="/barcode-generator">Barcode Generator</a></li><li><a href="/password-generator">Password Generator</a></li><li><a href="/password-strength-checker">Password Strength Checker</a></li><li><a href="/spin-the-wheel">Spin the Wheel</a></li></ul></div></div>
+    <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
+  </div>
+</footer>
+<script src="/assets/js/registry.js?v=mvp4lhax"></script>
+<script src="/assets/js/core.js?v=mvp4lhax"></script>
+
+<script src="/assets/js/assistant.js?v=mvp4lhax" defer></script>
+</body>
+</html>

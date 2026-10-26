@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Mouse Double Clicking on a Single Click? How to Test and Fix It',
   desc: 'If your mouse double clicks when you click once, test it in your browser to confirm the fault, then try these fixes — from Windows settings to cleaning and replacing the switch.',
-  date: '2026-10-27',
+  date: '2026-10-26',
   tools: ['mouse-double-click-test', 'cps-test'],
   faq: [
     ['Why does my mouse double click when I click once?', 'Almost always because the small switch under the button is wearing out. Its metal contact bounces and sends two clicks instead of one. Less often, it\'s caused by a Windows setting, a driver problem or dirt inside the switch.'],

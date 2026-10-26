@@ -1,7 +1,7 @@
 module.exports = {
   title: 'What Is a Good Internet Speed? Mbps Explained for Streaming, Gaming and Work',
   desc: 'A good internet speed for most homes is 100 Mbps download and 10–20 Mbps upload. See how much speed streaming, gaming, video calls and working from home really need.',
-  date: '2026-10-27',
+  date: '2026-10-26',
   tools: ['internet-speed-test', 'what-is-my-ip'],
   faq: [
     ['Is 100 Mbps fast?', 'Yes. 100 Mbps download is enough for a typical household to stream 4K video on a couple of TVs while others browse, game and make video calls.'],

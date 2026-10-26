@@ -1,7 +1,7 @@
 module.exports = {
   title: 'How to Make a Booklet From a PDF (Print, Fold and Staple)',
   desc: 'Turn any PDF into a booklet you can print double-sided, fold and staple. Free step-by-step guide with the right printer settings, paper sizes and tips for thick booklets.',
-  date: '2026-10-27',
+  date: '2026-10-26',
   tools: ['pdf-booklet-maker', 'merge-pdf', 'organize-pdf'],
   faq: [
     ['Why does a booklet need a multiple of 4 pages?', 'Each sheet of paper, folded in half, makes four booklet pages — two on the front and two on the back. If your PDF has, say, 10 pages, two blank pages are added at the end to make 12.'],

@@ -2,6 +2,7 @@ module.exports = {
   title: 'How to Calculate a Percentage: Formulas, Examples and Excel',
   desc: 'Every percentage formula you need, with worked examples: percentage of a number, what percent one number is of another, percentage increase and decrease, discounts, marks and Excel formulas.',
   date: '2026-10-26',
+  updated: '2026-10-29',
   tools: ['percentage-calculator', 'discount-calculator', 'grade-calculator'],
   faq: [
     ['What is the formula for percentage?', 'Percentage = (part ÷ whole) × 100. For example, 30 out of 120 is 30 ÷ 120 × 100 = 25%.'],
@@ -74,6 +75,8 @@ module.exports = {
 <li><strong>Grades:</strong> 42 out of 50 = 84%. For weighted coursework, use the <a href="/grade-calculator">grade calculator</a>.</li>
 <li><strong>Savings:</strong> saving 600 of a 3,000 monthly income = 20%.</li>
 <li><strong>Battery or progress:</strong> 3.2 GB downloaded of 8 GB = 40% done.</li>
+<li><strong>Averages:</strong> to find the mean of several percentages or scores, add them and divide by how many there are — or paste them into the <a href="/average-calculator">average calculator</a>.</li>
+<li><strong>Prices abroad:</strong> work out the discount first, then convert the final price with the <a href="/currency-converter">currency converter calculator</a>.</li>
 </ul>
 `,
 };

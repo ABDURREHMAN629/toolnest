@@ -2,6 +2,7 @@ module.exports = {
   title: 'How to Calculate Your GPA (Step by Step) and Convert It to a Percentage',
   desc: 'Learn the GPA formula with a worked example, how cumulative GPA works across semesters, and how to convert a 4.0 or 10-point GPA to a percentage.',
   date: '2026-10-26',
+  updated: '2026-10-29',
   tools: ['gpa-calculator', 'cgpa-calculator', 'cgpa-to-percentage'],
   faq: [
     ['What is a good GPA?', 'On a 4.0 scale, 3.0 (a B average) is generally considered good, 3.5 or above is strong, and 3.7–4.0 is excellent. What counts as good depends on your school and what you are applying for.'],
@@ -52,7 +53,7 @@ module.exports = {
 {{tool:cgpa-calculator}}
 
 <h2>Weighted vs unweighted GPA</h2>
-<p>An <strong>unweighted GPA</strong> uses the standard 0–4.0 scale for every course. Many US high schools also report a <strong>weighted GPA</strong>, which adds extra points for harder classes — commonly +0.5 for honors and +1.0 for AP or IB courses — so it can go above 4.0. Colleges usually see both. The calculators here give unweighted GPA; to estimate a weighted GPA, add your school's bonus to each eligible course's points before multiplying by credits.</p>
+<p>An <strong>unweighted GPA</strong> uses the standard 0–4.0 scale for every course. Many US high schools also report a <strong>weighted GPA</strong>, which adds extra points for harder classes — commonly +0.5 for honors and +1.0 for AP or IB courses — so it can go above 4.0. Colleges usually see both. The calculators here give unweighted GPA; to estimate a weighted GPA, add your school's bonus to each eligible course's points before multiplying by credits. If your course grade itself comes from weighted assignments and exams, work it out first with the <a href="/grade-calculator">grade calculator</a>, and use the <a href="/average-calculator">average calculator</a> to find the simple mean of a list of scores.</p>
 
 <h2>Other grading scales</h2>
 <ul>

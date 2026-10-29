@@ -150,6 +150,21 @@ const BENEFITS = {
   default: [['🔒', 'Private', 'Runs in your browser — nothing is uploaded.'], ['⚡', 'Fast', 'Instant results, no waiting in queues.'], ['💸', 'Free', 'No sign-up, no watermark, no limits.'], ['📱', 'Anywhere', 'Works on phone, tablet and desktop.']],
 };
 
+// Pages Google already ranks on pages 2–9 (Search Console, Oct 2026): extra links from related pages,
+// anchored with the exact query people search, to push them toward page 1. target → [anchor, sources].
+const BOOST = {
+  'average-calculator': ['average calculator', ['percentage-calculator', 'gpa-calculator', 'grade-calculator', 'cgpa-calculator', 'fraction-calculator', 'attendance-calculator']],
+  'grade-calculator': ['grade calculator', ['gpa-calculator', 'cgpa-calculator', 'percentage-calculator', 'average-calculator', 'attendance-calculator']],
+  'currency-converter': ['currency converter calculator', ['salary-calculator', 'tip-calculator', 'discount-calculator', 'percentage-calculator', 'loan-calculator', 'invoice-generator']],
+  'keyword-density-checker': ['keyword density calculator', ['word-counter', 'character-counter', 'meta-tag-generator', 'slug-generator', 'case-converter']],
+  'case-converter': ['online case converter', ['word-counter', 'character-counter', 'text-repeater', 'sort-lines', 'slug-generator', 'keyword-density-checker']],
+  'robots-txt-generator': ['robots.txt generator', ['meta-tag-generator', 'slug-generator', 'favicon-generator', 'utm-builder', 'code-minifier', 'keyword-density-checker']],
+  'words-to-minutes': ['words to minutes converter', ['word-counter', 'character-counter', 'text-to-speech', '5-minute-typing-test', 'keyword-density-checker']],
+  'color-picker': ['color calculator online', ['css-gradient-generator', 'image-color-picker', 'favicon-generator', 'photo-filters']],
+};
+const boostLinks = {};
+for (const [target, [anchor, sources]] of Object.entries(BOOST)) for (const s of sources) (boostLinks[s] = boostLinks[s] || []).push([target, anchor]);
+
 const pages = [];
 function write(file, html) {
   fs.mkdirSync(path.dirname(path.join(OUT, file)), { recursive: true });
@@ -193,7 +208,8 @@ for (const t of TOOLS) {
       <ol class="steps">${t.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
       <h2>About this tool</h2>
       <p>${esc(t.desc)} ${esc(t.name)} is part of ${esc(config.name)}'s collection of free ${esc(c.name.toLowerCase())}. ${['pdf', 'image', 'media'].includes(c.id) ? 'All processing happens locally in your browser, so your files stay private and nothing is uploaded.' : 'It works instantly in your browser with no account and no installation.'}</p>${CONTENT[t.slug] || ''}${(g => g.length ? `
-      <p class="related-guides">📝 <strong>Related guide${g.length > 1 ? 's' : ''}:</strong> ${g.map(p => `<a href="${BASE}blog/${p.slug}">${esc(p.title)}</a>`).join(' · ')}</p>` : '')(postsFor(t.slug, base.slug))}
+      <p class="related-guides">📝 <strong>Related guide${g.length > 1 ? 's' : ''}:</strong> ${g.map(p => `<a href="${BASE}blog/${p.slug}">${esc(p.title)}</a>`).join(' · ')}</p>` : '')(postsFor(t.slug, base.slug))}${boostLinks[t.slug] ? `
+      <p class="related-guides">🔗 <strong>You may also need:</strong> ${boostLinks[t.slug].map(([s, a]) => `the <a href="${BASE}${s}">${esc(a)}</a>`).join(' · ')}</p>` : ''}
       <h2>Frequently asked questions</h2>
       <div class="faq">${fq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div>
     </article>
@@ -260,7 +276,11 @@ for (const c of CATEGORIES) {
     ${CATEGORIES.map(c => `<section class="home-section" id="${c.id}" data-section>
       <div class="section-head"><h2>${c.icon} ${esc(c.name)}</h2><a href="${BASE}${c.slug}">View all →</a></div>
       <div class="tool-grid">${TOOLS.filter(t => t.cat === c.id).map(card).join('')}</div>
-    </section>`).join('\n')}
+    </section>`).join('\n')}${POSTS.length ? `
+    <section class="home-section" id="guides">
+      <div class="section-head"><h2>📝 Latest guides</h2><a href="${BASE}blog">All ${POSTS.length} guides →</a></div>
+      <div class="post-grid">${POSTS.slice(0, 6).map(p => `<a class="post-card" href="${BASE}blog/${p.slug}"><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p></a>`).join('')}</div>
+    </section>` : ''}
     <section class="why">
       <h2>Why people use ${esc(config.name)}</h2>
       <div class="trust-row">${BENEFITS.default.map(([i, h, p]) => `<div><span>${i}</span><strong>${h}</strong><small>${p}</small></div>`).join('')}</div>

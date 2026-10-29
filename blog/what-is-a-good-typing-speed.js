@@ -2,6 +2,7 @@ module.exports = {
   title: 'What Is a Good Typing Speed? Average WPM, Job Requirements and How to Improve',
   desc: 'A good typing speed is about 50–70 words per minute with 95%+ accuracy. See the average WPM, what speed different jobs ask for, and practical ways to type faster.',
   date: '2026-10-26',
+  updated: '2026-10-29',
   tools: ['typing-speed-test', '1-minute-typing-test', '5-minute-typing-test'],
   faq: [
     ['Is 40 words per minute a good typing speed?', 'Yes. 40 WPM is around average and is enough for most everyday computer work. Many office jobs ask for 40 WPM or more.'],
@@ -31,7 +32,7 @@ module.exports = {
 <h2>Check your own typing speed</h2>
 <p>The quickest way to know where you stand is to take a test. A one-minute test gives a quick snapshot; a three- or five-minute test is closer to your real working speed, because it includes the moments when you slow down or make mistakes.</p>
 {{tool:typing-speed-test}}
-<p>Your result shows your <strong>WPM</strong>, <strong>accuracy</strong>, characters per minute, raw speed and number of mistakes. Try the <a href="/1-minute-typing-test">1-minute test</a> for a quick check and the <a href="/5-minute-typing-test">5-minute test</a> when a job application asks for a certified-style speed.</p>
+<p>Your result shows your <strong>WPM</strong>, <strong>accuracy</strong>, characters per minute, raw speed and number of mistakes. Try the <a href="/1-minute-typing-test">1-minute test</a> for a quick check and the <a href="/5-minute-typing-test">5-minute test</a> when a job application asks for a certified-style speed. Speaking is slower than typing for most people — about 130 words per minute — so if you are writing a speech, the <a href="/words-to-minutes">words to minutes converter</a> tells you how long it will take to deliver.</p>
 
 <h2>What typing speed do jobs require?</h2>
 <p>Requirements vary between employers, but these are the ranges you'll commonly see in job adverts:</p>

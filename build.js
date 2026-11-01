@@ -421,7 +421,7 @@ if (POSTS.length) {
   <div class="content-grid">
     <article class="prose post">
       <h1>${esc(p.title)}</h1>
-      <p class="post-meta"><span>By <a href="${BASE}about">${esc(author.name)}</a></span><span>${modified !== p.date ? `Updated ${longDate(modified)}` : longDate(p.date)}</span><span>${minutes} min read</span></p>
+      <p class="post-meta"><span>By <a href="${BASE}about">${esc(author.name)}</a></span><span>${modified !== p.date ? `Updated ${longDate(modified)}` : longDate(p.date)}</span><span>${minutes} min read</span><button type="button" class="link-btn print-btn" onclick="print()">🖨 Print</button></p>
       ${toc.length > 2 ? `<nav class="toc" aria-label="Contents"><strong>In this article</strong><ol>${toc.map(([id, h]) => `<li><a href="#${id}">${textOf(h).trim()}</a></li>`).join('')}${p.faq ? '<li><a href="#faq">Frequently asked questions</a></li>' : ''}</ol></nav>` : ''}
       ${body}
       ${p.faq ? `<h2 id="faq">Frequently asked questions</h2>

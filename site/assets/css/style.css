@@ -378,3 +378,15 @@ kbd { font-family: var(--mono); font-size: .8rem; padding: 2px 6px; border: 1px 
 body.embed { background: var(--bg); }
 .embed-main { padding: 12px; max-width: 900px; margin: 0 auto; }
 .embed-credit { margin: 10px 0 0; text-align: center; font-size: 13px; color: var(--muted); }
+
+/* Printable guides: the 🖨 Print button on posts prints just the article and its charts */
+.print-btn { font-size: inherit; }
+@media print {
+  .site-header, .site-footer, .sidebar, .toc, .breadcrumb, .tool-cta, .author-box, .print-btn, .embed-box, .related-guides { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .content-grid { display: block !important; }
+  .post blockquote { background: none; }
+  .table th, .table td { border: 1px solid #999; color: #000; background: #fff; }
+  .table-wrap { overflow: visible !important; }
+  a { color: #000 !important; text-decoration: none !important; }
+}

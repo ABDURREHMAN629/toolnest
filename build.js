@@ -165,6 +165,14 @@ const BOOST = {
 const boostLinks = {};
 for (const [target, [anchor, sources]] of Object.entries(BOOST)) for (const s of sources) (boostLinks[s] = boostLinks[s] || []).push([target, anchor]);
 
+// Calculators other sites may embed in an iframe (/embed/<slug>). The visible credit link under the
+// iframe in the copied code is what earns the backlink. Embed pages are noindex and kept out of the sitemap.
+const EMBED_CATS = ['student', 'finance', 'health', 'math', 'time', 'text'];
+const NO_EMBED = ['resume-builder', 'ats-resume-checker', 'text-to-handwriting', 'online-notepad'];
+const embeddable = t => !t.of && EMBED_CATS.includes(t.cat) && !NO_EMBED.includes(t.slug);
+const embedCode = t => `<iframe src="${SITE}/embed/${t.slug}" title="${esc(t.name)}" width="100%" height="620" style="border:1px solid #e5e7eb;border-radius:12px;max-width:760px" loading="lazy"></iframe>
+<p style="font-size:13px;margin:6px 0 0"><a href="${abs(t.slug + '.html')}">${esc(t.name)}</a> by ${esc(config.name)}</p>`;
+
 const pages = [];
 function write(file, html) {
   fs.mkdirSync(path.dirname(path.join(OUT, file)), { recursive: true });
@@ -201,7 +209,13 @@ for (const t of TOOLS) {
     <div class="tool-loading">Loading ${esc(t.name)}…</div>
     <noscript><p class="notice error">Please enable JavaScript to use this tool.</p></noscript>
   </section>
-  <div class="trust-row">${BENEFITS.default.map(([i, h, p]) => `<div><span>${i}</span><strong>${h}</strong><small>${p}</small></div>`).join('')}</div>
+  <div class="trust-row">${BENEFITS.default.map(([i, h, p]) => `<div><span>${i}</span><strong>${h}</strong><small>${p}</small></div>`).join('')}</div>${embeddable(t) ? `
+  <details class="embed-box">
+    <summary>&lt;/&gt; Embed this ${/calculator/i.test(t.name) ? 'calculator' : 'tool'} on your website — free</summary>
+    <p class="small muted">Paste this code into any web page or blog post (WordPress: use a “Custom HTML” block). It's free for personal, school and business sites — just keep the credit link.</p>
+    <textarea readonly rows="5" aria-label="Embed code" onclick="this.select()">${esc(embedCode(t))}</textarea>
+    <button type="button" class="btn" onclick="UI.copy(this.previousElementSibling.value, 'Embed code copied')">Copy embed code</button>
+  </details>` : ''}
   <div class="content-grid">
     <article class="prose">
       <h2>How to use the ${esc(t.name)}</h2>
@@ -224,6 +238,40 @@ for (const t of TOOLS) {
 </main>
 ` + footer(`<script src="${BASE}assets/js/tools/${catById[base.cat].id}.js?v=${VERSION}"></script>
 <script>Tools.mount(${JSON.stringify(base.slug)}, document.getElementById('tool'), ${preset});</script>`));
+}
+
+// Embed pages: just the tool and a credit link, no header/footer/ads. Written directly (not via write())
+// so they stay out of the sitemap.
+fs.rmSync(path.join(OUT, 'embed'), { recursive: true, force: true });
+fs.mkdirSync(path.join(OUT, 'embed'), { recursive: true });
+for (const t of TOOLS.filter(embeddable)) {
+  fs.writeFileSync(path.join(OUT, 'embed', `${t.slug}.html`), `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${esc(t.name)} | ${esc(config.name)}</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="${esc(abs(t.slug + '.html'))}">
+<link rel="icon" href="${BASE}assets/img/favicon.svg?v=2" type="image/svg+xml">
+<link rel="stylesheet" href="${BASE}assets/css/style.css?v=${VERSION}">
+<script>window.BASE=${JSON.stringify(BASE)};try{var t=new URLSearchParams(location.search).get('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+</head>
+<body class="embed">
+<main class="embed-main">
+  <section id="tool" class="tool-app" data-tool="${t.slug}" aria-label="${esc(t.name)} tool">
+    <div class="tool-loading">Loading ${esc(t.name)}…</div>
+    <noscript><p class="notice error">Please enable JavaScript to use this tool.</p></noscript>
+  </section>
+  <p class="embed-credit"><a href="${abs(t.slug + '.html')}" target="_blank" rel="noopener">${t.icon} ${esc(t.name)}</a> · free tools by <a href="${SITE}/" target="_blank" rel="noopener">${esc(config.name)}</a></p>
+</main>
+<script src="${BASE}assets/js/registry.js?v=${VERSION}"></script>
+<script src="${BASE}assets/js/core.js?v=${VERSION}"></script>
+<script src="${BASE}assets/js/tools/${t.cat}.js?v=${VERSION}"></script>
+<script>Tools.mount(${JSON.stringify(t.slug)}, document.getElementById('tool'), {});</script>
+</body>
+</html>
+`);
 }
 
 for (const c of CATEGORIES) {

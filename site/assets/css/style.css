@@ -370,3 +370,11 @@ kbd { font-family: var(--mono); font-size: .8rem; padding: 2px 6px; border: 1px 
 .post-card p { margin: 0; color: var(--muted); font-size: .95rem; }
 .post-card .post-tools { margin-top: auto; padding-top: 6px; color: var(--primary); }
 @media (max-width: 640px) { .tool-cta { flex-wrap: wrap; } .tool-cta .btn { margin-left: 0; width: 100%; } }
+
+/* Embed: the "embed this tool" box on tool pages, and the bare /embed/<slug> pages shown in iframes */
+.embed-box { margin: 18px 0 0; padding: 12px 16px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); }
+.embed-box summary { cursor: pointer; font-weight: 600; color: var(--primary); }
+.embed-box textarea { width: 100%; margin: 8px 0 10px; font: 12px/1.5 ui-monospace, Consolas, monospace; padding: 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text); resize: vertical; }
+body.embed { background: var(--bg); }
+.embed-main { padding: 12px; max-width: 900px; margin: 0 auto; }
+.embed-credit { margin: 10px 0 0; text-align: center; font-size: 13px; color: var(--muted); }

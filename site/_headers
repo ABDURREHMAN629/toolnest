@@ -4,6 +4,11 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
 
+# Embeddable tools may be shown in iframes on any site
+/embed/*
+  ! X-Frame-Options
+  Content-Security-Policy: frame-ancestors *
+
 # CSS/JS are cache-busted with ?v= on every build, so they can be cached for a long time
 /assets/*
   Cache-Control: public, max-age=2592000

@@ -5,6 +5,7 @@ module.exports = {
   // e.g. 'https://www.yourdomain.com' — canonical links, sitemap and robots.txt all follow it.
   url: 'https://www.webtoolnest.com',
   contactEmail: 'contact@webtoolnest.com',
+  profiles: ['https://www.saashub.com/webtoolnest'], // the brand's listings elsewhere (Organization sameAs); add Product Hunt etc. once live
   contactPhone: '',
   whatsapp: '923444594523', // WhatsApp number with country code, digits only — adds "Chat on WhatsApp" links
   owner: {               // shown on the About page

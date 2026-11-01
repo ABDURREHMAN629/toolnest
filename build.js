@@ -23,6 +23,8 @@ const SITE = config.url.replace(/\/$/, '');
 const BASE = new URL(SITE).pathname.replace(/\/?$/, '/');
 const abs = p => `${SITE}/${p === 'index.html' ? '' : p.replace(/\.html$/, '')}`;
 const year = new Date().getFullYear();
+// Other names people may use for the brand; helps Google tell this site apart from similarly named ones.
+const BRAND_ALT = [`${config.name}.com`, config.name.replace(/([a-z])([A-Z])/g, '$1 $2')];
 const owner = config.owner || {};
 const waLink = config.whatsapp ? `https://wa.me/${config.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(`Hi, I'm messaging from ${config.name}`)}` : '';
 
@@ -297,17 +299,17 @@ for (const c of CATEGORIES) {
   const popular = TOOLS.filter(t => t.popular);
   const desc = `${COUNT}+ free online tools in one place: PDF converter, image compressor, video converter, CGPA calculator, ATS resume checker, QR code generator and more. No sign-up, works in your browser.`;
   write('index.html', head({
-    title: `${config.name} – ${COUNT}+ Free Online Tools: PDF, Image, Video, Calculators`, desc, file: 'index.html',
+    title: `${config.name}.com – ${COUNT}+ Free Online Tools: PDF, Image, Video, Calculators`, desc, file: 'index.html',
     jsonld: [
-      { '@context': 'https://schema.org', '@type': 'WebSite', name: config.name, url: abs('index.html'), potentialAction: { '@type': 'SearchAction', target: `${SITE}/?q={search_term_string}`, 'query-input': 'required name=search_term_string' } },
-      { '@context': 'https://schema.org', '@type': 'Organization', name: config.name, url: abs('index.html'), logo: `${SITE}/assets/img/logo.png`, email: config.contactEmail, description: desc },
+      { '@context': 'https://schema.org', '@type': 'WebSite', name: config.name, alternateName: BRAND_ALT, url: abs('index.html'), potentialAction: { '@type': 'SearchAction', target: `${SITE}/?q={search_term_string}`, 'query-input': 'required name=search_term_string' } },
+      { '@context': 'https://schema.org', '@type': 'Organization', name: config.name, alternateName: BRAND_ALT, url: abs('index.html'), logo: `${SITE}/assets/img/logo.png`, email: config.contactEmail, description: desc, ...(config.profiles ? { sameAs: config.profiles } : {}) },
     ],
   }) + `
 <main>
   <section class="hero">
     <div class="container">
       <h1>Every tool you need, <span class="grad">free &amp; in one place</span></h1>
-      <p class="lead">${COUNT}+ fast, private online tools for PDFs, images, videos, calculators, students, developers and everyday tasks. No sign-up. Your files never leave your device.</p>
+      <p class="lead">${esc(config.name)} has ${COUNT}+ fast, private online tools for PDFs, images, videos, calculators, students, developers and everyday tasks. No sign-up. Your files never leave your device.</p>
       <div class="hero-search">
         <input type="search" id="home-search" placeholder="Search tools — try “compress pdf”, “cgpa” or “qr code”" autocomplete="off" aria-label="Search all tools">
       </div>

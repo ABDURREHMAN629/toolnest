@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Calculate Average: Mean, Median, Mode and Weighted Average | WebToolNest</title>
+<meta name="description" content="How to calculate an average step by step, with examples — the mean, median and mode, weighted averages for grades, averaging percentages correctly, and the Excel formulas.">
+<link rel="canonical" href="https://www.webtoolnest.com/blog/how-to-calculate-average">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="WebToolNest">
+<meta property="og:title" content="How to Calculate Average: Mean, Median, Mode and Weighted Average | WebToolNest">
+<meta property="og:description" content="How to calculate an average step by step, with examples — the mean, median and mode, weighted averages for grades, averaging percentages correctly, and the Excel formulas.">
+<meta property="og:url" content="https://www.webtoolnest.com/blog/how-to-calculate-average">
+<meta property="og:image" content="https://www.webtoolnest.com/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/img/favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/css/style.css?v=mvxgvuxu">
+<script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<meta name="google-adsense-account" content="ca-pub-2580309541293686">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2580309541293686" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Calculate Average: Mean, Median, Mode and Weighted Average","description":"How to calculate an average step by step, with examples — the mean, median and mode, weighted averages for grades, averaging percentages correctly, and the Excel formulas.","url":"https://www.webtoolnest.com/blog/how-to-calculate-average","mainEntityOfPage":"https://www.webtoolnest.com/blog/how-to-calculate-average","image":"https://www.webtoolnest.com/assets/img/og.jpg","datePublished":"2026-11-01","dateModified":"2026-11-01","wordCount":747,"author":{"@type":"Person","name":"Abdur Rehman","url":"https://www.webtoolnest.com/about","sameAs":["https://abdurrehman629.github.io","https://github.com/ABDURREHMAN629/case-studies","https://www.linkedin.com/in/abdur-rehman-ar03247440629","https://github.com/ABDURREHMAN629"]},"publisher":{"@type":"Organization","name":"WebToolNest","url":"https://www.webtoolnest.com/","logo":{"@type":"ImageObject","url":"https://www.webtoolnest.com/assets/img/logo.png"}}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.webtoolnest.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.webtoolnest.com/blog"},{"@type":"ListItem","position":3,"name":"How to Calculate Average: Mean, Median, Mode and Weighted Average","item":"https://www.webtoolnest.com/blog/how-to-calculate-average"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the formula for average?","acceptedAnswer":{"@type":"Answer","text":"Average (mean) = sum of all values ÷ number of values. For 4, 8 and 9: (4 + 8 + 9) ÷ 3 = 7."}},{"@type":"Question","name":"What is the difference between mean and average?","acceptedAnswer":{"@type":"Answer","text":"In everyday use they are the same thing — the sum divided by the count. Strictly, \"average\" can also mean the median or mode, so statisticians say \"mean\" when they mean the sum-divided-by-count average."}},{"@type":"Question","name":"How do I calculate a weighted average?","acceptedAnswer":{"@type":"Answer","text":"Multiply each value by its weight, add the results, then divide by the total of the weights. For a test worth 60% scored 80 and homework worth 40% scored 95: (80 × 60 + 95 × 40) ÷ 100 = 86."}},{"@type":"Question","name":"Can you average percentages?","acceptedAnswer":{"@type":"Answer","text":"Only if each percentage is based on the same total. Otherwise add up the underlying numbers first: 45/50 and 8/10 average to 53/60 = 88.3%, not (90% + 80%) ÷ 2 = 85%."}},{"@type":"Question","name":"How do I calculate an average in Excel?","acceptedAnswer":{"@type":"Answer","text":"Use =AVERAGE(A1:A10). For a weighted average use =SUMPRODUCT(A1:A10,B1:B10)/SUM(B1:B10), where column B holds the weights."}}]}</script>
+<meta property="article:published_time" content="2026-11-01">
+<meta property="article:modified_time" content="2026-11-01">
+<link rel="alternate" type="application/rss+xml" title="WebToolNest Blog" href="https://www.webtoolnest.com/blog/rss.xml">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="/" aria-label="WebToolNest home"><img class="logo-mark" src="/assets/img/favicon.svg?v=2" alt="" width="30" height="30">WebToolNest</a>
+    <nav class="main-nav">
+      <div class="dropdown">
+        <button class="nav-btn" aria-haspopup="true" aria-expanded="false">All Tools <span aria-hidden="true">▾</span></button>
+        <div class="dropdown-menu"><a href="/pdf-tools"><span>📄</span>PDF Tools</a><a href="/image-tools"><span>🖼️</span>Image Tools</a><a href="/video-audio-tools"><span>🎬</span>Video &amp; Audio</a><a href="/student-tools"><span>🎓</span>Student &amp; Career</a><a href="/finance-calculators"><span>💰</span>Finance Calculators</a><a href="/health-calculators"><span>❤️</span>Health &amp; Fitness</a><a href="/math-tools"><span>🧮</span>Math &amp; Converters</a><a href="/date-time-tools"><span>⏰</span>Date &amp; Time</a><a href="/text-tools"><span>✍️</span>Text Tools</a><a href="/developer-tools"><span>💻</span>Developer Tools</a><a href="/web-tools"><span>🌐</span>Web &amp; Device</a><a href="/utility-tools"><span>🧰</span>Everyday Utilities</a><a href="/blog"><span>📝</span>Blog &amp; guides</a></div>
+      </div>
+      <a class="nav-link hide-sm" href="/pdf-tools">PDF</a>
+      <a class="nav-link hide-sm" href="/image-tools">Image</a>
+      <a class="nav-link hide-sm" href="/video-audio-tools">Video</a>
+      <a class="nav-link hide-sm" href="/student-tools">Student</a>
+      <a class="nav-link hide-sm" href="/blog">Blog</a>
+    </nav>
+    <div class="header-search">
+      <input type="search" id="site-search" placeholder="Search 170+ tools…" autocomplete="off" aria-label="Search tools">
+      <div class="search-results" id="search-results" role="listbox"></div>
+    </div>
+    <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌓</button>
+  </div>
+</header>
+<main class="container page">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/blog">Blog</a><span>›</span><span>How to Calculate Average: Mean, Median, Mode and Weighted Average</span></nav>
+  <div class="content-grid">
+    <article class="prose post">
+      <h1>How to Calculate Average: Mean, Median, Mode and Weighted Average</h1>
+      <p class="post-meta"><span>By <a href="/about">Abdur Rehman</a></span><span>November 1, 2026</span><span>3 min read</span></p>
+      <nav class="toc" aria-label="Contents"><strong>In this article</strong><ol><li><a href="#how-to-calculate-the-mean-the-usual-average">How to calculate the mean (the usual average)</a></li><li><a href="#how-to-find-the-median">How to find the median</a></li><li><a href="#how-to-find-the-mode">How to find the mode</a></li><li><a href="#mean-vs-median-vs-mode-which-should-you-use">Mean vs median vs mode: which should you use?</a></li><li><a href="#how-to-calculate-a-weighted-average">How to calculate a weighted average</a></li><li><a href="#how-to-average-percentages-correctly">How to average percentages correctly</a></li><li><a href="#how-to-calculate-an-average-in-excel-and-google-sheets">How to calculate an average in Excel and Google Sheets</a></li><li><a href="#everyday-averages">Everyday averages</a></li><li><a href="#faq">Frequently asked questions</a></li></ol></nav>
+      
+<blockquote><p><strong>Quick answer:</strong> to calculate an average, <strong>add all the numbers together, then divide by how many numbers there are</strong>. For 12, 15 and 21: 12 + 15 + 21 = 48, and 48 ÷ 3 = <strong>16</strong>. Paste any list into the calculator below to get the mean, median, mode and more at once.</p></blockquote>
+
+<p>"Average" usually means the <strong>mean</strong>, but there are three common kinds of average, and choosing the right one matters — especially when a few numbers are much bigger or smaller than the rest. Here's how to calculate each, with examples.</p>
+<div class="tool-cta"><span class="tool-icon" style="--c:#6366f1">📉</span><div><strong>Average Calculator</strong><p>Calculate the mean, median, mode, range, sum and standard deviation of a list of numbers.</p></div><a class="btn" href="/average-calculator">Open the tool →</a></div>
+
+<h2 id="how-to-calculate-the-mean-the-usual-average">How to calculate the mean (the usual average)</h2>
+<ol>
+<li><strong>Add up all the values.</strong></li>
+<li><strong>Count how many values there are.</strong></li>
+<li><strong>Divide the total by the count.</strong></li>
+</ol>
+<p>Example — test scores of 72, 85, 90, 64 and 89:</p>
+<ul>
+<li>Sum: 72 + 85 + 90 + 64 + 89 = 400</li>
+<li>Count: 5</li>
+<li>Mean: 400 ÷ 5 = <strong>80</strong></li>
+</ul>
+
+<h2 id="how-to-find-the-median">How to find the median</h2>
+<p>The median is the <strong>middle value</strong> when the numbers are sorted. Sort them, then:</p>
+<ul>
+<li><strong>Odd count:</strong> take the middle one. For 3, 7, <strong>9</strong>, 12, 40 the median is 9.</li>
+<li><strong>Even count:</strong> average the two middle ones. For 3, 7, <strong>9, 12</strong>, 40, 55 the median is (9 + 12) ÷ 2 = 10.5.</li>
+</ul>
+<p>The median is better than the mean when there are outliers. If five people earn 30k, 32k, 35k, 38k and 400k, the mean is 107k — which describes nobody — but the median of 35k is a fair "typical" salary.</p>
+
+<h2 id="how-to-find-the-mode">How to find the mode</h2>
+<p>The mode is the value that appears <strong>most often</strong>. In 2, 4, 4, 5, 7, 4, 9 the mode is 4. A list can have two modes (bimodal) or no mode at all if every value appears once. The mode is the only average that works for non-numbers — the most common shoe size sold, or the most popular answer in a survey.</p>
+
+<h2 id="mean-vs-median-vs-mode-which-should-you-use">Mean vs median vs mode: which should you use?</h2>
+<div class="table-wrap"><table class="table">
+<thead><tr><th>Average</th><th>Best for</th><th>Weak spot</th></tr></thead>
+<tbody>
+<tr><td>Mean</td><td>Test scores, temperatures, most everyday data</td><td>Pulled up or down by outliers</td></tr>
+<tr><td>Median</td><td>House prices, salaries, anything with extreme values</td><td>Ignores how far apart the values are</td></tr>
+<tr><td>Mode</td><td>Most common choice, size or category</td><td>May not exist, or there may be several</td></tr>
+</tbody></table></div>
+<p>The <a href="/average-calculator">average calculator</a> shows all three, plus the sum, range, minimum and maximum, standard deviation and geometric mean, so you can compare them side by side.</p>
+
+<h2 id="how-to-calculate-a-weighted-average">How to calculate a weighted average</h2>
+<p>Use a weighted average when some values count more than others — like a final exam worth more than a quiz.</p>
+<p><strong>Weighted average = (value₁ × weight₁ + value₂ × weight₂ + …) ÷ (sum of the weights)</strong></p>
+<div class="table-wrap"><table class="table">
+<thead><tr><th>Assessment</th><th class="num">Score</th><th class="num">Weight</th><th class="num">Score × weight</th></tr></thead>
+<tbody>
+<tr><td>Homework</td><td class="num">92</td><td class="num">20%</td><td class="num">1,840</td></tr>
+<tr><td>Midterm</td><td class="num">78</td><td class="num">30%</td><td class="num">2,340</td></tr>
+<tr><td>Final exam</td><td class="num">85</td><td class="num">50%</td><td class="num">4,250</td></tr>
+<tr><td><strong>Total</strong></td><td></td><td class="num"><strong>100%</strong></td><td class="num"><strong>8,430</strong></td></tr>
+</tbody></table></div>
+<p>Weighted average: 8,430 ÷ 100 = <strong>84.3</strong>. The simple mean of the three scores would be 85 — close, but not the grade you'd actually get. For course grades, the <a href="/grade-calculator">grade calculator</a> does the weighting for you and tells you what you need on the final.</p>
+
+<h2 id="how-to-average-percentages-correctly">How to average percentages correctly</h2>
+<p>You can only average percentages directly if they're out of the same total. Otherwise, go back to the raw numbers:</p>
+<ul>
+<li>Quiz 1: 45 out of 50 = 90%</li>
+<li>Quiz 2: 8 out of 10 = 80%</li>
+<li>Wrong: (90 + 80) ÷ 2 = 85%</li>
+<li>Right: (45 + 8) ÷ (50 + 10) = 53 ÷ 60 = <strong>88.3%</strong></li>
+</ul>
+<p>The bigger quiz deserves more influence, and adding the raw scores gives it that. For more percentage maths, see <a href="/blog/how-to-calculate-percentage">how to calculate percentages</a> or use the <a href="/percentage-calculator">percentage calculator</a>.</p>
+
+<h2 id="how-to-calculate-an-average-in-excel-and-google-sheets">How to calculate an average in Excel and Google Sheets</h2>
+<ul>
+<li><code>=AVERAGE(A2:A20)</code> — the mean of a range (blank cells are ignored, zeros are counted).</li>
+<li><code>=MEDIAN(A2:A20)</code> and <code>=MODE(A2:A20)</code> — median and mode.</li>
+<li><code>=AVERAGEIF(B2:B20,"Paid",C2:C20)</code> — the average of column C only where column B says "Paid".</li>
+<li><code>=SUMPRODUCT(A2:A10,B2:B10)/SUM(B2:B10)</code> — a weighted average, with values in column A and weights in column B.</li>
+</ul>
+
+<h2 id="everyday-averages">Everyday averages</h2>
+<ul>
+<li><strong>Average speed:</strong> total distance ÷ total time. Driving 120 km in 1.5 hours is 80 km/h on average — not the average of the speeds you saw on the speedometer.</li>
+<li><strong>Fuel average (mileage):</strong> distance driven ÷ fuel used. 450 km on 30 litres is 15 km per litre.</li>
+<li><strong>Monthly average:</strong> add the monthly totals and divide by the number of months. Spending of 820, 760 and 905 over three months averages 828.33 a month.</li>
+</ul>
+
+      <h2 id="faq">Frequently asked questions</h2>
+      <div class="faq"><details><summary>What is the formula for average?</summary><p>Average (mean) = sum of all values ÷ number of values. For 4, 8 and 9: (4 + 8 + 9) ÷ 3 = 7.</p></details><details><summary>What is the difference between mean and average?</summary><p>In everyday use they are the same thing — the sum divided by the count. Strictly, &quot;average&quot; can also mean the median or mode, so statisticians say &quot;mean&quot; when they mean the sum-divided-by-count average.</p></details><details><summary>How do I calculate a weighted average?</summary><p>Multiply each value by its weight, add the results, then divide by the total of the weights. For a test worth 60% scored 80 and homework worth 40% scored 95: (80 × 60 + 95 × 40) ÷ 100 = 86.</p></details><details><summary>Can you average percentages?</summary><p>Only if each percentage is based on the same total. Otherwise add up the underlying numbers first: 45/50 and 8/10 average to 53/60 = 88.3%, not (90% + 80%) ÷ 2 = 85%.</p></details><details><summary>How do I calculate an average in Excel?</summary><p>Use =AVERAGE(A1:A10). For a weighted average use =SUMPRODUCT(A1:A10,B1:B10)/SUM(B1:B10), where column B holds the weights.</p></details></div>
+      <div class="author-box"><img src="/assets/img/favicon.svg?v=2" alt="" width="48" height="48"><div><strong>Written by Abdur Rehman</strong><p>ERP developer and AI &amp; automation engineer who builds and maintains every tool on WebToolNest. <a href="/about">More about me</a>.</p></div></div>
+    </article>
+    <aside class="sidebar">
+      <h3>Tools in this article</h3>
+      <ul class="side-list"><li><a href="/average-calculator"><span>📉</span>Average Calculator</a></li><li><a href="/grade-calculator"><span>📊</span>Grade Calculator</a></li><li><a href="/percentage-calculator"><span>%</span>Percentage Calculator</a></li></ul>
+      <h3>More guides</h3>
+      <ul class="side-list"><li><a href="/blog/what-do-i-need-on-my-final"><span>📝</span>What Do I Need on My Final? The Formula and a Quick Calculator</a></li><li><a href="/blog/how-to-calculate-percentage"><span>📝</span>How to Calculate a Percentage: Formulas, Examples and Excel</a></li><li><a href="/blog/how-many-calories-should-i-eat-a-day"><span>📝</span>How Many Calories Should I Eat a Day? Calculator and Chart</a></li><li><a href="/blog/how-many-days-between-two-dates"><span>📝</span>How Many Days Between Two Dates? How to Count Days, Weeks and Workdays</a></li></ul>
+      <a class="side-more" href="/blog">All articles →</a>
+    </aside>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="/"><img class="logo-mark" src="/assets/img/favicon.svg?v=2" alt="" width="30" height="30">WebToolNest</a>
+        <p>Free online tools for everyday tasks. 170+ free tools that run right in your browser — no sign-up, no uploads, no limits.</p>
+      </div>
+      <div class="footer-links"><a href="/blog">Blog</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms">Terms of Use</a><a href="/sitemap.xml">Sitemap</a><a href="https://wa.me/923444594523?text=Hi%2C%20I'm%20messaging%20from%20WebToolNest" rel="noopener" target="_blank">💬 WhatsApp</a></div>
+    </div>
+    <div class="footer-cols"><div><h4><a href="/pdf-tools">PDF Tools</a></h4><ul><li><a href="/merge-pdf">Merge PDF</a></li><li><a href="/split-pdf">Split PDF</a></li><li><a href="/compress-pdf">Compress PDF</a></li><li><a href="/pdf-to-jpg">PDF to JPG</a></li><li><a href="/jpg-to-pdf">JPG to PDF</a></li><li><a href="/pdf-to-word">PDF to Word</a></li></ul></div><div><h4><a href="/image-tools">Image Tools</a></h4><ul><li><a href="/compress-image">Compress Image</a></li><li><a href="/resize-image">Resize Image</a></li><li><a href="/crop-image">Crop Image</a></li><li><a href="/image-converter">Image Converter</a></li><li><a href="/heic-to-jpg">HEIC to JPG</a></li><li><a href="/rotate-image">Rotate &amp; Flip Image</a></li></ul></div><div><h4><a href="/video-audio-tools">Video &amp; Audio</a></h4><ul><li><a href="/video-converter">Video Converter</a></li><li><a href="/video-compressor">Video Compressor</a></li><li><a href="/video-to-mp3">Video to MP3</a></li><li><a href="/video-trimmer">Video Trimmer</a></li><li><a href="/video-to-gif">Video to GIF</a></li><li><a href="/audio-converter">Audio Converter</a></li></ul></div><div><h4><a href="/student-tools">Student &amp; Career</a></h4><ul><li><a href="/cgpa-calculator">CGPA Calculator</a></li><li><a href="/gpa-calculator">GPA Calculator</a></li><li><a href="/grade-calculator">Grade Calculator</a></li><li><a href="/cgpa-to-percentage">CGPA to Percentage</a></li><li><a href="/attendance-calculator">Attendance Calculator</a></li><li><a href="/ats-resume-checker">ATS Resume Checker</a></li></ul></div><div><h4><a href="/finance-calculators">Finance Calculators</a></h4><ul><li><a href="/loan-calculator">Loan EMI Calculator</a></li><li><a href="/mortgage-calculator">Mortgage Calculator</a></li><li><a href="/compound-interest-calculator">Compound Interest Calculator</a></li><li><a href="/simple-interest-calculator">Simple Interest Calculator</a></li><li><a href="/sip-calculator">SIP Calculator</a></li><li><a href="/discount-calculator">Discount Calculator</a></li></ul></div><div><h4><a href="/health-calculators">Health &amp; Fitness</a></h4><ul><li><a href="/bmi-calculator">BMI Calculator</a></li><li><a href="/calorie-calculator">Calorie Calculator</a></li><li><a href="/bmr-calculator">BMR Calculator</a></li><li><a href="/body-fat-calculator">Body Fat Calculator</a></li><li><a href="/ideal-weight-calculator">Ideal Weight Calculator</a></li><li><a href="/pregnancy-calculator">Pregnancy Due Date Calculator</a></li></ul></div><div><h4><a href="/math-tools">Math &amp; Converters</a></h4><ul><li><a href="/percentage-calculator">Percentage Calculator</a></li><li><a href="/scientific-calculator">Scientific Calculator</a></li><li><a href="/fraction-calculator">Fraction Calculator</a></li><li><a href="/average-calculator">Average Calculator</a></li><li><a href="/unit-converter">Unit Converter</a></li><li><a href="/random-number-generator">Random Number Generator</a></li></ul></div><div><h4><a href="/date-time-tools">Date &amp; Time</a></h4><ul><li><a href="/age-calculator">Age Calculator</a></li><li><a href="/date-difference-calculator">Days Between Dates</a></li><li><a href="/date-calculator">Date Calculator</a></li><li><a href="/time-calculator">Time Calculator</a></li><li><a href="/stopwatch">Online Stopwatch</a></li><li><a href="/countdown-timer">Countdown Timer</a></li></ul></div><div><h4><a href="/text-tools">Text Tools</a></h4><ul><li><a href="/word-counter">Word Counter</a></li><li><a href="/case-converter">Case Converter</a></li><li><a href="/lorem-ipsum-generator">Lorem Ipsum Generator</a></li><li><a href="/text-compare">Text Compare (Diff Checker)</a></li><li><a href="/remove-duplicate-lines">Remove Duplicate Lines</a></li><li><a href="/sort-lines">Sort Text Lines</a></li></ul></div><div><h4><a href="/developer-tools">Developer Tools</a></h4><ul><li><a href="/json-formatter">JSON Formatter &amp; Validator</a></li><li><a href="/base64-encode-decode">Base64 Encode / Decode</a></li><li><a href="/url-encode-decode">URL Encode / Decode</a></li><li><a href="/html-entity-encoder">HTML Encoder / Decoder</a></li><li><a href="/uuid-generator">UUID Generator</a></li><li><a href="/hash-generator">Hash Generator</a></li></ul></div><div><h4><a href="/web-tools">Web &amp; Device</a></h4><ul><li><a href="/internet-speed-test">Internet Speed Test</a></li><li><a href="/what-is-my-ip">What Is My IP</a></li><li><a href="/youtube-thumbnail-downloader">YouTube Thumbnail Downloader</a></li><li><a href="/meta-tag-generator">Meta Tag Generator</a></li><li><a href="/utm-builder">UTM Link Builder</a></li><li><a href="/robots-txt-generator">Robots.txt Generator</a></li></ul></div><div><h4><a href="/utility-tools">Everyday Utilities</a></h4><ul><li><a href="/qr-code-generator">QR Code Generator</a></li><li><a href="/qr-code-scanner">QR Code Scanner</a></li><li><a href="/barcode-generator">Barcode Generator</a></li><li><a href="/password-generator">Password Generator</a></li><li><a href="/password-strength-checker">Password Strength Checker</a></li><li><a href="/spin-the-wheel">Spin the Wheel</a></li></ul></div></div>
+    <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
+  </div>
+</footer>
+<script src="/assets/js/registry.js?v=mvxgvuxu"></script>
+<script src="/assets/js/core.js?v=mvxgvuxu"></script>
+
+<script src="/assets/js/assistant.js?v=mvxgvuxu" defer></script>
+</body>
+</html>

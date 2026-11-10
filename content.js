@@ -407,7 +407,18 @@ module.exports = {
       </ul>
       <p>Names in any language (Urdu, Arabic, Hindi, Chinese…) are kept intact, and old Android exports that use “quoted-printable” encoding are decoded properly.</p>
       <h2>Private by design</h2>
-      <p>Contact lists contain other people's phone numbers and emails. Many online converters upload them to a server; this one reads and converts the file inside your browser, so the contacts never leave your device.</p>`,
+      <p>Contact lists contain other people's phone numbers and emails. Many online converters upload them to a server; this one reads and converts the file inside your browser, so the contacts never leave your device.</p>
+      <h2>Files it accepts</h2>
+      <p>For spreadsheets: CSV, TSV and TXT files with commas, semicolons, tabs or pipes between columns (the separator is detected automatically), plus Excel .xlsx and .xls and LibreOffice .ods. For contacts: .vcf and .vcard files in vCard 2.1, 3.0 or 4.0, including the older “quoted-printable” encoding many Android phones still use when exporting, so names with accents and non-English letters come out correctly.</p>
+      <h2>Choosing a vCard version</h2>
+      <ul>
+        <li><strong>3.0</strong> — the recommended choice; works with iPhone, Android, Google Contacts and Outlook.</li>
+        <li><strong>2.1</strong> — for older Android phones and basic feature phones that reject newer files.</li>
+        <li><strong>4.0</strong> — the newest standard, for apps that ask for it specifically.</li>
+      </ul>
+      <h2>One file or many?</h2>
+      <p>Normally all contacts go into a single .vcf, which is what phones expect when importing a list. If a system wants one contact per file, use <strong>One file per contact (ZIP)</strong> instead.</p>
+      <p>Before you download, a preview shows how many contacts are ready and exactly what the first one looks like, so you can catch a wrong column before importing hundreds of contacts.</p>`,
 
   'csv-to-vcf': `
       <h2>Prepare your CSV</h2>
@@ -423,7 +434,13 @@ module.exports = {
         <li><strong>Gmail / Google Contacts:</strong> contacts.google.com → Import → select the .vcf. They then sync to every Android phone on that account.</li>
         <li><strong>Outlook:</strong> open the .vcf, or import it from the People page.</li>
       </ul>
-      <p>vCard 3.0 is selected by default because every modern phone and app reads it. Choose 2.1 only for very old phones.</p>`,
+      <p>vCard 3.0 is selected by default because every modern phone and app reads it. Choose 2.1 only for very old phones.</p>
+      <h2>Exports from other apps</h2>
+      <p>Most CRMs, school systems, mailing tools and Google Sheets can export a CSV, and the converter reads it whatever separator it uses — commas, semicolons (common in European Excel), tabs or pipes. Columns named Name, Full name, Contact name, First name, Surname, Mobile, Cell, Phone, WhatsApp, Contact no, Email, Company and similar are matched automatically.</p>
+      <h2>Checking the result before import</h2>
+      <p>The preview shows the first contact exactly as your phone will receive it. Check three things: that the name is in the right field (not the phone number), that the number starts with the country code you expect, and that non-English letters look right. If they appear as strange symbols, save the CSV again as “CSV UTF-8” and reload it.</p>
+      <h2>Avoid duplicates</h2>
+      <p>Importing the same VCF twice creates two copies of every contact. If you need to re-import after a correction, delete the first import on the phone or use the merge-duplicates option in Google Contacts afterwards.</p>`,
 
   'excel-to-vcf': `
       <h2>Converting an Excel contact list</h2>
@@ -434,7 +451,13 @@ module.exports = {
         <li><strong>Missing leading zero:</strong> same cause — store phone numbers as text, or use the international format (+92 300…).</li>
         <li><strong>Several sheets:</strong> only the first sheet is converted. Move the contacts sheet to the front, or copy it into a new file.</li>
         <li><strong>Hundreds of contacts:</strong> no problem — they all go into one .vcf file, which phones import in a single step. Need one file per contact instead? Use the ZIP option.</li>
-      </ul>`,
+      </ul>
+      <h2>Which sheet and which rows?</h2>
+      <p>The first sheet in the workbook is read, and completely empty rows are skipped. If your contacts are on another sheet, move that sheet to the front in Excel and save. Leave <strong>First row is column names</strong> ticked when row 1 has headings; untick it if your sheet starts straight away with contact data, then match each column by hand.</p>
+      <h2>Phone numbers from Excel</h2>
+      <p>Numbers are read as Excel displays them, so whatever you see in the cell is what goes into the vCard. That is why the formatting fix matters: a cell showing 3.00123E+09 or a number missing its leading zero will be copied exactly like that. Fix the display in Excel first, and include the country code (for example +92 or +44) if the phone may be used abroad.</p>
+      <h2>A second phone number</h2>
+      <p>Columns such as Work phone, Home phone, Landline, Office phone or Phone 2 are matched to <strong>Other phone</strong>, so each contact can carry both a mobile and a second number.</p>`,
 
   'vcf-to-csv': `
       <h2>Why convert VCF to CSV?</h2>
@@ -445,7 +468,15 @@ module.exports = {
         <li><strong>iPhone:</strong> at icloud.com/contacts select all contacts and choose Export vCard.</li>
         <li><strong>Google Contacts:</strong> Export → vCard.</li>
       </ul>
-      <p>The CSV is saved as UTF-8 with the marker Excel needs, so Urdu, Arabic and other non-English names open correctly when you double-click the file.</p>`,
+      <p>The CSV is saved as UTF-8 with the marker Excel needs, so Urdu, Arabic and other non-English names open correctly when you double-click the file.</p>
+      <h2>Open it correctly in Excel</h2>
+      <p>The CSV is saved as UTF-8 with the marker Excel looks for, so names in Arabic, Urdu, Chinese or with accents display correctly when you double-click the file. Values that contain commas or line breaks, such as addresses and notes, are quoted properly, so they stay in their own cell instead of spilling into the next column.</p>
+      <h2>Importing into other systems</h2>
+      <ul>
+        <li><strong>Google Contacts or Outlook</strong> import VCF directly, so you only need CSV when moving contacts into a spreadsheet, CRM, newsletter tool or school database.</li>
+        <li>Most CRMs ask you to match columns during import; the clear column names (Full name, Phone 1, Email 1, Company…) make that quick.</li>
+      </ul>
+      <p>Before downloading, a table preview shows how many contacts were found and the first rows, so you can check the data came through.</p>`,
 
   'vcf-to-excel': `
       <h2>Open your contacts in Excel</h2>
@@ -456,7 +487,17 @@ module.exports = {
         <li>Multi-line notes and addresses stay in one cell.</li>
         <li>Phone numbers are kept as text, so leading zeros and + signs are not lost.</li>
         <li>Edited the sheet and want the contacts back on your phone? Switch the converter to <strong>CSV / Excel → VCF</strong> and choose your edited file.</li>
-      </ul>`,
+      </ul>
+      <h2>A real Excel workbook</h2>
+      <p>The download is a proper .xlsx file with a sheet named “Contacts”, not a CSV renamed to look like one. That means no import wizard, no lost leading zeros and no problems with non-English letters — it opens straight into Excel, Google Sheets, Numbers or LibreOffice.</p>
+      <h2>Cleaning up a contact list in Excel</h2>
+      <ol>
+        <li>Turn on <strong>Data → Filter</strong> to sort by name or company.</li>
+        <li>Use <strong>Data → Remove Duplicates</strong> on the phone column to find contacts saved twice.</li>
+        <li>Delete rows you don't need, then convert the cleaned list back with <a href="/excel-to-vcf">Excel to VCF</a> and import it on your phone.</li>
+      </ol>
+      <h2>Android phone exports</h2>
+      <p>Many Android phones export contacts in the older vCard 2.1 format with “quoted-printable” encoding, which shows up as codes like =C3=A9 in a text editor. These are decoded automatically, so names and addresses appear correctly in the spreadsheet.</p>`,
 
   'typing-speed-test': `
       <h2>How typing speed is measured</h2>
@@ -473,7 +514,16 @@ module.exports = {
         <li>Keep your fingers on the home row (ASDF and JKL;) and don't look at the keyboard.</li>
         <li>Slow down until you reach 95% accuracy — speed follows. The <strong>keys to practice</strong> list after each test shows which characters you miss most.</li>
         <li>Practise 10–15 minutes a day, and try <strong>Punctuation & numbers</strong> mode once plain words feel easy, since real writing has capitals, commas and numbers.</li>
-      </ol>`,
+      </ol>
+      <h2>Test lengths and text types</h2>
+      <p>Choose from seven durations — 15 seconds, 30 seconds, 1, 2, 3, 5 or 10 minutes — and three kinds of text: <strong>Common words</strong> (good for building speed), <strong>Punctuation &amp; numbers</strong> (capitals, commas and digits, like real writing) and <strong>Sentences</strong> (whole sentences, closest to typing a document). The timer starts on your first key press, so take your time getting ready.</p>
+      <h2>What you see at the end</h2>
+      <ul>
+        <li>Your <strong>WPM</strong> with a rating, your accuracy, and your characters per minute.</li>
+        <li>A <strong>speed chart</strong> of your WPM second by second, with your peak — a line that drops near the end shows where your focus or stamina slipped.</li>
+        <li><strong>Keys to practice</strong>: the characters you got wrong most often.</li>
+        <li>Your <strong>personal best</strong> for each duration is remembered in your browser, so you can track progress over weeks.</li>
+      </ul>`,
 
   '1-minute-typing-test': `
       <h2>About the 1 minute typing test</h2>
@@ -484,7 +534,12 @@ module.exports = {
         <li>Read a word or two ahead instead of looking at each letter.</li>
         <li>Don't stop to fix every mistake — keep a steady rhythm. Your WPM only counts correct characters, so accuracy still matters.</li>
         <li>Take three tests and use the average; the page remembers your best 1-minute score.</li>
-      </ul>`,
+      </ul>
+      <h2>Practising with short tests</h2>
+      <p>Because a 1-minute test is quick, it is ideal for practice in sets. Do three in a row: the first warms you up, the second and third show your real speed. Compare your score in <strong>Common words</strong> mode with <strong>Punctuation &amp; numbers</strong> — the gap shows how much capitals, commas and digits slow you down, and that is often where the quickest improvement is.</p>
+      <h2>Your 1-minute personal best</h2>
+      <p>Your best 1-minute score is saved separately from your scores at other lengths, so a fast one-minute sprint never hides a slower result over five minutes. Clearing your browser data resets it.</p>
+      <p>When your 1-minute score is steady, try the <a href="/3-minute-typing-test">3 minute test</a>: if you lose more than 5 WPM over the longer test, stamina rather than finger speed is what to work on.</p>`,
 
   '3-minute-typing-test': `
       <h2>Why take a 3 minute typing test?</h2>
@@ -494,7 +549,11 @@ module.exports = {
         <li>Practise with <strong>Sentences</strong> or <strong>Punctuation & numbers</strong> mode — real job tests use proper text with capitals and punctuation.</li>
         <li>Employers usually ask for 35–45 WPM for general office work and 50–60+ WPM for typists and data entry, often with 90–95% accuracy.</li>
         <li>Accuracy counts: a test that removes points for errors can make 60 WPM with mistakes score lower than 50 WPM without.</li>
-      </ul>`,
+      </ul>
+      <h2>Reading the speed chart</h2>
+      <p>After three minutes the chart shows your speed second by second. A flat line means a steady rhythm, which is what employers want. A line that starts high and slides down means you started too fast; a jagged line with deep dips usually means you stop to fix mistakes. Aim to start a little slower than your 1-minute speed and hold it.</p>
+      <h2>Mistakes over three minutes</h2>
+      <p>Errors add up on a longer test. The <strong>Keys to practice</strong> list shows the characters you got wrong most often — practise those letters and the finger that types them for a few minutes before your next attempt, rather than simply repeating the whole test.</p>`,
 
   '5-minute-typing-test': `
       <h2>About the 5 minute typing test</h2>
@@ -504,7 +563,16 @@ module.exports = {
         <li><strong>WPM</strong> counts only correct characters. <strong>Raw speed</strong> includes mistakes — a big gap between the two means you should slow down slightly.</li>
         <li><strong>CPM</strong> (characters per minute) is used by some employers instead of WPM; it is roughly WPM × 5.</li>
         <li>The <strong>speed chart</strong> shows your pace minute by minute. A falling line means fatigue — short daily practice builds the stamina to keep it flat.</li>
-      </ul>`,
+      </ul>
+      <h2>Building stamina for long tests</h2>
+      <ul>
+        <li>Relax your shoulders and hands — tension is what makes speed drop after two or three minutes.</li>
+        <li>Keep your eyes on the text a word or two ahead of where you are typing.</li>
+        <li>If you make a mistake, fix it and move on without rushing to make up time.</li>
+        <li>Practise with <strong>Sentences</strong> mode, since most 5-minute job and certificate tests use real paragraphs rather than random words.</li>
+      </ul>
+      <h2>Comparing with other lengths</h2>
+      <p>Your 5-minute personal best is stored separately, so you can see how it compares with your shorter tests. A 5-minute score within 5 WPM of your 1-minute score is a sign of very consistent typing. If you need an even longer test for transcription work, the main <a href="/typing-speed-test">typing speed test</a> also has a 10-minute option.</p>`,
 
   'image-splitter': `
       <h2>How Instagram grid posts work</h2>
@@ -521,7 +589,18 @@ module.exports = {
         <li><strong>4:5 portrait (1080×1350)</strong> — the tallest feed post Instagram allows; takes up more screen in the feed.</li>
         <li><strong>3:4 (1080×1440)</strong> — matches the taller thumbnails Instagram's profile grid now shows, so tiles line up without being cut off on your profile.</li>
       </ul>
-      <p>Use the two sliders to move the picture inside the frame before cutting. Tiles are saved as high-quality JPGs at Instagram's recommended 1080-pixel width and downloaded together in a ZIP.</p>`,
+      <p>Use the two sliders to move the picture inside the frame before cutting. Tiles are saved as high-quality JPGs at Instagram's recommended 1080-pixel width and downloaded together in a ZIP.</p>
+      <h2>Tile shapes</h2>
+      <ul>
+        <li><strong>1:1 square</strong> (1080 × 1080) — the classic Instagram post.</li>
+        <li><strong>4:5 portrait</strong> (1080 × 1350) — takes up more of the screen in the feed.</li>
+        <li><strong>3:4 grid</strong> (1080 × 1440) — matches the taller thumbnails Instagram now uses on profile grids.</li>
+        <li><strong>Original</strong> — cuts the picture as it is, without cropping to a fixed shape.</li>
+      </ul>
+      <h2>Position the picture</h2>
+      <p>When your photo doesn't have the same shape as the grid, part of it has to be cropped. Use the <strong>left / right</strong> and <strong>up / down</strong> sliders to choose which part stays, and watch the preview: each tile is drawn with its number so you can check that faces and text aren't cut through a gap between tiles.</p>
+      <h2>Download</h2>
+      <p>All tiles download together in one ZIP as high-quality images, named in posting order. Besides the profile grid and carousel modes, <strong>Custom</strong> lets you cut any image into up to 10 rows and 10 columns, numbered left to right and top to bottom — useful for printing large posters on several sheets.</p>`,
 
   'split-image-for-instagram': `
       <h2>Split one photo into 3 Instagram posts</h2>
@@ -532,7 +611,13 @@ module.exports = {
         <li>Then post tile <strong>2</strong> (the middle) and finally tile <strong>3</strong> (the left).</li>
         <li>Post all three in a row without anything in between, or the picture will be split across two rows.</li>
       </ol>
-      <p>Already have posts on your profile? The three tiles only line up if the number of posts before them is a multiple of three — otherwise post one or two extra images first, or archive them, to align the row.</p>`,
+      <p>Already have posts on your profile? The three tiles only line up if the number of posts before them is a multiple of three — otherwise post one or two extra images first, or archive them, to align the row.</p>
+      <h2>Choosing a photo that works in three</h2>
+      <p>A wide picture about three times wider than it is tall fits a row of three squares with little cropping — landscapes, skylines and group photos are ideal. With a normal phone photo (4:3), switch the tile shape to <strong>4:5 portrait</strong> or <strong>3:4 grid</strong> to keep more of the image, and use the up/down slider to choose which strip stays.</p>
+      <h2>Keep the main subject off the joins</h2>
+      <p>On your profile, the three tiles sit side by side with a thin gap between them. A face or a word that falls right on a join gets split by that gap. Use the left/right slider to move the important part into the middle of a tile.</p>
+      <h2>Want more than one row?</h2>
+      <p>The same tool can split a picture into 2 to 5 rows (6 to 15 posts) for a bigger profile mosaic — open <a href="/image-splitter">Instagram grid maker</a> and pick the number of rows.</p>`,
 
   'instagram-carousel-splitter': `
       <h2>Seamless Instagram carousel from a panorama</h2>
@@ -543,7 +628,13 @@ module.exports = {
         <li><strong>Choose 4:5 portrait</strong> for slides that take up more of the screen in the feed.</li>
         <li><strong>Upload all slides in one post</strong>, selecting them in order 1, 2, 3… Instagram keeps that order.</li>
         <li>Avoid placing faces or text exactly on a cut line — use the sliders to shift the picture slightly.</li>
-      </ul>`,
+      </ul>
+      <h2>How many slides?</h2>
+      <p>Choose 2, 3, 4, 5, 6, 7, 8 or 10 slides. The tool crops your picture to the exact width needed for that many slides at your chosen shape, so the joins line up perfectly when people swipe. As a rough guide: a normal wide photo suits 2–3 slides, a phone panorama 4–6, and a very long 360° panorama 8–10.</p>
+      <h2>Square or portrait slides?</h2>
+      <p><strong>4:5 portrait</strong> slides are taller, so they fill more of the screen in the feed and are noticed more. They need a taller strip of your photo, so use the up/down slider to choose what stays in frame. <strong>1:1 square</strong> slides keep more of a very wide panorama.</p>
+      <h2>Posting the carousel</h2>
+      <p>Create a new post, tap the multiple-images icon, and select the slides in order 1 → last. They download numbered, so they appear in the right order in your camera roll. Use the same filter on every slide, or none at all — different filters show visible seams between slides.</p>`,
 
   'gpx-kml-converter': `
       <h2>GPX vs KML — what's the difference?</h2>
@@ -553,7 +644,17 @@ module.exports = {
       </ul>
       <p>This converter reads either format and writes the other: waypoints become placemarks, and tracks and routes become lines (and back again). Elevation is kept, and timestamps are kept when converting KML tracks that include them. It also shows the total length of your tracks in kilometres and miles.</p>
       <h2>Private by design</h2>
-      <p>GPS files show exactly where you live, work and travel. Most online converters upload them to a server; this one converts the file inside your browser, so your location data never leaves your device.</p>`,
+      <p>GPS files show exactly where you live, work and travel. Most online converters upload them to a server; this one converts the file inside your browser, so your location data never leaves your device.</p>
+      <h2>Check the file before you download</h2>
+      <p>As soon as you choose a file, a summary shows which way it will be converted, how many waypoints and tracks it contains, the number of GPS points, and the total length of all tracks in kilometres and miles. If the length looks far too short, you probably exported only part of an activity — export it again from your app before converting.</p>
+      <h2>What is kept, and what isn't</h2>
+      <ul>
+        <li><strong>Kept both ways:</strong> waypoint names and descriptions, track and route names, latitude, longitude and elevation.</li>
+        <li><strong>KML areas</strong> (shapes drawn in My Maps) become closed lines named “Area”, because GPX has no polygons.</li>
+        <li><strong>Timestamps:</strong> Google Earth's timed tracks keep their times when converted to GPX. Plain KML lines have no times, and KML written from GPX keeps the path and elevation but not the times, so convert the original GPX again if an app needs your pace or speed.</li>
+        <li>Styles such as icons and fill colours in a KML have no equivalent in GPX and are left out.</li>
+      </ul>
+      <p>If a file isn't valid XML, or contains no waypoints or tracks at all, you get a clear message instead of an empty download.</p>`,
 
   'gpx-to-kml': `
       <h2>Open a GPX track in Google Earth or My Maps</h2>
@@ -562,7 +663,13 @@ module.exports = {
         <li>Convert it here. Pick a track colour and line width — they are saved inside the KML.</li>
         <li><strong>Google Earth:</strong> File → Open (or drag the KML onto the globe). <strong>Google My Maps:</strong> create a map → Add layer → Import, then choose the KML.</li>
       </ol>
-      <p>Google Earth on the web can open GPX directly too, but Google My Maps works more reliably with KML, and KML keeps your chosen colour and width when you share the map.</p>`,
+      <p>Google Earth on the web can open GPX directly too, but Google My Maps works more reliably with KML, and KML keeps your chosen colour and width when you share the map.</p>
+      <h2>Make the track easy to see</h2>
+      <p>The default red line at width 4 shows up well on Google Earth's satellite imagery. On a light map such as My Maps, a darker colour (blue or purple) and width 5–6 is easier to follow. If you are converting several tracks to view together, give each one its own colour before converting so you can tell them apart.</p>
+      <h2>Elevation in Google Earth</h2>
+      <p>When your GPX has elevation data, the KML is set to follow the ground, so the line sits on the terrain instead of floating in the air or disappearing under hills. Tilt the view in Google Earth (hold <kbd>Shift</kbd> and drag) to see the climbs and descents in 3D.</p>
+      <h2>Sharing the result</h2>
+      <p>A KML is a small text file, so it is easy to email or send in a chat. The person receiving it can open it in Google Earth on a computer, or import it into a My Maps map that anyone with the link can view on their phone.</p>`,
 
   'kml-to-gpx': `
       <h2>Take a Google Earth or My Maps route to your GPS</h2>
@@ -572,7 +679,17 @@ module.exports = {
         <li>Copy the GPX to your device or import it into your app (Garmin Connect, Komoot, OsmAnd, AllTrails, Wikiloc…).</li>
       </ol>
       <h2>Tracks or routes?</h2>
-      <p>By default lines become GPX <strong>tracks</strong>, which every app and device can display. Tick “Save lines as GPX routes” if your device needs <strong>routes</strong> for turn-by-turn navigation. Placemarks become waypoints. Shapes drawn as areas are converted to their outline.</p>`,
+      <p>By default lines become GPX <strong>tracks</strong>, which every app and device can display. Tick “Save lines as GPX routes” if your device needs <strong>routes</strong> for turn-by-turn navigation. Placemarks become waypoints. Shapes drawn as areas are converted to their outline.</p>
+      <h2>Routes from Google My Maps</h2>
+      <p>Lines you draw in My Maps, including driving, walking and cycling directions you add there, become GPX tracks or routes. Pins become GPX waypoints with their names and descriptions, so a planned trip with stops arrives on your device with the stops marked.</p>
+      <h2>Areas and shapes</h2>
+      <p>Polygons drawn in My Maps or Google Earth, such as a field boundary or a park outline, have no equivalent in GPX. They are converted to a closed line around the edge named “Area”, which most GPS apps display as a track you can follow around the perimeter.</p>
+      <h2>Garmin and other devices</h2>
+      <ul>
+        <li>Garmin Connect: Training → Courses → Import, then send the course to your watch or bike computer.</li>
+        <li>Komoot, AllTrails, Wikiloc and OsmAnd: use the app's “Import GPX” option on the website or in the app.</li>
+        <li>If a device shows a straight line between two points instead of your path, re-convert with “Save lines as GPX routes” unticked — tracks keep every point exactly.</li>
+      </ul>`,
 
   'instagram-unfollowers-tracker': `
       <h2>Why this tracker never asks for your password</h2>
@@ -589,7 +706,18 @@ module.exports = {
         <li>The results are a snapshot from the moment you requested the download. Request a fresh download to check again later.</li>
         <li>Brands, celebrities and creators rarely follow back — that's normal, not a sign of an unfollow.</li>
         <li>Unfollow slowly. Removing hundreds of accounts in a few minutes can trigger Instagram's limits; a few dozen per hour is safer.</li>
-      </ul>`,
+      </ul>
+      <h2>Three lists you can switch between</h2>
+      <ul>
+        <li><strong>Don't follow you back</strong> — accounts you follow that don't follow you.</li>
+        <li><strong>You don't follow back</strong> — your followers that you haven't followed.</li>
+        <li><strong>Mutual</strong> — accounts that follow each other with you.</li>
+      </ul>
+      <p>Above the lists you see your total followers, following and mutual counts. Each list can be filtered by typing part of a username, copied to the clipboard in one click, or downloaded as a CSV file for Excel or Google Sheets. Where Instagram's file includes it, the date you started following is shown too.</p>
+      <h2>Tracking changes over time</h2>
+      <p>Instagram's download is a snapshot of one moment. To see who unfollowed you between two dates, download your data again later and compare the two CSV files, or simply re-check the “Don't follow you back” list.</p>
+      <h2>Big accounts</h2>
+      <p>Accounts with many followers get several follower files (followers_1, followers_2 and so on). Dropping the ZIP reads all of them automatically, and you can also drop the separate JSON or HTML files.</p>`,
 
   'instagram-not-following-back': `
       <h2>See who doesn't follow you back — without risking your account</h2>
@@ -601,7 +729,13 @@ module.exports = {
         <li><strong>Download to device</strong>, date range <strong>All time</strong>, format <strong>JSON</strong> → <strong>Create files</strong>.</li>
         <li>When Instagram's email arrives, download the ZIP and drop it on this page.</li>
       </ol>
-      <p>Everything is processed in your browser; nothing is sent to us or to anyone else.</p>`,
+      <p>Everything is processed in your browser; nothing is sent to us or to anyone else.</p>
+      <h2>Before you unfollow</h2>
+      <p>Not everyone on the list is ignoring you. Brands, celebrities, news pages and public figures rarely follow back, and some accounts are inactive or have been deactivated. Type a name into the search box to check a specific person, and go through the list by hand rather than unfollowing everyone at once.</p>
+      <h2>Unfollow slowly</h2>
+      <p>Instagram limits how many accounts you can unfollow in a short time, and sudden bursts of activity can trigger a temporary block. Spread unfollows over several days — a few dozen per session is a safe pace.</p>
+      <h2>Keep a copy</h2>
+      <p>Use <strong>Download CSV</strong> to save the list before you start. Next time you download your data you can compare the two lists and see who you have already dealt with.</p>`,
 
   'sun-moon-rising-calculator': `
       <h2>Your Big Three</h2>
@@ -613,21 +747,47 @@ module.exports = {
       </ul>
       <h2>How it is calculated</h2>
       <p>The calculator converts your birth time to Universal Time using your birthplace's time zone (including daylight saving rules for that date), then computes the exact positions of the Sun and Moon along the zodiac with a professional astronomy library. The rising sign comes from the local sidereal time and the latitude of your birthplace. It uses the <strong>tropical zodiac</strong> used in Western astrology; Vedic (sidereal) astrology gives signs about 24° earlier.</p>
-      <p>Don't know your birth time? You will still get your Sun sign, and your Moon sign unless the Moon changed sign that day — the tool tells you when it did.</p>`,
+      <p>Don't know your birth time? You will still get your Sun sign, and your Moon sign unless the Moon changed sign that day — the tool tells you when it did.</p>
+      <h2>How the calculation works</h2>
+      <p>The calculator uses the Western (tropical) zodiac. Your local birth time is converted to universal time using your birthplace's time zone, including daylight saving time where it applied that year. From that moment it calculates the exact positions of the Sun and Moon and the sign rising on the eastern horizon at your birthplace. Each result also shows the degree within the sign: a placement at 0° or 29° sits at the edge of a sign and is sensitive to the exact minute of birth.</p>
+      <h2>Birthplace</h2>
+      <p>Start typing your city and choose it from a list of about 160 major cities worldwide. If your town isn't listed, enter its latitude, longitude and time zone yourself — you can find the coordinates by right-clicking the place in Google Maps. For the Sun and Moon a nearby big city is fine; for the rising sign, use your actual birthplace.</p>
+      <h2>Private by design</h2>
+      <p>The city list and the astronomy are built into the page, so your birth date, time and place are never sent anywhere.</p>`,
 
   'rising-sign-calculator': `
       <h2>What is a rising sign?</h2>
       <p>Your rising sign, or <strong>Ascendant</strong>, is the zodiac sign that was rising over the eastern horizon at the exact time and place you were born. Astrologers read it as your “mask”: the energy you show to new people, your style and your instinctive way of starting things.</p>
       <h2>Why the exact birth time matters</h2>
       <p>The Earth turns a full circle every day, so all twelve signs rise in turn — each for about two hours on average (much less for some signs at high latitudes). A difference of even 10–20 minutes can change your rising sign if you were born near the boundary, so use the time from your birth certificate when you can. Your birthplace matters too: the same moment gives different rising signs in London and Karachi.</p>
-      <p>The degree shown with your result tells you how close you are to a boundary: near 0° or 29° means a small error in the time could move it to the neighbouring sign.</p>`,
+      <p>The degree shown with your result tells you how close you are to a boundary: near 0° or 29° means a small error in the time could move it to the neighbouring sign.</p>
+      <h2>Where to find your exact birth time</h2>
+      <ul>
+        <li>A birth certificate — in many countries the long form records the time.</li>
+        <li>Hospital discharge papers or a baby book kept by your family.</li>
+        <li>Asking the people who were there; even “just after lunch” narrows it to a couple of hours.</li>
+      </ul>
+      <h2>Testing an uncertain time</h2>
+      <p>If you only know a range, run the calculator at the start and end of that range. If both give the same rising sign, you can be fairly confident. If they differ, the result tells you which two or three signs are possible — read the descriptions of each and see which fits how other people describe you.</p>
+      <h2>Why the birthplace matters</h2>
+      <p>The rising sign depends on where on Earth you were born, not just when. Two babies born at the same moment in London and Lahore have different rising signs, because a different part of the sky is on their eastern horizon. Choose your actual birth city, or enter its coordinates if it isn't in the list.</p>`,
 
   'moon-sign-calculator': `
       <h2>What is a Moon sign?</h2>
       <p>Your Moon sign is the zodiac sign the Moon was in when you were born. While your Sun sign describes your identity, the Moon describes your emotional world — your moods, comfort needs and how you care for others. Many people relate to their Moon sign more than to their Sun sign.</p>
       <h2>Do I need my birth time?</h2>
       <p>Usually not. The Moon spends about two and a half days in each sign, so on most dates the whole day falls in one sign and the calculator gives a definite answer. If the Moon changed sign on your birthday, the tool warns you and shows both signs — then your birth time decides which one is yours.</p>
-      <p>Results use the tropical (Western) zodiac and the Moon's exact position from an astronomy library, adjusted for your birthplace's time zone on that date.</p>`,
+      <p>Results use the tropical (Western) zodiac and the Moon's exact position from an astronomy library, adjusted for your birthplace's time zone on that date.</p>
+      <h2>When the Moon changes sign on your birthday</h2>
+      <p>If you tick <strong>I don't know my birth time</strong>, the calculator checks the Moon's position at the start and the end of your birth day. If it stayed in one sign, your Moon sign is certain. If it moved into the next sign that day, you get a clear warning naming both signs, because your Moon sign then depends on the hour you were born. Asking a parent, or checking a birth certificate or hospital record, usually settles it.</p>
+      <h2>Moon signs and the elements</h2>
+      <ul>
+        <li><strong>Fire Moons</strong> (Aries, Leo, Sagittarius) are described as needing excitement and recognition.</li>
+        <li><strong>Earth Moons</strong> (Taurus, Virgo, Capricorn) as needing stability and practical comfort.</li>
+        <li><strong>Air Moons</strong> (Gemini, Libra, Aquarius) as needing conversation and ideas.</li>
+        <li><strong>Water Moons</strong> (Cancer, Scorpio, Pisces) as needing closeness and emotional safety.</li>
+      </ul>
+      <p>Astrology is a tradition of interpretation rather than a science, so read these as ideas to reflect on, not facts about you.</p>`,
 
   'merge-pdf': `
       <h2>How to merge PDF files</h2>
@@ -660,7 +820,13 @@ module.exports = {
       </ul>
       <p>Ticking <strong>grayscale</strong> removes colour from images and often halves the size of scanned documents.</p>
       <h2>Why some PDFs barely shrink</h2>
-      <p>PDFs made of plain text (exported from Word, for example) are already small; most of a PDF's size comes from images and embedded fonts. If the tool can't make your file noticeably smaller it tells you, instead of giving you a worse copy.</p>`,
+      <p>PDFs made of plain text (exported from Word, for example) are already small; most of a PDF's size comes from images and embedded fonts. If the tool can't make your file noticeably smaller it tells you, instead of giving you a worse copy.</p>
+      <h2>What each level actually does</h2>
+      <p><strong>Recommended</strong> re-saves the photos and scans inside your PDF as JPGs no larger than 2000 pixels on their longest side, at good quality — plenty for reading on screen and for normal printing. <strong>Strong</strong> limits them to 1300 pixels at lower quality, which roughly halves the size again. In both, the text, fonts and links stay as they are, so the document remains searchable and sharp.</p>
+      <h2>Grayscale for scanned documents</h2>
+      <p>Tick <strong>Convert images to grayscale</strong> for black-and-white documents that were scanned in colour, such as forms, ID copies and bank statements. Colour information takes a lot of space, and removing it often makes a scan much smaller with no loss of readability.</p>
+      <h2>When the file won't get smaller</h2>
+      <p>PDFs that are mostly text, or were already compressed, may not shrink. In that case the tool tells you so instead of giving you a file that isn't smaller. Options then: try Strong or Extreme, <a href="/split-pdf">split the PDF</a> into parts if a portal limits each upload, or <a href="/delete-pdf-pages">remove pages</a> you don't need to send.</p>`,
 
   'pdf-to-jpg': `
       <h2>Convert PDF pages to images</h2>
@@ -928,7 +1094,14 @@ module.exports = {
       </ul>
       <p>For example, 70 kg at 1.75 m gives 70 ÷ 1.75² = <strong>22.9</strong>, a healthy BMI. For people of South Asian origin, the WHO suggests a lower threshold: health risks start to rise from a BMI of about 23.</p>
       <h2>Limits of BMI</h2>
-      <p>BMI doesn't distinguish muscle from fat, so athletes can score as “overweight” while being very fit, and it isn't designed for children or pregnancy. Waist size and the <a href="/body-fat-calculator">Body Fat Calculator</a> add useful context. For health decisions, talk to a doctor.</p>`,
+      <p>BMI doesn't distinguish muscle from fat, so athletes can score as “overweight” while being very fit, and it isn't designed for children or pregnancy. Waist size and the <a href="/body-fat-calculator">Body Fat Calculator</a> add useful context. For health decisions, talk to a doctor.</p>
+      <h2>Metric or imperial</h2>
+      <p>Enter your height in centimetres and weight in kilograms, or switch to US units for feet, inches and pounds. Along with your BMI and category, the result shows the <strong>healthy weight range for your height</strong>, so you can see how far you are from it in your own units, and a colour scale showing where you sit.</p>
+      <h2>Asian BMI cut-offs</h2>
+      <p>Tick <strong>Use Asian BMI cut-offs</strong> if you are of South or East Asian origin. Research shows health risks such as type 2 diabetes start at a lower BMI in these populations, so the categories become: healthy below 23, overweight from 23, and obese from 27.5. Many doctors in Pakistan, India, China and other Asian countries use these values.</p>
+      <h2>BMI is for adults</h2>
+      <p>This calculator uses adult ranges. Children's and teenagers' BMI is read against growth charts for their age and sex, so ask a doctor or use your country's child BMI tool for anyone under 18. BMI also isn't designed for pregnancy.</p>
+      <p>Want a fuller picture? Try the <a href="/body-fat-calculator">body fat calculator</a> or see the <a href="/blog/healthy-bmi-chart">healthy BMI chart by height</a>.</p>`,
 
   'age-calculator': `
       <h2>Exact age in years, months and days</h2>
@@ -956,7 +1129,21 @@ module.exports = {
         <li><strong>Percentage change</strong> — (new − old) ÷ old × 100: from 80 to 100 is <strong>+25%</strong>; from 100 to 80 is <strong>−20%</strong>.</li>
       </ul>
       <h2>A common mistake</h2>
-      <p>Percentage changes don't cancel out. A price that rises 20% and then falls 20% ends up 4% lower than where it started (100 → 120 → 96), because the second percentage is taken from a bigger number. For discounts and sale prices, the <a href="/discount-calculator">Discount Calculator</a> does the maths for you.</p>`,
+      <p>Percentage changes don't cancel out. A price that rises 20% and then falls 20% ends up 4% lower than where it started (100 → 120 → 96), because the second percentage is taken from a bigger number. For discounts and sale prices, the <a href="/discount-calculator">Discount Calculator</a> does the maths for you.</p>
+      <h2>Six calculators on one page</h2>
+      <ul>
+        <li><strong>What is X% of Y?</strong> — tips, tax, commission and discounts.</li>
+        <li><strong>X is what % of Y?</strong> — what share one number is of another.</li>
+        <li><strong>% change from X to Y</strong> — shows clearly whether it is an increase or a decrease.</li>
+        <li><strong>Marks obtained out of total</strong> — exam percentage, for example 445 out of 550 = 80.91%.</li>
+        <li><strong>Add X% to Y</strong> — a price plus tax, or a salary plus a raise.</li>
+        <li><strong>Subtract X% from Y</strong> — a sale price after a discount.</li>
+      </ul>
+      <p>Each row calculates as you type, with no button to press.</p>
+      <h2>Percent vs percentage points</h2>
+      <p>If an interest rate goes from 5% to 6%, it has risen by 1 <em>percentage point</em> but by 20 <em>percent</em> (because 1 is 20% of 5). News reports and bank offers often mix these up, so check which one is meant before comparing figures.</p>
+      <h2>Reverse percentages</h2>
+      <p>To find the price before tax was added, divide rather than subtract: a price of 118 including 18% tax was 118 ÷ 1.18 = 100 before tax, not 118 − 18% = 96.76. The <a href="/gst-calculator">GST / VAT calculator</a> does this for you.</p>`,
 
   'word-counter': `
       <h2>More than a word count</h2>
@@ -988,7 +1175,17 @@ module.exports = {
       <p>An EMI (equated monthly instalment) is the fixed monthly payment that pays off a loan with interest over its term. The formula is <code>EMI = P × r × (1 + r)ⁿ ÷ ((1 + r)ⁿ − 1)</code>, where P is the loan amount, r the monthly interest rate (annual rate ÷ 12 ÷ 100) and n the number of months.</p>
       <p>Example: 1,000,000 at 12% a year for 5 years (60 months) → r = 0.01 → EMI ≈ <strong>22,244</strong> a month, and about 334,667 paid in interest in total.</p>
       <h2>Reading the schedule</h2>
-      <p>In the early months most of each payment goes to interest; later, most goes to the principal. That's why paying extra early in the loan saves the most interest. Compare offers by total interest, not just the monthly amount — a longer term lowers the EMI but usually costs much more overall.</p>`,
+      <p>In the early months most of each payment goes to interest; later, most goes to the principal. That's why paying extra early in the loan saves the most interest. Compare offers by total interest, not just the monthly amount — a longer term lowers the EMI but usually costs much more overall.</p>
+      <h2>Monthly or yearly schedule</h2>
+      <p>The repayment table can show every month or a summary per year. Each row lists the payment, how much went to principal and to interest, and the balance still owed. A pie chart shows the split between the amount you borrowed and the total interest — often an eye-opener on long loans. Enter the tenure in years or in months, whichever your loan offer uses.</p>
+      <h2>Comparing two loan offers</h2>
+      <ol>
+        <li>Enter the first offer and note the monthly EMI and total interest.</li>
+        <li>Change only the rate or the tenure for the second offer.</li>
+        <li>Compare the <strong>total payment</strong>, not just the monthly EMI. A longer tenure lowers the EMI but almost always costs more in total.</li>
+      </ol>
+      <h2>What the EMI doesn't include</h2>
+      <p>Processing fees, insurance, taxes and late-payment charges are not part of the formula. Ask the lender for the annual percentage rate (APR), which includes most fees, and use it as the rate here for a truer comparison. For home loans with property tax and insurance, use the <a href="/mortgage-calculator">mortgage calculator</a>.</p>`,
 
   'json-formatter': `
       <h2>Format, validate and minify JSON</h2>

@@ -21,7 +21,7 @@
 <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=mwadbgqp">
+<link rel="stylesheet" href="/assets/css/style.css?v=mwajvpat">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEZ8T8ZK6B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SEZ8T8ZK6B');</script>
@@ -81,6 +81,16 @@
         <li>Phone numbers are kept as text, so leading zeros and + signs are not lost.</li>
         <li>Edited the sheet and want the contacts back on your phone? Switch the converter to <strong>CSV / Excel → VCF</strong> and choose your edited file.</li>
       </ul>
+      <h2>A real Excel workbook</h2>
+      <p>The download is a proper .xlsx file with a sheet named “Contacts”, not a CSV renamed to look like one. That means no import wizard, no lost leading zeros and no problems with non-English letters — it opens straight into Excel, Google Sheets, Numbers or LibreOffice.</p>
+      <h2>Cleaning up a contact list in Excel</h2>
+      <ol>
+        <li>Turn on <strong>Data → Filter</strong> to sort by name or company.</li>
+        <li>Use <strong>Data → Remove Duplicates</strong> on the phone column to find contacts saved twice.</li>
+        <li>Delete rows you don't need, then convert the cleaned list back with <a href="/excel-to-vcf">Excel to VCF</a> and import it on your phone.</li>
+      </ol>
+      <h2>Android phone exports</h2>
+      <p>Many Android phones export contacts in the older vCard 2.1 format with “quoted-printable” encoding, which shows up as codes like =C3=A9 in a text editor. These are decoded automatically, so names and addresses appear correctly in the spreadsheet.</p>
       <p class="related-guides">📝 <strong>Related guide:</strong> <a href="/blog/import-contacts-from-excel-to-iphone-android">How to Import Contacts From Excel to iPhone, Android or Gmail</a></p>
 
     </article>
@@ -106,10 +116,10 @@
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mwadbgqp"></script>
-<script src="/assets/js/core.js?v=mwadbgqp"></script>
-<script src="/assets/js/tools/utility.js?v=mwadbgqp"></script>
+<script src="/assets/js/registry.js?v=mwajvpat"></script>
+<script src="/assets/js/core.js?v=mwajvpat"></script>
+<script src="/assets/js/tools/utility.js?v=mwajvpat"></script>
 <script>Tools.mount("vcf-converter", document.getElementById('tool'), {"dir":"from-vcf","out":"xlsx"});</script>
-<script src="/assets/js/assistant.js?v=mwadbgqp" defer></script>
+<script src="/assets/js/assistant.js?v=mwajvpat" defer></script>
 </body>
 </html>

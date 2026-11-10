@@ -21,7 +21,7 @@
 <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=mwadbgqp">
+<link rel="stylesheet" href="/assets/css/style.css?v=mwajvpat">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEZ8T8ZK6B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SEZ8T8ZK6B');</script>
@@ -80,6 +80,16 @@
       <p>This converter reads either format and writes the other: waypoints become placemarks, and tracks and routes become lines (and back again). Elevation is kept, and timestamps are kept when converting KML tracks that include them. It also shows the total length of your tracks in kilometres and miles.</p>
       <h2>Private by design</h2>
       <p>GPS files show exactly where you live, work and travel. Most online converters upload them to a server; this one converts the file inside your browser, so your location data never leaves your device.</p>
+      <h2>Check the file before you download</h2>
+      <p>As soon as you choose a file, a summary shows which way it will be converted, how many waypoints and tracks it contains, the number of GPS points, and the total length of all tracks in kilometres and miles. If the length looks far too short, you probably exported only part of an activity — export it again from your app before converting.</p>
+      <h2>What is kept, and what isn't</h2>
+      <ul>
+        <li><strong>Kept both ways:</strong> waypoint names and descriptions, track and route names, latitude, longitude and elevation.</li>
+        <li><strong>KML areas</strong> (shapes drawn in My Maps) become closed lines named “Area”, because GPX has no polygons.</li>
+        <li><strong>Timestamps:</strong> Google Earth's timed tracks keep their times when converted to GPX. Plain KML lines have no times, and KML written from GPX keeps the path and elevation but not the times, so convert the original GPX again if an app needs your pace or speed.</li>
+        <li>Styles such as icons and fill colours in a KML have no equivalent in GPX and are left out.</li>
+      </ul>
+      <p>If a file isn't valid XML, or contains no waypoints or tracks at all, you get a clear message instead of an empty download.</p>
 
     </article>
     <aside class="sidebar">
@@ -104,10 +114,10 @@
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mwadbgqp"></script>
-<script src="/assets/js/core.js?v=mwadbgqp"></script>
-<script src="/assets/js/tools/utility.js?v=mwadbgqp"></script>
+<script src="/assets/js/registry.js?v=mwajvpat"></script>
+<script src="/assets/js/core.js?v=mwajvpat"></script>
+<script src="/assets/js/tools/utility.js?v=mwajvpat"></script>
 <script>Tools.mount("gpx-kml-converter", document.getElementById('tool'), {});</script>
-<script src="/assets/js/assistant.js?v=mwadbgqp" defer></script>
+<script src="/assets/js/assistant.js?v=mwajvpat" defer></script>
 </body>
 </html>

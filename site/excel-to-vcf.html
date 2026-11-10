@@ -21,7 +21,7 @@
 <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=mwadbgqp">
+<link rel="stylesheet" href="/assets/css/style.css?v=mwajvpat">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEZ8T8ZK6B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SEZ8T8ZK6B');</script>
@@ -81,6 +81,12 @@
         <li><strong>Several sheets:</strong> only the first sheet is converted. Move the contacts sheet to the front, or copy it into a new file.</li>
         <li><strong>Hundreds of contacts:</strong> no problem — they all go into one .vcf file, which phones import in a single step. Need one file per contact instead? Use the ZIP option.</li>
       </ul>
+      <h2>Which sheet and which rows?</h2>
+      <p>The first sheet in the workbook is read, and completely empty rows are skipped. If your contacts are on another sheet, move that sheet to the front in Excel and save. Leave <strong>First row is column names</strong> ticked when row 1 has headings; untick it if your sheet starts straight away with contact data, then match each column by hand.</p>
+      <h2>Phone numbers from Excel</h2>
+      <p>Numbers are read as Excel displays them, so whatever you see in the cell is what goes into the vCard. That is why the formatting fix matters: a cell showing 3.00123E+09 or a number missing its leading zero will be copied exactly like that. Fix the display in Excel first, and include the country code (for example +92 or +44) if the phone may be used abroad.</p>
+      <h2>A second phone number</h2>
+      <p>Columns such as Work phone, Home phone, Landline, Office phone or Phone 2 are matched to <strong>Other phone</strong>, so each contact can carry both a mobile and a second number.</p>
       <p class="related-guides">📝 <strong>Related guide:</strong> <a href="/blog/import-contacts-from-excel-to-iphone-android">How to Import Contacts From Excel to iPhone, Android or Gmail</a></p>
 
     </article>
@@ -106,10 +112,10 @@
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mwadbgqp"></script>
-<script src="/assets/js/core.js?v=mwadbgqp"></script>
-<script src="/assets/js/tools/utility.js?v=mwadbgqp"></script>
+<script src="/assets/js/registry.js?v=mwajvpat"></script>
+<script src="/assets/js/core.js?v=mwajvpat"></script>
+<script src="/assets/js/tools/utility.js?v=mwajvpat"></script>
 <script>Tools.mount("vcf-converter", document.getElementById('tool'), {"dir":"to-vcf"});</script>
-<script src="/assets/js/assistant.js?v=mwadbgqp" defer></script>
+<script src="/assets/js/assistant.js?v=mwajvpat" defer></script>
 </body>
 </html>

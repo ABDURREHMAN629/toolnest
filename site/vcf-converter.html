@@ -21,7 +21,7 @@
 <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=mwadbgqp">
+<link rel="stylesheet" href="/assets/css/style.css?v=mwajvpat">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEZ8T8ZK6B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SEZ8T8ZK6B');</script>
@@ -82,6 +82,17 @@
       <p>Names in any language (Urdu, Arabic, Hindi, Chinese…) are kept intact, and old Android exports that use “quoted-printable” encoding are decoded properly.</p>
       <h2>Private by design</h2>
       <p>Contact lists contain other people's phone numbers and emails. Many online converters upload them to a server; this one reads and converts the file inside your browser, so the contacts never leave your device.</p>
+      <h2>Files it accepts</h2>
+      <p>For spreadsheets: CSV, TSV and TXT files with commas, semicolons, tabs or pipes between columns (the separator is detected automatically), plus Excel .xlsx and .xls and LibreOffice .ods. For contacts: .vcf and .vcard files in vCard 2.1, 3.0 or 4.0, including the older “quoted-printable” encoding many Android phones still use when exporting, so names with accents and non-English letters come out correctly.</p>
+      <h2>Choosing a vCard version</h2>
+      <ul>
+        <li><strong>3.0</strong> — the recommended choice; works with iPhone, Android, Google Contacts and Outlook.</li>
+        <li><strong>2.1</strong> — for older Android phones and basic feature phones that reject newer files.</li>
+        <li><strong>4.0</strong> — the newest standard, for apps that ask for it specifically.</li>
+      </ul>
+      <h2>One file or many?</h2>
+      <p>Normally all contacts go into a single .vcf, which is what phones expect when importing a list. If a system wants one contact per file, use <strong>One file per contact (ZIP)</strong> instead.</p>
+      <p>Before you download, a preview shows how many contacts are ready and exactly what the first one looks like, so you can catch a wrong column before importing hundreds of contacts.</p>
 
     </article>
     <aside class="sidebar">
@@ -106,10 +117,10 @@
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mwadbgqp"></script>
-<script src="/assets/js/core.js?v=mwadbgqp"></script>
-<script src="/assets/js/tools/utility.js?v=mwadbgqp"></script>
+<script src="/assets/js/registry.js?v=mwajvpat"></script>
+<script src="/assets/js/core.js?v=mwajvpat"></script>
+<script src="/assets/js/tools/utility.js?v=mwajvpat"></script>
 <script>Tools.mount("vcf-converter", document.getElementById('tool'), {});</script>
-<script src="/assets/js/assistant.js?v=mwadbgqp" defer></script>
+<script src="/assets/js/assistant.js?v=mwajvpat" defer></script>
 </body>
 </html>

@@ -352,7 +352,7 @@ kbd { font-family: var(--mono); font-size: .8rem; padding: 2px 6px; border: 1px 
 .post h2 { scroll-margin-top: 90px; }
 .post h3 { margin-top: 1.3em; }
 .post .table-wrap { max-height: none; margin: 14px 0 20px; }
-.post .table td, .post .table th { white-space: normal; }
+.post .table td, .post .table th, .prose .table td, .prose .table th { white-space: normal; }
 .post blockquote { margin: 18px 0; padding: 12px 18px; border-left: 4px solid var(--primary); background: var(--bg-soft); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
 .post blockquote p { margin: 0; }
 .tool-cta { display: flex; align-items: center; gap: 14px; margin: 22px 0; padding: 16px 18px; background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius); }

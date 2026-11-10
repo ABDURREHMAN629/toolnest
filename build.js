@@ -131,21 +131,16 @@ function card(t) {
 }
 
 function faqs(t) {
+  // Page-specific questions first. Generic ones are kept only where they add something the page does not
+  // already say: the trust row under every tool covers free / private / any device, so those are not repeated.
   const c = catById[t.cat];
   const n = t.name;
-  const list = [...(FAQ[t.slug] || []), [`Is the ${n} free to use?`, `Yes. ${n} on ${config.name} is completely free, with no sign-up, no watermark and no daily limits.`]];
+  const list = [...(FAQ[t.slug] || [])];
   if (['pdf', 'image', 'media'].includes(c.id)) {
-    list.push([`Are my files uploaded to a server?`, `No. ${n} processes your files directly in your web browser on your own device. Your files are never uploaded, stored or seen by anyone, which makes it safe for private and confidential documents.`]);
     list.push([`Is there a file size limit?`, `There is no fixed limit, but very large files depend on your device's memory and speed. Files up to a few hundred MB usually work well on a modern computer.`]);
   } else if (['finance', 'health', 'math', 'student'].includes(c.id)) {
     list.push([`How accurate is the ${n}?`, `${n} uses standard, widely accepted formulas and calculates instantly as you type. Results are for general information — for important ${c.id === 'health' ? 'medical' : c.id === 'finance' ? 'financial' : 'academic'} decisions, please confirm with a qualified professional or your institution.`]);
-    list.push([`Is my data saved anywhere?`, `No. Everything you enter stays in your browser. Nothing is sent to or stored on our servers.`]);
-  } else if (c.id === 'web') {
-    list.push([`Is my data stored?`, `No. Most checks run entirely in your browser. Tools that must contact a network service — such as the speed test or IP lookup — only send what is needed to get the result, and we never store it.`]);
-  } else {
-    list.push([`Is my data private?`, `Yes. ${n} runs entirely in your browser. Your text and data are not uploaded or stored on our servers.`]);
   }
-  list.push([`Does ${n} work on mobile phones?`, `Yes. ${config.name} works in any modern browser on Android, iPhone, iPad, Windows, Mac and Linux. There is nothing to install.`]);
   return list;
 }
 
@@ -196,7 +191,7 @@ for (const t of TOOLS) {
   const jsonld = [
     { '@context': 'https://schema.org', '@type': 'WebApplication', name: t.name, url: abs(file), description: t.desc, applicationCategory: c.id === 'dev' ? 'DeveloperApplication' : 'UtilitiesApplication', operatingSystem: 'Any', browserRequirements: 'Requires JavaScript', offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }, ...(owner.name ? { author: { '@type': 'Person', name: owner.name, url: abs('about.html'), sameAs: (owner.links || []).map(l => l[1]) } } : {}) },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: abs('index.html') }, { '@type': 'ListItem', position: 2, name: c.name, item: abs(c.slug + '.html') }, { '@type': 'ListItem', position: 3, name: t.name, item: abs(file) }] },
-    { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: fq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+    ...(fq.length ? [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: fq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] : []),
   ];
   const preset = t.preset ? JSON.stringify(t.preset).replace(/</g, '\\u003c') : '{}';
   write(file, head({ title, desc: t.desc, file, jsonld }) + `
@@ -225,12 +220,12 @@ for (const t of TOOLS) {
     <article class="prose">
       <h2>How to use the ${esc(t.name)}</h2>
       <ol class="steps">${t.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
-      <h2>About this tool</h2>
-      <p>${esc(t.desc)} ${esc(t.name)} is part of ${esc(config.name)}'s collection of free ${esc(c.name.toLowerCase())}. ${['pdf', 'image', 'media'].includes(c.id) ? 'All processing happens locally in your browser, so your files stay private and nothing is uploaded.' : 'It works instantly in your browser with no account and no installation.'}</p>${CONTENT[t.slug] || ''}${(g => g.length ? `
+${CONTENT[t.slug] ? '' : `      <h2>About this tool</h2>
+      <p>${esc(t.desc)} ${esc(t.name)} is part of ${esc(config.name)}'s collection of free ${esc(c.name.toLowerCase())}.</p>`}${CONTENT[t.slug] || ''}${(g => g.length ? `
       <p class="related-guides">📝 <strong>Related guide${g.length > 1 ? 's' : ''}:</strong> ${g.map(p => `<a href="${BASE}blog/${p.slug}">${esc(p.title)}</a>`).join(' · ')}</p>` : '')(postsFor(t.slug, base.slug))}${boostLinks[t.slug] ? `
       <p class="related-guides">🔗 <strong>You may also need:</strong> ${boostLinks[t.slug].map(([s, a]) => `the <a href="${BASE}${s}">${esc(a)}</a>`).join(' · ')}</p>` : ''}
-      <h2>Frequently asked questions</h2>
-      <div class="faq">${fq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div>
+${fq.length ? `      <h2>Frequently asked questions</h2>
+      <div class="faq">${fq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div>` : ''}
     </article>
     <aside class="sidebar">
       <h3>More ${esc(c.name)}</h3>
@@ -304,7 +299,7 @@ for (const c of CATEGORIES) {
   write('index.html', head({
     title: `${config.name}.com – ${COUNT}+ Free Online Tools: PDF, Image, Video, Calculators`, desc, file: 'index.html',
     jsonld: [
-      { '@context': 'https://schema.org', '@type': 'WebSite', name: config.name, alternateName: BRAND_ALT, url: abs('index.html'), potentialAction: { '@type': 'SearchAction', target: `${SITE}/?q={search_term_string}`, 'query-input': 'required name=search_term_string' } },
+      { '@context': 'https://schema.org', '@type': 'WebSite', name: config.name, alternateName: BRAND_ALT, url: abs('index.html') },
       { '@context': 'https://schema.org', '@type': 'Organization', name: config.name, alternateName: BRAND_ALT, url: abs('index.html'), logo: `${SITE}/assets/img/logo.png`, email: config.contactEmail, description: desc, ...(config.profiles ? { sameAs: config.profiles } : {}) },
     ],
   }) + `

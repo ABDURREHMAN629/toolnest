@@ -639,8 +639,16 @@ module.exports = {
         <li><strong>File too big to email afterwards?</strong> Run the result through <a href="/compress-pdf">Compress PDF</a>.</li>
         <li>Password-protected PDFs must be opened and saved without a password first.</li>
       </ul>
-      <h2>Is it safe for private documents?</h2>
-      <p>Yes. The tool runs inside your web browser, so your documents are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+      <h2>What happens to bookmarks, forms and links?</h2>
+      <p>Each page is copied into the new file exactly as it is, so text stays selectable and searchable, and images keep their original quality. Two things may not carry over: the bookmark (outline) panel of the original files, and fillable form fields, which can stop being editable. If you need to fill in a form, fill it in and save it first, then merge.</p>
+      <h2>Merging large numbers of files</h2>
+      <p>You can add as many PDFs as you like, and the counter under the list shows the number of files and their combined size before you start. Because the work is done by your own device, very large jobs (hundreds of scanned pages) are limited by its memory rather than by an upload limit. On a phone, merging in batches of 20–30 files and then merging the results is more reliable.</p>
+      <h2>Naming and order tips</h2>
+      <ul>
+        <li>Files are listed in the order you add them. Use the arrows to move one up or down; the final document follows the list from top to bottom.</li>
+        <li>The result is saved as <code>merged.pdf</code>. Rename it to something descriptive, such as <em>Visa application – Ali Khan.pdf</em>, before you send it.</li>
+        <li>When you combine documents for an application, put the form first and supporting documents after it, in the order the checklist asks for.</li>
+      </ul>`,
 
   'compress-pdf': `
       <h2>Which compression level should I choose?</h2>
@@ -652,9 +660,7 @@ module.exports = {
       </ul>
       <p>Ticking <strong>grayscale</strong> removes colour from images and often halves the size of scanned documents.</p>
       <h2>Why some PDFs barely shrink</h2>
-      <p>PDFs made of plain text (exported from Word, for example) are already small; most of a PDF's size comes from images and embedded fonts. If the tool can't make your file noticeably smaller it tells you, instead of giving you a worse copy.</p>
-      <h2>Is it safe for private documents?</h2>
-      <p>Yes. The tool runs inside your web browser, so your documents are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+      <p>PDFs made of plain text (exported from Word, for example) are already small; most of a PDF's size comes from images and embedded fonts. If the tool can't make your file noticeably smaller it tells you, instead of giving you a worse copy.</p>`,
 
   'pdf-to-jpg': `
       <h2>Convert PDF pages to images</h2>
@@ -666,8 +672,20 @@ module.exports = {
         <li><strong>High (220 DPI)</strong> or <strong>Print (300 DPI)</strong> — printing, or zooming into small text.</li>
       </ul>
       <p>Higher resolutions make bigger files and take longer for long documents, so start in the middle and only go higher if the text looks soft.</p>
-      <h2>Is it safe for private documents?</h2>
-      <p>Yes. The tool runs inside your web browser, so your documents are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+      <h2>Convert only some pages</h2>
+      <p>Leave the <strong>Pages</strong> box empty to convert the whole document, or type <code>1</code> for just the cover, or <code>2-4, 9</code> for a selection. Converting only what you need is much faster on long documents. One page downloads as a single image; several pages come as a ZIP named after your file.</p>
+      <h2>JPG or PNG?</h2>
+      <div class="table-wrap" style="max-height:none;margin:14px 0 20px"><table class="table">
+        <tr><th>Use JPG when…</th><th>Use PNG when…</th></tr>
+        <tr><td>the page has photos, or you are sending it in a chat app</td><td>the page is mostly text, tables or line drawings</td></tr>
+        <tr><td>file size matters (often 3–5× smaller)</td><td>you will crop or zoom and need crisp edges</td></tr>
+      </table></div>
+      <h2>Good to know</h2>
+      <ul>
+        <li>Pages are rendered as they appear on screen, including fonts and vector graphics, so the images match what you see in a PDF reader.</li>
+        <li>An A4 page at 150 DPI is about 1240 × 1754 pixels; at 300 DPI it is about 2480 × 3508 pixels.</li>
+        <li>Need the text rather than a picture of it? Use <a href="/pdf-to-text">PDF to Text</a>, or <a href="/pdf-to-word">PDF to Word</a> to edit it.</li>
+      </ul>`,
 
   'jpg-to-pdf': `
       <h2>Turn photos and scans into one PDF</h2>
@@ -679,8 +697,17 @@ module.exports = {
         <li>Making a simple photo album or portfolio PDF.</li>
       </ul>
       <p>Tip: phone photos are often large. If the PDF must stay under an upload limit, run it through <a href="/compress-pdf">Compress PDF</a> afterwards.</p>
-      <h2>Is it safe for private photos?</h2>
-      <p>Yes. The tool runs inside your web browser, so your photos are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+      <h2>Settings explained</h2>
+      <ul>
+        <li><strong>Orientation: Auto</strong> turns each page to match its photo, so landscape pictures get landscape pages and nothing is shrunk unnecessarily. Choose Portrait or Landscape to force every page the same way.</li>
+        <li><strong>Margin</strong> — None makes the image fill the page (best for scans of documents), Small or Large leaves a white border like a printed photo.</li>
+        <li><strong>Image quality</strong> — High is right for most uses; pick “Smaller file” when a portal has a strict size limit, or Maximum for photos you plan to print.</li>
+      </ul>
+      <p>Images are centred on the page and scaled to fit without being cropped or stretched. PNG files with transparency keep it; other images get a white background.</p>
+      <h2>Adding images quickly</h2>
+      <p>Besides choosing files, you can drag them onto the box or paste a screenshot with <kbd>Ctrl</kbd> + <kbd>V</kbd>. JPG, PNG, WebP, GIF and BMP are accepted. iPhone photos in HEIC format need converting first with <a href="/heic-to-jpg">HEIC to JPG</a>.</p>
+      <h2>Scanning paper documents with a phone</h2>
+      <p>Lay the page on a dark surface in daylight, hold the phone directly above it so the edges are parallel, and crop away the table before converting. A straight, evenly lit photo turns into a much more readable PDF than a sharp but tilted one.</p>`,
 
   'pdf-to-word': `
       <h2>What gets converted</h2>
@@ -691,8 +718,17 @@ module.exports = {
         <li><strong>Complex layouts</strong> — columns, tables and text boxes — are simplified into ordinary paragraphs, so check the formatting before you send the file.</li>
         <li>Images inside the PDF are not copied into the Word file.</li>
       </ul>
-      <h2>Is it safe for private documents?</h2>
-      <p>Yes. The tool runs inside your web browser, so your documents are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+      <h2>How the conversion works</h2>
+      <p>The converter reads every line of text on each page, works out which lines belong to the same paragraph from their spacing, and treats noticeably larger text as headings (bolded in Word). Each PDF page starts on a new Word page, so a 5-page PDF gives you a 5-page document that is easy to compare with the original.</p>
+      <h2>Getting the best result</h2>
+      <ul>
+        <li><strong>Check that the text is selectable.</strong> Open the PDF and try to highlight a word. If you can't, it is a scan, and the tool will tell you so — run it through <a href="/image-to-text">Image to Text (OCR)</a> instead.</li>
+        <li><strong>Simple documents convert best</strong>: letters, essays, reports and CVs with a single column of text.</li>
+        <li><strong>Re-apply styles in Word.</strong> Select the headings and choose Heading 1/Heading 2 so you get a navigation pane and table of contents again.</li>
+        <li>Recreate tables with Word's Insert → Table, then paste the converted text into the cells.</li>
+      </ul>
+      <h2>Only need a quick edit?</h2>
+      <p>For small changes — a date, a name, a signature — it is often faster to keep the PDF as it is. You can <a href="/sign-pdf">sign it</a>, <a href="/add-page-numbers">add page numbers</a> or <a href="/watermark-pdf">add a watermark</a> without converting at all.</p>`,
 
   'word-to-pdf': `
       <h2>How it works</h2>
@@ -703,8 +739,17 @@ module.exports = {
         <li>Set the paper size (A4 or Letter) and margins to match your document.</li>
         <li>Only .docx files are supported. Save older .doc files as .docx in Word or Google Docs first.</li>
       </ul>
-      <h2>Is it safe for private documents?</h2>
-      <p>Yes. The tool runs inside your web browser, so your documents are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+      <h2>Preview before you save</h2>
+      <p>After you choose a .docx file, the document is shown page by page so you can check fonts, tables and images before saving. If something looks wrong in the preview, it will look the same in the PDF, so fix it in Word or Google Docs first and load the file again.</p>
+      <h2>Saving as PDF on different devices</h2>
+      <ul>
+        <li><strong>Chrome and Edge on Windows or Mac</strong> — set Destination to “Save as PDF” (or “Microsoft Print to PDF”), then Save.</li>
+        <li><strong>Safari on Mac</strong> — click the PDF button in the bottom-left corner of the print window.</li>
+        <li><strong>Android</strong> — choose “Save as PDF” as the printer, then tap the round PDF button.</li>
+        <li><strong>iPhone and iPad</strong> — in the print preview, pinch outward on the page to open it as a PDF, then use Share → Save to Files.</li>
+      </ul>
+      <h2>When fonts look different</h2>
+      <p>The preview uses the fonts installed on your device. If the document uses a font you don't have, a similar one is substituted. For a CV or form where the look matters, use common fonts such as Calibri, Arial or Times New Roman, or export the PDF straight from Word with File → Save As → PDF.</p>`,
 
   'split-pdf': `
       <h2>Two ways to split</h2>
@@ -714,8 +759,17 @@ module.exports = {
       </ul>
       <h2>Common uses</h2>
       <p>Sending only the relevant pages of a long contract, separating scanned documents that were captured in one batch, or pulling a single chapter out of a book or manual. To remove pages instead of extracting them, use <a href="/delete-pdf-pages">Delete PDF Pages</a>.</p>
-      <h2>Is it safe for private documents?</h2>
-      <p>Yes. The tool runs inside your web browser, so your documents are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+      <h2>Three split modes</h2>
+      <ul>
+        <li><strong>Custom ranges</strong> — type <code>1-3, 4-6, 7</code> and you get three files. An open range such as <code>5-</code> means “page 5 to the end”.</li>
+        <li><strong>Every page</strong> — one PDF per page, handy for scanned batches where each page is a separate receipt or certificate.</li>
+        <li><strong>Every N pages</strong> — cut a document into equal chunks, for example every 2 pages for double-sided forms, or every 10 pages to stay under an email attachment limit.</li>
+      </ul>
+      <p>If the result is a single file it downloads straight away; several files are offered together as a ZIP. Each file is named after the original with the pages it contains, such as <em>report-pages-4-6.pdf</em>, so you can tell them apart.</p>
+      <h2>Split or delete?</h2>
+      <p>Splitting keeps the original untouched and creates new files from the pages you pick. If you just want the same document without a few pages, <a href="/delete-pdf-pages">Delete PDF Pages</a> is quicker, and <a href="/organize-pdf">Organize PDF</a> lets you see thumbnails while you decide.</p>
+      <h2>Password-protected PDFs</h2>
+      <p>A PDF that asks for a password when you open it cannot be split until the password is removed. Open it in your PDF reader with the password, print it to a new PDF (“Save as PDF”), and split that copy.</p>`,
 
   'compress-image': `
       <h2>How image compression works</h2>
@@ -726,8 +780,14 @@ module.exports = {
         <li><strong>Choose the right format.</strong> WebP is usually 25–35% smaller than JPG at the same quality and works in all modern browsers. Keep PNG for logos and screenshots with sharp edges.</li>
         <li>Quality around 70–80% is the sweet spot for photos; below 60% blocky artefacts start to show.</li>
       </ul>
-      <h2>Is it safe for private images?</h2>
-      <p>Yes. The tool runs inside your web browser, so your images are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+      <h2>Compress to an exact size: 100 KB, 50 KB or 20 KB</h2>
+      <p>Many job portals, exam forms and visa applications ask for a photo “under 100 KB” or a signature “under 20 KB”. Switch the mode to <strong>Target size (KB)</strong> and type the limit. The tool searches for the highest quality that fits; if the image still won't fit, it scales the dimensions down step by step until it does. If even that can't reach the target, the result is marked “could not reach target size” so you never upload a file that will be rejected.</p>
+      <h2>Compress by quality</h2>
+      <p>In <strong>By quality</strong> mode you choose the trade-off yourself. If compressing would actually make a file bigger (some images are already well optimised), the original is kept and marked “already optimized”, so you never lose quality for nothing.</p>
+      <h2>Max width: the biggest saving</h2>
+      <p>Phone photos are often 4000 pixels wide, far more than any web page or form needs. Setting <strong>Max width</strong> to 1920 (or 1200 for blogs) usually cuts the size more than any quality setting, with no visible loss on screen.</p>
+      <h2>Batch compression</h2>
+      <p>Add a whole set of photos at once. You see the before and after size and the saving for each one, and can download them individually or together as a ZIP. The output format can stay the same or change to JPG, PNG or WebP.</p>`,
 
   'resize-image': `
       <h2>Resize by pixels or percentage</h2>
@@ -741,8 +801,14 @@ module.exports = {
         <li><strong>Passport photo:</strong> use the <a href="/passport-photo-maker">Passport Photo Maker</a>, which handles country sizes for you.</li>
       </ul>
       <p>Making an image bigger can't add detail that isn't there, so enlarging small photos will look soft. Shrinking always looks sharp.</p>
-      <h2>Is it safe for private images?</h2>
-      <p>Yes. The tool runs inside your web browser, so your images are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+      <h2>Ready-made sizes</h2>
+      <p>Pick a preset instead of typing numbers: Instagram post (1080 × 1080) and portrait (1080 × 1350), Stories, Reels and TikTok (1080 × 1920), YouTube thumbnail (1280 × 720) and banner (2560 × 1440), Facebook cover (820 × 312), link-share image (1200 × 630), X/Twitter header (1500 × 500), LinkedIn banner (1584 × 396), profile picture (400 × 400), Full HD and 4K.</p>
+      <h2>Fit, crop or stretch?</h2>
+      <p>When the new size has a different shape from your photo, you have to choose what gives. <strong>Fit inside</strong> keeps the whole picture and the original proportions, so one side may come out smaller than you asked for. <strong>Crop to exact size</strong> fills the frame and trims the edges evenly from the centre — the right choice for banners and thumbnails. <strong>Stretch</strong> forces the exact size and distorts the picture, so it is rarely what you want.</p>
+      <h2>Resizing many images at once</h2>
+      <p>Add several photos and they are all resized with the same settings. Each file is renamed with its new size (for example <em>holiday-1080x1080.jpg</em>) and you can download them together as a ZIP. You can also change the format while resizing, such as turning large PNG screenshots into much smaller JPG or WebP files.</p>
+      <h2>Size in pixels vs size in KB</h2>
+      <p>Pixel size is how big the picture is; KB is how much space the file takes. A form that says “under 200 KB” is asking about file size — use <a href="/compress-image">Compress Image</a> with a target size instead.</p>`,
 
   'remove-background': `
       <h2>AI background removal in your browser</h2>
@@ -753,8 +819,18 @@ module.exports = {
         <li>Good, even lighting helps more than a high resolution.</li>
         <li>Fine details such as flyaway hair are the hardest part for any tool — a plain background behind the subject gives the best edges.</li>
       </ul>
-      <h2>Is it safe for private photos?</h2>
-      <p>Yes. The tool runs inside your web browser, so your photos are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+      <h2>Four kinds of background</h2>
+      <ul>
+        <li><strong>Transparent</strong> — a PNG cut-out you can place on any design, slide or product listing.</li>
+        <li><strong>White</strong> — the usual requirement for marketplace product photos and many ID photos.</li>
+        <li><strong>Color</strong> — any colour from the picker, for profile pictures and branded images.</li>
+        <li><strong>Blur</strong> — keeps the original scene but softens it behind the subject, like a portrait-mode photo.</li>
+      </ul>
+      <p>You can switch between them after the cut-out is made without running the AI again, and the result is always saved as a full-resolution PNG.</p>
+      <h2>The first run takes longer</h2>
+      <p>The first time you use the tool, your browser downloads the AI model, and a progress bar shows how much is left. After that it stays cached, so later photos are processed in seconds. A recent version of Chrome, Edge or Firefox on a laptop or desktop gives the fastest results; on older phones it can take a little while.</p>
+      <h2>Passport and ID photos</h2>
+      <p>Removing the background is only one requirement — the photo also has to be the right size with the head in the right position. The <a href="/passport-photo-maker">Passport Photo Maker</a> handles the sizing; use a plain white or light background here first if your original was taken against a busy wall.</p>`,
 
   'image-to-text': `
       <h2>Extract text from images and scans (OCR)</h2>
@@ -765,8 +841,17 @@ module.exports = {
         <li>Higher contrast (dark text on a light background) works best; crop away anything that isn't text.</li>
         <li>Handwriting and decorative fonts are much harder than printed text — always proofread the result.</li>
       </ul>
-      <h2>Is it safe for private images?</h2>
-      <p>Yes. The tool runs inside your web browser, so your images are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+      <h2>Scanned PDFs work too</h2>
+      <p>Besides photos and screenshots you can choose a scanned PDF. Every page is read in turn and the text is joined into one result, with progress shown page by page. When it finishes you see a <strong>confidence</strong> score — above about 85% the text usually needs only light proofreading; much lower means the image was blurry, skewed or in a different language than the one you picked.</p>
+      <h2>Supported languages</h2>
+      <p>English, Urdu, Arabic, Hindi, Bengali, Persian, Spanish, French, German, Portuguese, Italian, Russian, Turkish, Indonesian, Vietnamese, Chinese (Simplified and Traditional), Japanese and Korean, plus a combined English + Urdu mode for bilingual documents. The first time you use a language, its recognition data is downloaded once and then reused.</p>
+      <h2>What OCR can and can't do</h2>
+      <ul>
+        <li>It extracts plain text. Tables come out as lines of text, and bold, colours and layout are not kept.</li>
+        <li>Neat printed text in a normal font is read very accurately. Handwriting, stylised logos and text over busy photos are unreliable.</li>
+        <li>Screenshots are ideal input: they are sharp, straight and high-contrast. Paste one directly with <kbd>Ctrl</kbd> + <kbd>V</kbd>.</li>
+      </ul>
+      <p>Copy the result to the clipboard or download it as a .txt file. To turn the text into an editable document, paste it into Word or Google Docs.</p>`,
 
   'heic-to-jpg': `
       <h2>What is a HEIC file?</h2>
@@ -774,8 +859,17 @@ module.exports = {
       <h2>Converting several photos</h2>
       <p>Add as many HEIC files as you like; each is converted to JPG and you can download them together as a ZIP.</p>
       <p>Want your iPhone to save JPG from now on? Go to <strong>Settings → Camera → Formats</strong> and choose <strong>Most Compatible</strong>.</p>
-      <h2>Is it safe for private photos?</h2>
-      <p>Yes. The tool runs inside your web browser, so your photos are processed on your own device and are never uploaded to a server. That makes it safe for contracts, ID documents, bank statements and anything confidential — and it works even on a slow connection once the page has loaded.</p>`,
+      <h2>JPG or PNG, and which quality?</h2>
+      <p>JPG is the right choice for photos: it opens everywhere and keeps the files small. The quality slider starts at 92%, which is visually identical to the original; drop it to 80% if you are sending many photos by email. PNG keeps every pixel but makes files several times larger, so only use it if a website specifically asks for PNG.</p>
+      <h2>Live Photos and bursts</h2>
+      <p>Some HEIC files contain more than one image, such as a burst or the frames of a Live Photo. The converter saves every image inside the file, so you may get a few JPGs from one HEIC. Keep the one you want and delete the rest.</p>
+      <h2>Getting HEIC photos off an iPhone</h2>
+      <ul>
+        <li><strong>AirDrop or iCloud Photos</strong> to a Mac usually converts to JPG automatically. Windows PCs, Android phones and many web forms are where HEIC causes trouble.</li>
+        <li><strong>USB cable to Windows</strong> — in Settings → Photos → Transfer to Mac or PC, “Automatic” converts on transfer, while “Keep Originals” gives you HEIC files to convert here.</li>
+        <li><strong>Sending through WhatsApp or email</strong> also converts photos to JPG, but at lower quality than converting the originals here.</li>
+      </ul>
+      <p>Large batches are fine: add a whole folder at once and download everything as one ZIP when it finishes.</p>`,
 
   'qr-code-generator': `
       <h2>What can a QR code hold?</h2>
@@ -787,7 +881,19 @@ module.exports = {
         <li>Leave the white border (quiet zone) around the code.</li>
         <li>Test with two different phones before printing hundreds of copies.</li>
       </ul>
-      <p>These are static QR codes: they never expire and don't depend on any service staying online.</p>`,
+      <p>These are static QR codes: they never expire and don't depend on any service staying online.</p>
+      <h2>Eight kinds of QR code</h2>
+      <ul>
+        <li><strong>Website URL</strong> and <strong>plain text</strong>.</li>
+        <li><strong>Wi-Fi</strong> — network name, password and security type (WPA/WPA2/WPA3, WEP or open), including hidden networks. Guests point their camera at it and join.</li>
+        <li><strong>WhatsApp</strong> — opens a chat with your number and an optional pre-filled message. Popular on shop counters and business cards.</li>
+        <li><strong>Email</strong> with subject and message, <strong>phone call</strong>, <strong>SMS</strong> with a message, and <strong>contact card (vCard)</strong> with name, phone, email, company and job title.</li>
+      </ul>
+      <h2>Error correction and logos</h2>
+      <p>QR codes store extra recovery data so they still scan when part of them is dirty, scratched or covered. Low recovers about 7% of the code, Medium 15%, Quartile 25% and High 30%. When you add a logo in the middle, error correction switches to High automatically, because the logo covers part of the code. Keep logos small and test the result.</p>
+      <h2>Size and file format</h2>
+      <p>Download a PNG at 256, 512, 1024 or 2048 pixels for screens and documents, or an SVG for print — SVG stays perfectly sharp at any size, from a sticker to a banner. A transparent background option is available for placing the code on a coloured design. You can also copy the image straight to the clipboard and paste it into Word, Canva or a chat.</p>
+      <p>The text under the preview shows how many characters the code holds. Shorter content gives a simpler code that scans faster, so use a short URL where you can.</p>`,
 
   'password-generator': `
       <h2>What makes a password strong?</h2>
@@ -797,7 +903,19 @@ module.exports = {
         <li><strong>Random password</strong> (e.g. <code>t7#Vq2!mLp9@xR4s</code>) — maximum strength per character. Ideal with a password manager.</li>
         <li><strong>Passphrase</strong> — several random words such as <code>Lamp-River-Orbit-Velvet-42</code>. Easier to type and remember, and still very strong at 5+ words.</li>
       </ul>
-      <p>Use “avoid look-alikes” if you'll have to type the password by hand. Passwords are generated with your browser's cryptographically secure random number generator and are never sent anywhere — and never reuse the same password on two sites.</p>`,
+      <p>Use “avoid look-alikes” if you'll have to type the password by hand. Passwords are generated with your browser's cryptographically secure random number generator and are never sent anywhere — and never reuse the same password on two sites.</p>
+      <h2>Settings you can change</h2>
+      <ul>
+        <li><strong>Length</strong> from 4 to 64 characters. The tool's default of 16 is a good minimum for important accounts.</li>
+        <li><strong>Character types</strong> — uppercase, lowercase, numbers and symbols. Every type you tick is guaranteed to appear at least once, which satisfies sites that demand “one number and one symbol”.</li>
+        <li><strong>Avoid look-alikes</strong> leaves out I, l, 1, O and 0, which are easy to misread when typing a password from paper or another screen.</li>
+        <li><strong>Passphrase mode</strong> builds 3 to 10 random words with a separator of your choice (hyphen, dot, underscore, space or none), optional capitals and an optional number.</li>
+      </ul>
+      <h2>What “bits of entropy” means</h2>
+      <p>The strength label shows how many guesses an attacker would need, measured in bits: every extra bit doubles the work. Around 60 bits resists casual attacks, 80 bits is strong, and 100+ bits is beyond any realistic brute-force attack. A 16-character password using all four character types is about 105 bits.</p>
+      <h2>Five more to choose from</h2>
+      <p>Under the main password you get five more alternatives with the same settings, each with its own Copy button — useful when a site rejects one character, or when you are setting up several accounts at once.</p>
+      <p>Already have a password and want to know how good it is? Try the <a href="/password-strength-checker">Password Strength Checker</a>.</p>`,
 
   'bmi-calculator': `
       <h2>What your BMI means</h2>
@@ -816,7 +934,19 @@ module.exports = {
       <h2>Exact age in years, months and days</h2>
       <p>Enter your date of birth to see your exact age, the total number of months, weeks and days you have lived, the weekday you were born on and a countdown to your next birthday. Change the “age at” date to find your age on a past or future date — useful for exam, job and visa forms that ask for age on a specific cut-off date.</p>
       <h2>How age is counted</h2>
-      <p>Age is counted in completed years, then completed months, then the remaining days. If you were born on 29 February, most countries treat 28 February (or 1 March) as your birthday in non-leap years; the calculator follows the calendar exactly so you can see both dates.</p>`,
+      <p>Age is counted in completed years, then completed months, then the remaining days. If you were born on 29 February, most countries treat 28 February (or 1 March) as your birthday in non-leap years; the calculator follows the calendar exactly so you can see both dates.</p>
+      <h2>Everything the calculator shows</h2>
+      <ul>
+        <li>Your exact age in years, months and days, and the <strong>day of the week</strong> you were born.</li>
+        <li>Your age as a total in months, weeks, days and hours.</li>
+        <li>A countdown to your <strong>next birthday</strong>, the date it falls on and the age you will turn.</li>
+        <li>Your Western <strong>zodiac sign</strong> and Chinese zodiac animal.</li>
+      </ul>
+      <h2>Age on a specific date</h2>
+      <p>Admissions, sports leagues, job adverts and visa rules often set an age limit “as on” a cut-off date, for example 1 January or the last date of applications. Change the <strong>Age on this date</strong> field to that date and the calculator shows your age on that day instead of today — the number the form is really asking for.</p>
+      <h2>Why online calculators sometimes disagree by a day</h2>
+      <p>Months have different lengths, so “1 month” from 31 January has no exact equivalent. This calculator counts completed calendar months first and then the remaining days, the same way a person would count on a calendar. Some calculators instead divide the total number of days by an average month length, which can give a result a day or two different.</p>
+      <p>Need the gap between any two dates rather than an age? Use <a href="/date-difference-calculator">Days Between Dates</a>, which can also count working days.</p>`,
 
   'percentage-calculator': `
       <h2>Three percentage questions, solved</h2>
@@ -839,7 +969,19 @@ module.exports = {
         <li><strong>Common App personal essay:</strong> 650 words</li>
         <li><strong>Reading speed:</strong> about 200–250 words per minute; speaking about 130–150</li>
       </ul>
-      <p>Need to fit a strict character limit? The <a href="/character-counter">Character Counter</a> focuses on characters only.</p>`,
+      <p>Need to fit a strict character limit? The <a href="/character-counter">Character Counter</a> focuses on characters only.</p>
+      <h2>What each number means</h2>
+      <ul>
+        <li><strong>Words</strong> are runs of letters or numbers, so “well-known” and “don't” each count as one word, and stand-alone symbols such as “–” or “&amp;” are not counted. Arabic, Urdu, Hindi and other scripts are counted too.</li>
+        <li><strong>Sentences</strong> end with a full stop, question mark or exclamation mark (including Arabic and Urdu question marks). <strong>Paragraphs</strong> are separated by a blank line.</li>
+        <li><strong>Reading time</strong> assumes 238 words per minute, the average for adults reading silently. <strong>Speaking time</strong> assumes 150 words per minute, a comfortable presentation pace.</li>
+        <li><strong>Unique words</strong> shows how varied your vocabulary is — a very low number in a long text often means repetition.</li>
+      </ul>
+      <h2>Top keywords and platform limits</h2>
+      <p>Below the text box you see the ten words you use most (common words such as “the” and “and” are ignored), with how often each appears as a percentage. Next to it, bars show how your text compares with real limits: an X post, an SEO title and meta description, an SMS, an Instagram caption, a YouTube title, a LinkedIn post and the part of a Facebook post shown before “See more”.</p>
+      <h2>Your text is kept for you</h2>
+      <p>What you type is saved in your own browser, so it is still there if you close the tab by accident. Click <strong>Clear</strong> when you are done, especially on a shared computer.</p>
+      <p>Working to a time limit rather than a word limit? The <a href="/words-to-minutes">Words to Minutes</a> calculator lets you pick your own speaking speed.</p>`,
 
   'loan-calculator': `
       <h2>How the EMI is calculated</h2>
@@ -858,7 +1000,15 @@ module.exports = {
         <li><strong>Unquoted keys</strong> — <code>{name: "x"}</code> is JavaScript, not JSON.</li>
         <li><strong>Comments</strong> — JSON has no comments; remove <code>//</code> and <code>/* */</code>.</li>
       </ul>
-      <p>Your data stays in your browser, so it is safe to format API responses containing tokens or personal data.</p>`,
+      <p>Your data stays in your browser, so it is safe to format API responses containing tokens or personal data.</p>
+      <h2>Beautify, minify or explore as a tree</h2>
+      <p><strong>Format / Beautify</strong> re-indents the JSON with 2 spaces, 4 spaces or tabs. <strong>Minify</strong> removes every unnecessary space and line break, which makes API payloads and config values smaller. <strong>Tree view</strong> shows the data as collapsible objects and arrays — the quickest way to understand a large API response you didn't write.</p>
+      <h2>Sort keys for clean comparisons</h2>
+      <p>Tick <strong>Sort keys</strong> to put every object's keys in alphabetical order, at every level. Two JSON files with the same data but keys in a different order then format identically, so you can paste both into <a href="/text-compare">Text Compare</a> and see only the real differences.</p>
+      <h2>Reading the error message</h2>
+      <p>When the JSON is invalid you get the parser's reason plus the exact line and column, for example “Unexpected token } (line 14, column 3)”. The real mistake is usually just before that point — most often a missing comma at the end of the previous line, or an extra one before a closing bracket.</p>
+      <h2>Copy or download</h2>
+      <p>Copy the result to the clipboard, or download it as a .json file. The size shown after a successful check is the size of the JSON as entered, which helps when an API or database field has a size limit.</p>`,
 
   'pdf-to-png': `
       <h2>PDF to PNG converter — free and high quality</h2>
@@ -876,8 +1026,7 @@ module.exports = {
         <li><strong>pdf to png for mac</strong> and Windows users who don't have Adobe Acrobat.</li>
       </ul>
       <p>Pages render on a white background. Need <strong>pdf to png with transparent background</strong>? Convert first, then remove the white with the <a href="/remove-background">Background Remover</a>. You can convert <strong>pdf to png for free</strong> with no watermark and no sign-up, and download all pages as a ZIP.</p>
-      <p>Exporting <strong>pdf to png adobe</strong>-style needs Acrobat Pro; this <strong>pdf to png format converter</strong> is <strong>pdf to png free</strong>, works on Windows and as a <strong>pdf to png mac</strong> option, and runs as <strong>pdf to png for free online</strong> on phones too.</p>
-      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>Exporting <strong>pdf to png adobe</strong>-style needs Acrobat Pro; this <strong>pdf to png format converter</strong> is <strong>pdf to png free</strong>, works on Windows and as a <strong>pdf to png mac</strong> option, and runs as <strong>pdf to png for free online</strong> on phones too.</p>`,
 
   'rotate-pdf': `
       <h2>Rotate PDF pages and save them that way</h2>
@@ -890,8 +1039,7 @@ module.exports = {
       </ul>
       <p>You can <strong>rotate pdf by degrees</strong> in 90° steps (90, 180 or 270), which is how PDF page rotation works in every reader. To <strong>rotate pdf online free</strong>, just choose the file, pick the angle and download — there's no need to <strong>rotate pdf in adobe</strong> Acrobat or remember a <strong>rotate pdf shortcut</strong>. You can <strong>rotate pdf for free online</strong> from Chrome on Windows, Mac, Android, and <strong>rotate pdf on iphone</strong> in Safari.</p>
       <p>This is a free way to <strong>rotate pdf online</strong> with no watermark, no file limit and no account — <strong>rotate pdf for free</strong> as often as you need.</p>
-      <p>In short: <strong>rotate pdf free</strong> here instead of paying to <strong>rotate pdf adobe</strong>-style — the simplest <strong>rotate for pdf</strong> pages scanned the wrong way.</p>
-      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>In short: <strong>rotate pdf free</strong> here instead of paying to <strong>rotate pdf adobe</strong>-style — the simplest <strong>rotate for pdf</strong> pages scanned the wrong way.</p>`,
 
   'organize-pdf': `
       <h2>Organize PDF pages online — free</h2>
@@ -904,8 +1052,7 @@ module.exports = {
       </ul>
       <h2>Organize PDF files from several sources</h2>
       <p>To <strong>organize pdf files</strong> that are split across documents, combine them first with <a href="/merge-pdf">Merge PDF</a>, then rearrange the pages here. Planning to print a booklet? You don't have to <strong>arrange pdf for booklet printing</strong> by hand — the <a href="/pdf-booklet-maker">PDF Booklet Maker</a> does the imposition for you. And if you need to <strong>arrange pdf for printing</strong> on two sides, organize first, then print.</p>
-      <p>You can <strong>organize pdf free</strong> as often as you like and <strong>organize pdf online free</strong> on any device — another way to <strong>organize pdf for free online</strong> without the limits of desktop apps. Once arranged, you can convert the result with <strong>organize pdf to word</strong> (<a href="/pdf-to-word">PDF to Word</a>) or <strong>organize pdf to jpg</strong> (<a href="/pdf-to-jpg">PDF to JPG</a>).</p>
-      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>You can <strong>organize pdf free</strong> as often as you like and <strong>organize pdf online free</strong> on any device — another way to <strong>organize pdf for free online</strong> without the limits of desktop apps. Once arranged, you can convert the result with <strong>organize pdf to word</strong> (<a href="/pdf-to-word">PDF to Word</a>) or <strong>organize pdf to jpg</strong> (<a href="/pdf-to-jpg">PDF to JPG</a>).</p>`,
 
   'delete-pdf-pages': `
       <h2>Delete PDF pages online — free</h2>
@@ -919,8 +1066,7 @@ module.exports = {
         <li>To <strong>delete pdf pages mac</strong> users and Windows users alike can use this page — it's the same tool on every system.</li>
       </ul>
       <p>Whether you need to <strong>delete pdf pages</strong> from a contract, a scanned book or a bank statement, you can <strong>remove pdf pages for free online</strong> here — another way to <strong>delete pdf pages online</strong> or <strong>delete pdf pages for free online</strong> without uploading anything.</p>
-      <p>It's a way to <strong>delete pdf pages free</strong> without the <strong>delete pdf pages adobe</strong> subscription — and to <strong>delete pdf pages iphone</strong> users can do in Safari without an app.</p>
-      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>It's a way to <strong>delete pdf pages free</strong> without the <strong>delete pdf pages adobe</strong> subscription — and to <strong>delete pdf pages iphone</strong> users can do in Safari without an app.</p>`,
 
   'add-page-numbers': `
       <h2>Add page numbers to PDF — free</h2>
@@ -934,8 +1080,7 @@ module.exports = {
         <li><strong>add page numbers to pdf for printing</strong> — use a margin of 28–40 pt so printers don't cut them off.</li>
       </ul>
       <p>Need a reference that points to a page, such as <strong>add page numbers to pdf url</strong> or <strong>add page numbers to pdf link</strong>? Most viewers open a page with <code>#page=5</code> added to the link. Roman numerals for front matter aren't supported yet, so to <strong>add page numbers to pdf in roman</strong> numerals, number the main section here and keep the preface separate. This is the quickest way to <strong>add page numbers to pdf in adobe acrobat pro</strong> style — without the subscription.</p>
-      <p>On a Mac you can't <strong>add page numbers to pdf in preview</strong> — Preview has no numbering feature — and you'd need to <strong>add page numbers to pdf acrobat pro</strong> (or <strong>add page numbers to pdf in acrobat pro</strong>) or <strong>add page numbers to pdf in bluebeam</strong> on paid software. This page does the same job for free.</p>
-      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>On a Mac you can't <strong>add page numbers to pdf in preview</strong> — Preview has no numbering feature — and you'd need to <strong>add page numbers to pdf acrobat pro</strong> (or <strong>add page numbers to pdf in acrobat pro</strong>) or <strong>add page numbers to pdf in bluebeam</strong> on paid software. This page does the same job for free.</p>`,
 
   'watermark-pdf': `
       <h2>Watermark PDF free — text watermark on every page</h2>
@@ -949,8 +1094,7 @@ module.exports = {
       <h2>Online, without Adobe</h2>
       <p>You don't need to <strong>watermark pdf in adobe</strong> Acrobat: <strong>watermark pdf online free</strong> here in any browser. It works as a <strong>pdf watermark for mac</strong>, Windows and phones, and you can <strong>watermark pdf for free</strong> as many times as you like. Looking for a <strong>watermark for pdf online</strong> that never uploads your file? This one doesn't — another reason to <strong>watermark pdf online</strong> here, or <strong>watermark pdf for free online</strong> for every document you send.</p>
       <p>This tool adds text watermarks. To <strong>watermark pdf with image</strong> such as a logo, add the logo to images with <a href="/watermark-image">Watermark Image</a> before building the PDF. Note that a watermark discourages copying but isn't encryption — and we don't offer a <strong>watermark pdf remover</strong>, because removing other people's watermarks is usually not permitted. It's the simplest <strong>watermark for pdf</strong> files you own.</p>
-      <p>It's a light <strong>watermark pdf editor</strong> that saves a ready <strong>watermark pdf download</strong> — no <strong>watermark pdf adobe</strong> subscription. Need the text editable afterwards? Watermark last, after any <strong>watermark pdf to word</strong> conversion and editing.</p>
-      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>It's a light <strong>watermark pdf editor</strong> that saves a ready <strong>watermark pdf download</strong> — no <strong>watermark pdf adobe</strong> subscription. Need the text editable afterwards? Watermark last, after any <strong>watermark pdf to word</strong> conversion and editing.</p>`,
 
   'pdf-to-text': `
       <h2>PDF to text converter — free</h2>
@@ -963,8 +1107,7 @@ module.exports = {
         <li>Columns and tables are flattened into plain lines — perfect for reading or AI, less so for keeping layout. Need an editable layout? Try <a href="/pdf-to-word">PDF to Word</a>.</li>
         <li>Want it read aloud? A <strong>pdf to text to speech</strong> workflow is simple: extract here, then paste into <a href="/text-to-speech">Text to Speech</a>.</li>
       </ul>
-      <p>Developers often reach for <strong>pdf to text python</strong> libraries; for one-off files this <strong>pdf to text online</strong> page is faster. Convert <strong>pdf to text for free</strong>, as a <strong>pdf to text converter free online</strong>, as often as you like.</p>
-      <p>Everything happens in your browser: your documents never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>Developers often reach for <strong>pdf to text python</strong> libraries; for one-off files this <strong>pdf to text online</strong> page is faster. Convert <strong>pdf to text for free</strong>, as a <strong>pdf to text converter free online</strong>, as often as you like.</p>`,
 
   'sign-pdf': `
       <h2>Sign PDF online free — no sign up</h2>
@@ -992,8 +1135,7 @@ module.exports = {
         <li><strong>crop image for passport size free</strong> — use the <a href="/passport-photo-maker">Passport Photo Maker</a>, which crops to official sizes.</li>
       </ul>
       <h2>No Photoshop needed</h2>
-      <p>There's no need to <strong>crop image photoshop</strong>-style, <strong>crop image in canva</strong> or <strong>crop image in illustrator</strong> for a quick edit, and it works where built-in tools are fiddly — such as when you <strong>crop image in preview</strong> or <strong>crop image on mac</strong>. Want to <strong>crop image into circle</strong>? Choose ⭕ and you're done. <strong>crop image for free online</strong> with no watermark and no sign-up.</p>
-      <p>Everything happens in your browser: your photos never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>There's no need to <strong>crop image photoshop</strong>-style, <strong>crop image in canva</strong> or <strong>crop image in illustrator</strong> for a quick edit, and it works where built-in tools are fiddly — such as when you <strong>crop image in preview</strong> or <strong>crop image on mac</strong>. Want to <strong>crop image into circle</strong>? Choose ⭕ and you're done. <strong>crop image for free online</strong> with no watermark and no sign-up.</p>`,
 
   'image-converter': `
       <h2>Free image converter — JPG, PNG, WebP and more</h2>
@@ -1011,8 +1153,7 @@ module.exports = {
         <li><strong>image converter to svg</strong> — SVG is a vector format, so photos can't truly become SVG; logos are best recreated as vectors.</li>
       </ul>
       <h2>Size and use-case tips</h2>
-      <p>This works as an <strong>image converter for windows</strong>, Mac and phones, so there's no need for an <strong>image converter for pc</strong> download. Combine it with <a href="/resize-image">Resize Image</a> when you need an exact <strong>image converter size</strong>: for example a 3000 × 3000 album cover (the classic <strong>image converter 3000x3000</strong> search), an <strong>image converter for instagram post</strong> (1080 × 1350), an <strong>image converter for whatsapp dp</strong> (square), an <strong>image converter for youtube banner</strong> (2560 × 1440) or an <strong>image converter for cricut</strong> PNG. Convert <strong>image converter for free</strong>, as often as you like.</p>
-      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>This works as an <strong>image converter for windows</strong>, Mac and phones, so there's no need for an <strong>image converter for pc</strong> download. Combine it with <a href="/resize-image">Resize Image</a> when you need an exact <strong>image converter size</strong>: for example a 3000 × 3000 album cover (the classic <strong>image converter 3000x3000</strong> search), an <strong>image converter for instagram post</strong> (1080 × 1350), an <strong>image converter for whatsapp dp</strong> (square), an <strong>image converter for youtube banner</strong> (2560 × 1440) or an <strong>image converter for cricut</strong> PNG. Convert <strong>image converter for free</strong>, as often as you like.</p>`,
 
   'png-to-jpg': `
       <h2>PNG to JPG converter — free</h2>
@@ -1022,8 +1163,7 @@ module.exports = {
       <h2>Quality and size</h2>
       <p>Use a quality around 85–92% for photos; lower it to shrink files further. For <strong>png to jpg for web</strong> use, combine with <a href="/resize-image">Resize Image</a> so pictures aren't larger than they're displayed.</p>
       <h2>On any device</h2>
-      <p>Convert <strong>png to jpg on iphone</strong> in Safari, <strong>png to jpg on mac</strong>, Windows or Android — it's a <strong>png to jpg converter free online</strong> with nothing to install. It's a quick <strong>png to jpg format converter</strong> (and <strong>png to jpg format converter online</strong>) for a fast <strong>png to jpg format change</strong>, so you can switch <strong>png to jpg format</strong> without editing software. Convert <strong>png to jpg online</strong>, <strong>png to jpg free</strong>, <strong>png to jpg for free</strong> and <strong>png to jpg for free online</strong> as many images as you like — a simple <strong>png to jpg converter</strong> with no watermark.</p>
-      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>Convert <strong>png to jpg on iphone</strong> in Safari, <strong>png to jpg on mac</strong>, Windows or Android — it's a <strong>png to jpg converter free online</strong> with nothing to install. It's a quick <strong>png to jpg format converter</strong> (and <strong>png to jpg format converter online</strong>) for a fast <strong>png to jpg format change</strong>, so you can switch <strong>png to jpg format</strong> without editing software. Convert <strong>png to jpg online</strong>, <strong>png to jpg free</strong>, <strong>png to jpg for free</strong> and <strong>png to jpg for free online</strong> as many images as you like — a simple <strong>png to jpg converter</strong> with no watermark.</p>`,
 
   'jpg-to-png': `
       <h2>JPG to PNG converter — free</h2>
@@ -1036,8 +1176,7 @@ module.exports = {
         <li><strong>jpg to png for logo</strong> — PNG keeps edges crisp on websites and documents.</li>
         <li><strong>jpg to png for website</strong> graphics with text, and <strong>jpg to png for printing</strong> where you want no further compression.</li>
       </ul>
-      <p>PNG files are larger than JPG for photos, so keep photos as JPG unless you need these benefits. It's a <strong>jpg to png format converter</strong> that changes the <strong>jpg to png extension</strong> the proper way (renaming a file doesn't convert it). Convert <strong>jpg to png free</strong>, <strong>jpg to png for free</strong> — the easy way to <strong>convert jpg to png for free</strong> in your browser, with no <strong>jpg to png format converter free download</strong> needed.</p>
-      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>PNG files are larger than JPG for photos, so keep photos as JPG unless you need these benefits. It's a <strong>jpg to png format converter</strong> that changes the <strong>jpg to png extension</strong> the proper way (renaming a file doesn't convert it). Convert <strong>jpg to png free</strong>, <strong>jpg to png for free</strong> — the easy way to <strong>convert jpg to png for free</strong> in your browser, with no <strong>jpg to png format converter free download</strong> needed.</p>`,
 
   'webp-to-jpg': `
       <h2>WebP to JPG converter — free</h2>
@@ -1048,8 +1187,7 @@ module.exports = {
       <p>Use it as a <strong>webp to jpg for windows</strong> or <strong>webp to jpg for mac</strong> solution — on a <strong>webp to jpg mac</strong> it saves opening Preview and exporting each file. No <strong>webp to jpg extension for chrome</strong> is needed either: there's no <strong>webp to jpg extension</strong> to install, so it's a simple way to <strong>change webp to jpg for free</strong>.</p>
       <h2>Why websites use WebP</h2>
       <p>WebP files are about 25–35% smaller than JPG at the same quality, so websites serve them to load faster. That's great for the web but not every program reads them, which is why people <strong>convert webp to jpg for free</strong>. Need transparency? Convert to PNG with <a href="/webp-to-png">WebP to PNG</a> instead.</p>
-      <p>Convert <strong>webp to jpg</strong>, <strong>webp to jpg free</strong>, <strong>webp to jpg for free</strong> and <strong>webp to jpg online for free</strong> (or <strong>webp to jpg online free</strong>) — an easy <strong>webp to jpg converter</strong> for the <strong>webp to jpg format</strong>.</p>
-      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>Convert <strong>webp to jpg</strong>, <strong>webp to jpg free</strong>, <strong>webp to jpg for free</strong> and <strong>webp to jpg online for free</strong> (or <strong>webp to jpg online free</strong>) — an easy <strong>webp to jpg converter</strong> for the <strong>webp to jpg format</strong>.</p>`,
 
   'webp-to-png': `
       <h2>WebP to PNG converter — free, keeps transparency</h2>
@@ -1059,8 +1197,7 @@ module.exports = {
       <h2>From a URL or link</h2>
       <p>To convert <strong>webp to png from url</strong> or <strong>webp to png from link</strong>, open the image link in your browser, right-click → Save image as, then drop the saved .webp file here.</p>
       <h2>PNG or JPG?</h2>
-      <p>Choose <strong>webp to png</strong> for graphics, screenshots and anything transparent; choose JPG (<a href="/webp-to-jpg">WebP to JPG</a>) for photos when small files matter — the converter covers <strong>webp to png jpg</strong> both ways. It's a straightforward <strong>webp to png format converter</strong> for the <strong>webp to png format</strong>: <strong>webp to png free</strong>, <strong>webp to png for free</strong>, and the quickest way to <strong>convert webp to png for free</strong> — a simple <strong>webp to png converter</strong> with no watermark.</p>
-      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>Choose <strong>webp to png</strong> for graphics, screenshots and anything transparent; choose JPG (<a href="/webp-to-jpg">WebP to JPG</a>) for photos when small files matter — the converter covers <strong>webp to png jpg</strong> both ways. It's a straightforward <strong>webp to png format converter</strong> for the <strong>webp to png format</strong>: <strong>webp to png free</strong>, <strong>webp to png for free</strong>, and the quickest way to <strong>convert webp to png for free</strong> — a simple <strong>webp to png converter</strong> with no watermark.</p>`,
 
   'jpg-to-webp': `
       <h2>JPG to WebP converter — smaller images, same quality</h2>
@@ -1075,8 +1212,7 @@ module.exports = {
         <li>WordPress, Shopify and most site builders accept WebP uploads directly.</li>
         <li>Prefer a design tool? You don't need to convert <strong>jpg to webp in photoshop</strong> or <strong>jpg to webp in canva</strong> — export as JPG and convert here.</li>
       </ul>
-      <p>This works as a <strong>jpg to webp converter online</strong>: change <strong>jpg to webp</strong>, <strong>jpg to webp free</strong>, <strong>jpg to webp for free</strong> — the simple way to <strong>convert jpg to webp for free</strong>. It's a <strong>jpg to webp format converter</strong> for any <strong>image to webp format</strong> need, and the right <strong>jpg to webp format</strong> for a fast site — sometimes searched as <strong>jpg to web format</strong>. A free <strong>jpg to webp converter</strong> with no limits.</p>
-      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>This works as a <strong>jpg to webp converter online</strong>: change <strong>jpg to webp</strong>, <strong>jpg to webp free</strong>, <strong>jpg to webp for free</strong> — the simple way to <strong>convert jpg to webp for free</strong>. It's a <strong>jpg to webp format converter</strong> for any <strong>image to webp format</strong> need, and the right <strong>jpg to webp format</strong> for a fast site — sometimes searched as <strong>jpg to web format</strong>. A free <strong>jpg to webp converter</strong> with no limits.</p>`,
 
   'rotate-image': `
       <h2>Rotate and flip images online</h2>
@@ -1093,8 +1229,7 @@ module.exports = {
       <h2>Rotate image online on any device</h2>
       <p>This <strong>rotate image online</strong> tool works wherever you are: <strong>rotate image iphone</strong> photos in Safari, fix pictures on Android, or on a PC — no need to <strong>rotate image in photoshop</strong>, <strong>rotate image in canva</strong> or <strong>rotate image in word</strong>. Likewise you can <strong>flip image online</strong> instead of trying to <strong>flip image in word</strong>, <strong>flip image in powerpoint</strong> or <strong>flip image in google docs</strong>, where flipped pictures often can't be saved as a separate file.</p>
       <ul><li><strong>flip image horizontally</strong> — creates a <strong>mirror image</strong>, left to right.</li><li><strong>flip image upside down</strong> — use ⇵ Flip vertical (or rotate 180°).</li><li><strong>flip image iphone</strong> selfies that came out reversed.</li></ul>
-      <p>To <strong>rotate image</strong> or <strong>flip image</strong> files and keep the result, just download — the change is saved into the picture itself.</p>
-      <p>Everything happens in your browser: your photos never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>To <strong>rotate image</strong> or <strong>flip image</strong> files and keep the result, just download — the change is saved into the picture itself.</p>`,
 
   'image-to-base64': `
       <h2>Image to Base64 converter — and back</h2>
@@ -1108,8 +1243,7 @@ module.exports = {
       </ul>
       <h2>When to use Base64 images</h2>
       <p>Good for small icons, <strong>image to base64 for email</strong> signatures and templates, <strong>image to base64 for markdown</strong> documents, and offline single-file pages. Avoid it for large photos: Base64 is about 33% bigger than the original file and can't be cached separately by browsers.</p>
-      <p>Developers often write <strong>image to base64 python</strong> scripts; for quick jobs this <strong>image to base64 online</strong> page is faster — an <strong>image to base64 encoder</strong> that lets you <strong>image to base64 encode</strong> any PNG, JPG, GIF, WebP or SVG. It's an <strong>image to base64 encode online</strong> tool and an <strong>image to base64 converter online</strong> in one: <strong>image to base64</strong> in your browser — the easiest way to <strong>convert image to base64 format</strong> or pick the <strong>image to base64 format</strong> you need.</p>
-      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>Developers often write <strong>image to base64 python</strong> scripts; for quick jobs this <strong>image to base64 online</strong> page is faster — an <strong>image to base64 encoder</strong> that lets you <strong>image to base64 encode</strong> any PNG, JPG, GIF, WebP or SVG. It's an <strong>image to base64 encode online</strong> tool and an <strong>image to base64 converter online</strong> in one: <strong>image to base64</strong> in your browser — the easiest way to <strong>convert image to base64 format</strong> or pick the <strong>image to base64 format</strong> you need.</p>`,
 
   'watermark-image': `
       <h2>Add watermark to image — free</h2>
@@ -1120,8 +1254,7 @@ module.exports = {
       <p>To <strong>add watermark to image bulk</strong>, add all your photos together and the same watermark is applied to each, then download them as a ZIP.</p>
       <h2>No editing software needed</h2>
       <p>There's no need to <strong>add watermark to image in photoshop</strong>, <strong>add watermark to image in lightroom</strong>, <strong>add watermark to image in canva</strong> (or <strong>add watermark to image canva</strong> Pro), or struggle to <strong>add watermark to image in paint</strong>, <strong>add watermark to image in word</strong> or <strong>add watermark to image in powerpoint</strong>. It works in any browser — including on Android and Samsung phones (<strong>add watermark to image samsung</strong>) and to <strong>add watermark to image on iphone</strong>.</p>
-      <p>Use it to <strong>add watermark to image online</strong>, <strong>add watermark to image online free</strong>, <strong>add watermark to image for free</strong> or <strong>add watermark to photo for free</strong>.</p>
-      <p>Everything happens in your browser: your photos never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>Use it to <strong>add watermark to image online</strong>, <strong>add watermark to image online free</strong>, <strong>add watermark to image for free</strong> or <strong>add watermark to photo for free</strong>.</p>`,
 
   'photo-filters': `
       <h2>Photo editor with filters — free and online</h2>
@@ -1135,8 +1268,7 @@ module.exports = {
       </ul>
       <h2>No app needed</h2>
       <p>Unlike a <strong>photo editor filters app</strong>, there's nothing to download — it's a <strong>photo editor filters online</strong> page that works on phones and computers, a simple <strong>image editor filters online</strong> option for quick edits without a <strong>photo editor filter photoshop</strong> subscription. It isn't a face-tracking camera app, so if you want a <strong>photo editor with filters like snapchat</strong>, use those apps; for clean, classic adjustments this is quicker.</p>
-      <p>Use it as an <strong>image editor with filters</strong>, a <strong>photo editor for filters</strong> and a <strong>photo editor for effects</strong> — a <strong>photo editor with effects free</strong> of watermarks. It's a <strong>photo editor with filters online free</strong> that works as a <strong>photo editor with filters online</strong> on any device — <strong>photo editor filters free</strong>, a free <strong>image editor filters</strong> tool and <strong>photo editor filters online free</strong> — perhaps the <strong>best photo editor for filters</strong> when you just need a fast fix.</p>
-      <p>Everything happens in your browser: your photos never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>Use it as an <strong>image editor with filters</strong>, a <strong>photo editor for filters</strong> and a <strong>photo editor for effects</strong> — a <strong>photo editor with effects free</strong> of watermarks. It's a <strong>photo editor with filters online free</strong> that works as a <strong>photo editor with filters online</strong> on any device — <strong>photo editor filters free</strong>, a free <strong>image editor filters</strong> tool and <strong>photo editor filters online free</strong> — perhaps the <strong>best photo editor for filters</strong> when you just need a fast fix.</p>`,
 
   'meme-generator': `
       <h2>Free meme generator — no watermark</h2>
@@ -1149,8 +1281,7 @@ module.exports = {
         <li>Use a thick outline so the text is readable on any background.</li>
         <li>Square or 4:5 images look best on Instagram; crop first with <a href="/crop-image">Crop Image</a>.</li>
       </ul>
-      <p>This is an image <strong>meme generator text</strong> tool — not a <strong>meme generator for videos</strong> or a <strong>meme generator gif</strong> maker (turn video clips into GIFs with <a href="/video-to-gif">Video to GIF</a> first). It works in your browser, so there's no <strong>meme generator app</strong> to install — a handy <strong>meme generator for iphone</strong>, Android and PC. Make memes with this <strong>meme generator</strong> as often as you like — a <strong>meme generator for free</strong>, with no <strong>meme generator ai</strong> guesswork, just your words.</p>
-      <p>Everything happens in your browser: your pictures never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>This is an image <strong>meme generator text</strong> tool — not a <strong>meme generator for videos</strong> or a <strong>meme generator gif</strong> maker (turn video clips into GIFs with <a href="/video-to-gif">Video to GIF</a> first). It works in your browser, so there's no <strong>meme generator app</strong> to install — a handy <strong>meme generator for iphone</strong>, Android and PC. Make memes with this <strong>meme generator</strong> as often as you like — a <strong>meme generator for free</strong>, with no <strong>meme generator ai</strong> guesswork, just your words.</p>`,
 
   'favicon-generator': `
       <h2>Favicon generator — from text, emoji or image</h2>
@@ -1180,8 +1311,7 @@ module.exports = {
       </ul>
       <h2>Pick colours from a website or screen</h2>
       <p>To use it as an <strong>image color picker from website</strong> or <strong>image color picker from screen</strong>, take a screenshot (Windows: Win + Shift + S; Mac: Cmd + Shift + 4), then paste or upload it here. For an <strong>image color picker from url</strong>, save the image first. This <strong>image color picker from image</strong> workflow also works as an <strong>image colour picker from file</strong> — any PNG, JPG or WebP.</p>
-      <p>It's a free <strong>image color picker tool</strong> — an <strong>image color picker with hex code</strong> (also an <strong>image color picker hex</strong> and <strong>image color picker rgb</strong> tool) and a <strong>hex color picker for image</strong> files, with no <strong>image color picker app</strong> or Adobe subscription needed. Use this <strong>image color picker free</strong> any time — a <strong>color picker for image online</strong> that also works as a plain <strong>image color picker</strong>. Need complementary colours? Try the <a href="/color-palette-generator">Color Palette Generator</a>.</p>
-      <p>Everything happens in your browser: your images never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>It's a free <strong>image color picker tool</strong> — an <strong>image color picker with hex code</strong> (also an <strong>image color picker hex</strong> and <strong>image color picker rgb</strong> tool) and a <strong>hex color picker for image</strong> files, with no <strong>image color picker app</strong> or Adobe subscription needed. Use this <strong>image color picker free</strong> any time — a <strong>color picker for image online</strong> that also works as a plain <strong>image color picker</strong>. Need complementary colours? Try the <a href="/color-palette-generator">Color Palette Generator</a>.</p>`,
 
   'svg-to-png': `
       <h2>SVG to PNG converter — any size, sharp edges</h2>
@@ -1192,8 +1322,7 @@ module.exports = {
       <p>Set the output width and the height follows the SVG's proportions — this is <strong>svg to png with size</strong> control. For example: 512 px for app icons, 1200 px for web graphics, 3000 px+ for printing.</p>
       <h2>From a URL</h2>
       <p>To convert <strong>svg to png from url</strong> or <strong>svg to png from link</strong>, open the SVG link, save it (Ctrl/Cmd + S), and drop the file here.</p>
-      <p>No need for Inkscape or Illustrator — convert <strong>svg to png on mac</strong> (or with a <strong>svg to png mac</strong> shortcut), Windows or phones. It's <strong>svg to png online</strong>, <strong>svg to png free</strong> and <strong>svg to png for free</strong>: the easiest way to <strong>convert svg to png for free</strong> into the <strong>svg to png format</strong> you need — a simple <strong>svg to png converter</strong> (and <strong>convert svg to png format</strong> tool) for <strong>svg to png</strong> jobs of any size.</p>
-      <p>Everything happens in your browser: your files never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>No need for Inkscape or Illustrator — convert <strong>svg to png on mac</strong> (or with a <strong>svg to png mac</strong> shortcut), Windows or phones. It's <strong>svg to png online</strong>, <strong>svg to png free</strong> and <strong>svg to png for free</strong>: the easiest way to <strong>convert svg to png for free</strong> into the <strong>svg to png format</strong> you need — a simple <strong>svg to png converter</strong> (and <strong>convert svg to png format</strong> tool) for <strong>svg to png</strong> jobs of any size.</p>`,
 
   'passport-photo-maker': `
       <h2>Passport photo maker — free and online</h2>
@@ -1209,8 +1338,7 @@ module.exports = {
       <p>Download a <strong>passport photo maker 4x6</strong> sheet (10 × 15 cm) to print at any photo kiosk for very little, or an A4 sheet for home printers — making it a true <strong>passport photo maker for print</strong>. Print at 100% scale so the size stays exact.</p>
       <h2>Tips for an accepted photo</h2>
       <ul><li>Even lighting, no shadows on face or background.</li><li>Look straight at the camera with a neutral expression; no glasses glare.</li><li>Need a white background? Use the <a href="/remove-background">Background Remover</a> first.</li></ul>
-      <p>No <strong>passport photo maker software</strong> or <strong>passport photo maker for pc free download</strong> needed — it runs in the browser on Windows (<strong>passport photo maker for windows</strong>, including <strong>passport photo maker for windows 10</strong> and <strong>passport photo maker for windows 7</strong>), Mac and phones, so you don't need a <strong>passport photo maker for pc</strong> install or a <strong>passport photo maker app</strong>. It's a <strong>passport photo maker for free online</strong> — a <strong>passport photo maker online</strong> and <strong>passport photo maker for free</strong>.</p>
-      <p>Everything happens in your browser: your photos never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>No <strong>passport photo maker software</strong> or <strong>passport photo maker for pc free download</strong> needed — it runs in the browser on Windows (<strong>passport photo maker for windows</strong>, including <strong>passport photo maker for windows 10</strong> and <strong>passport photo maker for windows 7</strong>), Mac and phones, so you don't need a <strong>passport photo maker for pc</strong> install or a <strong>passport photo maker app</strong>. It's a <strong>passport photo maker for free online</strong> — a <strong>passport photo maker online</strong> and <strong>passport photo maker for free</strong>.</p>`,
 
   'collage-maker': `
       <h2>Photo collage maker — free, no watermark</h2>
@@ -1229,8 +1357,7 @@ module.exports = {
         <li>A little spacing and rounded corners make collages look modern.</li>
         <li>Pick a background colour from one of your photos for a matching look.</li>
       </ul>
-      <p>It's a <strong>photo collage maker online</strong> that works on Windows, Mac and as a <strong>photo collage maker iphone</strong> alternative — no <strong>photo collage maker app</strong> or <strong>photo collage maker free download</strong> needed, though it's as easy as a <strong>photo collage maker app free</strong>. Use this <strong>photo collage maker</strong> — a <strong>photo collage maker for free</strong> — whenever you like.</p>
-      <p>Everything happens in your browser: your photos never leave your device, which makes this safe for private and confidential files.</p>`,
+      <p>It's a <strong>photo collage maker online</strong> that works on Windows, Mac and as a <strong>photo collage maker iphone</strong> alternative — no <strong>photo collage maker app</strong> or <strong>photo collage maker free download</strong> needed, though it's as easy as a <strong>photo collage maker app free</strong>. Use this <strong>photo collage maker</strong> — a <strong>photo collage maker for free</strong> — whenever you like.</p>`,
 
   'video-converter': `
       <h2>Free video converter — MP4, WebM, MOV, MKV and AVI</h2>
@@ -1245,7 +1372,7 @@ module.exports = {
       <p>It runs in the browser, so it's a <strong>video converter for windows</strong>, Mac and Linux, a <strong>video converter for chromebook</strong>, a <strong>video converter for android</strong> and a <strong>video converter for iphone</strong> — no <strong>video converter app</strong>, no <strong>video converter free download</strong> and no <strong>video converter for pc free download</strong> needed, even though it works just like a <strong>video converter for pc</strong>.</p>
       <h2>Audio and GIFs</h2>
       <p>Need sound only? Use <a href="/video-to-mp3">Video to MP3</a> — the <strong>video converter to mp3</strong> (or <strong>video converter mp4 to mp3</strong>) job. Want a short loop? Try <a href="/video-to-gif">Video to GIF</a>, the <strong>video converter to gif</strong>. This <strong>video converter online</strong> handles everyday files of a few hundred MB on a modern computer.</p>
-      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+      <p>The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
 
   'video-compressor': `
       <h2>Video compressor — make videos smaller without losing quality</h2>
@@ -1260,7 +1387,7 @@ module.exports = {
       <h2>Without losing quality</h2>
       <p>For a <strong>video compressor without losing quality</strong> look, use <strong>Light</strong> or <strong>Recommended</strong> and keep the original resolution. Phone videos are recorded at very high bitrates, so they often shrink 50–70% with no visible difference.</p>
       <p>No <strong>video compressor app</strong> or <strong>video compressor download</strong> needed: it's a <strong>video compressor online</strong> and <strong>video compressor online free</strong> page that works as a <strong>video compressor for pc</strong> and a <strong>video compressor for iphone</strong>.</p>
-      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+      <p>The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
 
   'video-to-mp3': `
       <h2>Video to MP3 converter — free</h2>
@@ -1276,7 +1403,7 @@ module.exports = {
       <h2>On phone or computer</h2>
       <p>Works as <strong>video to mp3 android</strong> (<strong>video to mp3 for android</strong>), <strong>video to mp3 iphone</strong> (<strong>video to mp3 for iphone</strong>) and <strong>video to mp3 for pc</strong> — no app and no <strong>video to mp3 download</strong> of software. It's a <strong>video to mp3 converter online</strong> and a <strong>video to mp3 format converter</strong> for the universal <strong>video to mp3 format</strong>: <strong>video to mp3 free</strong>, <strong>video to mp3 for free</strong> and <strong>video to mp3 for free online</strong> — a simple <strong>video to mp3 converter</strong>.</p>
       <p>Please only convert videos you own or have permission to use. This tool converts files on your device; it doesn't download from YouTube or other sites.</p>
-      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+      <p>The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
 
   'mp4-to-mp3': `
       <h2>MP4 to MP3 converter — free</h2>
@@ -1288,7 +1415,7 @@ module.exports = {
       <h2>Spotify and music apps</h2>
       <p>For <strong>mp4 to mp3 for spotify</strong>, convert your own audio here and add it to Spotify as a local file (Settings → Local files). Only convert content you own or have the right to use.</p>
       <p><strong>mp4 to mp3 free</strong>, <strong>mp4 to mp3 for free</strong> and <strong>mp4 to mp3 for free online</strong> — a no-signup <strong>mp4 to mp3 converter</strong> that often comes recommended on Reddit (<strong>mp4 to mp3 reddit</strong>) because it doesn't upload your files. No <strong>mp4 to mp3 download</strong> of software needed.</p>
-      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+      <p>The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
 
   'video-trimmer': `
       <h2>Video trimmer online — cut the start and end</h2>
@@ -1302,7 +1429,7 @@ module.exports = {
       <h2>Large files, any computer</h2>
       <p>As a <strong>video trimmer for large files</strong> (a <strong>video trimmer for large files free</strong> of upload limits), Fast mode handles big recordings quickly because it just copies the selected part. It works as a <strong>video trimmer for windows</strong> (or <strong>video trimmer windows</strong>), a <strong>video trimmer for pc</strong>, a <strong>video trimmer for linux</strong> (<strong>video trimmer linux</strong>) and a <strong>video trimmer for android</strong> — no <strong>video trimmer app</strong> or <strong>video trimmer download</strong>. It's a <strong>video trimmer for pc free</strong> of installs: <strong>video trimmer free</strong>, <strong>video trimmer for free</strong>, <strong>video trimmer online</strong>.</p>
       <p>Need a <strong>video trimmer and cropper</strong> to change the frame shape too? Trim here, then use the <a href="/video-converter">Video Converter</a> or an editor for cropping.</p>
-      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+      <p>The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
 
   'video-to-gif': `
       <h2>Video to GIF converter — high quality</h2>
@@ -1319,7 +1446,7 @@ module.exports = {
         <li><strong>video to gif for reddit</strong>, <strong>video to gif for whatsapp</strong>, <strong>video to gif for instagram</strong> and <strong>video to gif for tiktok</strong> profile loops.</li>
       </ul>
       <p>It's a <strong>video to gif maker</strong> and <strong>video to gif format converter</strong> in your browser — <strong>video to gif iphone</strong> users can use it in Safari. Convert <strong>video to gif online</strong>, <strong>video to gif free</strong> and <strong>video to gif for free</strong> into the classic <strong>video to gif format</strong> — a simple <strong>video to gif converter</strong>.</p>
-      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+      <p>The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
 
   'audio-converter': `
       <h2>Free audio converter — MP3, WAV, M4A, AAC, OGG, FLAC, OPUS</h2>
@@ -1365,7 +1492,7 @@ module.exports = {
       <p>It's a <strong>mute video online</strong> tool — a <strong>mute video for free online</strong> option to <strong>mute video</strong> files in seconds. Want to keep only the sound instead? Use <a href="/video-to-mp3">Video to MP3</a>.</p>
       <h2>Remove audio from video — free</h2>
       <p>This is the quickest way to <strong>remove audio from video</strong> files: <strong>remove audio from video online free</strong> (or <strong>remove sound from video online free</strong>) without editing software. Instead of learning to <strong>remove audio from video capcut</strong>, <strong>remove audio from video canva</strong> or <strong>remove audio from video davinci resolve</strong>-style, just choose the file. It works to <strong>remove audio from video iphone</strong> and <strong>remove audio from video android</strong> users record, and to <strong>remove audio from video windows</strong> PCs store — <strong>remove sound from video</strong> in one click, <strong>remove audio from video free</strong>.</p>
-      <p>Your videos are processed inside your browser and never uploaded, so private clips stay private. The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
+      <p>The first conversion downloads the video engine (about 30 MB) once; after that it's fast.</p>`,
 
   'screen-recorder': `
       <h2>Free screen recorder — no download</h2>

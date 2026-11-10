@@ -161,14 +161,15 @@ module.exports = {
       <h2>Ghosting and double-press checks</h2>
       <p><strong>Held at once</strong> shows how many keys your keyboard registers at the same time. Gaming keyboards usually manage 6 or more (“N-key rollover”); cheap office keyboards may stop at 2–3 keys for some combinations. <strong>Double-press warnings</strong> appear when one press arrives twice within 25 milliseconds — a sign of a worn switch (“key chatter”), common on older mechanical keyboards.</p>
       
-      <h2>A key does not light up — what next?</h2>
+      <h2>A key stays grey on a desktop or external keyboard</h2>
       <ol>
-        <li><strong>Rule out software first.</strong> Restart, then test again. Check that Filter Keys / Sticky Keys (Windows Settings → Accessibility → Keyboard) are off.</li>
-        <li><strong>Plug in a USB keyboard and test it here.</strong> If the external keyboard works, the laptop keyboard hardware is at fault, not Windows.</li>
-        <li><strong>Clean it.</strong> Turn the laptop off, tilt it, and blow compressed air under the dead key in short bursts. Crumbs and dust cause most “dead” or “sticky” keys.</li>
-        <li><strong>Reinstall the driver.</strong> Device Manager → Keyboards → right-click the keyboard → Uninstall device, then restart. Windows reinstalls it automatically.</li>
-        <li>If one key or one whole row is still dead, the keyboard (or its ribbon cable) needs replacing. On most laptops the keyboard is a separate, inexpensive part.</li>
-      </ol>`,
+        <li><strong>Try another USB port</strong>, ideally one directly on the computer rather than a hub or the monitor.</li>
+        <li><strong>Wireless keyboard?</strong> Replace or recharge the batteries and move the receiver closer — weak power causes missed and repeated keys long before the keyboard stops completely.</li>
+        <li><strong>Test it on a second computer or phone.</strong> If the same key fails there, the keyboard is at fault, not your PC.</li>
+        <li><strong>Mechanical keyboard:</strong> pull the keycap and blow out the switch. On hot-swap boards, swap the switch with one from a key you rarely use and test again.</li>
+        <li><strong>Check remapping software.</strong> Gaming suites, PowerToys Keyboard Manager and AutoHotkey scripts can disable or change a key so it never reaches the browser.</li>
+      </ol>
+      <p>Testing a laptop's built-in keyboard instead? The <a href="/laptop-keyboard-test">laptop keyboard test</a> has the laptop-specific steps, and there are pages for <a href="/dell-keyboard-test">Dell</a>, <a href="/hp-keyboard-test">HP</a>, <a href="/lenovo-keyboard-test">Lenovo</a>, <a href="/asus-keyboard-test">ASUS</a>, <a href="/acer-keyboard-test">Acer</a> and <a href="/macbook-keyboard-test">MacBook</a>.</p>`,
 
   'laptop-keyboard-test': `
       <h2>How to test a laptop keyboard</h2>
@@ -195,140 +196,104 @@ module.exports = {
 
   'dell-keyboard-test': `
       <h2>Testing a Dell laptop keyboard</h2>
-      <p>This page is set to the Windows laptop layout used by most Dell Inspiron, Vostro, Latitude, XPS and G-series laptops. If your Dell has a number pad, tick <strong>Numeric keypad</strong>. Press every key and check that each one turns green.</p>
-      
-      <h2>What the colours mean</h2>
+      <p>This page is set to the Windows laptop layout used by most Dell Inspiron, Vostro, Latitude, XPS and G-series laptops. If your Dell has a number pad (most 15.6″ and larger models), tick <strong>Numeric keypad</strong>. Press every key from Esc to the right arrow and check that each one turns green.</p>
+      <p class="small muted">Green means the key works, blue means it is held down, and dashed keys (Fn) can't be seen by any website. The full colour guide and the general step-by-step fixes for a dead key are on the <a href="/laptop-keyboard-test">laptop keyboard test</a> page; this page covers what is specific to Dell.</p>
+      <h2>Dell keys that behave differently</h2>
       <ul>
-        <li><strong>Green</strong> — the key sent a signal to your computer. It works.</li>
-        <li><strong>Blue</strong> — the key is being held down right now. A key that stays blue after you let go is <em>stuck</em>.</li>
-        <li><strong>Red outline</strong> — shown when you click “Highlight untested keys”: keys you have not pressed yet.</li>
-        <li><strong>Dashed</strong> — Fn and Touch ID are handled inside the laptop and are never visible to any website. Test Fn through its shortcuts instead (Fn + brightness or volume).</li>
+        <li><strong>Top row.</strong> Dell ships most laptops with the top row in multimedia mode, so F1–F12 may not light up until you hold <kbd>Fn</kbd> or switch <strong>Fn Lock</strong> with <kbd>Fn</kbd> + <kbd>Esc</kbd>. To change it permanently, restart, press <kbd>F2</kbd> for the BIOS setup and look for <strong>Function Key Behavior</strong>.</li>
+        <li><strong>Keyboard backlight.</strong> It is the key with the glowing-keyboard icon — <kbd>F5</kbd> on many recent Inspiron and XPS models, <kbd>F10</kbd> or <kbd>F6</kbd> on others, sometimes with Fn. The backlight changes inside the laptop, so that press may not light up here.</li>
+        <li><strong>Compact models.</strong> On small Dells such as the XPS 13, Home, End, PgUp and PgDn share keys with the arrows or the F-row and need Fn. Test them as a combination.</li>
+        <li><strong>Latitude pointing stick.</strong> The small stick between G, H and B and the extra buttons below the space bar are mouse controls. They will not show up in a keyboard test.</li>
       </ul>
-      <h2>Function keys not working on your Dell laptop?</h2>
-      <ul>
-        <li>On many Dell laptops <kbd>Fn</kbd> + <kbd>Esc</kbd> toggles <strong>Fn Lock</strong>, switching the top row between media keys and F1–F12.</li>
-        <li>You can also set it permanently: restart, press <kbd>F2</kbd> to open the BIOS setup, and look for <strong>Function Key Behavior</strong>.</li>
-      </ul>
-      <h2>Run Dell's own hardware test</h2>
-      <p>Restart and tap <kbd>F12</kbd> at the Dell logo, then choose <strong>Diagnostics</strong>. Dell's built-in test (ePSA / SupportAssist) checks the keyboard and other hardware without Windows. If it reports a keyboard fault and your laptop is under warranty, Dell can replace the keyboard.</p>
-      
-      <h2>A key does not light up — what next?</h2>
+      <h2>Run Dell's own keyboard diagnostic</h2>
       <ol>
-        <li><strong>Rule out software first.</strong> Restart, then test again. Check that Filter Keys / Sticky Keys (Windows Settings → Accessibility → Keyboard) are off.</li>
-        <li><strong>Plug in a USB keyboard and test it here.</strong> If the external keyboard works, the laptop keyboard hardware is at fault, not Windows.</li>
-        <li><strong>Clean it.</strong> Turn the laptop off, tilt it, and blow compressed air under the dead key in short bursts. Crumbs and dust cause most “dead” or “sticky” keys.</li>
-        <li><strong>Reinstall the driver.</strong> Device Manager → Keyboards → right-click the keyboard → Uninstall device, then restart. Windows reinstalls it automatically.</li>
-        <li>If one key or one whole row is still dead, the keyboard (or its ribbon cable) needs replacing. On most laptops the keyboard is a separate, inexpensive part.</li>
-      </ol>`,
+        <li><strong>Before Windows starts:</strong> restart and tap <kbd>F12</kbd> at the Dell logo, then choose <strong>Diagnostics</strong>. This pre-boot test (ePSA / SupportAssist Pre-Boot) checks the keyboard without any drivers, so a failure there is a hardware fault.</li>
+        <li><strong>Inside Windows:</strong> open the <strong>SupportAssist</strong> app, go to Troubleshooting, choose to check a specific piece of hardware and pick Keyboard.</li>
+        <li>Note any error code. If the laptop is under warranty, Dell support will ask for it together with the Service Tag printed on the bottom of the laptop.</li>
+      </ol>
+      <h2>If keys fail on your Dell</h2>
+      <ul>
+        <li><strong>A few keys dead after a spill or crumbs:</strong> clean first, then re-test here. One dead key is usually dirt; a whole row or column is usually the keyboard matrix or its ribbon cable.</li>
+        <li><strong>Keys or touchpad feel raised:</strong> stop and have the battery checked. A swollen battery under the palm rest can push the keyboard up on thin laptops.</li>
+        <li><strong>Replacement:</strong> on many Inspiron, Vostro and Latitude models the keyboard is a separate part. On thin models such as the XPS line it is built into the palm-rest assembly, so the repair costs more.</li>
+      </ul>`,
 
   'hp-keyboard-test': `
       <h2>Testing an HP laptop keyboard</h2>
-      <p>This page uses the Windows laptop layout found on HP Pavilion, Victus, Envy, Omen, ProBook and EliteBook laptops. Tick <strong>Numeric keypad</strong> if your HP has one. Press every key and make sure each turns green.</p>
-      
-      <h2>What the colours mean</h2>
+      <p>This page uses the Windows laptop layout found on HP Pavilion, Victus, Envy, Omen, ProBook and EliteBook laptops. Tick <strong>Numeric keypad</strong> if your HP has one. Work across each row and make sure every key turns green.</p>
+      <p class="small muted">Green means the key works, blue means it is held down, and dashed keys (Fn) can't be seen by any website. The full colour guide and the general step-by-step fixes for a dead key are on the <a href="/laptop-keyboard-test">laptop keyboard test</a> page; this page covers what is specific to HP.</p>
+      <h2>HP keys that behave differently</h2>
       <ul>
-        <li><strong>Green</strong> — the key sent a signal to your computer. It works.</li>
-        <li><strong>Blue</strong> — the key is being held down right now. A key that stays blue after you let go is <em>stuck</em>.</li>
-        <li><strong>Red outline</strong> — shown when you click “Highlight untested keys”: keys you have not pressed yet.</li>
-        <li><strong>Dashed</strong> — Fn and Touch ID are handled inside the laptop and are never visible to any website. Test Fn through its shortcuts instead (Fn + brightness or volume).</li>
+        <li><strong>Action keys.</strong> HP ships the top row as action keys (brightness, volume, playback). F1–F12 only register here while you hold <kbd>Fn</kbd>, unless you turn off <strong>Action Keys Mode</strong>: restart, press <kbd>F10</kbd> for the BIOS, open <strong>System Configuration</strong>.</li>
+        <li><strong>Fn Lock on business models.</strong> On many ProBook and EliteBook keyboards <kbd>Fn</kbd> + left <kbd>Shift</kbd> toggles Fn Lock without entering the BIOS.</li>
+        <li><strong>Power key in the top row.</strong> Many Envy, Spectre and Pavilion models have the power button as a keyboard key at the top right. Skip it — pressing it puts the laptop to sleep.</li>
+        <li><strong>Extra column on the right.</strong> 14″ and 15″ HPs often have Home, PgUp, PgDn and End in a column beside Enter and Backspace. They are easy to miss, so use <strong>Highlight untested keys</strong> at the end.</li>
+        <li><strong>Fingerprint reader.</strong> On newer models it sits where right Ctrl used to be. It is not a key and will not light up.</li>
       </ul>
-      <h2>Function keys not working on your HP laptop?</h2>
-      <p>HP laptops ship with the top row set to actions (brightness, volume). To make F1–F12 work without holding Fn, restart, press <kbd>F10</kbd> to open the BIOS, and under <strong>System Configuration</strong> turn off <strong>Action Keys Mode</strong>.</p>
-      <h2>Run HP's hardware test</h2>
-      <p>Restart and press <kbd>Esc</kbd> repeatedly to open the startup menu, then press <kbd>F2</kbd> for <strong>HP PC Hardware Diagnostics</strong>. Its component tests can confirm a keyboard fault before you contact HP support.</p>
-      
-      <h2>A key does not light up — what next?</h2>
+      <h2>Run HP's keyboard test</h2>
       <ol>
-        <li><strong>Rule out software first.</strong> Restart, then test again. Check that Filter Keys / Sticky Keys (Windows Settings → Accessibility → Keyboard) are off.</li>
-        <li><strong>Plug in a USB keyboard and test it here.</strong> If the external keyboard works, the laptop keyboard hardware is at fault, not Windows.</li>
-        <li><strong>Clean it.</strong> Turn the laptop off, tilt it, and blow compressed air under the dead key in short bursts. Crumbs and dust cause most “dead” or “sticky” keys.</li>
-        <li><strong>Reinstall the driver.</strong> Device Manager → Keyboards → right-click the keyboard → Uninstall device, then restart. Windows reinstalls it automatically.</li>
-        <li>If one key or one whole row is still dead, the keyboard (or its ribbon cable) needs replacing. On most laptops the keyboard is a separate, inexpensive part.</li>
-      </ol>`,
+        <li>Restart and press <kbd>Esc</kbd> repeatedly until the startup menu appears.</li>
+        <li>Press <kbd>F2</kbd> for <strong>HP PC Hardware Diagnostics UEFI</strong>.</li>
+        <li>Choose <strong>Component Tests → Keyboard</strong> and follow the prompts. Because this runs outside Windows, a failure here confirms a hardware fault before you contact HP support.</li>
+      </ol>
+      <h2>If the whole HP keyboard stops responding</h2>
+      <p>Try a power reset first: shut down, unplug the charger and all USB devices, hold the power button for about 15 seconds, then start up and test again. If keys still fail both here and in the UEFI test, the keyboard needs service. On many HP consumer laptops the keyboard is fixed into the top cover, so it is replaced together with the palm rest.</p>`,
 
   'lenovo-keyboard-test': `
       <h2>The Lenovo layout</h2>
       <p>Lenovo keyboards are a little different from other laptops, so this page draws them accurately: the <kbd>Fn</kbd> key is at the far bottom-left (before Ctrl), <kbd>PrtSc</kbd> sits between the right Alt and Ctrl, and <kbd>PgUp</kbd> / <kbd>PgDn</kbd> are above the left and right arrows, as on ThinkPads. Tick <strong>Numeric keypad</strong> for IdeaPad and Legion models that have one.</p>
-      
-      <h2>What the colours mean</h2>
+      <p class="small muted">Green means the key works, blue means it is held down, and dashed keys (Fn) can't be seen by any website. The full colour guide and the general step-by-step fixes for a dead key are on the <a href="/laptop-keyboard-test">laptop keyboard test</a> page; this page covers what is specific to Lenovo.</p>
+      <h2>ThinkPad, IdeaPad and Legion differences</h2>
       <ul>
-        <li><strong>Green</strong> — the key sent a signal to your computer. It works.</li>
-        <li><strong>Blue</strong> — the key is being held down right now. A key that stays blue after you let go is <em>stuck</em>.</li>
-        <li><strong>Red outline</strong> — shown when you click “Highlight untested keys”: keys you have not pressed yet.</li>
-        <li><strong>Dashed</strong> — Fn and Touch ID are handled inside the laptop and are never visible to any website. Test Fn through its shortcuts instead (Fn + brightness or volume).</li>
+        <li><strong>Fn and Ctrl.</strong> Classic ThinkPads put Fn in the corner. You can swap the two in the BIOS setup or in Lenovo Vantage (<strong>Fn and Ctrl Key Swap</strong>). ThinkPads released from 2024 onward ship with Ctrl in the corner instead — the test still works, because keys light up by the signal they send, not by position.</li>
+        <li><strong>FnLock.</strong> <kbd>Fn</kbd> + <kbd>Esc</kbd> toggles it; the small light on the Esc key shows when it is on. IdeaPads have the same setting in the BIOS as <strong>HotKey Mode</strong>.</li>
+        <li><strong>Backlight.</strong> <kbd>Fn</kbd> + <kbd>Space</kbd> steps through off, dim and bright on backlit models.</li>
+        <li><strong>TrackPoint.</strong> The red pointing stick and the three buttons under the space bar are mouse controls, so they never appear in a keyboard test.</li>
+        <li><strong>Legion.</strong> <kbd>Fn</kbd> + <kbd>Q</kbd> switches the performance mode. Only the Q is visible to the browser.</li>
       </ul>
-      <h2>Function keys not working on your Lenovo laptop?</h2>
+      <h2>Run Lenovo's hardware check</h2>
       <ul>
-        <li>Press <kbd>Fn</kbd> + <kbd>Esc</kbd> to toggle <strong>FnLock</strong> — the small light on the Esc key shows when it is on.</li>
-        <li>Prefer Ctrl in the corner? ThinkPad BIOS setup has a <strong>Fn and Ctrl Key Swap</strong> option, and Lenovo Vantage has the same setting under Input.</li>
+        <li>In Windows, open <strong>Lenovo Vantage</strong> and run <strong>Hardware Scan</strong>.</li>
+        <li>On many ThinkPads you can also press <kbd>F10</kbd> during startup to open <strong>Lenovo Diagnostics</strong>, which tests the keyboard before Windows loads.</li>
       </ul>
-      
-      <h2>A key does not light up — what next?</h2>
-      <ol>
-        <li><strong>Rule out software first.</strong> Restart, then test again. Check that Filter Keys / Sticky Keys (Windows Settings → Accessibility → Keyboard) are off.</li>
-        <li><strong>Plug in a USB keyboard and test it here.</strong> If the external keyboard works, the laptop keyboard hardware is at fault, not Windows.</li>
-        <li><strong>Clean it.</strong> Turn the laptop off, tilt it, and blow compressed air under the dead key in short bursts. Crumbs and dust cause most “dead” or “sticky” keys.</li>
-        <li><strong>Reinstall the driver.</strong> Device Manager → Keyboards → right-click the keyboard → Uninstall device, then restart. Windows reinstalls it automatically.</li>
-        <li>If one key or one whole row is still dead, the keyboard (or its ribbon cable) needs replacing. On most laptops the keyboard is a separate, inexpensive part.</li>
-      </ol>`,
+      <p>If a key fails in both places it is a hardware fault. ThinkPad keyboards are sold as separate replacement parts for most T, L and E series models.</p>`,
 
   'asus-keyboard-test': `
       <h2>Testing an ASUS laptop keyboard</h2>
-      <p>This page uses the Windows laptop layout found on ASUS VivoBook, ZenBook, TUF Gaming and ROG laptops. Tick <strong>Numeric keypad</strong> if yours has one. Note: some VivoBook and ZenBook models have a <em>NumberPad</em> built into the touchpad — that is a touchpad feature, so it won't show up as keyboard keys here.</p>
-      
-      <h2>What the colours mean</h2>
+      <p>This page uses the Windows laptop layout found on ASUS VivoBook, ZenBook, TUF Gaming and ROG laptops. Tick <strong>Numeric keypad</strong> if yours has physical number keys on the right.</p>
+      <p class="small muted">Green means the key works, blue means it is held down, and dashed keys (Fn) can't be seen by any website. The full colour guide and the general step-by-step fixes for a dead key are on the <a href="/laptop-keyboard-test">laptop keyboard test</a> page; this page covers what is specific to ASUS.</p>
+      <h2>ASUS keys that behave differently</h2>
       <ul>
-        <li><strong>Green</strong> — the key sent a signal to your computer. It works.</li>
-        <li><strong>Blue</strong> — the key is being held down right now. A key that stays blue after you let go is <em>stuck</em>.</li>
-        <li><strong>Red outline</strong> — shown when you click “Highlight untested keys”: keys you have not pressed yet.</li>
-        <li><strong>Dashed</strong> — Fn and Touch ID are handled inside the laptop and are never visible to any website. Test Fn through its shortcuts instead (Fn + brightness or volume).</li>
+        <li><strong>NumberPad in the touchpad.</strong> Some VivoBook and ZenBook models light up a number pad on the touchpad. That is a touchpad feature, so it won't show as keyboard keys here — check it by typing digits into any text box.</li>
+        <li><strong>Function row.</strong> On many ASUS laptops <kbd>Fn</kbd> + <kbd>Esc</kbd> toggles Fn Lock. The same switch is in the <strong>MyASUS</strong> app under Customization → <strong>Function key lock</strong>.</li>
+        <li><strong>Power key.</strong> Many VivoBook and ZenBook keyboards have the power button as the top-right key, sometimes with a fingerprint sensor. Don't press it during the test.</li>
+        <li><strong>ROG and TUF extras.</strong> The Armoury Crate key and the volume or macro keys above the keyboard are handled by ASUS software, so they can stay grey even when they work.</li>
+        <li><strong>Backlight.</strong> The brightness keys carry a keyboard-with-rays icon: <kbd>F7</kbd> on many newer models, <kbd>F3</kbd> / <kbd>F4</kbd> on older ones, and Fn + the up and down arrows on some ROG and TUF laptops.</li>
       </ul>
-      <h2>Function keys not working on your ASUS laptop?</h2>
-      <p>On many ASUS laptops <kbd>Fn</kbd> + <kbd>Esc</kbd> toggles Fn Lock. You can also set it in the <strong>MyASUS</strong> app under Customization → <strong>Function key lock</strong>. MyASUS also has a <strong>System Diagnosis</strong> section that can check your hardware.</p>
-      
-      <h2>A key does not light up — what next?</h2>
-      <ol>
-        <li><strong>Rule out software first.</strong> Restart, then test again. Check that Filter Keys / Sticky Keys (Windows Settings → Accessibility → Keyboard) are off.</li>
-        <li><strong>Plug in a USB keyboard and test it here.</strong> If the external keyboard works, the laptop keyboard hardware is at fault, not Windows.</li>
-        <li><strong>Clean it.</strong> Turn the laptop off, tilt it, and blow compressed air under the dead key in short bursts. Crumbs and dust cause most “dead” or “sticky” keys.</li>
-        <li><strong>Reinstall the driver.</strong> Device Manager → Keyboards → right-click the keyboard → Uninstall device, then restart. Windows reinstalls it automatically.</li>
-        <li>If one key or one whole row is still dead, the keyboard (or its ribbon cable) needs replacing. On most laptops the keyboard is a separate, inexpensive part.</li>
-      </ol>`,
+      <h2>Hotkeys stopped working after a Windows update?</h2>
+      <p>Brightness, volume and backlight keys on ASUS laptops depend on a driver called <strong>ASUS System Control Interface</strong>. If the letter keys pass this test but the hotkeys do nothing, update or reinstall that driver from MyASUS or from the support page for your exact model, then restart. MyASUS also has a <strong>System Diagnosis</strong> section for checking hardware.</p>`,
 
   'acer-keyboard-test': `
       <h2>Testing an Acer laptop keyboard</h2>
-      <p>This page uses the Windows laptop layout found on Acer Aspire, Swift, Nitro and Predator laptops. Tick <strong>Numeric keypad</strong> if yours has one. Press every key and check that each turns green.</p>
-      
-      <h2>What the colours mean</h2>
+      <p>This page uses the Windows laptop layout found on Acer Aspire, Swift, Nitro and Predator laptops. Tick <strong>Numeric keypad</strong> if yours has one — on many 15.6″ Acers the number keys are narrower than the letters, so press them carefully.</p>
+      <p class="small muted">Green means the key works, blue means it is held down, and dashed keys (Fn) can't be seen by any website. The full colour guide and the general step-by-step fixes for a dead key are on the <a href="/laptop-keyboard-test">laptop keyboard test</a> page; this page covers what is specific to Acer.</p>
+      <h2>Acer keys that behave differently</h2>
       <ul>
-        <li><strong>Green</strong> — the key sent a signal to your computer. It works.</li>
-        <li><strong>Blue</strong> — the key is being held down right now. A key that stays blue after you let go is <em>stuck</em>.</li>
-        <li><strong>Red outline</strong> — shown when you click “Highlight untested keys”: keys you have not pressed yet.</li>
-        <li><strong>Dashed</strong> — Fn and Touch ID are handled inside the laptop and are never visible to any website. Test Fn through its shortcuts instead (Fn + brightness or volume).</li>
+        <li><strong>Function row.</strong> On many Acer models the top-row behaviour is a BIOS setting: restart, press <kbd>F2</kbd>, and on the Main tab look for <strong>Function key behavior</strong> or <strong>Hotkey Mode</strong>. Some newer models toggle it with <kbd>Fn</kbd> + <kbd>Esc</kbd>.</li>
+        <li><strong>Hotkeys need Acer software.</strong> Brightness, volume and airplane-mode keys rely on <strong>Acer Quick Access</strong> (Launch Manager on older laptops). If the letters pass here but those keys do nothing, reinstall it from Acer's support page for your model.</li>
+        <li><strong>Backlight.</strong> On many Aspire and Swift models it is <kbd>Fn</kbd> + <kbd>F9</kbd> (<kbd>Fn</kbd> + <kbd>F8</kbd> on some).</li>
+        <li><strong>Nitro and Predator keys.</strong> The NitroSense, PredatorSense and Turbo keys open Acer's own apps and may not light up in a browser.</li>
+        <li><strong>€ and $ keys.</strong> Older Aspire keyboards have euro and dollar keys above the left and right arrows. They type the symbols but are not drawn as separate keys here.</li>
+        <li><strong>Power key.</strong> On many Swift and Aspire models the power button is the top-right key. Skip it.</li>
       </ul>
-      <h2>Function keys not working on your Acer laptop?</h2>
-      <p>On many Acer models the top row behaviour is set in the BIOS: restart, press <kbd>F2</kbd>, and on the Main tab look for an option such as <strong>Function key behavior</strong> or <strong>Hotkey Mode</strong>. Some newer models toggle it with <kbd>Fn</kbd> + <kbd>Esc</kbd>.</p>
-      
-      <h2>A key does not light up — what next?</h2>
-      <ol>
-        <li><strong>Rule out software first.</strong> Restart, then test again. Check that Filter Keys / Sticky Keys (Windows Settings → Accessibility → Keyboard) are off.</li>
-        <li><strong>Plug in a USB keyboard and test it here.</strong> If the external keyboard works, the laptop keyboard hardware is at fault, not Windows.</li>
-        <li><strong>Clean it.</strong> Turn the laptop off, tilt it, and blow compressed air under the dead key in short bursts. Crumbs and dust cause most “dead” or “sticky” keys.</li>
-        <li><strong>Reinstall the driver.</strong> Device Manager → Keyboards → right-click the keyboard → Uninstall device, then restart. Windows reinstalls it automatically.</li>
-        <li>If one key or one whole row is still dead, the keyboard (or its ribbon cable) needs replacing. On most laptops the keyboard is a separate, inexpensive part.</li>
-      </ol>`,
+      <h2>If keys fail on your Acer</h2>
+      <p>Open <strong>Acer Care Center</strong> to check for driver and BIOS updates, then test again. If the same keys stay grey afterwards, connect a USB keyboard: if that one passes, the built-in keyboard or its ribbon cable is at fault and needs repair.</p>`,
 
   'macbook-keyboard-test': `
       <h2>Testing a MacBook keyboard</h2>
       <p>This page draws the MacBook Air / MacBook Pro layout: <kbd>fn</kbd>, <kbd>control</kbd>, <kbd>option</kbd> and <kbd>command</kbd> on the bottom row, half-height arrow keys, and the function row with Touch ID. Using a UK or European MacBook? Tick <strong>UK / EU (ISO)</strong>.</p>
       
-      <h2>What the colours mean</h2>
-      <ul>
-        <li><strong>Green</strong> — the key sent a signal to your computer. It works.</li>
-        <li><strong>Blue</strong> — the key is being held down right now. A key that stays blue after you let go is <em>stuck</em>.</li>
-        <li><strong>Red outline</strong> — shown when you click “Highlight untested keys”: keys you have not pressed yet.</li>
-        <li><strong>Dashed</strong> — Fn and Touch ID are handled inside the laptop and are never visible to any website. Test Fn through its shortcuts instead (Fn + brightness or volume).</li>
-      </ul>
+      <p class="small muted">Green means the key works and blue means it is held down. The <kbd>fn</kbd> key and Touch ID are drawn dashed because macOS never passes them to a website.</p>
       <h2>F-keys only change brightness or volume?</h2>
       <p>That is normal on a Mac. Hold <kbd>fn</kbd> while pressing them, or change it permanently in <strong>System Settings → Keyboard → Keyboard Shortcuts → Function Keys</strong> and turn on “Use F1, F2, etc. keys as standard function keys”.</p>
       <h2>A key is sticky, repeats or does nothing</h2>

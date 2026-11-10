@@ -3,6 +3,7 @@ const path = require('path');
 const config = require('./site.config');
 const { CATEGORIES, TOOLS } = require('./site/assets/js/registry.js');
 const CONTENT = require('./content.js');
+const { TITLES, FAQ } = require('./seo.js');
 // Blog articles: one module per post in ./blog — the file name is the URL slug (blog/<slug>.js → /blog/<slug>).
 const BLOG_DIR = path.join(__dirname, 'blog');
 const POSTS = (fs.existsSync(BLOG_DIR) ? fs.readdirSync(BLOG_DIR).filter(f => f.endsWith('.js')) : [])
@@ -132,7 +133,7 @@ function card(t) {
 function faqs(t) {
   const c = catById[t.cat];
   const n = t.name;
-  const list = [[`Is the ${n} free to use?`, `Yes. ${n} on ${config.name} is completely free, with no sign-up, no watermark and no daily limits.`]];
+  const list = [...(FAQ[t.slug] || []), [`Is the ${n} free to use?`, `Yes. ${n} on ${config.name} is completely free, with no sign-up, no watermark and no daily limits.`]];
   if (['pdf', 'image', 'media'].includes(c.id)) {
     list.push([`Are my files uploaded to a server?`, `No. ${n} processes your files directly in your web browser on your own device. Your files are never uploaded, stored or seen by anyone, which makes it safe for private and confidential documents.`]);
     list.push([`Is there a file size limit?`, `There is no fixed limit, but very large files depend on your device's memory and speed. Files up to a few hundred MB usually work well on a modern computer.`]);
@@ -186,7 +187,9 @@ for (const t of TOOLS) {
   const c = catById[t.cat];
   const base = t.of ? toolBySlug[t.of] : t;
   const file = `${t.slug}.html`;
-  const title = t.title ? `${t.title} | ${config.name}` : `${t.name} – Free Online ${/calculator/i.test(t.name) ? 'Calculator' : 'Tool'} | ${config.name}`;
+  // Keyword title from the registry or seo.js; the brand is appended only while the whole title still fits in Google's ~60 characters.
+  const kwTitle = t.title || TITLES[t.slug];
+  const title = kwTitle ? (kwTitle.length + config.name.length + 3 <= 60 ? `${kwTitle} | ${config.name}` : kwTitle) : `${t.name} – Free Online ${/calculator/i.test(t.name) ? 'Calculator' : 'Tool'} | ${config.name}`;
   const fq = faqs(t);
   const related = TOOLS.filter(x => x.cat === t.cat && x.slug !== t.slug && !x.of).slice(0, 8);
   const more = TOOLS.filter(x => x.popular && x.cat !== t.cat).slice(0, 6);

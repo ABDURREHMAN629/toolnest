@@ -21,7 +21,7 @@
 <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=mwajvpat">
+<link rel="stylesheet" href="/assets/css/style.css?v=mwocri0r">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEZ8T8ZK6B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SEZ8T8ZK6B');</script>
@@ -72,22 +72,20 @@
       <h2>How to use the Base64 Encode / Decode</h2>
       <ol class="steps"><li>Paste text or choose a file</li><li>Click Encode or Decode</li><li>Copy the result</li></ol>
 
-      <h2>Base64 encode decode online</h2>
-      <p>Paste text and click <strong>Encode to Base64</strong>, or paste Base64 and click <strong>Decode from Base64</strong>. Text is handled as UTF-8, so accents, Arabic, Urdu and emoji survive the round trip. Tick <strong>URL-safe Base64</strong> to use <code>-</code> and <code>_</code> instead of <code>+</code> and <code>/</code> (as JWTs and URLs need). You can also drop any file to get it as a Base64 data URL. It's a <strong>base64 encode decode online</strong> tool — <strong>base64 encode to decode online</strong> in one place.</p>
+      <h2>Encode and decode Base64</h2>
+      <p>Paste text and click <strong>Encode to Base64</strong>, or paste Base64 and click <strong>Decode from Base64</strong>. Text is handled as UTF-8, so accents, Arabic, Urdu and emoji survive the round trip. Tick <strong>URL-safe Base64</strong> to use <code>-</code> and <code>_</code> instead of <code>+</code> and <code>/</code>, as JWTs and URLs require. You can also drop any file to get it as a Base64 data URL.</p>
       <h2>Example</h2>
-      <p>“Hello” → <code>SGVsbG8=</code>. Base64 turns every 3 bytes into 4 characters, so encoded data is about 33% larger. It's an encoding, not encryption — anyone can decode it, and a <strong>base64 encode decode with key</strong> doesn't exist; use real encryption for secrets.</p>
+      <p>“Hello” → <code>SGVsbG8=</code>. Base64 turns every 3 bytes into 4 characters, so encoded data is about 33% larger. It is an encoding, not encryption: anyone can decode it, and there is no such thing as Base64 “with a key”. Use real encryption for secrets.</p>
       <h2>In code and on the command line</h2>
       <ul>
-        <li><strong>base64 encode decode python</strong> (<strong>base64 encode decode in python</strong>) — <code>base64.b64encode(s.encode()).decode()</code> and <code>base64.b64decode(b).decode()</code>.</li>
-        <li><strong>base64 encode decode javascript</strong> (<strong>base64 encode decode in javascript</strong>) — <code>btoa()</code> / <code>atob()</code> only handle Latin-1, so encode UTF-8 with <code>TextEncoder</code> first; in Node, <code>Buffer.from(s).toString('base64')</code>.</li>
-        <li><strong>base64 encode decode java</strong> (<strong>base64 encode decode in java 8</strong> and later) — <code>Base64.getEncoder().encodeToString(bytes)</code> and <code>Base64.getDecoder().decode(s)</code>; the same in any <strong>base64 encode decode in java</strong> project.</li>
-        <li><strong>base64 encode decode php</strong> (<strong>base64 encode and decode in php</strong>) — <code>base64_encode()</code> and <code>base64_decode()</code>.</li>
-        <li><strong>base64 encode decode linux</strong> / <strong>base64 encode decode command line</strong> — <code>base64 file.txt</code> to encode, <code>base64 -d</code> to decode (a <strong>base64 encode decode command</strong> built into Linux and macOS).</li>
-        <li><strong>base64 encode decode c++</strong> and <strong>base64 encode decode in c</strong> — there's no standard function; use a library such as OpenSSL's <code>EVP_EncodeBlock</code>.</li>
-        <li><strong>base64 encode decode in notepad ++</strong> — Plugins → MIME Tools → Base64 Encode / Decode.</li>
+        <li><strong>Python</strong> — <code>base64.b64encode(s.encode()).decode()</code> and <code>base64.b64decode(b).decode()</code>.</li>
+        <li><strong>JavaScript</strong> — <code>btoa()</code> and <code>atob()</code> only handle Latin-1, so encode UTF-8 with <code>TextEncoder</code> first; in Node.js, <code>Buffer.from(s).toString('base64')</code>.</li>
+        <li><strong>Java 8+</strong> — <code>Base64.getEncoder().encodeToString(bytes)</code> and <code>Base64.getDecoder().decode(s)</code>.</li>
+        <li><strong>PHP</strong> — <code>base64_encode()</code> and <code>base64_decode()</code>.</li>
+        <li><strong>Linux and macOS terminal</strong> — <code>base64 file.txt</code> to encode, <code>base64 -d</code> to decode.</li>
+        <li><strong>C and C++</strong> — there's no standard function; use a library such as OpenSSL's <code>EVP_EncodeBlock</code>.</li>
+        <li><strong>Notepad++</strong> — Plugins → MIME Tools → Base64 Encode / Decode.</li>
       </ul>
-      <p>A simple <strong>base64 encode decode</strong> tool.</p>
-      <p class="small muted">🔒 Everything runs in your browser — nothing you paste is uploaded.</p>
 
     </article>
     <aside class="sidebar">
@@ -112,10 +110,10 @@
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mwajvpat"></script>
-<script src="/assets/js/core.js?v=mwajvpat"></script>
-<script src="/assets/js/tools/dev.js?v=mwajvpat"></script>
+<script src="/assets/js/registry.js?v=mwocri0r"></script>
+<script src="/assets/js/core.js?v=mwocri0r"></script>
+<script src="/assets/js/tools/dev.js?v=mwocri0r"></script>
 <script>Tools.mount("base64-encode-decode", document.getElementById('tool'), {});</script>
-<script src="/assets/js/assistant.js?v=mwajvpat" defer></script>
+<script src="/assets/js/assistant.js?v=mwocri0r" defer></script>
 </body>
 </html>

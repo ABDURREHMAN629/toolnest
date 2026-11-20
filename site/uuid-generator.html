@@ -21,7 +21,7 @@
 <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=mwajvpat">
+<link rel="stylesheet" href="/assets/css/style.css?v=mwocri0r">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEZ8T8ZK6B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SEZ8T8ZK6B');</script>
@@ -72,22 +72,21 @@
       <h2>How to use the UUID Generator</h2>
       <ol class="steps"><li>Choose how many UUIDs you need</li><li>Pick the format options</li><li>Copy or download them</li></ol>
 
-      <h2>UUID generator — v4 and v7</h2>
-      <p>Choose <strong>v4 (random)</strong> or <strong>v7 (time-ordered)</strong>, how many you need (up to 10,000), and options for <strong>UPPERCASE</strong>, <strong>no hyphens</strong> or <strong>{braces}</strong> (GUID style). Copy them all or download a .txt file. UUIDs are made with your browser's cryptographically secure random generator. It's a <strong>uuid generator online</strong> for bulk lists.</p>
-      <h2>v4 or v7?</h2>
-      <p>A <strong>uuid generator v4</strong> makes 122 random bits — the chance of a duplicate is effectively zero. A <strong>uuid generator v7</strong> puts a millisecond timestamp first, so new IDs sort in creation order; that makes database indexes faster. Use v7 for primary keys, v4 for everything else. The <strong>uuid generator format</strong> is 8-4-4-4-12 hex digits, e.g. <code>f47ac10b-58cc-4372-a567-0e02b2c3d479</code> (the “4” marks version 4).</p>
+      <h2>Version 4 and version 7 UUIDs</h2>
+      <p>Choose <strong>v4 (random)</strong> or <strong>v7 (time-ordered)</strong>, how many you need (up to 10,000), and options for <strong>UPPERCASE</strong>, <strong>no hyphens</strong> or <strong>{braces}</strong> (GUID style). Copy them all or download a .txt file. UUIDs are made with your browser's cryptographically secure random generator.</p>
+      <h2>Which version?</h2>
+      <p>Version 4 contains 122 random bits, so the chance of a duplicate is effectively zero. Version 7 puts a millisecond timestamp first, so new IDs sort in the order they were created, which keeps database indexes fast. Use v7 for primary keys and v4 for everything else. Every UUID has the form 8-4-4-4-12 hex digits, such as <code>f47ac10b-58cc-4372-a567-0e02b2c3d479</code> — the “4” at the start of the third group marks version 4.</p>
       <h2>Minecraft</h2>
-      <p>As a <strong>uuid generator for minecraft bedrock</strong> (or <strong>uuid generator minecraft bedrock</strong>) add-on, every <code>manifest.json</code> needs unique v4 UUIDs — one for the header and one for each module. Generate a few here and paste them in. A <strong>uuid generator minecraft java</strong> player UUID is different: it comes from the player's Mojang account and can't be generated. That's the whole story for any <strong>uuid generator for minecraft</strong> (or <strong>uuid generator minecraft</strong>) search.</p>
+      <p>Minecraft Bedrock add-ons need unique v4 UUIDs in every <code>manifest.json</code> — one for the header and one for each module. Generate a few here and paste them in. A Minecraft Java player UUID is different: it comes from the player's account and can't be generated.</p>
       <h2>In code</h2>
       <ul>
-        <li><strong>uuid generator python</strong> (<strong>uuid generator for python</strong>) — <code>import uuid; uuid.uuid4()</code>.</li>
-        <li><strong>uuid generator javascript</strong> (<strong>uuid generator for js</strong> and <strong>uuid generator for react</strong>) — <code>crypto.randomUUID()</code> in modern browsers and Node.</li>
-        <li><strong>uuid generator java</strong> (<strong>uuid generator for java</strong>) — <code>UUID.randomUUID()</code>.</li>
-        <li><strong>uuid generator for postgres</strong> — <code>gen_random_uuid()</code> (PostgreSQL 13+); <code>uuidv7()</code> arrives in PostgreSQL 18.</li>
-        <li><strong>uuid generator for postman</strong> — the <code>{{$guid}}</code> or <code>{{$randomUUID}}</code> variable.</li>
-        <li><strong>uuid generator for excel</strong> — generate a list here and paste it into a column.</li>
+        <li><strong>Python</strong> — <code>import uuid; uuid.uuid4()</code>.</li>
+        <li><strong>JavaScript and React</strong> — <code>crypto.randomUUID()</code> in modern browsers and Node.js.</li>
+        <li><strong>Java</strong> — <code>UUID.randomUUID()</code>.</li>
+        <li><strong>PostgreSQL</strong> — <code>gen_random_uuid()</code> (version 13+); <code>uuidv7()</code> arrives in PostgreSQL 18.</li>
+        <li><strong>Postman</strong> — the <code>{{$guid}}</code> or <code>{{$randomUUID}}</code> variable.</li>
+        <li><strong>Excel</strong> — generate a list here and paste it into a column.</li>
       </ul>
-      <p>A simple <strong>uuid generator</strong>.</p>
 
     </article>
     <aside class="sidebar">
@@ -112,10 +111,10 @@
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mwajvpat"></script>
-<script src="/assets/js/core.js?v=mwajvpat"></script>
-<script src="/assets/js/tools/dev.js?v=mwajvpat"></script>
+<script src="/assets/js/registry.js?v=mwocri0r"></script>
+<script src="/assets/js/core.js?v=mwocri0r"></script>
+<script src="/assets/js/tools/dev.js?v=mwocri0r"></script>
 <script>Tools.mount("uuid-generator", document.getElementById('tool'), {});</script>
-<script src="/assets/js/assistant.js?v=mwajvpat" defer></script>
+<script src="/assets/js/assistant.js?v=mwocri0r" defer></script>
 </body>
 </html>

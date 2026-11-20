@@ -21,7 +21,7 @@
 <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=mwajvpat">
+<link rel="stylesheet" href="/assets/css/style.css?v=mwocri0r">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEZ8T8ZK6B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SEZ8T8ZK6B');</script>
@@ -72,22 +72,22 @@
       <h2>How to use the JWT Decoder</h2>
       <ol class="steps"><li>Paste your JWT</li><li>See the decoded header and payload</li><li>Check the expiry time</li></ol>
 
-      <h2>JWT decoder online — decode JWT tokens locally</h2>
-      <p>Paste a JSON Web Token (with or without “Bearer ”) to <strong>decode jwt token</strong> data instantly: the <strong>header</strong> (algorithm and type), the <strong>payload</strong> (claims), and the issued-at, not-before and expiry times in your local time and UTC. A badge shows whether the token is <strong>expired</strong>. It's a <strong>jwt decoder online</strong> and <strong>jwt decoder tool</strong> — the quick way to <strong>decode jwt token online</strong>, <strong>decode jwt expiration time online</strong> and check <strong>jwt decode token expiry</strong>.</p>
-      <h2>Decode JWT locally</h2>
-      <p>Tokens can grant access to accounts, so never paste them into sites that upload them. This page is a <strong>jwt decoder offline</strong>-style tool: you can <strong>decode jwt locally</strong> (<strong>jwt decode locally</strong>) — the <strong>jwt decode in browser</strong> happens on your device and nothing is sent anywhere. Like the <strong>jwt io decode online</strong> debugger, it's a <strong>json web token decode online</strong> tool, without uploading your token.</p>
-      <h2>Decoding vs verifying</h2>
-      <p>A JWT's header and payload are just Base64URL-encoded JSON, so anyone can read them — never put secrets in a payload. Checking the <em>signature</em> needs the secret or public key; this page decodes but doesn't verify, so it isn't a <strong>jwt token decoder and verifier</strong> or <strong>jwt decode with secret key</strong> tool. Verify signatures in your server code. For a <strong>jwt decoder and encoder</strong> (or <strong>jwt decoder to encoder</strong>), sign new tokens with a library on your server.</p>
+      <h2>Read a JSON Web Token</h2>
+      <p>Paste a JWT, with or without “Bearer ”, to see its <strong>header</strong> (algorithm and type), its <strong>payload</strong> (claims), and the issued-at, not-before and expiry times in your local time and UTC. A badge shows whether the token has <strong>expired</strong>.</p>
+      <h2>Decoded on your device</h2>
+      <p>Tokens can grant access to accounts, so never paste them into sites that upload them. Here the decoding happens in your browser and nothing is sent anywhere.</p>
+      <h2>Decoding is not verifying</h2>
+      <p>A JWT's header and payload are just Base64URL-encoded JSON, so anyone can read them — never put secrets in a payload. Checking the <em>signature</em> needs the secret or public key. This page decodes but doesn't verify, so always verify signatures in your server code, and sign new tokens there with a library.</p>
       <h2>In code</h2>
       <ul>
-        <li><strong>jwt decode python</strong> — PyJWT: <code>jwt.decode(token, options={"verify_signature": False})</code> to inspect (verify in production).</li>
-        <li><strong>jwt decode in javascript</strong> — the <code>jwt-decode</code> npm package, or <code>JSON.parse(atob(token.split('.')[1]))</code> for simple tokens.</li>
-        <li><strong>java jwt decode</strong> / <strong>spring boot jwt decode</strong> — <code>JwtDecoder</code> in Spring Security, or the jjwt library.</li>
-        <li><strong>jwt decoder flutter</strong> (<strong>jwt decoder in flutter</strong>) — the <code>jwt_decoder</code> package.</li>
-        <li><strong>jwt decode bash</strong> / <strong>jwt decoder cli</strong> — <code>cut -d. -f2 | base64 -d</code> (add padding if needed); in PowerShell (<strong>jwt decode powershell</strong>), split on “.” and Base64-decode the second part.</li>
-        <li><strong>decode jwt in postman</strong> — <code>JSON.parse(atob(token.split('.')[1]))</code> in a test script.</li>
+        <li><strong>Python</strong> (PyJWT) — <code>jwt.decode(token, options={"verify_signature": False})</code> to inspect; verify in production.</li>
+        <li><strong>JavaScript</strong> — the <code>jwt-decode</code> npm package, or <code>JSON.parse(atob(token.split('.')[1]))</code> for simple tokens.</li>
+        <li><strong>Java / Spring Boot</strong> — <code>JwtDecoder</code> in Spring Security, or the jjwt library.</li>
+        <li><strong>Flutter</strong> — the <code>jwt_decoder</code> package.</li>
+        <li><strong>Command line</strong> — <code>cut -d. -f2 | base64 -d</code> (add padding if needed); in PowerShell, split on “.” and Base64-decode the second part.</li>
+        <li><strong>Postman</strong> — <code>JSON.parse(atob(token.split('.')[1]))</code> in a test script.</li>
       </ul>
-      <p>The <strong>jwt encode format</strong> is <code>header.payload.signature</code>, and decoding gives you the claims as JSON — a <strong>jwt decode to json</strong> view of any <strong>jwt decoder microsoft</strong> Entra ID token or other provider's token. A simple <strong>jwt decoder</strong> — just <strong>jwt decode</strong>, <strong>decode jwt</strong>, <strong>jwt decode online</strong>.</p>
+      <p>Every JWT has the form <code>header.payload.signature</code>, whether it comes from Microsoft Entra ID, Auth0 or your own server.</p>
 
     </article>
     <aside class="sidebar">
@@ -112,10 +112,10 @@
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mwajvpat"></script>
-<script src="/assets/js/core.js?v=mwajvpat"></script>
-<script src="/assets/js/tools/dev.js?v=mwajvpat"></script>
+<script src="/assets/js/registry.js?v=mwocri0r"></script>
+<script src="/assets/js/core.js?v=mwocri0r"></script>
+<script src="/assets/js/tools/dev.js?v=mwocri0r"></script>
 <script>Tools.mount("jwt-decoder", document.getElementById('tool'), {});</script>
-<script src="/assets/js/assistant.js?v=mwajvpat" defer></script>
+<script src="/assets/js/assistant.js?v=mwocri0r" defer></script>
 </body>
 </html>

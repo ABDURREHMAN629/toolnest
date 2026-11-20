@@ -124,7 +124,7 @@ ${scripts}
 
 function card(t) {
   const c = catById[t.cat];
-  return `<a class="tool-card-link" href="${BASE}${t.slug}" data-slug="${t.slug}" data-search="${esc((t.name + ' ' + t.kw + ' ' + c.name).toLowerCase())}">
+  return `<a class="tool-card-link" href="${BASE}${t.slug}" data-slug="${t.slug}">
   <span class="tool-icon" style="--c:${c.color}">${t.icon}</span>
   <span class="tool-card-body"><strong>${esc(t.name)}</strong><span>${esc(t.desc)}</span></span>
 </a>`;
@@ -148,8 +148,8 @@ const BENEFITS = {
   default: [['🔒', 'Private', 'Runs in your browser — nothing is uploaded.'], ['⚡', 'Fast', 'Instant results, no waiting in queues.'], ['💸', 'Free', 'No sign-up, no watermark, no limits.'], ['📱', 'Anywhere', 'Works on phone, tablet and desktop.']],
 };
 
-// Pages Google already ranks on pages 2–9 (Search Console, Oct 2026): extra links from related pages,
-// anchored with the exact query people search, to push them toward page 1. target → [anchor, sources].
+// Related-tool links: target → [query it was chosen for (not shown), pages that link to it].
+// The link text is the tool's own name — exact-match keyword anchors read as manipulative.
 const BOOST = {
   'average-calculator': ['average calculator', ['percentage-calculator', 'gpa-calculator', 'grade-calculator', 'cgpa-calculator', 'fraction-calculator', 'attendance-calculator']],
   'grade-calculator': ['grade calculator', ['gpa-calculator', 'cgpa-calculator', 'percentage-calculator', 'average-calculator', 'attendance-calculator']],
@@ -223,7 +223,7 @@ for (const t of TOOLS) {
 ${CONTENT[t.slug] ? '' : `      <h2>About this tool</h2>
       <p>${esc(t.desc)} ${esc(t.name)} is part of ${esc(config.name)}'s collection of free ${esc(c.name.toLowerCase())}.</p>`}${CONTENT[t.slug] || ''}${(g => g.length ? `
       <p class="related-guides">📝 <strong>Related guide${g.length > 1 ? 's' : ''}:</strong> ${g.map(p => `<a href="${BASE}blog/${p.slug}">${esc(p.title)}</a>`).join(' · ')}</p>` : '')(postsFor(t.slug, base.slug))}${boostLinks[t.slug] ? `
-      <p class="related-guides">🔗 <strong>You may also need:</strong> ${boostLinks[t.slug].map(([s, a]) => `the <a href="${BASE}${s}">${esc(a)}</a>`).join(' · ')}</p>` : ''}
+      <p class="related-guides">🔗 <strong>You may also need:</strong> ${boostLinks[t.slug].map(([s]) => `<a href="${BASE}${s}">${esc(toolBySlug[s].name)}</a>`).join(' · ')}</p>` : ''}
 ${fq.length ? `      <h2>Frequently asked questions</h2>
       <div class="faq">${fq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div>` : ''}
     </article>

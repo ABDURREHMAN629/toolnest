@@ -21,7 +21,7 @@
 <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=mwajvpat">
+<link rel="stylesheet" href="/assets/css/style.css?v=mwocri0r">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEZ8T8ZK6B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SEZ8T8ZK6B');</script>
@@ -72,25 +72,23 @@
       <h2>How to use the HTML Encoder / Decoder</h2>
       <ol class="steps"><li>Paste your text or HTML</li><li>Click Encode or Decode</li><li>Copy the result</li></ol>
 
-      <h2>HTML encoder and decoder</h2>
-      <p>Paste text and click <strong>Encode HTML</strong> to escape the five special characters — <code>&amp;</code> → <code>&amp;amp;</code>, <code>&lt;</code> → <code>&amp;lt;</code>, <code>&gt;</code> → <code>&amp;gt;</code>, <code>"</code> → <code>&amp;quot;</code> and <code>'</code> → <code>&amp;#39;</code> — or <strong>Decode HTML</strong> to turn entities back into plain text. Tick “Also encode non-ASCII characters” to write © or emoji as numeric entities like <code>&amp;#169;</code>. It's an <strong>html encoder decoder online</strong>: an <strong>html encode online</strong> and <strong>html decode online</strong> tool, and an <strong>html entity encoder online</strong>.</p>
+      <h2>Encode and decode HTML entities</h2>
+      <p>Paste text and click <strong>Encode HTML</strong> to escape the five special characters — <code>&amp;</code> → <code>&amp;amp;</code>, <code>&lt;</code> → <code>&amp;lt;</code>, <code>&gt;</code> → <code>&amp;gt;</code>, <code>"</code> → <code>&amp;quot;</code> and <code>'</code> → <code>&amp;#39;</code> — or <strong>Decode HTML</strong> to turn entities back into plain text. Tick “Also encode non-ASCII characters” to write © or emoji as numeric entities such as <code>&amp;#169;</code>.</p>
       <h2>What are HTML entities?</h2>
-      <p><strong>what are html entities</strong>? They're codes that display a character the browser would otherwise treat as markup, or that's hard to type. A few from the <strong>html entities list</strong>:</p>
+      <p>They are codes that display a character the browser would otherwise treat as markup, or one that is hard to type. Some common ones:</p>
       <ul>
-        <li><strong>html encoded ampersand</strong>: <code>&amp;amp;</code> · less than <code>&amp;lt;</code> · greater than <code>&amp;gt;</code></li>
-        <li><strong>html escape single quote</strong>: <code>&amp;#39;</code> (or <code>&amp;apos;</code>) · double quote <code>&amp;quot;</code></li>
-        <li><strong>html encode space</strong> that won't break: <code>&amp;nbsp;</code> · © <code>&amp;copy;</code> · ™ <code>&amp;trade;</code> · → <code>&amp;rarr;</code></li>
+        <li>Ampersand <code>&amp;amp;</code> · less than <code>&amp;lt;</code> · greater than <code>&amp;gt;</code></li>
+        <li>Single quote <code>&amp;#39;</code> (or <code>&amp;apos;</code>) · double quote <code>&amp;quot;</code></li>
+        <li>Non-breaking space <code>&amp;nbsp;</code> · © <code>&amp;copy;</code> · ™ <code>&amp;trade;</code> · → <code>&amp;rarr;</code></li>
       </ul>
-      <h2>Escape HTML to prevent XSS</h2>
-      <p>The main reason to <strong>html escape</strong> text: if user input is shown on a page without escaping, someone can inject scripts. Always <strong>escape html to prevent xss</strong> when inserting text into HTML — the <strong>html escape characters</strong> above are exactly the ones that matter. This page is handy for checking output and preparing snippets, such as showing code on a blog.</p>
+      <h2>Why escaping matters</h2>
+      <p>If text typed by users is shown on a page without escaping, someone can inject scripts — a cross-site scripting (XSS) attack. Always escape text before inserting it into HTML; the five characters above are the ones that matter. This page is handy for checking output and for preparing snippets, such as showing code in a blog post.</p>
       <h2>In code</h2>
       <ul>
-        <li><strong>html encode in javascript</strong> — set <code>element.textContent</code> instead of <code>innerHTML</code>, or replace the five characters.</li>
-        <li><strong>html encode in php</strong> — <code>htmlspecialchars($s, ENT_QUOTES)</code>; decode with <code>html_entity_decode()</code>.</li>
-        <li><strong>html encode in c#</strong> — <code>WebUtility.HtmlEncode()</code> / <code>HtmlDecode()</code>.</li>
+        <li><strong>JavaScript</strong> — set <code>element.textContent</code> instead of <code>innerHTML</code>, or replace the five characters.</li>
+        <li><strong>PHP</strong> — <code>htmlspecialchars($s, ENT_QUOTES)</code>; decode with <code>html_entity_decode()</code>.</li>
+        <li><strong>C#</strong> — <code>WebUtility.HtmlEncode()</code> and <code>HtmlDecode()</code>.</li>
       </ul>
-      <p>To decode a page full of <code>&amp;amp;</code> codes (<strong>html entities decode</strong>, <strong>html entities to text</strong> or <strong>html unescape online</strong>), paste and click Decode. A simple <strong>html encode decode</strong> (<strong>html encode decode online</strong>) <strong>html entity converter online</strong> — an <strong>html entities online converter</strong> that's also an <strong>html escape online</strong> and <strong>html entity decode online</strong> tool, with <strong>html entities encode</strong> and an <strong>html decoder</strong> in one.</p>
-      <p class="small muted">🔒 Everything runs in your browser — nothing you paste is uploaded.</p>
 
     </article>
     <aside class="sidebar">
@@ -115,10 +113,10 @@
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mwajvpat"></script>
-<script src="/assets/js/core.js?v=mwajvpat"></script>
-<script src="/assets/js/tools/dev.js?v=mwajvpat"></script>
+<script src="/assets/js/registry.js?v=mwocri0r"></script>
+<script src="/assets/js/core.js?v=mwocri0r"></script>
+<script src="/assets/js/tools/dev.js?v=mwocri0r"></script>
 <script>Tools.mount("html-entity-encoder", document.getElementById('tool'), {});</script>
-<script src="/assets/js/assistant.js?v=mwajvpat" defer></script>
+<script src="/assets/js/assistant.js?v=mwocri0r" defer></script>
 </body>
 </html>

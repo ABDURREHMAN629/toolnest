@@ -21,7 +21,7 @@
 <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=mwajvpat">
+<link rel="stylesheet" href="/assets/css/style.css?v=mwocri0r">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEZ8T8ZK6B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SEZ8T8ZK6B');</script>
@@ -79,27 +79,26 @@
       <h2>How to use the Find and Replace Text</h2>
       <ol class="steps"><li>Paste your text</li><li>Enter what to find and what to replace it with</li><li>Copy the updated text</li></ol>
 
-      <h2>Find and replace text online</h2>
-      <p>Paste your text, type what to <strong>Find</strong> and what to <strong>Replace with</strong>, and every match is replaced at once — with a count of how many replacements were made. Options: <strong>Match case</strong>, <strong>Whole words only</strong> (so “cat” doesn't change “category”) and <strong>Regular expression</strong> for advanced patterns, with <code>$1</code> to reuse captured groups. It's a <strong>find and replace text online</strong> tool — a <strong>find and replace for text</strong> editing that's fully private.</p>
+      <h2>Replace every match at once</h2>
+      <p>Paste your text, type what to <strong>Find</strong> and what to <strong>Replace with</strong>, and every match is replaced, with a count of how many changes were made. Options: <strong>Match case</strong>, <strong>Whole words only</strong> (so “cat” doesn't change “category”) and <strong>Regular expression</strong> for advanced patterns, with <code>$1</code> to reuse captured groups.</p>
       <h2>Regular expression examples</h2>
       <ul>
-        <li>Find <code>s+</code> → replace with one space: collapses repeated spaces.</li>
-        <li>Find <code>(w+)@example.com</code> → <code>$1@newdomain.com</code>: change an email domain.</li>
-        <li>Find <code>(d{2})/(d{2})/(d{4})</code> → <code>$3-$2-$1</code>: turn 21/10/2026 into 2026-10-21.</li>
+        <li>Find <code>\s+</code> → replace with one space: collapses repeated spaces.</li>
+        <li>Find <code>(\w+)@example\.com</code> → <code>$1@newdomain.com</code>: change an email domain.</li>
+        <li>Find <code>(\d{2})/(\d{2})/(\d{4})</code> → <code>$3-$2-$1</code>: turn 21/10/2026 into 2026-10-21.</li>
       </ul>
-      <h2>Find and replace for text editing in apps</h2>
+      <h2>In other programs</h2>
       <ul>
-        <li><strong>find and replace text in word</strong> and <strong>find and replace text in excel</strong> — Ctrl + H.</li>
-        <li><strong>find and replace text in autocad</strong> — the <code>FIND</code> command.</li>
-        <li><strong>find and replace text in indesign</strong> — Edit → Find/Change.</li>
-        <li><strong>find and replace text in illustrator</strong> — Edit → Find and Replace.</li>
-        <li><strong>find and replace text in revit</strong> — Annotate → Find/Replace.</li>
-        <li><strong>find and replace text in bluebeam</strong> — Bluebeam Revu's search and edit-text tools (in the editions that include them).</li>
+        <li><strong>Word and Excel</strong> — Ctrl + H.</li>
+        <li><strong>AutoCAD</strong> — the <code>FIND</code> command.</li>
+        <li><strong>InDesign</strong> — Edit → Find/Change.</li>
+        <li><strong>Illustrator</strong> — Edit → Find and Replace.</li>
+        <li><strong>Revit</strong> — Annotate → Find/Replace.</li>
       </ul>
       <h2>In a PDF</h2>
-      <p>To <strong>find and replace text in pdf</strong> files — a <strong>find and replace text in pdf online</strong> (or <strong>find and replace text in pdf online free</strong>) job — extract the text with <a href="/pdf-to-text">PDF to Text</a> or convert it with <a href="/pdf-to-word">PDF to Word</a>, make your replacements here or in Word, then save it as a PDF again.</p>
-      <h2>Without an extension</h2>
-      <p>No need for a <strong>find and replace for text editing chrome extension</strong> (or <strong>find and replace for text editing extension</strong>) with page permissions — for <strong>find and replace for text editing</strong> on a web form, paste the text here, replace, and paste it back. A simple <strong>find and replace text</strong> tool.</p>
+      <p>PDFs can't be edited like a text file. Extract the text with <a href="/pdf-to-text">PDF to Text</a> or convert it with <a href="/pdf-to-word">PDF to Word</a>, make your replacements here or in Word, then save it as a PDF again.</p>
+      <h2>Text on a web page or form</h2>
+      <p>No browser extension is needed: copy the text here, replace, and paste it back.</p>
 
     </article>
     <aside class="sidebar">
@@ -124,10 +123,10 @@
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mwajvpat"></script>
-<script src="/assets/js/core.js?v=mwajvpat"></script>
-<script src="/assets/js/tools/text.js?v=mwajvpat"></script>
+<script src="/assets/js/registry.js?v=mwocri0r"></script>
+<script src="/assets/js/core.js?v=mwocri0r"></script>
+<script src="/assets/js/tools/text.js?v=mwocri0r"></script>
 <script>Tools.mount("find-and-replace", document.getElementById('tool'), {});</script>
-<script src="/assets/js/assistant.js?v=mwajvpat" defer></script>
+<script src="/assets/js/assistant.js?v=mwocri0r" defer></script>
 </body>
 </html>

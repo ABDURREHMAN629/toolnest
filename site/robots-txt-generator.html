@@ -21,7 +21,7 @@
 <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=mwocri0r">
+<link rel="stylesheet" href="/assets/css/style.css?v=mwof1jtm">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEZ8T8ZK6B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SEZ8T8ZK6B');</script>
@@ -29,6 +29,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2580309541293686" crossorigin="anonymous"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Robots.txt Generator","url":"https://www.webtoolnest.com/robots-txt-generator","description":"Create a robots.txt file for your website, with rules for search engines and AI crawlers and your sitemap.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Abdur Rehman","url":"https://www.webtoolnest.com/about","sameAs":["https://abdurrehman629.github.io","https://github.com/ABDURREHMAN629/case-studies","https://www.linkedin.com/in/abdur-rehman-ar03247440629","https://github.com/ABDURREHMAN629"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.webtoolnest.com/"},{"@type":"ListItem","position":2,"name":"Web & Device","item":"https://www.webtoolnest.com/web-tools"},{"@type":"ListItem","position":3,"name":"Robots.txt Generator","item":"https://www.webtoolnest.com/robots-txt-generator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where do I upload robots.txt?","acceptedAnswer":{"@type":"Answer","text":"In the root folder of your domain, so it opens at https://yourdomain.com/robots.txt. A file in a sub-folder such as /blog/robots.txt is ignored by crawlers."}},{"@type":"Question","name":"Will robots.txt remove a page from Google?","acceptedAnswer":{"@type":"Answer","text":"No. A blocked page can still be indexed without its content if other sites link to it. To remove a page, let Google crawl it and add a noindex meta tag, or use the Removals tool in Search Console."}},{"@type":"Question","name":"Should I block AI crawlers?","acceptedAnswer":{"@type":"Answer","text":"Only if you do not want your content used for AI training. Blocking is a choice, not an SEO requirement. Remember that blocking AI search bots can also stop your pages appearing in AI answers."}}]}</script>
 </head>
 <body>
 <header class="site-header">
@@ -93,8 +94,28 @@ Sitemap: https://example.com/sitemap.xml</pre>
       </ul>
       <h2>Do you need one?</h2>
       <p>Not strictly — without one, everything may be crawled — but it's good practice for the sitemap line. It isn't security or a legal barrier: it's a request that well-behaved bots follow. To keep a page out of Google, use a <code>noindex</code> tag instead. Never block CSS, JavaScript or pages you want to rank, and check your file with Search Console's robots.txt report.</p>
-      <p class="related-guides">📝 <strong>Related guide:</strong> <a href="/blog/how-to-create-a-robots-txt-file">How to Create a Robots.txt File (With Examples for WordPress and Shopify)</a></p>
+      <h2>Ready-made files for common sites</h2>
+      <p><strong>WordPress.</strong> Keep the admin area out of crawls but leave the AJAX file open, because themes and plugins load content through it:</p>
+      <pre class="out-box">User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
 
+Sitemap: https://example.com/wp-sitemap.xml</pre>
+      <p>WordPress has served <code>/wp-sitemap.xml</code> since version 5.5. If you use Yoast or Rank Math, point the Sitemap line at <code>/sitemap_index.xml</code> instead.</p>
+      <p><strong>Online shop.</strong> Block cart, checkout and account pages, plus filtered URLs that create thousands of near-identical pages: <code>Disallow: /cart</code>, <code>Disallow: /checkout</code>, <code>Disallow: /*?sort=</code>. Shopify generates its own file; to change it you edit the <code>robots.txt.liquid</code> template in your theme.</p>
+      <p><strong>Staging site.</strong> <code>Disallow: /</code> keeps a test copy out of crawls, but remove it the day you launch. Forgetting this line is one of the most common reasons a new site never appears in Google.</p>
+      <h2>How Google reads your rules</h2>
+      <ul>
+        <li><strong>The most specific rule wins.</strong> With <code>Disallow: /admin/</code> and <code>Allow: /admin/help/</code>, the longer Allow rule applies to the help pages. If two rules are equally long, Google uses Allow.</li>
+        <li><strong>Wildcards.</strong> <code>*</code> matches any characters and <code>$</code> marks the end of the URL, so <code>Disallow: /*.pdf$</code> blocks every PDF.</li>
+        <li><strong>Paths are case-sensitive.</strong> <code>/Admin/</code> and <code>/admin/</code> are different rules.</li>
+        <li><strong>Each subdomain needs its own file.</strong> shop.example.com does not use the rules at www.example.com.</li>
+        <li><strong>Changes take a little time.</strong> Google usually caches robots.txt for up to a day, so a fix is not seen instantly.</li>
+      </ul>
+    
+      <p class="related-guides">📝 <strong>Related guide:</strong> <a href="/blog/how-to-create-a-robots-txt-file">How to Create a Robots.txt File (With Examples for WordPress and Shopify)</a></p>
+      <h2>Frequently asked questions</h2>
+      <div class="faq"><details><summary>Where do I upload robots.txt?</summary><p>In the root folder of your domain, so it opens at https://yourdomain.com/robots.txt. A file in a sub-folder such as /blog/robots.txt is ignored by crawlers.</p></details><details><summary>Will robots.txt remove a page from Google?</summary><p>No. A blocked page can still be indexed without its content if other sites link to it. To remove a page, let Google crawl it and add a noindex meta tag, or use the Removals tool in Search Console.</p></details><details><summary>Should I block AI crawlers?</summary><p>Only if you do not want your content used for AI training. Blocking is a choice, not an SEO requirement. Remember that blocking AI search bots can also stop your pages appearing in AI answers.</p></details></div>
     </article>
     <aside class="sidebar">
       <h3>More Web &amp; Device</h3>
@@ -118,10 +139,10 @@ Sitemap: https://example.com/sitemap.xml</pre>
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mwocri0r"></script>
-<script src="/assets/js/core.js?v=mwocri0r"></script>
-<script src="/assets/js/tools/web.js?v=mwocri0r"></script>
+<script src="/assets/js/registry.js?v=mwof1jtm"></script>
+<script src="/assets/js/core.js?v=mwof1jtm"></script>
+<script src="/assets/js/tools/web.js?v=mwof1jtm"></script>
 <script>Tools.mount("robots-txt-generator", document.getElementById('tool'), {});</script>
-<script src="/assets/js/assistant.js?v=mwocri0r" defer></script>
+<script src="/assets/js/assistant.js?v=mwof1jtm" defer></script>
 </body>
 </html>

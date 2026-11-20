@@ -219,6 +219,96 @@ const FAQ = {
     ['How do I turn on the keyboard backlight on an Acer?', 'On many Aspire and Swift models it is Fn + F9 (Fn + F8 on some). Nitro and Predator laptops also let you set the lighting in NitroSense or PredatorSense.'],
     ['What are the € and $ keys next to the arrows on my Acer?', 'Older Aspire keyboards have dedicated euro and dollar keys above the left and right arrows. They type the currency symbols and may not light up as separate keys in a browser test.'],
   ],
+  'robots-txt-generator': [
+    ["Where do I upload robots.txt?", "In the root folder of your domain, so it opens at https://yourdomain.com/robots.txt. A file in a sub-folder such as /blog/robots.txt is ignored by crawlers."],
+    ["Will robots.txt remove a page from Google?", "No. A blocked page can still be indexed without its content if other sites link to it. To remove a page, let Google crawl it and add a noindex meta tag, or use the Removals tool in Search Console."],
+    ["Should I block AI crawlers?", "Only if you do not want your content used for AI training. Blocking is a choice, not an SEO requirement. Remember that blocking AI search bots can also stop your pages appearing in AI answers."],
+  ],
+  'average-calculator': [
+    ["How do I find the average of percentages?", "If every percentage comes from the same total, add them and divide by how many there are. If the totals differ, add the raw marks and divide by the combined total instead, otherwise the result is wrong."],
+    ["Is the average the same as the mean?", "In everyday use, yes. \"Average\" usually means the arithmetic mean: the sum divided by the count. Median and mode are other kinds of average, and this page shows all three."],
+    ["Can I paste numbers from Excel?", "Yes. Copy a column and paste it into the box, since new lines separate the numbers. Remove thousands separators such as 1,250 first, because commas also act as separators."],
+  ],
+  'currency-converter': [
+    ["How often are the exchange rates updated?", "The source updates rates once a day. Your browser keeps them for up to six hours, and the time of the last update is shown under the converter."],
+    ["Why is my bank rate different from this one?", "This page shows the mid-market rate. Banks, cards and exchange counters add a margin to it, and some also charge a fee, so the rate you get is usually a little worse."],
+    ["Which currencies can I convert?", "About 160 world currencies, including USD, EUR, GBP, CAD, AUD, AED, SAR, INR, PKR, BDT, MYR, CNY, JPY and TRY."],
+  ],
+  'gst-calculator': [
+    ["How do I calculate GST backwards from a total?", "Divide the total by 1 plus the rate. For a ₹5,900 total at 18%, 5,900 ÷ 1.18 = ₹5,000 net, so the GST is ₹900. Choose \"Remove tax\" and the calculator does this for you."],
+    ["What is the difference between CGST, SGST and IGST?", "CGST and SGST are the central and state halves of GST on a sale inside one state. IGST is charged instead when goods or services go from one state to another. The total rate is the same."],
+    ["Is GST the same as VAT?", "They work the same way: a tax added at each stage of sale and shown on the invoice. India, Pakistan, Australia, Canada and others call it GST, while the UK, the EU, the UAE and Saudi Arabia call it VAT."],
+  ],
+  'grade-calculator': [
+    ["What if my category weights do not add up to 100%?", "The calculator divides by the total weight you entered, so your current grade reflects only the work done so far. That is how most teachers report a grade mid-semester."],
+    ["How do I use points instead of percentages?", "Turn each category into a percentage first: points earned divided by points possible, times 100. Then enter that percentage with the category weight from your syllabus."],
+    ["What letter grade is 85%?", "On the common US scale used here, 85% is a B (83–86). Your school may use different cut-offs, so check the syllabus."],
+  ],
+  'keyword-density-checker': [
+    ["How is keyword density calculated for a phrase?", "Every word of the phrase counts. A 2-word phrase used 5 times in a 500-word text takes up 10 words, which is a density of 2%."],
+    ["What is a good keyword density for SEO?", "There is no ideal number, and Google does not use one. Write naturally for your reader. Most good pages end up around 0.5–2% for their main phrase without trying, and much higher usually means repetition."],
+    ["Are links and numbers counted?", "No. Web addresses, email addresses and plain numbers are removed before counting, so they do not push real words down the list."],
+  ],
+  'number-to-words': [
+    ["How do you write 1,50,000 in words?", "One lakh fifty thousand. In the international system the same number, 150,000, is one hundred fifty thousand."],
+    ["Is it spelled lakh or lac?", "Both spellings are used, but lakh is the standard one in banking and official documents. Lac is an older, informal spelling."],
+    ["Should I write \"and\" in a cheque amount?", "Use \"and\" only before the cents or paisa, as in \"Five Hundred Rupees and Fifty Paisa Only\". Inside the number itself, either style is accepted, but keep the words and figures matching exactly."],
+  ],
+  'time-calculator': [
+    ["How do I calculate hours worked with a lunch break?", "Choose \"Hours between two times\", enter your start and end time, and put the unpaid break in minutes. 9:00 to 17:30 with a 30-minute lunch gives 8 hours."],
+    ["How do I convert minutes to decimal hours?", "Divide the minutes by 60. 45 minutes is 0.75 hours, so 7h 45m is 7.75 hours. The calculator shows the decimal figure under every total."],
+    ["Does it work for shifts past midnight?", "Yes. If the end time is earlier than the start time, it assumes the shift ends the next day and adds 24 hours."],
+  ],
+  'case-converter': [
+    ["How do I change text from all caps to normal?", "Paste it and click Sentence case. It lowercases everything, then capitalises the first letter of each sentence and the word \"I\". Check names and acronyms afterwards."],
+    ["What is the difference between camelCase and PascalCase?", "Both join words without spaces. camelCase starts with a lowercase letter (firstName), PascalCase with a capital (FirstName)."],
+    ["Does Title Case keep acronyms like NASA?", "No. The text is lowercased first, so acronyms and brand names such as NASA or iPhone need a quick fix by hand after converting."],
+  ],
+  'stopwatch': [
+    ["Does the stopwatch keep running if I switch tabs?", "Yes. Time is measured from your device clock, so it stays accurate in the background, even if the display updates less often while the tab is hidden."],
+    ["Can I save my lap times?", "The laps stay on screen until you reset or close the page. To keep them, copy the table or take a screenshot before leaving."],
+    ["How long can the stopwatch run?", "There is no limit. After an hour, the display adds hours in front of the minutes, for example 1:02:05.37."],
+  ],
+  'sleep-calculator': [
+    ["What time should I go to bed to wake up at 6 AM?", "Around 10:15 PM for five full cycles (7.5 hours), or 8:45 PM for six cycles (9 hours). Both include about 15 minutes to fall asleep."],
+    ["Is a sleep cycle always 90 minutes?", "No. 90 minutes is an average. Cycles range from about 70 to 120 minutes and tend to get longer later in the night, so treat the times as a starting point."],
+    ["Why does the calculator add time to fall asleep?", "Most people take 10–20 minutes to fall asleep. Adding it means the cycles start when you actually drift off, not when you get into bed. You can change it to match yourself."],
+  ],
+  'find-and-replace': [
+    ["How do I replace line breaks with commas?", "Tick Regular expression, find \\n and replace with a comma and a space. Every line is joined into one comma-separated line."],
+    ["Is find and replace case-sensitive?", "Not by default: \"cat\" also matches \"Cat\" and \"CAT\". Tick Match case to replace only the exact capitalisation you typed."],
+    ["Can I undo a replacement?", "Your original text stays in the input box and the result appears separately, so you can change the options and run it again at any time."],
+  ],
+  'regex-tester': [
+    ["Why does my regex only find the first match?", "The g (global) flag is missing. Add g in the Flags box to find and replace every match."],
+    ["How do I match across several lines?", "Use the m flag so ^ and $ work on every line, and the s flag if you need . to match line breaks as well."],
+    ["Is this the same as regex in Python?", "Mostly. Everyday patterns work the same, but Python writes named groups as (?P<name>...) and has some differences in flags. This tester follows JavaScript exactly."],
+  ],
+  'color-picker': [
+    ["How do I find the hex code of a colour on my screen?", "Click the colour swatch. In Chrome and Edge on a computer, the colour window has an eyedropper you can use on anything on your screen. For a colour in a photo, upload it to the Image Color Picker."],
+    ["What is the difference between HSL and HSV?", "Both describe colour as hue and saturation, but HSL uses lightness, where 100% is always white, and HSV uses value (brightness), where 100% is the purest version of the colour. CSS uses HSL; Photoshop pickers use HSV."],
+    ["Is the CMYK value accurate for printing?", "It is a direct mathematical conversion, which is a good starting point. Real print colours depend on the printer, ink and paper, so ask your print shop for their profile if the colour must match exactly."],
+  ],
+  'photo-filters': [
+    ["Does editing reduce my photo quality?", "The photo is saved at its full original size. JPG and WebP files are saved at high quality (92%), and PNG files are lossless."],
+    ["Can I undo a filter?", "Yes. Click Original or Reset at any time to go back to the untouched photo, then start again."],
+    ["Which file types can I edit?", "Common image formats such as JPG, PNG and WebP. The edited file is saved in the same format as the one you uploaded, or as PNG if your browser cannot save that format."],
+  ],
+  'meme-generator': [
+    ["Can I put text only at the bottom?", "Yes. Leave the top text box empty and only the bottom caption is drawn, or the other way round."],
+    ["What size and format is the meme?", "It is saved as a JPG. Images wider than 1,600 pixels are scaled down to that width, which keeps quality high for social media."],
+    ["Is there a watermark?", "No. The downloaded meme has only your image and your text."],
+  ],
+  'rotate-pdf': [
+    ["Does rotating a PDF reduce quality?", "No. Only the page orientation setting changes. Text and images are not re-compressed, so quality and file size stay the same."],
+    ["Can I rotate just one page?", "Yes. Choose Custom pages and type that page number, for example 5. You can also give a list such as 2, 5-7."],
+    ["Which way does 90° right turn the page?", "Clockwise. 90° left turns it anticlockwise, and 180° turns it upside down."],
+  ],
+  'organize-pdf': [
+    ["Can I undo deleting a page?", "Yes. Deleted pages are only marked until you save. Click ↺ on the page to bring it back."],
+    ["Does rearranging pages reduce quality?", "No. Pages are copied into the new PDF as they are, so text, images and links stay the same."],
+    ["How do I move a page on a phone?", "Use the ← and → buttons under each thumbnail to move a page one place at a time. Dragging works best with a mouse."],
+  ],
 };
 
 module.exports = { TITLES, FAQ };

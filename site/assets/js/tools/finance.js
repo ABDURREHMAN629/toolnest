@@ -149,7 +149,7 @@
     UI.calc(root, {
       fields: [
         { id: 'amt', label: 'Amount', type: 'number', value: 10000 },
-        { id: 'rate', label: 'Tax rate', type: 'select', value: '18', options: [['5', '5% (GST India / VAT UAE)'], ['12', '12% (GST India)'], ['15', '15% (VAT Saudi Arabia)'], ['17', '17% (GST Pakistan)'], ['18', '18% (GST India / Pakistan)'], ['20', '20% (VAT UK)'], ['28', '28% (GST India)'], ['c', 'Custom rate']] },
+        { id: 'rate', label: 'Tax rate', type: 'select', value: '18', options: [['5', '5% (GST India / VAT UAE)'], ['12', '12% (GST India)'], ['15', '15% (VAT Saudi Arabia)'], ['17', '17% (GST Pakistan)'], ['18', '18% (GST India / Pakistan)'], ['20', '20% (VAT UK)'], ['28', '28% (GST India)'], ['40', '40% (GST India)'], ['c', 'Custom rate']] },
         { id: 'custom', label: 'Custom rate', type: 'number', value: 10, unit: '%', show: v => v.rate === 'c' },
         { id: 'mode', label: 'Calculation', type: 'seg', value: 'add', options: [['add', 'Add tax (exclusive)'], ['rm', 'Remove tax (inclusive)']] },
       ],

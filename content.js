@@ -62,7 +62,22 @@ module.exports = {
       <h2>Writing an amount on a cheque</h2>
       <p>Banks expect the amount in words to match the figure exactly and to end with “only” so nothing can be added afterwards. For 1,250,075.50 rupees the converter writes: <em>Twelve Lakh Fifty Thousand Seventy-Five Rupees and Fifty Paisa Only</em>. Write it on one line starting at the far left, and draw a line through any space left over.</p>
       <h2>Decimals</h2>
-      <p>With a currency selected, decimals become the minor unit (paisa, cents, pence, fils, halalas). With no currency, decimals are read digit by digit — 3.14 becomes “three point one four”.</p>`,
+      <p>With a currency selected, decimals become the minor unit (paisa, cents, pence, fils, halalas). With no currency, decimals are read digit by digit — 3.14 becomes “three point one four”.</p>
+      <h2>Common amounts in words</h2>
+      <div class="table-wrap" style="max-height:none;margin:14px 0 20px"><table class="table"><thead><tr><th>Number</th><th>Lakh / crore</th><th>International</th></tr></thead><tbody>
+        <tr><td>1,00,000 (100,000)</td><td>one lakh</td><td>one hundred thousand</td></tr>
+        <tr><td>1,50,000 (150,000)</td><td>one lakh fifty thousand</td><td>one hundred fifty thousand</td></tr>
+        <tr><td>2,50,000 (250,000)</td><td>two lakh fifty thousand</td><td>two hundred fifty thousand</td></tr>
+        <tr><td>10,00,000 (1,000,000)</td><td>ten lakh</td><td>one million</td></tr>
+        <tr><td>25,50,000 (2,550,000)</td><td>twenty-five lakh fifty thousand</td><td>two million five hundred fifty thousand</td></tr>
+        <tr><td>1,00,00,000 (10,000,000)</td><td>one crore</td><td>ten million</td></tr>
+        <tr><td>2,75,00,000 (27,500,000)</td><td>two crore seventy-five lakh</td><td>twenty-seven million five hundred thousand</td></tr>
+      </tbody></table></div>
+      <p>The converter writes numbers the American way, without "and" inside the number: 105 is "one hundred five". In British English you may add it ("one hundred and five"); both are correct. Numbers from twenty-one to ninety-nine always take a hyphen.</p>
+      <h2>Cheques in other currencies</h2>
+      <p>Choose a currency and the decimals turn into the smaller unit: cents for dollars and euros, pence for pounds, fils for dirhams, halalas for riyals, paisa for Pakistani rupees, paise for Indian rupees and poisha for taka. In Title Case, $1,250.50 becomes "One Thousand Two Hundred Fifty Dollars And Fifty Cents Only". On US cheques many people write the cents as a fraction instead, "One thousand two hundred fifty and 50/100", which banks accept as well.</p>
+      <p>Pick the letter case your document needs. UPPERCASE is common on cheques and legal papers, Title Case on invoices, and Sentence case in letters. Numbers up to 21 digits and negative numbers ("minus …") are supported.</p>
+    `,
   'week-number': `
       <h2>How week numbers work</h2>
       <p>There are two common systems, and they can give different answers for the same date:</p>
@@ -1233,7 +1248,18 @@ module.exports = {
         <li><strong>Odd or even pages</strong> — useful for double-sided scans where every other page came out upside down.</li>
         <li><strong>Custom pages</strong> — enter a list such as <code>2, 5-7</code>.</li>
       </ul>
-      <p>PDF pages always rotate in 90° steps (90, 180 or 270), in every reader. No Adobe Acrobat is needed: it works in Chrome, Edge, Firefox and Safari on computers and phones, with no watermark, no file limit and no account.</p>`,
+      <p>PDF pages always rotate in 90° steps (90, 180 or 270), in every reader. No Adobe Acrobat is needed: it works in Chrome, Edge, Firefox and Safari on computers and phones, with no watermark, no file limit and no account.</p>
+      <h2>Typical fixes</h2>
+      <ul>
+        <li><strong>Every second page upside down</strong> after a double-sided scan: choose Even pages (or Odd) and 180°.</li>
+        <li><strong>A landscape table in a portrait report:</strong> choose Custom pages, type the page numbers such as 3-4, and rotate 90° right or left.</li>
+        <li><strong>A whole scan lying on its side:</strong> All pages and 90° in the direction it needs.</li>
+        <li><strong>One wrong page:</strong> Custom pages with just that number, such as 7.</li>
+      </ul>
+      <p>90° right turns the page clockwise and 90° left turns it anticlockwise. Rotation is added to any rotation the page already has, so rotating twice by 90° gives 180°.</p>
+      <h2>No quality loss</h2>
+      <p>A PDF stores each page's orientation as a setting. This tool changes only that setting, so text, images, links and form fields stay exactly as they were. The page is not re-rendered, which means no blur and almost no change in file size. Selectable text stays selectable, and the result opens the right way up in Adobe Reader, Chrome, Edge, Preview on a Mac and phone PDF apps.</p>
+    `,
 
   'organize-pdf': `
       <h2>Rearrange pages visually</h2>
@@ -1246,7 +1272,20 @@ module.exports = {
       </ul>
       <h2>Pages from several files</h2>
       <p>If the pages are spread across documents, combine them first with <a href="/merge-pdf">Merge PDF</a>, then rearrange them here. For a printed booklet, don't arrange the pages by hand — the <a href="/pdf-booklet-maker">PDF Booklet Maker</a> works out the printing order for you.</p>
-      <p>Once your pages are in order, you can convert the result with <a href="/pdf-to-word">PDF to Word</a> or <a href="/pdf-to-jpg">PDF to JPG</a>.</p>`,
+      <p>Once your pages are in order, you can convert the result with <a href="/pdf-to-word">PDF to Word</a> or <a href="/pdf-to-jpg">PDF to JPG</a>.</p>
+      <h2>An example</h2>
+      <p>Say you scanned a 12-page contract and three things went wrong: page 7 belongs after page 2, page 9 is a blank sheet, and page 4 came out sideways. Upload the file and:</p>
+      <ul>
+        <li>drag page 7 to sit after page 2, or use the ← and → arrows to step it along;</li>
+        <li>click ✕ on page 9 (it is marked, not lost, and ↺ brings it back);</li>
+        <li>click ↻ on page 4 until it is the right way up;</li>
+        <li>press Save PDF to download the fixed 11-page file.</li>
+      </ul>
+      <p>Each thumbnail keeps its original page number as a label, so you can always see where a page came from while you move things around.</p>
+      <h2>What stays the same</h2>
+      <p>Pages are copied into the new file as they are, not turned into images, so text stays selectable and searchable and the quality doesn't change. Rotation is saved as a page setting, the same way as in Rotate PDF.</p>
+      <p>Thumbnails are drawn for the first 300 pages. Very long documents still work, but for those it is often quicker to split out the section you need with Split PDF, rearrange it here and merge the parts back together.</p>
+    `,
 
   'delete-pdf-pages': `
       <h2>Remove pages from a PDF</h2>
@@ -1456,7 +1495,25 @@ module.exports = {
         <li><strong>Dreamy background</strong> — a small amount of blur.</li>
       </ul>
       <h2>Quick edits without an app</h2>
-      <p>There's nothing to download, and it works on phones and computers without a Photoshop subscription. It doesn't track faces like Snapchat-style camera filters; for clean, classic adjustments it's quicker. No watermark is added.</p>`,
+      <p>There's nothing to download, and it works on phones and computers without a Photoshop subscription. It doesn't track faces like Snapchat-style camera filters; for clean, classic adjustments it's quicker. No watermark is added.</p>
+      <h2>The presets and sliders</h2>
+      <p>Eight one-click looks set the sliders for you: <strong>Original</strong>, <strong>B&amp;W</strong> (full greyscale with a little extra contrast), <strong>Vintage</strong> (sepia with softer colour), <strong>Warm</strong>, <strong>Cool</strong>, <strong>Vivid</strong> (strong colour and contrast), <strong>Fade</strong> (lighter and muted) and <strong>Dramatic</strong> (high contrast, slightly darker). After picking one, move any slider to fine-tune it.</p>
+      <div class="table-wrap" style="max-height:none;margin:14px 0 20px"><table class="table"><thead><tr><th>Slider</th><th>Range</th><th>Normal</th></tr></thead><tbody>
+        <tr><td>Brightness, Contrast</td><td>0–200%</td><td>100%</td></tr>
+        <tr><td>Saturation</td><td>0–300%</td><td>100%</td></tr>
+        <tr><td>Blur</td><td>0–20 px</td><td>0</td></tr>
+        <tr><td>Grayscale, Sepia, Invert</td><td>0–100%</td><td>0</td></tr>
+        <tr><td>Hue rotate</td><td>0–360°</td><td>0°</td></tr>
+      </tbody></table></div>
+      <h2>Fixing common problems</h2>
+      <ul>
+        <li><strong>Too dark:</strong> brightness 115–130% and contrast around 105% so it doesn't look washed out.</li>
+        <li><strong>Flat or hazy:</strong> contrast 115–125% and saturation 110–120%.</li>
+        <li><strong>Product photos for a shop:</strong> brightness and contrast both around 110% give a clean, bright look without changing the product's colour much.</li>
+        <li><strong>Profile picture:</strong> B&amp;W with contrast raised to 120–130%.</li>
+      </ul>
+      <p>The download is saved at the photo's full original size, in the same format you uploaded (JPG, PNG or WebP; a format your browser cannot save is saved as PNG), with high quality for JPG and WebP. Blur is scaled to the image size, so the saved photo looks the same as the preview.</p>
+    `,
 
   'meme-generator': `
       <h2>Make a meme in seconds</h2>
@@ -1469,7 +1526,19 @@ module.exports = {
         <li>Use a thick outline so the text is readable on any background.</li>
         <li>Square or 4:5 images look best on Instagram; crop first with <a href="/crop-image">Crop Image</a>.</li>
       </ul>
-      <p>This makes image memes. For animated memes, turn a video clip into a GIF with <a href="/video-to-gif">Video to GIF</a> first. It works in the browser on iPhone, Android and computers.</p>`,
+      <p>This makes image memes. For animated memes, turn a video clip into a GIF with <a href="/video-to-gif">Video to GIF</a> first. It works in the browser on iPhone, Android and computers.</p>
+      <h2>Getting the text right</h2>
+      <ul>
+        <li><strong>Long captions wrap.</strong> Text that is too wide for the image moves onto extra lines automatically, so you never lose words off the edge.</li>
+        <li><strong>Font size.</strong> The size is a share of the image width. 8–10% suits short, punchy lines; drop to 5–7% for a longer caption so it doesn't cover the picture.</li>
+        <li><strong>One caption only.</strong> Leave the top or bottom box empty and nothing is drawn there, which suits formats where the picture is the punchline.</li>
+        <li><strong>Colours.</strong> White text with a black outline reads on almost any photo. On a very light image, try black text with a white outline.</li>
+      </ul>
+      <h2>Size and format</h2>
+      <p>Memes are saved as JPG files. Large photos are scaled down to 1,600 pixels wide, which is more than enough for WhatsApp, Instagram, X and Reddit and keeps the file small enough to share quickly. The text uses the classic Impact-style meme font.</p>
+      <h2>A note on templates</h2>
+      <p>Famous meme images usually belong to someone, such as a film studio or a photographer. Sharing memes for fun or comment is widely accepted, but avoid using someone else's image in adverts or for a business without permission. Your own photos are always safe to use.</p>
+    `,
 
   'favicon-generator': `
       <h2>Make a favicon from text or an image</h2>
@@ -1800,7 +1869,22 @@ module.exports = {
       <h2>Points instead of percentages</h2>
       <p>If your class uses points, convert each item to a percentage (points earned ÷ points possible × 100) and use the weight of its category.</p>
       <h2>Who it's for</h2>
-      <p>Students can track any course through the semester and plan for tests, quizzes and assignments. Teachers can check a student's standing quickly. For your overall average across all courses, use the <a href="/gpa-calculator">GPA Calculator</a>.</p>`,
+      <p>Students can track any course through the semester and plan for tests, quizzes and assignments. Teachers can check a student's standing quickly. For your overall average across all courses, use the <a href="/gpa-calculator">GPA Calculator</a>.</p>
+      <h2>A worked example</h2>
+      <p>The rows already filled in are a realistic mid-semester picture: assignments 88% (weight 20%), quizzes 76% (15%) and a midterm of 81% (25%). Multiply each score by its weight and add them up: 1,760 + 1,140 + 2,025 = 4,925. Divide by the 60% of the course you have completed and your current grade is about <strong>82.1%</strong>.</p>
+      <p>With a final exam worth 40% and a target of 80% for the course, you need (80 × 100 − 4,925) ÷ 40 ≈ <strong>76.9%</strong> on the final. To simply pass with 60% overall, you would need about 26.9%.</p>
+      <p>If the weights you enter do not add up to 100%, that is fine. The current grade is based only on the work you have entered, and the final-exam calculation treats your entered weights plus the final as the whole course.</p>
+      <h2>Letter grades used here</h2>
+      <div class="table-wrap" style="max-height:none;margin:14px 0 20px"><table class="table"><thead><tr><th>Letter</th><th>Percentage</th><th>Letter</th><th>Percentage</th></tr></thead><tbody>
+        <tr><td>A</td><td>93 and above</td><td>C+</td><td>77–79</td></tr>
+        <tr><td>A−</td><td>90–92</td><td>C</td><td>73–76</td></tr>
+        <tr><td>B+</td><td>87–89</td><td>C−</td><td>70–72</td></tr>
+        <tr><td>B</td><td>83–86</td><td>D+</td><td>67–69</td></tr>
+        <tr><td>B−</td><td>80–82</td><td>D</td><td>60–66</td></tr>
+        <tr><td colspan="2"></td><td>F</td><td>below 60</td></tr>
+      </tbody></table></div>
+      <p>This is the most common US scale. Many schools use their own cut-offs, for example 90+ for any A, so check your syllabus.</p>
+    `,
 
   'ats-resume-checker': `
       <h2>Check your resume against a job description</h2>
@@ -1972,7 +2056,20 @@ module.exports = {
         <li><strong>Europe</strong> — Germany 19%, France 20%, Spain 21%, Italy 22%, Ireland 23%.</li>
         <li><strong>South Africa</strong> 15%; <strong>Philippines</strong> 12%.</li>
       </ul>
-      <p>The US has state sales tax instead of VAT; enter your state's rate as a custom rate. Rates change, so check your tax authority's current figure.</p>`,
+      <p>The US has state sales tax instead of VAT; enter your state's rate as a custom rate. Rates change, so check your tax authority's current figure.</p>
+      <h2>Worked examples</h2>
+      <div class="table-wrap" style="max-height:none;margin:14px 0 20px"><table class="table"><thead><tr><th>Situation</th><th class="num">Net</th><th class="num">Tax</th><th class="num">Total</th></tr></thead><tbody>
+        <tr><td>India, ₹10,000 + 18% GST</td><td class="num">10,000</td><td class="num">1,800</td><td class="num">11,800</td></tr>
+        <tr><td>India, ₹5,900 including 18%</td><td class="num">5,000</td><td class="num">900</td><td class="num">5,900</td></tr>
+        <tr><td>UK, £120 including 20% VAT</td><td class="num">100</td><td class="num">20</td><td class="num">120</td></tr>
+        <tr><td>UAE, AED 2,000 + 5% VAT</td><td class="num">2,000</td><td class="num">100</td><td class="num">2,100</td></tr>
+        <tr><td>Saudi Arabia, SAR 1,150 including 15%</td><td class="num">1,000</td><td class="num">150</td><td class="num">1,150</td></tr>
+      </tbody></table></div>
+      <p><strong>A shortcut for UK VAT.</strong> At 20%, the VAT inside a VAT-inclusive price is always one sixth of it: £120 ÷ 6 = £20.</p>
+      <h2>CGST, SGST and IGST in India</h2>
+      <p>On a sale inside one state, GST is split equally between the centre and the state. 18% becomes 9% CGST + 9% SGST, so the ₹1,800 above is ₹900 + ₹900, and the calculator shows this split for you. On a sale between two states, the whole amount is charged as IGST (₹1,800 at 18%).</p>
+      <p>Since 22 September 2025, India has used two main GST rates, 5% and 18%, with 40% for luxury and "sin" goods. You will still see 12% and 28% on older invoices and for a few items, so those rates stay in the list. Pick the rate on your invoice, or enter any rate as a custom rate.</p>
+    `,
 
   'profit-margin-calculator': `
       <h2>Margin, markup and profit</h2>
@@ -2021,7 +2118,18 @@ module.exports = {
         <li>Historical rates aren't available here. For a rate on a past date, ask your bank or use a historical rates service such as OANDA.</li>
         <li>Converting between time zones rather than currencies? Use the <a href="/time-zone-converter">Time Zone Converter</a>.</li>
       </ul>
-      <p>Bookmark it on your phone and it works like an app, with nothing to install.</p>`,
+      <p>Bookmark it on your phone and it works like an app, with nothing to install.</p>
+      <h2>What you will actually pay</h2>
+      <p>The converter shows the mid-market rate, the midpoint between buying and selling prices that banks use with each other. What you get in real life is that rate minus a margin, and sometimes a fee on top.</p>
+      <ul>
+        <li><strong>Card payments abroad.</strong> Say a hotel charges €200 and the mid-market rate is 1 EUR = 1.08 USD (an example rate). That is $216. A card with a 3% foreign transaction fee adds $6.48, so you pay $222.48.</li>
+        <li><strong>"Pay in your own currency?"</strong> Card machines and cash machines abroad often offer this. It is called dynamic currency conversion and the rate is usually poor. Choosing the local currency is almost always cheaper.</li>
+        <li><strong>Sending money home.</strong> To compare providers, work out their margin: (mid-market rate − offered rate) ÷ mid-market rate. If the mid-market rate is 1 USD = 280 PKR and a service offers 274, the margin is 6 ÷ 280 ≈ 2.1%, plus any transfer fee.</li>
+      </ul>
+      <h2>About the rates</h2>
+      <p>Rates for about 160 currencies come from ExchangeRate-API, which updates them once a day. Your browser keeps the latest set for up to six hours, so switching between currencies is instant. The time of the last update is shown under the converter. Below the result, a table converts your amount into popular currencies such as USD, EUR, GBP, AED, SAR, CAD, AUD, INR and PKR at once. The converter remembers your last currency pair, so the next visit opens where you left off.</p>
+      <p>Because rates move during the day, use the figure as a guide for budgets and quotes. For an exact amount on an invoice or bank transfer, use the rate your bank or payment provider confirms at the time.</p>
+    `,
 
   'fuel-cost-calculator': `
       <h2>What will the trip cost?</h2>
@@ -2148,7 +2256,25 @@ module.exports = {
       <ul>
         <li><strong>Naps</strong>: 20 minutes for a quick boost, or a full 90-minute cycle. Avoid 45–60 minutes, which tends to end in deep sleep.</li>
         <li><strong>Jet lag</strong>: shift your bedtime by an hour a day before you fly, and get morning daylight at your destination.</li>
-      </ul>`,
+      </ul>
+      <h2>An example: waking up at 7:00</h2>
+      <p>With the default 15 minutes to fall asleep, the calculator counts back in 90-minute cycles from 7:00 AM:</p>
+      <ul>
+        <li>6 cycles (9 hours of sleep): go to bed at <strong>9:45 PM</strong></li>
+        <li>5 cycles (7.5 hours): go to bed at <strong>11:15 PM</strong></li>
+        <li>4 cycles (6 hours): go to bed at 12:45 AM</li>
+        <li>3 cycles (4.5 hours): go to bed at 2:15 AM, only if you have no other choice</li>
+      </ul>
+      <h2>Bedtimes for common wake-up times</h2>
+      <div class="table-wrap" style="max-height:none;margin:14px 0 20px"><table class="table"><thead><tr><th>Wake up at</th><th>5 cycles (7.5 h)</th><th>6 cycles (9 h)</th></tr></thead><tbody>
+        <tr><td>5:30 AM</td><td>9:45 PM</td><td>8:15 PM</td></tr>
+        <tr><td>6:00 AM</td><td>10:15 PM</td><td>8:45 PM</td></tr>
+        <tr><td>6:30 AM</td><td>10:45 PM</td><td>9:15 PM</td></tr>
+        <tr><td>7:30 AM</td><td>11:45 PM</td><td>10:15 PM</td></tr>
+        <tr><td>8:00 AM</td><td>12:15 AM</td><td>10:45 PM</td></tr>
+      </tbody></table></div>
+      <p>These times include 15 minutes to fall asleep. Ninety minutes is an average: real cycles vary from about 70 to 120 minutes and change through the night. If you keep waking up groggy at a suggested time, move your bedtime 15 minutes earlier or later for a week and see what works for you.</p>
+    `,
 
   'scientific-calculator': `
       <h2>A full scientific calculator</h2>
@@ -2195,7 +2321,16 @@ module.exports = {
         <li>Batting average in baseball: hits ÷ at-bats.</li>
         <li>Average speed over a route: total distance ÷ total time.</li>
       </ul>
-      <p>In Excel or Google Sheets, the formula is <code>=AVERAGE(A1:A10)</code>.</p>`,
+      <p>In Excel or Google Sheets, the formula is <code>=AVERAGE(A1:A10)</code>.</p>
+      <h2>Worked examples</h2>
+      <p>The numbers already in the box (12, 15, 18, 22, 22, 30, 41) add up to 160. Divide by 7 and the mean is about 22.86. The median is 22, the middle value of the sorted list, and the mode is also 22 because it appears twice. The range is 41 − 12 = 29.</p>
+      <p><strong>When the mean misleads.</strong> Five salaries of 30k, 32k, 35k, 38k and 250k have a mean of 77k, yet four of the five people earn far less. The median, 35k, describes the group much better. Use the median whenever one or two values are far from the rest, as with house prices, incomes or delivery times.</p>
+      <p><strong>Averaging percentages.</strong> Scoring 45/50 (90%) on one test and 60/100 (60%) on another does not give you 75% overall. Add the marks instead: 105 out of 150 is 70%. Only average the percentages directly when every test is out of the same total or counts equally.</p>
+      <p><strong>Weighted average.</strong> If one value counts more than another, multiply each value by its weight first. Marks of 80 with weight 2 and 90 with weight 3 give (160 + 270) ÷ 5 = 86, not 85.</p>
+      <h2>Sample or population standard deviation?</h2>
+      <p>The calculator shows both. Use the <strong>population</strong> figure when your list contains every value you care about, such as all 30 students in one class. Use the <strong>sample</strong> figure when your numbers are a sample of a bigger group, such as 20 people from a survey of a whole city. The sample version divides by n − 1 instead of n, which makes it slightly larger.</p>
+      <p><strong>Tip:</strong> you can paste a column straight from Excel or Google Sheets, since new lines work as separators. Remove thousands separators first, because a comma also separates numbers here, so 1,250 would be read as 1 and 250.</p>
+    `,
 
   'unit-converter': `
       <h2>Ten categories of units</h2>
@@ -2318,7 +2453,24 @@ module.exports = {
       <h2>Minutes and seconds</h2>
       <p>For a total in minutes, enter lines such as <code>45m</code>. For minutes and seconds, type h:mm:ss, such as <code>0:04:30</code>; totals are rounded to the minute.</p>
       <h2>Dividing time, dates and time zones</h2>
-      <p>To divide time, use decimal hours: 7.5 h ÷ 3 = 2.5 h = 2h 30m (the average in the list mode does this for you). For the gap between two dates, use <a href="/date-difference-calculator">Days Between Dates</a>; for time zones, the <a href="/time-zone-converter">Time Zone Converter</a>.</p>`,
+      <p>To divide time, use decimal hours: 7.5 h ÷ 3 = 2.5 h = 2h 30m (the average in the list mode does this for you). For the gap between two dates, use <a href="/date-difference-calculator">Days Between Dates</a>; for time zones, the <a href="/time-zone-converter">Time Zone Converter</a>.</p>
+      <h2>More examples</h2>
+      <ul>
+        <li><strong>Night shift.</strong> 22:00 to 06:30 with a 30-minute break is 8h 00m. The calculator notices the shift crosses midnight and adds the day for you.</li>
+        <li><strong>Pay for a short day.</strong> 7h 45m at $18 an hour: 7.75 × 18 = $139.50. Enter the hourly rate and the pay appears under the total.</li>
+        <li><strong>Arrival time.</strong> A flight leaves at 21:40 and takes 7h 35m. Add the time and you land at 05:15 the next day (in the departure city's time zone).</li>
+        <li><strong>Going back in time.</strong> To be somewhere at 09:00 with a 1h 20m journey, subtract 1 h 20 m and you need to leave at 07:40.</li>
+      </ul>
+      <h2>Minutes to decimal hours</h2>
+      <p>Timesheets and payroll often want decimal hours. Divide the minutes by 60:</p>
+      <div class="table-wrap" style="max-height:none;margin:14px 0 20px"><table class="table"><thead><tr><th>Minutes</th><th class="num">Decimal</th><th>Minutes</th><th class="num">Decimal</th></tr></thead><tbody>
+        <tr><td>6</td><td class="num">0.10</td><td>30</td><td class="num">0.50</td></tr>
+        <tr><td>10</td><td class="num">0.17</td><td>40</td><td class="num">0.67</td></tr>
+        <tr><td>15</td><td class="num">0.25</td><td>45</td><td class="num">0.75</td></tr>
+        <tr><td>20</td><td class="num">0.33</td><td>50</td><td class="num">0.83</td></tr>
+      </tbody></table></div>
+      <p>A common mistake is typing 7h 45m as 7.45. That is 7 hours 27 minutes, not 7 hours 45. The correct decimal is 7.75.</p>
+    `,
 
   'stopwatch': `
       <h2>A stopwatch with lap times</h2>
@@ -2333,7 +2485,18 @@ module.exports = {
         <li><strong>Study sessions</strong> — or try the <a href="/pomodoro-timer">Pomodoro Timer</a>.</li>
         <li><strong>Classroom activities</strong> — large, simple numbers that everyone can read.</li>
         <li><strong>A game</strong> — try stopping it at exactly 10.00 seconds.</li>
-      </ul>`,
+      </ul>
+      <h2>Lap time and total time</h2>
+      <p>Each row in the lap table shows two figures. <strong>Lap time</strong> is how long that lap took on its own. <strong>Total</strong> is the time on the clock when you pressed Lap. Three laps of a 400 m track might read 1:52.30, 1:48.10 and 1:55.42, with totals of 1:52.30, 3:40.40 and 5:35.82. The newest lap is shown at the top.</p>
+      <p>The display counts minutes, seconds and hundredths (2:05.37). Past an hour it adds the hours in front (1:02:05.37), and there is no upper limit.</p>
+      <h2>Tips for accurate timing</h2>
+      <ul>
+        <li><strong>Switching tabs is fine.</strong> The time is worked out from the clock, not by counting ticks, so it stays correct even if your browser slows the page down in the background.</li>
+        <li><strong>Don't refresh the page.</strong> Reloading clears the time and the laps. Note down or screenshot the lap table before closing the tab.</li>
+        <li><strong>Hand timing has limits.</strong> Human reaction time is around 0.15–0.25 seconds, so differences of a few hundredths between two hand-timed runs are mostly noise.</li>
+        <li><strong>Use the keyboard.</strong> Space, L and R react faster than reaching for the mouse, which helps with short laps.</li>
+      </ul>
+    `,
 
   'countdown-timer': `
       <h2>A timer with an alarm</h2>
@@ -2448,7 +2611,24 @@ module.exports = {
         <li><strong>Excel</strong> — <code>=LOWER(A1)</code>, <code>=UPPER(A1)</code> and <code>=PROPER(A1)</code>.</li>
         <li><strong>Google Docs</strong> — Format → Text → Capitalisation.</li>
         <li><strong>Python</strong> — <code>s.lower()</code>, <code>s.upper()</code> and <code>s.title()</code>.</li>
-      </ul>`,
+      </ul>
+      <h2>Which case to use where</h2>
+      <div class="table-wrap" style="max-height:none;margin:14px 0 20px"><table class="table"><thead><tr><th>Case</th><th>Example</th><th>Typical use</th></tr></thead><tbody>
+        <tr><td>Title Case</td><td>How to Write a Great Headline</td><td>Headlines, book and song titles</td></tr>
+        <tr><td>Sentence case</td><td>How to write a great headline</td><td>Buttons, menus, email subjects, many news sites</td></tr>
+        <tr><td>camelCase</td><td>userFirstName</td><td>JavaScript and Java variables</td></tr>
+        <tr><td>PascalCase</td><td>UserFirstName</td><td>Class names, C# methods, React components</td></tr>
+        <tr><td>snake_case</td><td>user_first_name</td><td>Python, database columns</td></tr>
+        <tr><td>kebab-case</td><td>user-first-name</td><td>URLs, CSS classes, file names</td></tr>
+        <tr><td>CONSTANT_CASE</td><td>USER_FIRST_NAME</td><td>Constants and environment variables</td></tr>
+      </tbody></table></div>
+      <h2>Good to know</h2>
+      <ul>
+        <li><strong>Acronyms.</strong> Title Case and Sentence case lowercase everything first, so "NASA" becomes "Nasa" and "iPhone" becomes "Iphone". Fix brand names and acronyms by hand afterwards.</li>
+        <li><strong>Programming cases work line by line.</strong> Paste a list of labels, one per line, and click snake_case to turn every line into its own variable name. Words are split at spaces, hyphens, underscores, dots and existing capital letters, so userName becomes user_name.</li>
+        <li><strong>Small words.</strong> In Title Case, a, an, and, as, at, but, by, for, in, nor, of, on, or, per, the, to, vs and via stay lowercase unless they start the text.</li>
+      </ul>
+    `,
 
   'lorem-ipsum-generator': `
       <h2>Placeholder text in any amount</h2>
@@ -2590,7 +2770,20 @@ module.exports = {
       <h2>In a PDF</h2>
       <p>PDFs can't be edited like a text file. Extract the text with <a href="/pdf-to-text">PDF to Text</a> or convert it with <a href="/pdf-to-word">PDF to Word</a>, make your replacements here or in Word, then save it as a PDF again.</p>
       <h2>Text on a web page or form</h2>
-      <p>No browser extension is needed: copy the text here, replace, and paste it back.</p>`,
+      <p>No browser extension is needed: copy the text here, replace, and paste it back.</p>
+      <h2>Handy recipes</h2>
+      <p>Tick <strong>Regular expression</strong> for these. In the patterns, <code>.</code> never matches a line break, so <code>(.+)</code> picks up one whole line at a time.</p>
+      <div class="table-wrap" style="max-height:none;margin:14px 0 20px"><table class="table"><thead><tr><th>To do this</th><th>Find</th><th>Replace with</th></tr></thead><tbody>
+        <tr><td>Add a bullet to every line</td><td><code>(.+)</code></td><td><code>• $1</code></td></tr>
+        <tr><td>Wrap lines in quotes with a comma (for SQL or code lists)</td><td><code>(.+)</code></td><td><code>'$1',</code></td></tr>
+        <tr><td>Join all lines into one, separated by commas</td><td><code>\\n</code></td><td><code>, </code></td></tr>
+        <tr><td>Remove empty lines</td><td><code>\\n\\s*(?=\\n)</code></td><td>(leave empty)</td></tr>
+        <tr><td>Swap "Smith, John" to "John Smith"</td><td><code>(\\w+), (\\w+)</code></td><td><code>$2 $1</code></td></tr>
+        <tr><td>Remove HTML tags</td><td><code>&lt;[^&gt;]+&gt;</code></td><td>(leave empty)</td></tr>
+        <tr><td>Delete text in brackets</td><td><code>\\s*\\([^)]*\\)</code></td><td>(leave empty)</td></tr>
+      </tbody></table></div>
+      <p>Without the regular expression option, everything you type is taken literally, including <code>$</code>, dots and brackets. Matching ignores upper and lower case unless you tick Match case. Your original text stays in the input box, so if a replacement goes wrong, adjust it and try again.</p>
+    `,
 
   'keyword-density-checker': `
       <h2>Your most-used words and phrases</h2>
@@ -2600,7 +2793,18 @@ module.exports = {
       <h2>Is there an ideal density?</h2>
       <p>No. Google has said it doesn't use a target density, and repeating a keyword unnaturally is “keyword stuffing”, which breaks its spam policies. Most well-written pages end up around 0.5–2% for their main phrase without trying. Treat this tool as a check for overuse, not a goal: write for the reader, use related words naturally, and answer their questions.</p>
       <h2>How to use it</h2>
-      <p>Paste your draft before publishing, look at the top 1-, 2- and 3-word lists, and make sure your main topic appears — but that nothing stands out as suspiciously high. If one phrase dominates, rewrite those sentences in plainer language. Your text stays in your browser.</p>`,
+      <p>Paste your draft before publishing, look at the top 1-, 2- and 3-word lists, and make sure your main topic appears — but that nothing stands out as suspiciously high. If one phrase dominates, rewrite those sentences in plainer language. Your text stays in your browser.</p>
+      <h2>Reading the results</h2>
+      <p>Each table lists up to 15 entries with a count and a density. For a single word, density is its count divided by the total words. For a phrase, every word in it counts, so a 2-word phrase used 5 times in a 500-word article takes up 10 words, a density of 2%. Phrases only appear in the 2- and 3-word tables if they are used at least twice.</p>
+      <p>To keep the lists useful, the checker leaves out web addresses, email addresses and plain numbers, and with "Ignore common words" ticked it skips words like "the", "and" and "with". A phrase is still counted if a common word sits in the middle, such as "cost of living", but not if it starts or ends with one.</p>
+      <h2>Three practical checks</h2>
+      <ul>
+        <li><strong>Is the topic clear?</strong> Your main subject should be among the top single words and phrases. If the top entries are generic words such as "best" or "free", the page may not say clearly what it is about.</li>
+        <li><strong>Is anything overused?</strong> If one phrase sits far above everything else, read those sentences aloud. Repeating the exact same phrase usually sounds odd to readers, and search engines treat heavy repetition as keyword stuffing.</li>
+        <li><strong>What are you missing?</strong> Paste the text of a page that ranks well for your topic and compare its word lists with yours. Related terms they cover and you don't often point to questions your page leaves unanswered.</li>
+      </ul>
+      <p>The same check works for product descriptions, essays with a word limit and social posts. For word, sentence and reading-time totals, use the Word Counter.</p>
+    `,
 
   'morse-code-translator': `
       <h2>Text to Morse and back</h2>
@@ -2790,7 +2994,26 @@ module.exports = {
       <ul>
         <li>Whole numbers: <code>^\\d+$</code>; decimals: <code>-?\\d+(\\.\\d+)?</code></li>
         <li>Anything that isn't a letter, digit or space: <code>[^a-zA-Z0-9\\s]</code></li>
-      </ul>`,
+      </ul>
+      <h2>Quick reference</h2>
+      <div class="table-wrap" style="max-height:none;margin:14px 0 20px"><table class="table"><thead><tr><th>Pattern</th><th>Matches</th></tr></thead><tbody>
+        <tr><td><code>\\d</code> <code>\\w</code> <code>\\s</code></td><td>A digit, a word character (letter, digit, underscore), whitespace</td></tr>
+        <tr><td><code>.</code></td><td>Any character except a line break (with the <code>s</code> flag, line breaks too)</td></tr>
+        <tr><td><code>[abc]</code> <code>[^abc]</code></td><td>One of a, b or c; anything except a, b or c</td></tr>
+        <tr><td><code>*</code> <code>+</code> <code>?</code> <code>{2,5}</code></td><td>0 or more, 1 or more, optional, between 2 and 5 times</td></tr>
+        <tr><td><code>^</code> <code>$</code> <code>\\b</code></td><td>Start of text, end of text, a word boundary</td></tr>
+        <tr><td><code>(…)</code> <code>(?:…)</code> <code>(?&lt;name&gt;…)</code></td><td>Capture group, group without capturing, named group</td></tr>
+        <tr><td><code>(?=…)</code> <code>(?!…)</code> <code>(?&lt;=…)</code></td><td>Followed by, not followed by, preceded by</td></tr>
+      </tbody></table></div>
+      <h2>Flags</h2>
+      <p><code>g</code> finds every match instead of the first one. <code>i</code> ignores case. <code>m</code> makes <code>^</code> and <code>$</code> match at the start and end of each line. <code>s</code> lets <code>.</code> match line breaks. <code>u</code> turns on full Unicode, needed for <code>\\p{L}</code>. <code>y</code> only matches at the exact position where the last match ended, and <code>d</code> records where each group starts and ends.</p>
+      <h2>Common mistakes</h2>
+      <ul>
+        <li><strong>Greedy matching.</strong> <code>&lt;.+&gt;</code> on "&lt;b&gt;hi&lt;/b&gt;" matches the whole string. Add <code>?</code> to make it lazy: <code>&lt;.+?&gt;</code> matches each tag separately.</li>
+        <li><strong>Unescaped dots.</strong> <code>example.com</code> also matches "exampleXcom". Write <code>example\\.com</code>.</li>
+        <li><strong>Only one match.</strong> Without the <code>g</code> flag, only the first match is found and replaced.</li>
+      </ul>
+    `,
 
   'color-picker': `
       <h2>Every colour format at once</h2>
@@ -2805,7 +3028,20 @@ module.exports = {
         <li><strong>Photoshop</strong> — press I for the Eyedropper; the hex code is in the Color Picker dialog.</li>
         <li><strong>Canva</strong> — click a colour, then the + tile, and paste a hex code.</li>
         <li><strong>Word</strong> — Font Color → More Colors → Custom shows RGB and Hex.</li>
-      </ul>`,
+      </ul>
+      <h2>Which colour format to use</h2>
+      <ul>
+        <li><strong>HEX</strong> (#4F46E5) is the shortest way to write a screen colour and works everywhere in CSS, HTML and design tools. Three-digit codes are shorthand: #FFF is #FFFFFF.</li>
+        <li><strong>RGB</strong> gives the red, green and blue light from 0 to 255. Use it when a program asks for separate numbers, or as rgba() when you need transparency.</li>
+        <li><strong>HSL</strong> (hue, saturation, lightness) is the easiest to adjust by hand. Keep the hue and change only the lightness to get lighter and darker versions of a brand colour.</li>
+        <li><strong>HSV</strong> (also called HSB) is what the colour pickers in Photoshop and many other apps use.</li>
+        <li><strong>CMYK</strong> is for print. The figure here is a straight conversion, so ask your printer for an exact match.</li>
+      </ul>
+      <h2>Building a palette from one colour</h2>
+      <p>The 11 tints and shades keep your colour's hue and saturation and step the lightness from 95% down to 5%. That gives you a ready scale: very light versions for backgrounds, the middle for buttons and links, dark ones for text and borders. Click any swatch to copy its hex code.</p>
+      <h2>Contrast in practice</h2>
+      <p>The default indigo #4F46E5 has a contrast ratio of about 6.3:1 with white, which passes WCAG AA for normal text, and only 3.3:1 with black. Teal #008080 on white is about 4.8:1, just above the 4.5:1 limit. Orange #FFA500 on white is only about 2:1, so it is fine for a background or an icon but too pale for white text on top.</p>
+    `,
 
   'color-palette-generator': `
       <h2>Five-colour palettes from colour theory</h2>
@@ -3066,7 +3302,26 @@ Sitemap: https://example.com/sitemap.xml</pre>
         <li><strong>Cloudflare</strong> can add AI-bot rules to your robots.txt automatically; check the result after turning it on.</li>
       </ul>
       <h2>Do you need one?</h2>
-      <p>Not strictly — without one, everything may be crawled — but it's good practice for the sitemap line. It isn't security or a legal barrier: it's a request that well-behaved bots follow. To keep a page out of Google, use a <code>noindex</code> tag instead. Never block CSS, JavaScript or pages you want to rank, and check your file with Search Console's robots.txt report.</p>`,
+      <p>Not strictly — without one, everything may be crawled — but it's good practice for the sitemap line. It isn't security or a legal barrier: it's a request that well-behaved bots follow. To keep a page out of Google, use a <code>noindex</code> tag instead. Never block CSS, JavaScript or pages you want to rank, and check your file with Search Console's robots.txt report.</p>
+      <h2>Ready-made files for common sites</h2>
+      <p><strong>WordPress.</strong> Keep the admin area out of crawls but leave the AJAX file open, because themes and plugins load content through it:</p>
+      <pre class="out-box">User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://example.com/wp-sitemap.xml</pre>
+      <p>WordPress has served <code>/wp-sitemap.xml</code> since version 5.5. If you use Yoast or Rank Math, point the Sitemap line at <code>/sitemap_index.xml</code> instead.</p>
+      <p><strong>Online shop.</strong> Block cart, checkout and account pages, plus filtered URLs that create thousands of near-identical pages: <code>Disallow: /cart</code>, <code>Disallow: /checkout</code>, <code>Disallow: /*?sort=</code>. Shopify generates its own file; to change it you edit the <code>robots.txt.liquid</code> template in your theme.</p>
+      <p><strong>Staging site.</strong> <code>Disallow: /</code> keeps a test copy out of crawls, but remove it the day you launch. Forgetting this line is one of the most common reasons a new site never appears in Google.</p>
+      <h2>How Google reads your rules</h2>
+      <ul>
+        <li><strong>The most specific rule wins.</strong> With <code>Disallow: /admin/</code> and <code>Allow: /admin/help/</code>, the longer Allow rule applies to the help pages. If two rules are equally long, Google uses Allow.</li>
+        <li><strong>Wildcards.</strong> <code>*</code> matches any characters and <code>$</code> marks the end of the URL, so <code>Disallow: /*.pdf$</code> blocks every PDF.</li>
+        <li><strong>Paths are case-sensitive.</strong> <code>/Admin/</code> and <code>/admin/</code> are different rules.</li>
+        <li><strong>Each subdomain needs its own file.</strong> shop.example.com does not use the rules at www.example.com.</li>
+        <li><strong>Changes take a little time.</strong> Google usually caches robots.txt for up to a day, so a fix is not seen instantly.</li>
+      </ul>
+    `,
 
   'slug-generator': `
       <h2>Clean URL slugs from titles</h2>

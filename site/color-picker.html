@@ -21,7 +21,7 @@
 <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=mwocri0r">
+<link rel="stylesheet" href="/assets/css/style.css?v=mwof1jtm">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEZ8T8ZK6B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SEZ8T8ZK6B');</script>
@@ -29,6 +29,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2580309541293686" crossorigin="anonymous"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Color Picker & Converter","url":"https://www.webtoolnest.com/color-picker","description":"Pick a color and convert between HEX, RGB, HSL and CMYK. See tints, shades and WCAG contrast ratio.","applicationCategory":"DeveloperApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Abdur Rehman","url":"https://www.webtoolnest.com/about","sameAs":["https://abdurrehman629.github.io","https://github.com/ABDURREHMAN629/case-studies","https://www.linkedin.com/in/abdur-rehman-ar03247440629","https://github.com/ABDURREHMAN629"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.webtoolnest.com/"},{"@type":"ListItem","position":2,"name":"Developer Tools","item":"https://www.webtoolnest.com/developer-tools"},{"@type":"ListItem","position":3,"name":"Color Picker & Converter","item":"https://www.webtoolnest.com/color-picker"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I find the hex code of a colour on my screen?","acceptedAnswer":{"@type":"Answer","text":"Click the colour swatch. In Chrome and Edge on a computer, the colour window has an eyedropper you can use on anything on your screen. For a colour in a photo, upload it to the Image Color Picker."}},{"@type":"Question","name":"What is the difference between HSL and HSV?","acceptedAnswer":{"@type":"Answer","text":"Both describe colour as hue and saturation, but HSL uses lightness, where 100% is always white, and HSV uses value (brightness), where 100% is the purest version of the colour. CSS uses HSL; Photoshop pickers use HSV."}},{"@type":"Question","name":"Is the CMYK value accurate for printing?","acceptedAnswer":{"@type":"Answer","text":"It is a direct mathematical conversion, which is a good starting point. Real print colours depend on the printer, ink and paper, so ask your print shop for their profile if the colour must match exactly."}}]}</script>
 </head>
 <body>
 <header class="site-header">
@@ -85,8 +86,22 @@
         <li><strong>Canva</strong> — click a colour, then the + tile, and paste a hex code.</li>
         <li><strong>Word</strong> — Font Color → More Colors → Custom shows RGB and Hex.</li>
       </ul>
+      <h2>Which colour format to use</h2>
+      <ul>
+        <li><strong>HEX</strong> (#4F46E5) is the shortest way to write a screen colour and works everywhere in CSS, HTML and design tools. Three-digit codes are shorthand: #FFF is #FFFFFF.</li>
+        <li><strong>RGB</strong> gives the red, green and blue light from 0 to 255. Use it when a program asks for separate numbers, or as rgba() when you need transparency.</li>
+        <li><strong>HSL</strong> (hue, saturation, lightness) is the easiest to adjust by hand. Keep the hue and change only the lightness to get lighter and darker versions of a brand colour.</li>
+        <li><strong>HSV</strong> (also called HSB) is what the colour pickers in Photoshop and many other apps use.</li>
+        <li><strong>CMYK</strong> is for print. The figure here is a straight conversion, so ask your printer for an exact match.</li>
+      </ul>
+      <h2>Building a palette from one colour</h2>
+      <p>The 11 tints and shades keep your colour's hue and saturation and step the lightness from 95% down to 5%. That gives you a ready scale: very light versions for backgrounds, the middle for buttons and links, dark ones for text and borders. Click any swatch to copy its hex code.</p>
+      <h2>Contrast in practice</h2>
+      <p>The default indigo #4F46E5 has a contrast ratio of about 6.3:1 with white, which passes WCAG AA for normal text, and only 3.3:1 with black. Teal #008080 on white is about 4.8:1, just above the 4.5:1 limit. Orange #FFA500 on white is only about 2:1, so it is fine for a background or an icon but too pale for white text on top.</p>
+    
       <p class="related-guides">📝 <strong>Related guide:</strong> <a href="/blog/hex-to-rgb">How to Convert HEX to RGB (and Back): Formula, Chart and Examples</a></p>
-
+      <h2>Frequently asked questions</h2>
+      <div class="faq"><details><summary>How do I find the hex code of a colour on my screen?</summary><p>Click the colour swatch. In Chrome and Edge on a computer, the colour window has an eyedropper you can use on anything on your screen. For a colour in a photo, upload it to the Image Color Picker.</p></details><details><summary>What is the difference between HSL and HSV?</summary><p>Both describe colour as hue and saturation, but HSL uses lightness, where 100% is always white, and HSV uses value (brightness), where 100% is the purest version of the colour. CSS uses HSL; Photoshop pickers use HSV.</p></details><details><summary>Is the CMYK value accurate for printing?</summary><p>It is a direct mathematical conversion, which is a good starting point. Real print colours depend on the printer, ink and paper, so ask your print shop for their profile if the colour must match exactly.</p></details></div>
     </article>
     <aside class="sidebar">
       <h3>More Developer Tools</h3>
@@ -110,10 +125,10 @@
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mwocri0r"></script>
-<script src="/assets/js/core.js?v=mwocri0r"></script>
-<script src="/assets/js/tools/dev.js?v=mwocri0r"></script>
+<script src="/assets/js/registry.js?v=mwof1jtm"></script>
+<script src="/assets/js/core.js?v=mwof1jtm"></script>
+<script src="/assets/js/tools/dev.js?v=mwof1jtm"></script>
 <script>Tools.mount("color-picker", document.getElementById('tool'), {});</script>
-<script src="/assets/js/assistant.js?v=mwocri0r" defer></script>
+<script src="/assets/js/assistant.js?v=mwof1jtm" defer></script>
 </body>
 </html>

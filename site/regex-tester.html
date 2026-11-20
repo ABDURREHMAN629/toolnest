@@ -21,7 +21,7 @@
 <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=mwocri0r">
+<link rel="stylesheet" href="/assets/css/style.css?v=mwof1jtm">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEZ8T8ZK6B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SEZ8T8ZK6B');</script>
@@ -29,6 +29,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2580309541293686" crossorigin="anonymous"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Regex Tester","url":"https://www.webtoolnest.com/regex-tester","description":"Test JavaScript regular expressions with live match highlighting, capture groups and a replace preview.","applicationCategory":"DeveloperApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Abdur Rehman","url":"https://www.webtoolnest.com/about","sameAs":["https://abdurrehman629.github.io","https://github.com/ABDURREHMAN629/case-studies","https://www.linkedin.com/in/abdur-rehman-ar03247440629","https://github.com/ABDURREHMAN629"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.webtoolnest.com/"},{"@type":"ListItem","position":2,"name":"Developer Tools","item":"https://www.webtoolnest.com/developer-tools"},{"@type":"ListItem","position":3,"name":"Regex Tester","item":"https://www.webtoolnest.com/regex-tester"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why does my regex only find the first match?","acceptedAnswer":{"@type":"Answer","text":"The g (global) flag is missing. Add g in the Flags box to find and replace every match."}},{"@type":"Question","name":"How do I match across several lines?","acceptedAnswer":{"@type":"Answer","text":"Use the m flag so ^ and $ work on every line, and the s flag if you need . to match line breaks as well."}},{"@type":"Question","name":"Is this the same as regex in Python?","acceptedAnswer":{"@type":"Answer","text":"Mostly. Everyday patterns work the same, but Python writes named groups as (?P<name>...) and has some differences in flags. This tester follows JavaScript exactly."}}]}</script>
 </head>
 <body>
 <header class="site-header">
@@ -88,7 +89,27 @@
         <li>Whole numbers: <code>^\d+$</code>; decimals: <code>-?\d+(\.\d+)?</code></li>
         <li>Anything that isn't a letter, digit or space: <code>[^a-zA-Z0-9\s]</code></li>
       </ul>
-
+      <h2>Quick reference</h2>
+      <div class="table-wrap" style="max-height:none;margin:14px 0 20px"><table class="table"><thead><tr><th>Pattern</th><th>Matches</th></tr></thead><tbody>
+        <tr><td><code>\d</code> <code>\w</code> <code>\s</code></td><td>A digit, a word character (letter, digit, underscore), whitespace</td></tr>
+        <tr><td><code>.</code></td><td>Any character except a line break (with the <code>s</code> flag, line breaks too)</td></tr>
+        <tr><td><code>[abc]</code> <code>[^abc]</code></td><td>One of a, b or c; anything except a, b or c</td></tr>
+        <tr><td><code>*</code> <code>+</code> <code>?</code> <code>{2,5}</code></td><td>0 or more, 1 or more, optional, between 2 and 5 times</td></tr>
+        <tr><td><code>^</code> <code>$</code> <code>\b</code></td><td>Start of text, end of text, a word boundary</td></tr>
+        <tr><td><code>(…)</code> <code>(?:…)</code> <code>(?&lt;name&gt;…)</code></td><td>Capture group, group without capturing, named group</td></tr>
+        <tr><td><code>(?=…)</code> <code>(?!…)</code> <code>(?&lt;=…)</code></td><td>Followed by, not followed by, preceded by</td></tr>
+      </tbody></table></div>
+      <h2>Flags</h2>
+      <p><code>g</code> finds every match instead of the first one. <code>i</code> ignores case. <code>m</code> makes <code>^</code> and <code>$</code> match at the start and end of each line. <code>s</code> lets <code>.</code> match line breaks. <code>u</code> turns on full Unicode, needed for <code>\p{L}</code>. <code>y</code> only matches at the exact position where the last match ended, and <code>d</code> records where each group starts and ends.</p>
+      <h2>Common mistakes</h2>
+      <ul>
+        <li><strong>Greedy matching.</strong> <code>&lt;.+&gt;</code> on "&lt;b&gt;hi&lt;/b&gt;" matches the whole string. Add <code>?</code> to make it lazy: <code>&lt;.+?&gt;</code> matches each tag separately.</li>
+        <li><strong>Unescaped dots.</strong> <code>example.com</code> also matches "exampleXcom". Write <code>example\.com</code>.</li>
+        <li><strong>Only one match.</strong> Without the <code>g</code> flag, only the first match is found and replaced.</li>
+      </ul>
+    
+      <h2>Frequently asked questions</h2>
+      <div class="faq"><details><summary>Why does my regex only find the first match?</summary><p>The g (global) flag is missing. Add g in the Flags box to find and replace every match.</p></details><details><summary>How do I match across several lines?</summary><p>Use the m flag so ^ and $ work on every line, and the s flag if you need . to match line breaks as well.</p></details><details><summary>Is this the same as regex in Python?</summary><p>Mostly. Everyday patterns work the same, but Python writes named groups as (?P&lt;name&gt;...) and has some differences in flags. This tester follows JavaScript exactly.</p></details></div>
     </article>
     <aside class="sidebar">
       <h3>More Developer Tools</h3>
@@ -112,10 +133,10 @@
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mwocri0r"></script>
-<script src="/assets/js/core.js?v=mwocri0r"></script>
-<script src="/assets/js/tools/dev.js?v=mwocri0r"></script>
+<script src="/assets/js/registry.js?v=mwof1jtm"></script>
+<script src="/assets/js/core.js?v=mwof1jtm"></script>
+<script src="/assets/js/tools/dev.js?v=mwof1jtm"></script>
 <script>Tools.mount("regex-tester", document.getElementById('tool'), {});</script>
-<script src="/assets/js/assistant.js?v=mwocri0r" defer></script>
+<script src="/assets/js/assistant.js?v=mwof1jtm" defer></script>
 </body>
 </html>

@@ -21,7 +21,7 @@
 <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="stylesheet" href="/assets/css/style.css?v=mwocri0r">
+<link rel="stylesheet" href="/assets/css/style.css?v=mwof1jtm">
 <script>window.BASE="/";try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEZ8T8ZK6B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SEZ8T8ZK6B');</script>
@@ -29,6 +29,7 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2580309541293686" crossorigin="anonymous"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Time Calculator","url":"https://www.webtoolnest.com/time-calculator","description":"Calculate the hours and minutes between two times, and add or subtract durations.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Abdur Rehman","url":"https://www.webtoolnest.com/about","sameAs":["https://abdurrehman629.github.io","https://github.com/ABDURREHMAN629/case-studies","https://www.linkedin.com/in/abdur-rehman-ar03247440629","https://github.com/ABDURREHMAN629"]}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.webtoolnest.com/"},{"@type":"ListItem","position":2,"name":"Date & Time","item":"https://www.webtoolnest.com/date-time-tools"},{"@type":"ListItem","position":3,"name":"Time Calculator","item":"https://www.webtoolnest.com/time-calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate hours worked with a lunch break?","acceptedAnswer":{"@type":"Answer","text":"Choose \"Hours between two times\", enter your start and end time, and put the unpaid break in minutes. 9:00 to 17:30 with a 30-minute lunch gives 8 hours."}},{"@type":"Question","name":"How do I convert minutes to decimal hours?","acceptedAnswer":{"@type":"Answer","text":"Divide the minutes by 60. 45 minutes is 0.75 hours, so 7h 45m is 7.75 hours. The calculator shows the decimal figure under every total."}},{"@type":"Question","name":"Does it work for shifts past midnight?","acceptedAnswer":{"@type":"Answer","text":"Yes. If the end time is earlier than the start time, it assumes the shift ends the next day and adds 24 hours."}}]}</script>
 </head>
 <body>
 <header class="site-header">
@@ -93,8 +94,26 @@
       <p>For a total in minutes, enter lines such as <code>45m</code>. For minutes and seconds, type h:mm:ss, such as <code>0:04:30</code>; totals are rounded to the minute.</p>
       <h2>Dividing time, dates and time zones</h2>
       <p>To divide time, use decimal hours: 7.5 h ÷ 3 = 2.5 h = 2h 30m (the average in the list mode does this for you). For the gap between two dates, use <a href="/date-difference-calculator">Days Between Dates</a>; for time zones, the <a href="/time-zone-converter">Time Zone Converter</a>.</p>
+      <h2>More examples</h2>
+      <ul>
+        <li><strong>Night shift.</strong> 22:00 to 06:30 with a 30-minute break is 8h 00m. The calculator notices the shift crosses midnight and adds the day for you.</li>
+        <li><strong>Pay for a short day.</strong> 7h 45m at $18 an hour: 7.75 × 18 = $139.50. Enter the hourly rate and the pay appears under the total.</li>
+        <li><strong>Arrival time.</strong> A flight leaves at 21:40 and takes 7h 35m. Add the time and you land at 05:15 the next day (in the departure city's time zone).</li>
+        <li><strong>Going back in time.</strong> To be somewhere at 09:00 with a 1h 20m journey, subtract 1 h 20 m and you need to leave at 07:40.</li>
+      </ul>
+      <h2>Minutes to decimal hours</h2>
+      <p>Timesheets and payroll often want decimal hours. Divide the minutes by 60:</p>
+      <div class="table-wrap" style="max-height:none;margin:14px 0 20px"><table class="table"><thead><tr><th>Minutes</th><th class="num">Decimal</th><th>Minutes</th><th class="num">Decimal</th></tr></thead><tbody>
+        <tr><td>6</td><td class="num">0.10</td><td>30</td><td class="num">0.50</td></tr>
+        <tr><td>10</td><td class="num">0.17</td><td>40</td><td class="num">0.67</td></tr>
+        <tr><td>15</td><td class="num">0.25</td><td>45</td><td class="num">0.75</td></tr>
+        <tr><td>20</td><td class="num">0.33</td><td>50</td><td class="num">0.83</td></tr>
+      </tbody></table></div>
+      <p>A common mistake is typing 7h 45m as 7.45. That is 7 hours 27 minutes, not 7 hours 45. The correct decimal is 7.75.</p>
+    
       <p class="related-guides">📝 <strong>Related guide:</strong> <a href="/blog/how-to-calculate-hours-worked">How to Calculate Hours Worked (With Breaks, Decimals and Excel)</a></p>
-
+      <h2>Frequently asked questions</h2>
+      <div class="faq"><details><summary>How do I calculate hours worked with a lunch break?</summary><p>Choose &quot;Hours between two times&quot;, enter your start and end time, and put the unpaid break in minutes. 9:00 to 17:30 with a 30-minute lunch gives 8 hours.</p></details><details><summary>How do I convert minutes to decimal hours?</summary><p>Divide the minutes by 60. 45 minutes is 0.75 hours, so 7h 45m is 7.75 hours. The calculator shows the decimal figure under every total.</p></details><details><summary>Does it work for shifts past midnight?</summary><p>Yes. If the end time is earlier than the start time, it assumes the shift ends the next day and adds 24 hours.</p></details></div>
     </article>
     <aside class="sidebar">
       <h3>More Date &amp; Time</h3>
@@ -118,10 +137,10 @@
     <p class="copyright">© 2026 WebToolNest. All rights reserved.</p>
   </div>
 </footer>
-<script src="/assets/js/registry.js?v=mwocri0r"></script>
-<script src="/assets/js/core.js?v=mwocri0r"></script>
-<script src="/assets/js/tools/time.js?v=mwocri0r"></script>
+<script src="/assets/js/registry.js?v=mwof1jtm"></script>
+<script src="/assets/js/core.js?v=mwof1jtm"></script>
+<script src="/assets/js/tools/time.js?v=mwof1jtm"></script>
 <script>Tools.mount("time-calculator", document.getElementById('tool'), {});</script>
-<script src="/assets/js/assistant.js?v=mwocri0r" defer></script>
+<script src="/assets/js/assistant.js?v=mwof1jtm" defer></script>
 </body>
 </html>
